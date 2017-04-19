@@ -1,0 +1,24 @@
+#%RAML 1.0
+title: RECS|Box Redfish API
+version: 0.1.0
+baseUri: http://localhost:8080
+types:
+  TestType:
+    type: object
+    properties:
+      id: number
+      optional?: string
+      expanded:
+        type: object
+        properties:
+          count: number
+/helloWorld:
+  get:
+    responses:
+      200:
+        body:
+          application/json:
+            example: |
+              {
+                "message" : "Hello World"
+              }
