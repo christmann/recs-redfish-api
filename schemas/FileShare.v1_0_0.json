@@ -1,5 +1,5 @@
 {
-    "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema.v1_2_0.json",
+    "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema.v1_1_0.json",
     "title": "#FileShare.v1_0_0.FileShare",
     "$ref": "#/definitions/FileShare",
     "definitions": {
@@ -82,7 +82,7 @@
                     "type": "array",
                     "items": {
                         "anyOf": [
-                            {"$ref": "http://redfish.dmtf.org/schemas/v1/FileSystem.v1_0_0.json#/definitions/FileProtocol"},
+                            {"$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/FileSystem.v1_0_0.json#/definitions/FileProtocol"},
                             {"type": "null"}
                         ]
                     },
@@ -131,7 +131,7 @@
                 },
                 "WritePolicy": {
                     "anyOf": [
-                        {"$ref": "http://redfish.dmtf.org/schemas/v1/StorageReplicaInfo.v1_0_0.json#/definitions/ReplicaUpdateMode"},
+                        {"$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/StorageReplicaInfo.v1_0_0.json#/definitions/ReplicaUpdateMode"},
                         {"type": "null"}
                     ],
                     "readonly": true,
@@ -213,7 +213,7 @@
                         },
                         "ClassOfService": {
                             "anyOf": [
-                                {"$ref": "http://redfish.dmtf.org/schemas/v1/ClassOfService.json#/definitions/ClassOfService"},
+                                {"$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/ClassOfService.json#/definitions/ClassOfService"},
                                 {"type": "null"}
                             ],
                             "readonly": false,
@@ -222,7 +222,7 @@
                         },
                         "FileSystem": {
                             "anyOf": [
-                                {"$ref": "http://redfish.dmtf.org/schemas/v1/FileSystem.json#/definitions/FileSystem"},
+                                {"$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/FileSystem.json#/definitions/FileSystem"},
                                 {"type": "null"}
                             ],
                             "readonly": true,
@@ -266,5 +266,5 @@
             "longDescription": "The value shall indicate whether quotas are enabled and enforced by this file share. If QuotaType is present, a value of Soft shall mean that quotas are enabled but not enforced, and a value of Hard shall mean that quotas are enabled and enforced."
         }
     },
-    "copyright": "Copyright 2014-2016 Distributed Management Task Force, Inc. (DMTF). For the full DMTF copyright policy, see http://www.dmtf.org/about/policies/copyright"
+    "copyright": "Copyright 2016-2017 Storage Networking Industry Association (SNIA), USA. All rights reserved. For the full SNIA copyright policy, see http://www.snia.org/about/corporate_info/copyright"
 }

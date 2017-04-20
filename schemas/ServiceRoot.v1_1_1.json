@@ -1,5 +1,5 @@
 {
-    "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema.v1_2_0.json",
+    "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema.v1_1_0.json",
     "title": "#ServiceRoot.v1_1_1.ServiceRoot",
     "$ref": "#/definitions/ServiceRoot",
     "definitions": {
@@ -152,13 +152,13 @@
                     "longDescription": "This object shall only contain a reference to a collection of resources that comply to the SchemaFile schema where the files are Json-Schema files."
                 },
                 "StorageSystems": {
-                    "$ref": "http://redfish.dmtf.org/schemas/v1/StorageSystemCollection.json#/definitions/StorageSystemCollection",
+                    "$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/StorageSystemCollection.json#/definitions/StorageSystemCollection",
                     "readonly": true,
                     "description": "This is a link to a collection of storage systems.",
                     "longDescription": "The referenced collection shall contain computer systems that act as storage servers.  The HostingRoles attribute of each such computer system shall have an entry for StorageServer."
                 },
                 "StorageServices": {
-                    "$ref": "http://redfish.dmtf.org/schemas/v1/StorageServiceCollection.json#/definitions/StorageServiceCollection",
+                    "$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/StorageServiceCollection.json#/definitions/StorageServiceCollection",
                     "readonly": true,
                     "description": "A link to a collection of all storage service entities.",
                     "longDescription": "The referenced collection shall contain references to all StorageService instances."

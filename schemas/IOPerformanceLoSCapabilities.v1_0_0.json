@@ -1,5 +1,5 @@
 {
-    "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema.v1_2_0.json",
+    "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema.v1_1_0.json",
     "title": "#IOPerformanceLoSCapabilities.v1_0_0.IOPerformanceLoSCapabilities",
     "$ref": "#/definitions/IOPerformanceLoSCapabilities",
     "definitions": {
@@ -50,7 +50,9 @@
                     "anyOf": [
                         {"$ref": "http://redfish.dmtf.org/schemas/v1/Resource.json#/definitions/Name"},
                         {"type": "null"}
-                    ]
+                    ],
+                    "description": "A friendly name for this line of service.",
+                    "longDescription": "If present, the name shall be a friendly name for this line of service."
                 },
                 "IOOperationsPerSecondIsLimited": {
                     "type": [
@@ -339,7 +341,7 @@
                 },
                 "Schedule": {
                     "anyOf": [
-                        {"$ref": "http://redfish.dmtf.org/schemas/v1/Schedule.v1_0_0.json#/definitions/Schedule"},
+                        {"$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/Schedule.v1_0_0.json#/definitions/Schedule"},
                         {"type": "null"}
                     ],
                     "readonly": false,
@@ -351,5 +353,5 @@
             "longDescription": "This structure may be used to describe a component of an IO workload."
         }
     },
-    "copyright": "Copyright 2014-2016 Distributed Management Task Force, Inc. (DMTF). For the full DMTF copyright policy, see http://www.dmtf.org/about/policies/copyright"
+    "copyright": "Copyright 2016-2017 Storage Networking Industry Association (SNIA), USA. All rights reserved. For the full SNIA copyright policy, see http://www.snia.org/about/corporate_info/copyright"
 }

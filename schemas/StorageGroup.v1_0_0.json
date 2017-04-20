@@ -1,5 +1,5 @@
 {
-    "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema.v1_2_0.json",
+    "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema.v1_1_0.json",
     "title": "#StorageGroup.v1_0_0.StorageGroup",
     "$ref": "#/definitions/StorageGroup",
     "definitions": {
@@ -120,7 +120,7 @@
                 },
                 "AccessState": {
                     "anyOf": [
-                        {"$ref": "http://redfish.dmtf.org/schemas/v1/EndpointGroup.v1_0_0.json#/definitions/AccessState"},
+                        {"$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/EndpointGroup.v1_0_0.json#/definitions/AccessState"},
                         {"type": "null"}
                     ],
                     "readonly": false,
@@ -207,7 +207,7 @@
                         },
                         "ClassOfService": {
                             "anyOf": [
-                                {"$ref": "http://redfish.dmtf.org/schemas/v1/ClassOfService.json#/definitions/ClassOfService"},
+                                {"$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/ClassOfService.json#/definitions/ClassOfService"},
                                 {"type": "null"}
                             ],
                             "readonly": true,
@@ -223,7 +223,7 @@
                     "type": "array",
                     "items": {
                         "anyOf": [
-                            {"$ref": "http://redfish.dmtf.org/schemas/v1/StorageReplicaInfo.v1_0_0.json#/definitions/ReplicaInfo"},
+                            {"$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/StorageReplicaInfo.v1_0_0.json#/definitions/ReplicaInfo"},
                             {"type": "null"}
                         ]
                     },
@@ -279,7 +279,7 @@
                 },
                 "ClientEndpointGroups": {
                     "anyOf": [
-                        {"$ref": "http://redfish.dmtf.org/schemas/v1/EndpointGroupCollection.json#/definitions/EndpointGroupCollection"},
+                        {"$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/EndpointGroupCollection.json#/definitions/EndpointGroupCollection"},
                         {"type": "null"}
                     ],
                     "readonly": false,
@@ -288,7 +288,7 @@
                 },
                 "ServerEndpointGroups": {
                     "anyOf": [
-                        {"$ref": "http://redfish.dmtf.org/schemas/v1/EndpointGroupCollection.json#/definitions/EndpointGroupCollection"},
+                        {"$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/EndpointGroupCollection.json#/definitions/EndpointGroupCollection"},
                         {"type": "null"}
                     ],
                     "readonly": false,
@@ -297,7 +297,7 @@
                 },
                 "Volumes": {
                     "anyOf": [
-                        {"$ref": "http://redfish.dmtf.org/schemas/v1/VolumeCollection.json#/definitions/VolumeCollection"},
+                        {"$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/VolumeCollection.json#/definitions/VolumeCollection"},
                         {"type": "null"}
                     ],
                     "readonly": false,
@@ -313,5 +313,5 @@
             "longDescription": "A storage group collects a set of related storage entities (volumes, file systems...) The collection should be useful for managing the storage of a set of related client applications."
         }
     },
-    "copyright": "Copyright 2014-2016 Distributed Management Task Force, Inc. (DMTF). For the full DMTF copyright policy, see http://www.dmtf.org/about/policies/copyright"
+    "copyright": "Copyright 2016-2017 Storage Networking Industry Association (SNIA), USA. All rights reserved. For the full SNIA copyright policy, see http://www.snia.org/about/corporate_info/copyright"
 }

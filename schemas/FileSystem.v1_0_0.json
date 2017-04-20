@@ -1,5 +1,5 @@
 {
-    "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema.v1_2_0.json",
+    "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema.v1_1_0.json",
     "title": "#FileSystem.v1_0_0.FileSystem",
     "$ref": "#/definitions/FileSystem",
     "definitions": {
@@ -131,7 +131,7 @@
                 },
                 "Capacity": {
                     "anyOf": [
-                        {"$ref": "http://redfish.dmtf.org/schemas/v1/Capacity.v1_0_0.json#/definitions/Capacity"},
+                        {"$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/Capacity.v1_0_0.json#/definitions/Capacity"},
                         {"type": "null"}
                     ],
                     "readonly": false,
@@ -140,7 +140,7 @@
                 },
                 "RemainingCapacity": {
                     "anyOf": [
-                        {"$ref": "http://redfish.dmtf.org/schemas/v1/Capacity.v1_0_0.json#/definitions/Capacity"},
+                        {"$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/Capacity.v1_0_0.json#/definitions/Capacity"},
                         {"type": "null"}
                     ],
                     "readonly": true,
@@ -151,7 +151,7 @@
                     "type": "array",
                     "items": {
                         "anyOf": [
-                            {"$ref": "http://redfish.dmtf.org/schemas/v1/Capacity.v1_0_0.json#/definitions/CapacitySource"},
+                            {"$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/Capacity.v1_0_0.json#/definitions/CapacitySource"},
                             {"type": "null"}
                         ]
                     },
@@ -178,7 +178,7 @@
                     "type": "array",
                     "items": {
                         "anyOf": [
-                            {"$ref": "http://redfish.dmtf.org/schemas/v1/StorageAccessCapability.v1_0_0.json#/definitions/StorageAccessCapability"},
+                            {"$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/StorageAccessCapability.v1_0_0.json#/definitions/StorageAccessCapability"},
                             {"type": "null"}
                         ]
                     },
@@ -240,12 +240,24 @@
                 },
                 "ReplicaInfo": {
                     "anyOf": [
-                        {"$ref": "http://redfish.dmtf.org/schemas/v1/StorageReplicaInfo.v1_0_0.json#/definitions/ReplicaInfo"},
+                        {"$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/StorageReplicaInfo.v1_0_0.json#/definitions/ReplicaInfo"},
                         {"type": "null"}
                     ],
                     "readonly": true,
                     "description": "This value describes the replica attributes if this file system is a replica.",
                     "longDescription": "If this file system is a replica, this value shall describe its replication attributes. This value shall not be present if this file system is not a replica. A file system may be both a source and a replica."
+                },
+                "ExportedShares": {
+                    "type": "array",
+                    "items": {
+                        "anyOf": [
+                            {"$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/FileShare.json#/definitions/FileShare"},
+                            {"type": "null"}
+                        ]
+                    },
+                    "readonly": true,
+                    "description": "An array of exported file shares of this file system.",
+                    "longDescription": "This property shall be an array of exported file shares of this file system. Each entry shall define an exported file share of this file system."
                 },
                 "Links": {
                     "type": "object",
@@ -279,7 +291,7 @@
                         "ReplicaCollection": {
                             "type": "array",
                             "items": {
-                                "$ref": "http://redfish.dmtf.org/schemas/v1/FileSystem.json#/definitions/FileSystem"
+                                "$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/FileSystem.json#/definitions/FileSystem"
                             },
                             "readonly": true,
                             "description": "An array of links to replicas for this file system.",
@@ -287,7 +299,7 @@
                         },
                         "ClassOfService": {
                             "anyOf": [
-                                {"$ref": "http://redfish.dmtf.org/schemas/v1/ClassOfService.json#/definitions/ClassOfService"},
+                                {"$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/ClassOfService.json#/definitions/ClassOfService"},
                                 {"type": "null"}
                             ],
                             "readonly": true,
@@ -298,22 +310,6 @@
                     "readonly": true,
                     "description": "Contains links to other resources that are related to this resource.",
                     "longDescription": "This property shall contain links to other resources that are related to this resource."
-                },
-                "ExportedShares@odata.count": {
-                    "$ref": "http://redfish.dmtf.org/schemas/v1/odata.4.0.0.json#/definitions/count"
-                },
-                "ExportedShares@odata.navigationLink": {
-                    "type": "string",
-                    "format": "uri"
-                },
-                "ExportedShares": {
-                    "type": "array",
-                    "items": {
-                        "$ref": "http://redfish.dmtf.org/schemas/v1/FileShare.json#/definitions/FileShare"
-                    },
-                    "readonly": true,
-                    "description": "An array of exported file shares of this file system.",
-                    "longDescription": "This property shall be an array of exported file shares of this file system. Each entry shall define an exported file share of this file system."
                 }
             },
             "required": [
@@ -344,5 +340,5 @@
             "longDescription": "The value shall indicate the persistence characteristics of the file system."
         }
     },
-    "copyright": "Copyright 2014-2016 Distributed Management Task Force, Inc. (DMTF). For the full DMTF copyright policy, see http://www.dmtf.org/about/policies/copyright"
+    "copyright": "Copyright 2016-2017 Storage Networking Industry Association (SNIA), USA. All rights reserved. For the full SNIA copyright policy, see http://www.snia.org/about/corporate_info/copyright"
 }

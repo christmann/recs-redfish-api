@@ -1,5 +1,5 @@
 {
-    "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema.v1_2_0.json",
+    "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema.v1_1_0.json",
     "title": "#ClassOfService.v1_0_0.ClassOfService",
     "$ref": "#/definitions/ClassOfService",
     "definitions": {
@@ -105,7 +105,7 @@
                     "type": "array",
                     "items": {
                         "anyOf": [
-                            {"$ref": "http://redfish.dmtf.org/schemas/v1/DataProtectionLoSCapabilities.v1_0_0.json#/definitions/DataProtectionLineOfService"},
+                            {"$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/DataProtectionLoSCapabilities.v1_0_0.json#/definitions/DataProtectionLineOfService"},
                             {"type": "null"}
                         ]
                     },
@@ -117,7 +117,7 @@
                     "type": "array",
                     "items": {
                         "anyOf": [
-                            {"$ref": "http://redfish.dmtf.org/schemas/v1/DataSecurityLoSCapabilities.v1_0_0.json#/definitions/DataSecurityLineOfService"},
+                            {"$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/DataSecurityLoSCapabilities.v1_0_0.json#/definitions/DataSecurityLineOfService"},
                             {"type": "null"}
                         ]
                     },
@@ -129,7 +129,7 @@
                     "type": "array",
                     "items": {
                         "anyOf": [
-                            {"$ref": "http://redfish.dmtf.org/schemas/v1/DataStorageLoSCapabilities.v1_0_0.json#/definitions/DataStorageLineOfService"},
+                            {"$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/DataStorageLoSCapabilities.v1_0_0.json#/definitions/DataStorageLineOfService"},
                             {"type": "null"}
                         ]
                     },
@@ -141,7 +141,7 @@
                     "type": "array",
                     "items": {
                         "anyOf": [
-                            {"$ref": "http://redfish.dmtf.org/schemas/v1/IOConnectivityLoSCapabilities.v1_0_0.json#/definitions/IOConnectivityLineOfService"},
+                            {"$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/IOConnectivityLoSCapabilities.v1_0_0.json#/definitions/IOConnectivityLineOfService"},
                             {"type": "null"}
                         ]
                     },
@@ -153,7 +153,7 @@
                     "type": "array",
                     "items": {
                         "anyOf": [
-                            {"$ref": "http://redfish.dmtf.org/schemas/v1/IOPerformanceLoSCapabilities.v1_0_0.json#/definitions/IOPerformanceLineOfService"},
+                            {"$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/IOPerformanceLoSCapabilities.v1_0_0.json#/definitions/IOPerformanceLineOfService"},
                             {"type": "null"}
                         ]
                     },
@@ -166,5 +166,5 @@
             "longDescription": "This structure may be used to collect a set of related service options."
         }
     },
-    "copyright": "Copyright 2014-2016 Distributed Management Task Force, Inc. (DMTF). For the full DMTF copyright policy, see http://www.dmtf.org/about/policies/copyright"
+    "copyright": "Copyright 2016-2017 Storage Networking Industry Association (SNIA), USA. All rights reserved. For the full SNIA copyright policy, see http://www.snia.org/about/corporate_info/copyright"
 }

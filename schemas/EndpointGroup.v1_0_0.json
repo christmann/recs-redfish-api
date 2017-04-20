@@ -1,5 +1,5 @@
 {
-    "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema.v1_2_0.json",
+    "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema.v1_1_0.json",
     "title": "#EndpointGroup.v1_0_0.EndpointGroup",
     "$ref": "#/definitions/EndpointGroup",
     "definitions": {
@@ -149,7 +149,7 @@
                 },
                 "Endpoints": {
                     "anyOf": [
-                        {"$ref": "http://redfish.dmtf.org/schemas/v1/EndpointCollection.json#/definitions/EndpointCollection"},
+                        {"$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/EndpointCollection.json#/definitions/EndpointCollection"},
                         {"type": "null"}
                     ],
                     "readonly": false,
@@ -176,5 +176,5 @@
             }
         }
     },
-    "copyright": "Copyright 2014-2016 Distributed Management Task Force, Inc. (DMTF). For the full DMTF copyright policy, see http://www.dmtf.org/about/policies/copyright"
+    "copyright": "Copyright 2016-2017 Storage Networking Industry Association (SNIA), USA. All rights reserved. For the full SNIA copyright policy, see http://www.snia.org/about/corporate_info/copyright"
 }

@@ -1,5 +1,5 @@
 {
-    "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema.v1_2_0.json",
+    "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema.v1_1_0.json",
     "title": "#StorageService.v1_0_0.StorageService",
     "$ref": "#/definitions/StorageService",
     "definitions": {
@@ -189,7 +189,7 @@
                         },
                         "DefaultClassOfService": {
                             "anyOf": [
-                                {"$ref": "http://redfish.dmtf.org/schemas/v1/ClassOfService.json#/definitions/ClassOfService"},
+                                {"$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/ClassOfService.json#/definitions/ClassOfService"},
                                 {"type": "null"}
                             ],
                             "readonly": false,
@@ -198,7 +198,7 @@
                         },
                         "DataProtectionLoSCapabilities": {
                             "anyOf": [
-                                {"$ref": "http://redfish.dmtf.org/schemas/v1/DataProtectionLoSCapabilities.json#/definitions/DataProtectionLoSCapabilities"},
+                                {"$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/DataProtectionLoSCapabilities.json#/definitions/DataProtectionLoSCapabilities"},
                                 {"type": "null"}
                             ],
                             "readonly": false,
@@ -207,7 +207,7 @@
                         },
                         "DataSecurityLoSCapabilities": {
                             "anyOf": [
-                                {"$ref": "http://redfish.dmtf.org/schemas/v1/DataSecurityLoSCapabilities.json#/definitions/DataSecurityLoSCapabilities"},
+                                {"$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/DataSecurityLoSCapabilities.json#/definitions/DataSecurityLoSCapabilities"},
                                 {"type": "null"}
                             ],
                             "readonly": false,
@@ -216,7 +216,7 @@
                         },
                         "DataStorageLoSCapabilities": {
                             "anyOf": [
-                                {"$ref": "http://redfish.dmtf.org/schemas/v1/DataStorageLoSCapabilities.json#/definitions/DataStorageLoSCapabilities"},
+                                {"$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/DataStorageLoSCapabilities.json#/definitions/DataStorageLoSCapabilities"},
                                 {"type": "null"}
                             ],
                             "readonly": false,
@@ -225,7 +225,7 @@
                         },
                         "IOConnectivityLoSCapabilities": {
                             "anyOf": [
-                                {"$ref": "http://redfish.dmtf.org/schemas/v1/IOConnectivityLoSCapabilities.json#/definitions/IOConnectivityLoSCapabilities"},
+                                {"$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/IOConnectivityLoSCapabilities.json#/definitions/IOConnectivityLoSCapabilities"},
                                 {"type": "null"}
                             ],
                             "readonly": false,
@@ -234,7 +234,7 @@
                         },
                         "IOPerformanceLoSCapabilities": {
                             "anyOf": [
-                                {"$ref": "http://redfish.dmtf.org/schemas/v1/IOPerformanceLoSCapabilities.json#/definitions/IOPerformanceLoSCapabilities"},
+                                {"$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/IOPerformanceLoSCapabilities.json#/definitions/IOPerformanceLoSCapabilities"},
                                 {"type": "null"}
                             ],
                             "readonly": false,
@@ -290,7 +290,7 @@
                 },
                 "StorageGroups": {
                     "anyOf": [
-                        {"$ref": "http://redfish.dmtf.org/schemas/v1/StorageGroupCollection.json#/definitions/StorageGroupCollection"},
+                        {"$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/StorageGroupCollection.json#/definitions/StorageGroupCollection"},
                         {"type": "null"}
                     ],
                     "readonly": true,
@@ -299,7 +299,7 @@
                 },
                 "ClientEndpointGroups": {
                     "anyOf": [
-                        {"$ref": "http://redfish.dmtf.org/schemas/v1/EndpointGroupCollection.json#/definitions/EndpointGroupCollection"},
+                        {"$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/EndpointGroupCollection.json#/definitions/EndpointGroupCollection"},
                         {"type": "null"}
                     ],
                     "readonly": false,
@@ -308,7 +308,7 @@
                 },
                 "ServerEndpointGroups": {
                     "anyOf": [
-                        {"$ref": "http://redfish.dmtf.org/schemas/v1/EndpointGroupCollection.json#/definitions/EndpointGroupCollection"},
+                        {"$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/EndpointGroupCollection.json#/definitions/EndpointGroupCollection"},
                         {"type": "null"}
                     ],
                     "readonly": false,
@@ -316,32 +316,32 @@
                     "longDescription": "The value of each entry in the array shall reference a EndpointGroup."
                 },
                 "Volumes": {
-                    "$ref": "http://redfish.dmtf.org/schemas/v1/VolumeCollection.json#/definitions/VolumeCollection",
+                    "$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/VolumeCollection.json#/definitions/VolumeCollection",
                     "readonly": false,
                     "description": "Volumes.",
                     "longDescription": "An array of references to Volumes managed by this storage service."
                 },
                 "FileSystems": {
-                    "$ref": "http://redfish.dmtf.org/schemas/v1/FileSystemCollection.json#/definitions/FileSystemCollection",
+                    "$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/FileSystemCollection.json#/definitions/FileSystemCollection",
                     "readonly": false,
                     "description": "FileSystems.",
                     "longDescription": "An array of references to FileSystems managed by this storage service."
                 },
                 "StoragePools": {
-                    "$ref": "http://redfish.dmtf.org/schemas/v1/StoragePoolCollection.json#/definitions/StoragePoolCollection",
+                    "$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/StoragePoolCollection.json#/definitions/StoragePoolCollection",
                     "readonly": true,
                     "description": "StoragePools.",
                     "longDescription": "An array of references to StoragePools."
                 },
                 "Drives": {
-                    "$ref": "http://redfish.dmtf.org/schemas/v1/DriveCollection.json#/definitions/DriveCollection",
+                    "$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/DriveCollection.json#/definitions/DriveCollection",
                     "readonly": true,
                     "description": "The set of drives managed by this storage service.",
                     "longDescription": "A collection that indicates all the drives managed by this storage service."
                 },
                 "Endpoints": {
                     "anyOf": [
-                        {"$ref": "http://redfish.dmtf.org/schemas/v1/EndpointCollection.json#/definitions/EndpointCollection"},
+                        {"$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/EndpointCollection.json#/definitions/EndpointCollection"},
                         {"type": "null"}
                     ],
                     "readonly": true,
@@ -365,7 +365,7 @@
                 },
                 "ClassesOfService": {
                     "anyOf": [
-                        {"$ref": "http://redfish.dmtf.org/schemas/v1/ClassOfServiceCollection.json#/definitions/ClassOfServiceCollection"},
+                        {"$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/ClassOfServiceCollection.json#/definitions/ClassOfServiceCollection"},
                         {"type": "null"}
                     ],
                     "readonly": false,
@@ -381,5 +381,5 @@
             "longDescription": "Collection of resources that the system can make available to one or more host systems.  The collection can contain: block, file, or object storage; local system access points through which the collection is made available; hosts, or host access points to which the collection is made available."
         }
     },
-    "copyright": "Copyright 2014-2016 Distributed Management Task Force, Inc. (DMTF). For the full DMTF copyright policy, see http://www.dmtf.org/about/policies/copyright"
+    "copyright": "Copyright 2016-2017 Storage Networking Industry Association (SNIA), USA. All rights reserved. For the full SNIA copyright policy, see http://www.snia.org/about/corporate_info/copyright"
 }

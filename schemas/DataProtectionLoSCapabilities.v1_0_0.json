@@ -1,5 +1,5 @@
 {
-    "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema.v1_2_0.json",
+    "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema.v1_1_0.json",
     "title": "#DataProtectionLoSCapabilities.v1_0_0.DataProtectionLoSCapabilities",
     "$ref": "#/definitions/DataProtectionLoSCapabilities",
     "definitions": {
@@ -24,7 +24,9 @@
                     "anyOf": [
                         {"$ref": "http://redfish.dmtf.org/schemas/v1/Resource.json#/definitions/Name"},
                         {"type": "null"}
-                    ]
+                    ],
+                    "description": "A friendly name for this line of service.",
+                    "longDescription": "If present, the name shall be a friendly name for this line of service."
                 },
                 "RecoveryGeographicObjective": {
                     "anyOf": [
@@ -56,7 +58,7 @@
                 },
                 "ReplicaType": {
                     "anyOf": [
-                        {"$ref": "http://redfish.dmtf.org/schemas/v1/StorageReplicaInfo.v1_0_0.json#/definitions/ReplicaType"},
+                        {"$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/StorageReplicaInfo.v1_0_0.json#/definitions/ReplicaType"},
                         {"type": "null"}
                     ],
                     "readonly": false,
@@ -83,7 +85,7 @@
                 },
                 "Schedule": {
                     "anyOf": [
-                        {"$ref": "http://redfish.dmtf.org/schemas/v1/Schedule.v1_0_0.json#/definitions/Schedule"},
+                        {"$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/Schedule.v1_0_0.json#/definitions/Schedule"},
                         {"type": "null"}
                     ],
                     "readonly": false,
@@ -92,7 +94,7 @@
                 },
                 "ReplicaAccessLocation": {
                     "anyOf": [
-                        {"$ref": "http://redfish.dmtf.org/schemas/v1/Location.v1_0_0.json#/definitions/Location"},
+                        {"$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/Location.v1_0_0.json#/definitions/Location"},
                         {"type": "null"}
                     ],
                     "readonly": false,
@@ -101,7 +103,7 @@
                 },
                 "ReplicaClassOfService": {
                     "anyOf": [
-                        {"$ref": "http://redfish.dmtf.org/schemas/v1/ClassOfService.json#/definitions/ClassOfService"},
+                        {"$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/ClassOfService.json#/definitions/ClassOfService"},
                         {"type": "null"}
                     ],
                     "readonly": false,
@@ -208,7 +210,7 @@
                     "type": "array",
                     "items": {
                         "anyOf": [
-                            {"$ref": "http://redfish.dmtf.org/schemas/v1/StorageReplicaInfo.v1_0_0.json#/definitions/ReplicaType"},
+                            {"$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/StorageReplicaInfo.v1_0_0.json#/definitions/ReplicaType"},
                             {"type": "null"}
                         ]
                     },
@@ -269,7 +271,7 @@
                         "SupportedReplicaOptions": {
                             "type": "array",
                             "items": {
-                                "$ref": "http://redfish.dmtf.org/schemas/v1/ClassOfService.json#/definitions/ClassOfService"
+                                "$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/ClassOfService.json#/definitions/ClassOfService"
                             },
                             "readonly": false,
                             "description": "Collection of known and supported replica Classes of Service.",
@@ -353,5 +355,5 @@
             "longDescription": "The enumeration literals shall represent the relative time required to make a replica available as a source. "
         }
     },
-    "copyright": "Copyright 2014-2016 Distributed Management Task Force, Inc. (DMTF). For the full DMTF copyright policy, see http://www.dmtf.org/about/policies/copyright"
+    "copyright": "Copyright 2016-2017 Storage Networking Industry Association (SNIA), USA. All rights reserved. For the full SNIA copyright policy, see http://www.snia.org/about/corporate_info/copyright"
 }

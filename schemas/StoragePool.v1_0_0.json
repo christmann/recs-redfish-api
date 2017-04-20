@@ -1,5 +1,5 @@
 {
-    "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema.v1_2_0.json",
+    "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema.v1_1_0.json",
     "title": "#StoragePool.v1_0_0.StoragePool",
     "$ref": "#/definitions/StoragePool",
     "definitions": {
@@ -71,7 +71,7 @@
                 },
                 "Capacity": {
                     "anyOf": [
-                        {"$ref": "http://redfish.dmtf.org/schemas/v1/Capacity.v1_0_0.json#/definitions/Capacity"},
+                        {"$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/Capacity.v1_0_0.json#/definitions/Capacity"},
                         {"type": "null"}
                     ],
                     "readonly": true,
@@ -82,7 +82,7 @@
                     "type": "array",
                     "items": {
                         "anyOf": [
-                            {"$ref": "http://redfish.dmtf.org/schemas/v1/Capacity.v1_0_0.json#/definitions/CapacitySource"},
+                            {"$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/Capacity.v1_0_0.json#/definitions/CapacitySource"},
                             {"type": "null"}
                         ]
                     },
@@ -129,7 +129,7 @@
                         },
                         "DefaultClassOfService": {
                             "anyOf": [
-                                {"$ref": "http://redfish.dmtf.org/schemas/v1/ClassOfService.json#/definitions/ClassOfService"},
+                                {"$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/ClassOfService.json#/definitions/ClassOfService"},
                                 {"type": "null"}
                             ],
                             "readonly": false,
@@ -149,7 +149,7 @@
                 },
                 "AllocatedVolumes": {
                     "anyOf": [
-                        {"$ref": "http://redfish.dmtf.org/schemas/v1/VolumeCollection.json#/definitions/VolumeCollection"},
+                        {"$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/VolumeCollection.json#/definitions/VolumeCollection"},
                         {"type": "null"}
                     ],
                     "readonly": true,
@@ -158,7 +158,7 @@
                 },
                 "AllocatedPools": {
                     "anyOf": [
-                        {"$ref": "http://redfish.dmtf.org/schemas/v1/StoragePoolCollection.json#/definitions/StoragePoolCollection"},
+                        {"$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/StoragePoolCollection.json#/definitions/StoragePoolCollection"},
                         {"type": "null"}
                     ],
                     "readonly": true,
@@ -167,7 +167,7 @@
                 },
                 "ClassesOfService": {
                     "anyOf": [
-                        {"$ref": "http://redfish.dmtf.org/schemas/v1/ClassOfServiceCollection.json#/definitions/ClassOfServiceCollection"},
+                        {"$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/ClassOfServiceCollection.json#/definitions/ClassOfServiceCollection"},
                         {"type": "null"}
                     ],
                     "readonly": false,
@@ -183,5 +183,5 @@
             "longDescription": "A container of data storage capable of providing capacity conforming to one of its supported classes of service. The storage pool does not support IO to its data storage."
         }
     },
-    "copyright": "Copyright 2014-2016 Distributed Management Task Force, Inc. (DMTF). For the full DMTF copyright policy, see http://www.dmtf.org/about/policies/copyright"
+    "copyright": "Copyright 2016-2017 Storage Networking Industry Association (SNIA), USA. All rights reserved. For the full SNIA copyright policy, see http://www.snia.org/about/corporate_info/copyright"
 }
