@@ -16,5 +16,5 @@ SET LOG_FILE=%LOG_DIR%\json2html.log
 
 "%PYTHON_EXE%" "%DOC_SCRIPT%" --format html --out "%DOC_FILE%" --sup "%DOC_SUPP_FILE%" "%JSON_DIR%" > "%LOG_FILE%" 2>&1
 
-"%DOC_FILE%"
 "%LOG_FILE%"
+"%DOC_FILE%"

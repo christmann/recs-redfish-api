@@ -15,6 +15,6 @@ SET LOG_FILE=%LOG_DIR%\csdl2json.log
 "%PYTHON_EXE%" "%CONVERTOR_SCRIPT%" --directory "%CSDL_DIR%" --outdir "%JSON_DIR%" > "%LOG_FILE%" 2>&1
 
 rem delete empty schema
-del "%JSON_DIR%\Validation.v1_0_0.json"
+del "%JSON_DIR%\Validation.v1_0_0.json" >> "%LOG_FILE%" 2>&1
 
 "%LOG_FILE%"
