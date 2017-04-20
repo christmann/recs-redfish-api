@@ -462,11 +462,11 @@ pre.code{
 <tr><th>string</th><th>Description</th></tr>
 </thead>
 <tbody>
-<tr><td>EUI</td><td>IEEE-defined 64-bit Extended Unique Identifier.</td></tr>
-<tr><td>FC_WWN</td><td>Fibre Channel World Wide Name.</td></tr>
-<tr><td>NAA</td><td>Name Address Authority Format.</td></tr>
-<tr><td>UUID</td><td>Universally Unique Identifier.</td></tr>
-<tr><td>iQN</td><td>iSCSI Qualified Name.</td></tr>
+<tr><td>EUI</td><td>IEEE-defined 64-bit Extended Unique Identifier</td></tr>
+<tr><td>FC_WWN</td><td>Fibre Channel World Wide Name</td></tr>
+<tr><td>NAA</td><td>Name Address Authority Format</td></tr>
+<tr><td>UUID</td><td>Universally Unique Identifier</td></tr>
+<tr><td>iQN</td><td>iSCSI Qualified Name</td></tr>
 </tbody></table>
 
 </div>
@@ -906,7 +906,7 @@ pre.code{
 <tr><td><b>SupportedDataProtectionLinesOfService</b> [ {</td><td>array</td><td>read-write</td><td>Collection of known and supported DataProtectionLinesOfService.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>IsIsolated</b></td><td>boolean, null</td><td>read-write</td><td>The replica is in a separate fault domain.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>MinLifetime</b></td><td>number, null</td><td>read-write</td><td>Minimum lifetime (seconds) that replica must be maintained.</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Name</b></td><td>string, null</td><td>read-write</td><td>The name of the resource or array element.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Name</b></td><td>string, null</td><td>read-write</td><td>A friendly name for this line of service.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>RecoveryGeographicObjective</b></td><td>string, null</td><td>read-write</td><td>Geographic distribution scopes<br><i>See Property Details, below, for more information about this property.</i></td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>RecoveryPointObjective</b></td><td>string, null</td><td>read-write</td><td>Time interval defining how much source data that can be lost on failure.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>RecoveryTimeObjective</b></td><td>string, null</td><td>read-write</td><td>Time to access an alternate replica.<br><i>See Property Details, below, for more information about this property.</i></td></tr>
@@ -930,11 +930,11 @@ pre.code{
 <tr><th>string</th><th>Description</th></tr>
 </thead>
 <tbody>
-<tr><td>EUI</td><td>IEEE-defined 64-bit Extended Unique Identifier.</td></tr>
-<tr><td>FC_WWN</td><td>Fibre Channel World Wide Name.</td></tr>
-<tr><td>NAA</td><td>Name Address Authority Format.</td></tr>
-<tr><td>UUID</td><td>Universally Unique Identifier.</td></tr>
-<tr><td>iQN</td><td>iSCSI Qualified Name.</td></tr>
+<tr><td>EUI</td><td>IEEE-defined 64-bit Extended Unique Identifier</td></tr>
+<tr><td>FC_WWN</td><td>Fibre Channel World Wide Name</td></tr>
+<tr><td>NAA</td><td>Name Address Authority Format</td></tr>
+<tr><td>UUID</td><td>Universally Unique Identifier</td></tr>
+<tr><td>iQN</td><td>iSCSI Qualified Name</td></tr>
 </tbody></table>
 
 <h4>RecoveryGeographicObjective:</h4>
@@ -986,7 +986,7 @@ pre.code{
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>DurableName</b></td><td>string, null</td><td>read-only</td><td>This indicates the world wide, persistent name of the resource.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>DurableNameFormat</b></td><td>string, null</td><td>read-write</td><td>This represents the format of the DurableName property.<br><i>See Property Details, below, for more information about this property.</i></td></tr>
 <tr><td>}</td><td></td><td></td><td></td></tr>
-<tr><td><b>Name</b></td><td>string</td><td>read-write</td><td>The name of the resource or array element.</td></tr>
+<tr><td><b>Name</b></td><td>string</td><td>read-write</td><td>A friendly name for this line of service.</td></tr>
 <tr><td><b>Oem</b> {}</td><td>object</td><td>read-write</td><td>This is the manufacturer/provider specific extension moniker used to divide the Oem object into sections.</td></tr>
 <tr><td><b>SupportedAntivirusEngineProviders</b> [ {} ]</td><td>array</td><td>read-write</td><td>Supported AntiVirus providers.</td></tr>
 <tr><td><b>SupportedAntivirusScanPolicies</b> [ {} ]</td><td>array</td><td>read-write</td><td>Supported policies that trigger an AntiVirus scan.</td></tr>
@@ -999,7 +999,7 @@ pre.code{
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>DataSanitizationPolicy</b></td><td>string, null</td><td>read-write</td><td>Data sanitization policy.<br><i>See Property Details, below, for more information about this property.</i></td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>HostAuthenticationType</b></td><td>string, null</td><td>read-write</td><td>Authentication type for hosts (servers) or initiator endpoints.<br><i>See Property Details, below, for more information about this property.</i></td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>MediaEncryptionStrength</b></td><td>string, null</td><td>read-write</td><td>Key size for media encryption.<br><i>See Property Details, below, for more information about this property.</i></td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Name</b></td><td>string, null</td><td>read-write</td><td>The name of the resource or array element.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Name</b></td><td>string, null</td><td>read-write</td><td>A friendly name for this line of service.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>SecureChannelProtocol</b></td><td>string, null</td><td>read-write</td><td>Protocol that provide encrypted communication.<br><i>See Property Details, below, for more information about this property.</i></td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>UserAuthenticationType</b></td><td>string, null</td><td>read-write</td><td>Authentication type for users (or programs).<br><i>See Property Details, below, for more information about this property.</i></td></tr>
 <tr><td>} ]</td><td></td><td></td><td></td></tr>
@@ -1040,11 +1040,11 @@ pre.code{
 <tr><th>string</th><th>Description</th></tr>
 </thead>
 <tbody>
-<tr><td>EUI</td><td>IEEE-defined 64-bit Extended Unique Identifier.</td></tr>
-<tr><td>FC_WWN</td><td>Fibre Channel World Wide Name.</td></tr>
-<tr><td>NAA</td><td>Name Address Authority Format.</td></tr>
-<tr><td>UUID</td><td>Universally Unique Identifier.</td></tr>
-<tr><td>iQN</td><td>iSCSI Qualified Name.</td></tr>
+<tr><td>EUI</td><td>IEEE-defined 64-bit Extended Unique Identifier</td></tr>
+<tr><td>FC_WWN</td><td>Fibre Channel World Wide Name</td></tr>
+<tr><td>NAA</td><td>Name Address Authority Format</td></tr>
+<tr><td>UUID</td><td>Universally Unique Identifier</td></tr>
+<tr><td>iQN</td><td>iSCSI Qualified Name</td></tr>
 </tbody></table>
 
 <h4>HostAuthenticationType:</h4>
@@ -1107,12 +1107,12 @@ pre.code{
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>DurableName</b></td><td>string, null</td><td>read-only</td><td>This indicates the world wide, persistent name of the resource.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>DurableNameFormat</b></td><td>string, null</td><td>read-write</td><td>This represents the format of the DurableName property.<br><i>See Property Details, below, for more information about this property.</i></td></tr>
 <tr><td>}</td><td></td><td></td><td></td></tr>
-<tr><td><b>Name</b></td><td>string</td><td>read-write</td><td>The name of the resource or array element.</td></tr>
+<tr><td><b>Name</b></td><td>string</td><td>read-write</td><td>A friendly name for this line of service.</td></tr>
 <tr><td><b>Oem</b> {}</td><td>object</td><td>read-write</td><td>This is the manufacturer/provider specific extension moniker used to divide the Oem object into sections.</td></tr>
 <tr><td><b>SupportedAccessCapabilities</b> [ {} ]</td><td>array</td><td>read-write</td><td>Supported access capabilities.</td></tr>
 <tr><td><b>SupportedDataStorageLinesOfService</b> [ {</td><td>array</td><td>read-write</td><td>Collection of known and supported DataStorageLinesOfService.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>IsSpaceEfficient</b></td><td>boolean, null</td><td>read-write</td><td>True implies compression or deduplication of storage.</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Name</b></td><td>string, null</td><td>read-write</td><td>The name of the resource or array element.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Name</b></td><td>string, null</td><td>read-write</td><td>A friendly name for this line of service.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>ProvisioningPolicy</b></td><td>string, null</td><td>read-write</td><td>Provisioning policy for storage.<br><i>See Property Details, below, for more information about this property.</i></td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>RecoveryTimeObjectives</b></td><td>null</td><td>read-write</td><td>Expectations for time to access the primary store after disaster recover.</td></tr>
 <tr><td>} ]</td><td></td><td></td><td></td></tr>
@@ -1128,11 +1128,11 @@ pre.code{
 <tr><th>string</th><th>Description</th></tr>
 </thead>
 <tbody>
-<tr><td>EUI</td><td>IEEE-defined 64-bit Extended Unique Identifier.</td></tr>
-<tr><td>FC_WWN</td><td>Fibre Channel World Wide Name.</td></tr>
-<tr><td>NAA</td><td>Name Address Authority Format.</td></tr>
-<tr><td>UUID</td><td>Universally Unique Identifier.</td></tr>
-<tr><td>iQN</td><td>iSCSI Qualified Name.</td></tr>
+<tr><td>EUI</td><td>IEEE-defined 64-bit Extended Unique Identifier</td></tr>
+<tr><td>FC_WWN</td><td>Fibre Channel World Wide Name</td></tr>
+<tr><td>NAA</td><td>Name Address Authority Format</td></tr>
+<tr><td>UUID</td><td>Universally Unique Identifier</td></tr>
+<tr><td>iQN</td><td>iSCSI Qualified Name</td></tr>
 </tbody></table>
 
 <h4>ProvisioningPolicy:</h4>
@@ -1184,7 +1184,7 @@ pre.code{
 <tr><td><b>Manufacturer</b></td><td>string, null</td><td>read-only</td><td>This is the manufacturer of this drive.</td></tr>
 <tr><td><b>MediaType</b></td><td>string, null</td><td>read-write</td><td>The type of media contained in this drive.<br><i>See Property Details, below, for more information about this property.</i></td></tr>
 <tr><td><b>Model</b></td><td>string, null</td><td>read-only</td><td>This is the model number for the drive.</td></tr>
-<tr><td><b>Name</b></td><td>string</td><td>read-write</td><td>The name of the resource or array element.</td></tr>
+<tr><td><b>Name</b></td><td>string</td><td>read-write</td><td>A friendly name for this line of service.</td></tr>
 <tr><td><b>NegotiatedSpeedGbs</b></td><td>number, null<br>(Gbit/s)</td><td>read-only</td><td>The speed which this drive is currently communicating to the storage controller in Gigabits per second.</td></tr>
 <tr><td><b>Oem</b> {}</td><td>object</td><td>read-write</td><td>This is the manufacturer/provider specific extension moniker used to divide the Oem object into sections.</td></tr>
 <tr><td><b>Operations</b> <i>(v1.1+)</i> [ {} ]</td><td>array</td><td>read-write</td><td>The operations currently running on the Drive.</td></tr>
@@ -1211,11 +1211,11 @@ pre.code{
 <tr><th>string</th><th>Description</th></tr>
 </thead>
 <tbody>
-<tr><td>EUI</td><td>IEEE-defined 64-bit Extended Unique Identifier.</td></tr>
-<tr><td>FC_WWN</td><td>Fibre Channel World Wide Name.</td></tr>
-<tr><td>NAA</td><td>Name Address Authority Format.</td></tr>
-<tr><td>UUID</td><td>Universally Unique Identifier.</td></tr>
-<tr><td>iQN</td><td>iSCSI Qualified Name.</td></tr>
+<tr><td>EUI</td><td>IEEE-defined 64-bit Extended Unique Identifier</td></tr>
+<tr><td>FC_WWN</td><td>Fibre Channel World Wide Name</td></tr>
+<tr><td>NAA</td><td>Name Address Authority Format</td></tr>
+<tr><td>UUID</td><td>Universally Unique Identifier</td></tr>
+<tr><td>iQN</td><td>iSCSI Qualified Name</td></tr>
 </tbody></table>
 
 <h4>EncryptionAbility:</h4>
@@ -1341,7 +1341,7 @@ pre.code{
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Oem</b> {}</td><td>object, null</td><td>read-write</td><td></td></tr>
 <tr><td>}</td><td></td><td></td><td></td></tr>
 <tr><td><b>ConnectedEntities</b> [ {</td><td>array</td><td>read-write</td><td>All the entities connected to this endpoint.</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>EntityLink</b></td><td>null</td><td>read-write</td><td>A link to the associated entity.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>EntityLink</b> {}</td><td>object, null</td><td>read-write</td><td>A link to the associated entity.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>EntityPciId</b> {}</td><td>object, null</td><td>read-write</td><td>The PCI ID of the connected entity.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>EntityRole</b></td><td>string, null</td><td>read-write</td><td>The role of the connected entity.<br><i>See Property Details, below, for more information about this property.</i></td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>EntityType</b></td><td>string, null</td><td>read-write</td><td>The type of the connected entity.<br><i>See Property Details, below, for more information about this property.</i></td></tr>
@@ -1365,7 +1365,7 @@ pre.code{
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Ports</b> [ {} ]</td><td>array</td><td>read-only</td><td>An array of references to the the physical ports associated with this endpoint.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Ports@odata.navigationLink</b></td><td>string</td><td>read-write</td><td></td></tr>
 <tr><td>}</td><td></td><td></td><td></td></tr>
-<tr><td><b>Name</b></td><td>string</td><td>read-write</td><td>The name of the resource or array element.</td></tr>
+<tr><td><b>Name</b></td><td>string</td><td>read-write</td><td>A friendly name for this line of service.</td></tr>
 <tr><td><b>Oem</b> {}</td><td>object</td><td>read-write</td><td>This is the manufacturer/provider specific extension moniker used to divide the Oem object into sections.</td></tr>
 <tr><td><b>PciId</b> {</td><td>object, null</td><td>read-write</td><td>The PCI ID of the endpoint.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>DeviceId</b></td><td>string, null</td><td>read-only</td><td>The Device ID of this PCIe function.</td></tr>
@@ -1375,7 +1375,7 @@ pre.code{
 <tr><td>}</td><td></td><td></td><td></td></tr>
 <tr><td><b>Redundancy</b> [ {</td><td>array</td><td>read-write</td><td>Redundancy information for the lower level endpoints supporting this endpoint.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>MaxNumSupported</b></td><td>number, null</td><td>read-only</td><td>This is the maximum number of members allowable for this particular redundancy group.</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>MemberId</b></td><td>string</td><td>read-only</td><td>This is the identifier for the member within the collection.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>MemberId</b></td><td>string</td><td>read-write</td><td>This is the identifier for the member within the collection.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>MinNumNeeded</b></td><td>number, null</td><td>read-only</td><td>This is the minumum number of members needed for this group to be redundant.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Mode</b></td><td>string, null</td><td>read-write</td><td>This is the redundancy mode of the group.<br><i>See Property Details, below, for more information about this property.</i></td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Name</b></td><td>string</td><td>read-only</td><td>The name of the resource or array element.</td></tr>
@@ -1383,6 +1383,7 @@ pre.code{
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>RedundancySet</b> [ {} ]</td><td>array</td><td>read-only</td><td>Contains any ids that represent components of this redundancy set.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>RedundancySet@odata.navigationLink</b></td><td>string</td><td>read-write</td><td></td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Status</b> {}</td><td>object</td><td>read-only</td><td></td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>MemberId</b></td><td>string</td><td>read-only</td><td>This is the identifier for the member within the collection.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>RedundancyEnabled</b></td><td>boolean, null</td><td>read-write</td><td>This indicates whether redundancy is enabled.</td></tr>
 <tr><td>} ]</td><td></td><td></td><td></td></tr>
 <tr><td><b>Redundancy@odata.navigationLink</b></td><td>string</td><td>read-write</td><td></td></tr>
@@ -1401,11 +1402,11 @@ pre.code{
 <tr><th>string</th><th>Description</th></tr>
 </thead>
 <tbody>
-<tr><td>EUI</td><td>IEEE-defined 64-bit Extended Unique Identifier.</td></tr>
-<tr><td>FC_WWN</td><td>Fibre Channel World Wide Name.</td></tr>
-<tr><td>NAA</td><td>Name Address Authority Format.</td></tr>
-<tr><td>UUID</td><td>Universally Unique Identifier.</td></tr>
-<tr><td>iQN</td><td>iSCSI Qualified Name.</td></tr>
+<tr><td>EUI</td><td>IEEE-defined 64-bit Extended Unique Identifier</td></tr>
+<tr><td>FC_WWN</td><td>Fibre Channel World Wide Name</td></tr>
+<tr><td>NAA</td><td>Name Address Authority Format</td></tr>
+<tr><td>UUID</td><td>Universally Unique Identifier</td></tr>
+<tr><td>iQN</td><td>iSCSI Qualified Name</td></tr>
 </tbody></table>
 
 <h4>EntityRole:</h4>
@@ -1499,7 +1500,7 @@ pre.code{
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Description</b></td><td>string, null</td><td>read-write</td><td>Provides a description of this resource and is used for commonality  in the schema definitions.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Members</b> [ {} ]</td><td>array</td><td>read-only</td><td>The value of each member references an Endpoint resource.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Members@odata.navigationLink</b></td><td>string</td><td>read-write</td><td></td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Name</b></td><td>string</td><td>read-write</td><td>The name of the resource or array element.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Name</b></td><td>string</td><td>read-write</td><td>A friendly name for this line of service.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Oem</b> {}</td><td>object</td><td>read-write</td><td>This is the manufacturer/provider specific extension moniker used to divide the Oem object into sections.</td></tr>
 <tr><td>}</td><td></td><td></td><td></td></tr>
 <tr><td><b>GroupType</b></td><td>string, null</td><td>read-write</td><td>Endpoint group type.<br><i>See Property Details, below, for more information about this property.</i></td></tr>
@@ -1511,7 +1512,7 @@ pre.code{
 <tr><td><b>Links</b> {</td><td>object</td><td>read-only</td><td>Contains links to other resources that are related to this resource.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Oem</b> {}</td><td>object</td><td>read-write</td><td>Oem extension object.</td></tr>
 <tr><td>}</td><td></td><td></td><td></td></tr>
-<tr><td><b>Name</b></td><td>string</td><td>read-write</td><td>The name of the resource or array element.</td></tr>
+<tr><td><b>Name</b></td><td>string</td><td>read-write</td><td>A friendly name for this line of service.</td></tr>
 <tr><td><b>Oem</b> {}</td><td>object</td><td>read-write</td><td>This is the manufacturer/provider specific extension moniker used to divide the Oem object into sections.</td></tr>
 <tr><td><b>Preferred</b></td><td>boolean, null</td><td>read-write</td><td>Access to resource is preferred.</td></tr>
 <tr><td><b>TargetEndpointGroupIdentifier</b></td><td>number, null</td><td>read-write</td><td>A defined identifier for this group.</td></tr>
@@ -1537,11 +1538,11 @@ pre.code{
 <tr><th>string</th><th>Description</th></tr>
 </thead>
 <tbody>
-<tr><td>EUI</td><td>IEEE-defined 64-bit Extended Unique Identifier.</td></tr>
-<tr><td>FC_WWN</td><td>Fibre Channel World Wide Name.</td></tr>
-<tr><td>NAA</td><td>Name Address Authority Format.</td></tr>
-<tr><td>UUID</td><td>Universally Unique Identifier.</td></tr>
-<tr><td>iQN</td><td>iSCSI Qualified Name.</td></tr>
+<tr><td>EUI</td><td>IEEE-defined 64-bit Extended Unique Identifier</td></tr>
+<tr><td>FC_WWN</td><td>Fibre Channel World Wide Name</td></tr>
+<tr><td>NAA</td><td>Name Address Authority Format</td></tr>
+<tr><td>UUID</td><td>Universally Unique Identifier</td></tr>
+<tr><td>iQN</td><td>iSCSI Qualified Name</td></tr>
 </tbody></table>
 
 <h4>GroupType:</h4>
@@ -1601,7 +1602,7 @@ pre.code{
 <tr><td><b>MACAddress</b></td><td>string, null</td><td>read-write</td><td>This is the currently configured MAC address of the (logical port) interface.</td></tr>
 <tr><td><b>MTUSize</b></td><td>number, null</td><td>read-write</td><td>This is the currently configured Maximum Transmission Unit (MTU) in bytes on this interface.</td></tr>
 <tr><td><b>MaxIPv6StaticAddresses</b></td><td>number, null</td><td>read-only</td><td>This indicates the maximum number of Static IPv6 addresses that can be configured on this interface.</td></tr>
-<tr><td><b>Name</b></td><td>string</td><td>read-write</td><td>The name of the resource or array element.</td></tr>
+<tr><td><b>Name</b></td><td>string</td><td>read-write</td><td>A friendly name for this line of service.</td></tr>
 <tr><td><b>NameServers</b> [ {} ]</td><td>array</td><td>read-only</td><td>This represents DNS name servers that are currently in use on this interface.</td></tr>
 <tr><td><b>Oem</b> {}</td><td>object</td><td>read-write</td><td>This is the manufacturer/provider specific extension moniker used to divide the Oem object into sections.</td></tr>
 <tr><td><b>PermanentMACAddress</b></td><td>string, null</td><td>read-write</td><td>This is the permanent MAC address assigned to this interface (port).</td></tr>
@@ -1618,7 +1619,7 @@ pre.code{
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Description</b></td><td>string, null</td><td>read-write</td><td>Provides a description of this resource and is used for commonality  in the schema definitions.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Members</b> [ {} ]</td><td>array</td><td>read-only</td><td>Contains the members of this collection.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Members@odata.navigationLink</b></td><td>string</td><td>read-write</td><td></td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Name</b></td><td>string</td><td>read-write</td><td>The name of the resource or array element.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Name</b></td><td>string</td><td>read-write</td><td>A friendly name for this line of service.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Oem</b> {}</td><td>object</td><td>read-write</td><td>This is the manufacturer/provider specific extension moniker used to divide the Oem object into sections.</td></tr>
 <tr><td>}</td><td></td><td></td><td></td></tr>
 </tbody></table>
@@ -1630,10 +1631,10 @@ pre.code{
 <tr><th>string</th><th>Description</th></tr>
 </thead>
 <tbody>
-<tr><td>DHCPv6</td><td>Address is provided by a DHCPv6 service.</td></tr>
-<tr><td>LinkLocal</td><td>Address is valid only for this network segment (link).</td></tr>
-<tr><td>SLAAC</td><td>Address is provided by a Stateless Address AutoConfiguration (SLAAC) service.</td></tr>
-<tr><td>Static</td><td>A static address as configured by the user.</td></tr>
+<tr><td>DHCPv6</td><td>Address is provided by a DHCPv6 service</td></tr>
+<tr><td>LinkLocal</td><td>Address is valid only for this network segment (link)</td></tr>
+<tr><td>SLAAC</td><td>Address is provided by a Stateless Address AutoConfiguration (SLAAC) service</td></tr>
+<tr><td>Static</td><td>A static address as configured by the user</td></tr>
 </tbody></table>
 
 <h4>AddressState:</h4>
@@ -1722,7 +1723,7 @@ pre.code{
 <tr><td>} ]</td><td></td><td></td><td></td></tr>
 <tr><td><b>Events@odata.navigationLink</b></td><td>string</td><td>read-write</td><td></td></tr>
 <tr><td><b>Id</b></td><td>string</td><td>read-write</td><td>Uniquely identifies the resource within the collection of like resources.</td></tr>
-<tr><td><b>Name</b></td><td>string</td><td>read-write</td><td>The name of the resource or array element.</td></tr>
+<tr><td><b>Name</b></td><td>string</td><td>read-write</td><td>A friendly name for this line of service.</td></tr>
 <tr><td><b>Oem</b> {}</td><td>object</td><td>read-write</td><td>This is the manufacturer/provider specific extension moniker used to divide the Oem object into sections.</td></tr>
 </tbody></table>
 <div class="property-details">
@@ -1752,7 +1753,7 @@ pre.code{
 <tr><td><b>HttpHeaders</b> [ {} ]</td><td>array</td><td>read-write</td><td>This is for setting HTTP headers, such as authorization information.  This object will be null on a GET.</td></tr>
 <tr><td><b>Id</b></td><td>string</td><td>read-write</td><td>Uniquely identifies the resource within the collection of like resources.</td></tr>
 <tr><td><b>MessageIds</b> <i>(v1.1+)</i> [ {} ]</td><td>array</td><td>read-only</td><td>A list of MessageIds that the service will only send.</td></tr>
-<tr><td><b>Name</b></td><td>string</td><td>read-write</td><td>The name of the resource or array element.</td></tr>
+<tr><td><b>Name</b></td><td>string</td><td>read-write</td><td>A friendly name for this line of service.</td></tr>
 <tr><td><b>Oem</b> {}</td><td>object</td><td>read-write</td><td>This is the manufacturer/provider specific extension moniker used to divide the Oem object into sections.</td></tr>
 <tr><td><b>OriginResources</b> <i>(v1.1+)</i> [ {} ]</td><td>array</td><td>read-only</td><td>A list of resources for which the service will only send related events.</td></tr>
 <tr><td><b>OriginResources@odata.navigationLink</b> <i>(v1.1+)</i></td><td>string</td><td>read-write</td><td></td></tr>
@@ -1783,7 +1784,7 @@ pre.code{
 <tr><td><b>Description</b></td><td>string, null</td><td>read-write</td><td>Provides a description of this resource and is used for commonality  in the schema definitions.</td></tr>
 <tr><td><b>EventTypesForSubscription</b> [ {} ]</td><td>array</td><td>read-only</td><td>This is the types of Events that can be subscribed to.</td></tr>
 <tr><td><b>Id</b></td><td>string</td><td>read-write</td><td>Uniquely identifies the resource within the collection of like resources.</td></tr>
-<tr><td><b>Name</b></td><td>string</td><td>read-write</td><td>The name of the resource or array element.</td></tr>
+<tr><td><b>Name</b></td><td>string</td><td>read-write</td><td>A friendly name for this line of service.</td></tr>
 <tr><td><b>Oem</b> {}</td><td>object</td><td>read-write</td><td>This is the manufacturer/provider specific extension moniker used to divide the Oem object into sections.</td></tr>
 <tr><td><b>ServiceEnabled</b></td><td>boolean, null</td><td>read-write</td><td>This indicates whether this service is enabled.</td></tr>
 <tr><td><b>Status</b> {</td><td>object</td><td>read-only</td><td></td></tr>
@@ -1796,7 +1797,7 @@ pre.code{
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Description</b></td><td>string, null</td><td>read-write</td><td>Provides a description of this resource and is used for commonality  in the schema definitions.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Members</b> [ {} ]</td><td>array</td><td>read-only</td><td>Contains the members of this collection.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Members@odata.navigationLink</b></td><td>string</td><td>read-write</td><td></td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Name</b></td><td>string</td><td>read-write</td><td>The name of the resource or array element.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Name</b></td><td>string</td><td>read-write</td><td>A friendly name for this line of service.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Oem</b> {}</td><td>object</td><td>read-write</td><td>This is the manufacturer/provider specific extension moniker used to divide the Oem object into sections.</td></tr>
 <tr><td>}</td><td></td><td></td><td></td></tr>
 </tbody></table>
@@ -1856,7 +1857,7 @@ pre.code{
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Description</b></td><td>string, null</td><td>read-write</td><td>Provides a description of this resource and is used for commonality  in the schema definitions.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Members</b> [ {} ]</td><td>array</td><td>read-only</td><td>The value of each member references an Endpoint resource.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Members@odata.navigationLink</b></td><td>string</td><td>read-write</td><td></td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Name</b></td><td>string</td><td>read-write</td><td>The name of the resource or array element.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Name</b></td><td>string</td><td>read-write</td><td>A friendly name for this line of service.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Oem</b> {}</td><td>object</td><td>read-write</td><td>This is the manufacturer/provider specific extension moniker used to divide the Oem object into sections.</td></tr>
 <tr><td>}</td><td></td><td></td><td></td></tr>
 <tr><td><b>FabricType</b></td><td>null</td><td>read-write</td><td>The protocol being sent over this fabric.</td></tr>
@@ -1865,7 +1866,7 @@ pre.code{
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Oem</b> {}</td><td>object</td><td>read-write</td><td>Oem extension object.</td></tr>
 <tr><td>}</td><td></td><td></td><td></td></tr>
 <tr><td><b>MaxZones</b></td><td>number, null</td><td>read-only</td><td>The value of this property shall contain the maximum number of zones the switch can currently configure.</td></tr>
-<tr><td><b>Name</b></td><td>string</td><td>read-write</td><td>The name of the resource or array element.</td></tr>
+<tr><td><b>Name</b></td><td>string</td><td>read-write</td><td>A friendly name for this line of service.</td></tr>
 <tr><td><b>Oem</b> {}</td><td>object</td><td>read-write</td><td>This is the manufacturer/provider specific extension moniker used to divide the Oem object into sections.</td></tr>
 <tr><td><b>Status</b> {</td><td>object</td><td>read-only</td><td></td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Health</b></td><td>string, null</td><td>read-write</td><td>This represents the health state of this resource in the absence of its dependent resources.<br><i>See Property Details, below, for more information about this property.</i></td></tr>
@@ -1877,14 +1878,14 @@ pre.code{
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Description</b></td><td>string, null</td><td>read-write</td><td>Provides a description of this resource and is used for commonality  in the schema definitions.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Members</b> [ {} ]</td><td>array</td><td>read-only</td><td>Contains the members of this collection.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Members@odata.navigationLink</b></td><td>string</td><td>read-write</td><td></td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Name</b></td><td>string</td><td>read-write</td><td>The name of the resource or array element.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Name</b></td><td>string</td><td>read-write</td><td>A friendly name for this line of service.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Oem</b> {}</td><td>object</td><td>read-write</td><td>This is the manufacturer/provider specific extension moniker used to divide the Oem object into sections.</td></tr>
 <tr><td>}</td><td></td><td></td><td></td></tr>
 <tr><td><b>Zones</b> {</td><td>object</td><td>read-write</td><td>A collection of references to the zones contained in this fabric.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Description</b></td><td>string, null</td><td>read-write</td><td>Provides a description of this resource and is used for commonality  in the schema definitions.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Members</b> [ {} ]</td><td>array</td><td>read-only</td><td>Contains the members of this collection.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Members@odata.navigationLink</b></td><td>string</td><td>read-write</td><td></td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Name</b></td><td>string</td><td>read-write</td><td>The name of the resource or array element.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Name</b></td><td>string</td><td>read-write</td><td>A friendly name for this line of service.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Oem</b> {}</td><td>object</td><td>read-write</td><td>This is the manufacturer/provider specific extension moniker used to divide the Oem object into sections.</td></tr>
 <tr><td>}</td><td></td><td></td><td></td></tr>
 </tbody></table>
@@ -1943,7 +1944,7 @@ pre.code{
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Description</b></td><td>string, null</td><td>read-write</td><td>Provides a description of this resource and is used for commonality  in the schema definitions.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Members</b> [ {} ]</td><td>array</td><td>read-only</td><td>Contains the members of this collection.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Members@odata.navigationLink</b></td><td>string</td><td>read-write</td><td></td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Name</b></td><td>string</td><td>read-write</td><td>The name of the resource or array element.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Name</b></td><td>string</td><td>read-write</td><td>A friendly name for this line of service.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Oem</b> {}</td><td>object</td><td>read-write</td><td>This is the manufacturer/provider specific extension moniker used to divide the Oem object into sections.</td></tr>
 <tr><td>}</td><td></td><td></td><td></td></tr>
 <tr><td><b>ExecuteSupport</b></td><td>boolean, null</td><td>read-only</td><td>Execute access is supported by the file share.</td></tr>
@@ -1959,7 +1960,7 @@ pre.code{
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Oem</b> {}</td><td>object</td><td>read-write</td><td>Oem extension object.</td></tr>
 <tr><td>}</td><td></td><td></td><td></td></tr>
 <tr><td><b>LowSpaceWarningThresholdPercents</b> [ {} ]</td><td>array</td><td>read-write</td><td>An array of low space warning threshold percentages for the file share.</td></tr>
-<tr><td><b>Name</b></td><td>string</td><td>read-write</td><td>The name of the resource or array element.</td></tr>
+<tr><td><b>Name</b></td><td>string</td><td>read-write</td><td>A friendly name for this line of service.</td></tr>
 <tr><td><b>Oem</b> {}</td><td>object</td><td>read-write</td><td>This is the manufacturer/provider specific extension moniker used to divide the Oem object into sections.</td></tr>
 <tr><td><b>RootAccess</b></td><td>boolean, null</td><td>read-only</td><td>Root access is allowed by the file share.</td></tr>
 <tr><td><b>Status</b> {</td><td>object, null</td><td>read-only</td><td>Indicates the status of the file share.</td></tr>
@@ -2074,13 +2075,12 @@ pre.code{
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Id</b></td><td>string</td><td>read-write</td><td>Uniquely identifies the resource within the collection of like resources.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Links</b> {}</td><td>object</td><td>read-only</td><td>Contains links to other resources that are related to this resource.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>LowSpaceWarningThresholdPercents</b> [ {} ]</td><td>array</td><td>read-write</td><td>An array of low space warning threshold percentages for the file share.</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Name</b></td><td>string</td><td>read-write</td><td>The name of the resource or array element.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Name</b></td><td>string</td><td>read-write</td><td>A friendly name for this line of service.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Oem</b> {}</td><td>object</td><td>read-write</td><td>This is the manufacturer/provider specific extension moniker used to divide the Oem object into sections.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>RootAccess</b></td><td>boolean, null</td><td>read-only</td><td>Root access is allowed by the file share.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Status</b> {}</td><td>object, null</td><td>read-only</td><td>Indicates the status of the file share.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>WritePolicy</b></td><td>string, null</td><td>read-write</td><td>Defines how writes are replicated to the shared source.<br><i>See Property Details, below, for more information about this property.</i></td></tr>
 <tr><td>} ]</td><td></td><td></td><td></td></tr>
-<tr><td><b>ExportedShares@odata.navigationLink</b></td><td>string</td><td>read-write</td><td></td></tr>
 <tr><td><b>Id</b></td><td>string</td><td>read-write</td><td>Uniquely identifies the resource within the collection of like resources.</td></tr>
 <tr><td><b>Links</b> {</td><td>object</td><td>read-only</td><td>Contains links to other resources that are related to this resource.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>ClassOfService</b> {}</td><td>object, null</td><td>read-write</td><td>The ClassOfService of this file system.</td></tr>
@@ -2090,7 +2090,7 @@ pre.code{
 <tr><td>}</td><td></td><td></td><td></td></tr>
 <tr><td><b>LowSpaceWarningThresholdPercents</b> [ {} ]</td><td>array</td><td>read-write</td><td>An array of low space warning threshold percentages for the file system.</td></tr>
 <tr><td><b>MaxFileNameLengthBytes</b></td><td>number, null<br>(By)</td><td>read-write</td><td>A value indicating the maximum length of a file name within the file system.</td></tr>
-<tr><td><b>Name</b></td><td>string</td><td>read-write</td><td>The name of the resource or array element.</td></tr>
+<tr><td><b>Name</b></td><td>string</td><td>read-write</td><td>A friendly name for this line of service.</td></tr>
 <tr><td><b>Oem</b> {}</td><td>object</td><td>read-write</td><td>This is the manufacturer/provider specific extension moniker used to divide the Oem object into sections.</td></tr>
 <tr><td><b>RemainingCapacity</b> {</td><td>object, null</td><td>read-write</td><td>Remaining capacity allocated to the file system.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Data</b> {}</td><td>object, null</td><td>read-write</td><td>The capacity information relating to the user data.</td></tr>
@@ -2351,7 +2351,7 @@ pre.code{
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Description</b></td><td>string, null</td><td>read-write</td><td>Provides a description of this resource and is used for commonality  in the schema definitions.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Members</b> [ {} ]</td><td>array</td><td>read-only</td><td>Contains the members of this collection.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Members@odata.navigationLink</b></td><td>string</td><td>read-write</td><td></td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Name</b></td><td>string</td><td>read-write</td><td>The name of the resource or array element.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Name</b></td><td>string</td><td>read-write</td><td>A friendly name for this line of service.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Oem</b> {}</td><td>object</td><td>read-write</td><td>This is the manufacturer/provider specific extension moniker used to divide the Oem object into sections.</td></tr>
 <tr><td>}</td><td></td><td></td><td></td></tr>
 <tr><td><b>HostInterfaceType</b></td><td>string, null</td><td>read-write</td><td>This indicates the Host Interface type for this interface.<br><i>See Property Details, below, for more information about this property.</i></td></tr>
@@ -2384,7 +2384,7 @@ pre.code{
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>MACAddress</b></td><td>string, null</td><td>read-write</td><td>This is the currently configured MAC address of the (logical port) interface.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>MTUSize</b></td><td>number, null</td><td>read-write</td><td>This is the currently configured Maximum Transmission Unit (MTU) in bytes on this interface.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>MaxIPv6StaticAddresses</b></td><td>number, null</td><td>read-only</td><td>This indicates the maximum number of Static IPv6 addresses that can be configured on this interface.</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Name</b></td><td>string</td><td>read-write</td><td>The name of the resource or array element.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Name</b></td><td>string</td><td>read-write</td><td>A friendly name for this line of service.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>NameServers</b> [ {} ]</td><td>array</td><td>read-only</td><td>This represents DNS name servers that are currently in use on this interface.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Oem</b> {}</td><td>object</td><td>read-write</td><td>This is the manufacturer/provider specific extension moniker used to divide the Oem object into sections.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>PermanentMACAddress</b></td><td>string, null</td><td>read-write</td><td>This is the permanent MAC address assigned to this interface (port).</td></tr>
@@ -2394,7 +2394,7 @@ pre.code{
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>VLAN</b></td><td>null</td><td>read-write</td><td>If this Network Interface supports more than one VLAN, this property will not be present and the client should look for VLANs collection in the link section of this resource.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>VLANs</b> {}</td><td>object</td><td>read-write</td><td>This is a reference to a collection of VLANs and is only used if the interface supports more than one VLANs.</td></tr>
 <tr><td>}</td><td></td><td></td><td></td></tr>
-<tr><td><b>Name</b></td><td>string</td><td>read-write</td><td>The name of the resource or array element.</td></tr>
+<tr><td><b>Name</b></td><td>string</td><td>read-write</td><td>A friendly name for this line of service.</td></tr>
 <tr><td><b>NetworkProtocol</b> {</td><td>object</td><td>read-write</td><td>This is a reference to the network services and their settings that the Manager controls.  It is here that clients will find network configuration options as well as network services.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>DHCP</b> {}</td><td>object</td><td>read-write</td><td>Settings for this Manager's DHCP protocol support.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Description</b></td><td>string, null</td><td>read-write</td><td>Provides a description of this resource and is used for commonality  in the schema definitions.</td></tr>
@@ -2405,7 +2405,7 @@ pre.code{
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>IPMI</b> {}</td><td>object</td><td>read-write</td><td>Settings for this Manager's IPMI-over-LAN protocol support.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Id</b></td><td>string</td><td>read-write</td><td>Uniquely identifies the resource within the collection of like resources.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>KVMIP</b> {}</td><td>object</td><td>read-write</td><td>Settings for this Manager's KVM-IP protocol support.</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Name</b></td><td>string</td><td>read-write</td><td>The name of the resource or array element.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Name</b></td><td>string</td><td>read-write</td><td>A friendly name for this line of service.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Oem</b> {}</td><td>object</td><td>read-write</td><td>This is the manufacturer/provider specific extension moniker used to divide the Oem object into sections.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>SNMP</b> {}</td><td>object</td><td>read-write</td><td>Settings for this Manager's SNMP support.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>SSDP</b> {}</td><td>object</td><td>read-write</td><td>Settings for this Manager's SSDP support.</td></tr>
@@ -2502,7 +2502,7 @@ pre.code{
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Id</b></td><td>string</td><td>read-write</td><td>Uniquely identifies the resource within the collection of like resources.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Identifier</b> {}</td><td>object, null</td><td>read-only</td><td>The value identifies this resource.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Links</b> {}</td><td>object</td><td>read-only</td><td>Contains links to other resources that are related to this resource.</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Name</b></td><td>string</td><td>read-write</td><td>The name of the resource or array element.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Name</b></td><td>string</td><td>read-write</td><td>A friendly name for this line of service.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Oem</b> {}</td><td>object</td><td>read-write</td><td>This is the manufacturer/provider specific extension moniker used to divide the Oem object into sections.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Redundancy</b> [ {} ]</td><td>array</td><td>read-only</td><td>Redundancy information for the storage subsystem</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Redundancy@odata.navigationLink</b></td><td>string</td><td>read-write</td><td></td></tr>
@@ -2513,7 +2513,7 @@ pre.code{
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Volumes</b> {}</td><td>object</td><td>read-write</td><td>Volumes.</td></tr>
 <tr><td>} ]</td><td></td><td></td><td></td></tr>
 <tr><td><b>Members@odata.navigationLink</b></td><td>string</td><td>read-write</td><td></td></tr>
-<tr><td><b>Name</b></td><td>string</td><td>read-write</td><td>The name of the resource or array element.</td></tr>
+<tr><td><b>Name</b></td><td>string</td><td>read-write</td><td>A friendly name for this line of service.</td></tr>
 <tr><td><b>Oem</b> {}</td><td>object</td><td>read-write</td><td>This is the manufacturer/provider specific extension moniker used to divide the Oem object into sections.</td></tr>
 </tbody></table>
 <h2>IOConnectivityLoSCapabilities 1.0.0</h2>
@@ -2527,13 +2527,13 @@ pre.code{
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>DurableNameFormat</b></td><td>string, null</td><td>read-write</td><td>This represents the format of the DurableName property.<br><i>See Property Details, below, for more information about this property.</i></td></tr>
 <tr><td>}</td><td></td><td></td><td></td></tr>
 <tr><td><b>MaxSupportedIOPS</b></td><td>number, null</td><td>read-write</td><td>The maximum IOPS that a connection can support.</td></tr>
-<tr><td><b>Name</b></td><td>string</td><td>read-write</td><td>The name of the resource or array element.</td></tr>
+<tr><td><b>Name</b></td><td>string</td><td>read-write</td><td>A friendly name for this line of service.</td></tr>
 <tr><td><b>Oem</b> {}</td><td>object</td><td>read-write</td><td>This is the manufacturer/provider specific extension moniker used to divide the Oem object into sections.</td></tr>
 <tr><td><b>SupportedAccessProtocols</b> [ {} ]</td><td>array</td><td>read-write</td><td>SupportedAccessProtocols.</td></tr>
 <tr><td><b>SupportedIOConnectivityLinesOfService</b> [ {</td><td>array</td><td>read-write</td><td>Collection of known and supported IOConnectivityLinesOfService.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>AccessProtocol</b></td><td>string, null</td><td>read-write</td><td>SupportedAccessProtocols.<br><i>See Property Details, below, for more information about this property.</i></td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>MaxIOPS</b></td><td>number, null</td><td>read-write</td><td>The maximum supported IOs per second that the connection will support for the selected access protocol.</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Name</b></td><td>string, null</td><td>read-write</td><td>The name of the resource or array element.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Name</b></td><td>string, null</td><td>read-write</td><td>A friendly name for this line of service.</td></tr>
 <tr><td>} ]</td><td></td><td></td><td></td></tr>
 </tbody></table>
 <div class="property-details">
@@ -2567,11 +2567,11 @@ pre.code{
 <tr><th>string</th><th>Description</th></tr>
 </thead>
 <tbody>
-<tr><td>EUI</td><td>IEEE-defined 64-bit Extended Unique Identifier.</td></tr>
-<tr><td>FC_WWN</td><td>Fibre Channel World Wide Name.</td></tr>
-<tr><td>NAA</td><td>Name Address Authority Format.</td></tr>
-<tr><td>UUID</td><td>Universally Unique Identifier.</td></tr>
-<tr><td>iQN</td><td>iSCSI Qualified Name.</td></tr>
+<tr><td>EUI</td><td>IEEE-defined 64-bit Extended Unique Identifier</td></tr>
+<tr><td>FC_WWN</td><td>Fibre Channel World Wide Name</td></tr>
+<tr><td>NAA</td><td>Name Address Authority Format</td></tr>
+<tr><td>UUID</td><td>Universally Unique Identifier</td></tr>
+<tr><td>iQN</td><td>iSCSI Qualified Name</td></tr>
 </tbody></table>
 
 </div>
@@ -2589,14 +2589,14 @@ pre.code{
 <tr><td><b>MaxSamplePeriod</b></td><td>string, null<br>(s)</td><td>read-write</td><td>Maximum sampling period over which average values are calculated.</td></tr>
 <tr><td><b>MinSamplePeriod</b></td><td>string, null<br>(s)</td><td>read-write</td><td>Minimum sampling period over which average values are calculated.</td></tr>
 <tr><td><b>MinSupportedIoOperationLatencyMicroseconds</b></td><td>number, null<br>(us)</td><td>read-write</td><td>Minimum supported average IO latency.</td></tr>
-<tr><td><b>Name</b></td><td>string</td><td>read-write</td><td>The name of the resource or array element.</td></tr>
+<tr><td><b>Name</b></td><td>string</td><td>read-write</td><td>A friendly name for this line of service.</td></tr>
 <tr><td><b>Oem</b> {}</td><td>object</td><td>read-write</td><td>This is the manufacturer/provider specific extension moniker used to divide the Oem object into sections.</td></tr>
 <tr><td><b>SupportedIOPerformanceLinesOfService</b> [ {</td><td>array</td><td>read-write</td><td>Collection of known and supported IOPerformanceLinesOfService.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>AverageIOOperationLatencyMicroseconds</b></td><td>number, null<br>(us)</td><td>read-write</td><td>Expected average IO latency.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>IOOperationsPerSecondIsLimited</b></td><td>boolean, null</td><td>read-write</td><td>Limit the IOPS.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>IOWorkload</b> {}</td><td>object, null</td><td>read-write</td><td>A description of the expected workload.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>MaxIOOperationsPerSecondPerTerabyte</b></td><td>number, null<br>(1/s/TBy)</td><td>read-write</td><td>The amount of IOPS a volume of a given committed size can support.</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Name</b></td><td>string, null</td><td>read-write</td><td>The name of the resource or array element.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Name</b></td><td>string, null</td><td>read-write</td><td>A friendly name for this line of service.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>SamplePeriod</b></td><td>string, null</td><td>read-write</td><td>Sampling period over which average values are calculated.</td></tr>
 <tr><td>} ]</td><td></td><td></td><td></td></tr>
 <tr><td><b>SupportedIOWorkloads</b> [ {</td><td>array</td><td>read-write</td><td>A collection of supported workloads.</td></tr>
@@ -2612,11 +2612,11 @@ pre.code{
 <tr><th>string</th><th>Description</th></tr>
 </thead>
 <tbody>
-<tr><td>EUI</td><td>IEEE-defined 64-bit Extended Unique Identifier.</td></tr>
-<tr><td>FC_WWN</td><td>Fibre Channel World Wide Name.</td></tr>
-<tr><td>NAA</td><td>Name Address Authority Format.</td></tr>
-<tr><td>UUID</td><td>Universally Unique Identifier.</td></tr>
-<tr><td>iQN</td><td>iSCSI Qualified Name.</td></tr>
+<tr><td>EUI</td><td>IEEE-defined 64-bit Extended Unique Identifier</td></tr>
+<tr><td>FC_WWN</td><td>Fibre Channel World Wide Name</td></tr>
+<tr><td>NAA</td><td>Name Address Authority Format</td></tr>
+<tr><td>UUID</td><td>Universally Unique Identifier</td></tr>
+<tr><td>iQN</td><td>iSCSI Qualified Name</td></tr>
 </tbody></table>
 
 </div>
@@ -2634,7 +2634,7 @@ pre.code{
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>PublicationUri</b></td><td>string</td><td>read-only</td><td>Link to publicly available (canonical) URI for schema.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Uri</b></td><td>string</td><td>read-only</td><td>Link to locally available URI for schema.</td></tr>
 <tr><td>} ]</td><td></td><td></td><td></td></tr>
-<tr><td><b>Name</b></td><td>string</td><td>read-write</td><td>The name of the resource or array element.</td></tr>
+<tr><td><b>Name</b></td><td>string</td><td>read-write</td><td>A friendly name for this line of service.</td></tr>
 <tr><td><b>Oem</b> {}</td><td>object</td><td>read-write</td><td>This is the manufacturer/provider specific extension moniker used to divide the Oem object into sections.</td></tr>
 <tr><td><b>Schema</b></td><td>string</td><td>read-only</td><td>The @odata.type name this schema describes.</td></tr>
 </tbody></table>
@@ -2657,7 +2657,7 @@ pre.code{
 <tr><td><b>Message</b></td><td>string, null</td><td>read-only</td><td>This property decodes from EntryType:  If it is Event then it is a message string.  Otherwise, it is SEL or Oem specific.  In most cases, this will be the actual Log Entry.</td></tr>
 <tr><td><b>MessageArgs</b> [ {} ]</td><td>array</td><td>read-only</td><td>The values of this property shall be any arguments for the message.</td></tr>
 <tr><td><b>MessageId</b></td><td>string</td><td>read-only</td><td>This property decodes from EntryType:  If it is Event then it is a message id.  Otherwise, it is SEL or Oem specific.  This value is only used for registries - for more information, see the specification.</td></tr>
-<tr><td><b>Name</b></td><td>string</td><td>read-write</td><td>The name of the resource or array element.</td></tr>
+<tr><td><b>Name</b></td><td>string</td><td>read-write</td><td>A friendly name for this line of service.</td></tr>
 <tr><td><b>Oem</b> {}</td><td>object</td><td>read-write</td><td>This is the manufacturer/provider specific extension moniker used to divide the Oem object into sections.</td></tr>
 <tr><td><b>OemRecordFormat</b></td><td>string, null</td><td>read-only</td><td>If the entry type is Oem, this will contain more information about the record format from the Oem.</td></tr>
 <tr><td><b>SensorNumber</b></td><td>number, null</td><td>read-only</td><td>This property decodes from EntryType:  If it is SEL, it is the sensor number; if Event then the count of events.  Otherwise, it is Oem specific.</td></tr>
@@ -2822,12 +2822,12 @@ pre.code{
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Description</b></td><td>string, null</td><td>read-write</td><td>Provides a description of this resource and is used for commonality  in the schema definitions.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Members</b> [ {} ]</td><td>array</td><td>read-only</td><td>Contains the members of this collection.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Members@odata.navigationLink</b></td><td>string</td><td>read-write</td><td></td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Name</b></td><td>string</td><td>read-write</td><td>The name of the resource or array element.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Name</b></td><td>string</td><td>read-write</td><td>A friendly name for this line of service.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Oem</b> {}</td><td>object</td><td>read-write</td><td>This is the manufacturer/provider specific extension moniker used to divide the Oem object into sections.</td></tr>
 <tr><td>}</td><td></td><td></td><td></td></tr>
 <tr><td><b>Id</b></td><td>string</td><td>read-write</td><td>Uniquely identifies the resource within the collection of like resources.</td></tr>
 <tr><td><b>MaxNumberOfRecords</b></td><td>number</td><td>read-only</td><td>The maximum number of log entries this service can have.</td></tr>
-<tr><td><b>Name</b></td><td>string</td><td>read-write</td><td>The name of the resource or array element.</td></tr>
+<tr><td><b>Name</b></td><td>string</td><td>read-write</td><td>A friendly name for this line of service.</td></tr>
 <tr><td><b>Oem</b> {}</td><td>object</td><td>read-write</td><td>This is the manufacturer/provider specific extension moniker used to divide the Oem object into sections.</td></tr>
 <tr><td><b>OverWritePolicy</b></td><td>string</td><td>read-write</td><td>The overwrite policy for this service that takes place when the log is full.<br><i>See Property Details, below, for more information about this property.</i></td></tr>
 <tr><td><b>ServiceEnabled</b></td><td>boolean, null</td><td>read-write</td><td>This indicates whether this service is enabled.</td></tr>
@@ -2915,7 +2915,7 @@ pre.code{
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Description</b></td><td>string, null</td><td>read-write</td><td>Provides a description of this resource and is used for commonality  in the schema definitions.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Members</b> [ {} ]</td><td>array</td><td>read-only</td><td>Contains the members of this collection.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Members@odata.navigationLink</b></td><td>string</td><td>read-write</td><td></td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Name</b></td><td>string</td><td>read-write</td><td>The name of the resource or array element.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Name</b></td><td>string</td><td>read-write</td><td>A friendly name for this line of service.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Oem</b> {}</td><td>object</td><td>read-write</td><td>This is the manufacturer/provider specific extension moniker used to divide the Oem object into sections.</td></tr>
 <tr><td>}</td><td></td><td></td><td></td></tr>
 <tr><td><b>FirmwareVersion</b></td><td>string, null</td><td>read-only</td><td>The firmware version of this Manager.</td></tr>
@@ -2928,7 +2928,7 @@ pre.code{
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Description</b></td><td>string, null</td><td>read-write</td><td>Provides a description of this resource and is used for commonality  in the schema definitions.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Members</b> [ {} ]</td><td>array</td><td>read-only</td><td>Contains the members of this collection.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Members@odata.navigationLink</b></td><td>string</td><td>read-write</td><td></td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Name</b></td><td>string</td><td>read-write</td><td>The name of the resource or array element.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Name</b></td><td>string</td><td>read-write</td><td>A friendly name for this line of service.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Oem</b> {}</td><td>object</td><td>read-write</td><td>This is the manufacturer/provider specific extension moniker used to divide the Oem object into sections.</td></tr>
 <tr><td>}</td><td></td><td></td><td></td></tr>
 <tr><td><b>Id</b></td><td>string</td><td>read-write</td><td>Uniquely identifies the resource within the collection of like resources.</td></tr>
@@ -2944,12 +2944,12 @@ pre.code{
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Description</b></td><td>string, null</td><td>read-write</td><td>Provides a description of this resource and is used for commonality  in the schema definitions.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Members</b> [ {} ]</td><td>array</td><td>read-only</td><td>Contains the members of this collection.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Members@odata.navigationLink</b></td><td>string</td><td>read-write</td><td></td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Name</b></td><td>string</td><td>read-write</td><td>The name of the resource or array element.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Name</b></td><td>string</td><td>read-write</td><td>A friendly name for this line of service.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Oem</b> {}</td><td>object</td><td>read-write</td><td>This is the manufacturer/provider specific extension moniker used to divide the Oem object into sections.</td></tr>
 <tr><td>}</td><td></td><td></td><td></td></tr>
 <tr><td><b>ManagerType</b></td><td>string</td><td>read-write</td><td>This property represents the type of manager that this resource represents.<br><i>See Property Details, below, for more information about this property.</i></td></tr>
 <tr><td><b>Model</b></td><td>string, null</td><td>read-only</td><td>The model information of this Manager as defined by the manufacturer.</td></tr>
-<tr><td><b>Name</b></td><td>string</td><td>read-write</td><td>The name of the resource or array element.</td></tr>
+<tr><td><b>Name</b></td><td>string</td><td>read-write</td><td>A friendly name for this line of service.</td></tr>
 <tr><td><b>NetworkProtocol</b> {</td><td>object</td><td>read-write</td><td>This is a reference to the network services and their settings that the manager controls.  It is here that clients will find network configuration options as well as network services.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>DHCP</b> {}</td><td>object</td><td>read-write</td><td>Settings for this Manager's DHCP protocol support.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Description</b></td><td>string, null</td><td>read-write</td><td>Provides a description of this resource and is used for commonality  in the schema definitions.</td></tr>
@@ -2960,7 +2960,7 @@ pre.code{
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>IPMI</b> {}</td><td>object</td><td>read-write</td><td>Settings for this Manager's IPMI-over-LAN protocol support.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Id</b></td><td>string</td><td>read-write</td><td>Uniquely identifies the resource within the collection of like resources.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>KVMIP</b> {}</td><td>object</td><td>read-write</td><td>Settings for this Manager's KVM-IP protocol support.</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Name</b></td><td>string</td><td>read-write</td><td>The name of the resource or array element.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Name</b></td><td>string</td><td>read-write</td><td>A friendly name for this line of service.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Oem</b> {}</td><td>object</td><td>read-write</td><td>This is the manufacturer/provider specific extension moniker used to divide the Oem object into sections.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>SNMP</b> {}</td><td>object</td><td>read-write</td><td>Settings for this Manager's SNMP support.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>SSDP</b> {}</td><td>object</td><td>read-write</td><td>Settings for this Manager's SSDP support.</td></tr>
@@ -2973,7 +2973,7 @@ pre.code{
 <tr><td><b>PowerState</b> <i>(v1.2+)</i></td><td>string, null</td><td>read-write</td><td>This is the current power state of the Manager.<br><i>See Property Details, below, for more information about this property.</i></td></tr>
 <tr><td><b>Redundancy</b> [ {</td><td>array</td><td>read-write</td><td>Redundancy information for the managers of this system.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>MaxNumSupported</b></td><td>number, null</td><td>read-only</td><td>This is the maximum number of members allowable for this particular redundancy group.</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>MemberId</b></td><td>string</td><td>read-only</td><td>This is the identifier for the member within the collection.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>MemberId</b></td><td>string</td><td>read-write</td><td>This is the identifier for the member within the collection.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>MinNumNeeded</b></td><td>number, null</td><td>read-only</td><td>This is the minumum number of members needed for this group to be redundant.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Mode</b></td><td>string, null</td><td>read-write</td><td>This is the redundancy mode of the group.<br><i>See Property Details, below, for more information about this property.</i></td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Name</b></td><td>string</td><td>read-only</td><td>The name of the resource or array element.</td></tr>
@@ -2981,6 +2981,7 @@ pre.code{
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>RedundancySet</b> [ {} ]</td><td>array</td><td>read-only</td><td>Contains any ids that represent components of this redundancy set.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>RedundancySet@odata.navigationLink</b></td><td>string</td><td>read-write</td><td></td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Status</b> {}</td><td>object</td><td>read-only</td><td>Indicates the status of the file share.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>MemberId</b></td><td>string</td><td>read-only</td><td>This is the identifier for the member within the collection.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>RedundancyEnabled</b></td><td>boolean, null</td><td>read-write</td><td>This indicates whether redundancy is enabled.</td></tr>
 <tr><td>} ]</td><td></td><td></td><td></td></tr>
 <tr><td><b>Redundancy@odata.navigationLink</b></td><td>string</td><td>read-write</td><td></td></tr>
@@ -2993,7 +2994,7 @@ pre.code{
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Description</b></td><td>string, null</td><td>read-write</td><td>Provides a description of this resource and is used for commonality  in the schema definitions.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Members</b> [ {} ]</td><td>array</td><td>read-only</td><td>Contains the members of this collection.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Members@odata.navigationLink</b></td><td>string</td><td>read-write</td><td></td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Name</b></td><td>string</td><td>read-write</td><td>The name of the resource or array element.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Name</b></td><td>string</td><td>read-write</td><td>A friendly name for this line of service.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Oem</b> {}</td><td>object</td><td>read-write</td><td>This is the manufacturer/provider specific extension moniker used to divide the Oem object into sections.</td></tr>
 <tr><td>}</td><td></td><td></td><td></td></tr>
 <tr><td><b>ServiceEntryPointUUID</b></td><td>string</td><td>read-write</td><td>The UUID of the Redfish Service provided by this manager.</td></tr>
@@ -3008,7 +3009,7 @@ pre.code{
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Description</b></td><td>string, null</td><td>read-write</td><td>Provides a description of this resource and is used for commonality  in the schema definitions.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Members</b> [ {} ]</td><td>array</td><td>read-only</td><td>Contains the members of this collection.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Members@odata.navigationLink</b></td><td>string</td><td>read-write</td><td></td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Name</b></td><td>string</td><td>read-write</td><td>The name of the resource or array element.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Name</b></td><td>string</td><td>read-write</td><td>A friendly name for this line of service.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Oem</b> {}</td><td>object</td><td>read-write</td><td>This is the manufacturer/provider specific extension moniker used to divide the Oem object into sections.</td></tr>
 <tr><td>}</td><td></td><td></td><td></td></tr>
 </tbody></table>
@@ -3106,7 +3107,7 @@ pre.code{
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Role</b> {}</td><td>object</td><td>read-write</td><td>A reference to the Role object defining Privileges for this account--returned when the resource is read. The ID of the role is the same as property RoleId.</td></tr>
 <tr><td>}</td><td></td><td></td><td></td></tr>
 <tr><td><b>Locked</b></td><td>boolean</td><td>read-write</td><td>This property indicates that the account has been auto-locked by the account service because the lockout threshold has been exceeded.  When set to true, the account is locked. A user admin can write the property to false to manually unlock, or the account service will unlock it once the lockout duration period has passed.</td></tr>
-<tr><td><b>Name</b></td><td>string</td><td>read-write</td><td>The name of the resource or array element.</td></tr>
+<tr><td><b>Name</b></td><td>string</td><td>read-write</td><td>A friendly name for this line of service.</td></tr>
 <tr><td><b>Oem</b> {}</td><td>object</td><td>read-write</td><td>This is the manufacturer/provider specific extension moniker used to divide the Oem object into sections.</td></tr>
 <tr><td><b>Password</b></td><td>string, null</td><td>read-write</td><td>This property is used with a PATCH or PUT to write the password for the account.  This property is null on a GET.</td></tr>
 <tr><td><b>RoleId</b></td><td>string</td><td>read-write</td><td>This property contains the Role for this account.</td></tr>
@@ -3171,7 +3172,7 @@ pre.code{
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Port</b></td><td>number, null</td><td>read-write</td><td>Indicates the protocol port.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>ProtocolEnabled</b></td><td>boolean, null</td><td>read-write</td><td>Indicates if the protocol is enabled or disabled.</td></tr>
 <tr><td>}</td><td></td><td></td><td></td></tr>
-<tr><td><b>Name</b></td><td>string</td><td>read-write</td><td>The name of the resource or array element.</td></tr>
+<tr><td><b>Name</b></td><td>string</td><td>read-write</td><td>A friendly name for this line of service.</td></tr>
 <tr><td><b>Oem</b> {}</td><td>object</td><td>read-write</td><td>This is the manufacturer/provider specific extension moniker used to divide the Oem object into sections.</td></tr>
 <tr><td><b>SNMP</b> {</td><td>object</td><td>read-write</td><td>Settings for this Manager's SNMP support.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Port</b></td><td>number, null</td><td>read-write</td><td>Indicates the protocol port.</td></tr>
@@ -3303,10 +3304,10 @@ pre.code{
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>HealthData</b> {}</td><td>object</td><td>read-write</td><td>This object describes the central memory of the system in general detail.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Id</b></td><td>string</td><td>read-write</td><td>Uniquely identifies the resource within the collection of like resources.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>LifeTime</b> {}</td><td>object</td><td>read-write</td><td>This object describes the central memory of the system in general detail.</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Name</b></td><td>string</td><td>read-write</td><td>The name of the resource or array element.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Name</b></td><td>string</td><td>read-write</td><td>A friendly name for this line of service.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Oem</b> {}</td><td>object</td><td>read-write</td><td>This is the manufacturer/provider specific extension moniker used to divide the Oem object into sections.</td></tr>
 <tr><td>}</td><td></td><td></td><td></td></tr>
-<tr><td><b>Name</b></td><td>string</td><td>read-write</td><td>The name of the resource or array element.</td></tr>
+<tr><td><b>Name</b></td><td>string</td><td>read-write</td><td>A friendly name for this line of service.</td></tr>
 <tr><td><b>Oem</b> {}</td><td>object</td><td>read-write</td><td>This is the manufacturer/provider specific extension moniker used to divide the Oem object into sections.</td></tr>
 <tr><td><b>OperatingMemoryModes</b> [ {} ]</td><td>array</td><td>read-only</td><td>Memory modes supported by the Memory.</td></tr>
 <tr><td><b>OperatingSpeedMhz</b></td><td>number, null</td><td>read-only</td><td>Operating speed of Memory in MHz.</td></tr>
@@ -3485,7 +3486,7 @@ pre.code{
 <tr><td><b>IsMirrorEnabled</b></td><td>boolean, null</td><td>read-only</td><td>Mirror Enabled status.</td></tr>
 <tr><td><b>IsSpare</b></td><td>boolean, null</td><td>read-only</td><td>Spare enabled status.</td></tr>
 <tr><td><b>MemoryChunkSizeMiB</b></td><td>number, null</td><td>read-only</td><td>Size of the memory chunk in MiB.</td></tr>
-<tr><td><b>Name</b></td><td>string</td><td>read-write</td><td>The name of the resource or array element.</td></tr>
+<tr><td><b>Name</b></td><td>string</td><td>read-write</td><td>A friendly name for this line of service.</td></tr>
 <tr><td><b>Oem</b> {}</td><td>object</td><td>read-write</td><td>This is the manufacturer/provider specific extension moniker used to divide the Oem object into sections.</td></tr>
 </tbody></table>
 <div class="property-details">
@@ -3520,10 +3521,10 @@ pre.code{
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Description</b></td><td>string, null</td><td>read-write</td><td>Provides a description of this resource and is used for commonality  in the schema definitions.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Members</b> [ {} ]</td><td>array</td><td>read-only</td><td>Contains the members of this collection.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Members@odata.navigationLink</b></td><td>string</td><td>read-write</td><td></td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Name</b></td><td>string</td><td>read-write</td><td>The name of the resource or array element.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Name</b></td><td>string</td><td>read-write</td><td>A friendly name for this line of service.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Oem</b> {}</td><td>object</td><td>read-write</td><td>This is the manufacturer/provider specific extension moniker used to divide the Oem object into sections.</td></tr>
 <tr><td>}</td><td></td><td></td><td></td></tr>
-<tr><td><b>Name</b></td><td>string</td><td>read-write</td><td>The name of the resource or array element.</td></tr>
+<tr><td><b>Name</b></td><td>string</td><td>read-write</td><td>A friendly name for this line of service.</td></tr>
 <tr><td><b>Oem</b> {}</td><td>object</td><td>read-write</td><td>This is the manufacturer/provider specific extension moniker used to divide the Oem object into sections.</td></tr>
 </tbody></table>
 <h2>MemoryMetrics 1.1.1</h2>
@@ -3553,7 +3554,7 @@ pre.code{
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>BlocksRead</b></td><td>number, null</td><td>read-only</td><td>Number of blocks read for the lifetime of the Memory.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>BlocksWritten</b></td><td>string, null</td><td>read-only</td><td>Number of blocks written for the lifetime of the Memory.</td></tr>
 <tr><td>}</td><td></td><td></td><td></td></tr>
-<tr><td><b>Name</b></td><td>string</td><td>read-write</td><td>The name of the resource or array element.</td></tr>
+<tr><td><b>Name</b></td><td>string</td><td>read-write</td><td>A friendly name for this line of service.</td></tr>
 <tr><td><b>Oem</b> {}</td><td>object</td><td>read-write</td><td>This is the manufacturer/provider specific extension moniker used to divide the Oem object into sections.</td></tr>
 </tbody></table>
 <h2>MessageRegistry 1.0.3</h2>
@@ -3564,7 +3565,7 @@ pre.code{
 <tr><td><b>Id</b></td><td>string</td><td>read-write</td><td>Uniquely identifies the resource within the collection of like resources.</td></tr>
 <tr><td><b>Language</b></td><td>string</td><td>read-only</td><td>This is the RFC 5646 compliant language code for the registry.</td></tr>
 <tr><td><b>Messages</b> {}</td><td>object</td><td>read-write</td><td>The pattern property indicates that a free-form string is the unique identifier for the message within the registry.</td></tr>
-<tr><td><b>Name</b></td><td>string</td><td>read-write</td><td>The name of the resource or array element.</td></tr>
+<tr><td><b>Name</b></td><td>string</td><td>read-write</td><td>A friendly name for this line of service.</td></tr>
 <tr><td><b>Oem</b> {}</td><td>object</td><td>read-write</td><td>This is the manufacturer/provider specific extension moniker used to divide the Oem object into sections.</td></tr>
 <tr><td><b>OwningEntity</b></td><td>string</td><td>read-only</td><td>This is the organization or company that publishes this registry.</td></tr>
 <tr><td><b>RegistryPrefix</b></td><td>string</td><td>read-only</td><td>This is the single word prefix used to form a messageID structure.</td></tr>
@@ -3584,7 +3585,7 @@ pre.code{
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>PublicationUri</b></td><td>string</td><td>read-only</td><td>Link to publicly available (canonical) URI for schema.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Uri</b></td><td>string</td><td>read-only</td><td>Link to locally available URI for schema.</td></tr>
 <tr><td>} ]</td><td></td><td></td><td></td></tr>
-<tr><td><b>Name</b></td><td>string</td><td>read-write</td><td>The name of the resource or array element.</td></tr>
+<tr><td><b>Name</b></td><td>string</td><td>read-write</td><td>A friendly name for this line of service.</td></tr>
 <tr><td><b>Oem</b> {}</td><td>object</td><td>read-write</td><td>This is the manufacturer/provider specific extension moniker used to divide the Oem object into sections.</td></tr>
 <tr><td><b>Registry</b></td><td>string</td><td>read-only</td><td>The Registry Name, Major and Minor version used in MessageID construction.</td></tr>
 </tbody></table>
@@ -3605,19 +3606,19 @@ pre.code{
 <tr><td><b>Id</b></td><td>string</td><td>read-write</td><td>Uniquely identifies the resource within the collection of like resources.</td></tr>
 <tr><td><b>Manufacturer</b></td><td>string, null</td><td>read-only</td><td>The manufacturer or OEM of this network adapter.</td></tr>
 <tr><td><b>Model</b></td><td>string, null</td><td>read-only</td><td>The model string for this network adapter.</td></tr>
-<tr><td><b>Name</b></td><td>string</td><td>read-write</td><td>The name of the resource or array element.</td></tr>
+<tr><td><b>Name</b></td><td>string</td><td>read-write</td><td>A friendly name for this line of service.</td></tr>
 <tr><td><b>NetworkDeviceFunctions</b> {</td><td>object</td><td>read-write</td><td>Contains the members of this collection.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Description</b></td><td>string, null</td><td>read-write</td><td>Provides a description of this resource and is used for commonality  in the schema definitions.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Members</b> [ {} ]</td><td>array</td><td>read-only</td><td>Contains the members of this collection.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Members@odata.navigationLink</b></td><td>string</td><td>read-write</td><td></td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Name</b></td><td>string</td><td>read-write</td><td>The name of the resource or array element.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Name</b></td><td>string</td><td>read-write</td><td>A friendly name for this line of service.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Oem</b> {}</td><td>object</td><td>read-write</td><td>This is the manufacturer/provider specific extension moniker used to divide the Oem object into sections.</td></tr>
 <tr><td>}</td><td></td><td></td><td></td></tr>
 <tr><td><b>NetworkPorts</b> {</td><td>object</td><td>read-write</td><td>Contains the members of this collection.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Description</b></td><td>string, null</td><td>read-write</td><td>Provides a description of this resource and is used for commonality  in the schema definitions.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Members</b> [ {} ]</td><td>array</td><td>read-only</td><td>Contains the members of this collection.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Members@odata.navigationLink</b></td><td>string</td><td>read-write</td><td></td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Name</b></td><td>string</td><td>read-write</td><td>The name of the resource or array element.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Name</b></td><td>string</td><td>read-write</td><td>A friendly name for this line of service.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Oem</b> {}</td><td>object</td><td>read-write</td><td>This is the manufacturer/provider specific extension moniker used to divide the Oem object into sections.</td></tr>
 <tr><td>}</td><td></td><td></td><td></td></tr>
 <tr><td><b>Oem</b> {}</td><td>object</td><td>read-write</td><td>This is the manufacturer/provider specific extension moniker used to divide the Oem object into sections.</td></tr>
@@ -3688,7 +3689,7 @@ pre.code{
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>FlowControlStatus</b></td><td>string, null</td><td>read-write</td><td>The 802.3x flow control behavior negotiated with the link partner for this network port (Ethernet-only).<br><i>See Property Details, below, for more information about this property.</i></td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Id</b></td><td>string</td><td>read-write</td><td>Uniquely identifies the resource within the collection of like resources.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>LinkStatus</b></td><td>string, null</td><td>read-write</td><td>The status of the link between this port and its link partner.<br><i>See Property Details, below, for more information about this property.</i></td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Name</b></td><td>string</td><td>read-write</td><td>The name of the resource or array element.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Name</b></td><td>string</td><td>read-write</td><td>A friendly name for this line of service.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>NetDevFuncMaxBWAlloc</b> [ {} ]</td><td>array</td><td>read-write</td><td>The array of maximum bandwidth allocation percentages for the Network Device Functions associated with this port.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>NetDevFuncMinBWAlloc</b> [ {} ]</td><td>array</td><td>read-write</td><td>The array of minimum bandwidth allocation percentages for the Network Device Functions associated with this port.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Oem</b> {}</td><td>object</td><td>read-write</td><td>This is the manufacturer/provider specific extension moniker used to divide the Oem object into sections.</td></tr>
@@ -3725,7 +3726,7 @@ pre.code{
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>PCIeFunction</b> {}</td><td>object</td><td>read-write</td><td>Contains the members of this collection.</td></tr>
 <tr><td>}</td><td></td><td></td><td></td></tr>
 <tr><td><b>MaxVirtualFunctions</b></td><td>number, null</td><td>read-only</td><td>The number of virtual functions (VFs) that are available for this Network Device Function.</td></tr>
-<tr><td><b>Name</b></td><td>string</td><td>read-write</td><td>The name of the resource or array element.</td></tr>
+<tr><td><b>Name</b></td><td>string</td><td>read-write</td><td>A friendly name for this line of service.</td></tr>
 <tr><td><b>NetDevFuncCapabilities</b> [ {} ]</td><td>array</td><td>read-only</td><td>Capabilities of this network device function.</td></tr>
 <tr><td><b>NetDevFuncType</b></td><td>string, null</td><td>read-write</td><td>The configured capability of this network device function.<br><i>See Property Details, below, for more information about this property.</i></td></tr>
 <tr><td><b>Oem</b> {}</td><td>object</td><td>read-write</td><td>This is the manufacturer/provider specific extension moniker used to divide the Oem object into sections.</td></tr>
@@ -3738,7 +3739,7 @@ pre.code{
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>FlowControlStatus</b></td><td>string, null</td><td>read-write</td><td>The 802.3x flow control behavior negotiated with the link partner for this network port (Ethernet-only).<br><i>See Property Details, below, for more information about this property.</i></td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Id</b></td><td>string</td><td>read-write</td><td>Uniquely identifies the resource within the collection of like resources.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>LinkStatus</b></td><td>string, null</td><td>read-write</td><td>The status of the link between this port and its link partner.<br><i>See Property Details, below, for more information about this property.</i></td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Name</b></td><td>string</td><td>read-write</td><td>The name of the resource or array element.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Name</b></td><td>string</td><td>read-write</td><td>A friendly name for this line of service.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>NetDevFuncMaxBWAlloc</b> [ {} ]</td><td>array</td><td>read-write</td><td>The array of maximum bandwidth allocation percentages for the Network Device Functions associated with this port.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>NetDevFuncMinBWAlloc</b> [ {} ]</td><td>array</td><td>read-write</td><td>The array of minimum bandwidth allocation percentages for the Network Device Functions associated with this port.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Oem</b> {}</td><td>object</td><td>read-write</td><td>This is the manufacturer/provider specific extension moniker used to divide the Oem object into sections.</td></tr>
@@ -3943,19 +3944,19 @@ pre.code{
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>NetworkAdapter</b> {}</td><td>object</td><td>read-write</td><td>Contains the members of this collection.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Oem</b> {}</td><td>object</td><td>read-write</td><td>Oem extension object.</td></tr>
 <tr><td>}</td><td></td><td></td><td></td></tr>
-<tr><td><b>Name</b></td><td>string</td><td>read-write</td><td>The name of the resource or array element.</td></tr>
+<tr><td><b>Name</b></td><td>string</td><td>read-write</td><td>A friendly name for this line of service.</td></tr>
 <tr><td><b>NetworkDeviceFunctions</b> {</td><td>object</td><td>read-write</td><td>Contains the members of this collection.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Description</b></td><td>string, null</td><td>read-write</td><td>Provides a description of this resource and is used for commonality  in the schema definitions.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Members</b> [ {} ]</td><td>array</td><td>read-only</td><td>Contains the members of this collection.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Members@odata.navigationLink</b></td><td>string</td><td>read-write</td><td></td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Name</b></td><td>string</td><td>read-write</td><td>The name of the resource or array element.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Name</b></td><td>string</td><td>read-write</td><td>A friendly name for this line of service.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Oem</b> {}</td><td>object</td><td>read-write</td><td>This is the manufacturer/provider specific extension moniker used to divide the Oem object into sections.</td></tr>
 <tr><td>}</td><td></td><td></td><td></td></tr>
 <tr><td><b>NetworkPorts</b> {</td><td>object</td><td>read-write</td><td>Contains the members of this collection.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Description</b></td><td>string, null</td><td>read-write</td><td>Provides a description of this resource and is used for commonality  in the schema definitions.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Members</b> [ {} ]</td><td>array</td><td>read-only</td><td>Contains the members of this collection.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Members@odata.navigationLink</b></td><td>string</td><td>read-write</td><td></td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Name</b></td><td>string</td><td>read-write</td><td>The name of the resource or array element.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Name</b></td><td>string</td><td>read-write</td><td>A friendly name for this line of service.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Oem</b> {}</td><td>object</td><td>read-write</td><td>This is the manufacturer/provider specific extension moniker used to divide the Oem object into sections.</td></tr>
 <tr><td>}</td><td></td><td></td><td></td></tr>
 <tr><td><b>Oem</b> {}</td><td>object</td><td>read-write</td><td>This is the manufacturer/provider specific extension moniker used to divide the Oem object into sections.</td></tr>
@@ -4022,7 +4023,7 @@ pre.code{
 <tr><td><b>FlowControlStatus</b></td><td>string, null</td><td>read-write</td><td>The 802.3x flow control behavior negotiated with the link partner for this network port (Ethernet-only).<br><i>See Property Details, below, for more information about this property.</i></td></tr>
 <tr><td><b>Id</b></td><td>string</td><td>read-write</td><td>Uniquely identifies the resource within the collection of like resources.</td></tr>
 <tr><td><b>LinkStatus</b></td><td>string, null</td><td>read-write</td><td>The status of the link between this port and its link partner.<br><i>See Property Details, below, for more information about this property.</i></td></tr>
-<tr><td><b>Name</b></td><td>string</td><td>read-write</td><td>The name of the resource or array element.</td></tr>
+<tr><td><b>Name</b></td><td>string</td><td>read-write</td><td>A friendly name for this line of service.</td></tr>
 <tr><td><b>NetDevFuncMaxBWAlloc</b> [ {</td><td>array</td><td>read-write</td><td>The array of maximum bandwidth allocation percentages for the Network Device Functions associated with this port.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>MaxBWAllocPercent</b></td><td>number, null</td><td>read-write</td><td>The maximum bandwidth allocation percentage allocated to the corresponding network device function instance.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>NetworkDeviceFunction</b> {}</td><td>object</td><td>read-write</td><td>Contains the members of this collection.</td></tr>
@@ -4166,7 +4167,7 @@ pre.code{
 <tr><td>}</td><td></td><td></td><td></td></tr>
 <tr><td><b>Manufacturer</b></td><td>string, null</td><td>read-only</td><td>This is the manufacturer of this PCIe device.</td></tr>
 <tr><td><b>Model</b></td><td>string, null</td><td>read-only</td><td>This is the model number for the PCIe device.</td></tr>
-<tr><td><b>Name</b></td><td>string</td><td>read-write</td><td>The name of the resource or array element.</td></tr>
+<tr><td><b>Name</b></td><td>string</td><td>read-write</td><td>A friendly name for this line of service.</td></tr>
 <tr><td><b>Oem</b> {}</td><td>object</td><td>read-write</td><td>This is the manufacturer/provider specific extension moniker used to divide the Oem object into sections.</td></tr>
 <tr><td><b>PartNumber</b></td><td>string, null</td><td>read-only</td><td>The part number for this PCIe device.</td></tr>
 <tr><td><b>SKU</b></td><td>string, null</td><td>read-only</td><td>This is the SKU for this PCIe device.</td></tr>
@@ -4254,7 +4255,7 @@ pre.code{
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>StorageControllers</b> [ {} ]</td><td>array</td><td>read-only</td><td>An array of references to the storage controllers which the PCIe device produces.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>StorageControllers@odata.navigationLink</b></td><td>string</td><td>read-write</td><td></td></tr>
 <tr><td>}</td><td></td><td></td><td></td></tr>
-<tr><td><b>Name</b></td><td>string</td><td>read-write</td><td>The name of the resource or array element.</td></tr>
+<tr><td><b>Name</b></td><td>string</td><td>read-write</td><td>A friendly name for this line of service.</td></tr>
 <tr><td><b>Oem</b> {}</td><td>object</td><td>read-write</td><td>This is the manufacturer/provider specific extension moniker used to divide the Oem object into sections.</td></tr>
 <tr><td><b>RevisionId</b></td><td>string, null</td><td>read-only</td><td>The Revision ID of this PCIe function.</td></tr>
 <tr><td><b>Status</b> {</td><td>object, null</td><td>read-only</td><td>Indicates the status of the file share.</td></tr>
@@ -4373,7 +4374,7 @@ pre.code{
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Oem</b> {}</td><td>object</td><td>read-write</td><td>Oem extension object.</td></tr>
 <tr><td>}</td><td></td><td></td><td></td></tr>
 <tr><td><b>MaxSpeedGbps</b></td><td>number, null<br>(Gbit/s)</td><td>read-only</td><td>The maximum speed of this port as currently configured.</td></tr>
-<tr><td><b>Name</b></td><td>string</td><td>read-write</td><td>The name of the resource or array element.</td></tr>
+<tr><td><b>Name</b></td><td>string</td><td>read-write</td><td>A friendly name for this line of service.</td></tr>
 <tr><td><b>Oem</b> {}</td><td>object</td><td>read-write</td><td>This is the manufacturer/provider specific extension moniker used to divide the Oem object into sections.</td></tr>
 <tr><td><b>PortId</b></td><td>string, null</td><td>read-only</td><td>This is the label of this port on the physical switch package.</td></tr>
 <tr><td><b>PortProtocol</b></td><td>null</td><td>read-write</td><td>The protocol being sent over this port.</td></tr>
@@ -4450,7 +4451,7 @@ pre.code{
 <tbody>
 <tr><td><b>Description</b></td><td>string, null</td><td>read-write</td><td>Provides a description of this resource and is used for commonality  in the schema definitions.</td></tr>
 <tr><td><b>Id</b></td><td>string</td><td>read-write</td><td>Uniquely identifies the resource within the collection of like resources.</td></tr>
-<tr><td><b>Name</b></td><td>string</td><td>read-write</td><td>The name of the resource or array element.</td></tr>
+<tr><td><b>Name</b></td><td>string</td><td>read-write</td><td>A friendly name for this line of service.</td></tr>
 <tr><td><b>Oem</b> {}</td><td>object</td><td>read-write</td><td>This is the manufacturer/provider specific extension moniker used to divide the Oem object into sections.</td></tr>
 <tr><td><b>PowerControl</b> [ {</td><td>array</td><td>read-write</td><td>This is the definition for power control function (power reading/limiting).</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>MemberId</b></td><td>string</td><td>read-only</td><td>This is the identifier for the member within the collection.</td></tr>
@@ -4494,7 +4495,7 @@ pre.code{
 <tr><td><b>PowerSupplies@odata.navigationLink</b></td><td>string</td><td>read-write</td><td></td></tr>
 <tr><td><b>Redundancy</b> [ {</td><td>array</td><td>read-write</td><td>Redundancy information for the power subsystem of this system or device.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>MaxNumSupported</b></td><td>number, null</td><td>read-only</td><td>This is the maximum number of members allowable for this particular redundancy group.</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>MemberId</b></td><td>string</td><td>read-only</td><td>This is the identifier for the member within the collection.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>MemberId</b></td><td>string</td><td>read-write</td><td>This is the identifier for the member within the collection.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>MinNumNeeded</b></td><td>number, null</td><td>read-only</td><td>This is the minumum number of members needed for this group to be redundant.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Mode</b></td><td>string, null</td><td>read-write</td><td>This is the redundancy mode of the group.<br><i>See Property Details, below, for more information about this property.</i></td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Name</b></td><td>string</td><td>read-only</td><td>The name of the resource or array element.</td></tr>
@@ -4502,6 +4503,7 @@ pre.code{
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>RedundancySet</b> [ {} ]</td><td>array</td><td>read-only</td><td>Contains any ids that represent components of this redundancy set.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>RedundancySet@odata.navigationLink</b></td><td>string</td><td>read-write</td><td></td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Status</b> {}</td><td>object</td><td>read-only</td><td>Indicates the status of the file share.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>MemberId</b></td><td>string</td><td>read-only</td><td>This is the identifier for the member within the collection.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>RedundancyEnabled</b></td><td>boolean, null</td><td>read-write</td><td>This indicates whether redundancy is enabled.</td></tr>
 <tr><td>} ]</td><td></td><td></td><td></td></tr>
 <tr><td><b>Redundancy@odata.navigationLink</b></td><td>string</td><td>read-write</td><td></td></tr>
@@ -4577,26 +4579,26 @@ pre.code{
 <tr><th>string</th><th>Description</th></tr>
 </thead>
 <tbody>
-<tr><td>Back</td><td>The back of the chassis.</td></tr>
-<tr><td>Backplane</td><td>A backplane within the chassis.</td></tr>
-<tr><td>CPU</td><td>A Processor (CPU).</td></tr>
-<tr><td>ComputeBay</td><td>Within a compute bay.</td></tr>
-<tr><td>Exhaust</td><td>The exhaust point of the chassis.</td></tr>
-<tr><td>ExpansionBay</td><td>Within an expansion bay.</td></tr>
-<tr><td>Front</td><td>The front of the chassis.</td></tr>
-<tr><td>GPU</td><td>A Graphics Processor (GPU).</td></tr>
-<tr><td>Intake</td><td>The intake point of the chassis.</td></tr>
-<tr><td>Lower</td><td>The lower portion of the chassis.</td></tr>
-<tr><td>NetworkBay</td><td>Within a networking bay.</td></tr>
-<tr><td>NetworkingDevice</td><td>A networking device.</td></tr>
-<tr><td>PowerSupply</td><td>A power supply.</td></tr>
-<tr><td>PowerSupplyBay</td><td>Within a power supply bay.</td></tr>
-<tr><td>Room</td><td>The room.</td></tr>
-<tr><td>StorageBay</td><td>Within a storage bay.</td></tr>
-<tr><td>StorageDevice</td><td>A storage device.</td></tr>
-<tr><td>SystemBoard</td><td>The system board (PCB).</td></tr>
-<tr><td>Upper</td><td>The upper portion of the chassis.</td></tr>
-<tr><td>VoltageRegulator</td><td>A voltage regulator device.</td></tr>
+<tr><td>Back</td><td>The back of the chassis</td></tr>
+<tr><td>Backplane</td><td>A backplane within the chassis</td></tr>
+<tr><td>CPU</td><td>A Processor (CPU)</td></tr>
+<tr><td>ComputeBay</td><td>Within a compute bay</td></tr>
+<tr><td>Exhaust</td><td>The exhaust point of the chassis</td></tr>
+<tr><td>ExpansionBay</td><td>Within an expansion bay</td></tr>
+<tr><td>Front</td><td>The front of the chassis</td></tr>
+<tr><td>GPU</td><td>A Graphics Processor (GPU)</td></tr>
+<tr><td>Intake</td><td>The intake point of the chassis</td></tr>
+<tr><td>Lower</td><td>The lower portion of the chassis</td></tr>
+<tr><td>NetworkBay</td><td>Within a networking bay</td></tr>
+<tr><td>NetworkingDevice</td><td>A networking device</td></tr>
+<tr><td>PowerSupply</td><td>A power supply</td></tr>
+<tr><td>PowerSupplyBay</td><td>Within a power supply bay</td></tr>
+<tr><td>Room</td><td>The room</td></tr>
+<tr><td>StorageBay</td><td>Within a storage bay</td></tr>
+<tr><td>StorageDevice</td><td>A storage device</td></tr>
+<tr><td>SystemBoard</td><td>The system board (PCB)</td></tr>
+<tr><td>Upper</td><td>The upper portion of the chassis</td></tr>
+<tr><td>VoltageRegulator</td><td>A voltage regulator device</td></tr>
 </tbody></table>
 
 <h4>PowerSupplyType:</h4>
@@ -4625,7 +4627,7 @@ pre.code{
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>ResourceURIOverrides</b> [ {} ]</td><td>array</td><td>read-write</td><td>Indicates privilege overrides of Resource URI.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>SubordinateOverrides</b> [ {} ]</td><td>array</td><td>read-write</td><td>Indicates privilege overrides of subordinate resource.</td></tr>
 <tr><td>} ]</td><td></td><td></td><td></td></tr>
-<tr><td><b>Name</b></td><td>string</td><td>read-write</td><td>The name of the resource or array element.</td></tr>
+<tr><td><b>Name</b></td><td>string</td><td>read-write</td><td>A friendly name for this line of service.</td></tr>
 <tr><td><b>OEMPrivilegesUsed</b> [ {} ]</td><td>array</td><td>read-only</td><td>Lists the set of OEM Priviliges used in building this mapping.</td></tr>
 <tr><td><b>Oem</b> {}</td><td>object</td><td>read-write</td><td>This is the manufacturer/provider specific extension moniker used to divide the Oem object into sections.</td></tr>
 <tr><td><b>PrivilegesUsed</b> [ {} ]</td><td>array</td><td>read-only</td><td>Lists the set of Redfish standard priviliges used in building this mapping.</td></tr>
@@ -4640,7 +4642,7 @@ pre.code{
 <tr><td><b>Manufacturer</b></td><td>string, null</td><td>read-only</td><td>The processor manufacturer.</td></tr>
 <tr><td><b>MaxSpeedMHz</b></td><td>number, null</td><td>read-only</td><td>The maximum clock speed of the processor.</td></tr>
 <tr><td><b>Model</b></td><td>string, null</td><td>read-only</td><td>The product model number of this device.</td></tr>
-<tr><td><b>Name</b></td><td>string</td><td>read-write</td><td>The name of the resource or array element.</td></tr>
+<tr><td><b>Name</b></td><td>string</td><td>read-write</td><td>A friendly name for this line of service.</td></tr>
 <tr><td><b>Oem</b> {}</td><td>object</td><td>read-write</td><td>This is the manufacturer/provider specific extension moniker used to divide the Oem object into sections.</td></tr>
 <tr><td><b>ProcessorArchitecture</b></td><td>string, null</td><td>read-write</td><td>The architecture of the processor.<br><i>See Property Details, below, for more information about this property.</i></td></tr>
 <tr><td><b>ProcessorId</b> {</td><td>object</td><td>read-write</td><td>Identification information for this processor.</td></tr>
@@ -4757,7 +4759,7 @@ pre.code{
 <tr><td><b>Description</b></td><td>string, null</td><td>read-write</td><td>Provides a description of this resource and is used for commonality  in the schema definitions.</td></tr>
 <tr><td><b>Id</b></td><td>string</td><td>read-write</td><td>Uniquely identifies the resource within the collection of like resources.</td></tr>
 <tr><td><b>IsPredefined</b></td><td>boolean</td><td>read-only</td><td>This property is used to indicate if the Role is one of the Redfish Predefined Roles vs a Custom role.</td></tr>
-<tr><td><b>Name</b></td><td>string</td><td>read-write</td><td>The name of the resource or array element.</td></tr>
+<tr><td><b>Name</b></td><td>string</td><td>read-write</td><td>A friendly name for this line of service.</td></tr>
 <tr><td><b>Oem</b> {}</td><td>object</td><td>read-write</td><td>This is the manufacturer/provider specific extension moniker used to divide the Oem object into sections.</td></tr>
 <tr><td><b>OemPrivileges</b> [ {} ]</td><td>array</td><td>read-write</td><td>The OEM privileges that this role includes.</td></tr>
 </tbody></table>
@@ -4771,7 +4773,7 @@ pre.code{
 <tr><td>}</td><td></td><td></td><td></td></tr>
 <tr><td><b>Description</b></td><td>string, null</td><td>read-write</td><td>Provides a description of this resource and is used for commonality  in the schema definitions.</td></tr>
 <tr><td><b>Id</b></td><td>string</td><td>read-write</td><td>Uniquely identifies the resource within the collection of like resources.</td></tr>
-<tr><td><b>Name</b></td><td>string</td><td>read-write</td><td>The name of the resource or array element.</td></tr>
+<tr><td><b>Name</b></td><td>string</td><td>read-write</td><td>A friendly name for this line of service.</td></tr>
 <tr><td><b>Oem</b> {}</td><td>object</td><td>read-write</td><td>This is the manufacturer/provider specific extension moniker used to divide the Oem object into sections.</td></tr>
 <tr><td><b>SecureBootCurrentBoot</b></td><td>string, null</td><td>read-write</td><td>Secure Boot state during the current boot cycle.<br><i>See Property Details, below, for more information about this property.</i></td></tr>
 <tr><td><b>SecureBootEnable</b></td><td>boolean, null</td><td>read-write</td><td>Enable or disable UEFI Secure Boot (takes effect on next boot).</td></tr>
@@ -4813,7 +4815,7 @@ pre.code{
 <tr><td><b>FlowControl</b></td><td>string</td><td>read-write</td><td>The type of flow control, if any, that will be imposed on the serial connection.<br><i>See Property Details, below, for more information about this property.</i></td></tr>
 <tr><td><b>Id</b></td><td>string</td><td>read-write</td><td>Uniquely identifies the resource within the collection of like resources.</td></tr>
 <tr><td><b>InterfaceEnabled</b></td><td>boolean, null</td><td>read-write</td><td>This indicates whether this interface is enabled.</td></tr>
-<tr><td><b>Name</b></td><td>string</td><td>read-write</td><td>The name of the resource or array element.</td></tr>
+<tr><td><b>Name</b></td><td>string</td><td>read-write</td><td>A friendly name for this line of service.</td></tr>
 <tr><td><b>Oem</b> {}</td><td>object</td><td>read-write</td><td>This is the manufacturer/provider specific extension moniker used to divide the Oem object into sections.</td></tr>
 <tr><td><b>Parity</b></td><td>string</td><td>read-write</td><td>The type of parity used by the sender and receiver in order to detect errors over the serial connection.<br><i>See Property Details, below, for more information about this property.</i></td></tr>
 <tr><td><b>PinOut</b></td><td>string, null</td><td>read-write</td><td>The physical pin configuration needed for a serial connector.<br><i>See Property Details, below, for more information about this property.</i></td></tr>
@@ -4938,7 +4940,7 @@ pre.code{
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Id</b></td><td>string</td><td>read-write</td><td>Uniquely identifies the resource within the collection of like resources.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>MaxPasswordLength</b></td><td>number</td><td>read-only</td><td>This is the maximum password length for this service.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>MinPasswordLength</b></td><td>number</td><td>read-only</td><td>This is the minimum password length for this service.</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Name</b></td><td>string</td><td>read-write</td><td>The name of the resource or array element.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Name</b></td><td>string</td><td>read-write</td><td>A friendly name for this line of service.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Oem</b> {}</td><td>object</td><td>read-write</td><td>This is the manufacturer/provider specific extension moniker used to divide the Oem object into sections.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>PrivilegeMap</b> {}</td><td>object</td><td>read-write</td><td>A reference to the Privilege mapping defining the privileges needed to perform a requested operation on a URI associated with this service.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Roles</b> {}</td><td>object</td><td>read-write</td><td>Link to a collection of Roles.</td></tr>
@@ -4949,7 +4951,7 @@ pre.code{
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Description</b></td><td>string, null</td><td>read-write</td><td>Provides a description of this resource and is used for commonality  in the schema definitions.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Members</b> [ {} ]</td><td>array</td><td>read-only</td><td>Contains the members of this collection.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Members@odata.navigationLink</b></td><td>string</td><td>read-write</td><td></td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Name</b></td><td>string</td><td>read-write</td><td>The name of the resource or array element.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Name</b></td><td>string</td><td>read-write</td><td>A friendly name for this line of service.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Oem</b> {}</td><td>object</td><td>read-write</td><td>This is the manufacturer/provider specific extension moniker used to divide the Oem object into sections.</td></tr>
 <tr><td>}</td><td></td><td></td><td></td></tr>
 <tr><td><b>Description</b></td><td>string, null</td><td>read-write</td><td>Provides a description of this resource and is used for commonality  in the schema definitions.</td></tr>
@@ -4960,7 +4962,7 @@ pre.code{
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Description</b></td><td>string, null</td><td>read-write</td><td>Provides a description of this resource and is used for commonality  in the schema definitions.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>EventTypesForSubscription</b> [ {} ]</td><td>array</td><td>read-only</td><td>This is the types of Events that can be subscribed to.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Id</b></td><td>string</td><td>read-write</td><td>Uniquely identifies the resource within the collection of like resources.</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Name</b></td><td>string</td><td>read-write</td><td>The name of the resource or array element.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Name</b></td><td>string</td><td>read-write</td><td>A friendly name for this line of service.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Oem</b> {}</td><td>object</td><td>read-write</td><td>This is the manufacturer/provider specific extension moniker used to divide the Oem object into sections.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>ServiceEnabled</b></td><td>boolean, null</td><td>read-write</td><td>This indicates whether this service is enabled.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Status</b> {}</td><td>object</td><td>read-only</td><td>Indicates the status of the file share.</td></tr>
@@ -4970,7 +4972,7 @@ pre.code{
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Description</b></td><td>string, null</td><td>read-write</td><td>Provides a description of this resource and is used for commonality  in the schema definitions.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Members</b> [ {} ]</td><td>array</td><td>read-only</td><td>Contains the members of this collection.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Members@odata.navigationLink</b></td><td>string</td><td>read-write</td><td></td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Name</b></td><td>string</td><td>read-write</td><td>The name of the resource or array element.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Name</b></td><td>string</td><td>read-write</td><td>A friendly name for this line of service.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Oem</b> {}</td><td>object</td><td>read-write</td><td>This is the manufacturer/provider specific extension moniker used to divide the Oem object into sections.</td></tr>
 <tr><td>}</td><td></td><td></td><td></td></tr>
 <tr><td><b>Id</b></td><td>string</td><td>read-write</td><td>Uniquely identifies the resource within the collection of like resources.</td></tr>
@@ -4978,7 +4980,7 @@ pre.code{
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Description</b></td><td>string, null</td><td>read-write</td><td>Provides a description of this resource and is used for commonality  in the schema definitions.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Members</b> [ {} ]</td><td>array</td><td>read-only</td><td>Contains the members of this collection.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Members@odata.navigationLink</b></td><td>string</td><td>read-write</td><td></td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Name</b></td><td>string</td><td>read-write</td><td>The name of the resource or array element.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Name</b></td><td>string</td><td>read-write</td><td>A friendly name for this line of service.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Oem</b> {}</td><td>object</td><td>read-write</td><td>This is the manufacturer/provider specific extension moniker used to divide the Oem object into sections.</td></tr>
 <tr><td>}</td><td></td><td></td><td></td></tr>
 <tr><td><b>Links</b> {</td><td>object</td><td>read-write</td><td>Contains references to other resources that are related to this resource.</td></tr>
@@ -4989,24 +4991,24 @@ pre.code{
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Description</b></td><td>string, null</td><td>read-write</td><td>Provides a description of this resource and is used for commonality  in the schema definitions.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Members</b> [ {} ]</td><td>array</td><td>read-only</td><td>Contains the members of this collection.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Members@odata.navigationLink</b></td><td>string</td><td>read-write</td><td></td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Name</b></td><td>string</td><td>read-write</td><td>The name of the resource or array element.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Name</b></td><td>string</td><td>read-write</td><td>A friendly name for this line of service.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Oem</b> {}</td><td>object</td><td>read-write</td><td>This is the manufacturer/provider specific extension moniker used to divide the Oem object into sections.</td></tr>
 <tr><td>}</td><td></td><td></td><td></td></tr>
-<tr><td><b>Name</b></td><td>string</td><td>read-write</td><td>The name of the resource or array element.</td></tr>
+<tr><td><b>Name</b></td><td>string</td><td>read-write</td><td>A friendly name for this line of service.</td></tr>
 <tr><td><b>Oem</b> {}</td><td>object</td><td>read-write</td><td>This is the manufacturer/provider specific extension moniker used to divide the Oem object into sections.</td></tr>
 <tr><td><b>RedfishVersion</b></td><td>string</td><td>read-only</td><td>The version of the Redfish service.</td></tr>
 <tr><td><b>Registries</b> {</td><td>object</td><td>read-write</td><td>This is a link to a collection of Registries.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Description</b></td><td>string, null</td><td>read-write</td><td>Provides a description of this resource and is used for commonality  in the schema definitions.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Members</b> [ {} ]</td><td>array</td><td>read-only</td><td>Contains the members of this collection.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Members@odata.navigationLink</b></td><td>string</td><td>read-write</td><td></td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Name</b></td><td>string</td><td>read-write</td><td>The name of the resource or array element.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Name</b></td><td>string</td><td>read-write</td><td>A friendly name for this line of service.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Oem</b> {}</td><td>object</td><td>read-write</td><td>This is the manufacturer/provider specific extension moniker used to divide the Oem object into sections.</td></tr>
 <tr><td>}</td><td></td><td></td><td></td></tr>
 <tr><td><b>SessionService</b> {</td><td>object</td><td>read-write</td><td>This is a link to the Sessions Service.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Actions</b> {}</td><td>object</td><td>read-write</td><td>The Actions object contains the available custom actions on this resource.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Description</b></td><td>string, null</td><td>read-write</td><td>Provides a description of this resource and is used for commonality  in the schema definitions.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Id</b></td><td>string</td><td>read-write</td><td>Uniquely identifies the resource within the collection of like resources.</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Name</b></td><td>string</td><td>read-write</td><td>The name of the resource or array element.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Name</b></td><td>string</td><td>read-write</td><td>A friendly name for this line of service.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Oem</b> {}</td><td>object</td><td>read-write</td><td>This is the manufacturer/provider specific extension moniker used to divide the Oem object into sections.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>ServiceEnabled</b></td><td>boolean, null</td><td>read-write</td><td>This indicates whether this service is enabled.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>SessionTimeout</b></td><td>number<br>(s)</td><td>read-write</td><td>This is the number of seconds of inactivity that a session may have before the session service closes the session due to inactivity.</td></tr>
@@ -5017,21 +5019,21 @@ pre.code{
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Description</b></td><td>string, null</td><td>read-write</td><td>Provides a description of this resource and is used for commonality  in the schema definitions.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Members</b> [ {} ]</td><td>array</td><td>read-only</td><td>The value of each member references a StorageService resource.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Members@odata.navigationLink</b></td><td>string</td><td>read-write</td><td></td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Name</b></td><td>string</td><td>read-write</td><td>The name of the resource or array element.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Name</b></td><td>string</td><td>read-write</td><td>A friendly name for this line of service.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Oem</b> {}</td><td>object</td><td>read-write</td><td>This is the manufacturer/provider specific extension moniker used to divide the Oem object into sections.</td></tr>
 <tr><td>}</td><td></td><td></td><td></td></tr>
 <tr><td><b>StorageSystems</b> <i>(v1.1+)</i> {</td><td>object</td><td>read-write</td><td>This is a link to a collection of storage systems.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Description</b></td><td>string, null</td><td>read-write</td><td>Provides a description of this resource and is used for commonality  in the schema definitions.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Members</b> [ {} ]</td><td>array</td><td>read-only</td><td>The value of each member references a Storage System resource.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Members@odata.navigationLink</b></td><td>string</td><td>read-write</td><td></td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Name</b></td><td>string</td><td>read-write</td><td>The name of the resource or array element.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Name</b></td><td>string</td><td>read-write</td><td>A friendly name for this line of service.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Oem</b> {}</td><td>object</td><td>read-write</td><td>This is the manufacturer/provider specific extension moniker used to divide the Oem object into sections.</td></tr>
 <tr><td>}</td><td></td><td></td><td></td></tr>
 <tr><td><b>Systems</b> {</td><td>object</td><td>read-write</td><td>This is a link to a collection of Systems.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Description</b></td><td>string, null</td><td>read-write</td><td>Provides a description of this resource and is used for commonality  in the schema definitions.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Members</b> [ {} ]</td><td>array</td><td>read-only</td><td>Contains the members of this collection.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Members@odata.navigationLink</b></td><td>string</td><td>read-write</td><td></td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Name</b></td><td>string</td><td>read-write</td><td>The name of the resource or array element.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Name</b></td><td>string</td><td>read-write</td><td>A friendly name for this line of service.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Oem</b> {}</td><td>object</td><td>read-write</td><td>This is the manufacturer/provider specific extension moniker used to divide the Oem object into sections.</td></tr>
 <tr><td>}</td><td></td><td></td><td></td></tr>
 <tr><td><b>Tasks</b> {</td><td>object</td><td>read-write</td><td>This is a link to the Task Service.</td></tr>
@@ -5040,7 +5042,7 @@ pre.code{
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Description</b></td><td>string, null</td><td>read-write</td><td>Provides a description of this resource and is used for commonality  in the schema definitions.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Id</b></td><td>string</td><td>read-write</td><td>Uniquely identifies the resource within the collection of like resources.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>LifeCycleEventOnTaskStateChange</b></td><td>boolean</td><td>read-only</td><td>Send an Event upon Task State Change.</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Name</b></td><td>string</td><td>read-write</td><td>The name of the resource or array element.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Name</b></td><td>string</td><td>read-write</td><td>A friendly name for this line of service.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Oem</b> {}</td><td>object</td><td>read-write</td><td>This is the manufacturer/provider specific extension moniker used to divide the Oem object into sections.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>ServiceEnabled</b></td><td>boolean, null</td><td>read-write</td><td>This indicates whether this service is enabled.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Status</b> {}</td><td>object</td><td>read-only</td><td>Indicates the status of the file share.</td></tr>
@@ -5053,7 +5055,7 @@ pre.code{
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>FirmwareInventory</b> {}</td><td>object, null</td><td>read-write</td><td>An inventory of firmware.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>HttpPushUri</b></td><td>string</td><td>read-only</td><td>The URI used to perform an HTTP or HTTPS push update to the Update Service.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Id</b></td><td>string</td><td>read-write</td><td>Uniquely identifies the resource within the collection of like resources.</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Name</b></td><td>string</td><td>read-write</td><td>The name of the resource or array element.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Name</b></td><td>string</td><td>read-write</td><td>A friendly name for this line of service.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Oem</b> {}</td><td>object</td><td>read-write</td><td>This is the manufacturer/provider specific extension moniker used to divide the Oem object into sections.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>ServiceEnabled</b></td><td>boolean, null</td><td>read-write</td><td>This indicates whether this service is enabled.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>SoftwareInventory</b> {}</td><td>object, null</td><td>read-write</td><td>An inventory of software.</td></tr>
@@ -5079,7 +5081,7 @@ pre.code{
 <tbody>
 <tr><td><b>Description</b></td><td>string, null</td><td>read-write</td><td>Provides a description of this resource and is used for commonality  in the schema definitions.</td></tr>
 <tr><td><b>Id</b></td><td>string</td><td>read-write</td><td>Uniquely identifies the resource within the collection of like resources.</td></tr>
-<tr><td><b>Name</b></td><td>string</td><td>read-write</td><td>The name of the resource or array element.</td></tr>
+<tr><td><b>Name</b></td><td>string</td><td>read-write</td><td>A friendly name for this line of service.</td></tr>
 <tr><td><b>Oem</b> {}</td><td>object</td><td>read-write</td><td>This is the manufacturer/provider specific extension moniker used to divide the Oem object into sections.</td></tr>
 <tr><td><b>Password</b></td><td>string, null</td><td>read-only</td><td>This property is used in a POST to specify a password when creating a new session.  This property is null on a GET.</td></tr>
 <tr><td><b>UserName</b></td><td>string, null</td><td>read-only</td><td>The UserName for the account for this session.</td></tr>
@@ -5093,7 +5095,7 @@ pre.code{
 <tr><td>}</td><td></td><td></td><td></td></tr>
 <tr><td><b>Description</b></td><td>string, null</td><td>read-write</td><td>Provides a description of this resource and is used for commonality  in the schema definitions.</td></tr>
 <tr><td><b>Id</b></td><td>string</td><td>read-write</td><td>Uniquely identifies the resource within the collection of like resources.</td></tr>
-<tr><td><b>Name</b></td><td>string</td><td>read-write</td><td>The name of the resource or array element.</td></tr>
+<tr><td><b>Name</b></td><td>string</td><td>read-write</td><td>A friendly name for this line of service.</td></tr>
 <tr><td><b>Oem</b> {}</td><td>object</td><td>read-write</td><td>This is the manufacturer/provider specific extension moniker used to divide the Oem object into sections.</td></tr>
 <tr><td><b>ServiceEnabled</b></td><td>boolean, null</td><td>read-write</td><td>This indicates whether this service is enabled.</td></tr>
 <tr><td><b>SessionTimeout</b></td><td>number<br>(s)</td><td>read-write</td><td>This is the number of seconds of inactivity that a session may have before the session service closes the session due to inactivity.</td></tr>
@@ -5101,7 +5103,7 @@ pre.code{
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Description</b></td><td>string, null</td><td>read-write</td><td>Provides a description of this resource and is used for commonality  in the schema definitions.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Members</b> [ {} ]</td><td>array</td><td>read-only</td><td>Contains the members of this collection.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Members@odata.navigationLink</b></td><td>string</td><td>read-write</td><td></td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Name</b></td><td>string</td><td>read-write</td><td>The name of the resource or array element.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Name</b></td><td>string</td><td>read-write</td><td>A friendly name for this line of service.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Oem</b> {}</td><td>object</td><td>read-write</td><td>This is the manufacturer/provider specific extension moniker used to divide the Oem object into sections.</td></tr>
 <tr><td>}</td><td></td><td></td><td></td></tr>
 <tr><td><b>Status</b> {</td><td>object</td><td>read-only</td><td>Indicates the status of the file share.</td></tr>
@@ -5169,7 +5171,7 @@ pre.code{
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Status</b> {}</td><td>object</td><td>read-only</td><td>Indicates the status of the file share.</td></tr>
 <tr><td>} ]</td><td></td><td></td><td></td></tr>
 <tr><td><b>Id</b></td><td>string</td><td>read-write</td><td>Uniquely identifies the resource within the collection of like resources.</td></tr>
-<tr><td><b>Name</b></td><td>string</td><td>read-write</td><td>The name of the resource or array element.</td></tr>
+<tr><td><b>Name</b></td><td>string</td><td>read-write</td><td>A friendly name for this line of service.</td></tr>
 <tr><td><b>Oem</b> {}</td><td>object</td><td>read-write</td><td>This is the manufacturer/provider specific extension moniker used to divide the Oem object into sections.</td></tr>
 <tr><td><b>Status</b> {</td><td>object</td><td>read-only</td><td>Indicates the status of the file share.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Health</b></td><td>string, null</td><td>read-write</td><td>This represents the health state of this resource in the absence of its dependent resources.<br><i>See Property Details, below, for more information about this property.</i></td></tr>
@@ -5233,7 +5235,7 @@ pre.code{
 <tr><td><b>Description</b></td><td>string, null</td><td>read-write</td><td>Provides a description of this resource and is used for commonality  in the schema definitions.</td></tr>
 <tr><td><b>Id</b></td><td>string</td><td>read-write</td><td>Uniquely identifies the resource within the collection of like resources.</td></tr>
 <tr><td><b>LowestSupportedVersion</b> <i>(v1.1+)</i></td><td>string, null</td><td>read-only</td><td>A string representing the lowest supported version of this software.</td></tr>
-<tr><td><b>Name</b></td><td>string</td><td>read-write</td><td>The name of the resource or array element.</td></tr>
+<tr><td><b>Name</b></td><td>string</td><td>read-write</td><td>A friendly name for this line of service.</td></tr>
 <tr><td><b>Oem</b> {}</td><td>object</td><td>read-write</td><td>This is the manufacturer/provider specific extension moniker used to divide the Oem object into sections.</td></tr>
 <tr><td><b>RelatedItem</b> <i>(v1.1+)</i> [ {} ]</td><td>array</td><td>read-only</td><td>The ID(s) of the resources associated with this software inventory item.</td></tr>
 <tr><td><b>RelatedItem@odata.navigationLink</b> <i>(v1.1+)</i></td><td>string</td><td>read-write</td><td></td></tr>
@@ -5320,7 +5322,7 @@ pre.code{
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Manufacturer</b></td><td>string, null</td><td>read-only</td><td>This is the manufacturer of this drive.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>MediaType</b></td><td>string, null</td><td>read-write</td><td>The type of media contained in this drive.<br><i>See Property Details, below, for more information about this property.</i></td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Model</b></td><td>string, null</td><td>read-only</td><td>This is the model number for the drive.</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Name</b></td><td>string</td><td>read-write</td><td>The name of the resource or array element.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Name</b></td><td>string</td><td>read-write</td><td>A friendly name for this line of service.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>NegotiatedSpeedGbs</b></td><td>number, null<br>(Gbit/s)</td><td>read-only</td><td>The speed which this drive is currently communicating to the storage controller in Gigabits per second.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Oem</b> {}</td><td>object</td><td>read-write</td><td>This is the manufacturer/provider specific extension moniker used to divide the Oem object into sections.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Operations</b> [ {} ]</td><td>array</td><td>read-write</td><td>The operations currently running on the Drive.</td></tr>
@@ -5341,11 +5343,11 @@ pre.code{
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Enclosures@odata.navigationLink</b></td><td>string</td><td>read-write</td><td></td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Oem</b> {}</td><td>object</td><td>read-write</td><td>Oem extension object.</td></tr>
 <tr><td>}</td><td></td><td></td><td></td></tr>
-<tr><td><b>Name</b></td><td>string</td><td>read-write</td><td>The name of the resource or array element.</td></tr>
+<tr><td><b>Name</b></td><td>string</td><td>read-write</td><td>A friendly name for this line of service.</td></tr>
 <tr><td><b>Oem</b> {}</td><td>object</td><td>read-write</td><td>This is the manufacturer/provider specific extension moniker used to divide the Oem object into sections.</td></tr>
 <tr><td><b>Redundancy</b> [ {</td><td>array</td><td>read-write</td><td>Redundancy information for the storage subsystem.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>MaxNumSupported</b></td><td>number, null</td><td>read-only</td><td>This is the maximum number of members allowable for this particular redundancy group.</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>MemberId</b></td><td>string</td><td>read-only</td><td>This is the identifier for the member within the collection.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>MemberId</b></td><td>string</td><td>read-write</td><td>This is the identifier for the member within the collection.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>MinNumNeeded</b></td><td>number, null</td><td>read-only</td><td>This is the minumum number of members needed for this group to be redundant.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Mode</b></td><td>string, null</td><td>read-write</td><td>This is the redundancy mode of the group.<br><i>See Property Details, below, for more information about this property.</i></td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Name</b></td><td>string</td><td>read-only</td><td>The name of the resource or array element.</td></tr>
@@ -5353,6 +5355,7 @@ pre.code{
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>RedundancySet</b> [ {} ]</td><td>array</td><td>read-only</td><td>Contains any ids that represent components of this redundancy set.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>RedundancySet@odata.navigationLink</b></td><td>string</td><td>read-write</td><td></td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Status</b> {}</td><td>object</td><td>read-only</td><td>Indicates the status of the file share.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>MemberId</b></td><td>string</td><td>read-only</td><td>This is the identifier for the member within the collection.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>RedundancyEnabled</b></td><td>boolean, null</td><td>read-write</td><td>This indicates whether redundancy is enabled.</td></tr>
 <tr><td>} ]</td><td></td><td></td><td></td></tr>
 <tr><td><b>Redundancy@odata.navigationLink</b></td><td>string</td><td>read-write</td><td></td></tr>
@@ -5384,7 +5387,7 @@ pre.code{
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Description</b></td><td>string, null</td><td>read-write</td><td>Provides a description of this resource and is used for commonality  in the schema definitions.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Members</b> [ {} ]</td><td>array</td><td>read-write</td><td>The value of each member references a Volume resource.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Members@odata.navigationLink</b></td><td>string</td><td>read-write</td><td></td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Name</b></td><td>string</td><td>read-write</td><td>The name of the resource or array element.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Name</b></td><td>string</td><td>read-write</td><td>A friendly name for this line of service.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Oem</b> {}</td><td>object</td><td>read-write</td><td>This is the manufacturer/provider specific extension moniker used to divide the Oem object into sections.</td></tr>
 <tr><td>}</td><td></td><td></td><td></td></tr>
 </tbody></table>
@@ -5531,7 +5534,7 @@ pre.code{
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Description</b></td><td>string, null</td><td>read-write</td><td>Provides a description of this resource and is used for commonality  in the schema definitions.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Members</b> [ {} ]</td><td>array</td><td>read-only</td><td>The value of each member references an endpoint group resource.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Members@odata.navigationLink</b></td><td>string</td><td>read-write</td><td></td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Name</b></td><td>string</td><td>read-write</td><td>The name of the resource or array element.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Name</b></td><td>string</td><td>read-write</td><td>A friendly name for this line of service.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Oem</b> {}</td><td>object</td><td>read-write</td><td>This is the manufacturer/provider specific extension moniker used to divide the Oem object into sections.</td></tr>
 <tr><td>}</td><td></td><td></td><td></td></tr>
 <tr><td><b>Description</b></td><td>string, null</td><td>read-write</td><td>Provides a description of this resource and is used for commonality  in the schema definitions.</td></tr>
@@ -5549,7 +5552,7 @@ pre.code{
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>ParentStorageGroups@odata.navigationLink</b></td><td>string</td><td>read-write</td><td></td></tr>
 <tr><td>}</td><td></td><td></td><td></td></tr>
 <tr><td><b>MembersAreConsistent</b></td><td>boolean, null</td><td>read-only</td><td>Members are kept in a consistent state.</td></tr>
-<tr><td><b>Name</b></td><td>string</td><td>read-write</td><td>The name of the resource or array element.</td></tr>
+<tr><td><b>Name</b></td><td>string</td><td>read-write</td><td>A friendly name for this line of service.</td></tr>
 <tr><td><b>Oem</b> {}</td><td>object</td><td>read-write</td><td>This is the manufacturer/provider specific extension moniker used to divide the Oem object into sections.</td></tr>
 <tr><td><b>ReplicaInfos</b> [ {</td><td>array</td><td>read-only</td><td>Describes this storage group in its role as a source and/or target for replication.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>ConsistencyEnabled</b></td><td>boolean, null</td><td>read-only</td><td>True if consistency is enabled.</td></tr>
@@ -5582,7 +5585,7 @@ pre.code{
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Description</b></td><td>string, null</td><td>read-write</td><td>Provides a description of this resource and is used for commonality  in the schema definitions.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Members</b> [ {} ]</td><td>array</td><td>read-only</td><td>The value of each member references an endpoint group resource.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Members@odata.navigationLink</b></td><td>string</td><td>read-write</td><td></td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Name</b></td><td>string</td><td>read-write</td><td>The name of the resource or array element.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Name</b></td><td>string</td><td>read-write</td><td>A friendly name for this line of service.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Oem</b> {}</td><td>object</td><td>read-write</td><td>This is the manufacturer/provider specific extension moniker used to divide the Oem object into sections.</td></tr>
 <tr><td>}</td><td></td><td></td><td></td></tr>
 <tr><td><b>Status</b> {</td><td>object, null</td><td>read-only</td><td>Indicates the status of the file share.</td></tr>
@@ -5595,7 +5598,7 @@ pre.code{
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Description</b></td><td>string, null</td><td>read-write</td><td>Provides a description of this resource and is used for commonality  in the schema definitions.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Members</b> [ {} ]</td><td>array</td><td>read-write</td><td>The value of each member references a Volume resource.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Members@odata.navigationLink</b></td><td>string</td><td>read-write</td><td></td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Name</b></td><td>string</td><td>read-write</td><td>The name of the resource or array element.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Name</b></td><td>string</td><td>read-write</td><td>A friendly name for this line of service.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Oem</b> {}</td><td>object</td><td>read-write</td><td>This is the manufacturer/provider specific extension moniker used to divide the Oem object into sections.</td></tr>
 <tr><td>}</td><td></td><td></td><td></td></tr>
 <tr><td><b>VolumesAreExposed</b></td><td>boolean, null</td><td>read-only</td><td>Storage volumes are exposed to the Client Endpoints.</td></tr>
@@ -5639,11 +5642,11 @@ pre.code{
 <tr><th>string</th><th>Description</th></tr>
 </thead>
 <tbody>
-<tr><td>EUI</td><td>IEEE-defined 64-bit Extended Unique Identifier.</td></tr>
-<tr><td>FC_WWN</td><td>Fibre Channel World Wide Name.</td></tr>
-<tr><td>NAA</td><td>Name Address Authority Format.</td></tr>
-<tr><td>UUID</td><td>Universally Unique Identifier.</td></tr>
-<tr><td>iQN</td><td>iSCSI Qualified Name.</td></tr>
+<tr><td>EUI</td><td>IEEE-defined 64-bit Extended Unique Identifier</td></tr>
+<tr><td>FC_WWN</td><td>Fibre Channel World Wide Name</td></tr>
+<tr><td>NAA</td><td>Name Address Authority Format</td></tr>
+<tr><td>UUID</td><td>Universally Unique Identifier</td></tr>
+<tr><td>iQN</td><td>iSCSI Qualified Name</td></tr>
 </tbody></table>
 
 <h4>Health:</h4>
@@ -5852,14 +5855,14 @@ pre.code{
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Description</b></td><td>string, null</td><td>read-write</td><td>Provides a description of this resource and is used for commonality  in the schema definitions.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Members</b> [ {} ]</td><td>array</td><td>read-only</td><td>The value of each member references a StoragePool resource.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Members@odata.navigationLink</b></td><td>string</td><td>read-write</td><td></td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Name</b></td><td>string</td><td>read-write</td><td>The name of the resource or array element.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Name</b></td><td>string</td><td>read-write</td><td>A friendly name for this line of service.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Oem</b> {}</td><td>object</td><td>read-write</td><td>This is the manufacturer/provider specific extension moniker used to divide the Oem object into sections.</td></tr>
 <tr><td>}</td><td></td><td></td><td></td></tr>
 <tr><td><b>AllocatedVolumes</b> {</td><td>object, null</td><td>read-write</td><td>A reference to the collection of volumes allocated from this storage pool.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Description</b></td><td>string, null</td><td>read-write</td><td>Provides a description of this resource and is used for commonality  in the schema definitions.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Members</b> [ {} ]</td><td>array</td><td>read-write</td><td>The value of each member references a Volume resource.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Members@odata.navigationLink</b></td><td>string</td><td>read-write</td><td></td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Name</b></td><td>string</td><td>read-write</td><td>The name of the resource or array element.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Name</b></td><td>string</td><td>read-write</td><td>A friendly name for this line of service.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Oem</b> {}</td><td>object</td><td>read-write</td><td>This is the manufacturer/provider specific extension moniker used to divide the Oem object into sections.</td></tr>
 <tr><td>}</td><td></td><td></td><td></td></tr>
 <tr><td><b>BlockSizeBytes</b></td><td>number, null<br>(By)</td><td>read-only</td><td>Maximum Block size in bytes.</td></tr>
@@ -5880,7 +5883,7 @@ pre.code{
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Description</b></td><td>string, null</td><td>read-write</td><td>Provides a description of this resource and is used for commonality  in the schema definitions.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Members</b> [ {} ]</td><td>array</td><td>read-only</td><td>The value of each member references a ClassOfService resource.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Members@odata.navigationLink</b></td><td>string</td><td>read-write</td><td></td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Name</b></td><td>string</td><td>read-write</td><td>The name of the resource or array element.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Name</b></td><td>string</td><td>read-write</td><td>A friendly name for this line of service.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Oem</b> {}</td><td>object</td><td>read-write</td><td>This is the manufacturer/provider specific extension moniker used to divide the Oem object into sections.</td></tr>
 <tr><td>}</td><td></td><td></td><td></td></tr>
 <tr><td><b>Description</b></td><td>string, null</td><td>read-write</td><td>Provides a description of this resource and is used for commonality  in the schema definitions.</td></tr>
@@ -5894,7 +5897,7 @@ pre.code{
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Oem</b> {}</td><td>object</td><td>read-write</td><td>Oem extension object.</td></tr>
 <tr><td>}</td><td></td><td></td><td></td></tr>
 <tr><td><b>LowSpaceWarningThresholdPercents</b> [ {} ]</td><td>array</td><td>read-write</td><td>Low space warning threshold specified in percents.</td></tr>
-<tr><td><b>Name</b></td><td>string</td><td>read-write</td><td>The name of the resource or array element.</td></tr>
+<tr><td><b>Name</b></td><td>string</td><td>read-write</td><td>A friendly name for this line of service.</td></tr>
 <tr><td><b>Oem</b> {}</td><td>object</td><td>read-write</td><td>This is the manufacturer/provider specific extension moniker used to divide the Oem object into sections.</td></tr>
 <tr><td><b>Status</b> {</td><td>object, null</td><td>read-only</td><td>Indicates the status of the file share.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Health</b></td><td>string, null</td><td>read-write</td><td>This represents the health state of this resource in the absence of its dependent resources.<br><i>See Property Details, below, for more information about this property.</i></td></tr>
@@ -5911,11 +5914,11 @@ pre.code{
 <tr><th>string</th><th>Description</th></tr>
 </thead>
 <tbody>
-<tr><td>EUI</td><td>IEEE-defined 64-bit Extended Unique Identifier.</td></tr>
-<tr><td>FC_WWN</td><td>Fibre Channel World Wide Name.</td></tr>
-<tr><td>NAA</td><td>Name Address Authority Format.</td></tr>
-<tr><td>UUID</td><td>Universally Unique Identifier.</td></tr>
-<tr><td>iQN</td><td>iSCSI Qualified Name.</td></tr>
+<tr><td>EUI</td><td>IEEE-defined 64-bit Extended Unique Identifier</td></tr>
+<tr><td>FC_WWN</td><td>Fibre Channel World Wide Name</td></tr>
+<tr><td>NAA</td><td>Name Address Authority Format</td></tr>
+<tr><td>UUID</td><td>Universally Unique Identifier</td></tr>
+<tr><td>iQN</td><td>iSCSI Qualified Name</td></tr>
 </tbody></table>
 
 <h4>Health:</h4>
@@ -5972,14 +5975,14 @@ pre.code{
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Description</b></td><td>string, null</td><td>read-write</td><td>Provides a description of this resource and is used for commonality  in the schema definitions.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Members</b> [ {} ]</td><td>array</td><td>read-only</td><td>The value of each member references a ClassOfService resource.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Members@odata.navigationLink</b></td><td>string</td><td>read-write</td><td></td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Name</b></td><td>string</td><td>read-write</td><td>The name of the resource or array element.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Name</b></td><td>string</td><td>read-write</td><td>A friendly name for this line of service.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Oem</b> {}</td><td>object</td><td>read-write</td><td>This is the manufacturer/provider specific extension moniker used to divide the Oem object into sections.</td></tr>
 <tr><td>}</td><td></td><td></td><td></td></tr>
 <tr><td><b>ClientEndpointGroups</b> {</td><td>object, null</td><td>read-write</td><td>Client endpoint groups.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Description</b></td><td>string, null</td><td>read-write</td><td>Provides a description of this resource and is used for commonality  in the schema definitions.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Members</b> [ {} ]</td><td>array</td><td>read-only</td><td>The value of each member references an endpoint group resource.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Members@odata.navigationLink</b></td><td>string</td><td>read-write</td><td></td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Name</b></td><td>string</td><td>read-write</td><td>The name of the resource or array element.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Name</b></td><td>string</td><td>read-write</td><td>A friendly name for this line of service.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Oem</b> {}</td><td>object</td><td>read-write</td><td>This is the manufacturer/provider specific extension moniker used to divide the Oem object into sections.</td></tr>
 <tr><td>}</td><td></td><td></td><td></td></tr>
 <tr><td><b>Description</b></td><td>string, null</td><td>read-write</td><td>Provides a description of this resource and is used for commonality  in the schema definitions.</td></tr>
@@ -5987,21 +5990,21 @@ pre.code{
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Description</b></td><td>string, null</td><td>read-write</td><td>Provides a description of this resource and is used for commonality  in the schema definitions.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Members</b> [ {} ]</td><td>array</td><td>read-only</td><td>Contains the members of this drive collection.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Members@odata.navigationLink</b></td><td>string</td><td>read-write</td><td></td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Name</b></td><td>string</td><td>read-write</td><td>The name of the resource or array element.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Name</b></td><td>string</td><td>read-write</td><td>A friendly name for this line of service.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Oem</b> {}</td><td>object</td><td>read-write</td><td>This is the manufacturer/provider specific extension moniker used to divide the Oem object into sections.</td></tr>
 <tr><td>}</td><td></td><td></td><td></td></tr>
 <tr><td><b>Endpoints</b> {</td><td>object, null</td><td>read-write</td><td>Endpoints.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Description</b></td><td>string, null</td><td>read-write</td><td>Provides a description of this resource and is used for commonality  in the schema definitions.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Members</b> [ {} ]</td><td>array</td><td>read-only</td><td>The value of each member references an Endpoint resource.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Members@odata.navigationLink</b></td><td>string</td><td>read-write</td><td></td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Name</b></td><td>string</td><td>read-write</td><td>The name of the resource or array element.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Name</b></td><td>string</td><td>read-write</td><td>A friendly name for this line of service.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Oem</b> {}</td><td>object</td><td>read-write</td><td>This is the manufacturer/provider specific extension moniker used to divide the Oem object into sections.</td></tr>
 <tr><td>}</td><td></td><td></td><td></td></tr>
 <tr><td><b>FileSystems</b> {</td><td>object</td><td>read-write</td><td>FileSystems.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Description</b></td><td>string, null</td><td>read-write</td><td>Provides a description of this resource and is used for commonality  in the schema definitions.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Members</b> [ {} ]</td><td>array</td><td>read-only</td><td>References to the members of this FileSystem collection.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Members@odata.navigationLink</b></td><td>string</td><td>read-write</td><td></td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Name</b></td><td>string</td><td>read-write</td><td>The name of the resource or array element.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Name</b></td><td>string</td><td>read-write</td><td>A friendly name for this line of service.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Oem</b> {}</td><td>object</td><td>read-write</td><td>This is the manufacturer/provider specific extension moniker used to divide the Oem object into sections.</td></tr>
 <tr><td>}</td><td></td><td></td><td></td></tr>
 <tr><td><b>Id</b></td><td>string</td><td>read-write</td><td>Uniquely identifies the resource within the collection of like resources.</td></tr>
@@ -6019,11 +6022,11 @@ pre.code{
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>IOPerformanceLoSCapabilities</b> {}</td><td>object, null</td><td>read-write</td><td>The IO performance capabilities of this service.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Oem</b> {}</td><td>object</td><td>read-write</td><td>Oem extension object.</td></tr>
 <tr><td>}</td><td></td><td></td><td></td></tr>
-<tr><td><b>Name</b></td><td>string</td><td>read-write</td><td>The name of the resource or array element.</td></tr>
+<tr><td><b>Name</b></td><td>string</td><td>read-write</td><td>A friendly name for this line of service.</td></tr>
 <tr><td><b>Oem</b> {}</td><td>object</td><td>read-write</td><td>This is the manufacturer/provider specific extension moniker used to divide the Oem object into sections.</td></tr>
 <tr><td><b>Redundancy</b> [ {</td><td>array</td><td>read-only</td><td>Redundancy information for the storage subsystem</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>MaxNumSupported</b></td><td>number, null</td><td>read-only</td><td>This is the maximum number of members allowable for this particular redundancy group.</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>MemberId</b></td><td>string</td><td>read-only</td><td>This is the identifier for the member within the collection.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>MemberId</b></td><td>string</td><td>read-write</td><td>This is the identifier for the member within the collection.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>MinNumNeeded</b></td><td>number, null</td><td>read-only</td><td>This is the minumum number of members needed for this group to be redundant.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Mode</b></td><td>string, null</td><td>read-write</td><td>This is the redundancy mode of the group.<br><i>See Property Details, below, for more information about this property.</i></td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Name</b></td><td>string</td><td>read-only</td><td>The name of the resource or array element.</td></tr>
@@ -6031,6 +6034,7 @@ pre.code{
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>RedundancySet</b> [ {} ]</td><td>array</td><td>read-only</td><td>Contains any ids that represent components of this redundancy set.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>RedundancySet@odata.navigationLink</b></td><td>string</td><td>read-write</td><td></td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Status</b> {}</td><td>object</td><td>read-only</td><td>Indicates the status of the file share.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>MemberId</b></td><td>string</td><td>read-only</td><td>This is the identifier for the member within the collection.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>RedundancyEnabled</b></td><td>boolean, null</td><td>read-write</td><td>This indicates whether redundancy is enabled.</td></tr>
 <tr><td>} ]</td><td></td><td></td><td></td></tr>
 <tr><td><b>Redundancy@odata.navigationLink</b></td><td>string</td><td>read-write</td><td></td></tr>
@@ -6038,7 +6042,7 @@ pre.code{
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Description</b></td><td>string, null</td><td>read-write</td><td>Provides a description of this resource and is used for commonality  in the schema definitions.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Members</b> [ {} ]</td><td>array</td><td>read-only</td><td>The value of each member references an endpoint group resource.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Members@odata.navigationLink</b></td><td>string</td><td>read-write</td><td></td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Name</b></td><td>string</td><td>read-write</td><td>The name of the resource or array element.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Name</b></td><td>string</td><td>read-write</td><td>A friendly name for this line of service.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Oem</b> {}</td><td>object</td><td>read-write</td><td>This is the manufacturer/provider specific extension moniker used to divide the Oem object into sections.</td></tr>
 <tr><td>}</td><td></td><td></td><td></td></tr>
 <tr><td><b>Status</b> {</td><td>object, null</td><td>read-only</td><td>Indicates the status of the file share.</td></tr>
@@ -6051,21 +6055,21 @@ pre.code{
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Description</b></td><td>string, null</td><td>read-write</td><td>Provides a description of this resource and is used for commonality  in the schema definitions.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Members</b> [ {} ]</td><td>array</td><td>read-only</td><td>The value of each member references a StorageGroup resource.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Members@odata.navigationLink</b></td><td>string</td><td>read-write</td><td></td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Name</b></td><td>string</td><td>read-write</td><td>The name of the resource or array element.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Name</b></td><td>string</td><td>read-write</td><td>A friendly name for this line of service.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Oem</b> {}</td><td>object</td><td>read-write</td><td>This is the manufacturer/provider specific extension moniker used to divide the Oem object into sections.</td></tr>
 <tr><td>}</td><td></td><td></td><td></td></tr>
 <tr><td><b>StoragePools</b> {</td><td>object</td><td>read-write</td><td>StoragePools.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Description</b></td><td>string, null</td><td>read-write</td><td>Provides a description of this resource and is used for commonality  in the schema definitions.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Members</b> [ {} ]</td><td>array</td><td>read-only</td><td>The value of each member references a StoragePool resource.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Members@odata.navigationLink</b></td><td>string</td><td>read-write</td><td></td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Name</b></td><td>string</td><td>read-write</td><td>The name of the resource or array element.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Name</b></td><td>string</td><td>read-write</td><td>A friendly name for this line of service.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Oem</b> {}</td><td>object</td><td>read-write</td><td>This is the manufacturer/provider specific extension moniker used to divide the Oem object into sections.</td></tr>
 <tr><td>}</td><td></td><td></td><td></td></tr>
 <tr><td><b>Volumes</b> {</td><td>object</td><td>read-write</td><td>Volumes.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Description</b></td><td>string, null</td><td>read-write</td><td>Provides a description of this resource and is used for commonality  in the schema definitions.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Members</b> [ {} ]</td><td>array</td><td>read-write</td><td>The value of each member references a Volume resource.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Members@odata.navigationLink</b></td><td>string</td><td>read-write</td><td></td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Name</b></td><td>string</td><td>read-write</td><td>The name of the resource or array element.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Name</b></td><td>string</td><td>read-write</td><td>A friendly name for this line of service.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Oem</b> {}</td><td>object</td><td>read-write</td><td>This is the manufacturer/provider specific extension moniker used to divide the Oem object into sections.</td></tr>
 <tr><td>}</td><td></td><td></td><td></td></tr>
 </tbody></table>
@@ -6077,11 +6081,11 @@ pre.code{
 <tr><th>string</th><th>Description</th></tr>
 </thead>
 <tbody>
-<tr><td>EUI</td><td>IEEE-defined 64-bit Extended Unique Identifier.</td></tr>
-<tr><td>FC_WWN</td><td>Fibre Channel World Wide Name.</td></tr>
-<tr><td>NAA</td><td>Name Address Authority Format.</td></tr>
-<tr><td>UUID</td><td>Universally Unique Identifier.</td></tr>
-<tr><td>iQN</td><td>iSCSI Qualified Name.</td></tr>
+<tr><td>EUI</td><td>IEEE-defined 64-bit Extended Unique Identifier</td></tr>
+<tr><td>FC_WWN</td><td>Fibre Channel World Wide Name</td></tr>
+<tr><td>NAA</td><td>Name Address Authority Format</td></tr>
+<tr><td>UUID</td><td>Universally Unique Identifier</td></tr>
+<tr><td>iQN</td><td>iSCSI Qualified Name</td></tr>
 </tbody></table>
 
 <h4>Health:</h4>
@@ -6162,25 +6166,25 @@ pre.code{
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Description</b></td><td>string, null</td><td>read-write</td><td>Provides a description of this resource and is used for commonality  in the schema definitions.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Members</b> [ {} ]</td><td>array</td><td>read-only</td><td>Contains the members of this collection.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Members@odata.navigationLink</b></td><td>string</td><td>read-write</td><td></td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Name</b></td><td>string</td><td>read-write</td><td>The name of the resource or array element.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Name</b></td><td>string</td><td>read-write</td><td>A friendly name for this line of service.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Oem</b> {}</td><td>object</td><td>read-write</td><td>This is the manufacturer/provider specific extension moniker used to divide the Oem object into sections.</td></tr>
 <tr><td>}</td><td></td><td></td><td></td></tr>
 <tr><td><b>Manufacturer</b></td><td>string, null</td><td>read-only</td><td>This is the manufacturer of this switch.</td></tr>
 <tr><td><b>Model</b></td><td>string, null</td><td>read-only</td><td>The product model number of this switch.</td></tr>
-<tr><td><b>Name</b></td><td>string</td><td>read-write</td><td>The name of the resource or array element.</td></tr>
+<tr><td><b>Name</b></td><td>string</td><td>read-write</td><td>A friendly name for this line of service.</td></tr>
 <tr><td><b>Oem</b> {}</td><td>object</td><td>read-write</td><td>This is the manufacturer/provider specific extension moniker used to divide the Oem object into sections.</td></tr>
 <tr><td><b>PartNumber</b></td><td>string, null</td><td>read-only</td><td>The part number for this switch.</td></tr>
 <tr><td><b>Ports</b> {</td><td>object</td><td>read-write</td><td>A collection of references to the ports for this switch.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Description</b></td><td>string, null</td><td>read-write</td><td>Provides a description of this resource and is used for commonality  in the schema definitions.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Members</b> [ {} ]</td><td>array</td><td>read-only</td><td>Contains the members of this collection.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Members@odata.navigationLink</b></td><td>string</td><td>read-write</td><td></td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Name</b></td><td>string</td><td>read-write</td><td>The name of the resource or array element.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Name</b></td><td>string</td><td>read-write</td><td>A friendly name for this line of service.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Oem</b> {}</td><td>object</td><td>read-write</td><td>This is the manufacturer/provider specific extension moniker used to divide the Oem object into sections.</td></tr>
 <tr><td>}</td><td></td><td></td><td></td></tr>
 <tr><td><b>PowerState</b></td><td>string, null</td><td>read-write</td><td>This is the current power state of the switch.<br><i>See Property Details, below, for more information about this property.</i></td></tr>
 <tr><td><b>Redundancy</b> [ {</td><td>array</td><td>read-write</td><td>Redundancy information for the switches.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>MaxNumSupported</b></td><td>number, null</td><td>read-only</td><td>This is the maximum number of members allowable for this particular redundancy group.</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>MemberId</b></td><td>string</td><td>read-only</td><td>This is the identifier for the member within the collection.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>MemberId</b></td><td>string</td><td>read-write</td><td>This is the identifier for the member within the collection.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>MinNumNeeded</b></td><td>number, null</td><td>read-only</td><td>This is the minumum number of members needed for this group to be redundant.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Mode</b></td><td>string, null</td><td>read-write</td><td>This is the redundancy mode of the group.<br><i>See Property Details, below, for more information about this property.</i></td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Name</b></td><td>string</td><td>read-only</td><td>The name of the resource or array element.</td></tr>
@@ -6188,6 +6192,7 @@ pre.code{
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>RedundancySet</b> [ {} ]</td><td>array</td><td>read-only</td><td>Contains any ids that represent components of this redundancy set.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>RedundancySet@odata.navigationLink</b></td><td>string</td><td>read-write</td><td></td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Status</b> {}</td><td>object</td><td>read-only</td><td>Indicates the status of the file share.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>MemberId</b></td><td>string</td><td>read-only</td><td>This is the identifier for the member within the collection.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>RedundancyEnabled</b></td><td>boolean, null</td><td>read-write</td><td>This indicates whether redundancy is enabled.</td></tr>
 <tr><td>} ]</td><td></td><td></td><td></td></tr>
 <tr><td><b>Redundancy@odata.navigationLink</b></td><td>string</td><td>read-write</td><td></td></tr>
@@ -6289,7 +6294,7 @@ pre.code{
 <tr><td><b>EndTime</b></td><td>string</td><td>read-only</td><td>The date-time stamp that the task was last completed.</td></tr>
 <tr><td><b>Id</b></td><td>string</td><td>read-write</td><td>Uniquely identifies the resource within the collection of like resources.</td></tr>
 <tr><td><b>Messages</b> [ {} ]</td><td>array</td><td>read-write</td><td>This is an array of messages associated with the task.</td></tr>
-<tr><td><b>Name</b></td><td>string</td><td>read-write</td><td>The name of the resource or array element.</td></tr>
+<tr><td><b>Name</b></td><td>string</td><td>read-write</td><td>A friendly name for this line of service.</td></tr>
 <tr><td><b>Oem</b> {}</td><td>object</td><td>read-write</td><td>This is the manufacturer/provider specific extension moniker used to divide the Oem object into sections.</td></tr>
 <tr><td><b>StartTime</b></td><td>string</td><td>read-only</td><td>The date-time stamp that the task was last started.</td></tr>
 <tr><td><b>TaskState</b></td><td>string</td><td>read-write</td><td>The state of the task.<br><i>See Property Details, below, for more information about this property.</i></td></tr>
@@ -6337,7 +6342,7 @@ pre.code{
 <tr><td><b>Description</b></td><td>string, null</td><td>read-write</td><td>Provides a description of this resource and is used for commonality  in the schema definitions.</td></tr>
 <tr><td><b>Id</b></td><td>string</td><td>read-write</td><td>Uniquely identifies the resource within the collection of like resources.</td></tr>
 <tr><td><b>LifeCycleEventOnTaskStateChange</b></td><td>boolean</td><td>read-only</td><td>Send an Event upon Task State Change.</td></tr>
-<tr><td><b>Name</b></td><td>string</td><td>read-write</td><td>The name of the resource or array element.</td></tr>
+<tr><td><b>Name</b></td><td>string</td><td>read-write</td><td>A friendly name for this line of service.</td></tr>
 <tr><td><b>Oem</b> {}</td><td>object</td><td>read-write</td><td>This is the manufacturer/provider specific extension moniker used to divide the Oem object into sections.</td></tr>
 <tr><td><b>ServiceEnabled</b></td><td>boolean, null</td><td>read-write</td><td>This indicates whether this service is enabled.</td></tr>
 <tr><td><b>Status</b> {</td><td>object</td><td>read-only</td><td>Indicates the status of the file share.</td></tr>
@@ -6350,7 +6355,7 @@ pre.code{
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Description</b></td><td>string, null</td><td>read-write</td><td>Provides a description of this resource and is used for commonality  in the schema definitions.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Members</b> [ {} ]</td><td>array</td><td>read-only</td><td>Contains the members of this collection.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Members@odata.navigationLink</b></td><td>string</td><td>read-write</td><td></td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Name</b></td><td>string</td><td>read-write</td><td>The name of the resource or array element.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Name</b></td><td>string</td><td>read-write</td><td>A friendly name for this line of service.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Oem</b> {}</td><td>object</td><td>read-write</td><td>This is the manufacturer/provider specific extension moniker used to divide the Oem object into sections.</td></tr>
 <tr><td>}</td><td></td><td></td><td></td></tr>
 </tbody></table>
@@ -6443,11 +6448,11 @@ pre.code{
 <tr><td>} ]</td><td></td><td></td><td></td></tr>
 <tr><td><b>Fans@odata.navigationLink</b></td><td>string</td><td>read-write</td><td></td></tr>
 <tr><td><b>Id</b></td><td>string</td><td>read-write</td><td>Uniquely identifies the resource within the collection of like resources.</td></tr>
-<tr><td><b>Name</b></td><td>string</td><td>read-write</td><td>The name of the resource or array element.</td></tr>
+<tr><td><b>Name</b></td><td>string</td><td>read-write</td><td>A friendly name for this line of service.</td></tr>
 <tr><td><b>Oem</b> {}</td><td>object</td><td>read-write</td><td>This is the manufacturer/provider specific extension moniker used to divide the Oem object into sections.</td></tr>
 <tr><td><b>Redundancy</b> [ {</td><td>array</td><td>read-write</td><td>This structure is used to show redundancy for fans.  The Component ids will reference the members of the redundancy groups.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>MaxNumSupported</b></td><td>number, null</td><td>read-only</td><td>This is the maximum number of members allowable for this particular redundancy group.</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>MemberId</b></td><td>string</td><td>read-only</td><td>This is the identifier for the member within the collection.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>MemberId</b></td><td>string</td><td>read-write</td><td>This is the identifier for the member within the collection.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>MinNumNeeded</b></td><td>number, null</td><td>read-only</td><td>This is the minumum number of members needed for this group to be redundant.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Mode</b></td><td>string, null</td><td>read-write</td><td>This is the redundancy mode of the group.<br><i>See Property Details, below, for more information about this property.</i></td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Name</b></td><td>string</td><td>read-only</td><td>The name of the resource or array element.</td></tr>
@@ -6455,6 +6460,7 @@ pre.code{
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>RedundancySet</b> [ {} ]</td><td>array</td><td>read-only</td><td>Contains any ids that represent components of this redundancy set.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>RedundancySet@odata.navigationLink</b></td><td>string</td><td>read-write</td><td></td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Status</b> {}</td><td>object</td><td>read-only</td><td>Indicates the status of the file share.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>MemberId</b></td><td>string</td><td>read-only</td><td>This is the identifier for the member within the collection.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>RedundancyEnabled</b></td><td>boolean, null</td><td>read-write</td><td>This indicates whether redundancy is enabled.</td></tr>
 <tr><td>} ]</td><td></td><td></td><td></td></tr>
 <tr><td><b>Redundancy@odata.navigationLink</b></td><td>string</td><td>read-write</td><td></td></tr>
@@ -6538,26 +6544,26 @@ pre.code{
 <tr><th>string</th><th>Description</th></tr>
 </thead>
 <tbody>
-<tr><td>Back</td><td>The back of the chassis.</td></tr>
-<tr><td>Backplane</td><td>A backplane within the chassis.</td></tr>
-<tr><td>CPU</td><td>A Processor (CPU).</td></tr>
-<tr><td>ComputeBay</td><td>Within a compute bay.</td></tr>
-<tr><td>Exhaust</td><td>The exhaust point of the chassis.</td></tr>
-<tr><td>ExpansionBay</td><td>Within an expansion bay.</td></tr>
-<tr><td>Front</td><td>The front of the chassis.</td></tr>
-<tr><td>GPU</td><td>A Graphics Processor (GPU).</td></tr>
-<tr><td>Intake</td><td>The intake point of the chassis.</td></tr>
-<tr><td>Lower</td><td>The lower portion of the chassis.</td></tr>
-<tr><td>NetworkBay</td><td>Within a networking bay.</td></tr>
-<tr><td>NetworkingDevice</td><td>A networking device.</td></tr>
-<tr><td>PowerSupply</td><td>A power supply.</td></tr>
-<tr><td>PowerSupplyBay</td><td>Within a power supply bay.</td></tr>
-<tr><td>Room</td><td>The room.</td></tr>
-<tr><td>StorageBay</td><td>Within a storage bay.</td></tr>
-<tr><td>StorageDevice</td><td>A storage device.</td></tr>
-<tr><td>SystemBoard</td><td>The system board (PCB).</td></tr>
-<tr><td>Upper</td><td>The upper portion of the chassis.</td></tr>
-<tr><td>VoltageRegulator</td><td>A voltage regulator device.</td></tr>
+<tr><td>Back</td><td>The back of the chassis</td></tr>
+<tr><td>Backplane</td><td>A backplane within the chassis</td></tr>
+<tr><td>CPU</td><td>A Processor (CPU)</td></tr>
+<tr><td>ComputeBay</td><td>Within a compute bay</td></tr>
+<tr><td>Exhaust</td><td>The exhaust point of the chassis</td></tr>
+<tr><td>ExpansionBay</td><td>Within an expansion bay</td></tr>
+<tr><td>Front</td><td>The front of the chassis</td></tr>
+<tr><td>GPU</td><td>A Graphics Processor (GPU)</td></tr>
+<tr><td>Intake</td><td>The intake point of the chassis</td></tr>
+<tr><td>Lower</td><td>The lower portion of the chassis</td></tr>
+<tr><td>NetworkBay</td><td>Within a networking bay</td></tr>
+<tr><td>NetworkingDevice</td><td>A networking device</td></tr>
+<tr><td>PowerSupply</td><td>A power supply</td></tr>
+<tr><td>PowerSupplyBay</td><td>Within a power supply bay</td></tr>
+<tr><td>Room</td><td>The room</td></tr>
+<tr><td>StorageBay</td><td>Within a storage bay</td></tr>
+<tr><td>StorageDevice</td><td>A storage device</td></tr>
+<tr><td>SystemBoard</td><td>The system board (PCB)</td></tr>
+<tr><td>Upper</td><td>The upper portion of the chassis</td></tr>
+<tr><td>VoltageRegulator</td><td>A voltage regulator device</td></tr>
 </tbody></table>
 
 <h4>ReadingUnits:</h4>
@@ -6603,19 +6609,19 @@ pre.code{
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Description</b></td><td>string, null</td><td>read-write</td><td>Provides a description of this resource and is used for commonality  in the schema definitions.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Members</b> [ {} ]</td><td>array</td><td>read-only</td><td>Contains the members of this collection.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Members@odata.navigationLink</b></td><td>string</td><td>read-write</td><td></td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Name</b></td><td>string</td><td>read-write</td><td>The name of the resource or array element.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Name</b></td><td>string</td><td>read-write</td><td>A friendly name for this line of service.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Oem</b> {}</td><td>object</td><td>read-write</td><td>This is the manufacturer/provider specific extension moniker used to divide the Oem object into sections.</td></tr>
 <tr><td>}</td><td></td><td></td><td></td></tr>
 <tr><td><b>HttpPushUri</b> <i>(v1.1+)</i></td><td>string</td><td>read-only</td><td>The URI used to perform an HTTP or HTTPS push update to the Update Service.</td></tr>
 <tr><td><b>Id</b></td><td>string</td><td>read-write</td><td>Uniquely identifies the resource within the collection of like resources.</td></tr>
-<tr><td><b>Name</b></td><td>string</td><td>read-write</td><td>The name of the resource or array element.</td></tr>
+<tr><td><b>Name</b></td><td>string</td><td>read-write</td><td>A friendly name for this line of service.</td></tr>
 <tr><td><b>Oem</b> {}</td><td>object</td><td>read-write</td><td>This is the manufacturer/provider specific extension moniker used to divide the Oem object into sections.</td></tr>
 <tr><td><b>ServiceEnabled</b></td><td>boolean, null</td><td>read-write</td><td>This indicates whether this service is enabled.</td></tr>
 <tr><td><b>SoftwareInventory</b> {</td><td>object, null</td><td>read-write</td><td>An inventory of software.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Description</b></td><td>string, null</td><td>read-write</td><td>Provides a description of this resource and is used for commonality  in the schema definitions.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Members</b> [ {} ]</td><td>array</td><td>read-only</td><td>Contains the members of this collection.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Members@odata.navigationLink</b></td><td>string</td><td>read-write</td><td></td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Name</b></td><td>string</td><td>read-write</td><td>The name of the resource or array element.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Name</b></td><td>string</td><td>read-write</td><td>A friendly name for this line of service.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Oem</b> {}</td><td>object</td><td>read-write</td><td>This is the manufacturer/provider specific extension moniker used to divide the Oem object into sections.</td></tr>
 <tr><td>}</td><td></td><td></td><td></td></tr>
 <tr><td><b>Status</b> {</td><td>object, null</td><td>read-only</td><td>Indicates the status of the file share.</td></tr>
@@ -6675,7 +6681,7 @@ pre.code{
 <tbody>
 <tr><td><b>Description</b></td><td>string, null</td><td>read-write</td><td>Provides a description of this resource and is used for commonality  in the schema definitions.</td></tr>
 <tr><td><b>Id</b></td><td>string</td><td>read-write</td><td>Uniquely identifies the resource within the collection of like resources.</td></tr>
-<tr><td><b>Name</b></td><td>string</td><td>read-write</td><td>The name of the resource or array element.</td></tr>
+<tr><td><b>Name</b></td><td>string</td><td>read-write</td><td>A friendly name for this line of service.</td></tr>
 <tr><td><b>Oem</b> {}</td><td>object</td><td>read-write</td><td>This is the manufacturer/provider specific extension moniker used to divide the Oem object into sections.</td></tr>
 <tr><td><b>VLANEnable</b></td><td>boolean, null</td><td>read-write</td><td>This indicates if this VLAN is enabled.</td></tr>
 <tr><td><b>VLANId</b></td><td>number, null</td><td>read-write</td><td>This indicates the VLAN identifier for this VLAN.</td></tr>
@@ -6691,7 +6697,7 @@ pre.code{
 <tr><td><b>ImageName</b></td><td>string, null</td><td>read-only</td><td>The current image name.</td></tr>
 <tr><td><b>Inserted</b></td><td>boolean, null</td><td>read-only</td><td>Indicates if virtual media is inserted in the virtual device.</td></tr>
 <tr><td><b>MediaTypes</b> [ {} ]</td><td>array</td><td>read-only</td><td>This is the media types supported as virtual media.</td></tr>
-<tr><td><b>Name</b></td><td>string</td><td>read-write</td><td>The name of the resource or array element.</td></tr>
+<tr><td><b>Name</b></td><td>string</td><td>read-write</td><td>A friendly name for this line of service.</td></tr>
 <tr><td><b>Oem</b> {}</td><td>object</td><td>read-write</td><td>This is the manufacturer/provider specific extension moniker used to divide the Oem object into sections.</td></tr>
 <tr><td><b>WriteProtected</b></td><td>boolean, null</td><td>read-only</td><td>Indicates the media is write protected.</td></tr>
 </tbody></table>
@@ -6731,7 +6737,7 @@ pre.code{
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Identifier</b> {}</td><td>object, null</td><td>read-only</td><td>The value identifies this resource.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Links</b> {}</td><td>object</td><td>read-only</td><td>Contains links to other resources that are related to this resource.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>LowSpaceWarningThresholdPercents</b> [ {} ]</td><td>array</td><td>read-write</td><td>Low space warning threshold specified in percents.</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Name</b></td><td>string</td><td>read-write</td><td>The name of the resource or array element.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Name</b></td><td>string</td><td>read-write</td><td>A friendly name for this line of service.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Oem</b> {}</td><td>object</td><td>read-write</td><td>This is the manufacturer/provider specific extension moniker used to divide the Oem object into sections.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Status</b> {}</td><td>object, null</td><td>read-only</td><td>Indicates the status of the file share.</td></tr>
 <tr><td>} ]</td><td></td><td></td><td></td></tr>
@@ -6769,7 +6775,7 @@ pre.code{
 <tr><td><b>Manufacturer</b> <i>(v1.1+)</i></td><td>string, null</td><td>read-only</td><td>The manufacturer or OEM of this storage volume.</td></tr>
 <tr><td><b>MaxBlockSizeBytes</b> <i>(v1.1+)</i></td><td>number, null<br>(By)</td><td>read-only</td><td>Max Block size in bytes .</td></tr>
 <tr><td><b>Model</b> <i>(v1.1+)</i></td><td>string, null</td><td>read-only</td><td>The model number for this storage volume</td></tr>
-<tr><td><b>Name</b></td><td>string</td><td>read-write</td><td>The name of the resource or array element.</td></tr>
+<tr><td><b>Name</b></td><td>string</td><td>read-write</td><td>A friendly name for this line of service.</td></tr>
 <tr><td><b>Oem</b> {}</td><td>object</td><td>read-write</td><td>This is the manufacturer/provider specific extension moniker used to divide the Oem object into sections.</td></tr>
 <tr><td><b>Operations</b> [ {</td><td>array</td><td>read-only</td><td>The operations currently running on the Volume</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>AssociatedTask</b> {}</td><td>object</td><td>read-write</td><td>A reference to the task associated with the operation if any.</td></tr>
@@ -6819,7 +6825,7 @@ pre.code{
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Identifier</b> {}</td><td>object, null</td><td>read-only</td><td>The value identifies this resource.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Links</b> {}</td><td>object</td><td>read-only</td><td>Contains links to other resources that are related to this resource.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>MembersAreConsistent</b></td><td>boolean, null</td><td>read-only</td><td>Members are kept in a consistent state.</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Name</b></td><td>string</td><td>read-write</td><td>The name of the resource or array element.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Name</b></td><td>string</td><td>read-write</td><td>A friendly name for this line of service.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Oem</b> {}</td><td>object</td><td>read-write</td><td>This is the manufacturer/provider specific extension moniker used to divide the Oem object into sections.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>ReplicaInfos</b> [ {} ]</td><td>array</td><td>read-only</td><td>Describes this storage group in its role as a source and/or target for replication.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>ServerEndpointGroups</b> {}</td><td>object, null</td><td>read-write</td><td>ServerEndpointGroups in this StorageGroup.</td></tr>
@@ -6869,11 +6875,11 @@ pre.code{
 <tr><th>string</th><th>Description</th></tr>
 </thead>
 <tbody>
-<tr><td>EUI</td><td>IEEE-defined 64-bit Extended Unique Identifier.</td></tr>
-<tr><td>FC_WWN</td><td>Fibre Channel World Wide Name.</td></tr>
-<tr><td>NAA</td><td>Name Address Authority Format.</td></tr>
-<tr><td>UUID</td><td>Universally Unique Identifier.</td></tr>
-<tr><td>iQN</td><td>iSCSI Qualified Name.</td></tr>
+<tr><td>EUI</td><td>IEEE-defined 64-bit Extended Unique Identifier</td></tr>
+<tr><td>FC_WWN</td><td>Fibre Channel World Wide Name</td></tr>
+<tr><td>NAA</td><td>Name Address Authority Format</td></tr>
+<tr><td>UUID</td><td>Universally Unique Identifier</td></tr>
+<tr><td>iQN</td><td>iSCSI Qualified Name</td></tr>
 </tbody></table>
 
 <h4>Health:</h4>
@@ -7101,7 +7107,7 @@ pre.code{
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>InvolvedSwitches@odata.navigationLink</b></td><td>string</td><td>read-write</td><td></td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Oem</b> {}</td><td>object</td><td>read-write</td><td>Oem extension object.</td></tr>
 <tr><td>}</td><td></td><td></td><td></td></tr>
-<tr><td><b>Name</b></td><td>string</td><td>read-write</td><td>The name of the resource or array element.</td></tr>
+<tr><td><b>Name</b></td><td>string</td><td>read-write</td><td>A friendly name for this line of service.</td></tr>
 <tr><td><b>Oem</b> {}</td><td>object</td><td>read-write</td><td>This is the manufacturer/provider specific extension moniker used to divide the Oem object into sections.</td></tr>
 <tr><td><b>Status</b> {</td><td>object</td><td>read-only</td><td>Indicates the status of the file share.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Health</b></td><td>string, null</td><td>read-write</td><td>This represents the health state of this resource in the absence of its dependent resources.<br><i>See Property Details, below, for more information about this property.</i></td></tr>
