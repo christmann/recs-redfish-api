@@ -12,13 +12,15 @@ types:
         type: object
         properties:
           count: number
+  RedfishResource: !include schemas\Resource.v1_3_0.json#definitions/Resource
 /helloWorld:
   get:
     responses:
       200:
         body:
           application/json:
+            type: RedfishResource
             example: |
               {
-                "message" : "Hello World"
+                "message2" : "Hello World"
               }
