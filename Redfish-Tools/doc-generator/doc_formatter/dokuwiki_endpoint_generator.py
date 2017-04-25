@@ -19,7 +19,7 @@ class DokuwikiEndpointGenerator(DocFormatter):
     """Provides methods for generating dokuwiki endpoints from Redfish schemas.
     """
 
-    link_basepath = 'documentation:redfish_api:schema_definition#'
+    link_basepath = 'documentation:redfish_api:endpoints:'
     space = '\ '
     
     references = dict()
@@ -389,64 +389,44 @@ class DokuwikiEndpointGenerator(DocFormatter):
     def emit(self):
         """ Output contents thus far """
 
+        endpoints = dict()
+        
+        for schema_name in self.references:
+            for prop_name in self.references[schema_name]:
+                endpoint = self.references[schema_name][prop_name]['endpoint']
+                type = self.references[schema_name][prop_name]['type']
+                description = self.references[schema_name][prop_name]['description']
+                if not endpoint in endpoints:
+                    endpoints[endpoint] = dict()
+                if not schema_name in endpoints[endpoint]:
+                    endpoints[endpoint][schema_name] = dict()
+                if not prop_name in endpoints[endpoint][schema_name]:
+                    endpoints[endpoint][schema_name][prop_name] = dict()
+                endpoints[endpoint][schema_name][prop_name]['description'] = description
+                endpoints[endpoint][schema_name][prop_name]['type'] = type
+
         contents = []
         
-        contents.append('===== Schema Definition =====\n')
+        contents.append('===== Endpoint Definition =====\n')
         
-        contents.append('<WRAP group><WRAP quarter column>')
+        contents.append('^ URI ^ Schema ^ Description ^')
+        contents.append('| [[' +  self.link_basepath + 'protocol_version|/redfish]] |  | Provides the protocol version |')
+        contents.append('| [[' +  self.link_basepath + 'service_root|/redfish/v1]] | ServiceRoot | Root Redfish service |')
+        contents.append('| [[' +  self.link_basepath + 'metadata|/redfish/v1/$metadata]] |  | Metadata document, describes the resources available at the root, and references additional metadata documents |')
+        contents.append('| [[' +  self.link_basepath + 'odata|/redfish/v1/odata]] |  | OData service document, provides a standard format for enumerating the resources exposed by the service |')
+        
+        for endpoint in endpoints:
+            for schema_name in endpoints[endpoint]:
+                for prop_name in endpoints[endpoint][schema_name]:
+                    link_path = self.link_basepath + endpoint.replace('/redfish/v1/', '', 1).replace('/', '_').lower()
+                    contents.append('| [[' +  link_path + '|' + endpoint + ']] | ' + endpoints[endpoint][schema_name][prop_name]['type'] + ' | ' +  endpoints[endpoint][schema_name][prop_name]['description'] + '(' + schema_name + '.' + prop_name + ') | ')
 
-        i = 1
-        num_sections = len(self.sections)
-        quarter = math.ceil(num_sections / 4)
-        
-        for section in self.sections:
-            section_name = self.escape_for_dokuwiki(section['head'], self.config['escape_chars'])
-            contents.append('  * [[' + self.link_basepath + section_name.lower() + '|' + section_name + ']]')
-            if i % quarter == 0 and i < num_sections:
-                contents.append('</WRAP><WRAP quarter column>')
-            i += 1
-        
-        contents.append('</WRAP></WRAP>\n')
-        
-        contents.append('\n====== Schema Definition ======\n')
-
-        for section in self.sections:
-            contents.append(section['heading'])
-            if section['description']:
-                contents.append(section['description'])
-            if section['json_payload']:
-                contents.append(section['json_payload'])
-            # something is awry if there are no properties, but ...
-            if section['properties']:
-                contents.append('^ Property ^ Type ^ Permission ^ Description ^')
-                contents.append('\n'.join(section['properties']))
-            if section['property_details']:
-                contents.append('\n=== Property Details ===\n')
-                contents.append('\n'.join(section['property_details']))
-
-        self.sections = []
         return '\n'.join(contents)
 
 
     def output_document(self):
         """Return full contents of document"""
-        body = self.emit()
-
-        supplemental = self.config['supplemental']
-
-        if 'Title' in supplemental:
-            doc_title = supplemental['Title']
-        else:
-            doc_title = 'Schema Documentation'
-
-        prelude = ""
-
-        if 'Introduction' in supplemental:
-            prelude += '\n' + supplemental['Introduction'] + '\n'
-        contents = [prelude, body]
-        if 'Postscript' in supplemental:
-            contents.append('\n' + supplemental['Postscript'])
-        return '\n'.join(contents)
+        return self.emit()
 
     def add_section(self, text):
         """ Add a top-level heading """
@@ -498,7 +478,7 @@ class DokuwikiEndpointGenerator(DocFormatter):
         Iterates through property_data and traverses schemas for details.
         Format of output will depend on the format_* methods of the class.
         """
-
+        
         property_data = self.property_data
         traverser = self.traverser
         config = self.config
