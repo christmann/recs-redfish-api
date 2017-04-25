@@ -18,6 +18,7 @@ class DokuwikiSchemaGenerator(DocFormatter):
     """
 
     link_basepath = 'documentation:redfish_api:schema_definition#'
+    space = '\ '
 
     def __init__(self, property_data, traverser, config):
         super(DokuwikiSchemaGenerator, self).__init__(property_data, traverser, config)
@@ -219,7 +220,7 @@ class DokuwikiSchemaGenerator(DocFormatter):
 
         traverser = self.traverser
         formatted = []     # The row itself
-        indentation_string = '<space>' * 6 * current_depth
+        indentation_string = self.space * 6 * current_depth
 
         if not meta:
             meta = {}
