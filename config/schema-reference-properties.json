@@ -1,0 +1,482 @@
+{
+    "AccountService": {
+        "properties": {
+            "Accounts": {
+                "description": "Link to a collection of Manager Accounts.",
+                "endpoint": "/redfish/v1/ManagerAccounts",
+                "type": "ManagerAccountCollection"
+            },
+            "PrivilegeMap": {
+                "description": "A reference to the Privilege mapping defining the privileges needed to perform a requested operation on a URI associated with this service.",
+                "endpoint": "/redfish/v1/PrivilegeRegistry",
+                "type": "PrivilegeRegistry"
+            },
+            "Roles": {
+                "description": "Link to a collection of Roles.",
+                "endpoint": "/redfish/v1/Roles",
+                "type": "RoleCollection"
+            }
+        }
+    },
+    "Chassis": {
+        "properties": {
+            "LogServices": {
+                "description": "A reference to the logs for this chassis.",
+                "endpoint": "/redfish/v1/LogServices",
+                "type": "LogServiceCollection"
+            },
+            "NetworkAdapters": {
+                "description": "A reference to the collection of Network Adapters associated with this chassis.",
+                "endpoint": "/redfish/v1/NetworkAdapters",
+                "type": "NetworkAdapterCollection"
+            },
+            "Power": {
+                "description": "A reference to the power properties (power supplies, power policies, sensors) for this chassis.",
+                "endpoint": "/redfish/v1/Power",
+                "type": "Power"
+            },
+            "Thermal": {
+                "description": "A reference to the thermal properties (fans, cooling, sensors) for this chassis.",
+                "endpoint": "/redfish/v1/Thermal",
+                "type": "Thermal"
+            }
+        }
+    },
+    "ComputerSystem": {
+        "properties": {
+            "Bios": {
+                "description": "A reference to the BIOS settings associated with this system.",
+                "endpoint": "/redfish/v1/Bios",
+                "type": "Bios"
+            },
+            "EthernetInterfaces": {
+                "description": "A reference to the collection of Ethernet interfaces associated with this system.",
+                "endpoint": "/redfish/v1/EthernetInterfaces",
+                "type": "EthernetInterfaceCollection"
+            },
+            "LogServices": {
+                "description": "A reference to the collection of Log Services associated with this system.",
+                "endpoint": "/redfish/v1/LogServices",
+                "type": "LogServiceCollection"
+            },
+            "Memory": {
+                "description": "A reference to the collection of Memory associated with this system.",
+                "endpoint": "/redfish/v1/Memorys",
+                "type": "MemoryCollection"
+            },
+            "MemoryDomains": {
+                "description": "A reference to the collection of Memory Domains associated with this system.",
+                "endpoint": "/redfish/v1/MemoryDomains",
+                "type": "MemoryDomainCollection"
+            },
+            "NetworkInterfaces": {
+                "description": "A reference to the collection of Network Interfaces associated with this system.",
+                "endpoint": "/redfish/v1/NetworkInterfaces",
+                "type": "NetworkInterfaceCollection"
+            },
+            "Processors": {
+                "description": "A reference to the collection of Processors associated with this system.",
+                "endpoint": "/redfish/v1/Processors",
+                "type": "ProcessorCollection"
+            },
+            "SecureBoot": {
+                "description": "A reference to the UEFI SecureBoot resource associated with this system.",
+                "endpoint": "/redfish/v1/SecureBoot",
+                "type": "SecureBoot"
+            },
+            "SimpleStorage": {
+                "description": "A reference to the collection of storage devices associated with this system.",
+                "endpoint": "/redfish/v1/SimpleStorages",
+                "type": "SimpleStorageCollection"
+            },
+            "Storage": {
+                "description": "A reference to the collection of storage devices associated with this system.",
+                "endpoint": "/redfish/v1/Storages",
+                "type": "StorageCollection"
+            }
+        }
+    },
+    "EndpointGroup": {
+        "properties": {
+            "Endpoints": {
+                "description": "The Endpoints.",
+                "endpoint": "/redfish/v1/Endpoints",
+                "type": "EndpointCollection"
+            }
+        }
+    },
+    "EthernetInterface": {
+        "properties": {
+            "VLANs": {
+                "description": "This is a reference to a collection of VLANs and is only used if the interface supports more than one VLANs.",
+                "endpoint": "/redfish/v1/VLanNetworkInterfaces",
+                "type": "VLanNetworkInterfaceCollection"
+            }
+        }
+    },
+    "EventService": {
+        "properties": {
+            "Subscriptions": {
+                "description": "This is a reference to a collection of Event Destination resources.",
+                "endpoint": "/redfish/v1/EventDestinations",
+                "type": "EventDestinationCollection"
+            }
+        }
+    },
+    "Fabric": {
+        "properties": {
+            "Endpoints": {
+                "description": "A collection of references to the endpoints contained in this fabric.",
+                "endpoint": "/redfish/v1/Endpoints",
+                "type": "EndpointCollection"
+            },
+            "Switches": {
+                "description": "A collection of references to the switches contained in this fabric.",
+                "endpoint": "/redfish/v1/Switchs",
+                "type": "SwitchCollection"
+            },
+            "Zones": {
+                "description": "A collection of references to the zones contained in this fabric.",
+                "endpoint": "/redfish/v1/Zones",
+                "type": "ZoneCollection"
+            }
+        }
+    },
+    "FileShare": {
+        "properties": {
+            "EthernetInterfaces": {
+                "description": "A link to the collection of Ethernet interfaces that provide access to this file share.",
+                "endpoint": "/redfish/v1/EthernetInterfaces",
+                "type": "EthernetInterfaceCollection"
+            }
+        }
+    },
+    "HostInterface": {
+        "properties": {
+            "HostEthernetInterfaces": {
+                "description": "This is a reference to a collection of NICs that Computer Systems use for network communication with this Host Interface.",
+                "endpoint": "/redfish/v1/EthernetInterfaces",
+                "type": "EthernetInterfaceCollection"
+            },
+            "ManagerEthernetInterface": {
+                "description": "This is a reference to a single NIC that this Manager uses for network communication with this Host Interface.",
+                "endpoint": "/redfish/v1/EthernetInterface",
+                "type": "EthernetInterface"
+            },
+            "NetworkProtocol": {
+                "description": "This is a reference to the network services and their settings that the Manager controls.  It is here that clients will find network configuration options as well as network services.",
+                "endpoint": "/redfish/v1/ManagerNetworkProtocol",
+                "type": "ManagerNetworkProtocol"
+            }
+        }
+    },
+    "LogService": {
+        "properties": {
+            "Entries": {
+                "description": "References to the log entry collection.",
+                "endpoint": "/redfish/v1/LogEntrys",
+                "type": "LogEntryCollection"
+            }
+        }
+    },
+    "Manager": {
+        "properties": {
+            "EthernetInterfaces": {
+                "description": "This is a reference to a collection of NICs that this manager uses for network communication.  It is here that clients will find NIC configuration options and settings.",
+                "endpoint": "/redfish/v1/EthernetInterfaces",
+                "type": "EthernetInterfaceCollection"
+            },
+            "HostInterfaces": {
+                "description": "This is a reference to a collection of Host Interfaces that this manager uses for local host communication.  It is here that clients will find Host Interface configuration options and settings.",
+                "endpoint": "/redfish/v1/HostInterfaces",
+                "type": "HostInterfaceCollection"
+            },
+            "LogServices": {
+                "description": "This is a reference to a collection of Logs used by the manager.",
+                "endpoint": "/redfish/v1/LogServices",
+                "type": "LogServiceCollection"
+            },
+            "NetworkProtocol": {
+                "description": "This is a reference to the network services and their settings that the manager controls.  It is here that clients will find network configuration options as well as network services.",
+                "endpoint": "/redfish/v1/ManagerNetworkProtocol",
+                "type": "ManagerNetworkProtocol"
+            },
+            "SerialInterfaces": {
+                "description": "This is a reference to a collection of serial interfaces that this manager uses for serial and console communication.  It is here that clients will find serial configuration options and settings.",
+                "endpoint": "/redfish/v1/SerialInterfaces",
+                "type": "SerialInterfaceCollection"
+            },
+            "VirtualMedia": {
+                "description": "This is a reference to the Virtual Media services for this particular manager.",
+                "endpoint": "/redfish/v1/VirtualMedias",
+                "type": "VirtualMediaCollection"
+            }
+        }
+    },
+    "Memory": {
+        "properties": {
+            "Metrics": {
+                "description": "A reference to the Metrics associated with this Memory.",
+                "endpoint": "/redfish/v1/MemoryMetrics",
+                "type": "MemoryMetrics"
+            }
+        }
+    },
+    "MemoryDomain": {
+        "properties": {
+            "MemoryChunks": {
+                "description": "A reference to the collection of Memory Chunks associated with this Memory Domain.",
+                "endpoint": "/redfish/v1/MemoryChunks",
+                "type": "MemoryChunksCollection"
+            }
+        }
+    },
+    "NetworkAdapter": {
+        "properties": {
+            "NetworkDeviceFunctions": {
+                "description": "Contains the members of this collection.",
+                "endpoint": "/redfish/v1/NetworkDeviceFunctions",
+                "type": "NetworkDeviceFunctionCollection"
+            },
+            "NetworkPorts": {
+                "description": "Contains the members of this collection.",
+                "endpoint": "/redfish/v1/NetworkPorts",
+                "type": "NetworkPortCollection"
+            }
+        }
+    },
+    "NetworkDeviceFunction": {
+        "properties": {
+            "PhysicalPortAssignment": {
+                "description": "Contains the members of this collection.",
+                "endpoint": "/redfish/v1/NetworkPort",
+                "type": "NetworkPort"
+            }
+        }
+    },
+    "NetworkInterface": {
+        "properties": {
+            "NetworkDeviceFunctions": {
+                "description": "Contains the members of this collection.",
+                "endpoint": "/redfish/v1/NetworkDeviceFunctions",
+                "type": "NetworkDeviceFunctionCollection"
+            },
+            "NetworkPorts": {
+                "description": "Contains the members of this collection.",
+                "endpoint": "/redfish/v1/NetworkPorts",
+                "type": "NetworkPortCollection"
+            }
+        }
+    },
+    "ServiceRoot": {
+        "properties": {
+            "AccountService": {
+                "description": "This is a link to the Account Service.",
+                "endpoint": "/redfish/v1/AccountService",
+                "type": "AccountService"
+            },
+            "Chassis": {
+                "description": "This is a link to a collection of Chassis.",
+                "endpoint": "/redfish/v1/Chassis",
+                "type": "ChassisCollection"
+            },
+            "EventService": {
+                "description": "This is a link to the EventService.",
+                "endpoint": "/redfish/v1/EventService",
+                "type": "EventService"
+            },
+            "Fabrics": {
+                "description": "A link to a collection of all fabric entities.",
+                "endpoint": "/redfish/v1/Fabrics",
+                "type": "FabricCollection"
+            },
+            "JsonSchemas": {
+                "description": "This is a link to a collection of Json-Schema files.",
+                "endpoint": "/redfish/v1/JsonSchemaFiles",
+                "type": "JsonSchemaFileCollection"
+            },
+            "Managers": {
+                "description": "This is a link to a collection of Managers.",
+                "endpoint": "/redfish/v1/Managers",
+                "type": "ManagerCollection"
+            },
+            "Registries": {
+                "description": "This is a link to a collection of Registries.",
+                "endpoint": "/redfish/v1/MessageRegistryFiles",
+                "type": "MessageRegistryFileCollection"
+            },
+            "SessionService": {
+                "description": "This is a link to the Sessions Service.",
+                "endpoint": "/redfish/v1/SessionService",
+                "type": "SessionService"
+            },
+            "StorageServices": {
+                "description": "A link to a collection of all storage service entities.",
+                "endpoint": "/redfish/v1/StorageServices",
+                "type": "StorageServiceCollection"
+            },
+            "StorageSystems": {
+                "description": "This is a link to a collection of storage systems.",
+                "endpoint": "/redfish/v1/StorageSystems",
+                "type": "StorageSystemCollection"
+            },
+            "Systems": {
+                "description": "This is a link to a collection of Systems.",
+                "endpoint": "/redfish/v1/ComputerSystems",
+                "type": "ComputerSystemCollection"
+            },
+            "Tasks": {
+                "description": "This is a link to the Task Service.",
+                "endpoint": "/redfish/v1/TaskService",
+                "type": "TaskService"
+            },
+            "UpdateService": {
+                "description": "This is a link to the UpdateService.",
+                "endpoint": "/redfish/v1/UpdateService",
+                "type": "UpdateService"
+            }
+        }
+    },
+    "SessionService": {
+        "properties": {
+            "Sessions": {
+                "description": "Link to a collection of Sessions.",
+                "endpoint": "/redfish/v1/Sessions",
+                "type": "SessionCollection"
+            }
+        }
+    },
+    "Storage": {
+        "properties": {
+            "Volumes": {
+                "description": "The set of volumes produced by the storage controllers represented by this resource.",
+                "endpoint": "/redfish/v1/Volumes",
+                "type": "VolumeCollection"
+            }
+        }
+    },
+    "StorageGroup": {
+        "properties": {
+            "ClientEndpointGroups": {
+                "description": "ClientEndpointGroup in this StorageGroup.",
+                "endpoint": "/redfish/v1/EndpointGroups",
+                "type": "EndpointGroupCollection"
+            },
+            "ServerEndpointGroups": {
+                "description": "ServerEndpointGroups in this StorageGroup.",
+                "endpoint": "/redfish/v1/EndpointGroups",
+                "type": "EndpointGroupCollection"
+            },
+            "Volumes": {
+                "description": "Volumes in this StorageGroup.",
+                "endpoint": "/redfish/v1/Volumes",
+                "type": "VolumeCollection"
+            }
+        }
+    },
+    "StoragePool": {
+        "properties": {
+            "AllocatedPools": {
+                "description": "A reference to the collection of storage pools allocated from this storage pool.",
+                "endpoint": "/redfish/v1/StoragePools",
+                "type": "StoragePoolCollection"
+            },
+            "AllocatedVolumes": {
+                "description": "A reference to the collection of volumes allocated from this storage pool.",
+                "endpoint": "/redfish/v1/Volumes",
+                "type": "VolumeCollection"
+            },
+            "ClassesOfService": {
+                "description": "The ClassesOfService supported by this storage pool.",
+                "endpoint": "/redfish/v1/ClassOfServices",
+                "type": "ClassOfServiceCollection"
+            }
+        }
+    },
+    "StorageService": {
+        "properties": {
+            "ClassesOfService": {
+                "description": "The ClassesOfService that all storage in this StorageService can support.",
+                "endpoint": "/redfish/v1/ClassOfServices",
+                "type": "ClassOfServiceCollection"
+            },
+            "ClientEndpointGroups": {
+                "description": "Client endpoint groups.",
+                "endpoint": "/redfish/v1/EndpointGroups",
+                "type": "EndpointGroupCollection"
+            },
+            "Drives": {
+                "description": "The set of drives managed by this storage service.",
+                "endpoint": "/redfish/v1/Drives",
+                "type": "DriveCollection"
+            },
+            "Endpoints": {
+                "description": "Endpoints.",
+                "endpoint": "/redfish/v1/Endpoints",
+                "type": "EndpointCollection"
+            },
+            "FileSystems": {
+                "description": "FileSystems.",
+                "endpoint": "/redfish/v1/FileSystems",
+                "type": "FileSystemCollection"
+            },
+            "ServerEndpointGroups": {
+                "description": "Server endpoint groups.",
+                "endpoint": "/redfish/v1/EndpointGroups",
+                "type": "EndpointGroupCollection"
+            },
+            "StorageGroups": {
+                "description": "StorageGroups.",
+                "endpoint": "/redfish/v1/StorageGroups",
+                "type": "StorageGroupCollection"
+            },
+            "StoragePools": {
+                "description": "StoragePools.",
+                "endpoint": "/redfish/v1/StoragePools",
+                "type": "StoragePoolCollection"
+            },
+            "Volumes": {
+                "description": "Volumes.",
+                "endpoint": "/redfish/v1/Volumes",
+                "type": "VolumeCollection"
+            }
+        }
+    },
+    "Switch": {
+        "properties": {
+            "LogServices": {
+                "description": "A reference to the collection of Log Services associated with this system.",
+                "endpoint": "/redfish/v1/LogServices",
+                "type": "LogServiceCollection"
+            },
+            "Ports": {
+                "description": "A collection of references to the ports for this switch.",
+                "endpoint": "/redfish/v1/Ports",
+                "type": "PortCollection"
+            }
+        }
+    },
+    "TaskService": {
+        "properties": {
+            "Tasks": {
+                "description": "References to the Tasks collection.",
+                "endpoint": "/redfish/v1/Tasks",
+                "type": "TaskCollection"
+            }
+        }
+    },
+    "UpdateService": {
+        "properties": {
+            "FirmwareInventory": {
+                "description": "An inventory of firmware.",
+                "endpoint": "/redfish/v1/SoftwareInventorys",
+                "type": "SoftwareInventoryCollection"
+            },
+            "SoftwareInventory": {
+                "description": "An inventory of software.",
+                "endpoint": "/redfish/v1/SoftwareInventorys",
+                "type": "SoftwareInventoryCollection"
+            }
+        }
+    }
+}

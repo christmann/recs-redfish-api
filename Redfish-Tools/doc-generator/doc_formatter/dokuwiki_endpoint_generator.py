@@ -10,6 +10,8 @@ Brief : This file contains definitions for the DokuwikiEndpointGenerator class.
 Initial author: Second Rise LLC.
 """
 
+import json
+from json.decoder import JSONDecodeError
 import math
 from . import DocFormatter
 
@@ -19,6 +21,8 @@ class DokuwikiEndpointGenerator(DocFormatter):
 
     link_basepath = 'documentation:redfish_api:schema_definition#'
     space = '\ '
+    
+    references = dict()
 
     def __init__(self, property_data, traverser, config):
         super(DokuwikiEndpointGenerator, self).__init__(property_data, traverser, config)
@@ -27,6 +31,15 @@ class DokuwikiEndpointGenerator(DocFormatter):
             'inline': ', ',
             'linebreak': '\n'
             }
+        
+        try:
+            addfile = open(config['addfile'], 'r')
+        except (OSError) as ex:
+            print('Unable to open', config['addfile'], 'to read:', ex)
+        try:
+            self.references = json.load(addfile)
+        except (JSONDecodeError) as ex:
+            print('Unable to JSON decode', config['addfile'], 'to read:', ex)
 
     def parse_property_info(self, schema_name, prop_name, traverser, prop_infos, current_depth):
         """Parse a list of one more more property info objects into strings for display.
@@ -245,12 +258,28 @@ class DokuwikiEndpointGenerator(DocFormatter):
 
         name_and_version = self.escape_for_dokuwiki(prop_name, self.config['escape_chars'])
 
+        collection_postfix = 'Collection'
+        
         if formatted_details['prop_is_ref']:
             entity_name = name_and_version
             if meta and 'entity_type' in meta:
                 entity_name = meta['entity_type']
-                if entity_name and entity_name.endswith('Collection'):
+                if entity_name and entity_name.endswith(collection_postfix):
                     formatted_details['prop_details'] = False
+                if not schema_name in self.references:
+                    self.references[schema_name] = dict()
+                    self.references[schema_name]['properties'] = dict()
+                if not prop_name in self.references[schema_name]['properties']:
+                    self.references[schema_name]['properties'][prop_name] = dict()
+                    self.references[schema_name]['properties'][prop_name]['type'] = entity_name
+                    self.references[schema_name]['properties'][prop_name]['description'] = formatted_details['descr']
+                    endpoint_name = entity_name
+                    if endpoint_name.endswith(collection_postfix):
+                        endpoint_name = endpoint_name[:-len(collection_postfix)]
+                        if not endpoint_name.endswith('s'):
+                            endpoint_name += 's'
+                    self.references[schema_name]['properties'][prop_name]['endpoint'] = '/redfish/v1/' + endpoint_name
+            
             name_and_version = '**[[' + self.link_basepath + entity_name.lower() + '|' + name_and_version + ']]**'
         else:
             name_and_version = '**' + self.escape_for_dokuwiki(prop_name, self.config['escape_chars']) + '**'
@@ -537,6 +566,7 @@ class DokuwikiEndpointGenerator(DocFormatter):
                             if '$ref' in item:
                                 meta['entity_type'] = item['$ref'].rsplit('/', 1)[1].strip()
                                 break;
+
                     prop_info = self.extend_property_info(schema_name, prop_info, traverser)
 
                     formatted = self.format_property_row(schema_name, prop_name, prop_info, meta)
@@ -552,5 +582,16 @@ class DokuwikiEndpointGenerator(DocFormatter):
                     for x in detail_names:
                         self.add_property_details(prop_details[x])
 
+        write_json_to_file(self.references, config['addfile'])
         return self.output_document()
 
+def write_json_to_file(json_object, outfile_name):
+    """Write content to a file."""
+    
+    try:
+        outfile = open(outfile_name, 'w')
+        print(json.dumps(json_object, indent=4, sort_keys=True), file=outfile)
+    except (OSError) as ex:
+        print('Unable to open', config['addfile'], 'to writer:', ex)
+    outfile.close()
+    print(outfile.name, "written.")

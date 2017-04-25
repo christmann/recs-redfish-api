@@ -48,6 +48,7 @@ def main():
     parser.add_argument('--out', dest='outfile', default='output.md',  help='Output file (default depends on output format -- output.md for markdown, index.html for html)')
     parser.add_argument('--sup', dest='supfile', help='Path to the supplemental material document. Default is usersupplement.md for user-focused documentation, and devsupplement.md for normative documentation.')
     parser.add_argument('--escape', dest='escape_chars', help="Characters to escape (\\) in generated markdown; e.g., --escape=@#. Use --escape=@ if strings with embedded @ are being converted to mailto links.")
+    parser.add_argument('--add', dest='add', help='Path to an additional document.')
 
     usage = parser.format_usage()
     parser.usage = usage + '\n\n' + help_epilog + '\n '
@@ -80,6 +81,15 @@ def main():
         outfile = open(outfile_name, 'w')
     except (OSError) as ex:
         print('Unable to open', outfile_name, 'to write:', ex)
+
+    addfile_name = args.add
+    try:
+        addfile = open(addfile_name, 'w+')
+    except (OSError) as ex:
+        print('Unable to open', addfile_name, 'to write:', ex)
+    addfile.close()
+    
+    config['addfile'] = addfile_name
 
     # Ensure supfile is readable (if not, warn but proceed)
     if args.supfile:
