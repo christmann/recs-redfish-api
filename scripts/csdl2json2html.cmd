@@ -2,7 +2,7 @@
 
 SET PYTHON_EXE=C:\Users\bil.CIM\AppData\Local\Programs\Python\Python36-32\python.exe
 
-SET REDFISH_TOOLS_DIR=C:\Users\bil.CIM\workspace\other\Redfish-Tools
+SET REDFISH_TOOLS_DIR=C:\Users\bil.CIM\workspace\other\recs-redfish-api\Redfish-Tools
 SET CONVERTOR_APP_DIR=%REDFISH_TOOLS_DIR%\csdl-to-json-convertor
 SET CONVERTOR_SCRIPT=%CONVERTOR_APP_DIR%\service.py
 SET DOC_APP_DIR=%REDFISH_TOOLS_DIR%\doc-generator
