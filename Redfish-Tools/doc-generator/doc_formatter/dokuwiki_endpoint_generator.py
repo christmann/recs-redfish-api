@@ -268,17 +268,17 @@ class DokuwikiEndpointGenerator(DocFormatter):
                     formatted_details['prop_details'] = False
                 if not schema_name in self.references:
                     self.references[schema_name] = dict()
-                    self.references[schema_name]['properties'] = dict()
-                if not prop_name in self.references[schema_name]['properties']:
-                    self.references[schema_name]['properties'][prop_name] = dict()
-                    self.references[schema_name]['properties'][prop_name]['type'] = entity_name
-                    self.references[schema_name]['properties'][prop_name]['description'] = formatted_details['descr']
+                if not prop_name in self.references[schema_name]:
+                    self.references[schema_name][prop_name] = dict()
+                    self.references[schema_name][prop_name]['type'] = entity_name
+                    self.references[schema_name][prop_name]['description'] = formatted_details['descr']
                     endpoint_name = entity_name
                     if endpoint_name.endswith(collection_postfix):
                         endpoint_name = endpoint_name[:-len(collection_postfix)]
                         if not endpoint_name.endswith('s'):
                             endpoint_name += 's'
-                    self.references[schema_name]['properties'][prop_name]['endpoint'] = '/redfish/v1/' + endpoint_name
+                    self.references[schema_name][prop_name]['endpoint'] = '/redfish/v1/' + endpoint_name
+                
             
             name_and_version = '**[[' + self.link_basepath + entity_name.lower() + '|' + name_and_version + ']]**'
         else:
