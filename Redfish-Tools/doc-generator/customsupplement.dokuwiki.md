@@ -5,8 +5,6 @@ This document contains details about specific properties contained within Schema
 
 # Introduction
 
-====== Schema Definition ======
-
 # Postscript
 
 # Excluded Properties

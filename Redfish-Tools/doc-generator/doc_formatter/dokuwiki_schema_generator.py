@@ -10,6 +10,7 @@ Brief : This file contains definitions for the DokuwikiSchemaGenerator class.
 Initial author: Second Rise LLC.
 """
 
+import math
 from . import DocFormatter
 
 class DokuwikiSchemaGenerator(DocFormatter):
@@ -355,11 +356,29 @@ class DokuwikiSchemaGenerator(DocFormatter):
         return None
 
 
-
     def emit(self):
         """ Output contents thus far """
 
         contents = []
+        
+        contents.append('===== Schema Definition =====\n')
+        
+        contents.append('<WRAP group><WRAP quarter column>')
+
+        i = 1
+        num_sections = len(self.sections)
+        quarter = math.ceil(num_sections / 4)
+        print(quarter)
+        for section in self.sections:
+            section_name = self.escape_for_dokuwiki(section['head'], self.config['escape_chars'])
+            contents.append('  * [[' + self.link_basepath + section_name.lower() + '|' + section_name + ']]')
+            if i % quarter == 0 and i < num_sections:
+                contents.append('</WRAP><WRAP quarter column>')
+            i += 1
+        
+        contents.append('</WRAP></WRAP>\n')
+        
+        contents.append('\n====== Schema Definition ======\n')
 
         for section in self.sections:
             contents.append(section['heading'])
@@ -398,7 +417,6 @@ class DokuwikiSchemaGenerator(DocFormatter):
         if 'Postscript' in supplemental:
             contents.append('\n' + supplemental['Postscript'])
         return '\n'.join(contents)
-
 
     def add_section(self, text):
         """ Add a top-level heading """
