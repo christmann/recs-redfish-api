@@ -5,4 +5,4 @@
 from .doc_formatter import DocFormatter
 from .markdown_generator import MarkdownGenerator
 from .html_generator import HtmlGenerator
-from .dokuwiki_generator import DokuwikiGenerator
+from .dokuwiki_schema_generator import DokuwikiSchemaGenerator

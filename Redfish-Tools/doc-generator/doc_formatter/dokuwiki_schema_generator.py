@@ -3,28 +3,208 @@
 # License: BSD 3-Clause License. For full text see link: https://github.com/DMTF/Redfish-Tools/LICENSE.md
 
 """
-File : dokuwiki_generator.py
+File : dokuwiki_schema_generator.py
 
-Brief : This file contains definitions for the DokuwikiGenerator class.
+Brief : This file contains definitions for the DokuwikiSchemaGenerator class.
 
 Initial author: Second Rise LLC.
 """
 
 from . import DocFormatter
 
-class DokuwikiGenerator(DocFormatter):
+class DokuwikiSchemaGenerator(DocFormatter):
     """Provides methods for generating dokuwiki output from Redfish schemas.
     """
 
     link_basepath = 'documentation:redfish_api:schema_definition#'
 
     def __init__(self, property_data, traverser, config):
-        super(DokuwikiGenerator, self).__init__(property_data, traverser, config)
+        super(DokuwikiSchemaGenerator, self).__init__(property_data, traverser, config)
         self.sections = []
         self.separators = {
             'inline': ', ',
             'linebreak': '\n'
             }
+
+    def parse_property_info(self, schema_name, prop_name, traverser, prop_infos, current_depth):
+        """Parse a list of one more more property info objects into strings for display.
+
+        Returns a dict of 'prop_type', 'read_only', descr', 'prop_is_object', 'prop_is_ref',
+        'prop_is_array', 'object_description', 'prop_details', 'item_description',
+        'has_direct_prop_details'
+        """
+
+        if len(prop_infos) == 1:
+            prop_info = prop_infos[0]
+            if isinstance(prop_info, dict):
+                return self._parse_single_property_info(schema_name, prop_name, prop_info, current_depth)
+            else:
+                return self.parse_property_info(schema_name, prop_name, prop_info, current_depth)
+
+        parsed = {'prop_type': [],
+                  'prop_units': False,
+                  'prop_pattern': False,
+                  'prop_format': False,
+                  'prop_min': False,
+                  'prop_max': False,
+                  'read_only': False,
+                  'descr': [],
+                  'prop_is_object': False,
+                  'prop_is_ref': False,
+                  'prop_is_array': False,
+                  'object_description': [],
+                  'item_description': [],
+                  'prop_details': {},
+                  'has_direct_prop_details': False}
+
+        anyOf_details = [self.parse_property_info(schema_name, prop_name, traverser, x, current_depth) for x in prop_infos]
+
+        # Remove details for anyOf props with prop_type = 'null'.
+        details = []
+        has_null = False
+        for det in anyOf_details:
+            if len(det['prop_type']) == 1 and 'null' in det['prop_type']:
+                has_null = True
+            else:
+                details.append(det)
+
+        # Uniquify these properties and save as lists:
+        props_to_combine = ['prop_type', 'descr', 'object_description', 'item_description']
+
+        for property_name in props_to_combine:
+            property_values = []
+            for det in anyOf_details:
+                if isinstance(det[property_name], list):
+                    for val in det[property_name]:
+                        if val and val not in property_values:
+                            property_values.append(val)
+                else:
+                    val = det[property_name]
+                    if val and val not in property_values:
+                        property_values.append(val)
+
+            parsed[property_name] = property_values
+
+        # add back null if we found one:
+        if has_null:
+            parsed['prop_type'].append('null')
+
+        # read_only and units should be the same for all
+        parsed['read_only'] = details[0]['read_only']
+        parsed['prop_units'] = details[0]['prop_units']
+        parsed['prop_pattern'] = details[0]['prop_pattern']
+        parsed['prop_format'] = details[0]['prop_format']
+        parsed['prop_min'] = details[0]['prop_min']
+        parsed['prop_max'] = details[0]['prop_max']
+
+        for det in details:
+            parsed['prop_is_object'] |= det['prop_is_object']
+            parsed['prop_is_ref'] |= det['prop_is_ref']
+            parsed['prop_is_array'] |= det['prop_is_array']
+            parsed['has_direct_prop_details'] |= det['has_direct_prop_details']
+            parsed['prop_details'].update(det['prop_details'])
+
+        return parsed
+
+
+    def _parse_single_property_info(self, schema_name, prop_name, prop_info, current_depth):
+        """Parse definition of a specific property into strings for display.
+
+        Returns a dict of 'prop_type', 'prop_units', 'read_only', descr', 'prop_is_object', 'prop_is_ref',
+        'prop_is_array', 'object_description', 'prop_details', 'item_description',
+        'has_direct_prop_details'
+        """
+
+        traverser = self.traverser
+
+        # type may be a string or a list.
+        prop_details = {}
+        prop_type = prop_info.get('type', [])
+        prop_is_object = False; object_description = ''
+        prop_is_ref = False
+        prop_is_array = False; item_description = ''
+        has_prop_details = False
+
+        if isinstance(prop_type, list):
+            prop_is_object = 'object' in prop_type
+            prop_is_array = 'array' in prop_type
+        else:
+            prop_is_object = prop_type == 'object'
+            prop_is_array = prop_type == 'array'
+            prop_type = [ prop_type ]
+
+        if prop_is_object:
+            prop_properties = prop_info.get('properties', [])
+            prop_is_ref = '@odata.id' in prop_properties
+            if prop_is_ref:
+                prop_is_object = False
+                prop_type = [ 'reference' ]
+
+        prop_units = prop_info.get('units')
+        prop_pattern = prop_info.get('pattern')
+        prop_format = prop_info.get('format')
+        prop_min = prop_info.get('minimum')
+        prop_max = prop_info.get('maximum')
+
+        read_only = prop_info.get('readonly')
+        if self.config['normative'] and 'longDescription' in prop_info:
+            descr = prop_info.get('longDescription', '')
+        else:
+            descr = prop_info.get('description', '')
+
+        # Items, if present, will have a definition with either an object or a $ref:
+        prop_item = prop_info.get('items')
+        if isinstance(prop_item, dict):
+            prop_items = self.extend_property_info(schema_name, prop_item, traverser)
+
+        # Enumerations go into Property Details
+        prop_enum = prop_info.get('enum')
+        supplemental_details = None
+
+        if 'supplemental' in self.config and 'Property Details' in self.config['supplemental']:
+            detconfig = self.config['supplemental']['Property Details']
+            if schema_name in detconfig and prop_name in detconfig[schema_name]:
+                supplemental_details = detconfig[schema_name][prop_name]
+
+        if prop_enum or supplemental_details:
+            has_prop_details = True
+
+            if self.config['normative'] and 'enumLongDescriptions' in prop_info:
+                prop_enum_details = prop_info.get('enumLongDescriptions')
+            else:
+                prop_enum_details = prop_info.get('enumDescriptions')
+            prop_details[prop_name] = self.format_property_details(prop_name, prop_type, prop_enum, prop_enum_details,
+                                                              supplemental_details)
+
+        # embedded object:
+        if current_depth < self.max_drilldown and prop_is_object:
+            object_formatted = self.format_object_description(schema_name, prop_info, traverser, current_depth)
+            object_description = object_formatted['rows']
+            if object_formatted['details']:
+                prop_details.update(object_formatted['details'])
+
+        # embedded items:
+        if current_depth < self.max_drilldown and prop_is_array:
+            item_formatted = self.format_list_of_object_descriptions(schema_name, prop_items, traverser, current_depth)
+            item_description = item_formatted['rows']
+            if item_formatted['details']:
+                prop_details.update(item_formatted['details'])
+
+        return {'prop_type': prop_type,
+                'prop_units': prop_units,
+                'prop_pattern': prop_pattern,
+                'prop_format': prop_format,
+                'prop_min': prop_min,
+                'prop_max': prop_max,
+                'read_only': read_only,
+                'descr': descr,
+                'prop_is_object': prop_is_object,
+                'prop_is_ref': prop_is_ref,
+                'prop_is_array': prop_is_array,
+                'object_description': object_description,
+                'item_description': item_description,
+                'prop_details': prop_details,
+                'has_direct_prop_details': has_prop_details}
 
 
     def format_property_row(self, schema_name, prop_name, prop_info, meta=None, current_depth=0):
@@ -355,182 +535,3 @@ class DokuwikiGenerator(DocFormatter):
 
         return self.output_document()
 
-    def parse_property_info(self, schema_name, prop_name, traverser, prop_infos, current_depth):
-        """Parse a list of one more more property info objects into strings for display.
-
-        Returns a dict of 'prop_type', 'read_only', descr', 'prop_is_object', 'prop_is_ref',
-        'prop_is_array', 'object_description', 'prop_details', 'item_description',
-        'has_direct_prop_details'
-        """
-
-        if len(prop_infos) == 1:
-            prop_info = prop_infos[0]
-            if isinstance(prop_info, dict):
-                return self._parse_single_property_info(schema_name, prop_name, prop_info, current_depth)
-            else:
-                return self.parse_property_info(schema_name, prop_name, prop_info, current_depth)
-
-        parsed = {'prop_type': [],
-                  'prop_units': False,
-                  'prop_pattern': False,
-                  'prop_format': False,
-                  'prop_min': False,
-                  'prop_max': False,
-                  'read_only': False,
-                  'descr': [],
-                  'prop_is_object': False,
-                  'prop_is_ref': False,
-                  'prop_is_array': False,
-                  'object_description': [],
-                  'item_description': [],
-                  'prop_details': {},
-                  'has_direct_prop_details': False}
-
-        anyOf_details = [self.parse_property_info(schema_name, prop_name, traverser, x, current_depth) for x in prop_infos]
-
-        # Remove details for anyOf props with prop_type = 'null'.
-        details = []
-        has_null = False
-        for det in anyOf_details:
-            if len(det['prop_type']) == 1 and 'null' in det['prop_type']:
-                has_null = True
-            else:
-                details.append(det)
-
-        # Uniquify these properties and save as lists:
-        props_to_combine = ['prop_type', 'descr', 'object_description', 'item_description']
-
-        for property_name in props_to_combine:
-            property_values = []
-            for det in anyOf_details:
-                if isinstance(det[property_name], list):
-                    for val in det[property_name]:
-                        if val and val not in property_values:
-                            property_values.append(val)
-                else:
-                    val = det[property_name]
-                    if val and val not in property_values:
-                        property_values.append(val)
-
-            parsed[property_name] = property_values
-
-        # add back null if we found one:
-        if has_null:
-            parsed['prop_type'].append('null')
-
-        # read_only and units should be the same for all
-        parsed['read_only'] = details[0]['read_only']
-        parsed['prop_units'] = details[0]['prop_units']
-        parsed['prop_pattern'] = details[0]['prop_pattern']
-        parsed['prop_format'] = details[0]['prop_format']
-        parsed['prop_min'] = details[0]['prop_min']
-        parsed['prop_max'] = details[0]['prop_max']
-
-        for det in details:
-            parsed['prop_is_object'] |= det['prop_is_object']
-            parsed['prop_is_ref'] |= det['prop_is_ref']
-            parsed['prop_is_array'] |= det['prop_is_array']
-            parsed['has_direct_prop_details'] |= det['has_direct_prop_details']
-            parsed['prop_details'].update(det['prop_details'])
-
-        return parsed
-
-
-    def _parse_single_property_info(self, schema_name, prop_name, prop_info, current_depth):
-        """Parse definition of a specific property into strings for display.
-
-        Returns a dict of 'prop_type', 'prop_units', 'read_only', descr', 'prop_is_object', 'prop_is_ref',
-        'prop_is_array', 'object_description', 'prop_details', 'item_description',
-        'has_direct_prop_details'
-        """
-
-        traverser = self.traverser
-
-        # type may be a string or a list.
-        prop_details = {}
-        prop_type = prop_info.get('type', [])
-        prop_is_object = False; object_description = ''
-        prop_is_ref = False
-        prop_is_array = False; item_description = ''
-        has_prop_details = False
-
-        if isinstance(prop_type, list):
-            prop_is_object = 'object' in prop_type
-            prop_is_array = 'array' in prop_type
-        else:
-            prop_is_object = prop_type == 'object'
-            prop_is_array = prop_type == 'array'
-            prop_type = [ prop_type ]
-
-        if prop_is_object:
-            prop_properties = prop_info.get('properties', [])
-            prop_is_ref = '@odata.id' in prop_properties
-            if prop_is_ref:
-                prop_is_object = False
-                prop_type = [ 'reference' ]
-
-        prop_units = prop_info.get('units')
-        prop_pattern = prop_info.get('pattern')
-        prop_format = prop_info.get('format')
-        prop_min = prop_info.get('minimum')
-        prop_max = prop_info.get('maximum')
-
-        read_only = prop_info.get('readonly')
-        if self.config['normative'] and 'longDescription' in prop_info:
-            descr = prop_info.get('longDescription', '')
-        else:
-            descr = prop_info.get('description', '')
-
-        # Items, if present, will have a definition with either an object or a $ref:
-        prop_item = prop_info.get('items')
-        if isinstance(prop_item, dict):
-            prop_items = self.extend_property_info(schema_name, prop_item, traverser)
-
-        # Enumerations go into Property Details
-        prop_enum = prop_info.get('enum')
-        supplemental_details = None
-
-        if 'supplemental' in self.config and 'Property Details' in self.config['supplemental']:
-            detconfig = self.config['supplemental']['Property Details']
-            if schema_name in detconfig and prop_name in detconfig[schema_name]:
-                supplemental_details = detconfig[schema_name][prop_name]
-
-        if prop_enum or supplemental_details:
-            has_prop_details = True
-
-            if self.config['normative'] and 'enumLongDescriptions' in prop_info:
-                prop_enum_details = prop_info.get('enumLongDescriptions')
-            else:
-                prop_enum_details = prop_info.get('enumDescriptions')
-            prop_details[prop_name] = self.format_property_details(prop_name, prop_type, prop_enum, prop_enum_details,
-                                                              supplemental_details)
-
-        # embedded object:
-        if current_depth < self.max_drilldown and prop_is_object:
-            object_formatted = self.format_object_description(schema_name, prop_info, traverser, current_depth)
-            object_description = object_formatted['rows']
-            if object_formatted['details']:
-                prop_details.update(object_formatted['details'])
-
-        # embedded items:
-        if current_depth < self.max_drilldown and prop_is_array:
-            item_formatted = self.format_list_of_object_descriptions(schema_name, prop_items, traverser, current_depth)
-            item_description = item_formatted['rows']
-            if item_formatted['details']:
-                prop_details.update(item_formatted['details'])
-
-        return {'prop_type': prop_type,
-                'prop_units': prop_units,
-                'prop_pattern': prop_pattern,
-                'prop_format': prop_format,
-                'prop_min': prop_min,
-                'prop_max': prop_max,
-                'read_only': read_only,
-                'descr': descr,
-                'prop_is_object': prop_is_object,
-                'prop_is_ref': prop_is_ref,
-                'prop_is_array': prop_is_array,
-                'object_description': object_description,
-                'item_description': item_description,
-                'prop_details': prop_details,
-                'has_direct_prop_details': has_prop_details}
