@@ -369,7 +369,7 @@ class DokuwikiSchemaGenerator(DocFormatter):
         i = 1
         num_sections = len(self.sections)
         quarter = math.ceil(num_sections / 4)
-        print(quarter)
+        
         for section in self.sections:
             section_name = self.escape_for_dokuwiki(section['head'], self.config['escape_chars'])
             contents.append('  * [[' + self.link_basepath + section_name.lower() + '|' + section_name + ']]')
