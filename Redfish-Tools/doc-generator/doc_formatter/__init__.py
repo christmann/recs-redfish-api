@@ -6,3 +6,4 @@ from .doc_formatter import DocFormatter
 from .markdown_generator import MarkdownGenerator
 from .html_generator import HtmlGenerator
 from .dokuwiki_schema_generator import DokuwikiSchemaGenerator
+from .dokuwiki_endpoint_generator import DokuwikiEndpointGenerator
