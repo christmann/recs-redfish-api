@@ -1,7 +1,7 @@
 #%RAML 1.0
 title: RECS|Box Redfish API
 version: 0.1.0
-baseUri: http://localhost:8080
+baseUri: http://localhost:8080/redfish
 types:
   TestType:
     type: object
@@ -12,15 +12,25 @@ types:
         type: object
         properties:
           count: number
-  RedfishResource: !include schemas\Resource.v1_3_0.json#definitions/Resource
-/helloWorld:
+  ServiceRoot: !include schemas/ServiceRoot.v1_1_1.json#/definitions/ServiceRoot
+/:
   get:
     responses:
       200:
         body:
           application/json:
-            type: RedfishResource
             example: |
               {
-                "message2" : "Hello World"
+                "v1" : "/redfish/v1/"
+              }
+/v1:
+  get:
+    responses:
+      200:
+        body:
+          application/json:
+            type: ServiceRoot
+            example: |
+              {
+                "v1" : "/redfish/v1/"
               }

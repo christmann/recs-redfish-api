@@ -67,7 +67,9 @@
                         }
                     }
                 }
-            ]
+            ],
+            "description": "A Collection of MemoryDomain resource instances.",
+            "longDescription": "This collection shall contain references to all MemoryDomain resource instances sharing the same parent resource."
         }
     },
     "copyright": "Copyright 2014-2016 Distributed Management Task Force, Inc. (DMTF). For the full DMTF copyright policy, see http://www.dmtf.org/about/policies/copyright"
