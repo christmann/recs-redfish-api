@@ -16,5 +16,11 @@ SET LOG_FILE=%LOG_DIR%\json2md.log
 
 "%PYTHON_EXE%" "%DOC_SCRIPT%" --format markdown --out "%DOC_FILE%" --sup "%DOC_SUPP_FILE%" "%JSON_DIR%" > "%LOG_FILE%" 2>&1
 
-"%LOG_FILE%"
-"%DOC_FILE%"
+if errorlevel 1 (
+  echo Failed
+  "%LOG_FILE%"
+  exit /b %errorlevel%
+) else (
+  echo Success
+  "%DOC_FILE%"
+)

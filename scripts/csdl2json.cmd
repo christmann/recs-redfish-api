@@ -17,4 +17,10 @@ SET LOG_FILE=%LOG_DIR%\csdl2json.log
 rem delete empty schema
 del "%JSON_DIR%\Validation.v1_0_0.json" >> "%LOG_FILE%" 2>&1
 
-"%LOG_FILE%"
+if errorlevel 1 (
+  echo Failed
+  "%LOG_FILE%"
+  exit /b %errorlevel%
+) else (
+  echo Success
+)
