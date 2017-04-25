@@ -44,7 +44,7 @@ def main():
     parser.add_argument('import_from', metavar='import_from', nargs='+',
                         help='Name of a file or directory to process (wildcards are acceptable)')
     parser.add_argument('-n', '--normative', action='store_true', dest='normative', default=False, help='Produce normative (developer-focused) output')
-    parser.add_argument('--format', dest='format', default='markdown', choices=['markdown', 'html'], help='Output format')
+    parser.add_argument('--format', dest='format', default='markdown', choices=['markdown', 'html', 'dokuwiki'], help='Output format')
     parser.add_argument('--out', dest='outfile', default='output.md',  help='Output file (default depends on output format -- output.md for markdown, index.html for html)')
     parser.add_argument('--sup', dest='supfile', help='Path to the supplemental material document. Default is usersupplement.md for user-focused documentation, and devsupplement.md for normative documentation.')
     parser.add_argument('--escape', dest='escape_chars', help="Characters to escape (\\) in generated markdown; e.g., --escape=@#. Use --escape=@ if strings with embedded @ are being converted to mailto links.")
@@ -129,6 +129,9 @@ def main():
     elif output_format == 'html':
         from doc_formatter import HtmlGenerator
         generator = HtmlGenerator(property_data, traverser, config)
+    elif output_format == 'dokuwiki':
+        from doc_formatter import DokuwikiGenerator
+        generator = DokuwikiGenerator(property_data, traverser, config)
 
     output = generator.generate_output()
 
