@@ -277,8 +277,12 @@ class DokuwikiEndpointGenerator(DocFormatter):
                         endpoint_name = endpoint_name[:-len(collection_postfix)]
                         if not endpoint_name.endswith('s'):
                             endpoint_name += 's'
+                    if schema_name != 'ServiceRoot':
+                        if schema_name.endswith('Service'):
+                            endpoint_name = schema_name + '/' + endpoint_name
+                        else:
+                            endpoint_name = schema_name + '/{' + schema_name + 'ID}/' + endpoint_name
                     self.references[schema_name][prop_name]['endpoint'] = '/redfish/v1/' + endpoint_name
-                
             
             name_and_version = '**[[' + self.link_basepath + entity_name.lower() + '|' + name_and_version + ']]**'
         else:
@@ -396,30 +400,41 @@ class DokuwikiEndpointGenerator(DocFormatter):
                 endpoint = self.references[schema_name][prop_name]['endpoint']
                 type = self.references[schema_name][prop_name]['type']
                 description = self.references[schema_name][prop_name]['description']
-                if not endpoint in endpoints:
-                    endpoints[endpoint] = dict()
-                if not schema_name in endpoints[endpoint]:
-                    endpoints[endpoint][schema_name] = dict()
-                if not prop_name in endpoints[endpoint][schema_name]:
-                    endpoints[endpoint][schema_name][prop_name] = dict()
-                endpoints[endpoint][schema_name][prop_name]['description'] = description
-                endpoints[endpoint][schema_name][prop_name]['type'] = type
+                if not type in endpoints:
+                    endpoints[type] = dict()
+                if not schema_name in endpoints[type]:
+                    endpoints[type][schema_name] = dict()
+                if not prop_name in endpoints[type][schema_name]:
+                    endpoints[type][schema_name][prop_name] = dict()
+                endpoints[type][schema_name][prop_name]['description'] = description
+                endpoints[type][schema_name][prop_name]['endpoint'] = endpoint
 
         contents = []
         
         contents.append('===== Endpoint Definition =====\n')
         
-        contents.append('^ URI ^ Schema ^ Description ^')
-        contents.append('| [[' +  self.link_basepath + 'protocol_version|/redfish]] |  | Provides the protocol version |')
-        contents.append('| [[' +  self.link_basepath + 'service_root|/redfish/v1]] | ServiceRoot | Root Redfish service |')
-        contents.append('| [[' +  self.link_basepath + 'metadata|/redfish/v1/$metadata]] |  | Metadata document, describes the resources available at the root, and references additional metadata documents |')
-        contents.append('| [[' +  self.link_basepath + 'odata|/redfish/v1/odata]] |  | OData service document, provides a standard format for enumerating the resources exposed by the service |')
+        contents.append('^ Schema ^ URI ^')
+        contents.append('| [[' +  self.link_basepath + 'protocol_version|Protocol Version]] | /redfish |')
+        contents.append('| [[' +  self.link_basepath + 'metadata|Metadata]] | /redfish/v1/$metadata |')
+        contents.append('| [[' +  self.link_basepath + 'odata|OData]] | /redfish/v1/odata |')
+        contents.append('| [[' +  self.link_basepath + 'service_root|ServiceRoot]] | /redfish/v1 |')
         
-        for endpoint in endpoints:
-            for schema_name in endpoints[endpoint]:
-                for prop_name in endpoints[endpoint][schema_name]:
-                    link_path = self.link_basepath + endpoint.replace('/redfish/v1/', '', 1).replace('/', '_').lower()
-                    contents.append('| [[' +  link_path + '|' + endpoint + ']] | ' + endpoints[endpoint][schema_name][prop_name]['type'] + ' | ' +  endpoints[endpoint][schema_name][prop_name]['description'] + '(' + schema_name + '.' + prop_name + ') | ')
+        for type in endpoints:
+            firstTypeRow = True
+            for schema_name in endpoints[type]:
+                for prop_name in endpoints[type][schema_name]:
+                    description = endpoints[type][schema_name][prop_name]['description']
+                    endpoint = endpoints[type][schema_name][prop_name]['endpoint']
+                    #endpoint_name = endpoint.rsplit('/', 1)[1]
+                    #endpoint_link = 'xxxTODOxxx/{' + schema_name + 'ID}/' + endpoint_name
+                    #link_path = self.link_basepath + endpoint.replace('/redfish/v1/', '', 1).replace('/', '_').lower()
+                    link_path = self.link_basepath + type.lower()
+                    schema_col = ':::'
+                    if firstTypeRow:
+                        schema_col = '[[' +  link_path + '|' + type + ']]'
+                    contents.append('| ' +  schema_col + ' | ' + endpoint + ' | ')
+                    lastSchema = schema_name
+                    firstTypeRow = False
 
         return '\n'.join(contents)
 

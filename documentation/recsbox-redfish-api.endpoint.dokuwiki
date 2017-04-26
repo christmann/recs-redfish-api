@@ -1,83 +1,83 @@
 ===== Endpoint Definition =====
 
-^ URI ^ Schema ^ Description ^
-| [[documentation:redfish_api:endpoints:protocol_version|/redfish]] |  | Provides the protocol version |
-| [[documentation:redfish_api:endpoints:service_root|/redfish/v1]] | ServiceRoot | Root Redfish service |
-| [[documentation:redfish_api:endpoints:metadata|/redfish/v1/$metadata]] |  | Metadata document, describes the resources available at the root, and references additional metadata documents |
-| [[documentation:redfish_api:endpoints:odata|/redfish/v1/odata]] |  | OData service document, provides a standard format for enumerating the resources exposed by the service |
-| [[documentation:redfish_api:endpoints:manageraccounts|/redfish/v1/ManagerAccounts]] | ManagerAccountCollection | Link to a collection of Manager Accounts.(AccountService.Accounts) | 
-| [[documentation:redfish_api:endpoints:privilegeregistry|/redfish/v1/PrivilegeRegistry]] | PrivilegeRegistry | A reference to the Privilege mapping defining the privileges needed to perform a requested operation on a URI associated with this service.(AccountService.PrivilegeMap) | 
-| [[documentation:redfish_api:endpoints:roles|/redfish/v1/Roles]] | RoleCollection | Link to a collection of Roles.(AccountService.Roles) | 
-| [[documentation:redfish_api:endpoints:logservices|/redfish/v1/LogServices]] | LogServiceCollection | A reference to the logs for this chassis.(Chassis.LogServices) | 
-| [[documentation:redfish_api:endpoints:logservices|/redfish/v1/LogServices]] | LogServiceCollection | A reference to the collection of Log Services associated with this system.(ComputerSystem.LogServices) | 
-| [[documentation:redfish_api:endpoints:logservices|/redfish/v1/LogServices]] | LogServiceCollection | This is a reference to a collection of Logs used by the manager.(Manager.LogServices) | 
-| [[documentation:redfish_api:endpoints:logservices|/redfish/v1/LogServices]] | LogServiceCollection | A reference to the collection of Log Services associated with this system.(Switch.LogServices) | 
-| [[documentation:redfish_api:endpoints:networkadapters|/redfish/v1/NetworkAdapters]] | NetworkAdapterCollection | A reference to the collection of Network Adapters associated with this chassis.(Chassis.NetworkAdapters) | 
-| [[documentation:redfish_api:endpoints:power|/redfish/v1/Power]] | Power | A reference to the power properties (power supplies, power policies, sensors) for this chassis.(Chassis.Power) | 
-| [[documentation:redfish_api:endpoints:thermal|/redfish/v1/Thermal]] | Thermal | A reference to the thermal properties (fans, cooling, sensors) for this chassis.(Chassis.Thermal) | 
-| [[documentation:redfish_api:endpoints:bios|/redfish/v1/Bios]] | Bios | A reference to the BIOS settings associated with this system.(ComputerSystem.Bios) | 
-| [[documentation:redfish_api:endpoints:ethernetinterfaces|/redfish/v1/EthernetInterfaces]] | EthernetInterfaceCollection | A reference to the collection of Ethernet interfaces associated with this system.(ComputerSystem.EthernetInterfaces) | 
-| [[documentation:redfish_api:endpoints:ethernetinterfaces|/redfish/v1/EthernetInterfaces]] | EthernetInterfaceCollection | A link to the collection of Ethernet interfaces that provide access to this file share.(FileShare.EthernetInterfaces) | 
-| [[documentation:redfish_api:endpoints:ethernetinterfaces|/redfish/v1/EthernetInterfaces]] | EthernetInterfaceCollection | This is a reference to a collection of NICs that Computer Systems use for network communication with this Host Interface.(HostInterface.HostEthernetInterfaces) | 
-| [[documentation:redfish_api:endpoints:ethernetinterfaces|/redfish/v1/EthernetInterfaces]] | EthernetInterfaceCollection | This is a reference to a collection of NICs that this manager uses for network communication.  It is here that clients will find NIC configuration options and settings.(Manager.EthernetInterfaces) | 
-| [[documentation:redfish_api:endpoints:memorys|/redfish/v1/Memorys]] | MemoryCollection | A reference to the collection of Memory associated with this system.(ComputerSystem.Memory) | 
-| [[documentation:redfish_api:endpoints:memorydomains|/redfish/v1/MemoryDomains]] | MemoryDomainCollection | A reference to the collection of Memory Domains associated with this system.(ComputerSystem.MemoryDomains) | 
-| [[documentation:redfish_api:endpoints:networkinterfaces|/redfish/v1/NetworkInterfaces]] | NetworkInterfaceCollection | A reference to the collection of Network Interfaces associated with this system.(ComputerSystem.NetworkInterfaces) | 
-| [[documentation:redfish_api:endpoints:processors|/redfish/v1/Processors]] | ProcessorCollection | A reference to the collection of Processors associated with this system.(ComputerSystem.Processors) | 
-| [[documentation:redfish_api:endpoints:secureboot|/redfish/v1/SecureBoot]] | SecureBoot | A reference to the UEFI SecureBoot resource associated with this system.(ComputerSystem.SecureBoot) | 
-| [[documentation:redfish_api:endpoints:simplestorages|/redfish/v1/SimpleStorages]] | SimpleStorageCollection | A reference to the collection of storage devices associated with this system.(ComputerSystem.SimpleStorage) | 
-| [[documentation:redfish_api:endpoints:storages|/redfish/v1/Storages]] | StorageCollection | A reference to the collection of storage devices associated with this system.(ComputerSystem.Storage) | 
-| [[documentation:redfish_api:endpoints:endpoints|/redfish/v1/Endpoints]] | EndpointCollection | The Endpoints.(EndpointGroup.Endpoints) | 
-| [[documentation:redfish_api:endpoints:endpoints|/redfish/v1/Endpoints]] | EndpointCollection | A collection of references to the endpoints contained in this fabric.(Fabric.Endpoints) | 
-| [[documentation:redfish_api:endpoints:endpoints|/redfish/v1/Endpoints]] | EndpointCollection | Endpoints.(StorageService.Endpoints) | 
-| [[documentation:redfish_api:endpoints:vlannetworkinterfaces|/redfish/v1/VLanNetworkInterfaces]] | VLanNetworkInterfaceCollection | This is a reference to a collection of VLANs and is only used if the interface supports more than one VLANs.(EthernetInterface.VLANs) | 
-| [[documentation:redfish_api:endpoints:eventdestinations|/redfish/v1/EventDestinations]] | EventDestinationCollection | This is a reference to a collection of Event Destination resources.(EventService.Subscriptions) | 
-| [[documentation:redfish_api:endpoints:switchs|/redfish/v1/Switchs]] | SwitchCollection | A collection of references to the switches contained in this fabric.(Fabric.Switches) | 
-| [[documentation:redfish_api:endpoints:zones|/redfish/v1/Zones]] | ZoneCollection | A collection of references to the zones contained in this fabric.(Fabric.Zones) | 
-| [[documentation:redfish_api:endpoints:ethernetinterface|/redfish/v1/EthernetInterface]] | EthernetInterface | This is a reference to a single NIC that this Manager uses for network communication with this Host Interface.(HostInterface.ManagerEthernetInterface) | 
-| [[documentation:redfish_api:endpoints:managernetworkprotocol|/redfish/v1/ManagerNetworkProtocol]] | ManagerNetworkProtocol | This is a reference to the network services and their settings that the Manager controls.  It is here that clients will find network configuration options as well as network services.(HostInterface.NetworkProtocol) | 
-| [[documentation:redfish_api:endpoints:managernetworkprotocol|/redfish/v1/ManagerNetworkProtocol]] | ManagerNetworkProtocol | This is a reference to the network services and their settings that the manager controls.  It is here that clients will find network configuration options as well as network services.(Manager.NetworkProtocol) | 
-| [[documentation:redfish_api:endpoints:logentrys|/redfish/v1/LogEntrys]] | LogEntryCollection | References to the log entry collection.(LogService.Entries) | 
-| [[documentation:redfish_api:endpoints:hostinterfaces|/redfish/v1/HostInterfaces]] | HostInterfaceCollection | This is a reference to a collection of Host Interfaces that this manager uses for local host communication.  It is here that clients will find Host Interface configuration options and settings.(Manager.HostInterfaces) | 
-| [[documentation:redfish_api:endpoints:serialinterfaces|/redfish/v1/SerialInterfaces]] | SerialInterfaceCollection | This is a reference to a collection of serial interfaces that this manager uses for serial and console communication.  It is here that clients will find serial configuration options and settings.(Manager.SerialInterfaces) | 
-| [[documentation:redfish_api:endpoints:virtualmedias|/redfish/v1/VirtualMedias]] | VirtualMediaCollection | This is a reference to the Virtual Media services for this particular manager.(Manager.VirtualMedia) | 
-| [[documentation:redfish_api:endpoints:memorymetrics|/redfish/v1/MemoryMetrics]] | MemoryMetrics | A reference to the Metrics associated with this Memory.(Memory.Metrics) | 
-| [[documentation:redfish_api:endpoints:memorychunks|/redfish/v1/MemoryChunks]] | MemoryChunksCollection | A reference to the collection of Memory Chunks associated with this Memory Domain.(MemoryDomain.MemoryChunks) | 
-| [[documentation:redfish_api:endpoints:networkdevicefunctions|/redfish/v1/NetworkDeviceFunctions]] | NetworkDeviceFunctionCollection | Contains the members of this collection.(NetworkAdapter.NetworkDeviceFunctions) | 
-| [[documentation:redfish_api:endpoints:networkdevicefunctions|/redfish/v1/NetworkDeviceFunctions]] | NetworkDeviceFunctionCollection | Contains the members of this collection.(NetworkInterface.NetworkDeviceFunctions) | 
-| [[documentation:redfish_api:endpoints:networkports|/redfish/v1/NetworkPorts]] | NetworkPortCollection | Contains the members of this collection.(NetworkAdapter.NetworkPorts) | 
-| [[documentation:redfish_api:endpoints:networkports|/redfish/v1/NetworkPorts]] | NetworkPortCollection | Contains the members of this collection.(NetworkInterface.NetworkPorts) | 
-| [[documentation:redfish_api:endpoints:networkport|/redfish/v1/NetworkPort]] | NetworkPort | Contains the members of this collection.(NetworkDeviceFunction.PhysicalPortAssignment) | 
-| [[documentation:redfish_api:endpoints:accountservice|/redfish/v1/AccountService]] | AccountService | This is a link to the Account Service.(ServiceRoot.AccountService) | 
-| [[documentation:redfish_api:endpoints:chassis|/redfish/v1/Chassis]] | ChassisCollection | This is a link to a collection of Chassis.(ServiceRoot.Chassis) | 
-| [[documentation:redfish_api:endpoints:eventservice|/redfish/v1/EventService]] | EventService | This is a link to the EventService.(ServiceRoot.EventService) | 
-| [[documentation:redfish_api:endpoints:fabrics|/redfish/v1/Fabrics]] | FabricCollection | A link to a collection of all fabric entities.(ServiceRoot.Fabrics) | 
-| [[documentation:redfish_api:endpoints:jsonschemafiles|/redfish/v1/JsonSchemaFiles]] | JsonSchemaFileCollection | This is a link to a collection of Json-Schema files.(ServiceRoot.JsonSchemas) | 
-| [[documentation:redfish_api:endpoints:managers|/redfish/v1/Managers]] | ManagerCollection | This is a link to a collection of Managers.(ServiceRoot.Managers) | 
-| [[documentation:redfish_api:endpoints:messageregistryfiles|/redfish/v1/MessageRegistryFiles]] | MessageRegistryFileCollection | This is a link to a collection of Registries.(ServiceRoot.Registries) | 
-| [[documentation:redfish_api:endpoints:sessionservice|/redfish/v1/SessionService]] | SessionService | This is a link to the Sessions Service.(ServiceRoot.SessionService) | 
-| [[documentation:redfish_api:endpoints:storageservices|/redfish/v1/StorageServices]] | StorageServiceCollection | A link to a collection of all storage service entities.(ServiceRoot.StorageServices) | 
-| [[documentation:redfish_api:endpoints:storagesystems|/redfish/v1/StorageSystems]] | StorageSystemCollection | This is a link to a collection of storage systems.(ServiceRoot.StorageSystems) | 
-| [[documentation:redfish_api:endpoints:computersystems|/redfish/v1/ComputerSystems]] | ComputerSystemCollection | This is a link to a collection of Systems.(ServiceRoot.Systems) | 
-| [[documentation:redfish_api:endpoints:taskservice|/redfish/v1/TaskService]] | TaskService | This is a link to the Task Service.(ServiceRoot.Tasks) | 
-| [[documentation:redfish_api:endpoints:updateservice|/redfish/v1/UpdateService]] | UpdateService | This is a link to the UpdateService.(ServiceRoot.UpdateService) | 
-| [[documentation:redfish_api:endpoints:sessions|/redfish/v1/Sessions]] | SessionCollection | Link to a collection of Sessions.(SessionService.Sessions) | 
-| [[documentation:redfish_api:endpoints:volumes|/redfish/v1/Volumes]] | VolumeCollection | The set of volumes produced by the storage controllers represented by this resource.(Storage.Volumes) | 
-| [[documentation:redfish_api:endpoints:volumes|/redfish/v1/Volumes]] | VolumeCollection | Volumes in this StorageGroup.(StorageGroup.Volumes) | 
-| [[documentation:redfish_api:endpoints:volumes|/redfish/v1/Volumes]] | VolumeCollection | A reference to the collection of volumes allocated from this storage pool.(StoragePool.AllocatedVolumes) | 
-| [[documentation:redfish_api:endpoints:volumes|/redfish/v1/Volumes]] | VolumeCollection | Volumes.(StorageService.Volumes) | 
-| [[documentation:redfish_api:endpoints:endpointgroups|/redfish/v1/EndpointGroups]] | EndpointGroupCollection | ClientEndpointGroup in this StorageGroup.(StorageGroup.ClientEndpointGroups) | 
-| [[documentation:redfish_api:endpoints:endpointgroups|/redfish/v1/EndpointGroups]] | EndpointGroupCollection | ServerEndpointGroups in this StorageGroup.(StorageGroup.ServerEndpointGroups) | 
-| [[documentation:redfish_api:endpoints:endpointgroups|/redfish/v1/EndpointGroups]] | EndpointGroupCollection | Client endpoint groups.(StorageService.ClientEndpointGroups) | 
-| [[documentation:redfish_api:endpoints:endpointgroups|/redfish/v1/EndpointGroups]] | EndpointGroupCollection | Server endpoint groups.(StorageService.ServerEndpointGroups) | 
-| [[documentation:redfish_api:endpoints:storagepools|/redfish/v1/StoragePools]] | StoragePoolCollection | A reference to the collection of storage pools allocated from this storage pool.(StoragePool.AllocatedPools) | 
-| [[documentation:redfish_api:endpoints:storagepools|/redfish/v1/StoragePools]] | StoragePoolCollection | StoragePools.(StorageService.StoragePools) | 
-| [[documentation:redfish_api:endpoints:classofservices|/redfish/v1/ClassOfServices]] | ClassOfServiceCollection | The ClassesOfService supported by this storage pool.(StoragePool.ClassesOfService) | 
-| [[documentation:redfish_api:endpoints:classofservices|/redfish/v1/ClassOfServices]] | ClassOfServiceCollection | The ClassesOfService that all storage in this StorageService can support.(StorageService.ClassesOfService) | 
-| [[documentation:redfish_api:endpoints:drives|/redfish/v1/Drives]] | DriveCollection | The set of drives managed by this storage service.(StorageService.Drives) | 
-| [[documentation:redfish_api:endpoints:filesystems|/redfish/v1/FileSystems]] | FileSystemCollection | FileSystems.(StorageService.FileSystems) | 
-| [[documentation:redfish_api:endpoints:storagegroups|/redfish/v1/StorageGroups]] | StorageGroupCollection | StorageGroups.(StorageService.StorageGroups) | 
-| [[documentation:redfish_api:endpoints:ports|/redfish/v1/Ports]] | PortCollection | A collection of references to the ports for this switch.(Switch.Ports) | 
-| [[documentation:redfish_api:endpoints:tasks|/redfish/v1/Tasks]] | TaskCollection | References to the Tasks collection.(TaskService.Tasks) | 
-| [[documentation:redfish_api:endpoints:softwareinventorys|/redfish/v1/SoftwareInventorys]] | SoftwareInventoryCollection | An inventory of firmware.(UpdateService.FirmwareInventory) | 
-| [[documentation:redfish_api:endpoints:softwareinventorys|/redfish/v1/SoftwareInventorys]] | SoftwareInventoryCollection | An inventory of software.(UpdateService.SoftwareInventory) | 
+^ Schema ^ URI ^
+| [[documentation:redfish_api:endpoints:protocol_version|Protocol Version]] | /redfish |
+| [[documentation:redfish_api:endpoints:service_root|ServiceRoot]] | /redfish/v1 |
+| [[documentation:redfish_api:endpoints:metadata|Metadata]] | /redfish/v1/$metadata |
+| [[documentation:redfish_api:endpoints:odata|OData]] | /redfish/v1/odata |
+| [[documentation:redfish_api:endpoints:manageraccountcollection|ManagerAccountCollection]] | /redfish/v1/AccountService/ManagerAccounts | 
+| [[documentation:redfish_api:endpoints:privilegeregistry|PrivilegeRegistry]] | /redfish/v1/AccountService/PrivilegeRegistry | 
+| [[documentation:redfish_api:endpoints:rolecollection|RoleCollection]] | /redfish/v1/AccountService/Roles | 
+| [[documentation:redfish_api:endpoints:logservicecollection|LogServiceCollection]] | /redfish/v1/Chassis/{ChassisID}/LogServices | 
+| ::: | /redfish/v1/ComputerSystem/{ComputerSystemID}/LogServices | 
+| ::: | /redfish/v1/Manager/{ManagerID}/LogServices | 
+| ::: | /redfish/v1/Switch/{SwitchID}/LogServices | 
+| [[documentation:redfish_api:endpoints:networkadaptercollection|NetworkAdapterCollection]] | /redfish/v1/Chassis/{ChassisID}/NetworkAdapters | 
+| [[documentation:redfish_api:endpoints:power|Power]] | /redfish/v1/Chassis/{ChassisID}/Power | 
+| [[documentation:redfish_api:endpoints:thermal|Thermal]] | /redfish/v1/Chassis/{ChassisID}/Thermal | 
+| [[documentation:redfish_api:endpoints:bios|Bios]] | /redfish/v1/ComputerSystem/{ComputerSystemID}/Bios | 
+| [[documentation:redfish_api:endpoints:ethernetinterfacecollection|EthernetInterfaceCollection]] | /redfish/v1/ComputerSystem/{ComputerSystemID}/EthernetInterfaces | 
+| ::: | /redfish/v1/FileShare/{FileShareID}/EthernetInterfaces | 
+| ::: | /redfish/v1/HostInterface/{HostInterfaceID}/EthernetInterfaces | 
+| ::: | /redfish/v1/Manager/{ManagerID}/EthernetInterfaces | 
+| [[documentation:redfish_api:endpoints:memorycollection|MemoryCollection]] | /redfish/v1/ComputerSystem/{ComputerSystemID}/Memorys | 
+| [[documentation:redfish_api:endpoints:memorydomaincollection|MemoryDomainCollection]] | /redfish/v1/ComputerSystem/{ComputerSystemID}/MemoryDomains | 
+| [[documentation:redfish_api:endpoints:networkinterfacecollection|NetworkInterfaceCollection]] | /redfish/v1/ComputerSystem/{ComputerSystemID}/NetworkInterfaces | 
+| [[documentation:redfish_api:endpoints:processorcollection|ProcessorCollection]] | /redfish/v1/ComputerSystem/{ComputerSystemID}/Processors | 
+| [[documentation:redfish_api:endpoints:secureboot|SecureBoot]] | /redfish/v1/ComputerSystem/{ComputerSystemID}/SecureBoot | 
+| [[documentation:redfish_api:endpoints:simplestoragecollection|SimpleStorageCollection]] | /redfish/v1/ComputerSystem/{ComputerSystemID}/SimpleStorages | 
+| [[documentation:redfish_api:endpoints:storagecollection|StorageCollection]] | /redfish/v1/ComputerSystem/{ComputerSystemID}/Storages | 
+| [[documentation:redfish_api:endpoints:endpointcollection|EndpointCollection]] | /redfish/v1/EndpointGroup/{EndpointGroupID}/Endpoints | 
+| ::: | /redfish/v1/Fabric/{FabricID}/Endpoints | 
+| ::: | /redfish/v1/StorageService/Endpoints | 
+| [[documentation:redfish_api:endpoints:vlannetworkinterfacecollection|VLanNetworkInterfaceCollection]] | /redfish/v1/EthernetInterface/{EthernetInterfaceID}/VLanNetworkInterfaces | 
+| [[documentation:redfish_api:endpoints:eventdestinationcollection|EventDestinationCollection]] | /redfish/v1/EventService/EventDestinations | 
+| [[documentation:redfish_api:endpoints:switchcollection|SwitchCollection]] | /redfish/v1/Fabric/{FabricID}/Switchs | 
+| [[documentation:redfish_api:endpoints:zonecollection|ZoneCollection]] | /redfish/v1/Fabric/{FabricID}/Zones | 
+| [[documentation:redfish_api:endpoints:ethernetinterface|EthernetInterface]] | /redfish/v1/HostInterface/{HostInterfaceID}/EthernetInterface | 
+| [[documentation:redfish_api:endpoints:managernetworkprotocol|ManagerNetworkProtocol]] | /redfish/v1/HostInterface/{HostInterfaceID}/ManagerNetworkProtocol | 
+| ::: | /redfish/v1/Manager/{ManagerID}/ManagerNetworkProtocol | 
+| [[documentation:redfish_api:endpoints:logentrycollection|LogEntryCollection]] | /redfish/v1/LogService/LogEntrys | 
+| [[documentation:redfish_api:endpoints:hostinterfacecollection|HostInterfaceCollection]] | /redfish/v1/Manager/{ManagerID}/HostInterfaces | 
+| [[documentation:redfish_api:endpoints:serialinterfacecollection|SerialInterfaceCollection]] | /redfish/v1/Manager/{ManagerID}/SerialInterfaces | 
+| [[documentation:redfish_api:endpoints:virtualmediacollection|VirtualMediaCollection]] | /redfish/v1/Manager/{ManagerID}/VirtualMedias | 
+| [[documentation:redfish_api:endpoints:memorymetrics|MemoryMetrics]] | /redfish/v1/Memory/{MemoryID}/MemoryMetrics | 
+| [[documentation:redfish_api:endpoints:memorychunkscollection|MemoryChunksCollection]] | /redfish/v1/MemoryDomain/{MemoryDomainID}/MemoryChunks | 
+| [[documentation:redfish_api:endpoints:networkdevicefunctioncollection|NetworkDeviceFunctionCollection]] | /redfish/v1/NetworkAdapter/{NetworkAdapterID}/NetworkDeviceFunctions | 
+| ::: | /redfish/v1/NetworkInterface/{NetworkInterfaceID}/NetworkDeviceFunctions | 
+| [[documentation:redfish_api:endpoints:networkportcollection|NetworkPortCollection]] | /redfish/v1/NetworkAdapter/{NetworkAdapterID}/NetworkPorts | 
+| ::: | /redfish/v1/NetworkInterface/{NetworkInterfaceID}/NetworkPorts | 
+| [[documentation:redfish_api:endpoints:networkport|NetworkPort]] | /redfish/v1/NetworkDeviceFunction/{NetworkDeviceFunctionID}/NetworkPort | 
+| [[documentation:redfish_api:endpoints:accountservice|AccountService]] | /redfish/v1/AccountService | 
+| [[documentation:redfish_api:endpoints:chassiscollection|ChassisCollection]] | /redfish/v1/Chassis | 
+| [[documentation:redfish_api:endpoints:eventservice|EventService]] | /redfish/v1/EventService | 
+| [[documentation:redfish_api:endpoints:fabriccollection|FabricCollection]] | /redfish/v1/Fabrics | 
+| [[documentation:redfish_api:endpoints:jsonschemafilecollection|JsonSchemaFileCollection]] | /redfish/v1/JsonSchemaFiles | 
+| [[documentation:redfish_api:endpoints:managercollection|ManagerCollection]] | /redfish/v1/Managers | 
+| [[documentation:redfish_api:endpoints:messageregistryfilecollection|MessageRegistryFileCollection]] | /redfish/v1/MessageRegistryFiles | 
+| [[documentation:redfish_api:endpoints:sessionservice|SessionService]] | /redfish/v1/SessionService | 
+| [[documentation:redfish_api:endpoints:storageservicecollection|StorageServiceCollection]] | /redfish/v1/StorageServices | 
+| [[documentation:redfish_api:endpoints:storagesystemcollection|StorageSystemCollection]] | /redfish/v1/StorageSystems | 
+| [[documentation:redfish_api:endpoints:computersystemcollection|ComputerSystemCollection]] | /redfish/v1/ComputerSystems | 
+| [[documentation:redfish_api:endpoints:taskservice|TaskService]] | /redfish/v1/TaskService | 
+| [[documentation:redfish_api:endpoints:updateservice|UpdateService]] | /redfish/v1/UpdateService | 
+| [[documentation:redfish_api:endpoints:sessioncollection|SessionCollection]] | /redfish/v1/SessionService/Sessions | 
+| [[documentation:redfish_api:endpoints:volumecollection|VolumeCollection]] | /redfish/v1/Storage/{StorageID}/Volumes | 
+| ::: | /redfish/v1/StorageGroup/{StorageGroupID}/Volumes | 
+| ::: | /redfish/v1/StoragePool/{StoragePoolID}/Volumes | 
+| ::: | /redfish/v1/StorageService/Volumes | 
+| [[documentation:redfish_api:endpoints:endpointgroupcollection|EndpointGroupCollection]] | /redfish/v1/StorageGroup/{StorageGroupID}/EndpointGroups | 
+| ::: | /redfish/v1/StorageGroup/{StorageGroupID}/EndpointGroups | 
+| ::: | /redfish/v1/StorageService/EndpointGroups | 
+| ::: | /redfish/v1/StorageService/EndpointGroups | 
+| [[documentation:redfish_api:endpoints:storagepoolcollection|StoragePoolCollection]] | /redfish/v1/StoragePool/{StoragePoolID}/StoragePools | 
+| ::: | /redfish/v1/StorageService/StoragePools | 
+| [[documentation:redfish_api:endpoints:classofservicecollection|ClassOfServiceCollection]] | /redfish/v1/StoragePool/{StoragePoolID}/ClassOfServices | 
+| ::: | /redfish/v1/StorageService/ClassOfServices | 
+| [[documentation:redfish_api:endpoints:drivecollection|DriveCollection]] | /redfish/v1/StorageService/Drives | 
+| [[documentation:redfish_api:endpoints:filesystemcollection|FileSystemCollection]] | /redfish/v1/StorageService/FileSystems | 
+| [[documentation:redfish_api:endpoints:storagegroupcollection|StorageGroupCollection]] | /redfish/v1/StorageService/StorageGroups | 
+| [[documentation:redfish_api:endpoints:portcollection|PortCollection]] | /redfish/v1/Switch/{SwitchID}/Ports | 
+| [[documentation:redfish_api:endpoints:taskcollection|TaskCollection]] | /redfish/v1/TaskService/Tasks | 
+| [[documentation:redfish_api:endpoints:softwareinventorycollection|SoftwareInventoryCollection]] | /redfish/v1/UpdateService/SoftwareInventorys | 
+| ::: | /redfish/v1/UpdateService/SoftwareInventorys | 
