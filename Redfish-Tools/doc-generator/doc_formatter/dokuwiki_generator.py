@@ -175,8 +175,10 @@ class DokuwikiGenerator(DocFormatter):
 
         # add back null if we found one:
         if has_null:
-            parsed['prop_is_nullable'] = True
             parsed['prop_type'].append('null')
+            
+        if 'null' in parsed['prop_type']:
+            parsed['prop_is_nullable'] = True
 
         # read_only and units should be the same for all
         parsed['read_only'] = details[0]['read_only']
@@ -225,6 +227,10 @@ class DokuwikiGenerator(DocFormatter):
         prop_format = prop_info.get('format')
         prop_min = prop_info.get('minimum')
         prop_max = prop_info.get('maximum')
+        
+        prop_is_nullable = False
+        if 'null' in prop_type:
+            prop_is_nullable = True
 
         read_only = prop_info.get('readonly')
         if self.config['normative'] and 'longDescription' in prop_info:
@@ -280,6 +286,7 @@ class DokuwikiGenerator(DocFormatter):
                 'descr': descr,
                 'prop_is_object': prop_is_object,
                 'prop_is_array': prop_is_array,
+                'prop_is_nullable': prop_is_nullable,
                 'object_description': object_description,
                 'item_description': item_description,
                 'prop_details': prop_details,
@@ -313,6 +320,7 @@ class DokuwikiGenerator(DocFormatter):
             'object_description': self.separators['linebreak'],
             'item_description': self.separators['linebreak']
             }
+        
         
         for property_name, delim in props.items():
             if isinstance(formatted_details[property_name], list):
@@ -363,19 +371,23 @@ class DokuwikiGenerator(DocFormatter):
                 prop_type += '(reference)'
                 if ref_type:
                     prop_type = prop_type.replace('reference', 'reference(' + self.link(self.schema_link_basepath + ref_type.lower(), ref_type) + ')')
-        elif prop_type == 'array':
-            print({ schema_name + '.' + prop_name : formatted_details})
 
+        prop_type = prop_type.replace('null', '').strip(', ')
+        
         prop_perm = ''
         if formatted_details['read_only']:
             prop_perm = 'read-only'
         else:
             prop_perm = 'read-write'
         
-
+        prop_nullable = ''
+        if formatted_details['prop_is_nullable']:
+            prop_nullable = 'Yes'
+        
         row = []
         row.append(indentation_string + name_and_version)
         row.append(prop_type)
+        row.append(prop_nullable)
         row.append(prop_perm)
         row.append(formatted_details['descr'])
 
@@ -477,7 +489,7 @@ class DokuwikiGenerator(DocFormatter):
                 contents.append(section['json_payload'])
             # something is awry if there are no properties, but ...
             if section['properties']:
-                contents.append(self.table_header(['Property', 'Type', 'Permission', 'Description']))
+                contents.append(self.table_header(['Property', 'Type', 'Nullable', 'Permission', 'Description']))
                 contents.append('\n'.join(section['properties']))
             if section['property_details']:
                 contents.append('\n=== Property Details ===\n')
@@ -532,6 +544,10 @@ class DokuwikiGenerator(DocFormatter):
 
     def link(self, uri, text):
         """Formats a dokuwiki link"""
+        if not uri:
+            uri = ''
+        if not text:
+            text = uri
         return '[[' + uri + '|' + text + ']]'
         
     def bold(self, text):
@@ -548,22 +564,30 @@ class DokuwikiGenerator(DocFormatter):
 
     def table_row(self, content):
         """Formats a list to a dokuwiki table row"""
+        if not content:
+            content = ''
         if not isinstance(content, list):
             content = [ content ]
         char = self.special_chars['cell_delimiter']
-        return self.enclose((' ' + char + ' ').join(content), char, True)
+        return self.enclose((' ' + char + ' ').join(['' if value is None else value for value in content]), char, True)
 
     def table_header(self, content):
         """Formats a list to a dokuwiki table header row"""
+        if not content:
+            content = ''
         if not isinstance(content, list):
             content = [ content ]
         char = self.special_chars['hcell_delimiter']
-        return self.enclose((' ' + char + ' ').join(content), char, True)
+        return self.enclose((' ' + char + ' ').join(['' if value is None else value for value in content]), char, True)
         
     
     @staticmethod
     def enclose(text, wrapper, gap=False):
         """Encloses a text with the wrappertext as pre- and postfix."""
+        if not text:
+            text = ''
+        if not wrapper:
+            wrapper = ''
         space = ''
         if gap:
             space = ' '
