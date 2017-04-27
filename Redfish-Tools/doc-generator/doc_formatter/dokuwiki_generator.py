@@ -321,7 +321,6 @@ class DokuwikiGenerator(DocFormatter):
             'item_description': self.separators['linebreak']
             }
         
-        
         for property_name, delim in props.items():
             if isinstance(formatted_details[property_name], list):
                 property_values = []
@@ -343,7 +342,6 @@ class DokuwikiGenerator(DocFormatter):
                 name_and_version += ' [ {} ]'
             else:
                 name_and_version += ' [ {'
-
 
         if formatted_details['prop_units']:
             formatted_details['descr'] += self.special_chars['linebreak'] + 'unit: ' + self.escape_for_dokuwiki(formatted_details['prop_units'], self.config['escape_chars'])
@@ -491,7 +489,7 @@ class DokuwikiGenerator(DocFormatter):
             if section['properties']:
                 contents.append(self.table_header(['Property', 'Type', 'Nullable', 'Permission', 'Description']))
                 contents.append('\n'.join(section['properties']))
-            if section['property_details']:
+            if section['property_details'] and not section['head'].endswith('Collection'):
                 contents.append('\n=== Property Details ===\n')
                 contents.append('\n'.join(section['property_details']))
 

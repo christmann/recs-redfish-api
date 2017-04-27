@@ -285,49 +285,6 @@ A Collection of Chassis resource instances.
 | **Name** | string |  | read-write | The name of the resource or array element. |
 | **Oem** {} | object |  | read-write | This is the manufacturer/provider specific extension moniker used to divide the Oem object into sections. |
 
-=== Property Details ===
-
-== ChassisType ==
-
-^ string ^ Description ^
-| Blade | An enclosed or semi-enclosed, typically vertically-oriented, system chassis which must be plugged into a multi-system chassis to function normally. |
-| Card | A loose device or circuit board intended to be installed in a system or other enclosure. |
-| Cartridge | A small self-contained system intended to be plugged into a multi-system chassis. |
-| Component | A small chassis, card, or device which contains devices for a particular subsystem or function. |
-| Drawer | An enclosed or semi-enclosed, typically horizontally-oriented, system chassis which may be slid into a multi-system chassis. |
-| Enclosure | A generic term for a chassis that does not fit any other description. |
-| Expansion | A chassis which expands the capabilities or capacity of another chassis. |
-| IPBasedDrive | A chassis in a drive form factor with IP-based network connections. |
-| Module | A small, typically removable, chassis or card which contains devices for a particular subsystem or function. |
-| Other | A chassis that does not fit any of these definitions. |
-| Pod | A collection of equipment racks in a large, likely transportable, container. |
-| Rack | An equipment rack, typically a 19-inch wide freestanding unit. |
-| RackGroup | A group of racks which form a single entity or share infrastructure. |
-| RackMount | A single system chassis designed specifically for mounting in an equipment rack. |
-| Row | A collection of equipment racks. |
-| Shelf | An enclosed or semi-enclosed, typically horizontally-oriented, system chassis which must be plugged into a multi-system chassis to function normally. |
-| Sidecar | A chassis that mates mechanically with another chassis to expand its capabilities or capacity. |
-| Sled | An enclosed or semi-enclosed, system chassis which must be plugged into a multi-system chassis to function normally similar to a blade type chassis. |
-| StandAlone | A single, free-standing system, commonly called a tower or desktop chassis. |
-| Zone | A logical division or portion of a physical chassis that contains multiple devices or systems that cannot be physically separated. |
-
-== IndicatorLED ==
-
-^ string ^ Description ^
-| Blinking | The Indicator LED is blinking. |
-| Lit | The Indicator LED is lit. |
-| Off | The Indicator LED is off. |
-| Unknown | The state of the Indicator LED cannot be determined. Deprecated: Return null if state is unknown. |
-
-== PowerState ==
-
-^ string ^ Description ^
-| Off | The components within the chassis has no power, except some components may continue to have AUX power such as management controller. |
-| On | The components within the chassis has power on. |
-| PoweringOff | A temporary state between On and Off. The components within the chassis can take time to process the power off action. |
-| PoweringOn | A temporary state between Off and On. The components within the chassis can take time to process the power on action. |
-
-
 ===== ClassOfService =====
 
 A service option composed of one or more service options.
@@ -627,34 +584,6 @@ A Collection of ComputerSystem resource instances.
 | **Members** | array(reference([[documentation:redfish_api:schema_definition#computersystem|ComputerSystem]])) |  | read-only | Contains the members of this collection. |
 | **Name** | string |  | read-write | The name of the resource or array element. |
 | **Oem** {} | object |  | read-write | This is the manufacturer/provider specific extension moniker used to divide the Oem object into sections. |
-
-=== Property Details ===
-
-== IndicatorLED ==
-
-^ string ^ Description ^
-| Blinking | The Indicator LED is blinking. |
-| Lit | The Indicator LED is lit. |
-| Off | The Indicator LED is off. |
-| Unknown | The state of the Indicator LED cannot be determined. Deprecated: Return null if state is unknown. |
-
-== PowerState ==
-
-^ string ^ Description ^
-| Off | The system is powered off, although some components may continue to have AUX power such as management controller. |
-| On | The system is powered on. |
-| PoweringOff | A temporary state between On and Off. The power off action can take time while the OS is in the shutdown process. |
-| PoweringOn | A temporary state between Off and On. This temporary state can be very short. |
-
-== SystemType ==
-
-^ string ^ Description ^
-| OS | An operating system instance. |
-| Physical | A computer system. |
-| PhysicallyPartitioned | A hardware-based partition of a computer system. |
-| Virtual | A virtual machine instance running on this system. |
-| VirtuallyPartitioned | A virtual or software-based partition of a computer system. |
-
 
 ===== DataProtectionLoSCapabilities =====
 
@@ -1022,58 +951,6 @@ A Collection of Drive resource instances.
 | **Name** | string |  | read-write | A friendly name for this line of service. |
 | **Oem** {} | object |  | read-write | This is the manufacturer/provider specific extension moniker used to divide the Oem object into sections. |
 
-=== Property Details ===
-
-== EncryptionAbility ==
-
-^ string ^ Description ^
-| None | The drive is not capable of self encryption. |
-| Other | The drive is capable of self encryption through some other means. |
-| SelfEncryptingDrive | The drive is capable of self encryption per the Trusted Computing Group's Self Encrypting Drive Standard. |
-
-== EncryptionStatus ==
-
-^ string ^ Description ^
-| Foreign | The drive is currently encrypted, the data is not accessible to the user, and the system requires user intervention to expose the data. |
-| Locked | The drive is currently encrypted and the data is not accessible to the user, however the system has the ability to unlock the drive automatically. |
-| Unecrypted | The drive is not currently encrypted. Deprecated: Use Unencrypted. |
-| Unencrypted | The drive is not currently encrypted. |
-| Unlocked | The drive is currently encrypted but the data is accessible to the user unencrypted. |
-
-== HotspareType ==
-
-^ string ^ Description ^
-| Chassis | The drive is currently serving as a hotspare for all other drives in the chassis. |
-| Dedicated | The drive is currently serving as a hotspare for a user defined set of drives. |
-| Global | The drive is currently serving as a hotspare for all other drives in the storage system. |
-| None | The drive is not currently a hotspare. |
-
-== IndicatorLED ==
-
-^ string ^ Description ^
-| Blinking | The Indicator LED is blinking. |
-| Lit | The Indicator LED is lit. |
-| Off | The Indicator LED is off. |
-
-== MediaType ==
-
-^ string ^ Description ^
-| HDD | The drive media type is traditional magnetic platters. |
-| SMR | The drive media type is shingled magnetic recording. |
-| SSD | The drive media type is solid state or flash memory. |
-
-== StatusIndicator ==
-
-^ string ^ Description ^
-| Fail | The drive has failed. |
-| Hotspare | The drive is marked to be automatically rebuilt and used as a replacement for a failed drive. |
-| InACriticalArray | The array that this drive is a part of is degraded. |
-| InAFailedArray | The array that this drive is a part of is failed. |
-| OK | The drive is OK. |
-| PredictiveFailureAnalysis | The drive is still working but predicted to fail soon. |
-| Rebuild | The drive is being rebuilt. |
-
-
 ===== Endpoint =====
 
 This is the schema definition for the Endpoint resource. It represents the properties of an entity that sends or receives protocol defined messages over a transport.
@@ -1269,24 +1146,6 @@ A Collection of endpoint group resource instances.
 | **Name** | string |  | read-write | A friendly name for this line of service. |
 | **Oem** {} | object |  | read-write | This is the manufacturer/provider specific extension moniker used to divide the Oem object into sections. |
 
-=== Property Details ===
-
-== AccessState ==
-
-^ string ^ Description ^
-| NonOptimized | The endpoint(s) are in an Active/NonOptimized state. |
-| Optimized | The endpoint(s) are in an Active/Optimized state. |
-| Standby | The endpoint(s) are in a Standby state. |
-| Transitioning | The endpoint(s) are transitioning to a new AccesState. |
-| Unavailable | The endpoint(s) are unavailable. |
-
-== GroupType ==
-
-^ string ^ Description ^
-| Client | The group contains the client (initiator) endpoints. |
-| Server | The group contains the server (target) endpoints. |
-
-
 ===== EthernetInterface =====
 
 This schema defines a simple ethernet NIC resource.
@@ -1413,16 +1272,6 @@ A Collection of EthernetInterface resource instances.
 | **Name** | string |  | read-write | A friendly name for this line of service. |
 | **Oem** {} | object |  | read-write | This is the manufacturer/provider specific extension moniker used to divide the Oem object into sections. |
 
-=== Property Details ===
-
-== LinkStatus ==
-
-^ string ^ Description ^
-| LinkDown | There is no link on this interface, but the interface is connected. |
-| LinkUp | The link is available for communication on this interface. |
-| NoLink | There is no link or connection detected on this interface. |
-
-
 ===== Event =====
 
 The Event schema describes the JSON payload received by an Event Destination (which has subscribed to event notification) when events occurs.  This resource contains data about event(s), including descriptions, severity and MessageId reference to a Message Registry that can be accessed for further information.
@@ -1493,14 +1342,6 @@ A Collection of EventDestination resource instances.
 | **Members** | array(reference([[documentation:redfish_api:schema_definition#eventdestination|EventDestination]])) |  | read-only | Contains the members of this collection. |
 | **Name** | string |  | read-write | A friendly name for this line of service. |
 | **Oem** {} | object |  | read-write | This is the manufacturer/provider specific extension moniker used to divide the Oem object into sections. |
-
-=== Property Details ===
-
-== Protocol ==
-
-^ string ^
-| Redfish |
-
 
 ===== EventService =====
 
@@ -2026,14 +1867,6 @@ A Collection of HostInterface resource instances.
 | **Name** | string |  | read-write | A friendly name for this line of service. |
 | **Oem** {} | object |  | read-write | This is the manufacturer/provider specific extension moniker used to divide the Oem object into sections. |
 
-=== Property Details ===
-
-== HostInterfaceType ==
-
-^ string ^ Description ^
-| NetworkHostInterface | This interface is a Network Host Interface. |
-
-
 ===== HostedStorageServices =====
 
 A Collection of Hosted Storage Service resource instances.
@@ -2331,133 +2164,6 @@ A Collection of LogEntry resource instances.
 | **Name** | string |  | read-write | A friendly name for this line of service. |
 | **Oem** {} | object |  | read-write | This is the manufacturer/provider specific extension moniker used to divide the Oem object into sections. |
 
-=== Property Details ===
-
-== EntryCode ==
-
-^ string ^
-| Assert |
-| Deassert |
-| Lower Non-critical - going low |
-| Lower Non-critical - going high |
-| Lower Critical - going low |
-| Lower Critical - going high |
-| Lower Non-recoverable - going low |
-| Lower Non-recoverable - going high |
-| Upper Non-critical - going low |
-| Upper Non-critical - going high |
-| Upper Critical - going low |
-| Upper Critical - going high |
-| Upper Non-recoverable - going low |
-| Upper Non-recoverable - going high |
-| Transition to Idle |
-| Transition to Active |
-| Transition to Busy |
-| State Deasserted |
-| State Asserted |
-| Predictive Failure deasserted |
-| Predictive Failure asserted |
-| Limit Not Exceeded |
-| Limit Exceeded |
-| Performance Met |
-| Performance Lags |
-| Transition to OK |
-| Transition to Non-Critical from OK |
-| Transition to Critical from less severe |
-| Transition to Non-recoverable from less severe |
-| Transition to Non-Critical from more severe |
-| Transition to Critical from Non-recoverable |
-| Transition to Non-recoverable |
-| Monitor |
-| Informational |
-| Device Removed / Device Absent |
-| Device Inserted / Device Present |
-| Device Disabled |
-| Device Enabled |
-| Transition to Running |
-| Transition to In Test |
-| Transition to Power Off |
-| Transition to On Line |
-| Transition to Off Line |
-| Transition to Off Duty |
-| Transition to Degraded |
-| Transition to Power Save |
-| Install Error |
-| Fully Redundant |
-| Redundancy Lost |
-| Redundancy Degraded |
-| Non-redundant:Sufficient Resources from Redundant |
-| Non-redundant:Sufficient Resources from Insufficient Resources |
-| Non-redundant:Insufficient Resources |
-| Redundancy Degraded from Fully Redundant |
-| Redundancy Degraded from Non-redundant |
-| D0 Power State |
-| D1 Power State |
-| D2 Power State |
-| D3 Power State |
-
-== EntryType ==
-
-^ string ^
-| Event |
-| SEL |
-| Oem |
-
-== SensorType ==
-
-^ string ^
-| Platform Security Violation Attempt |
-| Temperature |
-| Voltage |
-| Current |
-| Fan |
-| Physical Chassis Security |
-| Processor |
-| Power Supply / Converter |
-| PowerUnit |
-| CoolingDevice |
-| Other Units-based Sensor |
-| Memory |
-| Drive Slot/Bay |
-| POST Memory Resize |
-| System Firmware Progress |
-| Event Logging Disabled |
-| System Event |
-| Critical Interrupt |
-| Button/Switch |
-| Module/Board |
-| Microcontroller/Coprocessor |
-| Add-in Card |
-| Chassis |
-| ChipSet |
-| Other FRU |
-| Cable/Interconnect |
-| Terminator |
-| SystemBoot/Restart |
-| Boot Error |
-| BaseOSBoot/InstallationStatus |
-| OS Stop/Shutdown |
-| Slot/Connector |
-| System ACPI PowerState |
-| Watchdog |
-| Platform Alert |
-| Entity Presence |
-| Monitor ASIC/IC |
-| LAN |
-| Management Subsystem Health |
-| Battery |
-| Session Audit |
-| Version Change |
-| FRUState |
-
-== Severity ==
-
-^ string ^
-| OK |
-| Warning |
-| Critical |
-
-
 ===== LogService =====
 
 This resource represents the log service for the resource or service to which it is associated.
@@ -2532,16 +2238,6 @@ A Collection of LogService resource instances.
 | **Members** | array(reference([[documentation:redfish_api:schema_definition#logservice|LogService]])) |  | read-only | Contains the members of this collection. |
 | **Name** | string |  | read-write | A friendly name for this line of service. |
 | **Oem** {} | object |  | read-write | This is the manufacturer/provider specific extension moniker used to divide the Oem object into sections. |
-
-=== Property Details ===
-
-== OverWritePolicy ==
-
-^ string ^ Description ^
-| NeverOverWrites | When full, new entries to the Log will be discarded. |
-| Unknown | The overwrite policy is not known or is undefined. |
-| WrapsWhenFull | When full, new entries to the Log will overwrite previous entries. |
-
 
 ===== Manager =====
 
@@ -2707,26 +2403,6 @@ A Collection of Manager resource instances.
 | **Members** | array(reference([[documentation:redfish_api:schema_definition#manager|Manager]])) |  | read-only | Contains the members of this collection. |
 | **Name** | string |  | read-write | A friendly name for this line of service. |
 | **Oem** {} | object |  | read-write | This is the manufacturer/provider specific extension moniker used to divide the Oem object into sections. |
-
-=== Property Details ===
-
-== ManagerType ==
-
-^ string ^ Description ^
-| AuxiliaryController | A controller which provides management functions for a particular subsystem or group of devices. |
-| BMC | A controller which provides management functions for a single computer system. |
-| EnclosureManager | A controller which provides management functions for a chassis or group of devices or systems. |
-| ManagementController | A controller used primarily to monitor or manage the operation of a device or system. |
-| RackManager | A controller which provides management functions for a whole or part of a rack. |
-
-== PowerState ==
-
-^ string ^ Description ^
-| Off | The state is powered Off. |
-| On | The state is powered On. |
-| PoweringOff | A temporary state between On and Off. |
-| PoweringOn | A temporary state between Off and On. |
-
 
 ===== ManagerNetworkProtocol =====
 
@@ -3038,16 +2714,6 @@ A Collection of MemoryChunks resource instances.
 | **Name** | string |  | read-write | A friendly name for this line of service. |
 | **Oem** {} | object |  | read-write | This is the manufacturer/provider specific extension moniker used to divide the Oem object into sections. |
 
-=== Property Details ===
-
-== AddressRangeType ==
-
-^ string ^ Description ^
-| Block | Block accesible memory. |
-| PMEM | Byte accessible persistent memory. |
-| Volatile | Volatile memory. |
-
-
 ===== MemoryCollection =====
 
 A Collection of Memory resource instances.
@@ -3057,62 +2723,6 @@ A Collection of Memory resource instances.
 | **Members** | array(reference([[documentation:redfish_api:schema_definition#memory|Memory]])) |  | read-only | Contains the members of this collection. |
 | **Name** | string |  | read-write | A friendly name for this line of service. |
 | **Oem** {} | object |  | read-write | This is the manufacturer/provider specific extension moniker used to divide the Oem object into sections. |
-
-=== Property Details ===
-
-== BaseModuleType ==
-
-^ string ^ Description ^
-| LRDIMM | Load Reduced. |
-| Mini_RDIMM | Mini_RDIMM. |
-| Mini_UDIMM | Mini_UDIMM. |
-| RDIMM | Registered DIMM. |
-| SO_DIMM | SO_DIMM. |
-| SO_DIMM_16b | SO_DIMM_16b. |
-| SO_DIMM_32b | SO_DIMM_32b. |
-| SO_RDIMM_72b | SO_RDIMM_72b. |
-| SO_UDIMM_72b | SO_UDIMM_72b. |
-| UDIMM | UDIMM. |
-
-== ErrorCorrection ==
-
-^ string ^ Description ^
-| AddressParity | Address Parity errors can be corrected. |
-| MultiBitECC | Multi-bit Data errors can be corrected by ECC. |
-| NoECC | No ECC available. |
-| SingleBitECC | Single bit Data error can be corrected by ECC. |
-
-== MemoryDeviceType ==
-
-^ string ^ Description ^
-| DDR | DDR. |
-| DDR2 | DDR2. |
-| DDR2_SDRAM | DDR2 SDRAM. |
-| DDR2_SDRAM_FB_DIMM | DDR2 SDRAM FB_DIMM. |
-| DDR2_SDRAM_FB_DIMM_PROBE | DDR2 SDRAM FB_DIMM PROBE. |
-| DDR3 | DDR3. |
-| DDR3_SDRAM | DDR3 SDRAM. |
-| DDR4 | DDR4. |
-| DDR4E_SDRAM | DDR4E SDRAM. |
-| DDR4_SDRAM | DDR4 SDRAM. |
-| DDR_SDRAM | DDR SDRAM. |
-| DDR_SGRAM | DDR SGRAM. |
-| EDO | EDO. |
-| FastPageMode | Fast Page Mode. |
-| LPDDR3_SDRAM | LPDDR3 SDRAM. |
-| LPDDR4_SDRAM | LPDDR4 SDRAM. |
-| PipelinedNibble | Pipelined Nibble. |
-| ROM | ROM. |
-| SDRAM | SDRAM. |
-
-== MemoryType ==
-
-^ string ^ Description ^
-| DRAM | DRAM. |
-| NVDIMM_F | NVDIMM_F as defined by JEDEC. |
-| NVDIMM_N | NVDIMM_N as defined by JEDEC. |
-| NVDIMM_P | NVDIMM_P as defined by JEDEC. |
-
 
 ===== MemoryDomain =====
 
@@ -3481,27 +3091,6 @@ A Collection of NetworkDeviceFunction resource instances.
 | **Name** | string |  | read-write | A friendly name for this line of service. |
 | **Oem** {} | object |  | read-write | This is the manufacturer/provider specific extension moniker used to divide the Oem object into sections. |
 
-=== Property Details ===
-
-== BootMode ==
-
-^ string ^ Description ^
-| Disabled | Do not indicate to UEFI/BIOS that this device is bootable. |
-| FibreChannel | Boot this device using the embedded Fibre Channel support and configuration.  Only applicable if the NetworkDeviceFunctionType is set to FibreChannel. |
-| FibreChannelOverEthernet | Boot this device using the embedded Fibre Channel over Ethernet (FCoE) boot support and configuration.  Only applicable if the NetworkDeviceFunctionType is set to FibreChannelOverEthernet. |
-| PXE | Boot this device using the embedded PXE support.  Only applicable if the NetworkDeviceFunctionType is set to Ethernet. |
-| iSCSI | Boot this device using the embedded iSCSI boot support and configuration.  Only applicable if the NetworkDeviceFunctionType is set to iSCSI. |
-
-== NetDevFuncType ==
-
-^ string ^ Description ^
-| Disabled | Neither enumerated nor visible to the operating system. |
-| Ethernet | Appears to the operating system as an Ethernet device. |
-| FibreChannel | Appears to the operating system as a Fibre Channel device. |
-| FibreChannelOverEthernet | Appears to the operating system as an FCoE device. |
-| iSCSI | Appears to the operating system as an iSCSI device. |
-
-
 ===== NetworkInterface =====
 
 A NetworkInterface contains references linking NetworkAdapter, NetworkPort, and NetworkDeviceFunction resources and represents the functionality available to the containing system.
@@ -3682,38 +3271,6 @@ A Collection of NetworkPort resource instances.
 | **Members** | array(reference([[documentation:redfish_api:schema_definition#networkport|NetworkPort]])) |  | read-only | Contains the members of this collection. |
 | **Name** | string |  | read-write | A friendly name for this line of service. |
 | **Oem** {} | object |  | read-write | This is the manufacturer/provider specific extension moniker used to divide the Oem object into sections. |
-
-=== Property Details ===
-
-== ActiveLinkTechnology ==
-
-^ string ^ Description ^
-| Ethernet | The port is capable of connecting to an Ethernet network. |
-| FibreChannel | The port is capable of connecting to a Fibre Channel network. |
-| InfiniBand | The port is capable of connecting to an InfiniBand network. |
-
-== FlowControlConfiguration ==
-
-^ string ^ Description ^
-| None | No IEEE 802.3x flow control is enabled on this port. |
-| RX | IEEE 802.3x flow control may be initiated by the link partner. |
-| TX | IEEE 802.3x flow control may be initiated by this station. |
-| TX_RX | IEEE 802.3x flow control may be initiated by this station or the link partner. |
-
-== FlowControlStatus ==
-
-^ string ^ Description ^
-| None | No IEEE 802.3x flow control is enabled on this port. |
-| RX | IEEE 802.3x flow control may be initiated by the link partner. |
-| TX | IEEE 802.3x flow control may be initiated by this station. |
-| TX_RX | IEEE 802.3x flow control may be initiated by this station or the link partner. |
-
-== LinkStatus ==
-
-^ string ^ Description ^
-| Down | The port is enabled but link is down. |
-| Up | The port is enabled and link is good (up). |
-
 
 ===== PCIeDevice =====
 
@@ -3963,19 +3520,6 @@ A Collection of Port resource instances.
 | **Members** | array(reference([[documentation:redfish_api:schema_definition#port|Port]])) |  | read-only | Contains the members of this collection. |
 | **Name** | string |  | read-write | A friendly name for this line of service. |
 | **Oem** {} | object |  | read-write | This is the manufacturer/provider specific extension moniker used to divide the Oem object into sections. |
-
-=== Property Details ===
-
-== PortType ==
-
-^ string ^ Description ^
-| BidirectionalPort | This port connects to any type of device. |
-| DownstreamPort | This port connects to a target device. |
-| InterswitchPort | This port connects to another switch. |
-| ManagementPort | This port connects to a switch manager. |
-| UnconfiguredPort | This port has not yet been configured. |
-| UpstreamPort | This port connects to a host device. |
-
 
 ===== Power =====
 
@@ -4243,40 +3787,6 @@ A Collection of Processor resource instances.
 | **Name** | string |  | read-write | A friendly name for this line of service. |
 | **Oem** {} | object |  | read-write | This is the manufacturer/provider specific extension moniker used to divide the Oem object into sections. |
 
-=== Property Details ===
-
-== InstructionSet ==
-
-^ string ^ Description ^
-| ARM-A32 | ARM 32-bit. |
-| ARM-A64 | ARM 64-bit. |
-| IA-64 | Intel IA-64. |
-| MIPS32 | MIPS 32-bit. |
-| MIPS64 | MIPS 64-bit. |
-| OEM | OEM-defined. |
-| x86 | x86 32-bit. |
-| x86-64 | x86 64-bit. |
-
-== ProcessorArchitecture ==
-
-^ string ^ Description ^
-| ARM | ARM. |
-| IA-64 | Intel Itanium. |
-| MIPS | MIPS. |
-| OEM | OEM-defined. |
-| x86 | x86 or x86-64. |
-
-== ProcessorType ==
-
-^ string ^ Description ^
-| Accelerator | An Accelerator. |
-| CPU | A Central Processing Unit. |
-| DSP | A Digital Signal Processor. |
-| FPGA | A Field Programmable Gate Array. |
-| GPU | A Graphics Processing Unit. |
-| OEM | An OEM-defined Processing Unit. |
-
-
 ===== Role =====
 
 This resource defines a user role to be used in conjunction with a Manager Account.
@@ -4434,78 +3944,6 @@ A Collection of SerialInterface resource instances.
 | **Members** | array(reference([[documentation:redfish_api:schema_definition#serialinterface|SerialInterface]])) |  | read-only | Contains the members of this collection. |
 | **Name** | string |  | read-write | A friendly name for this line of service. |
 | **Oem** {} | object |  | read-write | This is the manufacturer/provider specific extension moniker used to divide the Oem object into sections. |
-
-=== Property Details ===
-
-== BitRate ==
-
-^ string ^
-| 1200 |
-| 2400 |
-| 4800 |
-| 9600 |
-| 19200 |
-| 38400 |
-| 57600 |
-| 115200 |
-| 230400 |
-
-== ConnectorType ==
-
-^ string ^
-| RJ45. |
-| RJ11. |
-| DB9 Female. |
-| DB9 Male. |
-| DB25 Female. |
-| DB25 Male. |
-| USB. |
-| mUSB. |
-| uUSB. |
-
-== DataBits ==
-
-^ string ^
-| 5 |
-| 6 |
-| 7 |
-| 8 |
-
-== FlowControl ==
-
-^ string ^ Description ^
-| Hardware | Out of band flow control imposed. |
-| None | No flow control imposed. |
-| Software | XON/XOFF in-band flow control imposed. |
-
-== Parity ==
-
-^ string ^
-| None |
-| Even |
-| Odd |
-| Mark |
-| Space |
-
-== PinOut ==
-
-^ string ^
-| Cisco |
-| Cyclades |
-| Digi |
-
-== SignalType ==
-
-^ string ^
-| Rs232 |
-| Rs485 |
-
-== StopBits ==
-
-^ string ^
-| 1 |
-| 2 |
-
 
 ===== ServiceRoot =====
 
@@ -5376,34 +4814,6 @@ A Collection of ComputerSystem resource instances that each have an entry in Hos
 | **Name** | string |  | read-write | A friendly name for this line of service. |
 | **Oem** {} | object |  | read-write | This is the manufacturer/provider specific extension moniker used to divide the Oem object into sections. |
 
-=== Property Details ===
-
-== IndicatorLED ==
-
-^ string ^ Description ^
-| Blinking | The Indicator LED is blinking. |
-| Lit | The Indicator LED is lit. |
-| Off | The Indicator LED is off. |
-| Unknown | The state of the Indicator LED cannot be determined. Deprecated: Return null if state is unknown. |
-
-== PowerState ==
-
-^ string ^ Description ^
-| Off | The system is powered off, although some components may continue to have AUX power such as management controller. |
-| On | The system is powered on. |
-| PoweringOff | A temporary state between On and Off. The power off action can take time while the OS is in the shutdown process. |
-| PoweringOn | A temporary state between Off and On. This temporary state can be very short. |
-
-== SystemType ==
-
-^ string ^ Description ^
-| OS | An operating system instance. |
-| Physical | A computer system. |
-| PhysicallyPartitioned | A hardware-based partition of a computer system. |
-| Virtual | A virtual machine instance running on this system. |
-| VirtuallyPartitioned | A virtual or software-based partition of a computer system. |
-
-
 ===== Switch =====
 
 Switch contains properties describing a simple fabric switch.
@@ -5520,24 +4930,6 @@ A Collection of Switch resource instances.
 | **Name** | string |  | read-write | A friendly name for this line of service. |
 | **Oem** {} | object |  | read-write | This is the manufacturer/provider specific extension moniker used to divide the Oem object into sections. |
 
-=== Property Details ===
-
-== IndicatorLED ==
-
-^ string ^ Description ^
-| Blinking | The Indicator LED is blinking. |
-| Lit | The Indicator LED is lit. |
-| Off | The Indicator LED is off. |
-
-== PowerState ==
-
-^ string ^ Description ^
-| Off | The state is powered Off. |
-| On | The state is powered On. |
-| PoweringOff | A temporary state between On and Off. |
-| PoweringOn | A temporary state between Off and On. |
-
-
 ===== Task =====
 
 This resource contains information about a specific Task scheduled by or being executed by a Redfish service's Task Service.
@@ -5587,31 +4979,6 @@ A Collection of Task resource instances.
 | **Members** | array(reference([[documentation:redfish_api:schema_definition#task|Task]])) |  | read-only | Contains the members of this collection. |
 | **Name** | string |  | read-write | A friendly name for this line of service. |
 | **Oem** {} | object |  | read-write | This is the manufacturer/provider specific extension moniker used to divide the Oem object into sections. |
-
-=== Property Details ===
-
-== TaskState ==
-
-^ string ^ Description ^
-| Completed | Task has completed. |
-| Exception | Task has stopped due to an exception condition. |
-| Interrupted | Task has been interrupted. |
-| Killed | Task was terminated. |
-| New | A new task. |
-| Pending | Task is pending and has not started. |
-| Running | Task is running normally. |
-| Service | Task is running as a service. |
-| Starting | Task is starting. |
-| Stopping | Task is in the process of stopping. |
-| Suspended | Task has been suspended. |
-
-== TaskStatus ==
-
-^ string ^ Description ^
-| Critical | A critical condition exists that requires immediate attention. |
-| OK | Normal. |
-| Warning | A condition exists that requires attention. |
-
 
 ===== TaskService =====
 
@@ -5936,17 +5303,6 @@ A Collection of VirtualMedia resource instances.
 | **Name** | string |  | read-write | A friendly name for this line of service. |
 | **Oem** {} | object |  | read-write | This is the manufacturer/provider specific extension moniker used to divide the Oem object into sections. |
 
-=== Property Details ===
-
-== ConnectedVia ==
-
-^ string ^ Description ^
-| Applet | Connected to a client application. |
-| NotConnected | No current connection. |
-| Oem | Connected via an OEM-defined method. |
-| URI | Connected to a URI location. |
-
-
 ===== Volume =====
 
 Volume contains properties used to describe a volume, virtual disk, LUN, or other logical storage entity for any system.
@@ -6229,19 +5585,6 @@ A Collection of Volume resource instances.
 | **Members** | array(reference([[documentation:redfish_api:schema_definition#volume|Volume]])) |  | read-write | The value of each member references a Volume resource. |
 | **Name** | string |  | read-write | A friendly name for this line of service. |
 | **Oem** {} | object |  | read-write | This is the manufacturer/provider specific extension moniker used to divide the Oem object into sections. |
-
-=== Property Details ===
-
-== VolumeType ==
-
-^ string ^ Description ^
-| Mirrored | The volume is a mirrored device |
-| NonRedundant | The volume is a non-redundant storage device |
-| RawDevice | The volume is a raw physical device without any RAID or other virtualization applied |
-| SpannedMirrors | The volume is a spanned set of mirrored devices |
-| SpannedStripesWithParity | The volume is a spanned set of devices which uses parity to retain redundant information |
-| StripedWithParity | The volume is a device which uses parity to retain redundant information |
-
 
 ===== Zone =====
 
