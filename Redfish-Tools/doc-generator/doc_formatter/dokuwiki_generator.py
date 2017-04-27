@@ -63,6 +63,15 @@ class DokuwikiGenerator(DocFormatter):
             
             doc_generator_meta = schema_details['doc_generator_meta']
             
+            required = []
+            requiredOnCreate = []
+            
+            if 'definitions' in schema_details.keys() and schema_name in schema_details['definitions']:
+                definition = schema_details['definitions'][schema_name]
+                
+                required = definition.get('required', [])
+                requiredOnCreate = definition.get('requiredOnCreate', [])
+            
             if 'properties' in schema_details.keys():
                 prop_details = {}
 
@@ -103,6 +112,9 @@ class DokuwikiGenerator(DocFormatter):
                     if ref_target:
                         meta['ref_type'] = ref_target.rsplit('/', 1)[1].strip()
                         meta['is_ref_resource'] = meta['ref_type'] in self.property_data.keys()
+                    
+                    meta['required'] = prop_name in required
+                    meta['required_on_create'] = prop_name in requiredOnCreate
 
 
     def skip_property(self, prop_name):
@@ -382,10 +394,17 @@ class DokuwikiGenerator(DocFormatter):
         if formatted_details['prop_is_nullable']:
             prop_nullable = 'Yes'
         
+        prop_required = []
+        if 'required' in meta and meta['required']:
+            prop_required.append('GET')
+        if 'required_on_create' in meta and meta['required_on_create']:
+            prop_required.append('POST')
+        
         row = []
         row.append(indentation_string + name_and_version)
         row.append(prop_type)
         row.append(prop_nullable)
+        row.append(', '.join(prop_required))
         row.append(prop_perm)
         row.append(formatted_details['descr'])
 
@@ -487,7 +506,7 @@ class DokuwikiGenerator(DocFormatter):
                 contents.append(section['json_payload'])
             # something is awry if there are no properties, but ...
             if section['properties']:
-                contents.append(self.table_header(['Property', 'Type', 'Nullable', 'Permission', 'Description']))
+                contents.append(self.table_header(['Property', 'Type', 'Nullable', 'Required', 'Permission', 'Description']))
                 contents.append('\n'.join(section['properties']))
             if section['property_details'] and not section['head'].endswith('Collection'):
                 contents.append('\n=== Property Details ===\n')
