@@ -43,9 +43,9 @@ class DokuwikiGenerator(DocFormatter):
         """
         
         for schema_name in self.property_data:
-            # Skip schemas in the excluded list:
             if self.skip_schema(schema_name):
                 continue
+            
             schema_details = self.property_data[schema_name]
             
             if 'doc_generator_meta' not in schema_details:
@@ -93,8 +93,6 @@ class DokuwikiGenerator(DocFormatter):
                     if ref_target:
                         meta['ref_type'] = ref_target.rsplit('/', 1)[1].strip()
                         meta['is_ref_resource'] = meta['ref_type'] in self.property_data.keys()
-            
-            print({ schema_name : schema_details })
 
 
     def skip_property(self, prop_name):
@@ -294,6 +292,8 @@ class DokuwikiGenerator(DocFormatter):
         if not meta:
             meta = {}
 
+        is_ref_resource = 'is_ref_resource' in meta and meta['is_ref_resource']
+
         formatted_details = self.parse_property_info(schema_name, prop_name, traverser, prop_info, current_depth)
 
         # Eliminate dups in these these properties and join with a delimiter:
@@ -314,13 +314,13 @@ class DokuwikiGenerator(DocFormatter):
                 
         name_and_version = '**' + self.escape_for_dokuwiki(prop_name, self.config['escape_chars']) + '**'
 
-        if formatted_details['prop_is_object']:
+        if formatted_details['prop_is_object'] and not is_ref_resource:
             if formatted_details['object_description'] == '':
                 name_and_version += ' {}'
             else:
                 name_and_version += ' {'
 
-        if formatted_details['prop_is_array']:
+        if formatted_details['prop_is_array'] and not is_ref_resource:
             if formatted_details['item_description'] == '':
                 name_and_version += ' [ {} ]'
             else:
@@ -342,8 +342,19 @@ class DokuwikiGenerator(DocFormatter):
         if formatted_details['has_direct_prop_details']:
             formatted_details['descr'] += self.dokuwiki_separators['linebreak'] + '//See Property Details, below, for more information about this property.//'
 
-
         prop_type = formatted_details['prop_type']
+        if is_ref_resource:
+            ref_type = meta.get('ref_type', None)
+            if prop_type == 'object':
+                prop_type = 'reference'
+                if ref_type:
+                    prop_type += '(' + ref_type + ')'
+            elif prop_type == 'array':
+                prop_type += '(reference)'
+                if ref_type:
+                    prop_type = prop_type.replace('reference', 'reference([[' + self.schema_link_basepath + ref_type.lower() + '|' + ref_type + ']])')
+        elif prop_type == 'array':
+            print({ schema_name + '.' + prop_name : formatted_details})
 
         prop_perm = ''
         if formatted_details['read_only']:
@@ -360,11 +371,11 @@ class DokuwikiGenerator(DocFormatter):
 
         formatted.append('| ' + ' | '.join(row) + ' |')
 
-        if len(formatted_details['object_description']) > 0:
+        if len(formatted_details['object_description']) > 0 and not is_ref_resource:
             formatted.append(formatted_details['object_description'])
             formatted.append('| ' + indentation_string + '} |   |   |')
 
-        if len(formatted_details['item_description']) > 0:
+        if len(formatted_details['item_description']) > 0 and not is_ref_resource:
             formatted.append(formatted_details['item_description'])
             formatted.append('| ' + indentation_string + '} ] |   |   |')
 
