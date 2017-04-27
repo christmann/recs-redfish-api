@@ -25,10 +25,20 @@ class DokuwikiGenerator(DocFormatter):
             'inline': ', ',
             'linebreak': '\n'
             }
-        self.dokuwiki_separators = {
+        self.special_chars = {
+            'bold': '**',
+            'italic': '//',
+            'underline': '__',
+            'hcell_delimiter': '^',
+            'cell_delimiter': '|',
             'whitespace': '\ ',
             'linebreak': '\\\\ '
             }
+        
+        for special_char in self.special_chars.values():
+            if not special_char in config['escape_chars']:
+                config['escape_chars'].append(special_char)
+        
         self.schema_link_basepath = 'documentation:redfish_api:schema_definition#'
         #self.endpoint_link_basepath = 'documentation:redfish_api:endpoints:'
         
@@ -287,7 +297,7 @@ class DokuwikiGenerator(DocFormatter):
 
         traverser = self.traverser
         formatted = []     # The row itself
-        indentation_string = self.dokuwiki_separators['whitespace'] * 6 * current_depth
+        indentation_string = self.special_chars['whitespace'] * 6 * current_depth
 
         if not meta:
             meta = {}
@@ -312,7 +322,7 @@ class DokuwikiGenerator(DocFormatter):
                         property_values.append(val)
                 formatted_details[property_name] = delim.join(property_values)
                 
-        name_and_version = '**' + self.escape_for_dokuwiki(prop_name, self.config['escape_chars']) + '**'
+        name_and_version = self.bold(self.escape_for_dokuwiki(prop_name, self.config['escape_chars']))
 
         if formatted_details['prop_is_object'] and not is_ref_resource:
             if formatted_details['object_description'] == '':
@@ -328,19 +338,19 @@ class DokuwikiGenerator(DocFormatter):
 
 
         if formatted_details['prop_units']:
-            formatted_details['descr'] += self.dokuwiki_separators['linebreak'] + 'unit: ' + formatted_details['prop_units']
+            formatted_details['descr'] += self.special_chars['linebreak'] + 'unit: ' + self.escape_for_dokuwiki(formatted_details['prop_units'], self.config['escape_chars'])
         if formatted_details['prop_pattern']:
-            formatted_details['descr'] += self.dokuwiki_separators['linebreak'] + 'pattern: ' + formatted_details['prop_pattern']
+            formatted_details['descr'] += self.special_chars['linebreak'] + 'pattern: ' + self.escape_for_dokuwiki(formatted_details['prop_pattern'], self.config['escape_chars'])
         if formatted_details['prop_format']:
-            formatted_details['descr'] += self.dokuwiki_separators['linebreak'] + 'format: ' + formatted_details['prop_format']
+            formatted_details['descr'] += self.special_chars['linebreak'] + 'format: ' + self.escape_for_dokuwiki(formatted_details['prop_format'], self.config['escape_chars'])
         if formatted_details['prop_min']:
-            formatted_details['descr'] += self.dokuwiki_separators['linebreak'] + 'minimum: ' + str(formatted_details['prop_min'])
+            formatted_details['descr'] += self.special_chars['linebreak'] + 'minimum: ' + self.escape_for_dokuwiki(str(formatted_details['prop_min']), self.config['escape_chars'])
         if formatted_details['prop_max']:
-            formatted_details['descr'] += self.dokuwiki_separators['linebreak'] + 'maximum: ' + str(formatted_details['prop_max'])
+            formatted_details['descr'] += self.special_chars['linebreak'] + 'maximum: ' + self.escape_for_dokuwiki(str(formatted_details['prop_max']), self.config['escape_chars'])
 
         # If there are prop_details (enum details), add a note to the description:
         if formatted_details['has_direct_prop_details']:
-            formatted_details['descr'] += self.dokuwiki_separators['linebreak'] + '//See Property Details, below, for more information about this property.//'
+            formatted_details['descr'] += self.special_chars['linebreak'] + self.italic('See Property Details, below, for more information about this property.')
 
         prop_type = formatted_details['prop_type']
         if is_ref_resource:
@@ -348,11 +358,11 @@ class DokuwikiGenerator(DocFormatter):
             if prop_type == 'object':
                 prop_type = 'reference'
                 if ref_type:
-                    prop_type += '(' + ref_type + ')'
+                    prop_type += '(' + self.link(self.schema_link_basepath + ref_type.lower(), ref_type) + ')'
             elif prop_type == 'array':
                 prop_type += '(reference)'
                 if ref_type:
-                    prop_type = prop_type.replace('reference', 'reference([[' + self.schema_link_basepath + ref_type.lower() + '|' + ref_type + ']])')
+                    prop_type = prop_type.replace('reference', 'reference(' + self.link(self.schema_link_basepath + ref_type.lower(), ref_type) + ')')
         elif prop_type == 'array':
             print({ schema_name + '.' + prop_name : formatted_details})
 
@@ -369,15 +379,15 @@ class DokuwikiGenerator(DocFormatter):
         row.append(prop_perm)
         row.append(formatted_details['descr'])
 
-        formatted.append('| ' + ' | '.join(row) + ' |')
+        formatted.append(self.table_row(row))
 
         if len(formatted_details['object_description']) > 0 and not is_ref_resource:
             formatted.append(formatted_details['object_description'])
-            formatted.append('| ' + indentation_string + '} |   |   |')
+            formatted.append(self.table_row([indentation_string + '}', '', '']))
 
         if len(formatted_details['item_description']) > 0 and not is_ref_resource:
             formatted.append(formatted_details['item_description'])
-            formatted.append('| ' + indentation_string + '} ] |   |   |')
+            formatted.append(self.table_row([indentation_string + '} ]', '', '']))
 
         return({'row': '\n'.join(formatted), 'details':formatted_details['prop_details']})
 
@@ -395,15 +405,15 @@ class DokuwikiGenerator(DocFormatter):
             contents.append('\n' + supplemental_details + '\n')
 
         if enum_details:
-            contents.append('^ ' + prop_type + ' ^ Description ^')
+            contents.append(self.table_header([prop_type, 'Description']))
             enum.sort()
             for enum_item in enum:
-                contents.append('| ' + enum_item + ' | ' + enum_details.get(enum_item, '') + ' |')
+                contents.append(self.table_row([enum_item, enum_details.get(enum_item, '')]))
 
         elif enum:
-            contents.append('^ ' + prop_type + ' ^')
+            contents.append(self.table_header(prop_type))
             for enum_item in enum:
-                contents.append('| ' + enum_item + ' | ')
+                contents.append(self.table_row(enum_item))
 
         return '\n'.join(contents) + '\n'
 
@@ -442,7 +452,7 @@ class DokuwikiGenerator(DocFormatter):
         
         for section in self.sections:
             section_name = self.escape_for_dokuwiki(section['head'], self.config['escape_chars'])
-            contents.append('  * [[' + self.schema_link_basepath + section_name.lower() + '|' + section_name + ']]')
+            contents.append('  * ' + self.link(self.schema_link_basepath + section_name.lower(), section_name))
             if i % quarter == 0 and i < num_sections:
                 contents.append('</WRAP><WRAP quarter column>')
             i += 1
@@ -467,7 +477,7 @@ class DokuwikiGenerator(DocFormatter):
                 contents.append(section['json_payload'])
             # something is awry if there are no properties, but ...
             if section['properties']:
-                contents.append('^ Property ^ Type ^ Permission ^ Description ^')
+                contents.append(self.table_header(['Property', 'Type', 'Permission', 'Description']))
                 contents.append('\n'.join(section['properties']))
             if section['property_details']:
                 contents.append('\n=== Property Details ===\n')
@@ -520,12 +530,50 @@ class DokuwikiGenerator(DocFormatter):
         """Add a chunk of property details information for the current section/schema."""
         self.this_section['property_details'].append(formatted_details)
 
+    def link(self, uri, text):
+        """Formats a dokuwiki link"""
+        return '[[' + uri + '|' + text + ']]'
+        
+    def bold(self, text):
+        """Formats a text bold"""
+        return self.enclose(text, self.special_chars['bold'])
+    
+    def italic(self, text):
+        """Formats a text italic"""
+        return self.enclose(text, self.special_chars['italic'])
+        
+    def underline(self, text):
+        """Formats a text underline"""
+        return self.enclose(text, self.special_chars['underline'])
+
+    def table_row(self, content):
+        """Formats a list to a dokuwiki table row"""
+        if not isinstance(content, list):
+            content = [ content ]
+        char = self.special_chars['cell_delimiter']
+        return self.enclose((' ' + char + ' ').join(content), char, True)
+
+    def table_header(self, content):
+        """Formats a list to a dokuwiki table header row"""
+        if not isinstance(content, list):
+            content = [ content ]
+        char = self.special_chars['hcell_delimiter']
+        return self.enclose((' ' + char + ' ').join(content), char, True)
+        
+    
+    @staticmethod
+    def enclose(text, wrapper, gap=False):
+        """Encloses a text with the wrappertext as pre- and postfix."""
+        space = ''
+        if gap:
+            space = ' '
+        return wrapper + space + text + space + wrapper
 
     @staticmethod
     def escape_for_dokuwiki(text, chars):
         """Escape selected characters in text to prevent auto-formatting in dokuwiki."""
         for char in chars:
-            text = text.replace(char, '\\' + char)
+            text = text.replace(char, '%%' + char + '%%')
         return text
     
     @staticmethod
