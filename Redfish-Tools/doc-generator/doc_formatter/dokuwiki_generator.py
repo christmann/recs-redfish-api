@@ -34,6 +34,76 @@ class DokuwikiGenerator(DocFormatter):
         
         schema_filename = config['outfile']
         self.intro_filename = schema_filename.replace('.schema.', '.main.')
+        
+        self.preprocess_property_data()
+
+
+    def preprocess_property_data(self):
+        """Adds additional meta information to the properties
+        """
+        
+        for schema_name in self.property_data:
+            # Skip schemas in the excluded list:
+            if self.skip_schema(schema_name):
+                continue
+            schema_details = self.property_data[schema_name]
+            
+            if 'doc_generator_meta' not in schema_details:
+                schema_details['doc_generator_meta'] = {}
+            
+            doc_generator_meta = schema_details['doc_generator_meta']
+            
+            if 'properties' in schema_details.keys():
+                prop_details = {}
+
+                for prop_name in schema_details['properties']:
+                    if self.skip_property(prop_name):
+                        continue
+                    
+                    if prop_name not in doc_generator_meta:
+                        doc_generator_meta[prop_name] = {}
+                    
+                    meta = doc_generator_meta[prop_name]
+                    prop_info = schema_details['properties'][prop_name]
+                    
+                    prop_ref = prop_info.get('$ref', None)
+                    prop_anyOf = prop_info.get('anyOf', None)
+                    prop_items = prop_info.get('items', None)
+                    
+                    ref_target = ''
+                    
+                    if prop_ref:
+                        ref_target = prop_ref
+                    elif prop_anyOf:
+                        for element in prop_anyOf:
+                            if '$ref' in element:
+                                ref_target = element['$ref']
+                                break;
+                    elif prop_items:
+                        prop_ref = prop_items.get('$ref', None)
+                        prop_anyOf = prop_items.get('anyOf', None)
+                        if prop_ref:
+                            ref_target = prop_ref
+                        elif prop_anyOf:
+                            for element in prop_anyOf:
+                                if '$ref' in element:
+                                    ref_target = element['$ref']
+                                    break;
+                    
+                    if ref_target:
+                        meta['ref_type'] = ref_target.rsplit('/', 1)[1].strip()
+                        meta['is_ref_resource'] = meta['ref_type'] in self.property_data.keys()
+            
+            print({ schema_name : schema_details })
+
+
+    def skip_property(self, prop_name):
+        if prop_name in self.config['excluded_properties']:
+            return True
+        for pattern in self.config['excluded_by_match']:
+            if pattern in prop_name:
+                return True
+        return False
 
 
     def parse_property_info(self, schema_name, prop_name, traverser, prop_infos, current_depth):
