@@ -20,6 +20,7 @@ class DokuwikiGenerator(DocFormatter):
 
     def __init__(self, property_data, traverser, config):
         super(DokuwikiGenerator, self).__init__(property_data, traverser, config)
+        self.max_drilldown = 1
         self.sections = []
         self.separators = {
             'inline': ', ',
@@ -273,7 +274,7 @@ class DokuwikiGenerator(DocFormatter):
                 prop_enum_details = prop_info.get('enumDescriptions')
             prop_details[prop_name] = self.format_property_details(prop_name, prop_type, prop_enum, prop_enum_details,
                                                               supplemental_details)
-
+        
         # embedded object:
         if current_depth < self.max_drilldown and prop_is_object:
             object_formatted = self.format_object_description(schema_name, prop_info, traverser, current_depth)
@@ -521,6 +522,72 @@ class DokuwikiGenerator(DocFormatter):
         self.write_intro_file()
         
         return self.emit()
+
+
+    def extend_property_info(self, schema_name, prop_info, traverser):
+        """If prop_info contains a $ref or anyOf attribute, extend it with that information.
+
+        Returns an array of objects. Arrays of arrays of objects are possible but not expected.
+        """
+
+        prop_ref = prop_info.get('$ref', None)
+        prop_anyOf = prop_info.get('anyOf', None)
+        prop_infos = []
+
+        # Properties to carry through from parent when a ref is extended:
+        parent_props = ['description', 'longDescription', 'readonly']
+
+        if prop_ref:
+
+            if '#/definitions/idRef' in prop_ref:
+                # Bit of a hack here, because we don't currently parse odata
+                ref_info = {
+                    "type": "object",
+                    "properties" :
+                    {
+                        "@odata.id": {
+                            "type": "string",
+                            "format": "uri",
+                            "readonly": True,
+                            "description": "The unique identifier for a resource.",
+                            "longDescription": "The value of this property shall be the unique identifier for the resource and it shall be of thee form defined in the Redfish specification."
+                        }
+                    },
+                    "description": "A reference to a resource.",
+                    "longDescription": "The value of this property shall be used for references to a resource."
+                    }
+
+            else:
+                prop_ref = traverser.parse_ref(prop_ref, schema_name)
+                ref_info = traverser.find_ref_data(prop_ref)
+
+            if ref_info:
+                # if specific attributes were defined in addition to a $ref, update with them:
+                for x in prop_info.keys():
+                    if x in parent_props:
+                        ref_info[x] = prop_info[x]
+
+                prop_info = ref_info
+
+                if '$ref' in ref_info or 'anyOf' in ref_info:
+                    return self.extend_property_info(ref_info['_from_schema_name'], ref_info, traverser)
+
+            prop_infos.append(prop_info)
+
+        elif prop_anyOf:
+            for elt in prop_anyOf:
+                if '$ref' in elt:
+                    for x in prop_info.keys():
+                        if x in parent_props:
+                            elt[x] = prop_info[x]
+
+                elt = self.extend_property_info(schema_name, elt, traverser)
+                prop_infos.append(elt)
+
+        else:
+            prop_infos.append(prop_info)
+
+        return prop_infos
 
 
     def add_section(self, text):
