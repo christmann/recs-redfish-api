@@ -20,7 +20,7 @@ class DokuwikiGenerator(DocFormatter):
 
     def __init__(self, property_data, traverser, config):
         super(DokuwikiGenerator, self).__init__(property_data, traverser, config)
-        self.max_drilldown = 1
+        self.max_drilldown = 2
         self.sections = []
         self.separators = {
             'inline': ', ',
