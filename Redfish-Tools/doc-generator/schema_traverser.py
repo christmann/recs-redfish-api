@@ -31,7 +31,9 @@ class SchemaTraverser:
 
         schema = self.schemas.get(schema_name, None)
         if not schema:
-            return None
+            schema = self.schemas.get(schema_name.split('.', 1)[0], None)
+            if not schema:
+                return None
 
         elements = [x for x in path.split('/') if x]
         for element in elements:

@@ -771,7 +771,7 @@ Describe data storage capabilities.
 | \ \ \ \ \ \ **IsSpaceEfficient** | boolean | Yes |  | read-write | True implies compression or deduplication of storage. |
 | \ \ \ \ \ \ **Name** | string | Yes |  | read-only | A friendly name for this line of service. |
 | \ \ \ \ \ \ **ProvisioningPolicy** | string | Yes |  | read-write | Provisioning policy for storage.\\ //See Property Details, below, for more information about this property.// |
-| \ \ \ \ \ \ **RecoveryTimeObjectives** |  | Yes |  | read-write | Expectations for time to access the primary store after disaster recover. |
+| \ \ \ \ \ \ **RecoveryTimeObjectives** | string | Yes |  | read-write | Expectations for time to access the primary store after disaster recover.\\ //See Property Details, below, for more information about this property.// |
 | } ] |  |  |
 | **SupportedProvisioningPolicies** [ {} ] | array |  |  | read-write | Thin allows over allocation of storage. |
 | **SupportedRecoveryTimeObjectives** [ {} ] | array |  |  | read-write | Supported expectations for time to access the primary store after recovery. |
@@ -793,6 +793,14 @@ Describe data storage capabilities.
 ^ string ^ Description ^
 | Fixed | Storage is fully allocated |
 | Thin | Storage may be over allocated. |
+
+== RecoveryTimeObjectives ==
+
+^ string ^ Description ^
+| Immediate | Active access to synchronous replicas. |
+| Nearline | Access to replica via a different front-end interconnect. A restore step is required before recovery can commence. |
+| Offline | No direct connection to the replica. (i.e. To a bunker containing backup media.) |
+| Online | Passive access to replicas via the same front-end interconnect. |
 
 
 ===== Drive =====
@@ -835,10 +843,14 @@ Drive contains properties describing a single physical disk drive for any system
 | **Name** | string |  | GET | read-only | A friendly name for this line of service. |
 | **NegotiatedSpeedGbs** | number | Yes |  | read-only | The speed which this drive is currently communicating to the storage controller in Gigabits per second.\\ unit: Gbit/s |
 | **Oem** {} | object |  |  | read-write | This is the manufacturer/provider specific extension moniker used to divide the Oem object into sections. |
-| **Operations** [ {} ] | array |  |  | read-write | The operations currently running on the Drive. |
+| **Operations** [ { | array |  |  | read-write | The operations currently running on the Drive. |
+| \ \ \ \ \ \ **AssociatedTask** {} | object |  |  | read-only | A reference to the task associated with the operation if any. |
+| \ \ \ \ \ \ **OperationName** | string | Yes |  | read-only | The name of the operation. |
+| \ \ \ \ \ \ **PercentageComplete** | number | Yes |  | read-only | The percentage of the operation that has been completed. |
+| } ] |  |  |
 | **PartNumber** | string | Yes |  | read-only | The part number for this drive. |
 | **PredictedMediaLifeLeftPercent** | number | Yes |  | read-only | The percentage of reads and writes that are predicted to still be available for the media. |
-| **Protocol** |  | Yes |  | read-only | The protocol this drive is using to communicate to the storage controller. |
+| **Protocol** | string | Yes |  | read-only | The protocol this drive is using to communicate to the storage controller.\\ //See Property Details, below, for more information about this property.// |
 | **Revision** | string | Yes |  | read-only | The revision of this Drive. This is typically the firmware/hardware version of the drive. |
 | **RotationSpeedRPM** | number | Yes |  | read-only | The rotation speed of this Drive in Revolutions per Minute (RPM).\\ unit: RPM |
 | **SKU** | string | Yes |  | read-only | This is the SKU for this drive. |
@@ -914,6 +926,28 @@ Drive contains properties describing a single physical disk drive for any system
 | SMR | The drive media type is shingled magnetic recording. |
 | SSD | The drive media type is solid state or flash memory. |
 
+== Protocol ==
+
+^ string ^ Description ^
+| AHCI | Advanced Host Controller Interface. |
+| FC | Fibre Channel. |
+| FCoE | Fibre Channel over Ethernet. |
+| FTP | File Transfer Protocol. |
+| HTTP | Hypertext Transport Protocol. |
+| HTTPS | Secure Hypertext Transport Protocol. |
+| NFSv3 | Network File System version 3. |
+| NFSv4 | Network File System version 4. |
+| NVMe | Non-Volatile Memory Express. |
+| NVMeOverFabrics | NVMe over Fabrics. |
+| PCIe | PCI Express (Vendor Proprietary). |
+| SAS | Serial Attached SCSI. |
+| SATA | Serial AT Attachment. |
+| SFTP | Secure File Transfer Protocol. |
+| SMB | Server Message Block (aka CIFS Common Internet File System). |
+| UHCI | Universal Host Controller Interface. |
+| USB | Universal Serial Bus. |
+| iSCSI | Internet SCSI. |
+
 == State ==
 
 ^ string ^ Description ^
@@ -970,7 +1004,7 @@ This is the schema definition for the Endpoint resource. It represents the prope
 | \ \ \ \ \ \ **PciFunctionNumber** | number | Yes |  | read-only | The PCI ID of the connected entity. |
 | } ] |  |  |
 | **Description** | string | Yes |  | read-only | Provides a description of this resource and is used for commonality  in the schema definitions. |
-| **EndpointProtocol** |  | Yes |  | read-only | The protocol supported by this endpoint. |
+| **EndpointProtocol** | string | Yes |  | read-only | The protocol supported by this endpoint.\\ //See Property Details, below, for more information about this property.// |
 | **HostReservationMemoryBytes** | number | Yes |  | read-only | The amount of memory in Bytes that the Host should allocate to connect to this endpoint.\\ unit: By |
 | **Id** | string |  | GET | read-only | Uniquely identifies the resource within the collection of like resources. |
 | **Identifiers** [ { | array |  |  | read-write | Identifiers for this endpoint. |
@@ -1019,6 +1053,28 @@ This is the schema definition for the Endpoint resource. It represents the prope
 | NAA | Name Address Authority Format |
 | UUID | Universally Unique Identifier |
 | iQN | iSCSI Qualified Name |
+
+== EndpointProtocol ==
+
+^ string ^ Description ^
+| AHCI | Advanced Host Controller Interface. |
+| FC | Fibre Channel. |
+| FCoE | Fibre Channel over Ethernet. |
+| FTP | File Transfer Protocol. |
+| HTTP | Hypertext Transport Protocol. |
+| HTTPS | Secure Hypertext Transport Protocol. |
+| NFSv3 | Network File System version 3. |
+| NFSv4 | Network File System version 4. |
+| NVMe | Non-Volatile Memory Express. |
+| NVMeOverFabrics | NVMe over Fabrics. |
+| PCIe | PCI Express (Vendor Proprietary). |
+| SAS | Serial Attached SCSI. |
+| SATA | Serial AT Attachment. |
+| SFTP | Secure File Transfer Protocol. |
+| SMB | Server Message Block (aka CIFS Common Internet File System). |
+| UHCI | Universal Host Controller Interface. |
+| USB | Universal Serial Bus. |
+| iSCSI | Internet SCSI. |
 
 == EntityRole ==
 
@@ -1204,7 +1260,10 @@ This schema defines a simple ethernet NIC resource.
 | \ \ \ \ \ \ **State** | string | Yes |  | read-only | This indicates the known state of the resource, such as if it is enabled.\\ //See Property Details, below, for more information about this property.// |
 | } |  |  |
 | **UefiDevicePath** | string | Yes |  | read-only | The UEFI device path for this interface. |
-| **VLAN** |  | Yes |  | read-write | If this Network Interface supports more than one VLAN, this property will not be present and the client should look for VLANs collection in the link section of this resource. |
+| **VLAN** { | object | Yes |  | read-write | If this Network Interface supports more than one VLAN, this property will not be present and the client should look for VLANs collection in the link section of this resource. |
+| \ \ \ \ \ \ **VLANEnable** | boolean | Yes |  | read-write | This indicates if this VLAN is enabled. |
+| \ \ \ \ \ \ **VLANId** | number | Yes |  | read-write | This indicates the VLAN identifier for this VLAN.\\ maximum: 4094 |
+| } |  |  |
 | **VLANs** | reference([[documentation:redfish_api:schema_definition#vlannetworkinterfacecollection|VLanNetworkInterfaceCollection]]) |  |  | read-only | This is a reference to a collection of VLANs and is only used if the interface supports more than one VLANs. |
 
 === Property Details ===
@@ -1410,7 +1469,7 @@ Fabric contains properties describing a simple fabric consisting of one or more 
 | } |  |  |
 | **Description** | string | Yes |  | read-only | Provides a description of this resource and is used for commonality  in the schema definitions. |
 | **Endpoints** | reference([[documentation:redfish_api:schema_definition#endpointcollection|EndpointCollection]]) |  |  | read-only | A collection of references to the endpoints contained in this fabric. |
-| **FabricType** |  | Yes |  | read-only | The protocol being sent over this fabric. |
+| **FabricType** | string | Yes |  | read-only | The protocol being sent over this fabric.\\ //See Property Details, below, for more information about this property.// |
 | **Id** | string |  | GET | read-only | Uniquely identifies the resource within the collection of like resources. |
 | **Links** { | object |  |  | read-write | Contains references to other resources that are related to this resource. |
 | \ \ \ \ \ \ **Oem** {} | object |  |  | read-write | Oem extension object. |
@@ -1428,6 +1487,28 @@ Fabric contains properties describing a simple fabric consisting of one or more 
 | **Zones** | reference([[documentation:redfish_api:schema_definition#zonecollection|ZoneCollection]]) |  |  | read-only | A collection of references to the zones contained in this fabric. |
 
 === Property Details ===
+
+== FabricType ==
+
+^ string ^ Description ^
+| AHCI | Advanced Host Controller Interface. |
+| FC | Fibre Channel. |
+| FCoE | Fibre Channel over Ethernet. |
+| FTP | File Transfer Protocol. |
+| HTTP | Hypertext Transport Protocol. |
+| HTTPS | Secure Hypertext Transport Protocol. |
+| NFSv3 | Network File System version 3. |
+| NFSv4 | Network File System version 4. |
+| NVMe | Non-Volatile Memory Express. |
+| NVMeOverFabrics | NVMe over Fabrics. |
+| PCIe | PCI Express (Vendor Proprietary). |
+| SAS | Serial Attached SCSI. |
+| SATA | Serial AT Attachment. |
+| SFTP | Secure File Transfer Protocol. |
+| SMB | Server Message Block (aka CIFS Common Internet File System). |
+| UHCI | Universal Host Controller Interface. |
+| USB | Universal Serial Bus. |
+| iSCSI | Internet SCSI. |
 
 == Health ==
 
@@ -2011,7 +2092,7 @@ This resource defines the record format for a log.  It is designed to be used fo
 | **EntryType** | string |  | GET, POST | read-only | his is the type of log entry.\\ //See Property Details, below, for more information about this property.// |
 | **EventId** | string |  |  | read-only | This is a unique instance identifier of an event. |
 | **EventTimestamp** | string |  |  | read-only | This is time the event occurred.\\ format: date-time |
-| **EventType** |  |  |  | read-only | This indicates the type of an event recorded in this log. |
+| **EventType** | string |  |  | read-only | This indicates the type of an event recorded in this log.\\ //See Property Details, below, for more information about this property.// |
 | **Id** | string |  | GET | read-only | Uniquely identifies the resource within the collection of like resources. |
 | **Links** { | object |  |  | read-write | Contains references to other resources that are related to this resource. |
 | \ \ \ \ \ \ **Oem** {} | object |  |  | read-write | Oem extension object. |
@@ -2098,6 +2179,15 @@ This resource defines the record format for a log.  It is designed to be used fo
 | Event |
 | SEL |
 | Oem |
+
+== EventType ==
+
+^ string ^ Description ^
+| Alert | A condition exists which requires attention. |
+| ResourceAdded | A resource has been added. |
+| ResourceRemoved | A resource has been removed. |
+| ResourceUpdated | The value of this resource has been updated. |
+| StatusChange | The status of this resource has changed. |
 
 == SensorType ==
 
@@ -3459,7 +3549,7 @@ Port contains properties describing a port of a switch.
 | **Name** | string |  | GET | read-only | A friendly name for this line of service. |
 | **Oem** {} | object |  |  | read-write | This is the manufacturer/provider specific extension moniker used to divide the Oem object into sections. |
 | **PortId** | string | Yes |  | read-only | This is the label of this port on the physical switch package. |
-| **PortProtocol** |  | Yes |  | read-only | The protocol being sent over this port. |
+| **PortProtocol** | string | Yes |  | read-only | The protocol being sent over this port.\\ //See Property Details, below, for more information about this property.// |
 | **PortType** | string | Yes |  | read-only | This is the type of this port.\\ //See Property Details, below, for more information about this property.// |
 | **Status** { | object |  |  | read-only | Indicates the status of the file share. |
 | \ \ \ \ \ \ **Health** | string | Yes |  | read-only | This represents the health state of this resource in the absence of its dependent resources.\\ //See Property Details, below, for more information about this property.// |
@@ -3484,6 +3574,28 @@ Port contains properties describing a port of a switch.
 | Critical | A critical condition exists that requires immediate attention. |
 | OK | Normal. |
 | Warning | A condition exists that requires attention. |
+
+== PortProtocol ==
+
+^ string ^ Description ^
+| AHCI | Advanced Host Controller Interface. |
+| FC | Fibre Channel. |
+| FCoE | Fibre Channel over Ethernet. |
+| FTP | File Transfer Protocol. |
+| HTTP | Hypertext Transport Protocol. |
+| HTTPS | Secure Hypertext Transport Protocol. |
+| NFSv3 | Network File System version 3. |
+| NFSv4 | Network File System version 4. |
+| NVMe | Non-Volatile Memory Express. |
+| NVMeOverFabrics | NVMe over Fabrics. |
+| PCIe | PCI Express (Vendor Proprietary). |
+| SAS | Serial Attached SCSI. |
+| SATA | Serial AT Attachment. |
+| SFTP | Secure File Transfer Protocol. |
+| SMB | Server Message Block (aka CIFS Common Internet File System). |
+| UHCI | Universal Host Controller Interface. |
+| USB | Universal Serial Bus. |
+| iSCSI | Internet SCSI. |
 
 == PortType ==
 
@@ -4310,6 +4422,28 @@ This schema defines a storage subsystem and its respective properties.  A storag
 | Sharing | Multiple units contribute or share such that operation will continue, but at a reduced capacity, if one or more units fail. |
 | Sparing | One or more spare units are available to take over the function of a failed unit, but takeover is not automatic. |
 
+== Protocol ==
+
+^ string ^ Description ^
+| AHCI | Advanced Host Controller Interface. |
+| FC | Fibre Channel. |
+| FCoE | Fibre Channel over Ethernet. |
+| FTP | File Transfer Protocol. |
+| HTTP | Hypertext Transport Protocol. |
+| HTTPS | Secure Hypertext Transport Protocol. |
+| NFSv3 | Network File System version 3. |
+| NFSv4 | Network File System version 4. |
+| NVMe | Non-Volatile Memory Express. |
+| NVMeOverFabrics | NVMe over Fabrics. |
+| PCIe | PCI Express (Vendor Proprietary). |
+| SAS | Serial Attached SCSI. |
+| SATA | Serial AT Attachment. |
+| SFTP | Secure File Transfer Protocol. |
+| SMB | Server Message Block (aka CIFS Common Internet File System). |
+| UHCI | Universal Host Controller Interface. |
+| USB | Universal Serial Bus. |
+| iSCSI | Internet SCSI. |
+
 == State ==
 
 ^ string ^ Description ^
@@ -4352,7 +4486,7 @@ A Collection of Storage resource instances.
 Collection of resources that are managed and exposed to hosts as a group.
 
 ^ Property ^ Type ^ Nullable ^ Required ^ Permission ^ Description ^
-| **AccessState** |  | Yes |  | read-write | AccessState for this storage group. |
+| **AccessState** | string | Yes |  | read-write | AccessState for this storage group.\\ //See Property Details, below, for more information about this property.// |
 | **Actions** { | object |  |  | read-only | The available actions for this resource. |
 | \ \ \ \ \ \ **#StorageGroup.ExposeVolumes** {} | object |  |  | read-write | Expose the storage volumes of this group. |
 | \ \ \ \ \ \ **#StorageGroup.HideVolumes** {} | object |  |  | read-write | Hide the storage volumes of this group. |
@@ -4412,6 +4546,15 @@ Collection of resources that are managed and exposed to hosts as a group.
 | **VolumesAreExposed** | boolean | Yes |  | read-only | Storage volumes are exposed to the Client Endpoints. |
 
 === Property Details ===
+
+== AccessState ==
+
+^ string ^ Description ^
+| NonOptimized | The endpoint(s) are in an Active/NonOptimized state. |
+| Optimized | The endpoint(s) are in an Active/Optimized state. |
+| Standby | The endpoint(s) are in a Standby state. |
+| Transitioning | The endpoint(s) are transitioning to a new AccesState. |
+| Unavailable | The endpoint(s) are unavailable. |
 
 == ConsistencyState ==
 
@@ -4862,7 +5005,7 @@ Switch contains properties describing a simple fabric switch.
 | \ \ \ \ \ \ **Oem** {} | object |  |  | read-write | This is the manufacturer/provider specific extension moniker used to divide the Oem object into sections. |
 | \ \ \ \ \ \ **State** | string | Yes |  | read-only | This indicates the known state of the resource, such as if it is enabled.\\ //See Property Details, below, for more information about this property.// |
 | } |  |  |
-| **SwitchType** |  | Yes |  | read-only | The protocol being sent over this switch. |
+| **SwitchType** | string | Yes |  | read-only | The protocol being sent over this switch.\\ //See Property Details, below, for more information about this property.// |
 | **TotalSwitchWidth** | number | Yes |  | read-only | The total number of lanes, phys, or other physical transport links that this switch contains. |
 
 === Property Details ===
@@ -4918,6 +5061,28 @@ Switch contains properties describing a simple fabric switch.
 | Starting | This function or resource is starting. |
 | UnavailableOffline | This function or resource is present but cannot be used. |
 | Updating | The element is updating and may be unavailable or degraded. |
+
+== SwitchType ==
+
+^ string ^ Description ^
+| AHCI | Advanced Host Controller Interface. |
+| FC | Fibre Channel. |
+| FCoE | Fibre Channel over Ethernet. |
+| FTP | File Transfer Protocol. |
+| HTTP | Hypertext Transport Protocol. |
+| HTTPS | Secure Hypertext Transport Protocol. |
+| NFSv3 | Network File System version 3. |
+| NFSv4 | Network File System version 4. |
+| NVMe | Non-Volatile Memory Express. |
+| NVMeOverFabrics | NVMe over Fabrics. |
+| PCIe | PCI Express (Vendor Proprietary). |
+| SAS | Serial Attached SCSI. |
+| SATA | Serial AT Attachment. |
+| SFTP | Secure File Transfer Protocol. |
+| SMB | Server Message Block (aka CIFS Common Internet File System). |
+| UHCI | Universal Host Controller Interface. |
+| USB | Universal Serial Bus. |
+| iSCSI | Internet SCSI. |
 
 
 ===== SwitchCollection =====
@@ -5391,6 +5556,15 @@ Volume contains properties used to describe a volume, virtual disk, LUN, or othe
 | **VolumeType** | string | Yes |  | read-only | The type of this volume\\ //See Property Details, below, for more information about this property.// |
 
 === Property Details ===
+
+== AccessState ==
+
+^ string ^ Description ^
+| NonOptimized | The endpoint(s) are in an Active/NonOptimized state. |
+| Optimized | The endpoint(s) are in an Active/Optimized state. |
+| Standby | The endpoint(s) are in a Standby state. |
+| Transitioning | The endpoint(s) are transitioning to a new AccesState. |
+| Unavailable | The endpoint(s) are unavailable. |
 
 == ConsistencyState ==
 
