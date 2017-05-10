@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>Chassis</title>
+</head>
+<body>
+<h1 id="chassis">Chassis</h1>
+<h2 id="schema definition">Schema Definition</h2>
+<table>
+<tr><th>Property</th><th>Type</th><th>Nullable</th><th>Required</th><th>Permission</th><th>Description</th></tr>
+<tr><td>@odata.context</td><td>string</td><td></td><td></td><td>read-only</td><td>The OData description of a payload.<br />Format: uri</td></tr>
+<tr><td>@odata.id</td><td>string</td><td></td><td></td><td>read-only</td><td>The unique identifier for a resource.<br />Format: uri</td></tr>
+<tr><td>@odata.type</td><td>string</td><td></td><td></td><td>read-only</td><td>The type of a resource.</td></tr>
+<tr><td>Oem { }</td><td>object</td><td></td><td></td><td>read-write</td><td>This is the manufacturer/provider specific extension moniker used to divide the Oem object into sections.</td></tr>
+<tr><td>Id</td><td>string</td><td></td><td>GET</td><td>read-only</td><td>Uniquely identifies the resource within the collection of like resources.</td></tr>
+<tr><td>Description</td><td>string</td><td>Yes</td><td></td><td>read-only</td><td>Provides a description of this resource and is used for commonality  in the schema definitions.</td></tr>
+<tr><td>Name</td><td>string</td><td></td><td>GET</td><td>read-only</td><td>The name of the resource or array element.</td></tr>
+<tr><td>ChassisType</td><td>string</td><td></td><td>GET</td><td>read-only</td><td>This property indicates the type of physical form factor of this resource.<br />Possible Values:<br />&nbsp;&nbsp;&nbsp;&nbsp;Rack: An equipment rack, typically a 19-inch wide freestanding unit.<br />&nbsp;&nbsp;&nbsp;&nbsp;Blade: An enclosed or semi-enclosed, typically vertically-oriented, system chassis which must be plugged into a multi-system chassis to function normally.<br />&nbsp;&nbsp;&nbsp;&nbsp;Enclosure: A generic term for a chassis that does not fit any other description.<br />&nbsp;&nbsp;&nbsp;&nbsp;StandAlone: A single, free-standing system, commonly called a tower or desktop chassis.<br />&nbsp;&nbsp;&nbsp;&nbsp;RackMount: A single system chassis designed specifically for mounting in an equipment rack.<br />&nbsp;&nbsp;&nbsp;&nbsp;Card: A loose device or circuit board intended to be installed in a system or other enclosure.<br />&nbsp;&nbsp;&nbsp;&nbsp;Cartridge: A small self-contained system intended to be plugged into a multi-system chassis.<br />&nbsp;&nbsp;&nbsp;&nbsp;Row: A collection of equipment racks.<br />&nbsp;&nbsp;&nbsp;&nbsp;Pod: A collection of equipment racks in a large, likely transportable, container.<br />&nbsp;&nbsp;&nbsp;&nbsp;Expansion: A chassis which expands the capabilities or capacity of another chassis.<br />&nbsp;&nbsp;&nbsp;&nbsp;Sidecar: A chassis that mates mechanically with another chassis to expand its capabilities or capacity.<br />&nbsp;&nbsp;&nbsp;&nbsp;Zone: A logical division or portion of a physical chassis that contains multiple devices or systems that cannot be physically separated.<br />&nbsp;&nbsp;&nbsp;&nbsp;Sled: An enclosed or semi-enclosed, system chassis which must be plugged into a multi-system chassis to function normally similar to a blade type chassis.<br />&nbsp;&nbsp;&nbsp;&nbsp;Shelf: An enclosed or semi-enclosed, typically horizontally-oriented, system chassis which must be plugged into a multi-system chassis to function normally.<br />&nbsp;&nbsp;&nbsp;&nbsp;Drawer: An enclosed or semi-enclosed, typically horizontally-oriented, system chassis which may be slid into a multi-system chassis.<br />&nbsp;&nbsp;&nbsp;&nbsp;Module: A small, typically removable, chassis or card which contains devices for a particular subsystem or function.<br />&nbsp;&nbsp;&nbsp;&nbsp;Component: A small chassis, card, or device which contains devices for a particular subsystem or function.<br />&nbsp;&nbsp;&nbsp;&nbsp;IPBasedDrive: A chassis in a drive form factor with IP-based network connections.<br />&nbsp;&nbsp;&nbsp;&nbsp;RackGroup: A group of racks which form a single entity or share infrastructure.<br />&nbsp;&nbsp;&nbsp;&nbsp;Other: A chassis that does not fit any of these definitions.</td></tr>
+<tr><td>Manufacturer</td><td>string</td><td>Yes</td><td></td><td>read-only</td><td>This is the manufacturer of this chassis.</td></tr>
+<tr><td>Model</td><td>string</td><td>Yes</td><td></td><td>read-only</td><td>This is the model number for the chassis.</td></tr>
+<tr><td>SKU</td><td>string</td><td>Yes</td><td></td><td>read-only</td><td>This is the SKU for this chassis.</td></tr>
+<tr><td>SerialNumber</td><td>string</td><td>Yes</td><td></td><td>read-only</td><td>The serial number for this chassis.</td></tr>
+<tr><td>PartNumber</td><td>string</td><td>Yes</td><td></td><td>read-only</td><td>The part number for this chassis.</td></tr>
+<tr><td>AssetTag</td><td>string</td><td>Yes</td><td></td><td>read-write</td><td>The user assigned asset tag for this chassis.</td></tr>
+<tr><td>IndicatorLED</td><td>string</td><td>Yes</td><td></td><td>read-write</td><td>The state of the indicator LED, used to identify the chassis.<br />Possible Values:<br />&nbsp;&nbsp;&nbsp;&nbsp;Unknown: The state of the Indicator LED cannot be determined. Deprecated: Return null if state is unknown.<br />&nbsp;&nbsp;&nbsp;&nbsp;Lit: The Indicator LED is lit.<br />&nbsp;&nbsp;&nbsp;&nbsp;Blinking: The Indicator LED is blinking.<br />&nbsp;&nbsp;&nbsp;&nbsp;Off: The Indicator LED is off.</td></tr>
+<tr><td>Links {</td><td>object</td><td></td><td></td><td>read-write</td><td>Contains references to other resources that are related to this resource.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;Oem { }</td><td>object</td><td></td><td></td><td>read-write</td><td>Oem extension object.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;ComputerSystems@odata.count</td><td>number</td><td></td><td></td><td>read-only</td><td>The number of items in a collection.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;ComputerSystems@odata.navigationLink</td><td>string</td><td></td><td></td><td>read-write</td><td>null<br />Format: uri</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;ComputerSystems [ {</td><td>array[reference(<a href="computersystem.html#computersystem">ComputerSystem</a>)]</td><td></td><td></td><td>read-only</td><td>An array of references to the computer systems contained in this chassis.  This will only reference ComputerSystems that are directly and wholly contained in this chassis.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@odata.id</td><td>string</td><td></td><td></td><td>read-only</td><td>The unique identifier for a resource.<br />Format: uri</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;} ]</td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;ManagedBy@odata.count</td><td>number</td><td></td><td></td><td>read-only</td><td>The number of items in a collection.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;ManagedBy@odata.navigationLink</td><td>string</td><td></td><td></td><td>read-write</td><td>null<br />Format: uri</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;ManagedBy [ {</td><td>array[reference(<a href="manager.html#manager">Manager</a>)]</td><td></td><td></td><td>read-only</td><td>An array of references to the Managers responsible for managing this chassis.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@odata.id</td><td>string</td><td></td><td></td><td>read-only</td><td>The unique identifier for a resource.<br />Format: uri</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;} ]</td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;ContainedBy {</td><td>reference(<a href="chassis.html#chassis">Chassis</a>)</td><td></td><td></td><td>read-only</td><td>A reference to the chassis that this chassis is contained by.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@odata.id</td><td>string</td><td></td><td></td><td>read-only</td><td>The unique identifier for a resource.<br />Format: uri</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;}</td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;Contains@odata.count</td><td>number</td><td></td><td></td><td>read-only</td><td>The number of items in a collection.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;Contains@odata.navigationLink</td><td>string</td><td></td><td></td><td>read-write</td><td>null<br />Format: uri</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;Contains [ {</td><td>array[reference(<a href="chassis.html#chassis">Chassis</a>)]</td><td></td><td></td><td>read-only</td><td>An array of references to any other chassis that this chassis has in it.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@odata.id</td><td>string</td><td></td><td></td><td>read-only</td><td>The unique identifier for a resource.<br />Format: uri</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;} ]</td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;PoweredBy@odata.count</td><td>number</td><td></td><td></td><td>read-only</td><td>The number of items in a collection.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;PoweredBy@odata.navigationLink</td><td>string</td><td></td><td></td><td>read-write</td><td>null<br />Format: uri</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;PoweredBy [ {</td><td>array[reference]</td><td></td><td></td><td>read-only</td><td>An array of ID[s] of resources that power this chassis. Normally the ID will be a chassis or a specific set of Power Supplies.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@odata.id</td><td>string</td><td></td><td></td><td>read-only</td><td>The unique identifier for a resource.<br />Format: uri</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;} ]</td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;CooledBy@odata.count</td><td>number</td><td></td><td></td><td>read-only</td><td>The number of items in a collection.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;CooledBy@odata.navigationLink</td><td>string</td><td></td><td></td><td>read-write</td><td>null<br />Format: uri</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;CooledBy [ {</td><td>array[reference]</td><td></td><td></td><td>read-only</td><td>An array of ID[s] of resources that cool this chassis. Normally the ID will be a chassis or a specific set of fans.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@odata.id</td><td>string</td><td></td><td></td><td>read-only</td><td>The unique identifier for a resource.<br />Format: uri</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;} ]</td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;ManagersInChassis@odata.count</td><td>number</td><td></td><td></td><td>read-only</td><td>The number of items in a collection.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;ManagersInChassis@odata.navigationLink</td><td>string</td><td></td><td></td><td>read-write</td><td>null<br />Format: uri</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;ManagersInChassis [ {</td><td>array[reference(<a href="manager.html#manager">Manager</a>)]</td><td></td><td></td><td>read-only</td><td>An array of references to the managers located in this Chassis.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@odata.id</td><td>string</td><td></td><td></td><td>read-only</td><td>The unique identifier for a resource.<br />Format: uri</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;} ]</td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;Drives@odata.count</td><td>number</td><td></td><td></td><td>read-only</td><td>The number of items in a collection.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;Drives@odata.navigationLink</td><td>string</td><td></td><td></td><td>read-write</td><td>null<br />Format: uri</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;Drives [ {</td><td>array[reference(<a href="drive.html#drive">Drive</a>)]</td><td></td><td></td><td>read-only</td><td>An array of references to the disk drives located in this Chassis.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@odata.id</td><td>string</td><td></td><td></td><td>read-only</td><td>The unique identifier for a resource.<br />Format: uri</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;} ]</td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;Storage@odata.count</td><td>number</td><td></td><td></td><td>read-only</td><td>The number of items in a collection.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;Storage@odata.navigationLink</td><td>string</td><td></td><td></td><td>read-write</td><td>null<br />Format: uri</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;Storage [ {</td><td>array[reference(<a href="storage.html#storage">Storage</a>)]</td><td></td><td></td><td>read-only</td><td>An array of references to the storage subsystems connected to or inside this Chassis.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@odata.id</td><td>string</td><td></td><td></td><td>read-only</td><td>The unique identifier for a resource.<br />Format: uri</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;} ]</td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;PCIeDevices@odata.count</td><td>number</td><td></td><td></td><td>read-only</td><td>The number of items in a collection.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;PCIeDevices@odata.navigationLink</td><td>string</td><td></td><td></td><td>read-write</td><td>null<br />Format: uri</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;PCIeDevices [ {</td><td>array[reference(<a href="pciedevice.html#pciedevice">PCIeDevice</a>)]</td><td></td><td></td><td>read-only</td><td>An array of references to the PCIe Devices located in this Chassis.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@odata.id</td><td>string</td><td></td><td></td><td>read-only</td><td>The unique identifier for a resource.<br />Format: uri</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;} ]</td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>}</td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>Actions {</td><td>object</td><td></td><td></td><td>read-write</td><td>The available actions for this resource.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;Oem { }</td><td>object</td><td></td><td></td><td>read-write</td><td>&nbsp;</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;#Chassis.Reset {</td><td>object</td><td></td><td></td><td>read-write</td><td>This action is used to reset the chassis. This action resets the chassis, not Systems or other contained resources, although side effects may occur which affect those resources.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;title</td><td>string</td><td></td><td></td><td>read-write</td><td>Friendly action name</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;target</td><td>string</td><td></td><td></td><td>read-write</td><td>Link to invoke action<br />Format: uri</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;}</td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>}</td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>Status {</td><td>object</td><td></td><td></td><td>read-only</td><td>&nbsp;</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;State</td><td>string</td><td>Yes</td><td></td><td>read-only</td><td>This indicates the known state of the resource, such as if it is enabled.<br />Possible Values:<br />&nbsp;&nbsp;&nbsp;&nbsp;Enabled: This function or resource has been enabled.<br />&nbsp;&nbsp;&nbsp;&nbsp;Disabled: This function or resource has been disabled.<br />&nbsp;&nbsp;&nbsp;&nbsp;StandbyOffline: This function or resource is enabled, but awaiting an external action to activate it.<br />&nbsp;&nbsp;&nbsp;&nbsp;StandbySpare: This function or resource is part of a redundancy set and is awaiting a failover or other external action to activate it.<br />&nbsp;&nbsp;&nbsp;&nbsp;InTest: This function or resource is undergoing testing.<br />&nbsp;&nbsp;&nbsp;&nbsp;Starting: This function or resource is starting.<br />&nbsp;&nbsp;&nbsp;&nbsp;Absent: This function or resource is not present or not detected.<br />&nbsp;&nbsp;&nbsp;&nbsp;UnavailableOffline: This function or resource is present but cannot be used.<br />&nbsp;&nbsp;&nbsp;&nbsp;Deferring: The element will not process any commands but will queue new requests.<br />&nbsp;&nbsp;&nbsp;&nbsp;Quiesced: The element is enabled but only processes a restricted set of commands.<br />&nbsp;&nbsp;&nbsp;&nbsp;Updating: The element is updating and may be unavailable or degraded.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;HealthRollup</td><td>string</td><td>Yes</td><td></td><td>read-only</td><td>This represents the overall health state from the view of this resource.<br />Possible Values:<br />&nbsp;&nbsp;&nbsp;&nbsp;OK: Normal.<br />&nbsp;&nbsp;&nbsp;&nbsp;Warning: A condition exists that requires attention.<br />&nbsp;&nbsp;&nbsp;&nbsp;Critical: A critical condition exists that requires immediate attention.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;Health</td><td>string</td><td>Yes</td><td></td><td>read-only</td><td>This represents the health state of this resource in the absence of its dependent resources.<br />Possible Values:<br />&nbsp;&nbsp;&nbsp;&nbsp;OK: Normal.<br />&nbsp;&nbsp;&nbsp;&nbsp;Warning: A condition exists that requires attention.<br />&nbsp;&nbsp;&nbsp;&nbsp;Critical: A critical condition exists that requires immediate attention.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;Oem { }</td><td>object</td><td></td><td></td><td>read-write</td><td>Oem extension object.</td></tr>
+<tr><td>}</td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>LogServices {</td><td>reference(<a href="logservicecollection.html#logservicecollection">LogServiceCollection</a>)</td><td></td><td></td><td>read-only</td><td>A reference to the logs for this chassis.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;@odata.id</td><td>string</td><td></td><td></td><td>read-only</td><td>The unique identifier for a resource.<br />Format: uri</td></tr>
+<tr><td>}</td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>Thermal {</td><td>reference(<a href="thermal.html#thermal">Thermal</a>)</td><td></td><td></td><td>read-only</td><td>A reference to the thermal properties (fans, cooling, sensors) for this chassis.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;@odata.id</td><td>string</td><td></td><td></td><td>read-only</td><td>The unique identifier for a resource.<br />Format: uri</td></tr>
+<tr><td>}</td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>Power {</td><td>reference(<a href="power.html#power">Power</a>)</td><td></td><td></td><td>read-only</td><td>A reference to the power properties (power supplies, power policies, sensors) for this chassis.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;@odata.id</td><td>string</td><td></td><td></td><td>read-only</td><td>The unique identifier for a resource.<br />Format: uri</td></tr>
+<tr><td>}</td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>PowerState</td><td>string</td><td>Yes</td><td></td><td>read-only</td><td>This is the current power state of the chassis.<br />Possible Values:<br />&nbsp;&nbsp;&nbsp;&nbsp;On: The components within the chassis has power on.<br />&nbsp;&nbsp;&nbsp;&nbsp;Off: The components within the chassis has no power, except some components may continue to have AUX power such as management controller.<br />&nbsp;&nbsp;&nbsp;&nbsp;PoweringOn: A temporary state between Off and On. The components within the chassis can take time to process the power on action.<br />&nbsp;&nbsp;&nbsp;&nbsp;PoweringOff: A temporary state between On and Off. The components within the chassis can take time to process the power off action.</td></tr>
+<tr><td>PhysicalSecurity {</td><td>object</td><td></td><td></td><td>read-write</td><td>The state of the physical security sensor.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;IntrusionSensorNumber</td><td>number</td><td>Yes</td><td></td><td>read-only</td><td>A numerical identifier to represent the physical security sensor.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;IntrusionSensor</td><td>string</td><td>Yes</td><td></td><td>read-write</td><td>This indicates the known state of the physical security sensor, such as if it is hardware intrusion detected.<br />Possible Values:<br />&nbsp;&nbsp;&nbsp;&nbsp;Normal: No abnormal physical security conditions are detected at this time.<br />&nbsp;&nbsp;&nbsp;&nbsp;HardwareIntrusion: A door, lock, or other mechanism protecting the internal system hardware from being accessed is detected as being in an insecure state.<br />&nbsp;&nbsp;&nbsp;&nbsp;TamperingDetected: Physical tampering of the monitored entity is detected.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;IntrusionSensorReArm</td><td>string</td><td>Yes</td><td></td><td>read-only</td><td>This indicates how the Normal state to be restored.<br />Possible Values:<br />&nbsp;&nbsp;&nbsp;&nbsp;Manual: This sensor would be restored to the Normal state by a manual re-arm.<br />&nbsp;&nbsp;&nbsp;&nbsp;Automatic: This sensor would be restored to the Normal state automatically as no abnormal physical security conditions are detected.</td></tr>
+<tr><td>}</td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>Location {</td><td>object</td><td></td><td></td><td>read-only</td><td>&nbsp;</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;Info</td><td>string</td><td>Yes</td><td></td><td>read-only</td><td>This indicates the location of the resource.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;InfoFormat</td><td>string</td><td>Yes</td><td></td><td>read-only</td><td>This represents the format of the Info property.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;Oem { }</td><td>object</td><td></td><td></td><td>read-write</td><td>Oem extension object.</td></tr>
+<tr><td>}</td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>HeightMm</td><td>number</td><td>Yes</td><td></td><td>read-only</td><td>The height of the chassis.<br />Unit: mm<br />Minimum: 0</td></tr>
+<tr><td>WidthMm</td><td>number</td><td>Yes</td><td></td><td>read-only</td><td>The width of the chassis.<br />Unit: mm<br />Minimum: 0</td></tr>
+<tr><td>DepthMm</td><td>number</td><td>Yes</td><td></td><td>read-only</td><td>The depth of the chassis.<br />Unit: mm<br />Minimum: 0</td></tr>
+<tr><td>WeightKg</td><td>number</td><td>Yes</td><td></td><td>read-only</td><td>The weight of the chassis.<br />Unit: kg<br />Minimum: 0</td></tr>
+<tr><td>NetworkAdapters {</td><td>reference(<a href="networkadaptercollection.html#networkadaptercollection">NetworkAdapterCollection</a>)</td><td></td><td></td><td>read-only</td><td>A reference to the collection of Network Adapters associated with this chassis.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;@odata.id</td><td>string</td><td></td><td></td><td>read-only</td><td>The unique identifier for a resource.<br />Format: uri</td></tr>
+<tr><td>}</td><td></td><td></td><td></td><td></td><td></td></tr>
+</table>
+</body>
+</html>

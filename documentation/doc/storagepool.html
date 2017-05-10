@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>StoragePool</title>
+</head>
+<body>
+<h1 id="storagepool">StoragePool</h1>
+<h2 id="schema definition">Schema Definition</h2>
+<table>
+<tr><th>Property</th><th>Type</th><th>Nullable</th><th>Required</th><th>Permission</th><th>Description</th></tr>
+<tr><td>@odata.context</td><td>string</td><td></td><td></td><td>read-only</td><td>The OData description of a payload.<br />Format: uri</td></tr>
+<tr><td>@odata.id</td><td>string</td><td></td><td></td><td>read-only</td><td>The unique identifier for a resource.<br />Format: uri</td></tr>
+<tr><td>@odata.type</td><td>string</td><td></td><td></td><td>read-only</td><td>The type of a resource.</td></tr>
+<tr><td>Oem { }</td><td>object</td><td></td><td></td><td>read-write</td><td>This is the manufacturer/provider specific extension moniker used to divide the Oem object into sections.</td></tr>
+<tr><td>Id</td><td>string</td><td></td><td>GET</td><td>read-only</td><td>Uniquely identifies the resource within the collection of like resources.</td></tr>
+<tr><td>Description</td><td>string</td><td>Yes</td><td></td><td>read-only</td><td>Provides a description of this resource and is used for commonality  in the schema definitions.</td></tr>
+<tr><td>Name</td><td>string</td><td></td><td>GET</td><td>read-only</td><td>The name of the resource or array element.</td></tr>
+<tr><td>Identifier {</td><td>object</td><td>Yes</td><td></td><td>read-only</td><td>The value identifies this resource.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;DurableName</td><td>string</td><td>Yes</td><td></td><td>read-only</td><td>This indicates the world wide, persistent name of the resource.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;DurableNameFormat</td><td>string</td><td>Yes</td><td></td><td>read-only</td><td>This represents the format of the DurableName property.<br />Possible Values:<br />&nbsp;&nbsp;&nbsp;&nbsp;NAA: Name Address Authority Format<br />&nbsp;&nbsp;&nbsp;&nbsp;iQN: iSCSI Qualified Name<br />&nbsp;&nbsp;&nbsp;&nbsp;FC_WWN: Fibre Channel World Wide Name<br />&nbsp;&nbsp;&nbsp;&nbsp;UUID: Universally Unique Identifier<br />&nbsp;&nbsp;&nbsp;&nbsp;EUI: IEEE-defined 64-bit Extended Unique Identifier</td></tr>
+<tr><td>}</td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>BlockSizeBytes</td><td>number</td><td>Yes</td><td></td><td>read-only</td><td>Maximum Block size in bytes.<br />Unit: By<br />Minimum: 0</td></tr>
+<tr><td>Capacity {</td><td>object</td><td>Yes</td><td></td><td>read-only</td><td>Capacity utilization.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;Data {</td><td>object</td><td>Yes</td><td></td><td>read-write</td><td>The capacity information relating to the user data.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ConsumedBytes</td><td>number</td><td>Yes</td><td></td><td>read-write</td><td>The number of bytes consumed in this data store for this data type.<br />Unit: By</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;AllocatedBytes</td><td>number</td><td>Yes</td><td></td><td>read-write</td><td>The number of bytes currently allocated by the storage system in this data store for this data type.<br />Unit: By</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;GuaranteedBytes</td><td>number</td><td>Yes</td><td></td><td>read-write</td><td>The number of bytes the storage system guarantees can be allocated in this data store for this data type.<br />Unit: By</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ProvisionedBytes</td><td>number</td><td>Yes</td><td></td><td>read-write</td><td>The maximum number of bytes that can be allocated in this data store for this data type.<br />Unit: By</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;}</td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;Metadata {</td><td>object</td><td>Yes</td><td></td><td>read-write</td><td>The capacity information relating to  metadata.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ConsumedBytes</td><td>number</td><td>Yes</td><td></td><td>read-write</td><td>The number of bytes consumed in this data store for this data type.<br />Unit: By</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;AllocatedBytes</td><td>number</td><td>Yes</td><td></td><td>read-write</td><td>The number of bytes currently allocated by the storage system in this data store for this data type.<br />Unit: By</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;GuaranteedBytes</td><td>number</td><td>Yes</td><td></td><td>read-write</td><td>The number of bytes the storage system guarantees can be allocated in this data store for this data type.<br />Unit: By</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ProvisionedBytes</td><td>number</td><td>Yes</td><td></td><td>read-write</td><td>The maximum number of bytes that can be allocated in this data store for this data type.<br />Unit: By</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;}</td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;Snapshot {</td><td>object</td><td>Yes</td><td></td><td>read-write</td><td>The capacity information relating to snapshot or backup data.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ConsumedBytes</td><td>number</td><td>Yes</td><td></td><td>read-write</td><td>The number of bytes consumed in this data store for this data type.<br />Unit: By</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;AllocatedBytes</td><td>number</td><td>Yes</td><td></td><td>read-write</td><td>The number of bytes currently allocated by the storage system in this data store for this data type.<br />Unit: By</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;GuaranteedBytes</td><td>number</td><td>Yes</td><td></td><td>read-write</td><td>The number of bytes the storage system guarantees can be allocated in this data store for this data type.<br />Unit: By</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ProvisionedBytes</td><td>number</td><td>Yes</td><td></td><td>read-write</td><td>The maximum number of bytes that can be allocated in this data store for this data type.<br />Unit: By</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;}</td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;IsThinProvisioned</td><td>boolean</td><td>Yes</td><td></td><td>read-write</td><td>Marks that the capacity is not necessarily fully allocated.</td></tr>
+<tr><td>}</td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>CapacitySources [ {</td><td>array[object]</td><td></td><td></td><td>read-only</td><td>An array of space allocations to this store.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;ProvidedCapacity {</td><td>object</td><td>Yes</td><td></td><td>read-write</td><td>The amount of space that has been provided from the ProvidingDrives, ProvidingVolumes or ProvidingPools.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Data {</td><td>object</td><td>Yes</td><td></td><td>read-write</td><td>The capacity information relating to the user data.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ConsumedBytes</td><td>number</td><td>Yes</td><td></td><td>read-write</td><td>The number of bytes consumed in this data store for this data type.<br />Unit: By</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;AllocatedBytes</td><td>number</td><td>Yes</td><td></td><td>read-write</td><td>The number of bytes currently allocated by the storage system in this data store for this data type.<br />Unit: By</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;GuaranteedBytes</td><td>number</td><td>Yes</td><td></td><td>read-write</td><td>The number of bytes the storage system guarantees can be allocated in this data store for this data type.<br />Unit: By</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ProvisionedBytes</td><td>number</td><td>Yes</td><td></td><td>read-write</td><td>The maximum number of bytes that can be allocated in this data store for this data type.<br />Unit: By</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Metadata {</td><td>object</td><td>Yes</td><td></td><td>read-write</td><td>The capacity information relating to  metadata.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ConsumedBytes</td><td>number</td><td>Yes</td><td></td><td>read-write</td><td>The number of bytes consumed in this data store for this data type.<br />Unit: By</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;AllocatedBytes</td><td>number</td><td>Yes</td><td></td><td>read-write</td><td>The number of bytes currently allocated by the storage system in this data store for this data type.<br />Unit: By</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;GuaranteedBytes</td><td>number</td><td>Yes</td><td></td><td>read-write</td><td>The number of bytes the storage system guarantees can be allocated in this data store for this data type.<br />Unit: By</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ProvisionedBytes</td><td>number</td><td>Yes</td><td></td><td>read-write</td><td>The maximum number of bytes that can be allocated in this data store for this data type.<br />Unit: By</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Snapshot {</td><td>object</td><td>Yes</td><td></td><td>read-write</td><td>The capacity information relating to snapshot or backup data.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ConsumedBytes</td><td>number</td><td>Yes</td><td></td><td>read-write</td><td>The number of bytes consumed in this data store for this data type.<br />Unit: By</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;AllocatedBytes</td><td>number</td><td>Yes</td><td></td><td>read-write</td><td>The number of bytes currently allocated by the storage system in this data store for this data type.<br />Unit: By</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;GuaranteedBytes</td><td>number</td><td>Yes</td><td></td><td>read-write</td><td>The number of bytes the storage system guarantees can be allocated in this data store for this data type.<br />Unit: By</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ProvisionedBytes</td><td>number</td><td>Yes</td><td></td><td>read-write</td><td>The maximum number of bytes that can be allocated in this data store for this data type.<br />Unit: By</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;IsThinProvisioned</td><td>boolean</td><td>Yes</td><td></td><td>read-write</td><td>Marks that the capacity is not necessarily fully allocated.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;}</td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;ProvidedClassOfService {</td><td>reference(<a href="classofservice.html#classofservice">ClassOfService</a>)</td><td>Yes</td><td></td><td>read-write</td><td>The ClassOfService provided from the ProvidingDrives, ProvidingVolumes or ProvidingPools.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@odata.id</td><td>string</td><td></td><td></td><td>read-only</td><td>The unique identifier for a resource.<br />Format: uri</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;}</td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;ProvidingVolumes {</td><td>reference(<a href="volumecollection.html#volumecollection">VolumeCollection</a>)</td><td>Yes</td><td></td><td>read-write</td><td>The volume or volumes that provide this space.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@odata.id</td><td>string</td><td></td><td></td><td>read-only</td><td>The unique identifier for a resource.<br />Format: uri</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;}</td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;ProvidingPools {</td><td>reference(<a href="storagepoolcollection.html#storagepoolcollection">StoragePoolCollection</a>)</td><td>Yes</td><td></td><td>read-write</td><td>The pool or pools that provide this space.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@odata.id</td><td>string</td><td></td><td></td><td>read-only</td><td>The unique identifier for a resource.<br />Format: uri</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;}</td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;ProvidingDrives {</td><td>reference(<a href="drivecollection.html#drivecollection">DriveCollection</a>)</td><td>Yes</td><td></td><td>read-write</td><td>The drive or drives that provide this space.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@odata.id</td><td>string</td><td></td><td></td><td>read-only</td><td>The unique identifier for a resource.<br />Format: uri</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;}</td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>} ]</td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>LowSpaceWarningThresholdPercents [ ]</td><td>array[number]</td><td></td><td></td><td>read-write</td><td>Low space warning threshold specified in percents.<br />Unit: %<br />Minimum: 0<br />Maximum: 100</td></tr>
+<tr><td>Links {</td><td>object</td><td></td><td></td><td>read-only</td><td>Contains links to other resources that are related to this resource.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;Oem { }</td><td>object</td><td></td><td></td><td>read-write</td><td>Oem extension object.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;DefaultClassOfService {</td><td>reference(<a href="classofservice.html#classofservice">ClassOfService</a>)</td><td>Yes</td><td></td><td>read-write</td><td>The default class of service for entities allocated from this storage pool.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@odata.id</td><td>string</td><td></td><td></td><td>read-only</td><td>The unique identifier for a resource.<br />Format: uri</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;}</td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>}</td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>Status {</td><td>object</td><td>Yes</td><td></td><td>read-only</td><td>&nbsp;</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;State</td><td>string</td><td>Yes</td><td></td><td>read-only</td><td>This indicates the known state of the resource, such as if it is enabled.<br />Possible Values:<br />&nbsp;&nbsp;&nbsp;&nbsp;Enabled: This function or resource has been enabled.<br />&nbsp;&nbsp;&nbsp;&nbsp;Disabled: This function or resource has been disabled.<br />&nbsp;&nbsp;&nbsp;&nbsp;StandbyOffline: This function or resource is enabled, but awaiting an external action to activate it.<br />&nbsp;&nbsp;&nbsp;&nbsp;StandbySpare: This function or resource is part of a redundancy set and is awaiting a failover or other external action to activate it.<br />&nbsp;&nbsp;&nbsp;&nbsp;InTest: This function or resource is undergoing testing.<br />&nbsp;&nbsp;&nbsp;&nbsp;Starting: This function or resource is starting.<br />&nbsp;&nbsp;&nbsp;&nbsp;Absent: This function or resource is not present or not detected.<br />&nbsp;&nbsp;&nbsp;&nbsp;UnavailableOffline: This function or resource is present but cannot be used.<br />&nbsp;&nbsp;&nbsp;&nbsp;Deferring: The element will not process any commands but will queue new requests.<br />&nbsp;&nbsp;&nbsp;&nbsp;Quiesced: The element is enabled but only processes a restricted set of commands.<br />&nbsp;&nbsp;&nbsp;&nbsp;Updating: The element is updating and may be unavailable or degraded.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;HealthRollup</td><td>string</td><td>Yes</td><td></td><td>read-only</td><td>This represents the overall health state from the view of this resource.<br />Possible Values:<br />&nbsp;&nbsp;&nbsp;&nbsp;OK: Normal.<br />&nbsp;&nbsp;&nbsp;&nbsp;Warning: A condition exists that requires attention.<br />&nbsp;&nbsp;&nbsp;&nbsp;Critical: A critical condition exists that requires immediate attention.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;Health</td><td>string</td><td>Yes</td><td></td><td>read-only</td><td>This represents the health state of this resource in the absence of its dependent resources.<br />Possible Values:<br />&nbsp;&nbsp;&nbsp;&nbsp;OK: Normal.<br />&nbsp;&nbsp;&nbsp;&nbsp;Warning: A condition exists that requires attention.<br />&nbsp;&nbsp;&nbsp;&nbsp;Critical: A critical condition exists that requires immediate attention.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;Oem { }</td><td>object</td><td></td><td></td><td>read-write</td><td>Oem extension object.</td></tr>
+<tr><td>}</td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>AllocatedVolumes {</td><td>reference(<a href="volumecollection.html#volumecollection">VolumeCollection</a>)</td><td>Yes</td><td></td><td>read-only</td><td>A reference to the collection of volumes allocated from this storage pool.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;@odata.id</td><td>string</td><td></td><td></td><td>read-only</td><td>The unique identifier for a resource.<br />Format: uri</td></tr>
+<tr><td>}</td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>AllocatedPools {</td><td>reference(<a href="storagepoolcollection.html#storagepoolcollection">StoragePoolCollection</a>)</td><td>Yes</td><td></td><td>read-only</td><td>A reference to the collection of storage pools allocated from this storage pool.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;@odata.id</td><td>string</td><td></td><td></td><td>read-only</td><td>The unique identifier for a resource.<br />Format: uri</td></tr>
+<tr><td>}</td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>ClassesOfService {</td><td>reference(<a href="classofservicecollection.html#classofservicecollection">ClassOfServiceCollection</a>)</td><td>Yes</td><td></td><td>read-write</td><td>The ClassesOfService supported by this storage pool.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;@odata.id</td><td>string</td><td></td><td></td><td>read-only</td><td>The unique identifier for a resource.<br />Format: uri</td></tr>
+<tr><td>}</td><td></td><td></td><td></td><td></td><td></td></tr>
+</table>
+</body>
+</html>

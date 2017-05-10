@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>Task</title>
+</head>
+<body>
+<h1 id="task">Task</h1>
+<h2 id="schema definition">Schema Definition</h2>
+<table>
+<tr><th>Property</th><th>Type</th><th>Nullable</th><th>Required</th><th>Permission</th><th>Description</th></tr>
+<tr><td>@odata.context</td><td>string</td><td></td><td></td><td>read-only</td><td>The OData description of a payload.<br />Format: uri</td></tr>
+<tr><td>@odata.id</td><td>string</td><td></td><td></td><td>read-only</td><td>The unique identifier for a resource.<br />Format: uri</td></tr>
+<tr><td>@odata.type</td><td>string</td><td></td><td></td><td>read-only</td><td>The type of a resource.</td></tr>
+<tr><td>Oem { }</td><td>object</td><td></td><td></td><td>read-write</td><td>This is the manufacturer/provider specific extension moniker used to divide the Oem object into sections.</td></tr>
+<tr><td>Id</td><td>string</td><td></td><td>GET</td><td>read-only</td><td>Uniquely identifies the resource within the collection of like resources.</td></tr>
+<tr><td>Description</td><td>string</td><td>Yes</td><td></td><td>read-only</td><td>Provides a description of this resource and is used for commonality  in the schema definitions.</td></tr>
+<tr><td>Name</td><td>string</td><td></td><td>GET</td><td>read-only</td><td>The name of the resource or array element.</td></tr>
+<tr><td>TaskState</td><td>string</td><td></td><td></td><td>read-only</td><td>The state of the task.<br />Possible Values:<br />&nbsp;&nbsp;&nbsp;&nbsp;New: A new task.<br />&nbsp;&nbsp;&nbsp;&nbsp;Starting: Task is starting.<br />&nbsp;&nbsp;&nbsp;&nbsp;Running: Task is running normally.<br />&nbsp;&nbsp;&nbsp;&nbsp;Suspended: Task has been suspended.<br />&nbsp;&nbsp;&nbsp;&nbsp;Interrupted: Task has been interrupted.<br />&nbsp;&nbsp;&nbsp;&nbsp;Pending: Task is pending and has not started.<br />&nbsp;&nbsp;&nbsp;&nbsp;Stopping: Task is in the process of stopping.<br />&nbsp;&nbsp;&nbsp;&nbsp;Completed: Task has completed.<br />&nbsp;&nbsp;&nbsp;&nbsp;Killed: Task was terminated.<br />&nbsp;&nbsp;&nbsp;&nbsp;Exception: Task has stopped due to an exception condition.<br />&nbsp;&nbsp;&nbsp;&nbsp;Service: Task is running as a service.</td></tr>
+<tr><td>StartTime</td><td>string</td><td></td><td></td><td>read-only</td><td>The date-time stamp that the task was last started.<br />Format: date-time</td></tr>
+<tr><td>EndTime</td><td>string</td><td></td><td></td><td>read-only</td><td>The date-time stamp that the task was last completed.<br />Format: date-time</td></tr>
+<tr><td>TaskStatus</td><td>string</td><td></td><td></td><td>read-only</td><td>This is the completion status of the task.<br />Possible Values:<br />&nbsp;&nbsp;&nbsp;&nbsp;OK: Normal.<br />&nbsp;&nbsp;&nbsp;&nbsp;Warning: A condition exists that requires attention.<br />&nbsp;&nbsp;&nbsp;&nbsp;Critical: A critical condition exists that requires immediate attention.</td></tr>
+<tr><td>Messages [ { } ]</td><td>array[object]</td><td></td><td></td><td>read-write</td><td>This is an array of messages associated with the task.</td></tr>
+</table>
+</body>
+</html>

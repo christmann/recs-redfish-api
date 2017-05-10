@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>NetworkPort</title>
+</head>
+<body>
+<h1 id="networkport">NetworkPort</h1>
+<h2 id="schema definition">Schema Definition</h2>
+<table>
+<tr><th>Property</th><th>Type</th><th>Nullable</th><th>Required</th><th>Permission</th><th>Description</th></tr>
+<tr><td>@odata.context</td><td>string</td><td></td><td></td><td>read-only</td><td>The OData description of a payload.<br />Format: uri</td></tr>
+<tr><td>@odata.id</td><td>string</td><td></td><td></td><td>read-only</td><td>The unique identifier for a resource.<br />Format: uri</td></tr>
+<tr><td>@odata.type</td><td>string</td><td></td><td></td><td>read-only</td><td>The type of a resource.</td></tr>
+<tr><td>Oem { }</td><td>object</td><td></td><td></td><td>read-write</td><td>This is the manufacturer/provider specific extension moniker used to divide the Oem object into sections.</td></tr>
+<tr><td>Id</td><td>string</td><td></td><td>GET</td><td>read-only</td><td>Uniquely identifies the resource within the collection of like resources.</td></tr>
+<tr><td>Description</td><td>string</td><td>Yes</td><td></td><td>read-only</td><td>Provides a description of this resource and is used for commonality  in the schema definitions.</td></tr>
+<tr><td>Name</td><td>string</td><td></td><td>GET</td><td>read-only</td><td>The name of the resource or array element.</td></tr>
+<tr><td>Status {</td><td>object</td><td>Yes</td><td></td><td>read-only</td><td>&nbsp;</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;State</td><td>string</td><td>Yes</td><td></td><td>read-only</td><td>This indicates the known state of the resource, such as if it is enabled.<br />Possible Values:<br />&nbsp;&nbsp;&nbsp;&nbsp;Enabled: This function or resource has been enabled.<br />&nbsp;&nbsp;&nbsp;&nbsp;Disabled: This function or resource has been disabled.<br />&nbsp;&nbsp;&nbsp;&nbsp;StandbyOffline: This function or resource is enabled, but awaiting an external action to activate it.<br />&nbsp;&nbsp;&nbsp;&nbsp;StandbySpare: This function or resource is part of a redundancy set and is awaiting a failover or other external action to activate it.<br />&nbsp;&nbsp;&nbsp;&nbsp;InTest: This function or resource is undergoing testing.<br />&nbsp;&nbsp;&nbsp;&nbsp;Starting: This function or resource is starting.<br />&nbsp;&nbsp;&nbsp;&nbsp;Absent: This function or resource is not present or not detected.<br />&nbsp;&nbsp;&nbsp;&nbsp;UnavailableOffline: This function or resource is present but cannot be used.<br />&nbsp;&nbsp;&nbsp;&nbsp;Deferring: The element will not process any commands but will queue new requests.<br />&nbsp;&nbsp;&nbsp;&nbsp;Quiesced: The element is enabled but only processes a restricted set of commands.<br />&nbsp;&nbsp;&nbsp;&nbsp;Updating: The element is updating and may be unavailable or degraded.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;HealthRollup</td><td>string</td><td>Yes</td><td></td><td>read-only</td><td>This represents the overall health state from the view of this resource.<br />Possible Values:<br />&nbsp;&nbsp;&nbsp;&nbsp;OK: Normal.<br />&nbsp;&nbsp;&nbsp;&nbsp;Warning: A condition exists that requires attention.<br />&nbsp;&nbsp;&nbsp;&nbsp;Critical: A critical condition exists that requires immediate attention.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;Health</td><td>string</td><td>Yes</td><td></td><td>read-only</td><td>This represents the health state of this resource in the absence of its dependent resources.<br />Possible Values:<br />&nbsp;&nbsp;&nbsp;&nbsp;OK: Normal.<br />&nbsp;&nbsp;&nbsp;&nbsp;Warning: A condition exists that requires attention.<br />&nbsp;&nbsp;&nbsp;&nbsp;Critical: A critical condition exists that requires immediate attention.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;Oem { }</td><td>object</td><td></td><td></td><td>read-write</td><td>Oem extension object.</td></tr>
+<tr><td>}</td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>PhysicalPortNumber</td><td>string</td><td>Yes</td><td></td><td>read-only</td><td>The physical port number label for this port.</td></tr>
+<tr><td>LinkStatus</td><td>string</td><td>Yes</td><td></td><td>read-only</td><td>The status of the link between this port and its link partner.<br />Possible Values:<br />&nbsp;&nbsp;&nbsp;&nbsp;Down: The port is enabled but link is down.<br />&nbsp;&nbsp;&nbsp;&nbsp;Up: The port is enabled and link is good (up).</td></tr>
+<tr><td>SupportedLinkCapabilities [ {</td><td>array[object]</td><td></td><td></td><td>read-write</td><td>The self-described link capabilities of this port.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;LinkNetworkTechnology</td><td>string</td><td>Yes</td><td></td><td>read-only</td><td>The self-described link network technology capabilities of this port.<br />Possible Values:<br />&nbsp;&nbsp;&nbsp;&nbsp;Ethernet: The port is capable of connecting to an Ethernet network.<br />&nbsp;&nbsp;&nbsp;&nbsp;InfiniBand: The port is capable of connecting to an InfiniBand network.<br />&nbsp;&nbsp;&nbsp;&nbsp;FibreChannel: The port is capable of connecting to a Fibre Channel network.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;LinkSpeedMbps</td><td>number</td><td>Yes</td><td></td><td>read-only</td><td>The speed of the link in Mbps when this link network technology is active.</td></tr>
+<tr><td>} ]</td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>ActiveLinkTechnology</td><td>string</td><td>Yes</td><td></td><td>read-write</td><td>Network Port Active Link Technology.<br />Possible Values:<br />&nbsp;&nbsp;&nbsp;&nbsp;Ethernet: The port is capable of connecting to an Ethernet network.<br />&nbsp;&nbsp;&nbsp;&nbsp;InfiniBand: The port is capable of connecting to an InfiniBand network.<br />&nbsp;&nbsp;&nbsp;&nbsp;FibreChannel: The port is capable of connecting to a Fibre Channel network.</td></tr>
+<tr><td>SupportedEthernetCapabilities [ ]</td><td>array[string]</td><td></td><td></td><td>read-only</td><td>The set of Ethernet capabilities that this port supports.<br />Possible Values:<br />&nbsp;&nbsp;&nbsp;&nbsp;WakeOnLAN: Wake on LAN (WoL) is supported on this port.<br />&nbsp;&nbsp;&nbsp;&nbsp;EEE: IEEE 802.3az Energy Efficient Ethernet (EEE) is supported on this port.</td></tr>
+<tr><td>NetDevFuncMinBWAlloc [ {</td><td>array[object]</td><td></td><td></td><td>read-write</td><td>The array of minimum bandwidth allocation percentages for the Network Device Functions associated with this port.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;MinBWAllocPercent</td><td>number</td><td>Yes</td><td></td><td>read-write</td><td>The minimum bandwidth allocation percentage allocated to the corresponding network device function instance.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;NetworkDeviceFunction {</td><td>reference(<a href="networkdevicefunction.html#networkdevicefunction">NetworkDeviceFunction</a>)</td><td></td><td></td><td>read-only</td><td>Contains the members of this collection.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@odata.id</td><td>string</td><td></td><td></td><td>read-only</td><td>The unique identifier for a resource.<br />Format: uri</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;}</td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>} ]</td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>NetDevFuncMaxBWAlloc [ {</td><td>array[object]</td><td></td><td></td><td>read-write</td><td>The array of maximum bandwidth allocation percentages for the Network Device Functions associated with this port.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;MaxBWAllocPercent</td><td>number</td><td>Yes</td><td></td><td>read-write</td><td>The maximum bandwidth allocation percentage allocated to the corresponding network device function instance.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;NetworkDeviceFunction {</td><td>reference(<a href="networkdevicefunction.html#networkdevicefunction">NetworkDeviceFunction</a>)</td><td></td><td></td><td>read-only</td><td>Contains the members of this collection.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@odata.id</td><td>string</td><td></td><td></td><td>read-only</td><td>The unique identifier for a resource.<br />Format: uri</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;}</td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>} ]</td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>AssociatedNetworkAddresses [ ]</td><td>array[string]</td><td></td><td></td><td>read-only</td><td>The array of configured network addresses (MAC or WWN) that are associated with this Network Port, including the programmed address of the lowest numbered Network Device Function, the configured but not active address if applicable, the address for hardware port teaming, or other network addresses.</td></tr>
+<tr><td>EEEEnabled</td><td>boolean</td><td>Yes</td><td></td><td>read-write</td><td>Whether IEEE 802.3az Energy Efficient Ethernet (EEE) is enabled for this network port.</td></tr>
+<tr><td>WakeOnLANEnabled</td><td>boolean</td><td>Yes</td><td></td><td>read-write</td><td>Whether Wake on LAN (WoL) is enabled for this network port.</td></tr>
+<tr><td>PortMaximumMTU</td><td>number</td><td>Yes</td><td></td><td>read-only</td><td>The largest maximum transmission unit (MTU) that can be configured for this network port.</td></tr>
+<tr><td>FlowControlStatus</td><td>string</td><td>Yes</td><td></td><td>read-only</td><td>The 802.3x flow control behavior negotiated with the link partner for this network port (Ethernet-only).<br />Possible Values:<br />&nbsp;&nbsp;&nbsp;&nbsp;None: No IEEE 802.3x flow control is enabled on this port.<br />&nbsp;&nbsp;&nbsp;&nbsp;TX: IEEE 802.3x flow control may be initiated by this station.<br />&nbsp;&nbsp;&nbsp;&nbsp;RX: IEEE 802.3x flow control may be initiated by the link partner.<br />&nbsp;&nbsp;&nbsp;&nbsp;TX_RX: IEEE 802.3x flow control may be initiated by this station or the link partner.</td></tr>
+<tr><td>FlowControlConfiguration</td><td>string</td><td>Yes</td><td></td><td>read-write</td><td>The locally configured 802.3x flow control setting for this network port.<br />Possible Values:<br />&nbsp;&nbsp;&nbsp;&nbsp;None: No IEEE 802.3x flow control is enabled on this port.<br />&nbsp;&nbsp;&nbsp;&nbsp;TX: IEEE 802.3x flow control may be initiated by this station.<br />&nbsp;&nbsp;&nbsp;&nbsp;RX: IEEE 802.3x flow control may be initiated by the link partner.<br />&nbsp;&nbsp;&nbsp;&nbsp;TX_RX: IEEE 802.3x flow control may be initiated by this station or the link partner.</td></tr>
+<tr><td>SignalDetected</td><td>boolean</td><td>Yes</td><td></td><td>read-only</td><td>Whether or not the port has detected enough signal on enough lanes to establish link.</td></tr>
+</table>
+</body>
+</html>

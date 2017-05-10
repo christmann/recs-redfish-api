@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>VirtualMedia</title>
+</head>
+<body>
+<h1 id="virtualmedia">VirtualMedia</h1>
+<h2 id="schema definition">Schema Definition</h2>
+<table>
+<tr><th>Property</th><th>Type</th><th>Nullable</th><th>Required</th><th>Permission</th><th>Description</th></tr>
+<tr><td>@odata.context</td><td>string</td><td></td><td></td><td>read-only</td><td>The OData description of a payload.<br />Format: uri</td></tr>
+<tr><td>@odata.id</td><td>string</td><td></td><td></td><td>read-only</td><td>The unique identifier for a resource.<br />Format: uri</td></tr>
+<tr><td>@odata.type</td><td>string</td><td></td><td></td><td>read-only</td><td>The type of a resource.</td></tr>
+<tr><td>Oem { }</td><td>object</td><td></td><td></td><td>read-write</td><td>This is the manufacturer/provider specific extension moniker used to divide the Oem object into sections.</td></tr>
+<tr><td>Id</td><td>string</td><td></td><td>GET</td><td>read-only</td><td>Uniquely identifies the resource within the collection of like resources.</td></tr>
+<tr><td>Description</td><td>string</td><td>Yes</td><td></td><td>read-only</td><td>Provides a description of this resource and is used for commonality  in the schema definitions.</td></tr>
+<tr><td>Name</td><td>string</td><td></td><td>GET</td><td>read-only</td><td>The name of the resource or array element.</td></tr>
+<tr><td>ImageName</td><td>string</td><td>Yes</td><td></td><td>read-only</td><td>The current image name.</td></tr>
+<tr><td>Image</td><td>string</td><td>Yes</td><td></td><td>read-only</td><td>A URI providing the location of the selected image.<br />Format: uri</td></tr>
+<tr><td>MediaTypes [ ]</td><td>array[string]</td><td></td><td></td><td>read-only</td><td>This is the media types supported as virtual media.<br />Possible Values:<br />&nbsp;&nbsp;&nbsp;&nbsp;CD: A CD-ROM format (ISO) image.<br />&nbsp;&nbsp;&nbsp;&nbsp;Floppy: A floppy disk image.<br />&nbsp;&nbsp;&nbsp;&nbsp;USBStick: An emulation of a USB storage device.<br />&nbsp;&nbsp;&nbsp;&nbsp;DVD: A DVD-ROM format image.</td></tr>
+<tr><td>ConnectedVia</td><td>string</td><td>Yes</td><td></td><td>read-only</td><td>Current virtual media connection methods.<br />Possible Values:<br />&nbsp;&nbsp;&nbsp;&nbsp;NotConnected: No current connection.<br />&nbsp;&nbsp;&nbsp;&nbsp;URI: Connected to a URI location.<br />&nbsp;&nbsp;&nbsp;&nbsp;Applet: Connected to a client application.<br />&nbsp;&nbsp;&nbsp;&nbsp;Oem: Connected via an OEM-defined method.</td></tr>
+<tr><td>Inserted</td><td>boolean</td><td>Yes</td><td></td><td>read-only</td><td>Indicates if virtual media is inserted in the virtual device.</td></tr>
+<tr><td>WriteProtected</td><td>boolean</td><td>Yes</td><td></td><td>read-only</td><td>Indicates the media is write protected.</td></tr>
+</table>
+</body>
+</html>

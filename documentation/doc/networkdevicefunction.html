@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>NetworkDeviceFunction</title>
+</head>
+<body>
+<h1 id="networkdevicefunction">NetworkDeviceFunction</h1>
+<h2 id="schema definition">Schema Definition</h2>
+<table>
+<tr><th>Property</th><th>Type</th><th>Nullable</th><th>Required</th><th>Permission</th><th>Description</th></tr>
+<tr><td>@odata.context</td><td>string</td><td></td><td></td><td>read-only</td><td>The OData description of a payload.<br />Format: uri</td></tr>
+<tr><td>@odata.id</td><td>string</td><td></td><td></td><td>read-only</td><td>The unique identifier for a resource.<br />Format: uri</td></tr>
+<tr><td>@odata.type</td><td>string</td><td></td><td></td><td>read-only</td><td>The type of a resource.</td></tr>
+<tr><td>Oem { }</td><td>object</td><td></td><td></td><td>read-write</td><td>This is the manufacturer/provider specific extension moniker used to divide the Oem object into sections.</td></tr>
+<tr><td>Id</td><td>string</td><td></td><td>GET</td><td>read-only</td><td>Uniquely identifies the resource within the collection of like resources.</td></tr>
+<tr><td>Description</td><td>string</td><td>Yes</td><td></td><td>read-only</td><td>Provides a description of this resource and is used for commonality  in the schema definitions.</td></tr>
+<tr><td>Name</td><td>string</td><td></td><td>GET</td><td>read-only</td><td>The name of the resource or array element.</td></tr>
+<tr><td>Status {</td><td>object</td><td>Yes</td><td></td><td>read-only</td><td>&nbsp;</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;State</td><td>string</td><td>Yes</td><td></td><td>read-only</td><td>This indicates the known state of the resource, such as if it is enabled.<br />Possible Values:<br />&nbsp;&nbsp;&nbsp;&nbsp;Enabled: This function or resource has been enabled.<br />&nbsp;&nbsp;&nbsp;&nbsp;Disabled: This function or resource has been disabled.<br />&nbsp;&nbsp;&nbsp;&nbsp;StandbyOffline: This function or resource is enabled, but awaiting an external action to activate it.<br />&nbsp;&nbsp;&nbsp;&nbsp;StandbySpare: This function or resource is part of a redundancy set and is awaiting a failover or other external action to activate it.<br />&nbsp;&nbsp;&nbsp;&nbsp;InTest: This function or resource is undergoing testing.<br />&nbsp;&nbsp;&nbsp;&nbsp;Starting: This function or resource is starting.<br />&nbsp;&nbsp;&nbsp;&nbsp;Absent: This function or resource is not present or not detected.<br />&nbsp;&nbsp;&nbsp;&nbsp;UnavailableOffline: This function or resource is present but cannot be used.<br />&nbsp;&nbsp;&nbsp;&nbsp;Deferring: The element will not process any commands but will queue new requests.<br />&nbsp;&nbsp;&nbsp;&nbsp;Quiesced: The element is enabled but only processes a restricted set of commands.<br />&nbsp;&nbsp;&nbsp;&nbsp;Updating: The element is updating and may be unavailable or degraded.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;HealthRollup</td><td>string</td><td>Yes</td><td></td><td>read-only</td><td>This represents the overall health state from the view of this resource.<br />Possible Values:<br />&nbsp;&nbsp;&nbsp;&nbsp;OK: Normal.<br />&nbsp;&nbsp;&nbsp;&nbsp;Warning: A condition exists that requires attention.<br />&nbsp;&nbsp;&nbsp;&nbsp;Critical: A critical condition exists that requires immediate attention.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;Health</td><td>string</td><td>Yes</td><td></td><td>read-only</td><td>This represents the health state of this resource in the absence of its dependent resources.<br />Possible Values:<br />&nbsp;&nbsp;&nbsp;&nbsp;OK: Normal.<br />&nbsp;&nbsp;&nbsp;&nbsp;Warning: A condition exists that requires attention.<br />&nbsp;&nbsp;&nbsp;&nbsp;Critical: A critical condition exists that requires immediate attention.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;Oem { }</td><td>object</td><td></td><td></td><td>read-write</td><td>Oem extension object.</td></tr>
+<tr><td>}</td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>NetDevFuncType</td><td>string</td><td>Yes</td><td></td><td>read-write</td><td>The configured capability of this network device function.<br />Possible Values:<br />&nbsp;&nbsp;&nbsp;&nbsp;Disabled: Neither enumerated nor visible to the operating system.<br />&nbsp;&nbsp;&nbsp;&nbsp;Ethernet: Appears to the operating system as an Ethernet device.<br />&nbsp;&nbsp;&nbsp;&nbsp;FibreChannel: Appears to the operating system as a Fibre Channel device.<br />&nbsp;&nbsp;&nbsp;&nbsp;iSCSI: Appears to the operating system as an iSCSI device.<br />&nbsp;&nbsp;&nbsp;&nbsp;FibreChannelOverEthernet: Appears to the operating system as an FCoE device.</td></tr>
+<tr><td>DeviceEnabled</td><td>boolean</td><td>Yes</td><td></td><td>read-write</td><td>Whether the network device function is enabled.</td></tr>
+<tr><td>NetDevFuncCapabilities [ ]</td><td>array[string]</td><td></td><td></td><td>read-only</td><td>Capabilities of this network device function.<br />Possible Values:<br />&nbsp;&nbsp;&nbsp;&nbsp;Disabled: Neither enumerated nor visible to the operating system.<br />&nbsp;&nbsp;&nbsp;&nbsp;Ethernet: Appears to the operating system as an Ethernet device.<br />&nbsp;&nbsp;&nbsp;&nbsp;FibreChannel: Appears to the operating system as a Fibre Channel device.<br />&nbsp;&nbsp;&nbsp;&nbsp;iSCSI: Appears to the operating system as an iSCSI device.<br />&nbsp;&nbsp;&nbsp;&nbsp;FibreChannelOverEthernet: Appears to the operating system as an FCoE device.</td></tr>
+<tr><td>Ethernet {</td><td>object</td><td>Yes</td><td></td><td>read-write</td><td>Ethernet.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;PermanentMACAddress</td><td>string</td><td>Yes</td><td></td><td>read-only</td><td>This is the permanent MAC address assigned to this network device function (physical function).</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;MACAddress</td><td>string</td><td>Yes</td><td></td><td>read-write</td><td>This is the currently configured MAC address of the (logical port) network device function.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;MTUSize</td><td>number</td><td>Yes</td><td></td><td>read-write</td><td>The Maximum Transmission Unit (MTU) configured for this network device function.</td></tr>
+<tr><td>}</td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>iSCSIBoot {</td><td>object</td><td>Yes</td><td></td><td>read-write</td><td>iSCSI Boot.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;IPAddressType</td><td>string</td><td>Yes</td><td></td><td>read-write</td><td>The type of IP address (IPv6 or IPv4) being populated in the iSCSIBoot IP address fields.<br />Possible Values:<br />&nbsp;&nbsp;&nbsp;&nbsp;IPv4: IPv4 addressing is used for all IP-fields in this object.<br />&nbsp;&nbsp;&nbsp;&nbsp;IPv6: IPv6 addressing is used for all IP-fields in this object.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;InitiatorIPAddress</td><td>string</td><td>Yes</td><td></td><td>read-write</td><td>The IPv6 or IPv4 address of the iSCSI initiator.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;InitiatorName</td><td>string</td><td>Yes</td><td></td><td>read-write</td><td>The iSCSI initiator name.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;InitiatorDefaultGateway</td><td>string</td><td>Yes</td><td></td><td>read-write</td><td>The IPv6 or IPv4 iSCSI boot default gateway.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;InitiatorNetmask</td><td>string</td><td>Yes</td><td></td><td>read-write</td><td>The IPv6 or IPv4 netmask of the iSCSI boot initiator.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;TargetInfoViaDHCP</td><td>boolean</td><td>Yes</td><td></td><td>read-write</td><td>Whether the iSCSI boot target name, LUN, IP address, and netmask should be obtained from DHCP.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;PrimaryTargetName</td><td>string</td><td>Yes</td><td></td><td>read-write</td><td>The name of the iSCSI primary boot target.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;PrimaryTargetIPAddress</td><td>string</td><td>Yes</td><td></td><td>read-write</td><td>The IP address (IPv6 or IPv4) for the primary iSCSI boot target.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;PrimaryTargetTCPPort</td><td>number</td><td>Yes</td><td></td><td>read-write</td><td>The TCP port for the primary iSCSI boot target.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;PrimaryLUN</td><td>number</td><td>Yes</td><td></td><td>read-write</td><td>The logical unit number (LUN) for the primary iSCSI boot target.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;PrimaryVLANEnable</td><td>boolean</td><td>Yes</td><td></td><td>read-write</td><td>This indicates if the primary VLAN is enabled.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;PrimaryVLANId</td><td>number</td><td>Yes</td><td></td><td>read-write</td><td>The 802.1q VLAN ID to use for iSCSI boot from the primary target.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;PrimaryDNS</td><td>string</td><td>Yes</td><td></td><td>read-write</td><td>The IPv6 or IPv4 address of the primary DNS server for the iSCSI boot initiator.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;SecondaryTargetName</td><td>string</td><td>Yes</td><td></td><td>read-write</td><td>The name of the iSCSI secondary boot target.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;SecondaryTargetIPAddress</td><td>string</td><td>Yes</td><td></td><td>read-write</td><td>The IP address (IPv6 or IPv4) for the secondary iSCSI boot target.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;SecondaryTargetTCPPort</td><td>number</td><td>Yes</td><td></td><td>read-write</td><td>The TCP port for the secondary iSCSI boot target.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;SecondaryLUN</td><td>number</td><td>Yes</td><td></td><td>read-write</td><td>The logical unit number (LUN) for the secondary iSCSI boot target.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;SecondaryVLANEnable</td><td>boolean</td><td>Yes</td><td></td><td>read-write</td><td>This indicates if the secondary VLAN is enabled.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;SecondaryVLANId</td><td>number</td><td>Yes</td><td></td><td>read-write</td><td>The 802.1q VLAN ID to use for iSCSI boot from the secondary target.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;SecondaryDNS</td><td>string</td><td>Yes</td><td></td><td>read-write</td><td>The IPv6 or IPv4 address of the secondary DNS server for the iSCSI boot initiator.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;IPMaskDNSViaDHCP</td><td>boolean</td><td>Yes</td><td></td><td>read-write</td><td>Whether the iSCSI boot initiator uses DHCP to obtain the iniator name, IP address, and netmask.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;RouterAdvertisementEnabled</td><td>boolean</td><td>Yes</td><td></td><td>read-write</td><td>Whether IPv6 router advertisement is enabled for the iSCSI boot target.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;AuthenticationMethod</td><td>string</td><td>Yes</td><td></td><td>read-write</td><td>The iSCSI boot authentication method for this network device function.<br />Possible Values:<br />&nbsp;&nbsp;&nbsp;&nbsp;None: No iSCSI authentication is used.<br />&nbsp;&nbsp;&nbsp;&nbsp;CHAP: iSCSI Challenge Handshake Authentication Protocol (CHAP) authentication is used.<br />&nbsp;&nbsp;&nbsp;&nbsp;MutualCHAP: iSCSI Mutual Challenge Handshake Authentication Protocol (CHAP) authentication is used.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;CHAPUsername</td><td>string</td><td>Yes</td><td></td><td>read-write</td><td>The username for CHAP authentication.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;CHAPSecret</td><td>string</td><td>Yes</td><td></td><td>read-write</td><td>The shared secret for CHAP authentication.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;MutualCHAPUsername</td><td>string</td><td>Yes</td><td></td><td>read-write</td><td>The CHAP Username for 2-way CHAP authentication.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;MutualCHAPSecret</td><td>string</td><td>Yes</td><td></td><td>read-write</td><td>The CHAP Secret for 2-way CHAP authentication.</td></tr>
+<tr><td>}</td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>FibreChannel {</td><td>object</td><td>Yes</td><td></td><td>read-write</td><td>Fibre Channel.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;PermanentWWPN</td><td>string</td><td>Yes</td><td></td><td>read-only</td><td>This is the permanent WWPN address assigned to this network device function (physical function).</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;PermanentWWNN</td><td>string</td><td>Yes</td><td></td><td>read-only</td><td>This is the permanent WWNN address assigned to this network device function (physical function).</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;WWPN</td><td>string</td><td>Yes</td><td></td><td>read-write</td><td>This is the currently configured WWPN address of the network device function (physical function).</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;WWNN</td><td>string</td><td>Yes</td><td></td><td>read-write</td><td>This is the currently configured WWNN address of the network device function (physical function).</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;WWNSource</td><td>string</td><td>Yes</td><td></td><td>read-write</td><td>The configuration source of the WWNs for this connection (WWPN and WWNN).<br />Possible Values:<br />&nbsp;&nbsp;&nbsp;&nbsp;ConfiguredLocally: The set of FC/FCoE boot targets was applied locally through API or UI.<br />&nbsp;&nbsp;&nbsp;&nbsp;ProvidedByFabric: The set of FC/FCoE boot targets was applied by the Fibre Channel fabric.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;FCoELocalVLANId</td><td>number</td><td>Yes</td><td></td><td>read-write</td><td>The locally configured FCoE VLAN ID.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;AllowFIPVLANDiscovery</td><td>boolean</td><td>Yes</td><td></td><td>read-write</td><td>Whether the FCoE Initialization Protocol (FIP) is used for populating the FCoE VLAN Id.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;FCoEActiveVLANId</td><td>number</td><td>Yes</td><td></td><td>read-only</td><td>The active FCoE VLAN ID.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;BootTargets [ {</td><td>array[object]</td><td></td><td></td><td>read-write</td><td>An array of Fibre Channel boot targets configured for this network device function.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;WWPN</td><td>string</td><td>Yes</td><td></td><td>read-write</td><td>The World-Wide Port Name to boot from.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;LUNID</td><td>string</td><td>Yes</td><td></td><td>read-write</td><td>The Logical Unit Number (LUN) ID to boot from on the device referred to by the corresponding WWPN.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;BootPriority</td><td>number</td><td>Yes</td><td></td><td>read-write</td><td>The relative priority for this entry in the boot targets array.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;} ]</td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>}</td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>BootMode</td><td>string</td><td>Yes</td><td></td><td>read-write</td><td>The boot mode configured for this network device function.<br />Possible Values:<br />&nbsp;&nbsp;&nbsp;&nbsp;Disabled: Do not indicate to UEFI/BIOS that this device is bootable.<br />&nbsp;&nbsp;&nbsp;&nbsp;PXE: Boot this device using the embedded PXE support.  Only applicable if the NetworkDeviceFunctionType is set to Ethernet.<br />&nbsp;&nbsp;&nbsp;&nbsp;iSCSI: Boot this device using the embedded iSCSI boot support and configuration.  Only applicable if the NetworkDeviceFunctionType is set to iSCSI.<br />&nbsp;&nbsp;&nbsp;&nbsp;FibreChannel: Boot this device using the embedded Fibre Channel support and configuration.  Only applicable if the NetworkDeviceFunctionType is set to FibreChannel.<br />&nbsp;&nbsp;&nbsp;&nbsp;FibreChannelOverEthernet: Boot this device using the embedded Fibre Channel over Ethernet (FCoE) boot support and configuration.  Only applicable if the NetworkDeviceFunctionType is set to FibreChannelOverEthernet.</td></tr>
+<tr><td>VirtualFunctionsEnabled</td><td>boolean</td><td>Yes</td><td></td><td>read-only</td><td>Whether Single Root I/O Virtualization (SR-IOV) Virual Functions (VFs) are enabled for this Network Device Function.</td></tr>
+<tr><td>MaxVirtualFunctions</td><td>number</td><td>Yes</td><td></td><td>read-only</td><td>The number of virtual functions (VFs) that are available for this Network Device Function.</td></tr>
+<tr><td>Links {</td><td>object</td><td></td><td></td><td>read-write</td><td>Links.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;PCIeFunction {</td><td>reference(<a href="pciefunction.html#pciefunction">PCIeFunction</a>)</td><td></td><td></td><td>read-only</td><td>Contains the members of this collection.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@odata.id</td><td>string</td><td></td><td></td><td>read-only</td><td>The unique identifier for a resource.<br />Format: uri</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;}</td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>}</td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>AssignablePhysicalPorts@odata.count</td><td>number</td><td></td><td></td><td>read-only</td><td>The number of items in a collection.</td></tr>
+<tr><td>AssignablePhysicalPorts@odata.navigationLink</td><td>string</td><td></td><td></td><td>read-write</td><td>null<br />Format: uri</td></tr>
+<tr><td>AssignablePhysicalPorts [ {</td><td>array[reference(<a href="networkport.html#networkport">NetworkPort</a>)]</td><td></td><td></td><td>read-only</td><td>Contains the members of this collection.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;@odata.id</td><td>string</td><td></td><td></td><td>read-only</td><td>The unique identifier for a resource.<br />Format: uri</td></tr>
+<tr><td>} ]</td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>PhysicalPortAssignment {</td><td>reference(<a href="networkport.html#networkport">NetworkPort</a>)</td><td></td><td></td><td>read-only</td><td>Contains the members of this collection.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;@odata.id</td><td>string</td><td></td><td></td><td>read-only</td><td>The unique identifier for a resource.<br />Format: uri</td></tr>
+<tr><td>}</td><td></td><td></td><td></td><td></td><td></td></tr>
+</table>
+</body>
+</html>
