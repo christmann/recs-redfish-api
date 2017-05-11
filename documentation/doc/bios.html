@@ -30,5 +30,17 @@
 <tr><td>}</td><td></td><td></td><td></td><td></td><td></td></tr>
 <tr><td>Attributes { }</td><td>object</td><td></td><td></td><td>read-write</td><td>This is the manufacturer/provider specific list of BIOS attributes.</td></tr>
 </table>
+<h2 id="actions definition">Actions Definition</h2>
+<h3 id="#bios.changepassword">#Bios.ChangePassword</h3>
+<h4 id="parameters">Parameters</h4>
+<table>
+<tr><th>Property</th><th>Type</th><th>Nullable</th><th>Required</th><th>Permission</th><th>Description</th></tr>
+<tr><td>PasswordName</td><td>string</td><td></td><td>POST</td><td>read-write</td><td>The name of the BIOS password to change.</td></tr>
+<tr><td>OldPassword</td><td>string</td><td></td><td>POST</td><td>read-write</td><td>The value of the existing password.</td></tr>
+<tr><td>NewPassword</td><td>string</td><td></td><td>POST</td><td>read-write</td><td>The value of the new BIOS password.</td></tr>
+</table>
+<h3 id="#bios.resetbios">#Bios.ResetBios</h3>
+<h4 id="parameters">Parameters</h4>
+This action has no parameters.
 </body>
 </html>

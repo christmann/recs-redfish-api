@@ -37,5 +37,19 @@
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;@odata.id</td><td>string</td><td></td><td></td><td>read-only</td><td>The unique identifier for a resource.<br />Format: uri</td></tr>
 <tr><td>}</td><td></td><td></td><td></td><td></td><td></td></tr>
 </table>
+<h2 id="actions definition">Actions Definition</h2>
+<h3 id="#eventservice.submittestevent">#EventService.SubmitTestEvent</h3>
+<h4 id="parameters">Parameters</h4>
+<table>
+<tr><th>Property</th><th>Type</th><th>Nullable</th><th>Required</th><th>Permission</th><th>Description</th></tr>
+<tr><td>EventType</td><td>string</td><td></td><td>POST</td><td>read-write</td><td>This is the type of event to be added.<br />Possible Values:<br />&nbsp;&nbsp;&nbsp;&nbsp;StatusChange: The status of this resource has changed<br />&nbsp;&nbsp;&nbsp;&nbsp;ResourceUpdated: The value of this resource has been updated<br />&nbsp;&nbsp;&nbsp;&nbsp;ResourceAdded: A resource has been added<br />&nbsp;&nbsp;&nbsp;&nbsp;ResourceRemoved: A resource has been removed<br />&nbsp;&nbsp;&nbsp;&nbsp;Alert: A condition exists which requires attention</td></tr>
+<tr><td>EventId</td><td>string</td><td></td><td>POST</td><td>read-write</td><td>This is the ID of event to be added.</td></tr>
+<tr><td>EventTimestamp</td><td>string</td><td></td><td>POST</td><td>read-write</td><td>This is the time stamp of event to be added.<br />Format: date-time</td></tr>
+<tr><td>Severity</td><td>string</td><td></td><td>POST</td><td>read-write</td><td>This is the Severity of event to be added.</td></tr>
+<tr><td>Message</td><td>string</td><td></td><td>POST</td><td>read-write</td><td>This is the human readable message of event to be added.</td></tr>
+<tr><td>MessageId</td><td>string</td><td></td><td>POST</td><td>read-write</td><td>This is the message ID of event to be added.</td></tr>
+<tr><td>MessageArgs [ ]</td><td>array[string]</td><td></td><td>POST</td><td>read-write</td><td>This is the array of message arguments of the event to be added.</td></tr>
+<tr><td>OriginOfCondition</td><td>string</td><td></td><td>POST</td><td>read-write</td><td>This is the OriginOfCondition property of event to be added.</td></tr>
+</table>
 </body>
 </html>

@@ -98,5 +98,34 @@
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;Oem { }</td><td>object</td><td></td><td></td><td>read-write</td><td>Oem extension object.</td></tr>
 <tr><td>}</td><td></td><td></td><td></td><td></td><td></td></tr>
 </table>
+<h2 id="actions definition">Actions Definition</h2>
+<h3 id="#memory.disablepassphrase">#Memory.DisablePassphrase</h3>
+<h4 id="parameters">Parameters</h4>
+<table>
+<tr><th>Property</th><th>Type</th><th>Nullable</th><th>Required</th><th>Permission</th><th>Description</th></tr>
+<tr><td>RegionId</td><td>string</td><td></td><td>POST</td><td>read-write</td><td>Memory region ID for which this action to be applied.</td></tr>
+<tr><td>Passphrase</td><td>string</td><td></td><td>POST</td><td>read-write</td><td>Passphrase for doing the operation.</td></tr>
+</table>
+<h3 id="#memory.secureeraseunit">#Memory.SecureEraseUnit</h3>
+<h4 id="parameters">Parameters</h4>
+<table>
+<tr><th>Property</th><th>Type</th><th>Nullable</th><th>Required</th><th>Permission</th><th>Description</th></tr>
+<tr><td>RegionId</td><td>string</td><td></td><td>POST</td><td>read-write</td><td>Memory region ID for which this action to be applied.</td></tr>
+<tr><td>Passphrase</td><td>string</td><td></td><td>POST</td><td>read-write</td><td>Passphrase for doing the operation.</td></tr>
+</table>
+<h3 id="#memory.setpassphrase">#Memory.SetPassphrase</h3>
+<h4 id="parameters">Parameters</h4>
+<table>
+<tr><th>Property</th><th>Type</th><th>Nullable</th><th>Required</th><th>Permission</th><th>Description</th></tr>
+<tr><td>RegionId</td><td>string</td><td></td><td>POST</td><td>read-write</td><td>Memory region ID for which this action to be applied.</td></tr>
+<tr><td>Passphrase</td><td>string</td><td></td><td>POST</td><td>read-write</td><td>Passphrase for doing the operation.</td></tr>
+</table>
+<h3 id="#memory.unlockunit">#Memory.UnlockUnit</h3>
+<h4 id="parameters">Parameters</h4>
+<table>
+<tr><th>Property</th><th>Type</th><th>Nullable</th><th>Required</th><th>Permission</th><th>Description</th></tr>
+<tr><td>RegionId</td><td>string</td><td></td><td>POST</td><td>read-write</td><td>Memory region ID for which this action to be applied.</td></tr>
+<tr><td>Passphrase</td><td>string</td><td></td><td>POST</td><td>read-write</td><td>Passphrase for doing the operation.</td></tr>
+</table>
 </body>
 </html>

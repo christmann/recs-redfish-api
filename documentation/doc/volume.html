@@ -164,5 +164,12 @@
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;@odata.id</td><td>string</td><td></td><td></td><td>read-only</td><td>The unique identifier for a resource.<br />Format: uri</td></tr>
 <tr><td>} ]</td><td></td><td></td><td></td><td></td><td></td></tr>
 </table>
+<h2 id="actions definition">Actions Definition</h2>
+<h3 id="#volume.initialize">#Volume.Initialize</h3>
+<h4 id="parameters">Parameters</h4>
+<table>
+<tr><th>Property</th><th>Type</th><th>Nullable</th><th>Required</th><th>Permission</th><th>Description</th></tr>
+<tr><td>InitializeType</td><td>string</td><td></td><td>POST</td><td>read-write</td><td>The type of initialization to be performed<br />Possible Values:<br />&nbsp;&nbsp;&nbsp;&nbsp;Fast: The volume is prepared for use quickly, typically by erasing just the beginning and end of the space so that partitioning can be performed<br />&nbsp;&nbsp;&nbsp;&nbsp;Slow: The volume is prepared for use slowly, typically by completely erasing the volume</td></tr>
+</table>
 </body>
 </html>

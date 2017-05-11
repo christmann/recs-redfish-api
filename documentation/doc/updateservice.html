@@ -38,5 +38,13 @@
 <tr><td>}</td><td></td><td></td><td></td><td></td><td></td></tr>
 <tr><td>HttpPushUri</td><td>string</td><td></td><td></td><td>read-only</td><td>The URI used to perform an HTTP or HTTPS push update to the Update Service.<br />Format: uri</td></tr>
 </table>
+<h2 id="actions definition">Actions Definition</h2>
+<h3 id="#updateservice.simpleupdate">#UpdateService.SimpleUpdate</h3>
+<h4 id="parameters">Parameters</h4>
+<table>
+<tr><th>Property</th><th>Type</th><th>Nullable</th><th>Required</th><th>Permission</th><th>Description</th></tr>
+<tr><td>ImageURI</td><td>string</td><td></td><td>POST</td><td>read-write</td><td>The URI of the software image to be installed.</td></tr>
+<tr><td>TransferProtocol</td><td>string</td><td></td><td>POST</td><td>read-write</td><td>The network protocol used by the Update Service to retrieve the software image file located at the URI provided in ImageURI, if the URI does not contain a scheme.<br />Possible Values:<br />&nbsp;&nbsp;&nbsp;&nbsp;CIFS: Common Internet File System protocol<br />&nbsp;&nbsp;&nbsp;&nbsp;FTP: File Transfer Protocol<br />&nbsp;&nbsp;&nbsp;&nbsp;HTTP: Hypertext Transfer Protocol<br />&nbsp;&nbsp;&nbsp;&nbsp;HTTPS: HTTP Secure protocol<br />&nbsp;&nbsp;&nbsp;&nbsp;NSF: Network File System protocol<br />&nbsp;&nbsp;&nbsp;&nbsp;SCP: Secure File Copy protocol<br />&nbsp;&nbsp;&nbsp;&nbsp;TFTP: Trivial File Transfer Protocol<br />&nbsp;&nbsp;&nbsp;&nbsp;OEM: A protocol defined by the manufacturer.</td></tr>
+</table>
 </body>
 </html>

@@ -81,5 +81,12 @@
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;@odata.id</td><td>string</td><td></td><td></td><td>read-only</td><td>The unique identifier for a resource.<br />Format: uri</td></tr>
 <tr><td>}</td><td></td><td></td><td></td><td></td><td></td></tr>
 </table>
+<h2 id="actions definition">Actions Definition</h2>
+<h3 id="#switch.reset">#Switch.Reset</h3>
+<h4 id="parameters">Parameters</h4>
+<table>
+<tr><th>Property</th><th>Type</th><th>Nullable</th><th>Required</th><th>Permission</th><th>Description</th></tr>
+<tr><td>ResetType</td><td>string</td><td></td><td>POST</td><td>read-write</td><td>The type of reset to be performed.<br />Possible Values:<br />&nbsp;&nbsp;&nbsp;&nbsp;On: Turn the system on.<br />&nbsp;&nbsp;&nbsp;&nbsp;ForceOff: Turn the system off immediately (non-graceful) shutdown.<br />&nbsp;&nbsp;&nbsp;&nbsp;GracefulShutdown: Perform a graceful system shutdown and power off.<br />&nbsp;&nbsp;&nbsp;&nbsp;GracefulRestart: Perform a graceful system shutdown followed by a restart of the system.<br />&nbsp;&nbsp;&nbsp;&nbsp;ForceRestart: Perform an immediate (non-graceful) shutdown, followed by a restart of the system.<br />&nbsp;&nbsp;&nbsp;&nbsp;Nmi: Generate a Diagnostic Interrupt (usually an NMI on x86 systems) to cease normal operations, perform diagnostic actions and typically halt the system.<br />&nbsp;&nbsp;&nbsp;&nbsp;ForceOn: Turn the system on immediately.<br />&nbsp;&nbsp;&nbsp;&nbsp;PushPowerButton: Simulate the pressing of the physical power button on this system.</td></tr>
+</table>
 </body>
 </html>
