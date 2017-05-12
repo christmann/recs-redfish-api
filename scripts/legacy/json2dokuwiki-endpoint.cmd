@@ -11,13 +11,12 @@ SET CONF_DIR=%PROJECT_DIR%\config
 SET DOC_SUPP_FILE=%CONF_DIR%\customsupplement.dokuwiki.md
 SET REF_FILE=%CONF_DIR%\schema-reference-properties.json
 SET JSON_DIR=%PROJECT_DIR%\schemas
-SET DOC_DIR=%PROJECT_DIR%\documentation
-SET INTRO_DOC_FILE=%DOC_DIR%\recsbox-redfish-api.main.dokuwiki
-SET SCHEMA_DOC_FILE=%DOC_DIR%\recsbox-redfish-api.schema.dokuwiki
+SET DOC_DIR=%PROJECT_DIR%\documentation\legacy
+SET DOC_FILE=%DOC_DIR%\recsbox-redfish-api.endpoint.dokuwiki
 SET LOG_DIR=%PROJECT_DIR%\logs
-SET LOG_FILE=%LOG_DIR%\json2dokuwiki.log
+SET LOG_FILE=%LOG_DIR%\json2dokuwiki-endpoint.log
 
-"%PYTHON_EXE%" "%DOC_SCRIPT%" --format dokuwiki --out "%SCHEMA_DOC_FILE%" --sup "%DOC_SUPP_FILE%" --add %REF_FILE% "%JSON_DIR%" > "%LOG_FILE%" 2>&1
+"%PYTHON_EXE%" "%DOC_SCRIPT%" --format dokuwiki-endpoint --out "%DOC_FILE%" --sup "%DOC_SUPP_FILE%" --add %REF_FILE% "%JSON_DIR%" > "%LOG_FILE%" 2>&1
 
 if errorlevel 1 (
   echo Failed
@@ -25,7 +24,6 @@ if errorlevel 1 (
   exit /b %errorlevel%
 ) else (
   echo Success
+  "%DOC_FILE%"
   "%REF_FILE%"
-  "%INTRO_DOC_FILE%"
-  "%SCHEMA_DOC_FILE%"
 )

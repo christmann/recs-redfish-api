@@ -8,15 +8,14 @@ SET DOC_SCRIPT=%DOC_APP_DIR%\doc_generator.py
 
 SET PROJECT_DIR=C:\Users\bil.CIM\workspace\other\recs-redfish-api
 SET CONF_DIR=%PROJECT_DIR%\config
-SET DOC_SUPP_FILE=%CONF_DIR%\customsupplement.dokuwiki.md
-SET REF_FILE=%CONF_DIR%\schema-reference-properties.json
+SET DOC_SUPP_FILE=%CONF_DIR%\customsupplement.md
 SET JSON_DIR=%PROJECT_DIR%\schemas
-SET DOC_DIR=%PROJECT_DIR%\documentation
-SET DOC_FILE=%DOC_DIR%\recsbox-redfish-api.endpoint.dokuwiki
+SET DOC_DIR=%PROJECT_DIR%\documentation\legacy
+SET DOC_FILE=%DOC_DIR%\recsbox-redfish-api.md
 SET LOG_DIR=%PROJECT_DIR%\logs
-SET LOG_FILE=%LOG_DIR%\json2dokuwiki-endpoint.log
+SET LOG_FILE=%LOG_DIR%\json2md.log
 
-"%PYTHON_EXE%" "%DOC_SCRIPT%" --format dokuwiki-endpoint --out "%DOC_FILE%" --sup "%DOC_SUPP_FILE%" --add %REF_FILE% "%JSON_DIR%" > "%LOG_FILE%" 2>&1
+"%PYTHON_EXE%" "%DOC_SCRIPT%" --format markdown --out "%DOC_FILE%" --sup "%DOC_SUPP_FILE%" "%JSON_DIR%" > "%LOG_FILE%" 2>&1
 
 if errorlevel 1 (
   echo Failed
@@ -25,5 +24,4 @@ if errorlevel 1 (
 ) else (
   echo Success
   "%DOC_FILE%"
-  "%REF_FILE%"
 )

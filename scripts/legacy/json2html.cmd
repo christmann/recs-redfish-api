@@ -10,12 +10,12 @@ SET PROJECT_DIR=C:\Users\bil.CIM\workspace\other\recs-redfish-api
 SET CONF_DIR=%PROJECT_DIR%\config
 SET DOC_SUPP_FILE=%CONF_DIR%\customsupplement.md
 SET JSON_DIR=%PROJECT_DIR%\schemas
-SET DOC_DIR=%PROJECT_DIR%\documentation
-SET DOC_FILE=%DOC_DIR%\recsbox-redfish-api.md
+SET DOC_DIR=%PROJECT_DIR%\documentation\legacy
+SET DOC_FILE=%DOC_DIR%\recsbox-redfish-api.html
 SET LOG_DIR=%PROJECT_DIR%\logs
-SET LOG_FILE=%LOG_DIR%\json2md.log
+SET LOG_FILE=%LOG_DIR%\json2html.log
 
-"%PYTHON_EXE%" "%DOC_SCRIPT%" --format markdown --out "%DOC_FILE%" --sup "%DOC_SUPP_FILE%" "%JSON_DIR%" > "%LOG_FILE%" 2>&1
+"%PYTHON_EXE%" "%DOC_SCRIPT%" --format html --out "%DOC_FILE%" --sup "%DOC_SUPP_FILE%" "%JSON_DIR%" > "%LOG_FILE%" 2>&1
 
 if errorlevel 1 (
   echo Failed
