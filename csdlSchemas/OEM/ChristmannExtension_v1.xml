@@ -37,8 +37,26 @@
 				<Annotation Term="OData.LongDescription" String="Christmann Chassis extension" />
 			</ComplexType>
 			
+			<ComplexType Name="Chassis.Location" BaseType="Resource.OemObject">
+				<NavigationProperty Name="LocationSettings" Type="Settings.Settings" Nullable="false">
+					<Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+					<Annotation Term="OData.Description" String="A reference to the Settings for this chassis."/>
+					<Annotation Term="OData.LongDescription" String="The value of this property shall be a link to Settings."/>
+					<Annotation Term="OData.AutoExpandReferences"/>
+				</NavigationProperty>
+				<Annotation Term="OData.AdditionalProperties" Bool="false"/>
+				<Annotation Term="OData.Description" String="Christmann Chassis extension"/>
+				<Annotation Term="OData.LongDescription" String="Christmann Chassis extension" />
+			</ComplexType>
+			
 			 <Action Name="StartDeepDiscovery" IsBound="true">
 				<Parameter Name="Chassis" Type="Chassis.v1_4_0.OemActions"/>
+				<Parameter Name="ResetType" Type="Resource.ResetType">
+				  <Annotation Term="OData.Description" String="This is the type of reset to be performed."/>
+				  <Annotation Term="OData.LongDescription" String="This defines the property name for the action."/>
+				</Parameter>
+				<Annotation Term="OData.Description" String="This action is used to deep discover the chassis."/>
+				<Annotation Term="OData.LongDescription" String="This defines the name of the custom action supported on this resource."/>
 			 </Action>
 			
 			<ComplexType Name="Location" Nullable="false">
