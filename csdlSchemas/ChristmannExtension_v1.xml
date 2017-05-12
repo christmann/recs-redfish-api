@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!---->
+<!--################################################################################       -->
+<!--# EID_47597                                                                            -->
+<!--# Copyright 2017-2019 christmann informationstechnik + medien GmbH & Co. KG            -->
+<!--################################################################################       -->
+<!---->
+<edmx:Edmx xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx" Version="4.0">
+
+	<edmx:Reference Uri="http://docs.oasis-open.org/odata/odata/v4.0/errata03/csd01/complete/vocabularies/Org.OData.Core.V1.xml">
+		<edmx:Include Namespace="Org.OData.Core.V1" Alias="OData"/>
+	</edmx:Reference>
+	<edmx:Reference Uri="http://redfish.dmtf.org/schemas/v1/RedfishExtensions_v1.xml">
+		<edmx:Include Namespace="RedfishExtensions.v1_0_0" Alias="Redfish"/>
+	</edmx:Reference>
+	<edmx:Reference Uri="http://redfish.dmtf.org/schemas/v1/Resource_v1.xml">
+		<edmx:Include Namespace="Resource.v1_3_0" Alias="Resource"/>
+	</edmx:Reference>
+	<edmx:Reference Uri="http://redfish.dmtf.org/schemas/v1/Settings_v1.xml">
+		<edmx:Include Namespace="Settings.v1_0_3" Alias="Settings"/>
+	</edmx:Reference>
+
+	<edmx:DataServices>
+
+		<Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="ChristmannExtension.v0_1_0">
+			
+			<ComplexType Name="Chassis" BaseType="Resource.OemObject">
+				<NavigationProperty Name="Settings" Type="Settings.Settings" Nullable="false">
+					<Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+					<Annotation Term="OData.Description" String="A reference to the Settings for this chassis."/>
+					<Annotation Term="OData.LongDescription" String="The value of this property shall be a link to Settings."/>
+					<Annotation Term="OData.AutoExpandReferences"/>
+				</NavigationProperty>
+				<Annotation Term="OData.AdditionalProperties" Bool="false"/>
+				<Property Name="Location" Type="ChristmannExtension.v0_1_0.Location" />
+				<Annotation Term="OData.Description" String="Christmann Chassis extension"/>
+				<Annotation Term="OData.LongDescription" String="Christmann Chassis extension" />
+			</ComplexType>
+			
+			 <Action Name="StartDeepDiscovery" IsBound="true">
+				<Parameter Name="Chassis" Type="Chassis.v1_4_0.OemActions"/>
+			 </Action>
+			
+			<ComplexType Name="Location" Nullable="false">
+				<Annotation Term="OData.AdditionalProperties" Bool="false"/>
+				<Property Name="Id" Type="Edm.String">
+					<Annotation Term="OData.Description" String="String containing physical location ID of this chassis"/>
+					<Annotation Term="OData.LongDescription" String="String containing physical location ID of this chassis" />
+				</Property>
+				<Property Name="ParentId" Type="Edm.String">
+					<Annotation Term="OData.Description" String="String containing  physical location ID of parent chassis"/>
+					<Annotation Term="OData.LongDescription" String="String containing  physical location ID of parent chassis" />
+				</Property>
+			</ComplexType>
+			
+		</Schema>
+
+	</edmx:DataServices>
+
+</edmx:Edmx>

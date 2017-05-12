@@ -7,8 +7,8 @@ SET CONVERTOR_APP_DIR=%REDFISH_TOOLS_DIR%\csdl-to-json-convertor
 SET CONVERTOR_SCRIPT=%CONVERTOR_APP_DIR%\service.py
 
 SET PROJECT_DIR=C:\Users\bil.CIM\workspace\other\recs-redfish-api
-SET CSDL_DIR=%PROJECT_DIR%\csdlSchemas
-SET JSON_DIR=%PROJECT_DIR%\schemas
+SET CSDL_DIR=%PROJECT_DIR%\csdlSchemas\OEM
+SET JSON_DIR=%PROJECT_DIR%\schemas\OEM
 SET LOG_DIR=%PROJECT_DIR%\logs
 SET LOG_FILE=%LOG_DIR%\csdl2json.log
 
