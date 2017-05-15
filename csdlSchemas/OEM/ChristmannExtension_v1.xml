@@ -25,16 +25,21 @@
 		<Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="ChristmannExtension.v0_1_0">
 			
 			<ComplexType Name="Chassis" BaseType="Resource.OemObject">
+				<Property Name="Location" Type="ChristmannExtension.v0_1_0.Location" />
 				<NavigationProperty Name="Settings" Type="Settings.Settings" Nullable="false">
 					<Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
 					<Annotation Term="OData.Description" String="A reference to the Settings for this chassis."/>
 					<Annotation Term="OData.LongDescription" String="The value of this property shall be a link to Settings."/>
 					<Annotation Term="OData.AutoExpandReferences"/>
 				</NavigationProperty>
+				<Property Name="Links" Type="ChristmannExtension.v0_1_0.Links" Nullable="false"/>
 				<Annotation Term="OData.AdditionalProperties" Bool="false"/>
-				<Property Name="Location" Type="ChristmannExtension.v0_1_0.Location" />
 				<Annotation Term="OData.Description" String="Christmann Chassis extension"/>
 				<Annotation Term="OData.LongDescription" String="Christmann Chassis extension" />
+			</ComplexType>
+			
+			<ComplexType Name="Links" BaseType="Resource.OemObject">
+				<Property Name="Location" Type="ChristmannExtension.v0_1_0.Location" />
 			</ComplexType>
 			
 			<ComplexType Name="Chassis.Location" BaseType="Resource.OemObject">
