@@ -12,22 +12,7 @@
 <tr><td>@odata.context</td><td>string</td><td></td><td></td><td>read-only</td><td>The OData description of a payload.<br />Format: uri</td></tr>
 <tr><td>@odata.id</td><td>string</td><td></td><td></td><td>read-only</td><td>The unique identifier for a resource.<br />Format: uri</td></tr>
 <tr><td>@odata.type</td><td>string</td><td></td><td></td><td>read-only</td><td>The type of a resource.</td></tr>
-<tr><td>Oem {</td><td>object</td><td></td><td></td><td>read-write</td><td>This is the manufacturer/provider specific extension moniker used to divide the Oem object into sections.</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;EID_47597 {</td><td>object</td><td></td><td></td><td>read-write</td><td>Christmann Chassis extension</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Location {</td><td>object</td><td>Yes</td><td></td><td>read-write</td><td>&nbsp;</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Id</td><td>string</td><td>Yes</td><td></td><td>read-write</td><td>String containing physical location ID of this chassis</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ParentId</td><td>string</td><td>Yes</td><td></td><td>read-write</td><td>String containing  physical location ID of parent chassis</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</td><td></td><td></td><td></td><td></td><td></td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Settings {</td><td>object</td><td></td><td></td><td>read-only</td><td>A reference to the Settings for this chassis.</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Time</td><td>string</td><td>Yes</td><td></td><td>read-only</td><td>Indicates the time the settings were applied.<br />Format: date-time</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ETag</td><td>string</td><td>Yes</td><td></td><td>read-only</td><td>The ETag of the resource to which the settings were applied, after the application.</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Messages [ { } ]</td><td>array[object]</td><td></td><td></td><td>read-only</td><td>This is an array of messages associated with the task.</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SettingsObject {</td><td>reference</td><td></td><td></td><td>read-write</td><td>Reference to the resource the client may PUT/PATCH to in order to change this resource.</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@odata.id</td><td>string</td><td></td><td></td><td>read-only</td><td>The unique identifier for a resource.<br />Format: uri</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</td><td></td><td></td><td></td><td></td><td></td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</td><td></td><td></td><td></td><td></td><td></td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;}</td><td></td><td></td><td></td><td></td><td></td></tr>
-<tr><td>}</td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>Oem { }</td><td>object</td><td></td><td></td><td>read-write</td><td>This is the manufacturer/provider specific extension moniker used to divide the Oem object into sections.</td></tr>
 <tr><td>Id</td><td>string</td><td></td><td>GET</td><td>read-only</td><td>Uniquely identifies the resource within the collection of like resources.</td></tr>
 <tr><td>Description</td><td>string</td><td>Yes</td><td></td><td>read-only</td><td>Provides a description of this resource and is used for commonality  in the schema definitions.</td></tr>
 <tr><td>Name</td><td>string</td><td></td><td>GET</td><td>read-only</td><td>The name of the resource or array element.</td></tr>
@@ -40,14 +25,7 @@
 <tr><td>AssetTag</td><td>string</td><td>Yes</td><td></td><td>read-write</td><td>The user assigned asset tag for this chassis.</td></tr>
 <tr><td>IndicatorLED</td><td>string</td><td>Yes</td><td></td><td>read-write</td><td>The state of the indicator LED, used to identify the chassis.<br />Possible Values:<br />&nbsp;&nbsp;&nbsp;&nbsp;Unknown: The state of the Indicator LED cannot be determined. Deprecated: Return null if state is unknown.<br />&nbsp;&nbsp;&nbsp;&nbsp;Lit: The Indicator LED is lit.<br />&nbsp;&nbsp;&nbsp;&nbsp;Blinking: The Indicator LED is blinking.<br />&nbsp;&nbsp;&nbsp;&nbsp;Off: The Indicator LED is off.</td></tr>
 <tr><td>Links {</td><td>object</td><td></td><td></td><td>read-write</td><td>Contains references to other resources that are related to this resource.</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;Oem {</td><td>object</td><td></td><td></td><td>read-write</td><td>Oem extension object.</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;EID_47597 {</td><td>object</td><td></td><td></td><td>read-write</td><td>Base type for an Oem object.</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Location {</td><td>object</td><td>Yes</td><td></td><td>read-write</td><td>&nbsp;</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Id</td><td>string</td><td>Yes</td><td></td><td>read-write</td><td>String containing physical location ID of this chassis</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ParentId</td><td>string</td><td>Yes</td><td></td><td>read-write</td><td>String containing  physical location ID of parent chassis</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</td><td></td><td></td><td></td><td></td><td></td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</td><td></td><td></td><td></td><td></td><td></td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;}</td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;Oem { }</td><td>object</td><td></td><td></td><td>read-write</td><td>Oem extension object.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;ComputerSystems@odata.count</td><td>number</td><td></td><td></td><td>read-only</td><td>The number of items in a collection.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;ComputerSystems@odata.navigationLink</td><td>string</td><td></td><td></td><td>read-write</td><td>null<br />Format: uri</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;ComputerSystems [ {</td><td>array[reference(<a href="computersystem.html#computersystem">ComputerSystem</a>)]</td><td></td><td></td><td>read-only</td><td>An array of references to the computer systems contained in this chassis.  This will only reference ComputerSystems that are directly and wholly contained in this chassis.</td></tr>
@@ -98,14 +76,7 @@
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;} ]</td><td></td><td></td><td></td><td></td><td></td></tr>
 <tr><td>}</td><td></td><td></td><td></td><td></td><td></td></tr>
 <tr><td>Actions {</td><td>object</td><td></td><td></td><td>read-write</td><td>The available actions for this resource.</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;Oem {</td><td>object</td><td></td><td></td><td>read-write</td><td>&nbsp;</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;EID_47597 {</td><td>object</td><td></td><td></td><td>read-write</td><td>This action is used to deep discover the chassis.</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#Chassis.StartDeepDiscovery {</td><td>object</td><td></td><td></td><td>read-write</td><td>This action is used to deep discover the chassis.</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;title</td><td>string</td><td></td><td></td><td>read-write</td><td>Friendly action name</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;target</td><td>string</td><td></td><td></td><td>read-write</td><td>Link to invoke action<br />Format: uri</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</td><td></td><td></td><td></td><td></td><td></td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</td><td></td><td></td><td></td><td></td><td></td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;}</td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;Oem { }</td><td>object</td><td></td><td></td><td>read-write</td><td>&nbsp;</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;#Chassis.Reset {</td><td>object</td><td></td><td></td><td>read-write</td><td>This action is used to reset the chassis. This action resets the chassis, not Systems or other contained resources, although side effects may occur which affect those resources.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;title</td><td>string</td><td></td><td></td><td>read-write</td><td>Friendly action name</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;target</td><td>string</td><td></td><td></td><td>read-write</td><td>Link to invoke action<br />Format: uri</td></tr>
@@ -135,18 +106,7 @@
 <tr><td>Location {</td><td>object</td><td></td><td></td><td>read-only</td><td>&nbsp;</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;Info</td><td>string</td><td>Yes</td><td></td><td>read-only</td><td>This indicates the location of the resource.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;InfoFormat</td><td>string</td><td>Yes</td><td></td><td>read-only</td><td>This represents the format of the Info property.</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;Oem {</td><td>object</td><td></td><td></td><td>read-write</td><td>Oem extension object.</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;EID_47597 {</td><td>object</td><td></td><td></td><td>read-write</td><td>Christmann Chassis extension</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;LocationSettings {</td><td>object</td><td></td><td></td><td>read-only</td><td>A reference to the Settings for this chassis.</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Time</td><td>string</td><td>Yes</td><td></td><td>read-only</td><td>Indicates the time the settings were applied.<br />Format: date-time</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ETag</td><td>string</td><td>Yes</td><td></td><td>read-only</td><td>The ETag of the resource to which the settings were applied, after the application.</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Messages [ { } ]</td><td>array[object]</td><td></td><td></td><td>read-only</td><td>This is an array of messages associated with the task.</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SettingsObject {</td><td>reference</td><td></td><td></td><td>read-write</td><td>Reference to the resource the client may PUT/PATCH to in order to change this resource.</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@odata.id</td><td>string</td><td></td><td></td><td>read-only</td><td>The unique identifier for a resource.<br />Format: uri</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</td><td></td><td></td><td></td><td></td><td></td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</td><td></td><td></td><td></td><td></td><td></td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</td><td></td><td></td><td></td><td></td><td></td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;}</td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;Oem { }</td><td>object</td><td></td><td></td><td>read-write</td><td>Oem extension object.</td></tr>
 <tr><td>}</td><td></td><td></td><td></td><td></td><td></td></tr>
 <tr><td>HeightMm</td><td>number</td><td>Yes</td><td></td><td>read-only</td><td>The height of the chassis.<br />Unit: mm<br />Minimum: 0</td></tr>
 <tr><td>WidthMm</td><td>number</td><td>Yes</td><td></td><td>read-only</td><td>The width of the chassis.<br />Unit: mm<br />Minimum: 0</td></tr>
@@ -157,12 +117,6 @@
 <tr><td>}</td><td></td><td></td><td></td><td></td><td></td></tr>
 </table>
 <h2 id="actions definition">Actions Definition</h2>
-<h3 id="#chassis.startdeepdiscovery">#Chassis.StartDeepDiscovery</h3>
-<h4 id="parameters">Parameters</h4>
-<table>
-<tr><th>Property</th><th>Type</th><th>Nullable</th><th>Required</th><th>Permission</th><th>Description</th></tr>
-<tr><td>ResetType</td><td>string</td><td></td><td>POST</td><td>read-write</td><td>This is the type of reset to be performed.<br />Possible Values:<br />&nbsp;&nbsp;&nbsp;&nbsp;On: Turn the system on.<br />&nbsp;&nbsp;&nbsp;&nbsp;ForceOff: Turn the system off immediately (non-graceful) shutdown.<br />&nbsp;&nbsp;&nbsp;&nbsp;GracefulShutdown: Perform a graceful system shutdown and power off.<br />&nbsp;&nbsp;&nbsp;&nbsp;GracefulRestart: Perform a graceful system shutdown followed by a restart of the system.<br />&nbsp;&nbsp;&nbsp;&nbsp;ForceRestart: Perform an immediate (non-graceful) shutdown, followed by a restart of the system.<br />&nbsp;&nbsp;&nbsp;&nbsp;Nmi: Generate a Diagnostic Interrupt (usually an NMI on x86 systems) to cease normal operations, perform diagnostic actions and typically halt the system.<br />&nbsp;&nbsp;&nbsp;&nbsp;ForceOn: Turn the system on immediately.<br />&nbsp;&nbsp;&nbsp;&nbsp;PushPowerButton: Simulate the pressing of the physical power button on this system.</td></tr>
-</table>
 <h3 id="#chassis.reset">#Chassis.Reset</h3>
 <h4 id="parameters">Parameters</h4>
 <table>
