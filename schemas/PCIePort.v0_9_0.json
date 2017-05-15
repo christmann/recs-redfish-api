@@ -1,0 +1,196 @@
+{
+    "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema.v1_2_0.json",
+    "title": "#PCIePort.v0_9_0.PCIePort",
+    "$ref": "#/definitions/PCIePort",
+    "definitions": {
+        "ForcedReset": {
+            "patternProperties": {
+                "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message|Privileges)\\.[a-zA-Z_][a-zA-Z0-9_.]+$": {
+                    "type": [
+                        "array",
+                        "boolean",
+                        "number",
+                        "null",
+                        "object",
+                        "string"
+                    ],
+                    "description": "This property shall specify a valid odata or Redfish property."
+                }
+            },
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "title": {
+                    "type": "string",
+                    "description": "Friendly action name"
+                },
+                "target": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "Link to invoke action"
+                }
+            },
+            "description": "This action is used to reset the PCIe Port.",
+            "longDescription": "This action shall perform a reset of the PCIe Port. "
+        },
+        "Reset": {
+            "patternProperties": {
+                "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message|Privileges)\\.[a-zA-Z_][a-zA-Z0-9_.]+$": {
+                    "type": [
+                        "array",
+                        "boolean",
+                        "number",
+                        "null",
+                        "object",
+                        "string"
+                    ],
+                    "description": "This property shall specify a valid odata or Redfish property."
+                }
+            },
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "title": {
+                    "type": "string",
+                    "description": "Friendly action name"
+                },
+                "target": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "Link to invoke action"
+                }
+            },
+            "description": "The reset action resets the PCIe Port.",
+            "longDescription": "This defines the name of the custom action supported when used in conjunction with a POST operation to this resource. When issued, this operation will perform a reset of the PCIe Port."
+        },
+        "PCIePort": {
+            "type": "object",
+            "patternProperties": {
+                "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message|Privileges)\\.[a-zA-Z_][a-zA-Z0-9_.]+$": {
+                    "type": [
+                        "array",
+                        "boolean",
+                        "number",
+                        "null",
+                        "object",
+                        "string"
+                    ],
+                    "description": "This property shall specify a valid odata or Redfish property."
+                }
+            },
+            "additionalProperties": false,
+            "properties": {
+                "@odata.context": {
+                    "$ref": "http://redfish.dmtf.org/schemas/v1/odata.4.0.0.json#/definitions/context"
+                },
+                "@odata.id": {
+                    "$ref": "http://redfish.dmtf.org/schemas/v1/odata.4.0.0.json#/definitions/id"
+                },
+                "@odata.type": {
+                    "$ref": "http://redfish.dmtf.org/schemas/v1/odata.4.0.0.json#/definitions/type"
+                },
+                "Oem": {
+                    "$ref": "http://redfish.dmtf.org/schemas/v1/Resource.json#/definitions/Oem",
+                    "description": "This is the manufacturer/provider specific extension moniker used to divide the Oem object into sections.",
+                    "longDescription": "The value of this string shall be of the format for the reserved word *Oem*."
+                },
+                "Id": {
+                    "$ref": "http://redfish.dmtf.org/schemas/v1/Resource.json#/definitions/Id",
+                    "readonly": true
+                },
+                "Description": {
+                    "anyOf": [
+                        {"$ref": "http://redfish.dmtf.org/schemas/v1/Resource.json#/definitions/Description"},
+                        {"type": "null"}
+                    ],
+                    "readonly": true
+                },
+                "Name": {
+                    "$ref": "http://redfish.dmtf.org/schemas/v1/Resource.json#/definitions/Name",
+                    "readonly": true
+                },
+                "Status": {
+                    "anyOf": [
+                        {"$ref": "http://redfish.dmtf.org/schemas/v1/Resource.json#/definitions/Status"},
+                        {"type": "null"}
+                    ]
+                },
+                "PortId": {
+                    "type": [
+                        "string",
+                        "null"
+                    ],
+                    "readonly": false,
+                    "description": "Identifier of the port ",
+                    "longDescription": ""
+                },
+                "PortType": {
+                    "anyOf": [
+                        {"$ref": "#/definitions/PortType"},
+                        {"type": "null"}
+                    ],
+                    "readonly": true,
+                    "description": "The type of PCIe Port.",
+                    "longDescription": ""
+                },
+                "SpeedGBps": {
+                    "type": [
+                        "number",
+                        "null"
+                    ],
+                    "units": "GBytes/s",
+                    "readonly": true,
+                    "description": "The speed of current operating speed of this PCIe Port in GBps",
+                    "longDescription": "The value of this property shall contain current operating speed of this PCIe Port in GBps"
+                },
+                "Width": {
+                    "type": [
+                        "number",
+                        "null"
+                    ],
+                    "readonly": true,
+                    "description": "operating width of the PCIe Port specified in number of PCIe lanes",
+                    "longDescription": "The value of this property shall contain the operating width of the PCIe Port specified in number of PCIe lanes."
+                },
+                "MaxSpeedGBps": {
+                    "type": [
+                        "number",
+                        "null"
+                    ],
+                    "units": "GBytes/s",
+                    "readonly": true,
+                    "description": "The speed of Maximum speed of this PCIe Port in GBps",
+                    "longDescription": "The value of this property shall contain Maximum speed of this PCIe Port in GBps"
+                },
+                "MaxWidth": {
+                    "type": [
+                        "number",
+                        "null"
+                    ],
+                    "readonly": true,
+                    "description": "Maximum width of the PCIe Port specified in number of PCIe lanes",
+                    "longDescription": "The value of this property shall contain the Maximum width of the PCIe Port specified in number of PCIe lanes."
+                }
+            },
+            "required": [
+                "Id",
+                "Name"
+            ],
+            "description": "This is the schema definition for the PCIePort resource.  It represents the properties of a PCIePort attached to a System."
+        },
+        "PortType": {
+            "type": "string",
+            "enum": [
+                "HostPort",
+                "DevicePort",
+                "InterSwitchPort"
+            ],
+            "enumDescriptions": {
+                "HostPort": "This PCIe port is intended for connecting to a computer system",
+                "DevicePort": "This PCIe port is intended for connecting to a PCIe device.",
+                "InterSwitchPort": "This PCIe port is intended for connecting to another PCIe switch."
+            }
+        }
+    },
+    "copyright": "Copyright 2014-2017 Distributed Management Task Force, Inc. (DMTF). For the full DMTF copyright policy, see http://www.dmtf.org/about/policies/copyright"
+}
