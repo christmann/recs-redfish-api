@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright 2014-2015 Distributed Management Task Force, Inc. (DMTF). All rights reserved.-->
+<edmx:Edmx xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx" Version="4.0">
+
+  <edmx:Reference Uri="http://docs.oasis-open.org/odata/odata/v4.0/cs01/vocabularies/Org.OData.Core.V1.xml">
+    <edmx:Include Namespace="Org.OData.Core.V1" Alias="OData" />
+  </edmx:Reference>
+  <edmx:Reference Uri="http://redfish.dmtf.org/schemas/v1/Resource_v1.xml">
+    <edmx:Include Namespace="Resource"/>
+    <edmx:Include Namespace="Resource.v1_0_0"/>
+  </edmx:Reference>
+
+  <edmx:DataServices>
+
+    <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="PCIePort">
+
+      <EntityType Name="PCIePort" BaseType="Resource.v1_0_0.Resource">
+        <Annotation Term="OData.Description" String="This is the schema definition for the PCIePort resource.  It represents the properties of a PCIePort attached to a System." />
+        <Annotation Term="OData.AdditionalProperties" Bool="false"/>
+      </EntityType>
+
+      <!-- Reset the PCIe Port  -->
+      <Action Name="Reset" IsBound="true">
+        <Annotation Term="OData.Description" String="The reset action resets the PCIe Port."/>
+        <Annotation Term="OData.LongDescription" String="This defines the name of the custom action supported when used in conjunction with a POST operation to this resource. When issued, this operation will perform a reset of the PCIe Port."/>
+        <Parameter Name="PCIePort" Type="PCIePort.v0_9_0.Actions"/>
+      </Action>
+
+      <!-- Reset the PCIe Port with a specific reset type. Allowed Values are ForceOn, ForceOff and ForceRestart  -->
+      <!-- ForceOn will enable the port if the port is previously disabled - reflected by Status.State  -->
+      <!-- ForceOff will disable the port if the port is previously is enabled - reflected by Status.State  -->
+      <!-- ForceRestart will enable the port if the port is not functioning even though it is supposed to be enabled - reflected by Status.State  -->
+      <Action Name="ForcedReset" IsBound="true">
+        <Parameter Name="PCIePort" Type="PCIePort.v0_9_0.Actions"/>
+        <Parameter Name="ResetType" Type="Resource.ResetType">
+          <Annotation Term="OData.Description" String="The type of reset to be performed"/>
+          <Annotation Term="OData.LongDescription" String="This defines the property name for the action."/>
+        </Parameter>
+        <Annotation Term="OData.Description" String="This action is used to reset the PCIe Port."/>
+        <Annotation Term="OData.LongDescription" String="This action shall perform a reset of the PCIe Port. "/>
+      </Action>
+    </Schema>
+
+    <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="PCIePort.v0_9_0">
+
+      <EntityType Name="PCIePort" BaseType="PCIePort.PCIePort">
+        <Annotation Term="OData.Description" String="This is the schema definition for the PCIePort resource.  It represents the properties of a PCIePort attached to a System." />
+        <Annotation Term="OData.AdditionalProperties" Bool="false"/>
+
+        <Property Name="Status" Type="Resource.Status" />
+
+        <!-- Id, Description, Name are already present as a result of inheritance from Resource  -->
+
+        <!-- Is this needed? Allow the PortId to be different than Id? -->
+        <Property Name="PortId" Type="Edm.String">
+          <Annotation Term="OData.Permissions" EnumMember="OData.Permissions/ReadWrite"/>
+          <Annotation Term="OData.Description" String="Identifier of the port "/>
+          <Annotation Term="OData.LongDescription" String=""/>
+        </Property>
+        <Property Name="PortType" Type="PCIePort.v0_9_0.PortType">
+          <Annotation Term="OData.Permissions" EnumMember="OData.Permissions/Read"/>
+          <Annotation Term="OData.Description" String="The type of PCIe Port."/>
+          <Annotation Term="OData.LongDescription" String=""/>
+        </Property>
+        <Property Name="SpeedGBps" Type="Edm.Int64">
+          <Annotation Term="Measures.Unit" Edm.String="GBytes/s"/>
+          <Annotation Term="OData.Permissions" EnumMember="OData.Permissions/Read"/>
+          <Annotation Term="OData.Description" String="The speed of current operating speed of this PCIe Port in GBps"/>
+          <Annotation Term="OData.LongDescription" String="The value of this property shall contain current operating speed of this PCIe Port in GBps"/>
+        </Property>
+        <Property Name="Width" Type="Edm.Int64">
+          <Annotation Term="OData.Permissions" EnumMember="OData.Permissions/Read"/>
+          <Annotation Term="OData.Description" String="operating width of the PCIe Port specified in number of PCIe lanes"/>
+          <Annotation Term="OData.LongDescription" String="The value of this property shall contain the operating width of the PCIe Port specified in number of PCIe lanes."/>
+        </Property>
+        <Property Name="MaxSpeedGBps" Type="Edm.Int64">
+          <Annotation Term="Measures.Unit" Edm.String="GBytes/s"/>
+          <Annotation Term="OData.Permissions" EnumMember="OData.Permissions/Read"/>
+          <Annotation Term="OData.Description" String="The speed of Maximum speed of this PCIe Port in GBps"/>
+          <Annotation Term="OData.LongDescription" String="The value of this property shall contain Maximum speed of this PCIe Port in GBps"/>
+        </Property>
+        <Property Name="MaxWidth" Type="Edm.Int64">
+          <Annotation Term="OData.Permissions" EnumMember="OData.Permissions/Read"/>
+          <Annotation Term="OData.Description" String="Maximum width of the PCIe Port specified in number of PCIe lanes"/>
+          <Annotation Term="OData.LongDescription" String="The value of this property shall contain the Maximum width of the PCIe Port specified in number of PCIe lanes."/>
+        </Property>
+      </EntityType>
+
+      <EnumType Name="PortType">
+        <Member Name="HostPort">
+          <Annotation Term="OData.Description" String="This PCIe port is intended for connecting to a computer system"/>
+        </Member>
+        <Member Name="DevicePort">
+          <Annotation Term="OData.Description" String="This PCIe port is intended for connecting to a PCIe device."/>
+        </Member>
+        <Member Name="InterSwitchPort">
+          <Annotation Term="OData.Description" String="This PCIe port is intended for connecting to another PCIe switch."/>
+        </Member>
+      </EnumType>
+
+
+      <ComplexType Name="Actions">
+        <Annotation Term="OData.AdditionalProperties" Bool="false"/>
+        <Property Name="Oem" Type="PCIePort.v0_9_0.OemActions"/>
+      </ComplexType>
+
+      <ComplexType Name="OemActions">
+        <Annotation Term="OData.AdditionalProperties" Bool="true"/>
+      </ComplexType>
+
+    </Schema>
+  </edmx:DataServices>
+</edmx:Edmx>
