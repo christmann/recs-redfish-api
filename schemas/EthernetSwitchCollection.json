@@ -60,7 +60,7 @@
                         "Members": {
                             "type": "array",
                             "items": {
-                                "$ref": "http://redfish.dmtf.org/schemas/v1/EthernetSwitch.v1_0_0.json#/definitions/EthernetSwitch"
+                                "$ref": "http://redfish.dmtf.org/schemas/v1/EthernetSwitch.json#/definitions/EthernetSwitch"
                             },
                             "readonly": true,
                             "description": "Contains the members of this collection."

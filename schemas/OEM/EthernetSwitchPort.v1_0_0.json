@@ -223,13 +223,13 @@
                         },
                         "Switch": {
                             "anyOf": [
-                                {"$ref": "http://redfish.dmtf.org/schemas/v1/EthernetSwitch.v1_0_0.json#/definitions/EthernetSwitch"},
+                                {"$ref": "http://redfish.dmtf.org/schemas/v1/EthernetSwitch.json#/definitions/EthernetSwitch"},
                                 {"type": "null"}
                             ]
                         },
                         "MemberOfPort": {
                             "anyOf": [
-                                {"$ref": "#/definitions/EthernetSwitchPort"},
+                                {"$ref": "http://redfish.dmtf.org/schemas/v1/EthernetSwitchPort.json#/definitions/EthernetSwitchPort"},
                                 {"type": "null"}
                             ]
                         },
@@ -243,7 +243,7 @@
                         "PortMembers": {
                             "type": "array",
                             "items": {
-                                "$ref": "#/definitions/EthernetSwitchPort"
+                                "$ref": "http://redfish.dmtf.org/schemas/v1/EthernetSwitchPort.json#/definitions/EthernetSwitchPort"
                             },
                             "readonly": false
                         },
@@ -257,7 +257,7 @@
                         "ActiveACLs": {
                             "type": "array",
                             "items": {
-                                "$ref": "http://redfish.dmtf.org/schemas/v1/EthernetSwitchACL.v1_0_0.json#/definitions/EthernetSwitchACL"
+                                "$ref": "http://redfish.dmtf.org/schemas/v1/EthernetSwitchACL.json#/definitions/EthernetSwitchACL"
                             }
                         }
                     }
@@ -279,7 +279,8 @@
                 "Id",
                 "Name"
             ],
-            "description": "This is the base type for resources and referenceable members."
+            "description": "A Ethernet Switch Port represents a port for switch.",
+            "longDescription": "This resource shall be used to represent resources that represent a ethernet switch port"
         },
         "LinkType": {
             "type": "string",

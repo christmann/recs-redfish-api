@@ -27,13 +27,13 @@
                     "longDescription": "The value of this string shall represent the version of the RECS|Box extension.  The format of this string shall be of the format majorversion.minorversion.errata in compliance with Protocol Version section of the Redfish specification."
                 },
                 "EthernetSwitches": {
-                    "$ref": "EthernetSwitchCollection.json#/definitions/EthernetSwitchCollection",
+                    "$ref": "http://redfish.dmtf.org/schemas/v1/EthernetSwitchCollection.json#/definitions/EthernetSwitchCollection",
                     "readonly": true,
                     "description": "This is a link to a collection of EthernetSwitches.",
                     "longDescription": "This object shall only contain a reference to a collection of resources that comply to the EthernetSwitch schema."
                 },
                 "PCIeSwitches": {
-                    "$ref": "PCIeSwitchCollection.json#/definitions/PCIeSwitchCollection",
+                    "$ref": "http://redfish.dmtf.org/schemas/v1/PCIeSwitchCollection.json#/definitions/PCIeSwitchCollection",
                     "readonly": true,
                     "description": "This is a link to a collection of PCIeSwitches.",
                     "longDescription": "This object shall only contain a reference to a collection of resources that comply to the PCIeSwitch schema."
