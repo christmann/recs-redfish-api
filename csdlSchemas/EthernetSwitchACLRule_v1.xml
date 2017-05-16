@@ -26,7 +26,7 @@
   </edmx:Reference>
   <edmx:Reference Uri="http://redfish.dmtf.org/schemas/v1/Resource_v1.xml">
     <edmx:Include Namespace="Resource"/>
-    <edmx:Include Namespace="Resource.v1_3_0" />
+    <edmx:Include Namespace="Resource.v1_0_0" />
   </edmx:Reference>
   <edmx:Reference Uri="EthernetSwitchPort_v1.xml">
     <edmx:Include Namespace="EthernetSwitchPort"/>
@@ -37,7 +37,7 @@
      <!-- This schema defines a switch ACL and its respective properties.-->
     <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="EthernetSwitchACLRule">
 
-      <EntityType Name="EthernetSwitchACLRule" BaseType="Resource.v1_3_0.Resource" Abstract="true">
+      <EntityType Name="EthernetSwitchACLRule" BaseType="Resource.v1_0_0.Resource" Abstract="true">
         <Annotation Term="OData.Description" String="A Ethernet Switch ACL Rule represents Access Control List rule for switch."/>
         <Annotation Term="OData.LongDescription" String="This resource shall be used to represent resources that represent a ethernet switch ACL rule"/>
       </EntityType>

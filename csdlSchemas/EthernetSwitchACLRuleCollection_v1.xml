@@ -22,7 +22,7 @@
     <edmx:Include Namespace="Org.OData.Core.V1" Alias="OData"/>
   </edmx:Reference>
   <edmx:Reference Uri="http://redfish.dmtf.org/schemas/v1/Resource_v1.xml">
-    <edmx:Include Namespace="Resource.v1_3_0" />
+    <edmx:Include Namespace="Resource.v1_0_0" />
   </edmx:Reference>
   <edmx:Reference Uri="EthernetSwitchACLRule_v1.xml">
     <edmx:Include Namespace="EthernetSwitchACLRule.v1_0_0"/>
@@ -31,7 +31,7 @@
   <edmx:DataServices>
     <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="EthernetSwitchACLRuleCollection">
 
-      <EntityType Name="EthernetSwitchACLRuleCollection" BaseType="Resource.v1_3_0.ResourceCollection">
+      <EntityType Name="EthernetSwitchACLRuleCollection" BaseType="Resource.v1_0_0.ResourceCollection">
         <NavigationProperty Name="Members" Type="Collection(EthernetSwitchACLRule.v1_0_0.EthernetSwitchACLRule)">
           <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
           <Annotation Term="OData.Description" String="Contains the members of this collection."/>
