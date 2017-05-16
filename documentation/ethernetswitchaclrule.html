@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>EthernetSwitchACLRule</title>
+</head>
+<body>
+<h1 id="ethernetswitchaclrule">EthernetSwitchACLRule</h1>
+<h2 id="schema definition">Schema Definition</h2>
+<table>
+<tr><th>Property</th><th>Type</th><th>Nullable</th><th>Required</th><th>Permission</th><th>Description</th></tr>
+<tr><td>@odata.context</td><td>string</td><td></td><td></td><td>read-only</td><td>The OData description of a payload.<br />Format: uri</td></tr>
+<tr><td>@odata.id</td><td>string</td><td></td><td></td><td>read-only</td><td>The unique identifier for a resource.<br />Format: uri</td></tr>
+<tr><td>@odata.type</td><td>string</td><td></td><td></td><td>read-only</td><td>The type of a resource.</td></tr>
+<tr><td>Oem { }</td><td>object</td><td></td><td></td><td>read-write</td><td>This is the manufacturer/provider specific extension moniker used to divide the Oem object into sections.</td></tr>
+<tr><td>Id</td><td>string</td><td></td><td>GET</td><td>read-only</td><td>Uniquely identifies the resource within the collection of like resources.</td></tr>
+<tr><td>Description</td><td>string</td><td>Yes</td><td></td><td>read-only</td><td>Provides a description of this resource and is used for commonality  in the schema definitions.</td></tr>
+<tr><td>Name</td><td>string</td><td></td><td>GET</td><td>read-only</td><td>The name of the resource or array element.</td></tr>
+<tr><td>RuleId</td><td>number</td><td>Yes</td><td></td><td>read-write</td><td>This is ACL rule ID which determine rule priority.</td></tr>
+<tr><td>Action</td><td>string</td><td>Yes</td><td></td><td>read-write</td><td>Action that will be executed when rule condition will be met.s<br />Possible Values:<br />&nbsp;&nbsp;&nbsp;&nbsp;Permit: Permit traffic meeting condition.<br />&nbsp;&nbsp;&nbsp;&nbsp;Deny: Deny traffic meeting condition.<br />&nbsp;&nbsp;&nbsp;&nbsp;Forward: Forward traffic to specified interface.<br />&nbsp;&nbsp;&nbsp;&nbsp;Mirror: Mirror traffic on the mirrored port to the mirror destination port</td></tr>
+<tr><td>MirrorType</td><td>string</td><td>Yes</td><td></td><td>read-write</td><td>Type of mirroring that should be use for Mirror action.<br />Possible Values:<br />&nbsp;&nbsp;&nbsp;&nbsp;Egress: Mirror egressing traffic on the mirrored port to the mirror destination port.<br />&nbsp;&nbsp;&nbsp;&nbsp;Ingress: Mirror ingressing traffic on the mirrored port to the mirror destination port.<br />&nbsp;&nbsp;&nbsp;&nbsp;Bidirectional: Mirror ingressing and egressing traffic on the mirrored port to the mirror destination port.<br />&nbsp;&nbsp;&nbsp;&nbsp;Redirect: Mirror ingress traffic to the mirror destination port and drop the traffic ingressing the mirror ports.</td></tr>
+<tr><td>Condition {</td><td>object</td><td>Yes</td><td></td><td>read-write</td><td>Property contain set of conditions that should be met to trigger Rule action.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;IPSource {</td><td>object</td><td>Yes</td><td></td><td>read-write</td><td>&nbsp;</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;IPv4Address</td><td>string</td><td>Yes</td><td></td><td>read-write</td><td>&nbsp;</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Mask</td><td>string</td><td>Yes</td><td></td><td>read-write</td><td>&nbsp;</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;}</td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;IPDestination {</td><td>object</td><td>Yes</td><td></td><td>read-write</td><td>&nbsp;</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;IPv4Address</td><td>string</td><td>Yes</td><td></td><td>read-write</td><td>&nbsp;</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Mask</td><td>string</td><td>Yes</td><td></td><td>read-write</td><td>&nbsp;</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;}</td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;MACSource {</td><td>object</td><td>Yes</td><td></td><td>read-write</td><td>&nbsp;</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MACAddress</td><td>string</td><td>Yes</td><td></td><td>read-write</td><td>&nbsp;</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Mask</td><td>string</td><td>Yes</td><td></td><td>read-write</td><td>&nbsp;</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;}</td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;MACDestination {</td><td>object</td><td>Yes</td><td></td><td>read-write</td><td>&nbsp;</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MACAddress</td><td>string</td><td>Yes</td><td></td><td>read-write</td><td>&nbsp;</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Mask</td><td>string</td><td>Yes</td><td></td><td>read-write</td><td>&nbsp;</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;}</td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;VLANId {</td><td>object</td><td>Yes</td><td></td><td>read-write</td><td>&nbsp;</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Id</td><td>number</td><td>Yes</td><td></td><td>read-write</td><td>&nbsp;</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Mask</td><td>number</td><td>Yes</td><td></td><td>read-write</td><td>&nbsp;</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;}</td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;L4SourcePort {</td><td>object</td><td>Yes</td><td></td><td>read-write</td><td>&nbsp;</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Port</td><td>number</td><td>Yes</td><td></td><td>read-write</td><td>&nbsp;</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Mask</td><td>number</td><td>Yes</td><td></td><td>read-write</td><td>&nbsp;</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;}</td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;L4DestinationPort {</td><td>object</td><td>Yes</td><td></td><td>read-write</td><td>&nbsp;</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Port</td><td>number</td><td>Yes</td><td></td><td>read-write</td><td>&nbsp;</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Mask</td><td>number</td><td>Yes</td><td></td><td>read-write</td><td>&nbsp;</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;}</td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;L4Protocol</td><td>number</td><td>Yes</td><td></td><td>read-only</td><td>IP layer 4 protocol number</td></tr>
+<tr><td>}</td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>Links {</td><td>object</td><td></td><td></td><td>read-only</td><td>Contains links to other resources that are related to this resource.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;Oem { }</td><td>object</td><td></td><td></td><td>read-write</td><td>Oem extension object.</td></tr>
+<tr><td>}</td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>ForwardMirrorInterface {</td><td>reference(<a href="ethernetswitchport.html#ethernetswitchport">EthernetSwitchPort</a>)</td><td>Yes</td><td></td><td>read-write</td><td>Reference to interface (port) to which traffic should be mirrored/forwarded.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;@odata.id</td><td>string</td><td></td><td></td><td>read-only</td><td>The unique identifier for a resource.<br />Format: uri</td></tr>
+<tr><td>}</td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>MirrorPortRegion@odata.count</td><td>number</td><td></td><td></td><td>read-only</td><td>The number of items in a collection.</td></tr>
+<tr><td>MirrorPortRegion@odata.navigationLink</td><td>string</td><td></td><td></td><td>read-write</td><td>null<br />Format: uri</td></tr>
+<tr><td>MirrorPortRegion [ {</td><td>array[reference(<a href="ethernetswitchport.html#ethernetswitchport">EthernetSwitchPort</a>)]</td><td></td><td></td><td>read-write</td><td>Group of interfaces (ports)  which should be mirrored.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;@odata.id</td><td>string</td><td></td><td></td><td>read-only</td><td>The unique identifier for a resource.<br />Format: uri</td></tr>
+<tr><td>} ]</td><td></td><td></td><td></td><td></td><td></td></tr>
+</table>
+</body>
+</html>
