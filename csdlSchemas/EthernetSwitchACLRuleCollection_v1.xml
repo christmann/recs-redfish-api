@@ -25,14 +25,14 @@
     <edmx:Include Namespace="Resource.v1_0_0" />
   </edmx:Reference>
   <edmx:Reference Uri="EthernetSwitchACLRule_v1.xml">
-    <edmx:Include Namespace="EthernetSwitchACLRule.v1_0_0"/>
+    <edmx:Include Namespace="EthernetSwitchACLRule"/>
   </edmx:Reference>
 
   <edmx:DataServices>
     <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="EthernetSwitchACLRuleCollection">
 
       <EntityType Name="EthernetSwitchACLRuleCollection" BaseType="Resource.v1_0_0.ResourceCollection">
-        <NavigationProperty Name="Members" Type="Collection(EthernetSwitchACLRule.v1_0_0.EthernetSwitchACLRule)">
+        <NavigationProperty Name="Members" Type="Collection(EthernetSwitchACLRule.EthernetSwitchACLRule)">
           <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
           <Annotation Term="OData.Description" String="Contains the members of this collection."/>
           <Annotation Term="OData.AutoExpandReferences"/>

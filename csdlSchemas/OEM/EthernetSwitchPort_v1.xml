@@ -41,10 +41,10 @@
     <edmx:Include Namespace="IPAddresses.v1_0_4"/>
   </edmx:Reference>
   <edmx:Reference Uri="EthernetSwitch_v1.xml">
-    <edmx:Include Namespace="EthernetSwitch.v1_0_0"/>
+    <edmx:Include Namespace="EthernetSwitch"/>
   </edmx:Reference>
   <edmx:Reference Uri="EthernetSwitchACL_v1.xml">
-    <edmx:Include Namespace="EthernetSwitchACL.v1_0_0"/>
+    <edmx:Include Namespace="EthernetSwitchACL"/>
   </edmx:Reference>
   <edmx:Reference Uri="EthernetSwitchStaticMACCollection_v1.xml">
     <edmx:Include Namespace="EthernetSwitchStaticMACCollection"/>
@@ -55,7 +55,10 @@
     <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="EthernetSwitchPort">
 
       <EntityType Name="EthernetSwitchPort" BaseType="Resource.v1_0_0.Resource">
+        <Annotation Term="OData.Description" String="A Ethernet Switch Port represents a port for switch."/>
+        <Annotation Term="OData.LongDescription" String="This resource shall be used to represent resources that represent a ethernet switch port"/>
       </EntityType>
+
     </Schema>
 
     <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="EthernetSwitchPort.v1_0_0">
@@ -196,17 +199,17 @@
           <Annotation Term="OData.Permissions" EnumMember="OData.Permission/ReadWrite"/>
           <Annotation Term="OData.AutoExpandReferences"/>
         </NavigationProperty>
-        <NavigationProperty Name="Switch" Type="EthernetSwitch.v1_0_0.EthernetSwitch">
+        <NavigationProperty Name="Switch" Type="EthernetSwitch.EthernetSwitch">
           <Annotation Term="OData.AutoExpandReferences"/>
         </NavigationProperty>
-        <NavigationProperty Name="MemberOfPort" Type="EthernetSwitchPort.v1_0_0.EthernetSwitchPort">
+        <NavigationProperty Name="MemberOfPort" Type="EthernetSwitchPort.EthernetSwitchPort">
           <Annotation Term="OData.AutoExpandReferences"/>
         </NavigationProperty>
-        <NavigationProperty Name="PortMembers" Type="Collection(EthernetSwitchPort.v1_0_0.EthernetSwitchPort)">
+        <NavigationProperty Name="PortMembers" Type="Collection(EthernetSwitchPort.EthernetSwitchPort)">
           <Annotation Term="OData.Permissions" EnumMember="OData.Permission/ReadWrite"/>
           <Annotation Term="OData.AutoExpandReferences"/>
         </NavigationProperty>
-        <NavigationProperty Name="ActiveACLs" Type="Collection(EthernetSwitchACL.v1_0_0.EthernetSwitchACL)">
+        <NavigationProperty Name="ActiveACLs" Type="Collection(EthernetSwitchACL.EthernetSwitchACL)">
           <Annotation Term="OData.AutoExpandReferences"/>
         </NavigationProperty>
       </ComplexType>

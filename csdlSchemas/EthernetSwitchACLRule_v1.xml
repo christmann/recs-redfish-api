@@ -41,6 +41,7 @@
         <Annotation Term="OData.Description" String="A Ethernet Switch ACL Rule represents Access Control List rule for switch."/>
         <Annotation Term="OData.LongDescription" String="This resource shall be used to represent resources that represent a ethernet switch ACL rule"/>
       </EntityType>
+
     </Schema>
 
     <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="EthernetSwitchACLRule.v1_0_0">

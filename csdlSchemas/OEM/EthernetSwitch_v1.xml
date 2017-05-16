@@ -42,9 +42,19 @@
   </edmx:Reference>
 
   <edmx:DataServices>
+
+    <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="EthernetSwitch">
+
+      <EntityType Name="EthernetSwitch" BaseType="Resource.v1_0_0.Resource" Abstract="true">
+        <Annotation Term="OData.Description" String="An EthernetSwitch represents an ethernet switch."/>
+        <Annotation Term="OData.LongDescription" String="This resource shall be used to represent resources that represent a ethernet switch"/>
+      </EntityType>
+
+    </Schema>
+
     <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="EthernetSwitch.v1_0_0">
 
-      <EntityType Name="EthernetSwitch" BaseType="Resource.v1_0_0.Resource">
+      <EntityType Name="EthernetSwitch" BaseType="EthernetSwitch.EthernetSwitch">
         <Property Name="SwitchId" Type="Edm.String">
           <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
           <Annotation Term="OData.Description" String="Unique switch Id (within drawer) used to identify in switch hierarchy discovery."/>
