@@ -110,7 +110,10 @@
                     "longDescription": "For Upstream port type this property provide information about neighbor switch (and switch port if available) connected to this port"
                 },
                 "NeighborMAC": {
-                    "ERROR": "type EthernetInterface.v1_2_0.MACAddress unrecognized.",
+                    "anyOf": [
+                        {"$ref": "http://redfish.dmtf.org/schemas/v1/EthernetInterface.v1_0_0.json#/definitions/MACAddress"},
+                        {"type": "null"}
+                    ],
                     "description": "For Downstream port type this property provide MAC address of NIC connected to this port.",
                     "longDescription": "For Downstream port type this property provide MAC address of NIC connected to this port."
                 },
@@ -141,14 +144,17 @@
                     "longDescription": "Indicates if port is in Full Duplex mode or not"
                 },
                 "MACAddress": {
-                    "ERROR": "type EthernetInterface.v1_2_0.MACAddress unrecognized.",
+                    "anyOf": [
+                        {"$ref": "http://redfish.dmtf.org/schemas/v1/EthernetInterface.v1_0_0.json#/definitions/MACAddress"},
+                        {"type": "null"}
+                    ],
                     "description": "MAC address of port.",
                     "longDescription": "MAC address of port."
                 },
                 "IPv4Addresses": {
                     "type": "array",
                     "items": {
-                        "ERROR": "type IPAddresses.v1_0_4.IPv4Address unrecognized."
+                        "$ref": "http://redfish.dmtf.org/schemas/v1/IPAddresses.v1_0_0.json#/definitions/IPv4Address"
                     },
                     "description": "Array of following IPv4 address",
                     "longDescription": "Array of following IPv4 address"
@@ -156,7 +162,7 @@
                 "IPv6Addresses": {
                     "type": "array",
                     "items": {
-                        "ERROR": "type IPAddresses.v1_0_4.IPv6Address unrecognized."
+                        "$ref": "http://redfish.dmtf.org/schemas/v1/IPAddresses.v1_0_0.json#/definitions/IPv6Address"
                     },
                     "description": "Array of following IPv6 address",
                     "longDescription": "Array of following IPv6 address"
@@ -216,7 +222,7 @@
                         },
                         "PrimaryVLAN": {
                             "anyOf": [
-                                {"$ref": "http://redfish.dmtf.org/schemas/v1/VLanNetworkInterface.v1_0_3.json#/definitions/VLanNetworkInterface"},
+                                {"$ref": "http://redfish.dmtf.org/schemas/v1/VLanNetworkInterface.json#/definitions/VLanNetworkInterface"},
                                 {"type": "null"}
                             ],
                             "readonly": false

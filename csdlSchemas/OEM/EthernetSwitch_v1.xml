@@ -29,10 +29,10 @@
     <edmx:Include Namespace="Resource.v1_0_0" />
   </edmx:Reference>
   <edmx:Reference Uri="http://redfish.dmtf.org/schemas/v1/Manager_v1.xml">
-    <edmx:Include Namespace="Manager.v1_3_0"/>
+    <edmx:Include Namespace="Manager"/>
   </edmx:Reference>
   <edmx:Reference Uri="http://redfish.dmtf.org/schemas/v1/Chassis_v1.xml">
-    <edmx:Include Namespace="Chassis.v1_4_0"/>
+    <edmx:Include Namespace="Chassis"/>
   </edmx:Reference>
   <edmx:Reference Uri="EthernetSwitchPortCollection_v1.xml">
     <edmx:Include Namespace="EthernetSwitchPortCollection"/>
@@ -113,10 +113,10 @@
       </EntityType>
 
       <ComplexType Name="Links" BaseType="Resource.Links">
-        <NavigationProperty Name="Chassis" Type="Chassis.v1_4_0.Chassis">
+        <NavigationProperty Name="Chassis" Type="Chassis.Chassis">
           <Annotation Term="OData.AutoExpandReferences"/>
         </NavigationProperty>
-        <NavigationProperty Name="ManagedBy" Type="Collection(Manager.v1_3_0.Manager)">
+        <NavigationProperty Name="ManagedBy" Type="Collection(Manager.Manager)">
           <Annotation Term="OData.AutoExpandReferences"/>
         </NavigationProperty>
       </ComplexType>
