@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!---->
+<!--################################################################################       -->
+<!--# Copyright 2017-2019 christmann informationstechnik + medien GmbH & Co. KG            -->
+<!--################################################################################       -->
+<!---->
+<edmx:Edmx xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx" Version="4.0">
+
+	<edmx:Reference Uri="http://docs.oasis-open.org/odata/odata/v4.0/errata03/csd01/complete/vocabularies/Org.OData.Core.V1.xml">
+		<edmx:Include Namespace="Org.OData.Core.V1" Alias="OData"/>
+	</edmx:Reference>
+	<edmx:Reference Uri="http://redfish.dmtf.org/schemas/v1/RedfishExtensions_v1.xml">
+		<edmx:Include Namespace="RedfishExtensions.v1_0_0" Alias="Redfish"/>
+		<edmx:Include Namespace="Validation.v1_0_0" Alias="Validation"/>
+	</edmx:Reference>
+	<edmx:Reference Uri="http://redfish.dmtf.org/schemas/v1/Resource_v1.xml">
+		<edmx:Include Namespace="Resource"/>
+	</edmx:Reference
+	<edmx:Reference Uri="ComposedNode_v1.xml">
+		<edmx:Include Namespace="ComposedNode"/>
+	</edmx:Reference>
+	<edmx:Reference Uri="HSSInterface_v1.xml">
+		<edmx:Include Namespace="HSSInterface"/>
+	</edmx:Reference>
+
+	<edmx:DataServices>
+
+		<Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="EID_47597_RECSBox_ComputerSystem.v0_1_0">
+			
+			<ComplexType Name="ComputerSystem" BaseType="Resource.OemObject">
+				<Property Name="Links" Type="EID_47597_RECSBox_ComputerSystem.v0_1_0.Links" Nullable="false">
+				<NavigationProperty Name="HSSInterface" Type="HSSInterface.HSSInterface">
+					<Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+					<Annotation Term="OData.Description" String="The HSSInterface hosted by this system"/>
+					<Annotation Term="OData.LongDescription" String="This object shall only contain a reference to a HSSInterface schema."/>
+					<Annotation Term="OData.AutoExpandReferences"/>
+				</NavigationProperty>
+				<Annotation Term="OData.AdditionalProperties" Bool="false"/>
+				<Annotation Term="OData.Description" String="RECS|Box ComputerSystem extension"/>
+				<Annotation Term="OData.LongDescription" String="RECS|Box ComputerSystem extension" />
+			</ComplexType>
+
+			<ComplexType Name="Links" BaseType="Resource.Links">
+				<NavigationProperty Name="ComposedIn" Type="ComposedNode">
+					<Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+					<Annotation Term="OData.Description" String="This is a link to the ComposedNode, this ComputerSystem is composed in."/>
+					<Annotation Term="OData.LongDescription" String="This object shall only contain a reference to a resource that comply to the ComposedNode schema."/>
+					<Annotation Term="OData.AutoExpandReferences"/>
+				</NavigationProperty>
+			</ComplexType>
+			
+		</Schema>
+
+	</edmx:DataServices>
+
+</edmx:Edmx>
