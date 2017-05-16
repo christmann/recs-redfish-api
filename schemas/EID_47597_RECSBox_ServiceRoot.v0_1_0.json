@@ -1,0 +1,41 @@
+{
+    "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema.v1_2_0.json",
+    "title": "#EID_47597_RECSBox_ServiceRoot.v0_1_0",
+    "definitions": {
+        "ServiceRoot": {
+            "type": "object",
+            "patternProperties": {
+                "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message|Privileges)\\.[a-zA-Z_][a-zA-Z0-9_.]+$": {
+                    "type": [
+                        "array",
+                        "boolean",
+                        "number",
+                        "null",
+                        "object",
+                        "string"
+                    ],
+                    "description": "This property shall specify a valid odata or Redfish property."
+                }
+            },
+            "additionalProperties": false,
+            "properties": {
+                "APIVersion": {
+                    "type": "string",
+                    "pattern": "^\\d+\\.\\d+\\.\\d+$",
+                    "readonly": true,
+                    "description": "The version of the RECS|Box extension.",
+                    "longDescription": "The value of this string shall represent the version of the RECS|Box extension.  The format of this string shall be of the format majorversion.minorversion.errata in compliance with Protocol Version section of the Redfish specification."
+                },
+                "PCIeSwitches": {
+                    "$ref": "http://redfish.dmtf.org/schemas/v1/PCIeSwitchCollection.json#/definitions/PCIeSwitchCollection",
+                    "readonly": true,
+                    "description": "This is a link to a collection of PCIeSwitches.",
+                    "longDescription": "This object shall only contain a reference to a collection of resources that comply to the PCIeSwitch schema."
+                }
+            },
+            "description": "RECS|Box ServiceRoot extension",
+            "longDescription": "RECS|Box ServiceRoot extension"
+        }
+    },
+    "copyright": "Copyright 2014-2017 Distributed Management Task Force, Inc. (DMTF). For the full DMTF copyright policy, see http://www.dmtf.org/about/policies/copyright"
+}
