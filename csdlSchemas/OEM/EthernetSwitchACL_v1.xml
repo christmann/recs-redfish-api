@@ -1,20 +1,37 @@
-<?xml version="1.0" encoding="UTF-8"?><!-- Copyright 2014-2015 Distributed Management Task Force, Inc. (DMTF). All rights reserved.-->
+<?xml version="1.0" encoding="UTF-8"?>
+<!---->
+<!--################################################################################       -->
+<!--# Copyright (c) 2015-2016 Intel Corporation                                            -->
+<!--#                                                                                      -->
+<!--# Licensed under the Apache License, Version 2.0 (the "License");                      -->
+<!--# you may not use this file except in compliance with the License.                     -->
+<!--# You may obtain a copy of the License at                                              -->
+<!--#                                                                                      -->
+<!--#     http://www.apache.org/licenses/LICENSE-2.0                                       -->
+<!--#                                                                                      -->
+<!--# Unless required by applicable law or agreed to in writing, software                  -->
+<!--# distributed under the License is distributed on an "AS IS" BASIS,                    -->
+<!--# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.             -->
+<!--# See the License for the specific language governing permissions and                  -->
+<!--# limitations under the License.                                                       -->
+<!--################################################################################       -->
+<!---->
 <edmx:Edmx xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx" Version="4.0">
 
-  <edmx:Reference Uri="Org.OData.Core.V1.xml">
+  <edmx:Reference Uri="http://docs.oasis-open.org/odata/odata/v4.0/errata03/csd01/complete/vocabularies/Org.OData.Core.V1.xml">
     <edmx:Include Namespace="Org.OData.Core.V1" Alias="OData"/>
   </edmx:Reference>
-  <edmx:Reference Uri="RedfishExtensions.xml">
-    <edmx:Include Namespace="RedfishExtensions.1.0.0" Alias="Redfish"/>
+  <edmx:Reference Uri="http://redfish.dmtf.org/schemas/v1/RedfishExtensions_v1.xml">
+    <edmx:Include Namespace="RedfishExtensions.v1_0_0" Alias="Redfish"/>
   </edmx:Reference>
-  <edmx:Reference Uri="Resource.xml">
+  <edmx:Reference Uri="http://redfish.dmtf.org/schemas/v1/Resource_v1.xml">
     <edmx:Include Namespace="Resource"/>
-    <edmx:Include Namespace="Resource.1.0.0" />
+    <edmx:Include Namespace="Resource.v1_3_0" />
   </edmx:Reference>
-  <edmx:Reference Uri="EthernetSwitchPort.xml">
+  <edmx:Reference Uri="EthernetSwitchPort_v1.xml">
     <edmx:Include Namespace="EthernetSwitchPort"/>
   </edmx:Reference>
-  <edmx:Reference Uri="EthernetSwitchACLRuleCollection.xml">
+  <edmx:Reference Uri="EthernetSwitchACLRuleCollection_v1.xml">
     <edmx:Include Namespace="EthernetSwitchACLRuleCollection"/>
   </edmx:Reference>
 
@@ -23,13 +40,13 @@
      <!-- This schema defines a switch ACL and its respective properties.-->
     <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="EthernetSwitchACL">
 
-      <EntityType Name="EthernetSwitchACL" BaseType="Resource.1.0.0.Resource" Abstract="true">
+      <EntityType Name="EthernetSwitchACL" BaseType="Resource.v1_3_0.Resource" Abstract="true">
         <Annotation Term="OData.Description" String="A Ethernet Switch ACL represents Access Control List for switch."/>
         <Annotation Term="OData.LongDescription" String="This resource shall be used to represent resources that represent a ethernet switch ACL"/>
       </EntityType>
 
       <Action Name="Bind" IsBound="true">
-        <Parameter Name="EthernetSwitchACL" Type="EthernetSwitchACL.1.0.0.Actions"/>
+        <Parameter Name="EthernetSwitchACL" Type="EthernetSwitchACL.v1_0_0.Actions"/>
         <Parameter Name="Port" Type="Collection(EthernetSwitchPort.EthernetSwitchPort)">
           <Annotation Term="OData.Description" String="This is array of ports that this ACL should be binded."/>
         </Parameter>
@@ -37,7 +54,7 @@
       </Action>
 
       <Action Name="Unbind" IsBound="true">
-        <Parameter Name="EthernetSwitchACL" Type="EthernetSwitchACL.1.0.0.Actions"/>
+        <Parameter Name="EthernetSwitchACL" Type="EthernetSwitchACL.v1_0_0.Actions"/>
         <Parameter Name="Port" Type="Collection(EthernetSwitchPort.EthernetSwitchPort)">
           <Annotation Term="OData.Description" String="This is array of ports that this ACL should be unbinded."/>
         </Parameter>
@@ -46,7 +63,7 @@
 
     </Schema>
 
-    <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="EthernetSwitchACL.1.0.0">
+    <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="EthernetSwitchACL.v1_0_0">
 
       <EntityType Name="EthernetSwitchACL" BaseType="EthernetSwitchACL.EthernetSwitchACL">
 
@@ -54,9 +71,9 @@
           <Annotation Term="OData.AutoExpandReferences"/>
         </NavigationProperty>
 
-        <Property Name="Links" Type="EthernetSwitchACL.1.0.0.Links" Nullable="false"/>
+        <Property Name="Links" Type="EthernetSwitchACL.v1_0_0.Links" Nullable="false"/>
 
-        <Property Name="Actions" Type="EthernetSwitchACL.1.0.0.Actions" Nullable="false"/>
+        <Property Name="Actions" Type="EthernetSwitchACL.v1_0_0.Actions" Nullable="false"/>
       </EntityType>
 
       <ComplexType Name="Links" BaseType="Resource.Links">
@@ -67,7 +84,7 @@
 
       <ComplexType Name="Actions">
         <Annotation Term="OData.AdditionalProperties" Bool="false"/>
-        <Property Name="Oem" Type="EthernetSwitchACL.1.0.0.OemActions" Nullable="false"/>
+        <Property Name="Oem" Type="EthernetSwitchACL.v1_0_0.OemActions" Nullable="false"/>
       </ComplexType>
 
       <ComplexType Name="OemActions">
