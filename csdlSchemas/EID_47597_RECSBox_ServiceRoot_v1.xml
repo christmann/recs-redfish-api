@@ -17,6 +17,9 @@
 	<edmx:Reference Uri="http://redfish.dmtf.org/schemas/v1/Resource_v1.xml">
 		<edmx:Include Namespace="Resource"/>
 	</edmx:Reference>
+	<edmx:Reference Uri="http://redfish.dmtf.org/schemas/v1/EthernetSwitchCollection_v1.xml">
+		<edmx:Include Namespace="EthernetSwitchCollection"/>
+	</edmx:Reference>
 	<edmx:Reference Uri="http://redfish.dmtf.org/schemas/v1/PCIeSwitchCollection_v1.xml">
 		<edmx:Include Namespace="PCIeSwitchCollection"/>
 	</edmx:Reference>
@@ -32,6 +35,12 @@
 					<Annotation Term="OData.LongDescription" String="The value of this string shall represent the version of the RECS|Box extension.  The format of this string shall be of the format majorversion.minorversion.errata in compliance with Protocol Version section of the Redfish specification."/>
 					<Annotation Term="Validation.Pattern" String="^\d+\.\d+\.\d+$"/>
 				</Property>
+				<NavigationProperty Name="EthernetSwitches" Type="EthernetSwitchCollection.EthernetSwitchCollection" Nullable="false">
+					<Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+					<Annotation Term="OData.Description" String="This is a link to a collection of EthernetSwitches."/>
+					<Annotation Term="OData.LongDescription" String="This object shall only contain a reference to a collection of resources that comply to the EthernetSwitche schema."/>
+					<Annotation Term="OData.AutoExpandReferences"/>
+				</NavigationProperty>
 				<NavigationProperty Name="PCIeSwitches" Type="PCIeSwitchCollection.PCIeSwitchCollection" Nullable="false">
 					<Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
 					<Annotation Term="OData.Description" String="This is a link to a collection of PCIeSwitches."/>
