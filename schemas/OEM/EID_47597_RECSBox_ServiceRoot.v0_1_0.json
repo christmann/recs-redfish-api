@@ -26,6 +26,12 @@
                     "description": "The version of the RECS|Box extension.",
                     "longDescription": "The value of this string shall represent the version of the RECS|Box extension.  The format of this string shall be of the format majorversion.minorversion.errata in compliance with Protocol Version section of the Redfish specification."
                 },
+                "ComposedNodes": {
+                    "$ref": "http://redfish.dmtf.org/schemas/v1/ComposedNodeCollection.json#/definitions/ComposedNodeCollection",
+                    "readonly": true,
+                    "description": "This is a link to a collection of ComposedNodes.",
+                    "longDescription": "This object shall only contain a reference to a collection of resources that comply to the ComposedNode schema."
+                },
                 "EthernetSwitches": {
                     "$ref": "http://redfish.dmtf.org/schemas/v1/EthernetSwitchCollection.json#/definitions/EthernetSwitchCollection",
                     "readonly": true,
