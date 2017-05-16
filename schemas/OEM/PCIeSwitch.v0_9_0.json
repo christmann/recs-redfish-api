@@ -1,5 +1,5 @@
 {
-    "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema.v1_1_0.json",
+    "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema.v1_2_0.json",
     "title": "#PCIeSwitch.v0_9_0.PCIeSwitch",
     "$ref": "#/definitions/PCIeSwitch",
     "definitions": {
@@ -78,13 +78,19 @@
                     "longDescription": "The value of this string shall be of the format for the reserved word *Oem*."
                 },
                 "Id": {
-                    "$ref": "http://redfish.dmtf.org/schemas/v1/Resource.json#/definitions/Id"
+                    "$ref": "http://redfish.dmtf.org/schemas/v1/Resource.json#/definitions/Id",
+                    "readonly": true
                 },
                 "Description": {
-                    "$ref": "http://redfish.dmtf.org/schemas/v1/Resource.json#/definitions/Description"
+                    "anyOf": [
+                        {"$ref": "http://redfish.dmtf.org/schemas/v1/Resource.json#/definitions/Description"},
+                        {"type": "null"}
+                    ],
+                    "readonly": true
                 },
                 "Name": {
-                    "$ref": "http://redfish.dmtf.org/schemas/v1/Resource.json#/definitions/Name"
+                    "$ref": "http://redfish.dmtf.org/schemas/v1/Resource.json#/definitions/Name",
+                    "readonly": true
                 },
                 "Links": {
                     "type": "object",
@@ -231,13 +237,19 @@
                     "longDescription": "The value of this property shall contain the part number for the Switch as defined by the manufacturer."
                 },
                 "IndicatorLED": {
-                    "$ref": "#/definitions/IndicatorLED",
+                    "anyOf": [
+                        {"$ref": "#/definitions/IndicatorLED"},
+                        {"type": "null"}
+                    ],
                     "readonly": false,
                     "description": "The state of the indicator LED, used to identify the Switch",
                     "longDescription": "The value of this property shall contain the indicator light state for the indicator light associated with this Switch."
                 },
                 "PowerState": {
-                    "$ref": "#/definitions/PowerState",
+                    "anyOf": [
+                        {"$ref": "#/definitions/PowerState"},
+                        {"type": "null"}
+                    ],
                     "readonly": true,
                     "description": "This is the current power state of the Switch",
                     "longDescription": "The value of this property shall contain the power state of the switch."
@@ -288,16 +300,25 @@
                     "description": "The Actions object contains the available custom actions on this resource."
                 },
                 "Status": {
-                    "$ref": "http://redfish.dmtf.org/schemas/v1/Resource.json#/definitions/Status"
+                    "anyOf": [
+                        {"$ref": "http://redfish.dmtf.org/schemas/v1/Resource.json#/definitions/Status"},
+                        {"type": "null"}
+                    ]
                 },
                 "Zones": {
-                    "$ref": "http://redfish.dmtf.org/schemas/v1/PCIeZoneCollection.json#/definitions/PCIeZoneCollection",
+                    "anyOf": [
+                        {"$ref": "http://redfish.dmtf.org/schemas/v1/PCIeZoneCollection.json#/definitions/PCIeZoneCollection"},
+                        {"type": "null"}
+                    ],
                     "readonly": true,
                     "description": "A reference to the collection of Zones associated with this Switch",
                     "longDescription": ""
                 },
                 "PCIePorts": {
-                    "$ref": "http://redfish.dmtf.org/schemas/v1/PCIePortCollection.json#/definitions/PCIePortCollection",
+                    "anyOf": [
+                        {"$ref": "http://redfish.dmtf.org/schemas/v1/PCIePortCollection.json#/definitions/PCIePortCollection"},
+                        {"type": "null"}
+                    ],
                     "readonly": true,
                     "description": "A reference to the collection of PCIe Ports associated with this Switch",
                     "longDescription": ""
@@ -319,7 +340,10 @@
                     "longDescription": ""
                 },
                 "LogServices": {
-                    "$ref": "http://redfish.dmtf.org/schemas/v1/LogServiceCollection.json#/definitions/LogServiceCollection",
+                    "anyOf": [
+                        {"$ref": "http://redfish.dmtf.org/schemas/v1/LogServiceCollection.json#/definitions/LogServiceCollection"},
+                        {"type": "null"}
+                    ],
                     "readonly": true,
                     "description": "A reference to the collection of Log Services associated with this system",
                     "longDescription": "The value of this property shall be a link to a collection of type LogServiceCollection."
@@ -348,5 +372,5 @@
             }
         }
     },
-    "copyright": "Copyright 2014-2016 Distributed Management Task Force, Inc. (DMTF). For the full DMTF copyright policy, see http://www.dmtf.org/about/policies/copyright"
+    "copyright": "Copyright 2014-2017 Distributed Management Task Force, Inc. (DMTF). For the full DMTF copyright policy, see http://www.dmtf.org/about/policies/copyright"
 }
