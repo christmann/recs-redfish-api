@@ -39,6 +39,12 @@
                     "readonly": true,
                     "description": "An array of references to the HSSInterfaces hosted by this system",
                     "longDescription": "This object shall only contain an array of references that comply to the HSSInterface schema."
+                },
+                "Baseboard": {
+                    "$ref": "http://redfish.dmtf.org/schemas/v1/Baseboard.json#/definitions/Baseboard",
+                    "readonly": true,
+                    "description": "The Baseboard hosting this ComputerSystem",
+                    "longDescription": "This object shall only contain a reference that complies to the Baseboard schema."
                 }
             },
             "description": "RECS|Box ComputerSystem extension",
@@ -69,6 +75,22 @@
                     "readonly": true,
                     "description": "This is a link to the ComposedNode, this ComputerSystem is composed in.",
                     "longDescription": "This object shall only contain a reference to a resource that comply to the ComposedNode schema."
+                },
+                "Backplanes@odata.count": {
+                    "$ref": "http://redfish.dmtf.org/schemas/v1/odata.4.0.0.json#/definitions/count"
+                },
+                "Backplanes@odata.navigationLink": {
+                    "type": "string",
+                    "format": "uri"
+                },
+                "Backplanes": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "http://redfish.dmtf.org/schemas/v1/Backplane.json#/definitions/Backplane"
+                    },
+                    "readonly": true,
+                    "description": "An array of references to the Backplanes the Baseboard of this ComputerSystem is connected to.",
+                    "longDescription": "This object shall only contain an array of references that comply to the Backplane schema."
                 }
             },
             "description": "Base type for an Oem object.",

@@ -22,6 +22,9 @@
 	<edmx:Reference Uri="HSSInterface_v1.xml">
 		<edmx:Include Namespace="HSSInterface"/>
 	</edmx:Reference>
+	<edmx:Reference Uri="Baseboard_v1.xml">
+		<edmx:Include Namespace="Baseboard"/>
+	</edmx:Reference>
 
 	<edmx:DataServices>
 
@@ -38,6 +41,12 @@
 					<Annotation Term="OData.LongDescription" String="This object shall only contain an array of references that comply to the HSSInterface schema."/>
 					<Annotation Term="OData.AutoExpandReferences"/>
 				</NavigationProperty>
+				<NavigationProperty Name="Baseboard" Type="Baseboard.Baseboard" Nullable="false">
+					<Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+					<Annotation Term="OData.Description" String="The Baseboard hosting this ComputerSystem"/>
+					<Annotation Term="OData.LongDescription" String="This object shall only contain a reference that complies to the Baseboard schema."/>
+					<Annotation Term="OData.AutoExpandReferences"/>
+				</NavigationProperty>
 				<Annotation Term="OData.AdditionalProperties" Bool="false"/>
 				<Annotation Term="OData.Description" String="RECS|Box ComputerSystem extension"/>
 				<Annotation Term="OData.LongDescription" String="RECS|Box ComputerSystem extension" />
@@ -48,6 +57,12 @@
 					<Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
 					<Annotation Term="OData.Description" String="This is a link to the ComposedNode, this ComputerSystem is composed in."/>
 					<Annotation Term="OData.LongDescription" String="This object shall only contain a reference to a resource that comply to the ComposedNode schema."/>
+					<Annotation Term="OData.AutoExpandReferences"/>
+				</NavigationProperty>
+				<NavigationProperty Name="Backplanes" Type="Collection(Backplane.Backplane)" Nullable="false">
+					<Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+					<Annotation Term="OData.Description" String="An array of references to the Backplanes the Baseboard of this ComputerSystem is connected to."/>
+					<Annotation Term="OData.LongDescription" String="This object shall only contain an array of references that comply to the Backplane schema."/>
 					<Annotation Term="OData.AutoExpandReferences"/>
 				</NavigationProperty>
 			</ComplexType>

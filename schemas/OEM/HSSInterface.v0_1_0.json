@@ -167,7 +167,7 @@
                     "description": "Maximum width of the HSSInterface specified in number of lanes",
                     "longDescription": "The value of this property shall contain the Maximum width of the HSSInterface specified in number of lanes."
                 },
-                "ContainingSystem": {
+                "Host": {
                     "$ref": "http://redfish.dmtf.org/schemas/v1/ComputerSystem.json#/definitions/ComputerSystem",
                     "readonly": true,
                     "description": "The ComputerSystem hosting this HSSInterface",

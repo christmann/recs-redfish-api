@@ -103,8 +103,8 @@
                         "$ref": "http://redfish.dmtf.org/schemas/v1/odata.4.0.0.json#/definitions/idRef"
                     },
                     "readonly": false,
-                    "description": "An array of ID[s] of resources this ComposedNode consists of. Normally the ID will be a ComputerSystem or a ComposedNode.",
-                    "longDescription": "This object shall only contain a reference to a collection of resources that comply to the ComputerSystem or ComposedNode schemas."
+                    "description": "An array of references to the nodes this ComposedNode consists of. This can either be a ComputerSystem or a ComposedNode.",
+                    "longDescription": "This object shall only contain an array of references that comply to the ComputerSystem or ComposedNode schema."
                 },
                 "Connections@odata.count": {
                     "$ref": "http://redfish.dmtf.org/schemas/v1/odata.4.0.0.json#/definitions/count"
@@ -119,8 +119,8 @@
                         "$ref": "http://redfish.dmtf.org/schemas/v1/HSSConnection.json#/definitions/HSSConnection"
                     },
                     "readonly": false,
-                    "description": "An array of references to the connections that connect the nodes within this composition.",
-                    "longDescription": "The value of this property shall be an array of references to the resources that represent the connections that connect the nodes within this composition and shall be of type HSSConnection."
+                    "description": "An array of references to the HSSConnections that connect the nodes within this composition.",
+                    "longDescription": "This object shall only contain an array of references that comply to the HSSConnection schema."
                 }
             },
             "required": [
