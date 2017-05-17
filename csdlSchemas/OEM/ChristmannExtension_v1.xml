@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!---->
-<!--################################################################################       -->
-<!--# EID_47597                                                                            -->
-<!--# Copyright 2017-2019 christmann informationstechnik + medien GmbH & Co. KG            -->
-<!--################################################################################       -->
+<!--################################################################################ -->
+<!--# Copyright 2017-2019 christmann informationstechnik + medien GmbH & Co. KG      -->
+<!--################################################################################ -->
 <!---->
 <edmx:Edmx xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx" Version="4.0">
 
@@ -57,8 +56,8 @@
 			 <Action Name="StartDeepDiscovery" IsBound="true">
 				<Parameter Name="Chassis" Type="Chassis.v1_4_0.OemActions"/>
 				<Parameter Name="ResetType" Type="Resource.ResetType">
-				  <Annotation Term="OData.Description" String="This is the type of reset to be performed."/>
-				  <Annotation Term="OData.LongDescription" String="This defines the property name for the action."/>
+					<Annotation Term="OData.Description" String="This is the type of reset to be performed."/>
+					<Annotation Term="OData.LongDescription" String="This defines the property name for the action."/>
 				</Parameter>
 				<Annotation Term="OData.Description" String="This action is used to deep discover the chassis."/>
 				<Annotation Term="OData.LongDescription" String="This defines the name of the custom action supported on this resource."/>
@@ -71,8 +70,8 @@
 					<Annotation Term="OData.LongDescription" String="String containing physical location ID of this chassis" />
 				</Property>
 				<Property Name="ParentId" Type="Edm.String">
-					<Annotation Term="OData.Description" String="String containing  physical location ID of parent chassis"/>
-					<Annotation Term="OData.LongDescription" String="String containing  physical location ID of parent chassis" />
+					<Annotation Term="OData.Description" String="String containing	physical location ID of parent chassis"/>
+					<Annotation Term="OData.LongDescription" String="String containing	physical location ID of parent chassis" />
 				</Property>
 			</ComplexType>
 			

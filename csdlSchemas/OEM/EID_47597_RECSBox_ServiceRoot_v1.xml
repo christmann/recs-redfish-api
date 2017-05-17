@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!---->
-<!--################################################################################       -->
-<!--# Copyright 2017-2019 christmann informationstechnik + medien GmbH & Co. KG            -->
-<!--################################################################################       -->
+<!--################################################################################ -->
+<!--# Copyright 2017-2019 christmann informationstechnik + medien GmbH & Co. KG      -->
+<!--################################################################################ -->
 <!---->
 <edmx:Edmx xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx" Version="4.0">
 
@@ -34,7 +34,7 @@
 				<Property Name="APIVersion" Type="Edm.String" Nullable="false">
 					<Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
 					<Annotation Term="OData.Description" String="The version of the RECS|Box extension."/>
-					<Annotation Term="OData.LongDescription" String="The value of this string shall represent the version of the RECS|Box extension.  The format of this string shall be of the format majorversion.minorversion.errata in compliance with Protocol Version section of the Redfish specification."/>
+					<Annotation Term="OData.LongDescription" String="The value of this string shall represent the version of the RECS|Box extension.	The format of this string shall be of the format majorversion.minorversion.errata in compliance with Protocol Version section of the Redfish specification."/>
 					<Annotation Term="Validation.Pattern" String="^\d+\.\d+\.\d+$"/>
 				</Property>
 				<NavigationProperty Name="ComposedNodes" Type="ComposedNodeCollection.ComposedNodeCollection" Nullable="false">

@@ -1,61 +1,61 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!---->
-<!--################################################################################       -->
-<!--# Copyright 2017-2019 christmann informationstechnik + medien GmbH & Co. KG            -->
-<!--################################################################################       -->
+<!--################################################################################ -->
+<!--# Copyright 2017-2019 christmann informationstechnik + medien GmbH & Co. KG      -->
+<!--################################################################################ -->
 <!---->
 <edmx:Edmx xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx" Version="4.0">
 
-  <edmx:Reference Uri="http://docs.oasis-open.org/odata/odata/v4.0/cs01/vocabularies/Org.OData.Core.V1.xml">
-    <edmx:Include Namespace="Org.OData.Core.V1" Alias="OData" />
-  </edmx:Reference>
-  <edmx:Reference Uri="http://redfish.dmtf.org/schemas/v1/RedfishExtensions_v1.xml">
-    <edmx:Include Namespace="RedfishExtensions.v1_0_0" Alias="Redfish"/>
-    <edmx:Include Namespace="Validation.v1_0_0" Alias="Validation"/>
-  </edmx:Reference>
-  <edmx:Reference Uri="http://redfish.dmtf.org/schemas/v1/Resource_v1.xml">
-    <edmx:Include Namespace="Resource"/>
-    <edmx:Include Namespace="Resource.v1_0_0" />
-  </edmx:Reference>
-  <edmx:Reference Uri="http://redfish.dmtf.org/schemas/v1/ComputerSystem_v1.xml">
-    <edmx:Include Namespace="ComputerSystem"/>
-  </edmx:Reference>
+	<edmx:Reference Uri="http://docs.oasis-open.org/odata/odata/v4.0/errata03/csd01/complete/vocabularies/Org.OData.Core.V1.xml">
+		<edmx:Include Namespace="Org.OData.Core.V1" Alias="OData" />
+	</edmx:Reference>
+	<edmx:Reference Uri="http://redfish.dmtf.org/schemas/v1/RedfishExtensions_v1.xml">
+		<edmx:Include Namespace="RedfishExtensions.v1_0_0" Alias="Redfish"/>
+		<edmx:Include Namespace="Validation.v1_0_0" Alias="Validation"/>
+	</edmx:Reference>
+	<edmx:Reference Uri="http://redfish.dmtf.org/schemas/v1/Resource_v1.xml">
+		<edmx:Include Namespace="Resource"/>
+		<edmx:Include Namespace="Resource.v1_0_0" />
+	</edmx:Reference>
+	<edmx:Reference Uri="http://redfish.dmtf.org/schemas/v1/ComputerSystem_v1.xml">
+		<edmx:Include Namespace="ComputerSystem"/>
+	</edmx:Reference>
 	<edmx:Reference Uri="HSSInterface_v1.xml">
 		<edmx:Include Namespace="HSSInterface"/>
 	</edmx:Reference>
 
-  <edmx:DataServices>
-    <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="HSSConnection">
+	<edmx:DataServices>
+		<Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="HSSConnection">
 
-      <EntityType Name="HSSConnection" BaseType="Resource.v1_0_0.Resource">
-        <Annotation Term="OData.Description" String="This is the schema definition for the HSSConnection resource." />
-        <Annotation Term="OData.LongDescription" String="This is the schema definition for the HSSConnection resource. It represents the properties of a HSSConnection." />
-      </EntityType>
+			<EntityType Name="HSSConnection" BaseType="Resource.v1_0_0.Resource">
+				<Annotation Term="OData.Description" String="This is the schema definition for the HSSConnection resource." />
+				<Annotation Term="OData.LongDescription" String="This is the schema definition for the HSSConnection resource. It represents the properties of a HSSConnection." />
+			</EntityType>
 
-    </Schema>
+		</Schema>
 
-    <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="HSSConnection.v0_1_0">
+		<Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="HSSConnection.v0_1_0">
 
-      <EntityType Name="HSSConnection" BaseType="HSSConnection.HSSConnection">
-        <NavigationProperty Name="HSSInterfaceA" Type="HSSInterface.HSSInterface" Nullable="false">
-          <Annotation Term="OData.Permissions" EnumMember="OData.Permission/ReadWrite"/>
-          <Annotation Term="OData.Description" String="The first endpoint of this connection"/>
-          <Annotation Term="OData.LongDescription" String="This object shall only contain a reference to a HSSInterface schema."/>
-          <Annotation Term="OData.AutoExpandReferences"/>
-        </NavigationProperty>
-        <NavigationProperty Name="HSSInterfaceB" Type="HSSInterface.HSSInterface" Nullable="false">
-          <Annotation Term="OData.Permissions" EnumMember="OData.Permission/ReadWrite"/>
-          <Annotation Term="OData.Description" String="The second endpoint of this connection"/>
-          <Annotation Term="OData.LongDescription" String="This object shall only contain a reference to a HSSInterface schema."/>
-          <Annotation Term="OData.AutoExpandReferences"/>
-        </NavigationProperty>
-        <Property Name="Width" Type="Edm.Int64">
-          <Annotation Term="OData.Permissions" EnumMember="OData.Permissions/Read"/>
-          <Annotation Term="OData.Description" String="Connection width of the HSSConnection specified in number of lanes"/>
-          <Annotation Term="OData.LongDescription" String="The value of this property shall contain the connection width of the HSSConnection specified in number of lanes."/>
-        </Property>
-      </EntityType>
+			<EntityType Name="HSSConnection" BaseType="HSSConnection.HSSConnection">
+				<NavigationProperty Name="HSSInterfaceA" Type="HSSInterface.HSSInterface" Nullable="false">
+					<Annotation Term="OData.Permissions" EnumMember="OData.Permission/ReadWrite"/>
+					<Annotation Term="OData.Description" String="The first endpoint of this connection"/>
+					<Annotation Term="OData.LongDescription" String="This object shall only contain a reference to a HSSInterface schema."/>
+					<Annotation Term="OData.AutoExpandReferences"/>
+				</NavigationProperty>
+				<NavigationProperty Name="HSSInterfaceB" Type="HSSInterface.HSSInterface" Nullable="false">
+					<Annotation Term="OData.Permissions" EnumMember="OData.Permission/ReadWrite"/>
+					<Annotation Term="OData.Description" String="The second endpoint of this connection"/>
+					<Annotation Term="OData.LongDescription" String="This object shall only contain a reference to a HSSInterface schema."/>
+					<Annotation Term="OData.AutoExpandReferences"/>
+				</NavigationProperty>
+				<Property Name="Width" Type="Edm.Int64">
+					<Annotation Term="OData.Permissions" EnumMember="OData.Permissions/Read"/>
+					<Annotation Term="OData.Description" String="Connection width of the HSSConnection specified in number of lanes"/>
+					<Annotation Term="OData.LongDescription" String="The value of this property shall contain the connection width of the HSSConnection specified in number of lanes."/>
+				</Property>
+			</EntityType>
 
-    </Schema>
-  </edmx:DataServices>
+		</Schema>
+	</edmx:DataServices>
 </edmx:Edmx>

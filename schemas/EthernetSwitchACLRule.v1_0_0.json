@@ -221,7 +221,7 @@
                         "$ref": "http://redfish.dmtf.org/schemas/v1/EthernetSwitchPort.json#/definitions/EthernetSwitchPort"
                     },
                     "readonly": false,
-                    "description": "Group of interfaces (ports)  which should be mirrored."
+                    "description": "Group of interfaces (ports) which should be mirrored."
                 }
             },
             "required": [

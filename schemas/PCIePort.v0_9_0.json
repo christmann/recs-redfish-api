@@ -176,7 +176,7 @@
                 "Id",
                 "Name"
             ],
-            "description": "This is the schema definition for the PCIePort resource.  It represents the properties of a PCIePort attached to a System."
+            "description": "This is the schema definition for the PCIePort resource. It represents the properties of a PCIePort attached to a System."
         },
         "PortType": {
             "type": "string",
