@@ -9,6 +9,9 @@
 	<edmx:Reference Uri="http://docs.oasis-open.org/odata/odata/v4.0/errata03/csd01/complete/vocabularies/Org.OData.Core.V1.xml">
 		<edmx:Include Namespace="Org.OData.Core.V1" Alias="OData" />
 	</edmx:Reference>
+	<edmx:Reference Uri="http://docs.oasis-open.org/odata/odata/v4.0/errata03/csd01/complete/vocabularies/Org.OData.Measures.V1.xml">
+		<edmx:Include Namespace="Org.OData.Measures.V1" Alias="Measures"/>
+	</edmx:Reference>
 	<edmx:Reference Uri="http://redfish.dmtf.org/schemas/v1/RedfishExtensions_v1.xml">
 		<edmx:Include Namespace="RedfishExtensions.v1_0_0" Alias="Redfish"/>
 		<edmx:Include Namespace="Validation.v1_0_0" Alias="Validation"/>
@@ -25,6 +28,9 @@
 	</edmx:Reference>
 	<edmx:Reference Uri="http://redfish.dmtf.org/schemas/v1/PCIeDevice_v1.xml">
 		<edmx:Include Namespace="PCIeDevice"/>
+	</edmx:Reference>
+	<edmx:Reference Uri="http://redfish.dmtf.org/schemas/v1/PCIeSwitch_v1.xml">
+		<edmx:Include Namespace="PCIeSwitch"/>
 	</edmx:Reference>
 
 	<edmx:DataServices>
@@ -48,18 +54,35 @@
 				<NavigationProperty Name="ContainingSystem" Type="ComputerSystem.ComputerSystem" Nullable="false">
 					<Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
 					<Annotation Term="OData.Description" String="The ComputerSystem hosting this HSSInterface"/>
-					<Annotation Term="OData.LongDescription" String="This object shall only contain a reference to a ComputerSystem schema."/>
+					<Annotation Term="OData.LongDescription" String="This object shall only contain a reference that complies to the ComputerSystem schema."/>
 					<Annotation Term="OData.AutoExpandReferences"/>
 				</NavigationProperty>
+				<Property Name="SpeedGBps" Type="Edm.Int64">
+					<Annotation Term="Measures.Unit" String="GBytes/s"/>
+					<Annotation Term="OData.Permissions" EnumMember="OData.Permissions/Read"/>
+					<Annotation Term="OData.Description" String="The speed of current operating speed of this HSSInterface in GBps"/>
+					<Annotation Term="OData.LongDescription" String="The value of this property shall contain current operating speed of this HSSInterface in GBps"/>
+				</Property>
 				<Property Name="Width" Type="Edm.Int64">
 					<Annotation Term="OData.Permissions" EnumMember="OData.Permissions/Read"/>
 					<Annotation Term="OData.Description" String="operating width of the HSSInterface specified in number of lanes"/>
 					<Annotation Term="OData.LongDescription" String="The value of this property shall contain the operating width of the HSSInterface specified in number of lanes."/>
 				</Property>
+				<Property Name="MaxSpeedGBps" Type="Edm.Int64">
+					<Annotation Term="Measures.Unit" String="GBytes/s"/>
+					<Annotation Term="OData.Permissions" EnumMember="OData.Permissions/Read"/>
+					<Annotation Term="OData.Description" String="The speed of Maximum speed of this HSSInterface in GBps"/>
+					<Annotation Term="OData.LongDescription" String="The value of this property shall contain Maximum speed of this HSSInterface in GBps"/>
+				</Property>
+				<Property Name="MaxWidth" Type="Edm.Int64">
+					<Annotation Term="OData.Permissions" EnumMember="OData.Permissions/Read"/>
+					<Annotation Term="OData.Description" String="Maximum width of the HSSInterface specified in number of lanes"/>
+					<Annotation Term="OData.LongDescription" String="The value of this property shall contain the Maximum width of the HSSInterface specified in number of lanes."/>
+				</Property>
 				<NavigationProperty Name="Connections" Type="Collection(HSSConnection.HSSConnection)" Nullable="false">
 					<Annotation Term="OData.Permissions" EnumMember="OData.Permission/ReadWrite"/>
 					<Annotation Term="OData.Description" String="An array of references to the connections that use this interface."/>
-					<Annotation Term="OData.LongDescription" String="The value of this property shall be an array of references to the resources that represent the connections that use this interface and shall be of type HSSConnection."/>
+					<Annotation Term="OData.LongDescription" String="This object shall only contain an array of references that comply to the HSSConnection schema."/>
 					<Annotation Term="OData.AutoExpandReferences"/>
 				</NavigationProperty>
 			</EntityType>
@@ -68,13 +91,19 @@
 				<NavigationProperty Name="ConnectedSystems" Type="Collection(ComputerSystem.ComputerSystem)" Nullable="false">
 					<Annotation Term="OData.Permissions" EnumMember="OData.Permission/ReadWrite"/>
 					<Annotation Term="OData.Description" String="An array of references to the ComputerSystems connected to this interface."/>
-					<Annotation Term="OData.LongDescription" String="The value of this property shall be an array of references to the resources that represent the systems connected to this interface and shall be of type ComputerSystem."/>
+					<Annotation Term="OData.LongDescription" String="This object shall only contain an array of references that comply to the ComputerSystem schema."/>
 					<Annotation Term="OData.AutoExpandReferences"/>
 				</NavigationProperty>
 				<NavigationProperty Name="ConnectedDevices" Type="Collection(PCIeDevice.PCIeDevice)" Nullable="false">
 					<Annotation Term="OData.Permissions" EnumMember="OData.Permission/ReadWrite"/>
 					<Annotation Term="OData.Description" String="An array of references to the PCIeDevices connected to this interface."/>
-					<Annotation Term="OData.LongDescription" String="The value of this property shall be an array of references to the resources that represent the PCIe devices connected to this interface and shall be of type PCIeDevice."/>
+					<Annotation Term="OData.LongDescription" String="This object shall only contain an array of references that comply to the PCIeDevice schema."/>
+					<Annotation Term="OData.AutoExpandReferences"/>
+				</NavigationProperty>
+				<NavigationProperty Name="ConnectedSwitches" Type="Collection(PCIeSwitch.PCIeSwitch)" Nullable="false">
+					<Annotation Term="OData.Permissions" EnumMember="OData.Permission/ReadWrite"/>
+					<Annotation Term="OData.Description" String="An array of references to the PCIeSwitches connected to this interface."/>
+					<Annotation Term="OData.LongDescription" String="This object shall only contain an array of references that comply to the PCIeSwitch schema."/>
 					<Annotation Term="OData.AutoExpandReferences"/>
 				</NavigationProperty>
 			</ComplexType>

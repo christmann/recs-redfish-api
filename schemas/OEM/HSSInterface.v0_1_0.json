@@ -91,7 +91,7 @@
                             },
                             "readonly": false,
                             "description": "An array of references to the ComputerSystems connected to this interface.",
-                            "longDescription": "The value of this property shall be an array of references to the resources that represent the systems connected to this interface and shall be of type ComputerSystem."
+                            "longDescription": "This object shall only contain an array of references that comply to the ComputerSystem schema."
                         },
                         "ConnectedDevices@odata.count": {
                             "$ref": "http://redfish.dmtf.org/schemas/v1/odata.4.0.0.json#/definitions/count"
@@ -107,11 +107,37 @@
                             },
                             "readonly": false,
                             "description": "An array of references to the PCIeDevices connected to this interface.",
-                            "longDescription": "The value of this property shall be an array of references to the resources that represent the PCIe devices connected to this interface and shall be of type PCIeDevice."
+                            "longDescription": "This object shall only contain an array of references that comply to the PCIeDevice schema."
+                        },
+                        "ConnectedSwitches@odata.count": {
+                            "$ref": "http://redfish.dmtf.org/schemas/v1/odata.4.0.0.json#/definitions/count"
+                        },
+                        "ConnectedSwitches@odata.navigationLink": {
+                            "type": "string",
+                            "format": "uri"
+                        },
+                        "ConnectedSwitches": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "http://redfish.dmtf.org/schemas/v1/PCIeSwitch.json#/definitions/PCIeSwitch"
+                            },
+                            "readonly": false,
+                            "description": "An array of references to the PCIeSwitches connected to this interface.",
+                            "longDescription": "This object shall only contain an array of references that comply to the PCIeSwitch schema."
                         }
                     },
                     "readonly": true,
                     "description": "The links object contains the links to other resources that are related to this resource."
+                },
+                "SpeedGBps": {
+                    "type": [
+                        "number",
+                        "null"
+                    ],
+                    "units": "GBytes/s",
+                    "readonly": true,
+                    "description": "The speed of current operating speed of this HSSInterface in GBps",
+                    "longDescription": "The value of this property shall contain current operating speed of this HSSInterface in GBps"
                 },
                 "Width": {
                     "type": [
@@ -122,11 +148,30 @@
                     "description": "operating width of the HSSInterface specified in number of lanes",
                     "longDescription": "The value of this property shall contain the operating width of the HSSInterface specified in number of lanes."
                 },
+                "MaxSpeedGBps": {
+                    "type": [
+                        "number",
+                        "null"
+                    ],
+                    "units": "GBytes/s",
+                    "readonly": true,
+                    "description": "The speed of Maximum speed of this HSSInterface in GBps",
+                    "longDescription": "The value of this property shall contain Maximum speed of this HSSInterface in GBps"
+                },
+                "MaxWidth": {
+                    "type": [
+                        "number",
+                        "null"
+                    ],
+                    "readonly": true,
+                    "description": "Maximum width of the HSSInterface specified in number of lanes",
+                    "longDescription": "The value of this property shall contain the Maximum width of the HSSInterface specified in number of lanes."
+                },
                 "ContainingSystem": {
                     "$ref": "http://redfish.dmtf.org/schemas/v1/ComputerSystem.json#/definitions/ComputerSystem",
                     "readonly": true,
                     "description": "The ComputerSystem hosting this HSSInterface",
-                    "longDescription": "This object shall only contain a reference to a ComputerSystem schema."
+                    "longDescription": "This object shall only contain a reference that complies to the ComputerSystem schema."
                 },
                 "Connections@odata.count": {
                     "$ref": "http://redfish.dmtf.org/schemas/v1/odata.4.0.0.json#/definitions/count"
@@ -142,7 +187,7 @@
                     },
                     "readonly": false,
                     "description": "An array of references to the connections that use this interface.",
-                    "longDescription": "The value of this property shall be an array of references to the resources that represent the connections that use this interface and shall be of type HSSConnection."
+                    "longDescription": "This object shall only contain an array of references that comply to the HSSConnection schema."
                 }
             },
             "required": [

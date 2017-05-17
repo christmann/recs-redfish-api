@@ -54,12 +54,12 @@
 			</EntityType>
 
 			<ComplexType Name="Links" BaseType="Resource.Links">
-		<NavigationProperty Name="ComposedIn" Type="ComposedNode.ComposedNode">
-			<Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
-			<Annotation Term="OData.Description" String="This is a link to the ComposedNode, this ComposedNode is composed in."/>
-			<Annotation Term="OData.LongDescription" String="This object shall only contain a reference to a resource that comply to the ComposedNode schema."/>
-			<Annotation Term="OData.AutoExpandReferences"/>
-		</NavigationProperty>
+				<NavigationProperty Name="ComposedIn" Type="ComposedNode.ComposedNode">
+					<Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+					<Annotation Term="OData.Description" String="This is a link to the ComposedNode, this ComposedNode is composed in."/>
+					<Annotation Term="OData.LongDescription" String="This object shall only contain a reference to a resource that comply to the ComposedNode schema."/>
+					<Annotation Term="OData.AutoExpandReferences"/>
+				</NavigationProperty>
 			</ComplexType>
 
 		</Schema>

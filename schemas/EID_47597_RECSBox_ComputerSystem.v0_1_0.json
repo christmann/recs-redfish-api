@@ -24,14 +24,21 @@
                     "readonly": true,
                     "description": "The links object contains the links to other resources that are related to this resource."
                 },
-                "HSSInterface": {
-                    "anyOf": [
-                        {"$ref": "http://redfish.dmtf.org/schemas/v1/HSSInterface.json#/definitions/HSSInterface"},
-                        {"type": "null"}
-                    ],
+                "HSSInterfaces@odata.count": {
+                    "$ref": "http://redfish.dmtf.org/schemas/v1/odata.4.0.0.json#/definitions/count"
+                },
+                "HSSInterfaces@odata.navigationLink": {
+                    "type": "string",
+                    "format": "uri"
+                },
+                "HSSInterfaces": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "http://redfish.dmtf.org/schemas/v1/HSSInterface.json#/definitions/HSSInterface"
+                    },
                     "readonly": true,
-                    "description": "The HSSInterface hosted by this system",
-                    "longDescription": "This object shall only contain a reference to a HSSInterface schema."
+                    "description": "An array of references to the HSSInterfaces hosted by this system",
+                    "longDescription": "This object shall only contain an array of references that comply to the HSSInterface schema."
                 }
             },
             "description": "RECS|Box ComputerSystem extension",
