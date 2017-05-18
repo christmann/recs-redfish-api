@@ -29,6 +29,16 @@
 				<Annotation Term="OData.LongDescription" String="This is the schema definition for the ComposedNode resource. It represents the properties of a ComposedNode." />
 			</EntityType>
 
+			<Action Name="Reset" IsBound="true">
+				<Parameter Name="ComposedNode" Type="ComposedNode.v0_1_0.Actions"/>
+				<Parameter Name="ResetType" Type="Resource.ResetType">
+					<Annotation Term="OData.Description" String="The type of reset to be performed."/>
+					<Annotation Term="OData.LongDescription" String="This defines the property name for the action."/>
+				</Parameter>
+				<Annotation Term="OData.Description" String="This action is used to reset all systems within this ComposedNode."/>
+				<Annotation Term="OData.LongDescription" String="This action shall perform a reset of all systems within this ComposedNode.  For systems which implement APCI Power Button functionality, the PushPowerButton value shall perform or emulate an ACPI Power Button push.  The ForceOff value shall remove power from the system or perform an ACPI Power Button Override (commonly known as a 4-second hold of the Power Button).  The ForceRestart value shall perform a ForceOff action followed by a On action."/>
+			</Action>
+
 		</Schema>
 
 		<Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="ComposedNode.v0_1_0">
@@ -38,6 +48,10 @@
 				<Property Name="Links" Type="ComposedNode.v0_1_0.Links" Nullable="false">
 					<Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
 					<Annotation Term="OData.Description" String="The links object contains the links to other resources that are related to this resource."/>
+				</Property>
+				<Property Name="Actions" Type="ComposedNode.v0_1_0.Actions" Nullable="false">
+					<Annotation Term="OData.Description" String="The available actions for this resource."/>
+					<Annotation Term="OData.LongDescription" String="The Actions property shall contain the available actions for this resource."/>
 				</Property>
 				<NavigationProperty Name="ContainedNodes" Type="Collection(Resource.Item)" Nullable="false">
 					<Annotation Term="OData.Permissions" EnumMember="OData.Permission/ReadWrite"/>
@@ -60,6 +74,15 @@
 					<Annotation Term="OData.LongDescription" String="This object shall only contain a reference to a resource that comply to the ComposedNode schema."/>
 					<Annotation Term="OData.AutoExpandReferences"/>
 				</NavigationProperty>
+			</ComplexType>
+
+			<ComplexType Name="Actions">
+				<Annotation Term="OData.AdditionalProperties" Bool="false"/>
+				<Property Name="Oem" Type="ComposedNode.v0_1_0.OemActions" Nullable="false"/>
+			</ComplexType>
+
+			<ComplexType Name="OemActions">
+				<Annotation Term="OData.AdditionalProperties" Bool="true"/>
 			</ComplexType>
 
 		</Schema>
