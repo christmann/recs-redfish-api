@@ -139,6 +139,7 @@
                         "null"
                     ],
                     "units": "GBytes/s",
+                    "minimum": 0,
                     "readonly": true,
                     "description": "The speed of current operating speed of this PCIe Port in GBps",
                     "longDescription": "The value of this property shall contain current operating speed of this PCIe Port in GBps"
@@ -148,6 +149,7 @@
                         "number",
                         "null"
                     ],
+                    "minimum": 0,
                     "readonly": true,
                     "description": "operating width of the PCIe Port specified in number of PCIe lanes",
                     "longDescription": "The value of this property shall contain the operating width of the PCIe Port specified in number of PCIe lanes."
@@ -158,6 +160,7 @@
                         "null"
                     ],
                     "units": "GBytes/s",
+                    "minimum": 0,
                     "readonly": true,
                     "description": "The speed of Maximum speed of this PCIe Port in GBps",
                     "longDescription": "The value of this property shall contain Maximum speed of this PCIe Port in GBps"
@@ -167,6 +170,7 @@
                         "number",
                         "null"
                     ],
+                    "minimum": 0,
                     "readonly": true,
                     "description": "Maximum width of the PCIe Port specified in number of PCIe lanes",
                     "longDescription": "The value of this property shall contain the Maximum width of the PCIe Port specified in number of PCIe lanes."

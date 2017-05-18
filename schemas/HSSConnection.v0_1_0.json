@@ -80,6 +80,7 @@
                         "number",
                         "null"
                     ],
+                    "minimum": 0,
                     "readonly": true,
                     "description": "Connection width of the HSSConnection specified in number of lanes",
                     "longDescription": "The value of this property shall contain the connection width of the HSSConnection specified in number of lanes."

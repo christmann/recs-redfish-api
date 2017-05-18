@@ -25,10 +25,10 @@ This is the schema definition for the PCIePort resource. It represents the prope
 <tr><td>}</td><td></td><td></td><td></td><td></td><td></td></tr>
 <tr><td>PortId</td><td>string</td><td>Yes</td><td></td><td>read-write</td><td>Identifier of the port </td></tr>
 <tr><td>PortType</td><td>string</td><td>Yes</td><td></td><td>read-only</td><td>The type of PCIe Port.<br />Possible Values:<br />&nbsp;&nbsp;&nbsp;&nbsp;HostPort: This PCIe port is intended for connecting to a computer system<br />&nbsp;&nbsp;&nbsp;&nbsp;DevicePort: This PCIe port is intended for connecting to a PCIe device.<br />&nbsp;&nbsp;&nbsp;&nbsp;InterSwitchPort: This PCIe port is intended for connecting to another PCIe switch.</td></tr>
-<tr><td>SpeedGBps</td><td>number</td><td>Yes</td><td></td><td>read-only</td><td>The speed of current operating speed of this PCIe Port in GBps<br />Unit: GBytes/s</td></tr>
-<tr><td>Width</td><td>number</td><td>Yes</td><td></td><td>read-only</td><td>operating width of the PCIe Port specified in number of PCIe lanes</td></tr>
-<tr><td>MaxSpeedGBps</td><td>number</td><td>Yes</td><td></td><td>read-only</td><td>The speed of Maximum speed of this PCIe Port in GBps<br />Unit: GBytes/s</td></tr>
-<tr><td>MaxWidth</td><td>number</td><td>Yes</td><td></td><td>read-only</td><td>Maximum width of the PCIe Port specified in number of PCIe lanes</td></tr>
+<tr><td>SpeedGBps</td><td>number</td><td>Yes</td><td></td><td>read-only</td><td>The speed of current operating speed of this PCIe Port in GBps<br />Unit: GBytes/s<br />Minimum: 0</td></tr>
+<tr><td>Width</td><td>number</td><td>Yes</td><td></td><td>read-only</td><td>operating width of the PCIe Port specified in number of PCIe lanes<br />Minimum: 0</td></tr>
+<tr><td>MaxSpeedGBps</td><td>number</td><td>Yes</td><td></td><td>read-only</td><td>The speed of Maximum speed of this PCIe Port in GBps<br />Unit: GBytes/s<br />Minimum: 0</td></tr>
+<tr><td>MaxWidth</td><td>number</td><td>Yes</td><td></td><td>read-only</td><td>Maximum width of the PCIe Port specified in number of PCIe lanes<br />Minimum: 0</td></tr>
 </table>
 </body>
 </html>

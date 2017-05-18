@@ -23,6 +23,7 @@
 	</edmx:Reference>
 	<edmx:Reference Uri="http://redfish.dmtf.org/schemas/v1/RedfishExtensions_v1.xml">
 		<edmx:Include Namespace="RedfishExtensions.v1_0_0" Alias="Redfish"/>
+		<edmx:Include Namespace="Validation.v1_0_0" Alias="Validation"/>
 	</edmx:Reference>
 	<edmx:Reference Uri="http://redfish.dmtf.org/schemas/v1/Resource_v1.xml">
 		<edmx:Include Namespace="Resource"/>
@@ -88,6 +89,7 @@
 					<Annotation Term="OData.Permissions" EnumMember="OData.Permission/ReadWrite"/>
 					<Annotation Term="OData.Description" String="Port speed"/>
 					<Annotation Term="OData.LongDescription" String="Port speed" />
+					<Annotation Term="Validation.Minimum" Int="0"/>
 				</Property>
 				<Property Name="NeighborInfo" Type="EthernetSwitchPort.v1_0_0.NeighborInfo">
 					<Annotation Term="OData.Description" String="For Upstream port type this property provide information about neighbor switch (and switch port if available) connected to this port"/>
@@ -101,6 +103,7 @@
 					<Annotation Term="OData.Permissions" EnumMember="OData.Permission/ReadWrite"/>
 					<Annotation Term="OData.Description" String="MAC frame size in bytes"/>
 					<Annotation Term="OData.LongDescription" String="MAC frame size in bytes" />
+					<Annotation Term="Validation.Minimum" Int="0"/>
 				</Property>
 				<Property Name="Autosense" Type="Edm.Boolean">
 					<Annotation Term="OData.Permissions" EnumMember="OData.Permission/ReadWrite"/>

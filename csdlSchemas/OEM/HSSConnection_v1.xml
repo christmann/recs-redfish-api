@@ -57,6 +57,7 @@
 					<Annotation Term="OData.Permissions" EnumMember="OData.Permissions/Read"/>
 					<Annotation Term="OData.Description" String="Connection width of the HSSConnection specified in number of lanes"/>
 					<Annotation Term="OData.LongDescription" String="The value of this property shall contain the connection width of the HSSConnection specified in number of lanes."/>
+					<Annotation Term="Validation.Minimum" Int="0"/>
 				</Property>
 			</EntityType>
 

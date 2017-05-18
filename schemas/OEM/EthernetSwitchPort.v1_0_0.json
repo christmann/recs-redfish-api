@@ -97,6 +97,7 @@
                         "number",
                         "null"
                     ],
+                    "minimum": 0,
                     "readonly": false,
                     "description": "Port speed",
                     "longDescription": "Port speed"
@@ -122,6 +123,7 @@
                         "number",
                         "null"
                     ],
+                    "minimum": 0,
                     "readonly": false,
                     "description": "MAC frame size in bytes",
                     "longDescription": "MAC frame size in bytes"

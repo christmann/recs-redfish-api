@@ -67,6 +67,7 @@
 					<Annotation Term="OData.Permissions" EnumMember="OData.Permissions/ReadWrite"/>
 					<Annotation Term="OData.Description" String="Maximum number of MR zones supported by the switch"/>
 					<Annotation Term="OData.LongDescription" String=""/>
+					<Annotation Term="Validation.Minimum" Int="0"/>
 				</Property>
 				<Property Name="Manufacturer" Type="Edm.String">
 					<Annotation Term="OData.Permissions" EnumMember="OData.Permissions/Read"/>

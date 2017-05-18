@@ -70,22 +70,26 @@
 					<Annotation Term="OData.Permissions" EnumMember="OData.Permissions/Read"/>
 					<Annotation Term="OData.Description" String="The speed of current operating speed of this PCIe Port in GBps"/>
 					<Annotation Term="OData.LongDescription" String="The value of this property shall contain current operating speed of this PCIe Port in GBps"/>
+					<Annotation Term="Validation.Minimum" Int="0"/>
 				</Property>
 				<Property Name="Width" Type="Edm.Int64">
 					<Annotation Term="OData.Permissions" EnumMember="OData.Permissions/Read"/>
 					<Annotation Term="OData.Description" String="operating width of the PCIe Port specified in number of PCIe lanes"/>
 					<Annotation Term="OData.LongDescription" String="The value of this property shall contain the operating width of the PCIe Port specified in number of PCIe lanes."/>
+					<Annotation Term="Validation.Minimum" Int="0"/>
 				</Property>
 				<Property Name="MaxSpeedGBps" Type="Edm.Int64">
 					<Annotation Term="Measures.Unit" String="GBytes/s"/>
 					<Annotation Term="OData.Permissions" EnumMember="OData.Permissions/Read"/>
 					<Annotation Term="OData.Description" String="The speed of Maximum speed of this PCIe Port in GBps"/>
 					<Annotation Term="OData.LongDescription" String="The value of this property shall contain Maximum speed of this PCIe Port in GBps"/>
+					<Annotation Term="Validation.Minimum" Int="0"/>
 				</Property>
 				<Property Name="MaxWidth" Type="Edm.Int64">
 					<Annotation Term="OData.Permissions" EnumMember="OData.Permissions/Read"/>
 					<Annotation Term="OData.Description" String="Maximum width of the PCIe Port specified in number of PCIe lanes"/>
 					<Annotation Term="OData.LongDescription" String="The value of this property shall contain the Maximum width of the PCIe Port specified in number of PCIe lanes."/>
+					<Annotation Term="Validation.Minimum" Int="0"/>
 				</Property>
 			</EntityType>
 

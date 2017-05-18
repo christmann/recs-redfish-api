@@ -187,6 +187,7 @@
                         "number",
                         "null"
                     ],
+                    "minimum": 0,
                     "readonly": false,
                     "description": "Maximum number of MR zones supported by the switch",
                     "longDescription": ""
