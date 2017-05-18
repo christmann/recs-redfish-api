@@ -88,6 +88,12 @@
 					<Annotation Term="OData.LongDescription" String="This object shall only contain an array of references that comply to the Backplane schema."/>
 					<Annotation Term="OData.AutoExpandReferences"/>
 				</NavigationProperty>
+				<Property Name="BladeSlot" Type="Edm.Int64">
+					<Annotation Term="OData.Permissions" EnumMember="OData.Permissions/Read"/>
+					<Annotation Term="OData.Description" String="The zero-based position of the blade slot containing this Baseboard within the Chassis."/>
+					<Annotation Term="OData.LongDescription" String="The value of this property shall contain the zero-based numeric position of the blade slot containing this Baseboard within the Chassis."/>
+					<Annotation Term="Validation.Minimum" Int="0"/>
+				</Property>
 			</EntityType>
 
 			<ComplexType Name="Links" BaseType="Resource.Links">
