@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>index</title>
+</head>
+<body>
+<h1 id="recs|box redfish api v0.1.0">RECS|Box Redfish API v0.1.0</h1>
+This is the documentation of the RECS|Box Redfish API v0.1.0.<br />
+The entry point of this API (and any Redfish API) is the <a href="serviceroot.html#serviceroot">ServiceRoot</a>.
+One should start exploring at that Schema.
+<h2 id="referenced versions">Referenced Versions</h2>
+<ul>
+<li>DMTF Redfish Scalable Platforms Management API Specification <a href="http://redfish.dmtf.org/schemas/DSP0266_1.1.html">1.1.0</a></li>
+<li>DMTF Redfish Schema Version <a href="http://www.dmtf.org/sites/default/files/standards/documents/DSP8010_2016.3.zip">2016.3</a></li>
+<li>SINA Swordfish Schema API Specification <a href="https://www.snia.org/sites/default/files/SMI/swordfish/v103/Swordfish_v1.0.3_Specification.html">1.0.3</a> and <a href="http://www.snia.org/sites/default/files/technical_work/Swordfish/Swordfish_v1.0.3.zip">Schema</a></li>
+</ul>
+All other referred versions, such as JSON, ODATA and SSDP, are corresponding to the <a href="http://redfish.dmtf.org/schemas/DSP0266_1.1.html#normative-references">normative references</a> of the Redfish Scalable Platforms Management API Specification of the version noted above.
+<h2 id="endpoint definitions">Endpoint Definitions</h2>
+Here will be a table of all URIs, provided by this API.
+<h2 id="schema definitions">Schema Definitions</h2>
+<table class="datatable">
+<tr>
+<td><a href="accountservice.html#accountservice">AccountService</a></td>
+<td><a href="ethernetswitchstaticmaccollection.html#ethernetswitchstaticmaccollection">EthernetSwitchStaticMACCollection</a></td>
+<td><a href="memorymetrics.html#memorymetrics">MemoryMetrics</a></td>
+<td><a href="sessioncollection.html#sessioncollection">SessionCollection</a></td>
+</tr>
+<tr>
+<td><a href="backplane.html#backplane">Backplane</a></td>
+<td><a href="eventdestination.html#eventdestination">EventDestination</a></td>
+<td><a href="messageregistryfile.html#messageregistryfile">MessageRegistryFile</a></td>
+<td><a href="sessionservice.html#sessionservice">SessionService</a></td>
+</tr>
+<tr>
+<td><a href="baseboard.html#baseboard">Baseboard</a></td>
+<td><a href="eventdestinationcollection.html#eventdestinationcollection">EventDestinationCollection</a></td>
+<td><a href="messageregistryfilecollection.html#messageregistryfilecollection">MessageRegistryFileCollection</a></td>
+<td><a href="simplestorage.html#simplestorage">SimpleStorage</a></td>
+</tr>
+<tr>
+<td><a href="bios.html#bios">Bios</a></td>
+<td><a href="eventservice.html#eventservice">EventService</a></td>
+<td><a href="networkadapter.html#networkadapter">NetworkAdapter</a></td>
+<td><a href="simplestoragecollection.html#simplestoragecollection">SimpleStorageCollection</a></td>
+</tr>
+<tr>
+<td><a href="chassis.html#chassis">Chassis</a></td>
+<td><a href="fabric.html#fabric">Fabric</a></td>
+<td><a href="networkadaptercollection.html#networkadaptercollection">NetworkAdapterCollection</a></td>
+<td><a href="softwareinventory.html#softwareinventory">SoftwareInventory</a></td>
+</tr>
+<tr>
+<td><a href="chassiscollection.html#chassiscollection">ChassisCollection</a></td>
+<td><a href="fabriccollection.html#fabriccollection">FabricCollection</a></td>
+<td><a href="networkdevicefunction.html#networkdevicefunction">NetworkDeviceFunction</a></td>
+<td><a href="softwareinventorycollection.html#softwareinventorycollection">SoftwareInventoryCollection</a></td>
+</tr>
+<tr>
+<td><a href="classofservice.html#classofservice">ClassOfService</a></td>
+<td><a href="fileshare.html#fileshare">FileShare</a></td>
+<td><a href="networkdevicefunctioncollection.html#networkdevicefunctioncollection">NetworkDeviceFunctionCollection</a></td>
+<td><a href="storage.html#storage">Storage</a></td>
+</tr>
+<tr>
+<td><a href="classofservicecollection.html#classofservicecollection">ClassOfServiceCollection</a></td>
+<td><a href="filesystem.html#filesystem">FileSystem</a></td>
+<td><a href="networkinterface.html#networkinterface">NetworkInterface</a></td>
+<td><a href="storagecollection.html#storagecollection">StorageCollection</a></td>
+</tr>
+<tr>
+<td><a href="composednode.html#composednode">ComposedNode</a></td>
+<td><a href="filesystemcollection.html#filesystemcollection">FileSystemCollection</a></td>
+<td><a href="networkinterfacecollection.html#networkinterfacecollection">NetworkInterfaceCollection</a></td>
+<td><a href="storagegroup.html#storagegroup">StorageGroup</a></td>
+</tr>
+<tr>
+<td><a href="composednodecollection.html#composednodecollection">ComposedNodeCollection</a></td>
+<td><a href="hostinterface.html#hostinterface">HostInterface</a></td>
+<td><a href="networkport.html#networkport">NetworkPort</a></td>
+<td><a href="storagegroupcollection.html#storagegroupcollection">StorageGroupCollection</a></td>
+</tr>
+<tr>
+<td><a href="computersystem.html#computersystem">ComputerSystem</a></td>
+<td><a href="hostinterfacecollection.html#hostinterfacecollection">HostInterfaceCollection</a></td>
+<td><a href="networkportcollection.html#networkportcollection">NetworkPortCollection</a></td>
+<td><a href="storagepool.html#storagepool">StoragePool</a></td>
+</tr>
+<tr>
+<td><a href="computersystemcollection.html#computersystemcollection">ComputerSystemCollection</a></td>
+<td><a href="hssconnection.html#hssconnection">HSSConnection</a></td>
+<td><a href="pciedevice.html#pciedevice">PCIeDevice</a></td>
+<td><a href="storagepoolcollection.html#storagepoolcollection">StoragePoolCollection</a></td>
+</tr>
+<tr>
+<td><a href="dataprotectionloscapabilities.html#dataprotectionloscapabilities">DataProtectionLoSCapabilities</a></td>
+<td><a href="hssinterface.html#hssinterface">HSSInterface</a></td>
+<td><a href="pciefunction.html#pciefunction">PCIeFunction</a></td>
+<td><a href="storageservice.html#storageservice">StorageService</a></td>
+</tr>
+<tr>
+<td><a href="datasecurityloscapabilities.html#datasecurityloscapabilities">DataSecurityLoSCapabilities</a></td>
+<td><a href="ioconnectivityloscapabilities.html#ioconnectivityloscapabilities">IOConnectivityLoSCapabilities</a></td>
+<td><a href="pcieport.html#pcieport">PCIePort</a></td>
+<td><a href="storageservicecollection.html#storageservicecollection">StorageServiceCollection</a></td>
+</tr>
+<tr>
+<td><a href="datastorageloscapabilities.html#datastorageloscapabilities">DataStorageLoSCapabilities</a></td>
+<td><a href="ioperformanceloscapabilities.html#ioperformanceloscapabilities">IOPerformanceLoSCapabilities</a></td>
+<td><a href="pcieportcollection.html#pcieportcollection">PCIePortCollection</a></td>
+<td><a href="storagesystemcollection.html#storagesystemcollection">StorageSystemCollection</a></td>
+</tr>
+<tr>
+<td><a href="drive.html#drive">Drive</a></td>
+<td><a href="jsonschemafile.html#jsonschemafile">JsonSchemaFile</a></td>
+<td><a href="pcieswitch.html#pcieswitch">PCIeSwitch</a></td>
+<td><a href="switch.html#switch">Switch</a></td>
+</tr>
+<tr>
+<td><a href="drivecollection.html#drivecollection">DriveCollection</a></td>
+<td><a href="jsonschemafilecollection.html#jsonschemafilecollection">JsonSchemaFileCollection</a></td>
+<td><a href="pcieswitchcollection.html#pcieswitchcollection">PCIeSwitchCollection</a></td>
+<td><a href="switchcollection.html#switchcollection">SwitchCollection</a></td>
+</tr>
+<tr>
+<td><a href="endpoint.html#endpoint">Endpoint</a></td>
+<td><a href="logentry.html#logentry">LogEntry</a></td>
+<td><a href="pciezone.html#pciezone">PCIeZone</a></td>
+<td><a href="task.html#task">Task</a></td>
+</tr>
+<tr>
+<td><a href="endpointcollection.html#endpointcollection">EndpointCollection</a></td>
+<td><a href="logentrycollection.html#logentrycollection">LogEntryCollection</a></td>
+<td><a href="pciezonecollection.html#pciezonecollection">PCIeZoneCollection</a></td>
+<td><a href="taskcollection.html#taskcollection">TaskCollection</a></td>
+</tr>
+<tr>
+<td><a href="endpointgroup.html#endpointgroup">EndpointGroup</a></td>
+<td><a href="logservice.html#logservice">LogService</a></td>
+<td><a href="port.html#port">Port</a></td>
+<td><a href="taskservice.html#taskservice">TaskService</a></td>
+</tr>
+<tr>
+<td><a href="endpointgroupcollection.html#endpointgroupcollection">EndpointGroupCollection</a></td>
+<td><a href="logservicecollection.html#logservicecollection">LogServiceCollection</a></td>
+<td><a href="portcollection.html#portcollection">PortCollection</a></td>
+<td><a href="thermal.html#thermal">Thermal</a></td>
+</tr>
+<tr>
+<td><a href="ethernetinterface.html#ethernetinterface">EthernetInterface</a></td>
+<td><a href="manager.html#manager">Manager</a></td>
+<td><a href="power.html#power">Power</a></td>
+<td><a href="updateservice.html#updateservice">UpdateService</a></td>
+</tr>
+<tr>
+<td><a href="ethernetinterfacecollection.html#ethernetinterfacecollection">EthernetInterfaceCollection</a></td>
+<td><a href="manageraccount.html#manageraccount">ManagerAccount</a></td>
+<td><a href="privilegeregistry.html#privilegeregistry">PrivilegeRegistry</a></td>
+<td><a href="virtualmedia.html#virtualmedia">VirtualMedia</a></td>
+</tr>
+<tr>
+<td><a href="ethernetswitch.html#ethernetswitch">EthernetSwitch</a></td>
+<td><a href="manageraccountcollection.html#manageraccountcollection">ManagerAccountCollection</a></td>
+<td><a href="processor.html#processor">Processor</a></td>
+<td><a href="virtualmediacollection.html#virtualmediacollection">VirtualMediaCollection</a></td>
+</tr>
+<tr>
+<td><a href="ethernetswitchacl.html#ethernetswitchacl">EthernetSwitchACL</a></td>
+<td><a href="managercollection.html#managercollection">ManagerCollection</a></td>
+<td><a href="processorcollection.html#processorcollection">ProcessorCollection</a></td>
+<td><a href="vlannetworkinterface.html#vlannetworkinterface">VLanNetworkInterface</a></td>
+</tr>
+<tr>
+<td><a href="ethernetswitchaclcollection.html#ethernetswitchaclcollection">EthernetSwitchACLCollection</a></td>
+<td><a href="managernetworkprotocol.html#managernetworkprotocol">ManagerNetworkProtocol</a></td>
+<td><a href="role.html#role">Role</a></td>
+<td><a href="vlannetworkinterfacecollection.html#vlannetworkinterfacecollection">VLanNetworkInterfaceCollection</a></td>
+</tr>
+<tr>
+<td><a href="ethernetswitchaclrule.html#ethernetswitchaclrule">EthernetSwitchACLRule</a></td>
+<td><a href="memory.html#memory">Memory</a></td>
+<td><a href="rolecollection.html#rolecollection">RoleCollection</a></td>
+<td><a href="volume.html#volume">Volume</a></td>
+</tr>
+<tr>
+<td><a href="ethernetswitchaclrulecollection.html#ethernetswitchaclrulecollection">EthernetSwitchACLRuleCollection</a></td>
+<td><a href="memorychunks.html#memorychunks">MemoryChunks</a></td>
+<td><a href="secureboot.html#secureboot">SecureBoot</a></td>
+<td><a href="volumecollection.html#volumecollection">VolumeCollection</a></td>
+</tr>
+<tr>
+<td><a href="ethernetswitchcollection.html#ethernetswitchcollection">EthernetSwitchCollection</a></td>
+<td><a href="memorychunkscollection.html#memorychunkscollection">MemoryChunksCollection</a></td>
+<td><a href="serialinterface.html#serialinterface">SerialInterface</a></td>
+<td><a href="zone.html#zone">Zone</a></td>
+</tr>
+<tr>
+<td><a href="ethernetswitchport.html#ethernetswitchport">EthernetSwitchPort</a></td>
+<td><a href="memorycollection.html#memorycollection">MemoryCollection</a></td>
+<td><a href="serialinterfacecollection.html#serialinterfacecollection">SerialInterfaceCollection</a></td>
+<td><a href="zonecollection.html#zonecollection">ZoneCollection</a></td>
+</tr>
+<tr>
+<td><a href="ethernetswitchportcollection.html#ethernetswitchportcollection">EthernetSwitchPortCollection</a></td>
+<td><a href="memorydomain.html#memorydomain">MemoryDomain</a></td>
+<td><a href="serviceroot.html#serviceroot">ServiceRoot</a></td>
+</tr>
+<tr>
+<td><a href="ethernetswitchstaticmac.html#ethernetswitchstaticmac">EthernetSwitchStaticMAC</a></td>
+<td><a href="memorydomaincollection.html#memorydomaincollection">MemoryDomainCollection</a></td>
+<td><a href="session.html#session">Session</a></td>
+</tr>
+</table>
+</body>
+</html>
