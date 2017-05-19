@@ -5,6 +5,12 @@
 <title>DataSecurityLoSCapabilities</title>
 <style type="text/css">
 body { font-family: Georgia, 'Times New Roman', Times, serif; }
+h1 { font-size: 2.2em; }
+h2 { font-size: 1.8em; }
+h3 { font-size: 1.45em; }
+h4 { font-size: 1.25em; }
+h5 { font-size: 1.1em; }
+h6 { font-size: 1.0em; }
 a:link { color: #034A4A; }
 a:visited { color: #567D7D; }
 a:hover { color: #9CB7B7; }
@@ -24,6 +30,7 @@ table { border-collapse: collapse; }
 <h1 id="datasecurityloscapabilities">DataSecurityLoSCapabilities</h1>
 <h2 id="schema definition">Schema Definition</h2>
 Describe data security capabilities.
+<h3 id="properties">Properties</h3>
 <table class="datatable">
 <tr><th>Property</th><th>Type</th><th>Nullable</th><th>Required</th><th>Permission</th><th>Description</th></tr>
 <tr><td>@odata.context</td><td>string</td><td></td><td></td><td>read-only</td><td>The OData description of a payload.<br />Format: uri</td></tr>
@@ -57,5 +64,7 @@ Describe data security capabilities.
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;DataSanitizationPolicy</td><td>string</td><td>Yes</td><td></td><td>read-write</td><td>Data sanitization policy.<br />Possible Values:<br />&nbsp;&nbsp;&nbsp;&nbsp;None: No sanitization.<br />&nbsp;&nbsp;&nbsp;&nbsp;Clear: Sanitize data in all user-addressable storage locations for protection against simple non-invasive data recovery techniques.<br />&nbsp;&nbsp;&nbsp;&nbsp;CryptographicErase: Leverages the encryption of target data by enabling sanitization of the target data's encryption key. This leaves only the ciphertext remaining on the media, effectively sanitizing the data by preventing read-access. For more information, see NIST800-88 and ISO/IEC 27040.</td></tr>
 <tr><td>} ]</td><td></td><td></td><td></td><td></td><td></td></tr>
 </table>
+<h2 id="operations">Operations</h2>
+Here the URL endpoints and corresponding operations, such as GET, PATCH, PATCH and DELETE, will be described with JSON payload examples.
 </body>
 </html>

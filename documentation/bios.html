@@ -5,6 +5,12 @@
 <title>Bios</title>
 <style type="text/css">
 body { font-family: Georgia, 'Times New Roman', Times, serif; }
+h1 { font-size: 2.2em; }
+h2 { font-size: 1.8em; }
+h3 { font-size: 1.45em; }
+h4 { font-size: 1.25em; }
+h5 { font-size: 1.1em; }
+h6 { font-size: 1.0em; }
 a:link { color: #034A4A; }
 a:visited { color: #567D7D; }
 a:hover { color: #9CB7B7; }
@@ -24,6 +30,7 @@ table { border-collapse: collapse; }
 <h1 id="bios">Bios</h1>
 <h2 id="schema definition">Schema Definition</h2>
 Bios contains properties surrounding a BIOS Attribute Registry (where the system-specific BIOS attributes are described) and the Actions needed to perform changes to BIOS settings, which typically require a system reset to apply.
+<h3 id="properties">Properties</h3>
 <table class="datatable">
 <tr><th>Property</th><th>Type</th><th>Nullable</th><th>Required</th><th>Permission</th><th>Description</th></tr>
 <tr><td>@odata.context</td><td>string</td><td></td><td></td><td>read-only</td><td>The OData description of a payload.<br />Format: uri</td></tr>
@@ -47,17 +54,17 @@ Bios contains properties surrounding a BIOS Attribute Registry (where the system
 <tr><td>}</td><td></td><td></td><td></td><td></td><td></td></tr>
 <tr><td>Attributes { }</td><td>object</td><td></td><td></td><td>read-write</td><td>This is the manufacturer/provider specific list of BIOS attributes.</td></tr>
 </table>
-<h2 id="actions definition">Actions Definition</h2>
-<h3 id="#bios.changepassword">#Bios.ChangePassword</h3>
-<h4 id="parameters">Parameters</h4>
+<h3 id="action parameters">Action Parameters</h3>
+<h4 id="#bios.changepassword">#Bios.ChangePassword</h4>
 <table class="datatable">
 <tr><th>Property</th><th>Type</th><th>Nullable</th><th>Required</th><th>Permission</th><th>Description</th></tr>
 <tr><td>PasswordName</td><td>string</td><td></td><td>POST</td><td>read-write</td><td>The name of the BIOS password to change.</td></tr>
 <tr><td>OldPassword</td><td>string</td><td></td><td>POST</td><td>read-write</td><td>The value of the existing password.</td></tr>
 <tr><td>NewPassword</td><td>string</td><td></td><td>POST</td><td>read-write</td><td>The value of the new BIOS password.</td></tr>
 </table>
-<h3 id="#bios.resetbios">#Bios.ResetBios</h3>
-<h4 id="parameters">Parameters</h4>
+<h4 id="#bios.resetbios">#Bios.ResetBios</h4>
 This action has no parameters.
+<h2 id="operations">Operations</h2>
+Here the URL endpoints and corresponding operations, such as GET, PATCH, PATCH and DELETE, will be described with JSON payload examples.
 </body>
 </html>
