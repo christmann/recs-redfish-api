@@ -175,7 +175,7 @@ This resource contains UEFI Secure Boot information. It represents properties fo
 <tr><td>SecureBootCurrentBoot</td><td>string</td><td>Yes</td><td></td><td>read-only</td><td>Secure Boot state during the current boot cycle.<br />Possible Values:<br />&nbsp;&nbsp;&nbsp;&nbsp;Enabled: Secure Boot is currently enabled.<br />&nbsp;&nbsp;&nbsp;&nbsp;Disabled: Secure Boot is currently disabled.</td></tr>
 <tr><td>SecureBootMode</td><td>string</td><td>Yes</td><td></td><td>read-only</td><td>Current Secure Boot Mode.<br />Possible Values:<br />&nbsp;&nbsp;&nbsp;&nbsp;SetupMode: Secure Boot is currently in Setup Mode.<br />&nbsp;&nbsp;&nbsp;&nbsp;UserMode: Secure Boot is currently in User Mode.<br />&nbsp;&nbsp;&nbsp;&nbsp;AuditMode: Secure Boot is currently in Audit Mode.<br />&nbsp;&nbsp;&nbsp;&nbsp;DeployedMode: Secure Boot is currently in Deployed Mode.</td></tr>
 <tr><td>Actions {</td><td>object</td><td></td><td></td><td>read-write</td><td>The available actions for this resource.</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;Oem { }</td><td>object</td><td></td><td></td><td>read-write</td><td>&nbsp;</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;Oem { }</td><td>object</td><td></td><td></td><td>read-write</td><td></td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;#SecureBoot.ResetKeys {</td><td>object</td><td></td><td></td><td>read-write</td><td>This action is used to reset the Secure Boot keys.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;title</td><td>string</td><td></td><td></td><td>read-write</td><td>Friendly action name</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;target</td><td>string</td><td></td><td></td><td>read-write</td><td>Link to invoke action<br />Format: uri</td></tr>

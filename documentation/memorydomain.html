@@ -175,7 +175,7 @@ This is the schema definition of a Memory Domain and its configuration. Memory D
 <tr><td>AllowsBlockProvisioning</td><td>boolean</td><td>Yes</td><td></td><td>read-only</td><td>Indicates if this Memory Domain supports the provisioning of blocks of memory.</td></tr>
 <tr><td>InterleavableMemorySets [ {</td><td>array[object]</td><td></td><td></td><td>read-write</td><td>This is the interleave sets for the memory chunk.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;MemorySet@odata.count</td><td>number</td><td></td><td></td><td>read-only</td><td>The number of items in a collection.</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;MemorySet@odata.navigationLink</td><td>string</td><td></td><td></td><td>read-write</td><td>null<br />Format: uri</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;MemorySet@odata.navigationLink</td><td>string</td><td></td><td></td><td>read-write</td><td>Format: uri</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;MemorySet [ {</td><td>array[reference(<a href="memory.html#memory">Memory</a>)]</td><td></td><td></td><td>read-only</td><td>This is the collection of memory for a particular interleave set.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@odata.id</td><td>string</td><td></td><td></td><td>read-only</td><td>The unique identifier for a resource.<br />Format: uri</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;} ]</td><td></td><td></td><td></td><td></td><td></td></tr>

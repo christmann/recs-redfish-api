@@ -160,7 +160,6 @@ table { border-collapse: collapse; }
 <div class="content">
 <h1 id="ethernetswitchstaticmaccollection">EthernetSwitchStaticMACCollection</h1>
 <h2 id="schema definition">Schema Definition</h2>
-null
 <h3 id="properties">Properties</h3>
 <table class="datatable">
 <tr><th>Property</th><th>Type</th><th>Nullable</th><th>Required</th><th>Permission</th><th>Description</th></tr>
@@ -171,7 +170,7 @@ null
 <tr><td>Name</td><td>string</td><td></td><td></td><td>read-only</td><td>The name of the resource or array element.</td></tr>
 <tr><td>Oem { }</td><td>object</td><td></td><td></td><td>read-write</td><td>This is the manufacturer/provider specific extension moniker used to divide the Oem object into sections.</td></tr>
 <tr><td>Members@odata.count</td><td>number</td><td></td><td></td><td>read-only</td><td>The number of items in a collection.</td></tr>
-<tr><td>Members@odata.navigationLink</td><td>string</td><td></td><td></td><td>read-write</td><td>null<br />Format: uri</td></tr>
+<tr><td>Members@odata.navigationLink</td><td>string</td><td></td><td></td><td>read-write</td><td>Format: uri</td></tr>
 <tr><td>Members [ {</td><td>array[reference(<a href="ethernetswitchstaticmac.html#ethernetswitchstaticmac">EthernetSwitchStaticMAC</a>)]</td><td></td><td></td><td>read-only</td><td>Contains the members of this collection.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;@odata.id</td><td>string</td><td></td><td></td><td>read-only</td><td>The unique identifier for a resource.<br />Format: uri</td></tr>
 <tr><td>} ]</td><td></td><td></td><td></td><td></td><td></td></tr>

@@ -174,22 +174,22 @@ This schema defines a PCIeSwitch and its respective properties.
 <tr><td>Links {</td><td>object</td><td></td><td></td><td>read-only</td><td>Contains links to other resources that are related to this resource.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;Oem { }</td><td>object</td><td></td><td></td><td>read-write</td><td>Oem extension object.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;Chassis@odata.count</td><td>number</td><td></td><td></td><td>read-only</td><td>The number of items in a collection.</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;Chassis@odata.navigationLink</td><td>string</td><td></td><td></td><td>read-write</td><td>null<br />Format: uri</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;Chassis@odata.navigationLink</td><td>string</td><td></td><td></td><td>read-write</td><td>Format: uri</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;Chassis [ {</td><td>array[reference(<a href="chassis.html#chassis">Chassis</a>)]</td><td></td><td></td><td>read-only</td><td>An array of references to the chassis in which this switch is contained</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@odata.id</td><td>string</td><td></td><td></td><td>read-only</td><td>The unique identifier for a resource.<br />Format: uri</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;} ]</td><td></td><td></td><td></td><td></td><td></td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;ManagedBy@odata.count</td><td>number</td><td></td><td></td><td>read-only</td><td>The number of items in a collection.</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;ManagedBy@odata.navigationLink</td><td>string</td><td></td><td></td><td>read-write</td><td>null<br />Format: uri</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;ManagedBy@odata.navigationLink</td><td>string</td><td></td><td></td><td>read-write</td><td>Format: uri</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;ManagedBy [ {</td><td>array[reference(<a href="manager.html#manager">Manager</a>)]</td><td></td><td></td><td>read-only</td><td>An array of references to the Managers responsible for this switch</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@odata.id</td><td>string</td><td></td><td></td><td>read-only</td><td>The unique identifier for a resource.<br />Format: uri</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;} ]</td><td></td><td></td><td></td><td></td><td></td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;PoweredBy@odata.count</td><td>number</td><td></td><td></td><td>read-only</td><td>The number of items in a collection.</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;PoweredBy@odata.navigationLink</td><td>string</td><td></td><td></td><td>read-write</td><td>null<br />Format: uri</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;PoweredBy@odata.navigationLink</td><td>string</td><td></td><td></td><td>read-write</td><td>Format: uri</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;PoweredBy [ {</td><td>array[reference]</td><td></td><td></td><td>read-only</td><td>An array of ID[s] of resources that power this Switch. </td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@odata.id</td><td>string</td><td></td><td></td><td>read-only</td><td>The unique identifier for a resource.<br />Format: uri</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;} ]</td><td></td><td></td><td></td><td></td><td></td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;CooledBy@odata.count</td><td>number</td><td></td><td></td><td>read-only</td><td>The number of items in a collection.</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;CooledBy@odata.navigationLink</td><td>string</td><td></td><td></td><td>read-write</td><td>null<br />Format: uri</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;CooledBy@odata.navigationLink</td><td>string</td><td></td><td></td><td>read-write</td><td>Format: uri</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;CooledBy [ {</td><td>array[reference]</td><td></td><td></td><td>read-only</td><td>An array of ID[s] of resources that cool this switch. </td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@odata.id</td><td>string</td><td></td><td></td><td>read-only</td><td>The unique identifier for a resource.<br />Format: uri</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;} ]</td><td></td><td></td><td></td><td></td><td></td></tr>
@@ -203,13 +203,13 @@ This schema defines a PCIeSwitch and its respective properties.
 <tr><td>IndicatorLED</td><td>string</td><td>Yes</td><td></td><td>read-write</td><td>The state of the indicator LED, used to identify the Switch<br />Possible Values:<br />&nbsp;&nbsp;&nbsp;&nbsp;Lit: The Indicator LED is lit.<br />&nbsp;&nbsp;&nbsp;&nbsp;Blinking: The Indicator LED is blinking.<br />&nbsp;&nbsp;&nbsp;&nbsp;Off: The Indicator LED is off.</td></tr>
 <tr><td>PowerState</td><td>string</td><td>Yes</td><td></td><td>read-only</td><td>This is the current power state of the Switch<br />Possible Values:<br />&nbsp;&nbsp;&nbsp;&nbsp;On: The system is powered on.<br />&nbsp;&nbsp;&nbsp;&nbsp;Off: The system is powered off, although some components may continue to have AUX power such as management controller.<br />&nbsp;&nbsp;&nbsp;&nbsp;PoweringOn: A temporary state between Off and On. This temporary state can be very short.<br />&nbsp;&nbsp;&nbsp;&nbsp;PoweringOff: A temporary state between On and Off. The power off action can take time while the OS is in the shutdown process.</td></tr>
 <tr><td>Actions {</td><td>object</td><td></td><td></td><td>read-only</td><td>The Actions object contains the available custom actions on this resource.</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;Oem { }</td><td>object</td><td>Yes</td><td></td><td>read-write</td><td>&nbsp;</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;Oem { }</td><td>object</td><td>Yes</td><td></td><td>read-write</td><td></td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;#PCIeSwitch.Reset {</td><td>object</td><td></td><td></td><td>read-write</td><td>This action is used to reset the system.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;title</td><td>string</td><td></td><td></td><td>read-write</td><td>Friendly action name</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;target</td><td>string</td><td></td><td></td><td>read-write</td><td>Link to invoke action<br />Format: uri</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;}</td><td></td><td></td><td></td><td></td><td></td></tr>
 <tr><td>}</td><td></td><td></td><td></td><td></td><td></td></tr>
-<tr><td>Status {</td><td>object</td><td>Yes</td><td></td><td>read-only</td><td>&nbsp;</td></tr>
+<tr><td>Status {</td><td>object</td><td>Yes</td><td></td><td>read-only</td><td></td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;State</td><td>string</td><td>Yes</td><td></td><td>read-only</td><td>This indicates the known state of the resource, such as if it is enabled.<br />Possible Values:<br />&nbsp;&nbsp;&nbsp;&nbsp;Enabled: This function or resource has been enabled.<br />&nbsp;&nbsp;&nbsp;&nbsp;Disabled: This function or resource has been disabled.<br />&nbsp;&nbsp;&nbsp;&nbsp;StandbyOffline: This function or resource is enabled, but awaiting an external action to activate it.<br />&nbsp;&nbsp;&nbsp;&nbsp;StandbySpare: This function or resource is part of a redundancy set and is awaiting a failover or other external action to activate it.<br />&nbsp;&nbsp;&nbsp;&nbsp;InTest: This function or resource is undergoing testing.<br />&nbsp;&nbsp;&nbsp;&nbsp;Starting: This function or resource is starting.<br />&nbsp;&nbsp;&nbsp;&nbsp;Absent: This function or resource is not present or not detected.<br />&nbsp;&nbsp;&nbsp;&nbsp;UnavailableOffline: This function or resource is present but cannot be used.<br />&nbsp;&nbsp;&nbsp;&nbsp;Deferring: The element will not process any commands but will queue new requests.<br />&nbsp;&nbsp;&nbsp;&nbsp;Quiesced: The element is enabled but only processes a restricted set of commands.<br />&nbsp;&nbsp;&nbsp;&nbsp;Updating: The element is updating and may be unavailable or degraded.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;HealthRollup</td><td>string</td><td>Yes</td><td></td><td>read-only</td><td>This represents the overall health state from the view of this resource.<br />Possible Values:<br />&nbsp;&nbsp;&nbsp;&nbsp;OK: Normal.<br />&nbsp;&nbsp;&nbsp;&nbsp;Warning: A condition exists that requires attention.<br />&nbsp;&nbsp;&nbsp;&nbsp;Critical: A critical condition exists that requires immediate attention.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;Health</td><td>string</td><td>Yes</td><td></td><td>read-only</td><td>This represents the health state of this resource in the absence of its dependent resources.<br />Possible Values:<br />&nbsp;&nbsp;&nbsp;&nbsp;OK: Normal.<br />&nbsp;&nbsp;&nbsp;&nbsp;Warning: A condition exists that requires attention.<br />&nbsp;&nbsp;&nbsp;&nbsp;Critical: A critical condition exists that requires immediate attention.</td></tr>
@@ -222,7 +222,7 @@ This schema defines a PCIeSwitch and its respective properties.
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;@odata.id</td><td>string</td><td></td><td></td><td>read-only</td><td>The unique identifier for a resource.<br />Format: uri</td></tr>
 <tr><td>}</td><td></td><td></td><td></td><td></td><td></td></tr>
 <tr><td>AttachedDevices@odata.count</td><td>number</td><td></td><td></td><td>read-only</td><td>The number of items in a collection.</td></tr>
-<tr><td>AttachedDevices@odata.navigationLink</td><td>string</td><td></td><td></td><td>read-write</td><td>null<br />Format: uri</td></tr>
+<tr><td>AttachedDevices@odata.navigationLink</td><td>string</td><td></td><td></td><td>read-write</td><td>Format: uri</td></tr>
 <tr><td>AttachedDevices [ {</td><td>array[reference(<a href="pciedevice.html#pciedevice">PCIeDevice</a>)]</td><td></td><td></td><td>read-only</td><td>An array of references to the Physical Devices attached to this switch</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;@odata.id</td><td>string</td><td></td><td></td><td>read-only</td><td>The unique identifier for a resource.<br />Format: uri</td></tr>
 <tr><td>} ]</td><td></td><td></td><td></td><td></td><td></td></tr>

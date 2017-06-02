@@ -177,9 +177,9 @@ A Ethernet Switch Port represents a port for switch.
 <tr><td>AdministrativeState</td><td>string</td><td>Yes</td><td></td><td>read-write</td><td>Port link state forced by user.<br />Possible Values:<br />&nbsp;&nbsp;&nbsp;&nbsp;Up<br />&nbsp;&nbsp;&nbsp;&nbsp;Down</td></tr>
 <tr><td>LinkSpeedMbps</td><td>number</td><td>Yes</td><td></td><td>read-write</td><td>Port speed<br />Minimum: 0</td></tr>
 <tr><td>NeighborInfo {</td><td>object</td><td>Yes</td><td></td><td>read-write</td><td>For Upstream port type this property provide information about neighbor switch (and switch port if available) connected to this port</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;SwitchId</td><td>string</td><td>Yes</td><td></td><td>read-write</td><td>&nbsp;</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;PortId</td><td>string</td><td>Yes</td><td></td><td>read-write</td><td>&nbsp;</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;CableId</td><td>string</td><td>Yes</td><td></td><td>read-write</td><td>&nbsp;</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;SwitchId</td><td>string</td><td>Yes</td><td></td><td>read-write</td><td></td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;PortId</td><td>string</td><td>Yes</td><td></td><td>read-write</td><td></td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;CableId</td><td>string</td><td>Yes</td><td></td><td>read-write</td><td></td></tr>
 <tr><td>}</td><td></td><td></td><td></td><td></td><td></td></tr>
 <tr><td>NeighborMAC</td><td>string</td><td>Yes</td><td></td><td>read-write</td><td>For Downstream port type this property provide MAC address of NIC connected to this port.<br />Pattern: ^([0-9A-Fa-f]{2}[:-]){5}([0-9A-Fa-f]{2})$</td></tr>
 <tr><td>FrameSize</td><td>number</td><td>Yes</td><td></td><td>read-write</td><td>MAC frame size in bytes<br />Minimum: 0</td></tr>
@@ -203,13 +203,13 @@ A Ethernet Switch Port represents a port for switch.
 <tr><td>PortClass</td><td>string</td><td>Yes</td><td></td><td>read-write</td><td>Port class<br />Possible Values:<br />&nbsp;&nbsp;&nbsp;&nbsp;Physical<br />&nbsp;&nbsp;&nbsp;&nbsp;Logical<br />&nbsp;&nbsp;&nbsp;&nbsp;Reserved</td></tr>
 <tr><td>PortMode</td><td>string</td><td>Yes</td><td></td><td>read-write</td><td>Port working mode. The value shall correspond to the port class (especially to the logical port definition).<br />Possible Values:<br />&nbsp;&nbsp;&nbsp;&nbsp;LinkAggregationStatic<br />&nbsp;&nbsp;&nbsp;&nbsp;LinkAggregationDynamic<br />&nbsp;&nbsp;&nbsp;&nbsp;Unknown</td></tr>
 <tr><td>PortType</td><td>string</td><td>Yes</td><td></td><td>read-write</td><td>PortType<br />Possible Values:<br />&nbsp;&nbsp;&nbsp;&nbsp;Upstream<br />&nbsp;&nbsp;&nbsp;&nbsp;Downstream<br />&nbsp;&nbsp;&nbsp;&nbsp;MeshPort<br />&nbsp;&nbsp;&nbsp;&nbsp;Unknown</td></tr>
-<tr><td>Status {</td><td>object</td><td>Yes</td><td></td><td>read-only</td><td>&nbsp;</td></tr>
+<tr><td>Status {</td><td>object</td><td>Yes</td><td></td><td>read-only</td><td></td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;State</td><td>string</td><td>Yes</td><td></td><td>read-only</td><td>This indicates the known state of the resource, such as if it is enabled.<br />Possible Values:<br />&nbsp;&nbsp;&nbsp;&nbsp;Enabled: This function or resource has been enabled.<br />&nbsp;&nbsp;&nbsp;&nbsp;Disabled: This function or resource has been disabled.<br />&nbsp;&nbsp;&nbsp;&nbsp;StandbyOffline: This function or resource is enabled, but awaiting an external action to activate it.<br />&nbsp;&nbsp;&nbsp;&nbsp;StandbySpare: This function or resource is part of a redundancy set and is awaiting a failover or other external action to activate it.<br />&nbsp;&nbsp;&nbsp;&nbsp;InTest: This function or resource is undergoing testing.<br />&nbsp;&nbsp;&nbsp;&nbsp;Starting: This function or resource is starting.<br />&nbsp;&nbsp;&nbsp;&nbsp;Absent: This function or resource is not present or not detected.<br />&nbsp;&nbsp;&nbsp;&nbsp;UnavailableOffline: This function or resource is present but cannot be used.<br />&nbsp;&nbsp;&nbsp;&nbsp;Deferring: The element will not process any commands but will queue new requests.<br />&nbsp;&nbsp;&nbsp;&nbsp;Quiesced: The element is enabled but only processes a restricted set of commands.<br />&nbsp;&nbsp;&nbsp;&nbsp;Updating: The element is updating and may be unavailable or degraded.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;HealthRollup</td><td>string</td><td>Yes</td><td></td><td>read-only</td><td>This represents the overall health state from the view of this resource.<br />Possible Values:<br />&nbsp;&nbsp;&nbsp;&nbsp;OK: Normal.<br />&nbsp;&nbsp;&nbsp;&nbsp;Warning: A condition exists that requires attention.<br />&nbsp;&nbsp;&nbsp;&nbsp;Critical: A critical condition exists that requires immediate attention.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;Health</td><td>string</td><td>Yes</td><td></td><td>read-only</td><td>This represents the health state of this resource in the absence of its dependent resources.<br />Possible Values:<br />&nbsp;&nbsp;&nbsp;&nbsp;OK: Normal.<br />&nbsp;&nbsp;&nbsp;&nbsp;Warning: A condition exists that requires attention.<br />&nbsp;&nbsp;&nbsp;&nbsp;Critical: A critical condition exists that requires immediate attention.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;Oem { }</td><td>object</td><td></td><td></td><td>read-write</td><td>Oem extension object.</td></tr>
 <tr><td>}</td><td></td><td></td><td></td><td></td><td></td></tr>
-<tr><td>Links {</td><td>object</td><td></td><td></td><td>read-write</td><td>&nbsp;</td></tr>
+<tr><td>Links {</td><td>object</td><td></td><td></td><td>read-write</td><td></td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;Oem { }</td><td>object</td><td></td><td></td><td>read-write</td><td>Oem extension object.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;PrimaryVLAN {</td><td>reference(<a href="vlannetworkinterface.html#vlannetworkinterface">VLanNetworkInterface</a>)</td><td>Yes</td><td></td><td>read-write</td><td>This resource contains information for a Virtual LAN (VLAN) network instance available on a manager, system or other device.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@odata.id</td><td>string</td><td></td><td></td><td>read-only</td><td>The unique identifier for a resource.<br />Format: uri</td></tr>
@@ -221,20 +221,20 @@ A Ethernet Switch Port represents a port for switch.
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@odata.id</td><td>string</td><td></td><td></td><td>read-only</td><td>The unique identifier for a resource.<br />Format: uri</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;}</td><td></td><td></td><td></td><td></td><td></td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;PortMembers@odata.count</td><td>number</td><td></td><td></td><td>read-only</td><td>The number of items in a collection.</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;PortMembers@odata.navigationLink</td><td>string</td><td></td><td></td><td>read-write</td><td>null<br />Format: uri</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;PortMembers@odata.navigationLink</td><td>string</td><td></td><td></td><td>read-write</td><td>Format: uri</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;PortMembers [ {</td><td>array[reference(<a href="ethernetswitchport.html#ethernetswitchport">EthernetSwitchPort</a>)]</td><td></td><td></td><td>read-write</td><td>A Ethernet Switch Port represents a port for switch.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@odata.id</td><td>string</td><td></td><td></td><td>read-only</td><td>The unique identifier for a resource.<br />Format: uri</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;} ]</td><td></td><td></td><td></td><td></td><td></td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;ActiveACLs@odata.count</td><td>number</td><td></td><td></td><td>read-only</td><td>The number of items in a collection.</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;ActiveACLs@odata.navigationLink</td><td>string</td><td></td><td></td><td>read-write</td><td>null<br />Format: uri</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;ActiveACLs@odata.navigationLink</td><td>string</td><td></td><td></td><td>read-write</td><td>Format: uri</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;ActiveACLs [ {</td><td>array[reference(<a href="ethernetswitchacl.html#ethernetswitchacl">EthernetSwitchACL</a>)]</td><td></td><td></td><td>read-write</td><td>A Ethernet Switch ACL represents Access Control List for switch.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@odata.id</td><td>string</td><td></td><td></td><td>read-only</td><td>The unique identifier for a resource.<br />Format: uri</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;} ]</td><td></td><td></td><td></td><td></td><td></td></tr>
 <tr><td>}</td><td></td><td></td><td></td><td></td><td></td></tr>
-<tr><td>VLANs {</td><td>reference(<a href="vlannetworkinterfacecollection.html#vlannetworkinterfacecollection">VLanNetworkInterfaceCollection</a>)</td><td>Yes</td><td></td><td>read-write</td><td>&nbsp;</td></tr>
+<tr><td>VLANs {</td><td>reference(<a href="vlannetworkinterfacecollection.html#vlannetworkinterfacecollection">VLanNetworkInterfaceCollection</a>)</td><td>Yes</td><td></td><td>read-write</td><td></td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;@odata.id</td><td>string</td><td></td><td></td><td>read-only</td><td>The unique identifier for a resource.<br />Format: uri</td></tr>
 <tr><td>}</td><td></td><td></td><td></td><td></td><td></td></tr>
-<tr><td>StaticMACs {</td><td>reference(<a href="ethernetswitchstaticmaccollection.html#ethernetswitchstaticmaccollection">EthernetSwitchStaticMACCollection</a>)</td><td>Yes</td><td></td><td>read-write</td><td>&nbsp;</td></tr>
+<tr><td>StaticMACs {</td><td>reference(<a href="ethernetswitchstaticmaccollection.html#ethernetswitchstaticmaccollection">EthernetSwitchStaticMACCollection</a>)</td><td>Yes</td><td></td><td>read-write</td><td></td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;@odata.id</td><td>string</td><td></td><td></td><td>read-only</td><td>The unique identifier for a resource.<br />Format: uri</td></tr>
 <tr><td>}</td><td></td><td></td><td></td><td></td><td></td></tr>
 </table>

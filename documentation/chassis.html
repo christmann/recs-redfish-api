@@ -182,12 +182,12 @@ A Chassis represents the physical components for any system.  This resource repr
 <tr><td>Links {</td><td>object</td><td></td><td></td><td>read-write</td><td>Contains references to other resources that are related to this resource.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;Oem { }</td><td>object</td><td></td><td></td><td>read-write</td><td>Oem extension object.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;ComputerSystems@odata.count</td><td>number</td><td></td><td></td><td>read-only</td><td>The number of items in a collection.</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;ComputerSystems@odata.navigationLink</td><td>string</td><td></td><td></td><td>read-write</td><td>null<br />Format: uri</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;ComputerSystems@odata.navigationLink</td><td>string</td><td></td><td></td><td>read-write</td><td>Format: uri</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;ComputerSystems [ {</td><td>array[reference(<a href="computersystem.html#computersystem">ComputerSystem</a>)]</td><td></td><td></td><td>read-only</td><td>An array of references to the computer systems contained in this chassis.  This will only reference ComputerSystems that are directly and wholly contained in this chassis.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@odata.id</td><td>string</td><td></td><td></td><td>read-only</td><td>The unique identifier for a resource.<br />Format: uri</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;} ]</td><td></td><td></td><td></td><td></td><td></td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;ManagedBy@odata.count</td><td>number</td><td></td><td></td><td>read-only</td><td>The number of items in a collection.</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;ManagedBy@odata.navigationLink</td><td>string</td><td></td><td></td><td>read-write</td><td>null<br />Format: uri</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;ManagedBy@odata.navigationLink</td><td>string</td><td></td><td></td><td>read-write</td><td>Format: uri</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;ManagedBy [ {</td><td>array[reference(<a href="manager.html#manager">Manager</a>)]</td><td></td><td></td><td>read-only</td><td>An array of references to the Managers responsible for managing this chassis.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@odata.id</td><td>string</td><td></td><td></td><td>read-only</td><td>The unique identifier for a resource.<br />Format: uri</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;} ]</td><td></td><td></td><td></td><td></td><td></td></tr>
@@ -195,49 +195,49 @@ A Chassis represents the physical components for any system.  This resource repr
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@odata.id</td><td>string</td><td></td><td></td><td>read-only</td><td>The unique identifier for a resource.<br />Format: uri</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;}</td><td></td><td></td><td></td><td></td><td></td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;Contains@odata.count</td><td>number</td><td></td><td></td><td>read-only</td><td>The number of items in a collection.</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;Contains@odata.navigationLink</td><td>string</td><td></td><td></td><td>read-write</td><td>null<br />Format: uri</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;Contains@odata.navigationLink</td><td>string</td><td></td><td></td><td>read-write</td><td>Format: uri</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;Contains [ {</td><td>array[reference(<a href="chassis.html#chassis">Chassis</a>)]</td><td></td><td></td><td>read-only</td><td>An array of references to any other chassis that this chassis has in it.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@odata.id</td><td>string</td><td></td><td></td><td>read-only</td><td>The unique identifier for a resource.<br />Format: uri</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;} ]</td><td></td><td></td><td></td><td></td><td></td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;PoweredBy@odata.count</td><td>number</td><td></td><td></td><td>read-only</td><td>The number of items in a collection.</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;PoweredBy@odata.navigationLink</td><td>string</td><td></td><td></td><td>read-write</td><td>null<br />Format: uri</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;PoweredBy@odata.navigationLink</td><td>string</td><td></td><td></td><td>read-write</td><td>Format: uri</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;PoweredBy [ {</td><td>array[reference]</td><td></td><td></td><td>read-only</td><td>An array of ID[s] of resources that power this chassis. Normally the ID will be a chassis or a specific set of Power Supplies.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@odata.id</td><td>string</td><td></td><td></td><td>read-only</td><td>The unique identifier for a resource.<br />Format: uri</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;} ]</td><td></td><td></td><td></td><td></td><td></td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;CooledBy@odata.count</td><td>number</td><td></td><td></td><td>read-only</td><td>The number of items in a collection.</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;CooledBy@odata.navigationLink</td><td>string</td><td></td><td></td><td>read-write</td><td>null<br />Format: uri</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;CooledBy@odata.navigationLink</td><td>string</td><td></td><td></td><td>read-write</td><td>Format: uri</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;CooledBy [ {</td><td>array[reference]</td><td></td><td></td><td>read-only</td><td>An array of ID[s] of resources that cool this chassis. Normally the ID will be a chassis or a specific set of fans.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@odata.id</td><td>string</td><td></td><td></td><td>read-only</td><td>The unique identifier for a resource.<br />Format: uri</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;} ]</td><td></td><td></td><td></td><td></td><td></td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;ManagersInChassis@odata.count</td><td>number</td><td></td><td></td><td>read-only</td><td>The number of items in a collection.</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;ManagersInChassis@odata.navigationLink</td><td>string</td><td></td><td></td><td>read-write</td><td>null<br />Format: uri</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;ManagersInChassis@odata.navigationLink</td><td>string</td><td></td><td></td><td>read-write</td><td>Format: uri</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;ManagersInChassis [ {</td><td>array[reference(<a href="manager.html#manager">Manager</a>)]</td><td></td><td></td><td>read-only</td><td>An array of references to the managers located in this Chassis.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@odata.id</td><td>string</td><td></td><td></td><td>read-only</td><td>The unique identifier for a resource.<br />Format: uri</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;} ]</td><td></td><td></td><td></td><td></td><td></td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;Drives@odata.count</td><td>number</td><td></td><td></td><td>read-only</td><td>The number of items in a collection.</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;Drives@odata.navigationLink</td><td>string</td><td></td><td></td><td>read-write</td><td>null<br />Format: uri</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;Drives@odata.navigationLink</td><td>string</td><td></td><td></td><td>read-write</td><td>Format: uri</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;Drives [ {</td><td>array[reference(<a href="drive.html#drive">Drive</a>)]</td><td></td><td></td><td>read-only</td><td>An array of references to the disk drives located in this Chassis.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@odata.id</td><td>string</td><td></td><td></td><td>read-only</td><td>The unique identifier for a resource.<br />Format: uri</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;} ]</td><td></td><td></td><td></td><td></td><td></td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;Storage@odata.count</td><td>number</td><td></td><td></td><td>read-only</td><td>The number of items in a collection.</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;Storage@odata.navigationLink</td><td>string</td><td></td><td></td><td>read-write</td><td>null<br />Format: uri</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;Storage@odata.navigationLink</td><td>string</td><td></td><td></td><td>read-write</td><td>Format: uri</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;Storage [ {</td><td>array[reference(<a href="storage.html#storage">Storage</a>)]</td><td></td><td></td><td>read-only</td><td>An array of references to the storage subsystems connected to or inside this Chassis.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@odata.id</td><td>string</td><td></td><td></td><td>read-only</td><td>The unique identifier for a resource.<br />Format: uri</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;} ]</td><td></td><td></td><td></td><td></td><td></td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;PCIeDevices@odata.count</td><td>number</td><td></td><td></td><td>read-only</td><td>The number of items in a collection.</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;PCIeDevices@odata.navigationLink</td><td>string</td><td></td><td></td><td>read-write</td><td>null<br />Format: uri</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;PCIeDevices@odata.navigationLink</td><td>string</td><td></td><td></td><td>read-write</td><td>Format: uri</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;PCIeDevices [ {</td><td>array[reference(<a href="pciedevice.html#pciedevice">PCIeDevice</a>)]</td><td></td><td></td><td>read-only</td><td>An array of references to the PCIe Devices located in this Chassis.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@odata.id</td><td>string</td><td></td><td></td><td>read-only</td><td>The unique identifier for a resource.<br />Format: uri</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;} ]</td><td></td><td></td><td></td><td></td><td></td></tr>
 <tr><td>}</td><td></td><td></td><td></td><td></td><td></td></tr>
 <tr><td>Actions {</td><td>object</td><td></td><td></td><td>read-write</td><td>The available actions for this resource.</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;Oem { }</td><td>object</td><td></td><td></td><td>read-write</td><td>&nbsp;</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;Oem { }</td><td>object</td><td></td><td></td><td>read-write</td><td></td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;#Chassis.Reset {</td><td>object</td><td></td><td></td><td>read-write</td><td>This action is used to reset the chassis. This action resets the chassis, not Systems or other contained resources, although side effects may occur which affect those resources.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;title</td><td>string</td><td></td><td></td><td>read-write</td><td>Friendly action name</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;target</td><td>string</td><td></td><td></td><td>read-write</td><td>Link to invoke action<br />Format: uri</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;}</td><td></td><td></td><td></td><td></td><td></td></tr>
 <tr><td>}</td><td></td><td></td><td></td><td></td><td></td></tr>
-<tr><td>Status {</td><td>object</td><td></td><td></td><td>read-only</td><td>&nbsp;</td></tr>
+<tr><td>Status {</td><td>object</td><td></td><td></td><td>read-only</td><td></td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;State</td><td>string</td><td>Yes</td><td></td><td>read-only</td><td>This indicates the known state of the resource, such as if it is enabled.<br />Possible Values:<br />&nbsp;&nbsp;&nbsp;&nbsp;Enabled: This function or resource has been enabled.<br />&nbsp;&nbsp;&nbsp;&nbsp;Disabled: This function or resource has been disabled.<br />&nbsp;&nbsp;&nbsp;&nbsp;StandbyOffline: This function or resource is enabled, but awaiting an external action to activate it.<br />&nbsp;&nbsp;&nbsp;&nbsp;StandbySpare: This function or resource is part of a redundancy set and is awaiting a failover or other external action to activate it.<br />&nbsp;&nbsp;&nbsp;&nbsp;InTest: This function or resource is undergoing testing.<br />&nbsp;&nbsp;&nbsp;&nbsp;Starting: This function or resource is starting.<br />&nbsp;&nbsp;&nbsp;&nbsp;Absent: This function or resource is not present or not detected.<br />&nbsp;&nbsp;&nbsp;&nbsp;UnavailableOffline: This function or resource is present but cannot be used.<br />&nbsp;&nbsp;&nbsp;&nbsp;Deferring: The element will not process any commands but will queue new requests.<br />&nbsp;&nbsp;&nbsp;&nbsp;Quiesced: The element is enabled but only processes a restricted set of commands.<br />&nbsp;&nbsp;&nbsp;&nbsp;Updating: The element is updating and may be unavailable or degraded.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;HealthRollup</td><td>string</td><td>Yes</td><td></td><td>read-only</td><td>This represents the overall health state from the view of this resource.<br />Possible Values:<br />&nbsp;&nbsp;&nbsp;&nbsp;OK: Normal.<br />&nbsp;&nbsp;&nbsp;&nbsp;Warning: A condition exists that requires attention.<br />&nbsp;&nbsp;&nbsp;&nbsp;Critical: A critical condition exists that requires immediate attention.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;Health</td><td>string</td><td>Yes</td><td></td><td>read-only</td><td>This represents the health state of this resource in the absence of its dependent resources.<br />Possible Values:<br />&nbsp;&nbsp;&nbsp;&nbsp;OK: Normal.<br />&nbsp;&nbsp;&nbsp;&nbsp;Warning: A condition exists that requires attention.<br />&nbsp;&nbsp;&nbsp;&nbsp;Critical: A critical condition exists that requires immediate attention.</td></tr>
@@ -258,7 +258,7 @@ A Chassis represents the physical components for any system.  This resource repr
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;IntrusionSensor</td><td>string</td><td>Yes</td><td></td><td>read-write</td><td>This indicates the known state of the physical security sensor, such as if it is hardware intrusion detected.<br />Possible Values:<br />&nbsp;&nbsp;&nbsp;&nbsp;Normal: No abnormal physical security conditions are detected at this time.<br />&nbsp;&nbsp;&nbsp;&nbsp;HardwareIntrusion: A door, lock, or other mechanism protecting the internal system hardware from being accessed is detected as being in an insecure state.<br />&nbsp;&nbsp;&nbsp;&nbsp;TamperingDetected: Physical tampering of the monitored entity is detected.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;IntrusionSensorReArm</td><td>string</td><td>Yes</td><td></td><td>read-only</td><td>This indicates how the Normal state to be restored.<br />Possible Values:<br />&nbsp;&nbsp;&nbsp;&nbsp;Manual: This sensor would be restored to the Normal state by a manual re-arm.<br />&nbsp;&nbsp;&nbsp;&nbsp;Automatic: This sensor would be restored to the Normal state automatically as no abnormal physical security conditions are detected.</td></tr>
 <tr><td>}</td><td></td><td></td><td></td><td></td><td></td></tr>
-<tr><td>Location {</td><td>object</td><td></td><td></td><td>read-only</td><td>&nbsp;</td></tr>
+<tr><td>Location {</td><td>object</td><td></td><td></td><td>read-only</td><td></td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;Info</td><td>string</td><td>Yes</td><td></td><td>read-only</td><td>This indicates the location of the resource.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;InfoFormat</td><td>string</td><td>Yes</td><td></td><td>read-only</td><td>This represents the format of the Info property.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;Oem { }</td><td>object</td><td></td><td></td><td>read-write</td><td>Oem extension object.</td></tr>
