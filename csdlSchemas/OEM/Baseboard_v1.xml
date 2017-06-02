@@ -23,8 +23,8 @@
 	<edmx:Reference Uri="http://redfish.dmtf.org/schemas/v1/ComputerSystem_v1.xml">
 		<edmx:Include Namespace="ComputerSystem"/>
 	</edmx:Reference>
-	<edmx:Reference Uri="PCIeDevice_v1.xml">
-		<edmx:Include Namespace="PCIeDevice"/>
+	<edmx:Reference Uri="PCIePort_v1.xml">
+		<edmx:Include Namespace="PCIePort"/>
 	</edmx:Reference>
 	<edmx:Reference Uri="EthernetSwitch_v1.xml">
 		<edmx:Include Namespace="EthernetSwitch"/>
@@ -34,6 +34,9 @@
 	</edmx:Reference>
 	<edmx:Reference Uri="Backplane_v1.xml">
 		<edmx:Include Namespace="Backplane"/>
+	</edmx:Reference>
+	<edmx:Reference Uri="http://redfish.dmtf.org/schemas/v1/PCIeDevice_v1.xml">
+		<edmx:Include Namespace="PCIeDevice"/>
 	</edmx:Reference>
 
 	<edmx:DataServices>
@@ -64,10 +67,10 @@
 					<Annotation Term="OData.LongDescription" String="This object shall only contain an array of references that comply to the ComputerSystem schema."/>
 					<Annotation Term="OData.AutoExpandReferences"/>
 				</NavigationProperty>
-				<NavigationProperty Name="PCIeDevices" Type="Collection(PCIeDevice.PCIeDevice)" Nullable="false">
+				<NavigationProperty Name="PCIePorts" Type="Collection(PCIePort.PCIePort)" Nullable="false">
 					<Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
-					<Annotation Term="OData.Description" String="An array of references to the PCIeDevices hosted on this Baseboard."/>
-					<Annotation Term="OData.LongDescription" String="This object shall only contain an array of references that comply to the PCIeDevice schema."/>
+					<Annotation Term="OData.Description" String="An array of references to the PCIePorts hosted on this Baseboard."/>
+					<Annotation Term="OData.LongDescription" String="This object shall only contain an array of references that comply to the PCIePort schema."/>
 					<Annotation Term="OData.AutoExpandReferences"/>
 				</NavigationProperty>
 				<NavigationProperty Name="EthernetSwitches" Type="Collection(EthernetSwitch.EthernetSwitch)" Nullable="false">
@@ -101,6 +104,12 @@
 					<Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
 					<Annotation Term="OData.Description" String="The Chassis hosting this Baseboard"/>
 					<Annotation Term="OData.LongDescription" String="This object shall only contain a reference that complies to the Chassis schema."/>
+					<Annotation Term="OData.AutoExpandReferences"/>
+				</NavigationProperty>
+				<NavigationProperty Name="PCIeDevices" Type="Collection(PCIeDevice.PCIeDevice)" Nullable="false">
+					<Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+					<Annotation Term="OData.Description" String="An array of references to the PCIeDevices attached to PCIePorts on this Baseboard."/>
+					<Annotation Term="OData.LongDescription" String="This object shall only contain an array of references that comply to the PCIeDevice schema."/>
 					<Annotation Term="OData.AutoExpandReferences"/>
 				</NavigationProperty>
 			</ComplexType>

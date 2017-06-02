@@ -33,7 +33,7 @@
 			<ComplexType Name="ComputerSystem" BaseType="Resource.OemObject">
 				<Property Name="Links" Type="EID_47597_RECSBox_ComputerSystem.v0_1_0.Links" Nullable="false">
 					<Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
-					<Annotation Term="OData.Description" String="The links object contains the links to other resources that are related to this resource."/>
+					<Annotation Term="OData.Description" String="RECS|Box ComputerSystem Links extension"/>
 				</Property>
 				<NavigationProperty Name="HSSInterfaces" Type="Collection(HSSInterface.HSSInterface)">
 					<Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>

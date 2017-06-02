@@ -19,49 +19,52 @@
 	<edmx:Reference Uri="ComposedNode_v1.xml">
 		<edmx:Include Namespace="ComposedNode"/>
 	</edmx:Reference>
-	<edmx:Reference Uri="HSSInterface_v1.xml">
-		<edmx:Include Namespace="HSSInterface"/>
+	<edmx:Reference Uri="PCIePort_v1.xml">
+		<edmx:Include Namespace="PCIePort"/>
 	</edmx:Reference>
 	<edmx:Reference Uri="Baseboard_v1.xml">
 		<edmx:Include Namespace="Baseboard"/>
 	</edmx:Reference>
+	<edmx:Reference Uri="Backplane_v1.xml">
+		<edmx:Include Namespace="Backplane"/>
+	</edmx:Reference>
 
 	<edmx:DataServices>
 
-		<Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="EID_47597_RECSBox_ComputerSystem.v0_1_0">
+		<Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="EID_47597_RECSBox_PCIeDevice.v0_1_0">
 			
-			<ComplexType Name="ComputerSystem" BaseType="Resource.OemObject">
-				<Property Name="Links" Type="EID_47597_RECSBox_ComputerSystem.v0_1_0.Links" Nullable="false">
+			<ComplexType Name="PCIeDevice" BaseType="Resource.OemObject">
+				<Property Name="Links" Type="EID_47597_RECSBox_PCIeDevice.v0_1_0.Links" Nullable="false">
 					<Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
-					<Annotation Term="OData.Description" String="RECS|Box ComputerSystem Links extension"/>
+					<Annotation Term="OData.Description" String="RECS|Box PCIeDevice Links extension"/>
 				</Property>
-				<NavigationProperty Name="HSSInterfaces" Type="Collection(HSSInterface.HSSInterface)">
+				<NavigationProperty Name="Port" Type="PCIePort.PCIePort" Nullable="false">
 					<Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
-					<Annotation Term="OData.Description" String="An array of references to the HSSInterfaces hosted by this system"/>
-					<Annotation Term="OData.LongDescription" String="This object shall only contain an array of references that comply to the HSSInterface schema."/>
-					<Annotation Term="OData.AutoExpandReferences"/>
-				</NavigationProperty>
-				<NavigationProperty Name="Baseboard" Type="Baseboard.Baseboard" Nullable="false">
-					<Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
-					<Annotation Term="OData.Description" String="The Baseboard hosting this ComputerSystem"/>
+					<Annotation Term="OData.Description" String="The PCIePort this PCIeDevice is attached to"/>
 					<Annotation Term="OData.LongDescription" String="This object shall only contain a reference that complies to the Baseboard schema."/>
 					<Annotation Term="OData.AutoExpandReferences"/>
 				</NavigationProperty>
 				<NavigationProperty Name="ComposedIn" Type="ComposedNode.ComposedNode">
 					<Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
-					<Annotation Term="OData.Description" String="This is a link to the ComposedNode, this ComputerSystem is composed in."/>
+					<Annotation Term="OData.Description" String="This is a link to the ComposedNode, this PCIeDevice is composed in."/>
 					<Annotation Term="OData.LongDescription" String="This object shall only contain a reference to a resource that comply to the ComposedNode schema."/>
 					<Annotation Term="OData.AutoExpandReferences"/>
 				</NavigationProperty>
 				<Annotation Term="OData.AdditionalProperties" Bool="false"/>
-				<Annotation Term="OData.Description" String="RECS|Box ComputerSystem extension"/>
-				<Annotation Term="OData.LongDescription" String="RECS|Box ComputerSystem extension" />
+				<Annotation Term="OData.Description" String="RECS|Box PCIeDevice extension"/>
+				<Annotation Term="OData.LongDescription" String="RECS|Box PCIeDevice extension" />
 			</ComplexType>
 
 			<ComplexType Name="Links" BaseType="Resource.OemObject">
+				<NavigationProperty Name="Baseboard" Type="Baseboard.Baseboard" Nullable="false">
+					<Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+					<Annotation Term="OData.Description" String="The Baseboard hosting the PCIePort this PCIeDevice is attached to"/>
+					<Annotation Term="OData.LongDescription" String="This object shall only contain a reference that complies to the Baseboard schema."/>
+					<Annotation Term="OData.AutoExpandReferences"/>
+				</NavigationProperty>
 				<NavigationProperty Name="Backplanes" Type="Collection(Backplane.Backplane)" Nullable="false">
 					<Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
-					<Annotation Term="OData.Description" String="An array of references to the Backplanes the Baseboard of this ComputerSystem is connected to."/>
+					<Annotation Term="OData.Description" String="An array of references to the Backplanes the Baseboard of this PCIeDevice is connected to."/>
 					<Annotation Term="OData.LongDescription" String="This object shall only contain an array of references that comply to the Backplane schema."/>
 					<Annotation Term="OData.AutoExpandReferences"/>
 				</NavigationProperty>
