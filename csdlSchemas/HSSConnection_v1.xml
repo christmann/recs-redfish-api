@@ -37,6 +37,10 @@
 		<Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="HSSConnection.v0_1_0">
 
 			<EntityType Name="HSSConnection" BaseType="HSSConnection.HSSConnection">
+				<Property Name="Links" Type="HSSConnection.v0_1_0.Links" Nullable="false">
+					<Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+					<Annotation Term="OData.Description" String="The links object contains the links to other resources that are related to this resource."/>
+				</Property>
 				<NavigationProperty Name="EndpointA" Type="HSSInterface.HSSInterface" Nullable="false">
 					<Annotation Term="OData.Permissions" EnumMember="OData.Permission/ReadWrite"/>
 					<Annotation Term="OData.Description" String="The first endpoint of this connection"/>
@@ -45,8 +49,8 @@
 				</NavigationProperty>
 				<NavigationProperty Name="EndpointB" Type="Resource.Item" Nullable="false">
 					<Annotation Term="OData.Permissions" EnumMember="OData.Permission/ReadWrite"/>
-					<Annotation Term="OData.Description" String="The second endpoint of this connection. This can either be an HSSInterface of a ComputerSystem, a PCIePort of a PCIeSwitch or a PCIeDevice"/>
-					<Annotation Term="OData.LongDescription" String="This object shall only contain a reference that complies to the HSSInterface, PCIePort or PCIeDevice schema."/>
+					<Annotation Term="OData.Description" String="The second endpoint of this connection. This can either be an HSSInterface of a ComputerSystem or a PCIePort of a PCIeSwitch or a PCIePort of a Baseboard, where a PCIeDevice can be attached."/>
+					<Annotation Term="OData.LongDescription" String="This object shall only contain a reference that complies to the HSSInterface or PCIePort schema."/>
 					<Annotation Term="OData.AutoExpandReferences"/>
 				</NavigationProperty>
 				<Property Name="Width" Type="Edm.Int64">
@@ -56,6 +60,9 @@
 					<Annotation Term="Validation.Minimum" Int="0"/>
 				</Property>
 			</EntityType>
+
+			<ComplexType Name="Links" BaseType="Resource.Links">
+			</ComplexType>
 
 		</Schema>
 	</edmx:DataServices>
