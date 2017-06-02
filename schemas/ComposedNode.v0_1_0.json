@@ -85,41 +85,6 @@
                         {"type": "null"}
                     ]
                 },
-                "Links": {
-                    "type": "object",
-                    "patternProperties": {
-                        "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message|Privileges)\\.[a-zA-Z_][a-zA-Z0-9_.]+$": {
-                            "type": [
-                                "array",
-                                "boolean",
-                                "number",
-                                "null",
-                                "object",
-                                "string"
-                            ],
-                            "description": "This property shall specify a valid odata or Redfish property."
-                        }
-                    },
-                    "additionalProperties": false,
-                    "properties": {
-                        "Oem": {
-                            "$ref": "http://redfish.dmtf.org/schemas/v1/Resource.json#/definitions/Oem",
-                            "description": "Oem extension object.",
-                            "longDescription": "This object represents the Oem property.  All values for resources described by this schema shall comply to the requirements as described in the Redfish specification."
-                        },
-                        "ComposedIn": {
-                            "anyOf": [
-                                {"$ref": "http://redfish.dmtf.org/schemas/v1/ComposedNode.json#/definitions/ComposedNode"},
-                                {"type": "null"}
-                            ],
-                            "readonly": true,
-                            "description": "This is a link to the ComposedNode, this ComposedNode is composed in.",
-                            "longDescription": "This object shall only contain a reference to a resource that comply to the ComposedNode schema."
-                        }
-                    },
-                    "readonly": true,
-                    "description": "The links object contains the links to other resources that are related to this resource."
-                },
                 "Actions": {
                     "type": "object",
                     "patternProperties": {
@@ -193,6 +158,15 @@
                     "readonly": false,
                     "description": "An array of references to the HSSConnections that connect the nodes within this composition.",
                     "longDescription": "This object shall only contain an array of references that comply to the HSSConnection schema."
+                },
+                "ComposedIn": {
+                    "anyOf": [
+                        {"$ref": "http://redfish.dmtf.org/schemas/v1/ComposedNode.json#/definitions/ComposedNode"},
+                        {"type": "null"}
+                    ],
+                    "readonly": true,
+                    "description": "This is a link to the ComposedNode, this ComposedNode is composed in.",
+                    "longDescription": "This object shall only contain a reference to a resource that comply to the ComposedNode schema."
                 }
             },
             "required": [

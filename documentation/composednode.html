@@ -177,12 +177,6 @@ This is the schema definition for the ComposedNode resource.
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;Health</td><td>string</td><td>Yes</td><td></td><td>read-only</td><td>This represents the health state of this resource in the absence of its dependent resources.<br />Possible Values:<br />&nbsp;&nbsp;&nbsp;&nbsp;OK: Normal.<br />&nbsp;&nbsp;&nbsp;&nbsp;Warning: A condition exists that requires attention.<br />&nbsp;&nbsp;&nbsp;&nbsp;Critical: A critical condition exists that requires immediate attention.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;Oem { }</td><td>object</td><td></td><td></td><td>read-write</td><td>Oem extension object.</td></tr>
 <tr><td>}</td><td></td><td></td><td></td><td></td><td></td></tr>
-<tr><td>Links {</td><td>object</td><td></td><td></td><td>read-only</td><td>The links object contains the links to other resources that are related to this resource.</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;Oem { }</td><td>object</td><td></td><td></td><td>read-write</td><td>Oem extension object.</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;ComposedIn {</td><td>reference(<a href="composednode.html#composednode">ComposedNode</a>)</td><td>Yes</td><td></td><td>read-only</td><td>This is a link to the ComposedNode, this ComposedNode is composed in.</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@odata.id</td><td>string</td><td></td><td></td><td>read-only</td><td>The unique identifier for a resource.<br />Format: uri</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;}</td><td></td><td></td><td></td><td></td><td></td></tr>
-<tr><td>}</td><td></td><td></td><td></td><td></td><td></td></tr>
 <tr><td>Actions {</td><td>object</td><td></td><td></td><td>read-write</td><td>The available actions for this resource.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;Oem { }</td><td>object</td><td></td><td></td><td>read-write</td><td></td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;#ComposedNode.Reset {</td><td>object</td><td></td><td></td><td>read-write</td><td>This action is used to reset all systems within this ComposedNode.</td></tr>
@@ -200,6 +194,9 @@ This is the schema definition for the ComposedNode resource.
 <tr><td>Connections [ {</td><td>array[reference(<a href="hssconnection.html#hssconnection">HSSConnection</a>)]</td><td></td><td></td><td>read-write</td><td>An array of references to the HSSConnections that connect the nodes within this composition.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;@odata.id</td><td>string</td><td></td><td></td><td>read-only</td><td>The unique identifier for a resource.<br />Format: uri</td></tr>
 <tr><td>} ]</td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>ComposedIn {</td><td>reference(<a href="composednode.html#composednode">ComposedNode</a>)</td><td>Yes</td><td></td><td>read-only</td><td>This is a link to the ComposedNode, this ComposedNode is composed in.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;@odata.id</td><td>string</td><td></td><td></td><td>read-only</td><td>The unique identifier for a resource.<br />Format: uri</td></tr>
+<tr><td>}</td><td></td><td></td><td></td><td></td><td></td></tr>
 </table>
 <h3 id="action parameters">Action Parameters</h3>
 <h4 id="#composednode.reset">#ComposedNode.Reset</h4>

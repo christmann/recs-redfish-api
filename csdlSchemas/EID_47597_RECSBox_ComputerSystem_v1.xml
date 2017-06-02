@@ -35,14 +35,6 @@
 					<Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
 					<Annotation Term="OData.Description" String="The links object contains the links to other resources that are related to this resource."/>
 				</Property>
-				<Property Name="FPGASummary" Type="EID_47597_RECSBox_ComputerSystem.v0_1_0.FPGASummary"  Nullable="false">
-					<Annotation Term="OData.Description" String="This object describes the FPGA accelerators of the system in general detail."/>
-					<Annotation Term="OData.LongDescription" String="This object shall contain properties which describe the FPGA accelerators for the current resource."/>
-				</Property>
-				<Property Name="GPUSummary" Type="EID_47597_RECSBox_ComputerSystem.v0_1_0.GPUSummary"  Nullable="false">
-					<Annotation Term="OData.Description" String="This object describes the GPU accelerators of the system in general detail."/>
-					<Annotation Term="OData.LongDescription" String="This object shall contain properties which describe the GPU accelerators for the current resource."/>
-				</Property>
 				<NavigationProperty Name="HSSInterfaces" Type="Collection(HSSInterface.HSSInterface)">
 					<Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
 					<Annotation Term="OData.Description" String="An array of references to the HSSInterfaces hosted by this system"/>
@@ -55,58 +47,24 @@
 					<Annotation Term="OData.LongDescription" String="This object shall only contain a reference that complies to the Baseboard schema."/>
 					<Annotation Term="OData.AutoExpandReferences"/>
 				</NavigationProperty>
-				<Annotation Term="OData.AdditionalProperties" Bool="false"/>
-				<Annotation Term="OData.Description" String="RECS|Box ComputerSystem extension"/>
-				<Annotation Term="OData.LongDescription" String="RECS|Box ComputerSystem extension" />
-			</ComplexType>
-
-			<ComplexType Name="Links" BaseType="Resource.OemObject">
 				<NavigationProperty Name="ComposedIn" Type="ComposedNode.ComposedNode">
 					<Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
 					<Annotation Term="OData.Description" String="This is a link to the ComposedNode, this ComputerSystem is composed in."/>
 					<Annotation Term="OData.LongDescription" String="This object shall only contain a reference to a resource that comply to the ComposedNode schema."/>
 					<Annotation Term="OData.AutoExpandReferences"/>
 				</NavigationProperty>
+				<Annotation Term="OData.AdditionalProperties" Bool="false"/>
+				<Annotation Term="OData.Description" String="RECS|Box ComputerSystem extension"/>
+				<Annotation Term="OData.LongDescription" String="RECS|Box ComputerSystem extension" />
+			</ComplexType>
+
+			<ComplexType Name="Links" BaseType="Resource.OemObject">
 				<NavigationProperty Name="Backplanes" Type="Collection(Backplane.Backplane)" Nullable="false">
 					<Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
 					<Annotation Term="OData.Description" String="An array of references to the Backplanes the Baseboard of this ComputerSystem is connected to."/>
 					<Annotation Term="OData.LongDescription" String="This object shall only contain an array of references that comply to the Backplane schema."/>
 					<Annotation Term="OData.AutoExpandReferences"/>
 				</NavigationProperty>
-			</ComplexType>
-
-			<ComplexType Name="FPGASummary">
-				<Annotation Term="OData.AdditionalProperties" Bool="false"/>
-				<Property Name="Count" Type="Edm.Int64">
-					<Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
-					<Annotation Term="OData.Description" String="The number of FPGAs in the system."/>
-					<Annotation Term="OData.LongDescription" String="This property shall contain the number of FPGAs in the system."/>
-					<Annotation Term="Validation.Minimum" Int="0"/>
-				</Property>
-				<Property Name="Model" Type="Edm.String">
-					<Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
-					<Annotation Term="OData.Description" String="The model for the primary or majority of FPGAs in this system."/>
-					<Annotation Term="OData.LongDescription" String="This property shall contain the model for the FPGAs in the system."/>
-				</Property>
-				<Property Name="Status" Type="Resource.Status"  Nullable="false"/>
-				<Annotation Term="OData.Description" String="This object describes the FPGAs of the system in general detail."/>
-			</ComplexType>
-
-			<ComplexType Name="GPUSummary">
-				<Annotation Term="OData.AdditionalProperties" Bool="false"/>
-				<Property Name="Count" Type="Edm.Int64">
-					<Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
-					<Annotation Term="OData.Description" String="The number of GPUs in the system."/>
-					<Annotation Term="OData.LongDescription" String="This property shall contain the number of GPUs in the system."/>
-					<Annotation Term="Validation.Minimum" Int="0"/>
-				</Property>
-				<Property Name="Model" Type="Edm.String">
-					<Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
-					<Annotation Term="OData.Description" String="The model for the primary or majority of GPUs in this system."/>
-					<Annotation Term="OData.LongDescription" String="This property shall contain the model for the GPUs in the system."/>
-				</Property>
-				<Property Name="Status" Type="Resource.Status"  Nullable="false"/>
-				<Annotation Term="OData.Description" String="This object describes the GPUs of the system in general detail."/>
 			</ComplexType>
 		</Schema>
 
