@@ -45,7 +45,17 @@
 			<EntityType Name="Baseboard" BaseType="Resource.v1_0_0.Resource">
 				<Annotation Term="OData.Description" String="This is the schema definition for the Baseboard resource." />
 				<Annotation Term="OData.LongDescription" String="This is the schema definition for the Baseboard resource. It represents the properties of a Baseboard." />
-			</EntityType>
+			</EntityType>>
+
+			<Action Name="Reset" IsBound="true">
+				<Parameter Name="Baseboard" Type="Baseboard.v0_1_0.Actions"/>
+				<Parameter Name="ResetType" Type="Resource.ResetType">
+					<Annotation Term="OData.Description" String="The type of reset to be performed."/>
+					<Annotation Term="OData.LongDescription" String="This defines the property name for the action."/>
+				</Parameter>
+				<Annotation Term="OData.Description" String="This action is used to reset all systems hosted on this Baseboard."/>
+				<Annotation Term="OData.LongDescription" String="This action shall perform a reset of all systems hosted on this Baseboard.  For systems which implement APCI Power Button functionality, the PushPowerButton value shall perform or emulate an ACPI Power Button push.  The ForceOff value shall remove power from the system or perform an ACPI Power Button Override (commonly known as a 4-second hold of the Power Button).  The ForceRestart value shall perform a ForceOff action followed by a On action."/>
+			</Action>
 
 		</Schema>
 
@@ -56,6 +66,10 @@
 				<Property Name="Links" Type="Baseboard.v0_1_0.Links" Nullable="false">
 					<Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
 					<Annotation Term="OData.Description" String="The links object contains the links to other resources that are related to this resource."/>
+				</Property>
+				<Property Name="Actions" Type="Baseboard.v0_1_0.Actions" Nullable="false">
+					<Annotation Term="OData.Description" String="The available actions for this resource."/>
+					<Annotation Term="OData.LongDescription" String="The Actions property shall contain the available actions for this resource."/>
 				</Property>
 				<Property Name="BaseboardType" Type="Baseboard.v0_1_0.BaseboardType">
 					<Annotation Term="OData.Permissions" EnumMember="OData.Permissions/Read"/>
@@ -112,6 +126,15 @@
 					<Annotation Term="OData.LongDescription" String="This object shall only contain an array of references that comply to the PCIeDevice schema."/>
 					<Annotation Term="OData.AutoExpandReferences"/>
 				</NavigationProperty>
+			</ComplexType>
+
+			<ComplexType Name="Actions">
+				<Annotation Term="OData.AdditionalProperties" Bool="false"/>
+				<Property Name="Oem" Type="Baseboard.v0_1_0.OemActions" Nullable="false"/>
+			</ComplexType>>
+
+			<ComplexType Name="OemActions">
+				<Annotation Term="OData.AdditionalProperties" Bool="true"/>
 			</ComplexType>
 
 			<EnumType Name="BaseboardType">
