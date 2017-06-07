@@ -1,0 +1,501 @@
+{
+    "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema.v1_2_0.json",
+    "title": "#AllocationSystemRequest.v0_1_0",
+    "definitions": {
+        "AllocationSystemRequest": {
+            "type": "object",
+            "patternProperties": {
+                "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message|Privileges)\\.[a-zA-Z_][a-zA-Z0-9_.]+$": {
+                    "type": [
+                        "array",
+                        "boolean",
+                        "number",
+                        "null",
+                        "object",
+                        "string"
+                    ],
+                    "description": "This property shall specify a valid odata or Redfish property."
+                }
+            },
+            "additionalProperties": false,
+            "properties": {
+                "Processors": {
+                    "type": "array",
+                    "items": {
+                        "anyOf": [
+                            {"$ref": "#/definitions/Processor"},
+                            {"type": "null"}
+                        ]
+                    },
+                    "description": "The requirements for one or more processors"
+                },
+                "Memory": {
+                    "type": "array",
+                    "items": {
+                        "anyOf": [
+                            {"$ref": "#/definitions/Memory"},
+                            {"type": "null"}
+                        ]
+                    },
+                    "description": "The requirements for one or more memory configurations"
+                },
+                "LocalDrives": {
+                    "type": "array",
+                    "items": {
+                        "anyOf": [
+                            {"$ref": "#/definitions/LocalDrive"},
+                            {"type": "null"}
+                        ]
+                    },
+                    "description": "The requirements for one or more local drives"
+                },
+                "EthernetInterfaces": {
+                    "type": "array",
+                    "items": {
+                        "anyOf": [
+                            {"$ref": "#/definitions/EthernetInterface"},
+                            {"type": "null"}
+                        ]
+                    },
+                    "description": "The requirements for one or more ethernet interfaces"
+                },
+                "HSSInterfaces": {
+                    "type": "array",
+                    "items": {
+                        "anyOf": [
+                            {"$ref": "#/definitions/HSSInterface"},
+                            {"type": "null"}
+                        ]
+                    },
+                    "description": "The requirements for one or more HSS interfaces"
+                }
+            },
+            "description": "The requirements for a system"
+        },
+        "EthernetInterface": {
+            "type": "object",
+            "patternProperties": {
+                "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message|Privileges)\\.[a-zA-Z_][a-zA-Z0-9_.]+$": {
+                    "type": [
+                        "array",
+                        "boolean",
+                        "number",
+                        "null",
+                        "object",
+                        "string"
+                    ],
+                    "description": "This property shall specify a valid odata or Redfish property."
+                }
+            },
+            "additionalProperties": false,
+            "properties": {
+                "SpeedMbps": {
+                    "type": [
+                        "number",
+                        "null"
+                    ],
+                    "units": "Mbit/s",
+                    "description": "The minimum speed of the ethernet interface"
+                },
+                "PrimaryVLAN": {
+                    "type": [
+                        "number",
+                        "null"
+                    ],
+                    "description": "The primary VLAN ID of the ethernet interface"
+                },
+                "VLANs": {
+                    "type": "array",
+                    "items": {
+                        "anyOf": [
+                            {"$ref": "#/definitions/VLAN"},
+                            {"type": "null"}
+                        ]
+                    },
+                    "description": "The VLANs of the ethernet interface"
+                },
+                "Resource": {
+                    "anyOf": [
+                        {"$ref": "http://redfish.dmtf.org/schemas/v1/EthernetInterface.json#/definitions/EthernetInterface"},
+                        {"type": "null"}
+                    ],
+                    "description": "The URI of a concrete resource"
+                },
+                "Baseboard": {
+                    "anyOf": [
+                        {"$ref": "http://redfish.dmtf.org/schemas/v1/Baseboard.json#/definitions/Baseboard"},
+                        {"type": "null"}
+                    ],
+                    "description": "The Baseboard where applicable resources are located"
+                },
+                "Backplane": {
+                    "anyOf": [
+                        {"$ref": "http://redfish.dmtf.org/schemas/v1/Backplane.json#/definitions/Backplane"},
+                        {"type": "null"}
+                    ],
+                    "description": "The Backplane where applicable resources are located"
+                },
+                "Chassis": {
+                    "anyOf": [
+                        {"$ref": "http://redfish.dmtf.org/schemas/v1/Chassis.json#/definitions/Chassis"},
+                        {"type": "null"}
+                    ],
+                    "description": "The Chassis in which applicable resources are located"
+                }
+            },
+            "description": "The requirements for a ethernet interface"
+        },
+        "HSSInterface": {
+            "type": "object",
+            "patternProperties": {
+                "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message|Privileges)\\.[a-zA-Z_][a-zA-Z0-9_.]+$": {
+                    "type": [
+                        "array",
+                        "boolean",
+                        "number",
+                        "null",
+                        "object",
+                        "string"
+                    ],
+                    "description": "This property shall specify a valid odata or Redfish property."
+                }
+            },
+            "additionalProperties": false,
+            "properties": {
+                "MaxSpeedGBps": {
+                    "type": [
+                        "number",
+                        "null"
+                    ],
+                    "units": "GBytes/s",
+                    "description": "The minimal value of the maximum speed of the HSS interface"
+                },
+                "AvailableWidth": {
+                    "type": [
+                        "number",
+                        "null"
+                    ],
+                    "description": "The number of unused lanes of the HSS interface"
+                },
+                "MaxWidth": {
+                    "type": [
+                        "number",
+                        "null"
+                    ],
+                    "description": "The minimal value of the maximum lanes of the HSS interface"
+                },
+                "Resource": {
+                    "anyOf": [
+                        {"$ref": "http://redfish.dmtf.org/schemas/v1/HSSInterface.json#/definitions/HSSInterface"},
+                        {"type": "null"}
+                    ],
+                    "description": "The URI of a concrete resource"
+                },
+                "Baseboard": {
+                    "anyOf": [
+                        {"$ref": "http://redfish.dmtf.org/schemas/v1/Baseboard.json#/definitions/Baseboard"},
+                        {"type": "null"}
+                    ],
+                    "description": "The Baseboard where applicable resources are located"
+                },
+                "Backplane": {
+                    "anyOf": [
+                        {"$ref": "http://redfish.dmtf.org/schemas/v1/Backplane.json#/definitions/Backplane"},
+                        {"type": "null"}
+                    ],
+                    "description": "The Backplane where applicable resources are located"
+                },
+                "Chassis": {
+                    "anyOf": [
+                        {"$ref": "http://redfish.dmtf.org/schemas/v1/Chassis.json#/definitions/Chassis"},
+                        {"type": "null"}
+                    ],
+                    "description": "The Chassis in which applicable resources are located"
+                }
+            },
+            "description": "The requirements for a HSS interface"
+        },
+        "LocalDrive": {
+            "type": "object",
+            "patternProperties": {
+                "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message|Privileges)\\.[a-zA-Z_][a-zA-Z0-9_.]+$": {
+                    "type": [
+                        "array",
+                        "boolean",
+                        "number",
+                        "null",
+                        "object",
+                        "string"
+                    ],
+                    "description": "This property shall specify a valid odata or Redfish property."
+                }
+            },
+            "additionalProperties": false,
+            "properties": {
+                "CapacityBytes": {
+                    "type": [
+                        "number",
+                        "null"
+                    ],
+                    "units": "By",
+                    "description": "The minimum capacity of the local drive"
+                },
+                "Type": {
+                    "anyOf": [
+                        {"$ref": "http://redfish.dmtf.org/schemas/v1/Drive.v1_0_0.json#/definitions/MediaType"},
+                        {"type": "null"}
+                    ],
+                    "description": "The exact media type of the local drive"
+                },
+                "MinRPM": {
+                    "type": [
+                        "number",
+                        "null"
+                    ],
+                    "description": "The minimum RPM value of the local drive"
+                },
+                "SerialNumber": {
+                    "type": [
+                        "string",
+                        "null"
+                    ],
+                    "description": "The exact serial number of the local drive"
+                },
+                "Protocol": {
+                    "anyOf": [
+                        {"$ref": "http://redfish.dmtf.org/schemas/v1/Storage.v1_0_0.json#/definitions/Protocol"},
+                        {"type": "null"}
+                    ],
+                    "description": "The exact protocol of the local drive"
+                },
+                "Resource": {
+                    "anyOf": [
+                        {"$ref": "http://redfish.dmtf.org/schemas/v1/Drive.json#/definitions/Drive"},
+                        {"type": "null"}
+                    ],
+                    "description": "The URI of a concrete resource"
+                },
+                "Baseboard": {
+                    "anyOf": [
+                        {"$ref": "http://redfish.dmtf.org/schemas/v1/Baseboard.json#/definitions/Baseboard"},
+                        {"type": "null"}
+                    ],
+                    "description": "The Baseboard where applicable resources are located"
+                },
+                "Backplane": {
+                    "anyOf": [
+                        {"$ref": "http://redfish.dmtf.org/schemas/v1/Backplane.json#/definitions/Backplane"},
+                        {"type": "null"}
+                    ],
+                    "description": "The Backplane where applicable resources are located"
+                },
+                "Chassis": {
+                    "anyOf": [
+                        {"$ref": "http://redfish.dmtf.org/schemas/v1/Chassis.json#/definitions/Chassis"},
+                        {"type": "null"}
+                    ],
+                    "description": "The Chassis in which applicable resources are located"
+                }
+            },
+            "description": "The requirements for a local drive"
+        },
+        "Memory": {
+            "type": "object",
+            "patternProperties": {
+                "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message|Privileges)\\.[a-zA-Z_][a-zA-Z0-9_.]+$": {
+                    "type": [
+                        "array",
+                        "boolean",
+                        "number",
+                        "null",
+                        "object",
+                        "string"
+                    ],
+                    "description": "This property shall specify a valid odata or Redfish property."
+                }
+            },
+            "additionalProperties": false,
+            "properties": {
+                "CapacityMiB": {
+                    "type": [
+                        "number",
+                        "null"
+                    ],
+                    "units": "MiBy",
+                    "description": "The minimum capacity of the memory"
+                },
+                "DimmDeviceType": {
+                    "anyOf": [
+                        {"$ref": "http://redfish.dmtf.org/schemas/v1/Memory.v1_0_0.json#/definitions/MemoryDeviceType"},
+                        {"type": "null"}
+                    ],
+                    "description": "The exact type of the memory"
+                },
+                "SpeedMHz": {
+                    "type": [
+                        "number",
+                        "null"
+                    ],
+                    "units": "MHz",
+                    "description": "The minimum speed of the memory"
+                },
+                "Manufacturer": {
+                    "type": [
+                        "string",
+                        "null"
+                    ],
+                    "description": "The exact manufacturer of the memory"
+                },
+                "DataWidthBits": {
+                    "type": [
+                        "number",
+                        "null"
+                    ],
+                    "units": "bits",
+                    "description": "The minimum data width of the memory"
+                },
+                "Resource": {
+                    "anyOf": [
+                        {"$ref": "http://redfish.dmtf.org/schemas/v1/Memory.json#/definitions/Memory"},
+                        {"type": "null"}
+                    ],
+                    "description": "The URI of a concrete resource"
+                },
+                "Baseboard": {
+                    "anyOf": [
+                        {"$ref": "http://redfish.dmtf.org/schemas/v1/Baseboard.json#/definitions/Baseboard"},
+                        {"type": "null"}
+                    ],
+                    "description": "The Baseboard where applicable resources are located"
+                },
+                "Backplane": {
+                    "anyOf": [
+                        {"$ref": "http://redfish.dmtf.org/schemas/v1/Backplane.json#/definitions/Backplane"},
+                        {"type": "null"}
+                    ],
+                    "description": "The Backplane where applicable resources are located"
+                },
+                "Chassis": {
+                    "anyOf": [
+                        {"$ref": "http://redfish.dmtf.org/schemas/v1/Chassis.json#/definitions/Chassis"},
+                        {"type": "null"}
+                    ],
+                    "description": "The Chassis in which applicable resources are located"
+                }
+            },
+            "description": "The requirements for a memory configuration"
+        },
+        "Processor": {
+            "type": "object",
+            "patternProperties": {
+                "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message|Privileges)\\.[a-zA-Z_][a-zA-Z0-9_.]+$": {
+                    "type": [
+                        "array",
+                        "boolean",
+                        "number",
+                        "null",
+                        "object",
+                        "string"
+                    ],
+                    "description": "This property shall specify a valid odata or Redfish property."
+                }
+            },
+            "additionalProperties": false,
+            "properties": {
+                "Model": {
+                    "type": [
+                        "string",
+                        "null"
+                    ],
+                    "description": "The exact model of the processor"
+                },
+                "TotalCores": {
+                    "type": [
+                        "number",
+                        "null"
+                    ],
+                    "description": "The minimum number of cores of the processor"
+                },
+                "AchievableSpeedMHz": {
+                    "type": [
+                        "number",
+                        "null"
+                    ],
+                    "units": "MHz",
+                    "description": "The minimum speed of the processor"
+                },
+                "InstructionSet": {
+                    "anyOf": [
+                        {"$ref": "http://redfish.dmtf.org/schemas/v1/Processor.v1_0_0.json#/definitions/InstructionSet"},
+                        {"type": "null"}
+                    ],
+                    "description": "The instruction set of the processor"
+                },
+                "Resource": {
+                    "anyOf": [
+                        {"$ref": "http://redfish.dmtf.org/schemas/v1/Processor.json#/definitions/Processor"},
+                        {"type": "null"}
+                    ],
+                    "description": "The URI of a concrete resource"
+                },
+                "Baseboard": {
+                    "anyOf": [
+                        {"$ref": "http://redfish.dmtf.org/schemas/v1/Baseboard.json#/definitions/Baseboard"},
+                        {"type": "null"}
+                    ],
+                    "description": "The Baseboard where applicable resources are located"
+                },
+                "Backplane": {
+                    "anyOf": [
+                        {"$ref": "http://redfish.dmtf.org/schemas/v1/Backplane.json#/definitions/Backplane"},
+                        {"type": "null"}
+                    ],
+                    "description": "The Backplane where applicable resources are located"
+                },
+                "Chassis": {
+                    "anyOf": [
+                        {"$ref": "http://redfish.dmtf.org/schemas/v1/Chassis.json#/definitions/Chassis"},
+                        {"type": "null"}
+                    ],
+                    "description": "The Chassis in which applicable resources are located"
+                }
+            },
+            "description": "The requirements for a processor"
+        },
+        "VLAN": {
+            "type": "object",
+            "patternProperties": {
+                "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message|Privileges)\\.[a-zA-Z_][a-zA-Z0-9_.]+$": {
+                    "type": [
+                        "array",
+                        "boolean",
+                        "number",
+                        "null",
+                        "object",
+                        "string"
+                    ],
+                    "description": "This property shall specify a valid odata or Redfish property."
+                }
+            },
+            "additionalProperties": false,
+            "properties": {
+                "VLANId": {
+                    "type": [
+                        "number",
+                        "null"
+                    ],
+                    "description": "The ID of the VLAN"
+                },
+                "Tagged": {
+                    "type": [
+                        "boolean",
+                        "null"
+                    ],
+                    "description": "The tagged value of the VLAN"
+                }
+            },
+            "description": "The VLAN ID and tagged property"
+        }
+    },
+    "copyright": "Copyright 2014-2017 Distributed Management Task Force, Inc. (DMTF). For the full DMTF copyright policy, see http://www.dmtf.org/about/policies/copyright"
+}

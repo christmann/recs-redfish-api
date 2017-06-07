@@ -15,6 +15,46 @@
 	<edmx:Reference Uri="ComposedNode_v1.xml">
 		<edmx:Include Namespace="ComposedNode" />
 	</edmx:Reference>
+	<edmx:Reference Uri="http://redfish.dmtf.org/schemas/v1/Chassis_v1.xml">
+		<edmx:Include Namespace="Chassis"/>
+	</edmx:Reference>
+	<edmx:Reference Uri="Backplane_v1.xml">
+		<edmx:Include Namespace="Backplane"/>
+	</edmx:Reference>
+	<edmx:Reference Uri="Baseboard_v1.xml">
+		<edmx:Include Namespace="Baseboard"/>
+	</edmx:Reference>
+	<edmx:Reference Uri="http://redfish.dmtf.org/schemas/v1/Processor_v1.xml">
+		<edmx:Include Namespace="Processor"/>
+		<edmx:Include Namespace="Processor.v1_0_0"/>
+	</edmx:Reference>
+	<edmx:Reference Uri="http://redfish.dmtf.org/schemas/v1/Memory_v1.xml">
+		<edmx:Include Namespace="Memory"/>
+		<edmx:Include Namespace="Memory.v1_0_0"/>
+	</edmx:Reference>
+	<edmx:Reference Uri="http://redfish.dmtf.org/schemas/v1/Drive_v1.xml">
+		<edmx:Include Namespace="Drive"/>
+		<edmx:Include Namespace="Drive.v1_0_0"/>
+	</edmx:Reference>
+	<edmx:Reference Uri="http://redfish.dmtf.org/schemas/v1/Storage_v1.xml">
+		<edmx:Include Namespace="Storage.v1_0_0"/>
+	</edmx:Reference>
+	<edmx:Reference Uri="http://redfish.dmtf.org/schemas/v1/EthernetInterface_v1.xml">
+		<edmx:Include Namespace="EthernetInterface"/>
+	</edmx:Reference>
+	<edmx:Reference Uri="HSSInterface_v1.xml">
+		<edmx:Include Namespace="HSSInterface"/>
+	</edmx:Reference>
+	<edmx:Reference Uri="http://redfish.dmtf.org/schemas/v1/PCIeDevice_v1.xml">
+		<edmx:Include Namespace="PCIeDevice"/>
+		<edmx:Include Namespace="PCIeDevice.v1_0_0"/>
+	</edmx:Reference>
+	<edmx:Reference Uri="http://redfish.dmtf.org/schemas/v1/PCIeFunction_v1.xml">
+		<edmx:Include Namespace="PCIeFunction.v1_0_0"/>
+	</edmx:Reference>
+	<edmx:Reference Uri="http://redfish.dmtf.org/schemas/v1/Port_v1.xml">
+		<edmx:Include Namespace="Port"/>
+	</edmx:Reference>
 
 	<edmx:DataServices>
 		<Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="ComposedNodeCollection">
@@ -25,8 +65,352 @@
 					<Annotation Term="OData.Description" String="Contains the members of this collection." />
 					<Annotation Term="OData.AutoExpandReferences" />
 				</NavigationProperty>
+				<Property Name="Actions" Type="ComposedNodeCollection.Actions" Nullable="false">
+					<Annotation Term="OData.Description" String="The available actions for this resource."/>
+					<Annotation Term="OData.LongDescription" String="The Actions property shall contain the available actions for this resource."/>
+				</Property>
 			</EntityType>
 
+			<ComplexType Name="Actions">
+				<Annotation Term="OData.AdditionalProperties" Bool="false"/>
+				<Property Name="Oem" Type="ComposedNodeCollection.OemActions" Nullable="false"/>
+			</ComplexType>
+
+			<ComplexType Name="OemActions">
+				<Annotation Term="OData.AdditionalProperties" Bool="true"/>
+			</ComplexType>
+
+			<Action Name="Allocate" IsBound="true">
+				<Parameter Name="ComposedNodeCollection" Type="ComposedNodeCollection.Actions"/>
+				<Parameter Name="Systems" Type="Collection(AllocationSystemRequest.v0_1_0.AllocationSystemRequest)"/>
+				<Parameter Name="Devices" Type="Collection(AllocationDeviceRequest.v0_1_0.AllocationDeviceRequest)"/>
+				<Annotation Term="OData.Description" String="This action is used to allocate a composed node."/>
+			</Action>
+
 		</Schema>
+
+		<Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="AllocationSystemRequest.v0_1_0">
+
+			<ComplexType Name="AllocationSystemRequest">
+				<Annotation Term="OData.AdditionalProperties" Bool="false"/>
+				<Annotation Term="OData.Description" String="The requirements for a system" />
+				<Property Name="Processors" Type="Collection(AllocationSystemRequest.v0_1_0.Processor)">
+					<Annotation Term="OData.Description" String="The requirements for one or more processors" />
+				</Property>
+				<Property Name="Memory" Type="Collection(AllocationSystemRequest.v0_1_0.Memory)">
+					<Annotation Term="OData.Description" String="The requirements for one or more memory configurations" />
+				</Property>
+				<Property Name="LocalDrives" Type="Collection(AllocationSystemRequest.v0_1_0.LocalDrive)">
+					<Annotation Term="OData.Description" String="The requirements for one or more local drives" />
+				</Property>
+				<Property Name="EthernetInterfaces" Type="Collection(AllocationSystemRequest.v0_1_0.EthernetInterface)">
+					<Annotation Term="OData.Description" String="The requirements for one or more ethernet interfaces" />
+				</Property>
+				<Property Name="HSSInterfaces" Type="Collection(AllocationSystemRequest.v0_1_0.HSSInterface)">
+					<Annotation Term="OData.Description" String="The requirements for one or more HSS interfaces" />
+				</Property>
+			</ComplexType>
+
+			<ComplexType Name="Processor">
+				<Annotation Term="OData.AdditionalProperties" Bool="false"/>
+				<Annotation Term="OData.Description" String="The requirements for a processor" />
+				<Property Name="Model" Type="Edm.String">
+					<Annotation Term="OData.Description" String="The exact model of the processor" />
+				</Property>
+				<Property Name="TotalCores" Type="Edm.Int32">
+					<Annotation Term="OData.Description" String="The minimum number of cores of the processor" />
+				</Property>
+				<Property Name="AchievableSpeedMHz" Type="Edm.Int32">
+					<Annotation Term="OData.Description" String="The minimum speed of the processor" />
+					<Annotation Term="Measures.Unit" String="MHz"/>
+				</Property>
+				<Property Name="InstructionSet" Type="Processor.v1_0_0.InstructionSet">
+					<Annotation Term="OData.Description" String="The instruction set of the processor" />
+				</Property>
+				<NavigationProperty Name="Resource" Type="Processor.Processor">
+					<Annotation Term="OData.Description" String="The URI of a concrete resource" />
+					<Annotation Term="OData.AutoExpandReferences"/>
+				</NavigationProperty>
+				<NavigationProperty Name="Baseboard" Type="Baseboard.Baseboard">
+					<Annotation Term="OData.Description" String="The Baseboard where applicable resources are located" />
+					<Annotation Term="OData.AutoExpandReferences"/>
+				</NavigationProperty>
+				<NavigationProperty Name="Backplane" Type="Backplane.Backplane">
+					<Annotation Term="OData.Description" String="The Backplane where applicable resources are located" />
+					<Annotation Term="OData.AutoExpandReferences"/>
+				</NavigationProperty>
+				<NavigationProperty Name="Chassis" Type="Chassis.Chassis">
+					<Annotation Term="OData.Description" String="The Chassis in which applicable resources are located" />
+					<Annotation Term="OData.AutoExpandReferences"/>
+				</NavigationProperty>
+			</ComplexType>
+
+			<ComplexType Name="Memory">
+				<Annotation Term="OData.AdditionalProperties" Bool="false"/>
+				<Annotation Term="OData.Description" String="The requirements for a memory configuration" />
+				<Property Name="CapacityMiB" Type="Edm.Int32">
+					<Annotation Term="OData.Description" String="The minimum capacity of the memory" />
+					<Annotation Term="Measures.Unit" String="MiBy"/>
+				</Property>
+				<Property Name="DimmDeviceType" Type="Memory.v1_0_0.MemoryDeviceType">
+					<Annotation Term="OData.Description" String="The exact type of the memory" />
+				</Property>
+				<Property Name="SpeedMHz" Type="Edm.Int64">
+					<Annotation Term="OData.Description" String="The minimum speed of the memory" />
+					<Annotation Term="Measures.Unit" String="MHz"/>
+				</Property>
+				<Property Name="Manufacturer" Type="Edm.String">
+					<Annotation Term="OData.Description" String="The exact manufacturer of the memory" />
+				</Property>
+				<Property Name="DataWidthBits" Type="Edm.Int32">
+					<Annotation Term="OData.Description" String="The minimum data width of the memory" />
+					<Annotation Term="Measures.Unit" String="bits"/>
+				</Property>
+				<NavigationProperty Name="Resource" Type="Memory.Memory">
+					<Annotation Term="OData.Description" String="The URI of a concrete resource" />
+					<Annotation Term="OData.AutoExpandReferences"/>
+				</NavigationProperty>
+				<NavigationProperty Name="Baseboard" Type="Baseboard.Baseboard">
+					<Annotation Term="OData.Description" String="The Baseboard where applicable resources are located" />
+					<Annotation Term="OData.AutoExpandReferences"/>
+				</NavigationProperty>
+				<NavigationProperty Name="Backplane" Type="Backplane.Backplane">
+					<Annotation Term="OData.Description" String="The Backplane where applicable resources are located" />
+					<Annotation Term="OData.AutoExpandReferences"/>
+				</NavigationProperty>
+				<NavigationProperty Name="Chassis" Type="Chassis.Chassis">
+					<Annotation Term="OData.Description" String="The Chassis in which applicable resources are located" />
+					<Annotation Term="OData.AutoExpandReferences"/>
+				</NavigationProperty>
+			</ComplexType>
+
+			<ComplexType Name="LocalDrive">
+				<Annotation Term="OData.AdditionalProperties" Bool="false"/>
+				<Annotation Term="OData.Description" String="The requirements for a local drive" />
+				<Property Name="CapacityBytes" Type="Edm.Int64">
+					<Annotation Term="OData.Description" String="The minimum capacity of the local drive" />
+					<Annotation Term="Measures.Unit" String="By"/>
+				</Property>
+				<Property Name="Type" Type="Drive.v1_0_0.MediaType">
+					<Annotation Term="OData.Description" String="The exact media type of the local drive" />
+				</Property>
+				<Property Name="MinRPM" Type="Edm.Int32">
+					<Annotation Term="OData.Description" String="The minimum RPM value of the local drive" />
+				</Property>
+				<Property Name="SerialNumber" Type="Edm.String">
+					<Annotation Term="OData.Description" String="The exact serial number of the local drive" />
+				</Property>
+				<Property Name="Protocol" Type="Storage.v1_0_0.Protocol">
+					<Annotation Term="OData.Description" String="The exact protocol of the local drive" />
+				</Property>
+				<NavigationProperty Name="Resource" Type="Drive.Drive">
+					<Annotation Term="OData.Description" String="The URI of a concrete resource" />
+					<Annotation Term="OData.AutoExpandReferences"/>
+				</NavigationProperty>
+				<NavigationProperty Name="Baseboard" Type="Baseboard.Baseboard">
+					<Annotation Term="OData.Description" String="The Baseboard where applicable resources are located" />
+					<Annotation Term="OData.AutoExpandReferences"/>
+				</NavigationProperty>
+				<NavigationProperty Name="Backplane" Type="Backplane.Backplane">
+					<Annotation Term="OData.Description" String="The Backplane where applicable resources are located" />
+					<Annotation Term="OData.AutoExpandReferences"/>
+				</NavigationProperty>
+				<NavigationProperty Name="Chassis" Type="Chassis.Chassis">
+					<Annotation Term="OData.Description" String="The Chassis in which applicable resources are located" />
+					<Annotation Term="OData.AutoExpandReferences"/>
+				</NavigationProperty>
+			</ComplexType>
+
+			<ComplexType Name="EthernetInterface">
+				<Annotation Term="OData.AdditionalProperties" Bool="false"/>
+				<Annotation Term="OData.Description" String="The requirements for a ethernet interface" />
+				<Property Name="SpeedMbps" Type="Edm.Int32">
+					<Annotation Term="OData.Description" String="The minimum speed of the ethernet interface" />
+					<Annotation Term="Measures.Unit" String="Mbit/s"/>
+				</Property>
+				<Property Name="PrimaryVLAN" Type="Edm.Int32">
+					<Annotation Term="OData.Description" String="The primary VLAN ID of the ethernet interface" />
+				</Property>
+				<Property Name="VLANs" Type="Collection(AllocationSystemRequest.v0_1_0.VLAN)">
+					<Annotation Term="OData.Description" String="The VLANs of the ethernet interface" />
+				</Property>
+				<NavigationProperty Name="Resource" Type="EthernetInterface.EthernetInterface">
+					<Annotation Term="OData.Description" String="The URI of a concrete resource" />
+					<Annotation Term="OData.AutoExpandReferences"/>
+				</NavigationProperty>
+				<NavigationProperty Name="Baseboard" Type="Baseboard.Baseboard">
+					<Annotation Term="OData.Description" String="The Baseboard where applicable resources are located" />
+					<Annotation Term="OData.AutoExpandReferences"/>
+				</NavigationProperty>
+				<NavigationProperty Name="Backplane" Type="Backplane.Backplane">
+					<Annotation Term="OData.Description" String="The Backplane where applicable resources are located" />
+					<Annotation Term="OData.AutoExpandReferences"/>
+				</NavigationProperty>
+				<NavigationProperty Name="Chassis" Type="Chassis.Chassis">
+					<Annotation Term="OData.Description" String="The Chassis in which applicable resources are located" />
+					<Annotation Term="OData.AutoExpandReferences"/>
+				</NavigationProperty>
+			</ComplexType>
+
+			<ComplexType Name="VLAN">
+				<Annotation Term="OData.AdditionalProperties" Bool="false"/>
+				<Annotation Term="OData.Description" String="The VLAN ID and tagged property" />
+				<Property Name="VLANId" Type="Edm.Int32">
+					<Annotation Term="OData.Description" String="The ID of the VLAN" />
+				</Property>
+				<Property Name="Tagged" Type="Edm.Boolean">
+					<Annotation Term="OData.Description" String="The tagged value of the VLAN" />
+				</Property>
+			</ComplexType>
+
+			<ComplexType Name="HSSInterface">
+				<Annotation Term="OData.AdditionalProperties" Bool="false"/>
+				<Annotation Term="OData.Description" String="The requirements for a HSS interface" />
+				<Property Name="MaxSpeedGBps" Type="Edm.Int32">
+					<Annotation Term="OData.Description" String="The minimal value of the maximum speed of the HSS interface" />
+					<Annotation Term="Measures.Unit" String="GBytes/s"/>
+				</Property>
+				<Property Name="AvailableWidth" Type="Edm.Int32">
+					<Annotation Term="OData.Description" String="The number of unused lanes of the HSS interface" />
+				</Property>
+				<Property Name="MaxWidth" Type="Edm.Int32">
+					<Annotation Term="OData.Description" String="The minimal value of the maximum lanes of the HSS interface" />
+				</Property>
+				<NavigationProperty Name="Resource" Type="HSSInterface.HSSInterface">
+					<Annotation Term="OData.Description" String="The URI of a concrete resource" />
+					<Annotation Term="OData.AutoExpandReferences"/>
+				</NavigationProperty>
+				<NavigationProperty Name="Baseboard" Type="Baseboard.Baseboard">
+					<Annotation Term="OData.Description" String="The Baseboard where applicable resources are located" />
+					<Annotation Term="OData.AutoExpandReferences"/>
+				</NavigationProperty>
+				<NavigationProperty Name="Backplane" Type="Backplane.Backplane">
+					<Annotation Term="OData.Description" String="The Backplane where applicable resources are located" />
+					<Annotation Term="OData.AutoExpandReferences"/>
+				</NavigationProperty>
+				<NavigationProperty Name="Chassis" Type="Chassis.Chassis">
+					<Annotation Term="OData.Description" String="The Chassis in which applicable resources are located" />
+					<Annotation Term="OData.AutoExpandReferences"/>
+				</NavigationProperty>
+			</ComplexType>
+
+		</Schema>
+
+		<Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="AllocationDeviceRequest.v0_1_0">
+
+			<ComplexType Name="AllocationDeviceRequest">
+				<Annotation Term="OData.AdditionalProperties" Bool="false"/>
+				<Annotation Term="OData.Description" String="The requirements for a PCIe device" />
+				<Property Name="Manufacturer" Type="Edm.String">
+					<Annotation Term="OData.Description" String="The exact manufacturer of the PCIe device" />
+				</Property>
+				<Property Name="Model" Type="Edm.String">
+					<Annotation Term="OData.Description" String="The exact model of the PCIe device" />
+				</Property>
+				<Property Name="SerialNumber" Type="Edm.String">
+					<Annotation Term="OData.Description" String="The exact serial number of the PCIe device" />
+				</Property>
+				<Property Name="Type" Type="PCIeDevice.v1_0_0.DeviceType">
+					<Annotation Term="OData.Description" String="The exact type of the PCIe device" />
+				</Property>
+				<Property Name="PCIeFunctions" Type="Collection(AllocationDeviceRequest.v0_1_0.PCIeFunction)">
+					<Annotation Term="OData.Description" String="The minimal required set of PCIe functions exposed by the PCIe device" />
+				</Property>
+				<Property Name="Port" Type="AllocationDeviceRequest.v0_1_0.Port">
+					<Annotation Term="OData.Description" String="The requirements for the PCIe port of the PCIe device" />
+				</Property>
+				<NavigationProperty Name="Resource" Type="PCIeDevice.PCIeDevice">
+					<Annotation Term="OData.Description" String="The URI of a concrete resource" />
+					<Annotation Term="OData.AutoExpandReferences"/>
+				</NavigationProperty>
+				<NavigationProperty Name="Baseboard" Type="Baseboard.Baseboard">
+					<Annotation Term="OData.Description" String="The Baseboard where applicable resources are located" />
+					<Annotation Term="OData.AutoExpandReferences"/>
+				</NavigationProperty>
+				<NavigationProperty Name="Backplane" Type="Backplane.Backplane">
+					<Annotation Term="OData.Description" String="The Backplane where applicable resources are located" />
+					<Annotation Term="OData.AutoExpandReferences"/>
+				</NavigationProperty>
+				<NavigationProperty Name="Chassis" Type="Chassis.Chassis">
+					<Annotation Term="OData.Description" String="The Chassis in which applicable resources are located" />
+					<Annotation Term="OData.AutoExpandReferences"/>
+				</NavigationProperty>
+			</ComplexType>
+
+			<ComplexType Name="PCIeFunction">
+				<Annotation Term="OData.AdditionalProperties" Bool="false"/>
+				<Annotation Term="OData.Description" String="A PCIe function" />
+				<Property Name="FunctionType" Type="PCIeFunction.v1_0_0.FunctionType">
+					<Annotation Term="OData.Description" String="The type of the PCIe Function" />
+				</Property>
+				<Property Name="DeviceClass" Type="PCIeFunction.v1_0_0.DeviceClass">
+					<Annotation Term="OData.Description" String="The class for this PCIe Function" />
+				</Property>
+				<Property Name="DeviceId" Type="Edm.String">
+					<Annotation Term="OData.Description" String="The Device ID of this PCIe function."/>
+					<Annotation Term="OData.LongDescription" String="The value of this property shall be the PCI Device ID of the PCIe device function."/>
+					<Annotation Term="Validation.Pattern" String="/0[xX](([a-fA-F]|[0-9]){2}){2}"/>
+				</Property>
+				<Property Name="VendorId" Type="Edm.String">
+					<Annotation Term="OData.Description" String="The Vendor ID of this PCIe function."/>
+					<Annotation Term="OData.LongDescription" String="The value of this property shall be the PCI Vendor ID of the PCIe device function."/>
+					<Annotation Term="Validation.Pattern" String="/0[xX](([a-fA-F]|[0-9]){2}){2}"/>
+				</Property>
+				<Property Name="ClassCode" Type="Edm.String">
+					<Annotation Term="OData.Description" String="The Class Code of this PCIe function."/>
+					<Annotation Term="OData.LongDescription" String="The value of this property shall be the PCI Class Code of the PCIe device function."/>
+					<Annotation Term="Validation.Pattern" String="/0[xX](([a-fA-F]|[0-9]){2}){3}"/>
+				</Property>
+				<Property Name="RevisionId" Type="Edm.String">
+					<Annotation Term="OData.Description" String="The Revision ID of this PCIe function."/>
+					<Annotation Term="OData.LongDescription" String="The value of this property shall be the PCI Revision ID of the PCIe device function."/>
+					<Annotation Term="Validation.Pattern" String="/0[xX](([a-fA-F]|[0-9]){2}){1}"/>
+				</Property>
+				<Property Name="SubsystemId" Type="Edm.String">
+					<Annotation Term="OData.Description" String="The Subsystem ID of this PCIe function."/>
+					<Annotation Term="OData.LongDescription" String="The value of this property shall be the PCI Subsystem ID of the PCIe device function."/>
+					<Annotation Term="Validation.Pattern" String="/0[xX](([a-fA-F]|[0-9]){2}){2}"/>
+				</Property>
+				<Property Name="SubsystemVendorId" Type="Edm.String">
+					<Annotation Term="OData.Description" String="The Subsystem Vendor ID of this PCIe function."/>
+					<Annotation Term="OData.LongDescription" String="The value of this property shall be the PCI Subsystem Vendor ID of the PCIe device function."/>
+					<Annotation Term="Validation.Pattern" String="/0[xX](([a-fA-F]|[0-9]){2}){2}"/>
+				</Property>
+			</ComplexType>
+
+			<ComplexType Name="Port">
+				<Annotation Term="OData.AdditionalProperties" Bool="false"/>
+				<Annotation Term="OData.Description" String="The requirements for a PCIe device port" />
+				<Property Name="MaxSpeedGBps" Type="Edm.Int32">
+					<Annotation Term="OData.Description" String="The minimal value of the maximum speed of the port" />
+					<Annotation Term="Measures.Unit" String="GBytes/s"/>
+				</Property>
+				<Property Name="AvailableWidth" Type="Edm.Int32">
+					<Annotation Term="OData.Description" String="The number of unused lanes of the port" />
+				</Property>
+				<Property Name="MaxWidth" Type="Edm.Int32">
+					<Annotation Term="OData.Description" String="The minimal value of the maximum lanes of the port" />
+				</Property>
+				<NavigationProperty Name="Resource" Type="Port.Port">
+					<Annotation Term="OData.Description" String="The URI of a concrete resource" />
+					<Annotation Term="OData.AutoExpandReferences"/>
+				</NavigationProperty>
+				<NavigationProperty Name="Baseboard" Type="Baseboard.Baseboard">
+					<Annotation Term="OData.Description" String="The Baseboard where applicable resources are located" />
+					<Annotation Term="OData.AutoExpandReferences"/>
+				</NavigationProperty>
+				<NavigationProperty Name="Backplane" Type="Backplane.Backplane">
+					<Annotation Term="OData.Description" String="The Backplane where applicable resources are located" />
+					<Annotation Term="OData.AutoExpandReferences"/>
+				</NavigationProperty>
+				<NavigationProperty Name="Chassis" Type="Chassis.Chassis">
+					<Annotation Term="OData.Description" String="The Chassis in which applicable resources are located" />
+					<Annotation Term="OData.AutoExpandReferences"/>
+				</NavigationProperty>
+			</ComplexType>
+
+		</Schema>
+
+
 	</edmx:DataServices>
 </edmx:Edmx>

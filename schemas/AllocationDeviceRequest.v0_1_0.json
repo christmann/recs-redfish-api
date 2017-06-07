@@ -1,0 +1,258 @@
+{
+    "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema.v1_2_0.json",
+    "title": "#AllocationDeviceRequest.v0_1_0",
+    "definitions": {
+        "AllocationDeviceRequest": {
+            "type": "object",
+            "patternProperties": {
+                "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message|Privileges)\\.[a-zA-Z_][a-zA-Z0-9_.]+$": {
+                    "type": [
+                        "array",
+                        "boolean",
+                        "number",
+                        "null",
+                        "object",
+                        "string"
+                    ],
+                    "description": "This property shall specify a valid odata or Redfish property."
+                }
+            },
+            "additionalProperties": false,
+            "properties": {
+                "Manufacturer": {
+                    "type": [
+                        "string",
+                        "null"
+                    ],
+                    "description": "The exact manufacturer of the PCIe device"
+                },
+                "Model": {
+                    "type": [
+                        "string",
+                        "null"
+                    ],
+                    "description": "The exact model of the PCIe device"
+                },
+                "SerialNumber": {
+                    "type": [
+                        "string",
+                        "null"
+                    ],
+                    "description": "The exact serial number of the PCIe device"
+                },
+                "Type": {
+                    "anyOf": [
+                        {"$ref": "http://redfish.dmtf.org/schemas/v1/PCIeDevice.v1_0_0.json#/definitions/DeviceType"},
+                        {"type": "null"}
+                    ],
+                    "description": "The exact type of the PCIe device"
+                },
+                "PCIeFunctions": {
+                    "type": "array",
+                    "items": {
+                        "anyOf": [
+                            {"$ref": "#/definitions/PCIeFunction"},
+                            {"type": "null"}
+                        ]
+                    },
+                    "description": "The minimal required set of PCIe functions exposed by the PCIe device"
+                },
+                "Port": {
+                    "anyOf": [
+                        {"$ref": "#/definitions/Port"},
+                        {"type": "null"}
+                    ],
+                    "description": "The requirements for the PCIe port of the PCIe device"
+                },
+                "Resource": {
+                    "anyOf": [
+                        {"$ref": "http://redfish.dmtf.org/schemas/v1/PCIeDevice.json#/definitions/PCIeDevice"},
+                        {"type": "null"}
+                    ],
+                    "description": "The URI of a concrete resource"
+                },
+                "Baseboard": {
+                    "anyOf": [
+                        {"$ref": "http://redfish.dmtf.org/schemas/v1/Baseboard.json#/definitions/Baseboard"},
+                        {"type": "null"}
+                    ],
+                    "description": "The Baseboard where applicable resources are located"
+                },
+                "Backplane": {
+                    "anyOf": [
+                        {"$ref": "http://redfish.dmtf.org/schemas/v1/Backplane.json#/definitions/Backplane"},
+                        {"type": "null"}
+                    ],
+                    "description": "The Backplane where applicable resources are located"
+                },
+                "Chassis": {
+                    "anyOf": [
+                        {"$ref": "http://redfish.dmtf.org/schemas/v1/Chassis.json#/definitions/Chassis"},
+                        {"type": "null"}
+                    ],
+                    "description": "The Chassis in which applicable resources are located"
+                }
+            },
+            "description": "The requirements for a PCIe device"
+        },
+        "PCIeFunction": {
+            "type": "object",
+            "patternProperties": {
+                "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message|Privileges)\\.[a-zA-Z_][a-zA-Z0-9_.]+$": {
+                    "type": [
+                        "array",
+                        "boolean",
+                        "number",
+                        "null",
+                        "object",
+                        "string"
+                    ],
+                    "description": "This property shall specify a valid odata or Redfish property."
+                }
+            },
+            "additionalProperties": false,
+            "properties": {
+                "FunctionType": {
+                    "anyOf": [
+                        {"$ref": "http://redfish.dmtf.org/schemas/v1/PCIeFunction.v1_0_0.json#/definitions/FunctionType"},
+                        {"type": "null"}
+                    ],
+                    "description": "The type of the PCIe Function"
+                },
+                "DeviceClass": {
+                    "anyOf": [
+                        {"$ref": "http://redfish.dmtf.org/schemas/v1/PCIeFunction.v1_0_0.json#/definitions/DeviceClass"},
+                        {"type": "null"}
+                    ],
+                    "description": "The class for this PCIe Function"
+                },
+                "DeviceId": {
+                    "type": [
+                        "string",
+                        "null"
+                    ],
+                    "pattern": "/0[xX](([a-fA-F]|[0-9]){2}){2}",
+                    "description": "The Device ID of this PCIe function.",
+                    "longDescription": "The value of this property shall be the PCI Device ID of the PCIe device function."
+                },
+                "VendorId": {
+                    "type": [
+                        "string",
+                        "null"
+                    ],
+                    "pattern": "/0[xX](([a-fA-F]|[0-9]){2}){2}",
+                    "description": "The Vendor ID of this PCIe function.",
+                    "longDescription": "The value of this property shall be the PCI Vendor ID of the PCIe device function."
+                },
+                "ClassCode": {
+                    "type": [
+                        "string",
+                        "null"
+                    ],
+                    "pattern": "/0[xX](([a-fA-F]|[0-9]){2}){3}",
+                    "description": "The Class Code of this PCIe function.",
+                    "longDescription": "The value of this property shall be the PCI Class Code of the PCIe device function."
+                },
+                "RevisionId": {
+                    "type": [
+                        "string",
+                        "null"
+                    ],
+                    "pattern": "/0[xX](([a-fA-F]|[0-9]){2}){1}",
+                    "description": "The Revision ID of this PCIe function.",
+                    "longDescription": "The value of this property shall be the PCI Revision ID of the PCIe device function."
+                },
+                "SubsystemId": {
+                    "type": [
+                        "string",
+                        "null"
+                    ],
+                    "pattern": "/0[xX](([a-fA-F]|[0-9]){2}){2}",
+                    "description": "The Subsystem ID of this PCIe function.",
+                    "longDescription": "The value of this property shall be the PCI Subsystem ID of the PCIe device function."
+                },
+                "SubsystemVendorId": {
+                    "type": [
+                        "string",
+                        "null"
+                    ],
+                    "pattern": "/0[xX](([a-fA-F]|[0-9]){2}){2}",
+                    "description": "The Subsystem Vendor ID of this PCIe function.",
+                    "longDescription": "The value of this property shall be the PCI Subsystem Vendor ID of the PCIe device function."
+                }
+            },
+            "description": "A PCIe function"
+        },
+        "Port": {
+            "type": "object",
+            "patternProperties": {
+                "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message|Privileges)\\.[a-zA-Z_][a-zA-Z0-9_.]+$": {
+                    "type": [
+                        "array",
+                        "boolean",
+                        "number",
+                        "null",
+                        "object",
+                        "string"
+                    ],
+                    "description": "This property shall specify a valid odata or Redfish property."
+                }
+            },
+            "additionalProperties": false,
+            "properties": {
+                "MaxSpeedGBps": {
+                    "type": [
+                        "number",
+                        "null"
+                    ],
+                    "units": "GBytes/s",
+                    "description": "The minimal value of the maximum speed of the port"
+                },
+                "AvailableWidth": {
+                    "type": [
+                        "number",
+                        "null"
+                    ],
+                    "description": "The number of unused lanes of the port"
+                },
+                "MaxWidth": {
+                    "type": [
+                        "number",
+                        "null"
+                    ],
+                    "description": "The minimal value of the maximum lanes of the port"
+                },
+                "Resource": {
+                    "anyOf": [
+                        {"$ref": "http://redfish.dmtf.org/schemas/v1/Port.json#/definitions/Port"},
+                        {"type": "null"}
+                    ],
+                    "description": "The URI of a concrete resource"
+                },
+                "Baseboard": {
+                    "anyOf": [
+                        {"$ref": "http://redfish.dmtf.org/schemas/v1/Baseboard.json#/definitions/Baseboard"},
+                        {"type": "null"}
+                    ],
+                    "description": "The Baseboard where applicable resources are located"
+                },
+                "Backplane": {
+                    "anyOf": [
+                        {"$ref": "http://redfish.dmtf.org/schemas/v1/Backplane.json#/definitions/Backplane"},
+                        {"type": "null"}
+                    ],
+                    "description": "The Backplane where applicable resources are located"
+                },
+                "Chassis": {
+                    "anyOf": [
+                        {"$ref": "http://redfish.dmtf.org/schemas/v1/Chassis.json#/definitions/Chassis"},
+                        {"type": "null"}
+                    ],
+                    "description": "The Chassis in which applicable resources are located"
+                }
+            },
+            "description": "The requirements for a PCIe device port"
+        }
+    },
+    "copyright": "Copyright 2014-2017 Distributed Management Task Force, Inc. (DMTF). For the full DMTF copyright policy, see http://www.dmtf.org/about/policies/copyright"
+}
