@@ -3,6 +3,35 @@
     "title": "#ComposedNode.v0_1_0.ComposedNode",
     "$ref": "#/definitions/ComposedNode",
     "definitions": {
+        "Assemble": {
+            "patternProperties": {
+                "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message|Privileges)\\.[a-zA-Z_][a-zA-Z0-9_.]+$": {
+                    "type": [
+                        "array",
+                        "boolean",
+                        "number",
+                        "null",
+                        "object",
+                        "string"
+                    ],
+                    "description": "This property shall specify a valid odata or Redfish property."
+                }
+            },
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "title": {
+                    "type": "string",
+                    "description": "Friendly action name"
+                },
+                "target": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "Link to invoke action"
+                }
+            },
+            "description": "This action is used to assemble a composed node with optional concrete connections."
+        },
         "Reset": {
             "patternProperties": {
                 "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message|Privileges)\\.[a-zA-Z_][a-zA-Z0-9_.]+$": {
@@ -145,6 +174,9 @@
                             },
                             "additionalProperties": true,
                             "properties": {}
+                        },
+                        "#ComposedNode.Assemble": {
+                            "$ref": "#/definitions/Assemble"
                         },
                         "#ComposedNode.Reset": {
                             "$ref": "#/definitions/Reset"
