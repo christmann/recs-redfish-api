@@ -82,31 +82,31 @@
 
 			<Action Name="Allocate" IsBound="true">
 				<Parameter Name="ComposedNodeCollection" Type="ComposedNodeCollection.Actions"/>
-				<Parameter Name="Systems" Type="Collection(AllocationSystemRequest.v0_1_0.AllocationSystemRequest)"/>
-				<Parameter Name="Devices" Type="Collection(AllocationDeviceRequest.v0_1_0.AllocationDeviceRequest)"/>
+				<Parameter Name="Systems" Type="Collection(ComposedNodeAllocationSystemRequirement.v0_1_0.ComposedNodeAllocationSystemRequirement)"/>
+				<Parameter Name="Devices" Type="Collection(ComposedNodeAllocationDeviceRequirement.v0_1_0.ComposedNodeAllocationDeviceRequirement)"/>
 				<Annotation Term="OData.Description" String="This action is used to allocate a composed node."/>
 			</Action>
 
 		</Schema>
 
-		<Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="AllocationSystemRequest.v0_1_0">
+		<Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="ComposedNodeAllocationSystemRequirement.v0_1_0">
 
-			<ComplexType Name="AllocationSystemRequest">
+			<ComplexType Name="ComposedNodeAllocationSystemRequirement">
 				<Annotation Term="OData.AdditionalProperties" Bool="false"/>
 				<Annotation Term="OData.Description" String="The requirements for a system" />
-				<Property Name="Processors" Type="Collection(AllocationSystemRequest.v0_1_0.Processor)">
+				<Property Name="Processors" Type="Collection(ComposedNodeAllocationSystemRequirement.v0_1_0.Processor)">
 					<Annotation Term="OData.Description" String="The requirements for one or more processors" />
 				</Property>
-				<Property Name="Memory" Type="Collection(AllocationSystemRequest.v0_1_0.Memory)">
+				<Property Name="Memory" Type="Collection(ComposedNodeAllocationSystemRequirement.v0_1_0.Memory)">
 					<Annotation Term="OData.Description" String="The requirements for one or more memory configurations" />
 				</Property>
-				<Property Name="LocalDrives" Type="Collection(AllocationSystemRequest.v0_1_0.LocalDrive)">
+				<Property Name="LocalDrives" Type="Collection(ComposedNodeAllocationSystemRequirement.v0_1_0.LocalDrive)">
 					<Annotation Term="OData.Description" String="The requirements for one or more local drives" />
 				</Property>
-				<Property Name="EthernetInterfaces" Type="Collection(AllocationSystemRequest.v0_1_0.EthernetInterface)">
+				<Property Name="EthernetInterfaces" Type="Collection(ComposedNodeAllocationSystemRequirement.v0_1_0.EthernetInterface)">
 					<Annotation Term="OData.Description" String="The requirements for one or more ethernet interfaces" />
 				</Property>
-				<Property Name="HSSInterfaces" Type="Collection(AllocationSystemRequest.v0_1_0.HSSInterface)">
+				<Property Name="HSSInterfaces" Type="Collection(ComposedNodeAllocationSystemRequirement.v0_1_0.HSSInterface)">
 					<Annotation Term="OData.Description" String="The requirements for one or more HSS interfaces" />
 				</Property>
 			</ComplexType>
@@ -231,7 +231,7 @@
 				<Property Name="PrimaryVLAN" Type="Edm.Int32">
 					<Annotation Term="OData.Description" String="The primary VLAN ID of the ethernet interface" />
 				</Property>
-				<Property Name="VLANs" Type="Collection(AllocationSystemRequest.v0_1_0.VLAN)">
+				<Property Name="VLANs" Type="Collection(ComposedNodeAllocationSystemRequirement.v0_1_0.VLAN)">
 					<Annotation Term="OData.Description" String="The VLANs of the ethernet interface" />
 				</Property>
 				<NavigationProperty Name="Resource" Type="EthernetInterface.EthernetInterface">
@@ -296,9 +296,9 @@
 
 		</Schema>
 
-		<Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="AllocationDeviceRequest.v0_1_0">
+		<Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="ComposedNodeAllocationDeviceRequirement.v0_1_0">
 
-			<ComplexType Name="AllocationDeviceRequest">
+			<ComplexType Name="ComposedNodeAllocationDeviceRequirement">
 				<Annotation Term="OData.AdditionalProperties" Bool="false"/>
 				<Annotation Term="OData.Description" String="The requirements for a PCIe device" />
 				<Property Name="Manufacturer" Type="Edm.String">
@@ -313,10 +313,10 @@
 				<Property Name="Type" Type="PCIeDevice.v1_0_0.DeviceType">
 					<Annotation Term="OData.Description" String="The exact type of the PCIe device" />
 				</Property>
-				<Property Name="PCIeFunctions" Type="Collection(AllocationDeviceRequest.v0_1_0.PCIeFunction)">
+				<Property Name="PCIeFunctions" Type="Collection(ComposedNodeAllocationDeviceRequirement.v0_1_0.PCIeFunction)">
 					<Annotation Term="OData.Description" String="The minimal required set of PCIe functions exposed by the PCIe device" />
 				</Property>
-				<Property Name="Port" Type="AllocationDeviceRequest.v0_1_0.Port">
+				<Property Name="Port" Type="ComposedNodeAllocationDeviceRequirement.v0_1_0.Port">
 					<Annotation Term="OData.Description" String="The requirements for the PCIe port of the PCIe device" />
 				</Property>
 				<NavigationProperty Name="Resource" Type="PCIeDevice.PCIeDevice">

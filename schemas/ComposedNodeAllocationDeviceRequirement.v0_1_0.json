@@ -1,8 +1,8 @@
 {
     "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema.v1_2_0.json",
-    "title": "#AllocationDeviceRequest.v0_1_0",
+    "title": "#ComposedNodeAllocationDeviceRequirement.v0_1_0",
     "definitions": {
-        "AllocationDeviceRequest": {
+        "ComposedNodeAllocationDeviceRequirement": {
             "type": "object",
             "patternProperties": {
                 "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message|Privileges)\\.[a-zA-Z_][a-zA-Z0-9_.]+$": {
