@@ -9,7 +9,7 @@ SET JSON_DIR=%PROJECT_DIR%\schemas\OEM
 SET LOG_DIR=%PROJECT_DIR%\logs
 SET LOG_FILE=%LOG_DIR%\csdl2json.log
 
-"%PYTHON_EXE%" "%CONVERTOR_SCRIPT%" --directory "%CSDL_DIR%" --outdir "%JSON_DIR%" > "%LOG_FILE%" 2>&1
+"%PYTHON_EXE%" "%APPLICATION%" --directory "%CSDL_DIR%" --outdir "%JSON_DIR%" > "%LOG_FILE%" 2>&1
 
 if errorlevel 1 (
   echo Failed
