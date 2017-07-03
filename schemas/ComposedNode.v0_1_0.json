@@ -32,6 +32,35 @@
             },
             "description": "This action is used to assemble a composed node with optional concrete connections."
         },
+        "Reject": {
+            "patternProperties": {
+                "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message|Privileges)\\.[a-zA-Z_][a-zA-Z0-9_.]+$": {
+                    "type": [
+                        "array",
+                        "boolean",
+                        "number",
+                        "null",
+                        "object",
+                        "string"
+                    ],
+                    "description": "This property shall specify a valid odata or Redfish property."
+                }
+            },
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "title": {
+                    "type": "string",
+                    "description": "Friendly action name"
+                },
+                "target": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "Link to invoke action"
+                }
+            },
+            "description": "This action is used to reject an allocated but not assembled composed node."
+        },
         "Reset": {
             "patternProperties": {
                 "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message|Privileges)\\.[a-zA-Z_][a-zA-Z0-9_.]+$": {
@@ -177,6 +206,9 @@
                         },
                         "#ComposedNode.Assemble": {
                             "$ref": "#/definitions/Assemble"
+                        },
+                        "#ComposedNode.Reject": {
+                            "$ref": "#/definitions/Reject"
                         },
                         "#ComposedNode.Reset": {
                             "$ref": "#/definitions/Reset"

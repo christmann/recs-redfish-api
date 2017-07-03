@@ -45,6 +45,11 @@
 				<Annotation Term="OData.Description" String="This action is used to assemble a composed node with optional concrete connections."/>
 			</Action>
 
+			<Action Name="Reject" IsBound="true">
+				<Parameter Name="ComposedNode" Type="ComposedNode.v0_1_0.Actions"/>
+				<Annotation Term="OData.Description" String="This action is used to reject an allocated but not assembled composed node."/>
+			</Action>
+
 		</Schema>
 
 		<Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="ComposedNode.v0_1_0">
