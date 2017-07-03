@@ -1,12 +1,9 @@
 @echo off
 
-SET PYTHON_EXE=C:\Users\bil.CIM\AppData\Local\Programs\Python\Python36-32\python.exe
+SET PYTHON_EXE=%LOCALAPPDATA%\Programs\Python\Python36-32\python.exe
 
-SET REDFISH_TOOLS_DIR=C:\Users\bil.CIM\workspace\other\recs-redfish-api\Redfish-Tools
-SET CONVERTOR_APP_DIR=%REDFISH_TOOLS_DIR%\csdl-to-json-convertor
-SET CONVERTOR_SCRIPT=%CONVERTOR_APP_DIR%\service.py
-
-SET PROJECT_DIR=C:\Users\bil.CIM\workspace\other\recs-redfish-api
+SET PROJECT_DIR=..
+SET APPLICATION=%PROJECT_DIR%\applications\csdl-to-json-convertor\service.py
 SET CSDL_DIR=%PROJECT_DIR%\csdlSchemas
 SET JSON_DIR=%PROJECT_DIR%\schemas\OEM
 SET LOG_DIR=%PROJECT_DIR%\logs
