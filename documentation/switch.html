@@ -172,11 +172,50 @@ Switch contains properties describing a simple fabric switch.
 <tr><td>Id</td><td>string</td><td></td><td>GET</td><td>read-only</td><td>Uniquely identifies the resource within the collection of like resources.</td></tr>
 <tr><td>Description</td><td>string</td><td>Yes</td><td></td><td>read-only</td><td>Provides a description of this resource and is used for commonality  in the schema definitions.</td></tr>
 <tr><td>Name</td><td>string</td><td></td><td>GET</td><td>read-only</td><td>The name of the resource or array element.</td></tr>
-<tr><td>SwitchType</td><td>string</td><td>Yes</td><td></td><td>read-only</td><td>The protocol being sent over this switch.<br />Possible Values:<br />&nbsp;&nbsp;&nbsp;&nbsp;PCIe: PCI Express (Vendor Proprietary)<br />&nbsp;&nbsp;&nbsp;&nbsp;AHCI: Advanced Host Controller Interface<br />&nbsp;&nbsp;&nbsp;&nbsp;UHCI: Universal Host Controller Interface<br />&nbsp;&nbsp;&nbsp;&nbsp;SAS: Serial Attached SCSI<br />&nbsp;&nbsp;&nbsp;&nbsp;SATA: Serial AT Attachment<br />&nbsp;&nbsp;&nbsp;&nbsp;USB: Universal Serial Bus<br />&nbsp;&nbsp;&nbsp;&nbsp;NVMe: Non-Volatile Memory Express<br />&nbsp;&nbsp;&nbsp;&nbsp;FC: Fibre Channel<br />&nbsp;&nbsp;&nbsp;&nbsp;iSCSI: Internet SCSI<br />&nbsp;&nbsp;&nbsp;&nbsp;FCoE: Fibre Channel over Ethernet<br />&nbsp;&nbsp;&nbsp;&nbsp;NVMeOverFabrics: NVMe over Fabrics<br />&nbsp;&nbsp;&nbsp;&nbsp;SMB: Server Message Block (aka CIFS Common Internet File System)<br />&nbsp;&nbsp;&nbsp;&nbsp;NFSv3: Network File System version 3<br />&nbsp;&nbsp;&nbsp;&nbsp;NFSv4: Network File System version 4<br />&nbsp;&nbsp;&nbsp;&nbsp;HTTP: Hypertext Transport Protocol<br />&nbsp;&nbsp;&nbsp;&nbsp;HTTPS: Secure Hypertext Transport Protocol<br />&nbsp;&nbsp;&nbsp;&nbsp;FTP: File Transfer Protocol<br />&nbsp;&nbsp;&nbsp;&nbsp;SFTP: Secure File Transfer Protocol</td></tr>
+<tr><td>SwitchType</td><td>string</td><td>Yes</td><td></td><td>read-only</td><td>The protocol being sent over this switch.<br />Possible Values:<ul>
+<li>PCIe: PCI Express (Vendor Proprietary)</li>
+<li>AHCI: Advanced Host Controller Interface</li>
+<li>UHCI: Universal Host Controller Interface</li>
+<li>SAS: Serial Attached SCSI</li>
+<li>SATA: Serial AT Attachment</li>
+<li>USB: Universal Serial Bus</li>
+<li>NVMe: Non-Volatile Memory Express</li>
+<li>FC: Fibre Channel</li>
+<li>iSCSI: Internet SCSI</li>
+<li>FCoE: Fibre Channel over Ethernet</li>
+<li>NVMeOverFabrics: NVMe over Fabrics</li>
+<li>SMB: Server Message Block (aka CIFS Common Internet File System)</li>
+<li>NFSv3: Network File System version 3</li>
+<li>NFSv4: Network File System version 4</li>
+<li>HTTP: Hypertext Transport Protocol</li>
+<li>HTTPS: Secure Hypertext Transport Protocol</li>
+<li>FTP: File Transfer Protocol</li>
+<li>SFTP: Secure File Transfer Protocol</li>
+</ul></td></tr>
 <tr><td>Status {</td><td>object</td><td></td><td></td><td>read-only</td><td></td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;State</td><td>string</td><td>Yes</td><td></td><td>read-only</td><td>This indicates the known state of the resource, such as if it is enabled.<br />Possible Values:<br />&nbsp;&nbsp;&nbsp;&nbsp;Enabled: This function or resource has been enabled.<br />&nbsp;&nbsp;&nbsp;&nbsp;Disabled: This function or resource has been disabled.<br />&nbsp;&nbsp;&nbsp;&nbsp;StandbyOffline: This function or resource is enabled, but awaiting an external action to activate it.<br />&nbsp;&nbsp;&nbsp;&nbsp;StandbySpare: This function or resource is part of a redundancy set and is awaiting a failover or other external action to activate it.<br />&nbsp;&nbsp;&nbsp;&nbsp;InTest: This function or resource is undergoing testing.<br />&nbsp;&nbsp;&nbsp;&nbsp;Starting: This function or resource is starting.<br />&nbsp;&nbsp;&nbsp;&nbsp;Absent: This function or resource is not present or not detected.<br />&nbsp;&nbsp;&nbsp;&nbsp;UnavailableOffline: This function or resource is present but cannot be used.<br />&nbsp;&nbsp;&nbsp;&nbsp;Deferring: The element will not process any commands but will queue new requests.<br />&nbsp;&nbsp;&nbsp;&nbsp;Quiesced: The element is enabled but only processes a restricted set of commands.<br />&nbsp;&nbsp;&nbsp;&nbsp;Updating: The element is updating and may be unavailable or degraded.</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;HealthRollup</td><td>string</td><td>Yes</td><td></td><td>read-only</td><td>This represents the overall health state from the view of this resource.<br />Possible Values:<br />&nbsp;&nbsp;&nbsp;&nbsp;OK: Normal.<br />&nbsp;&nbsp;&nbsp;&nbsp;Warning: A condition exists that requires attention.<br />&nbsp;&nbsp;&nbsp;&nbsp;Critical: A critical condition exists that requires immediate attention.</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;Health</td><td>string</td><td>Yes</td><td></td><td>read-only</td><td>This represents the health state of this resource in the absence of its dependent resources.<br />Possible Values:<br />&nbsp;&nbsp;&nbsp;&nbsp;OK: Normal.<br />&nbsp;&nbsp;&nbsp;&nbsp;Warning: A condition exists that requires attention.<br />&nbsp;&nbsp;&nbsp;&nbsp;Critical: A critical condition exists that requires immediate attention.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;State</td><td>string</td><td>Yes</td><td></td><td>read-only</td><td>This indicates the known state of the resource, such as if it is enabled.<br />Possible Values:<ul>
+<li>Enabled: This function or resource has been enabled.</li>
+<li>Disabled: This function or resource has been disabled.</li>
+<li>StandbyOffline: This function or resource is enabled, but awaiting an external action to activate it.</li>
+<li>StandbySpare: This function or resource is part of a redundancy set and is awaiting a failover or other external action to activate it.</li>
+<li>InTest: This function or resource is undergoing testing.</li>
+<li>Starting: This function or resource is starting.</li>
+<li>Absent: This function or resource is not present or not detected.</li>
+<li>UnavailableOffline: This function or resource is present but cannot be used.</li>
+<li>Deferring: The element will not process any commands but will queue new requests.</li>
+<li>Quiesced: The element is enabled but only processes a restricted set of commands.</li>
+<li>Updating: The element is updating and may be unavailable or degraded.</li>
+</ul></td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;HealthRollup</td><td>string</td><td>Yes</td><td></td><td>read-only</td><td>This represents the overall health state from the view of this resource.<br />Possible Values:<ul>
+<li>OK: Normal.</li>
+<li>Warning: A condition exists that requires attention.</li>
+<li>Critical: A critical condition exists that requires immediate attention.</li>
+</ul></td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;Health</td><td>string</td><td>Yes</td><td></td><td>read-only</td><td>This represents the health state of this resource in the absence of its dependent resources.<br />Possible Values:<ul>
+<li>OK: Normal.</li>
+<li>Warning: A condition exists that requires attention.</li>
+<li>Critical: A critical condition exists that requires immediate attention.</li>
+</ul></td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;Oem { }</td><td>object</td><td></td><td></td><td>read-write</td><td>Oem extension object.</td></tr>
 <tr><td>}</td><td></td><td></td><td></td><td></td><td></td></tr>
 <tr><td>Manufacturer</td><td>string</td><td>Yes</td><td></td><td>read-only</td><td>This is the manufacturer of this switch.</td></tr>
@@ -188,8 +227,17 @@ Switch contains properties describing a simple fabric switch.
 <tr><td>DomainID</td><td>number</td><td>Yes</td><td></td><td>read-only</td><td>The Domain ID for this switch.</td></tr>
 <tr><td>IsManaged</td><td>boolean</td><td>Yes</td><td></td><td>read-write</td><td>This indicates whether the switch is in a managed or unmanaged state.</td></tr>
 <tr><td>TotalSwitchWidth</td><td>number</td><td>Yes</td><td></td><td>read-only</td><td>The total number of lanes, phys, or other physical transport links that this switch contains.</td></tr>
-<tr><td>IndicatorLED</td><td>string</td><td>Yes</td><td></td><td>read-write</td><td>The state of the indicator LED, used to identify the switch.<br />Possible Values:<br />&nbsp;&nbsp;&nbsp;&nbsp;Lit: The Indicator LED is lit.<br />&nbsp;&nbsp;&nbsp;&nbsp;Blinking: The Indicator LED is blinking.<br />&nbsp;&nbsp;&nbsp;&nbsp;Off: The Indicator LED is off.</td></tr>
-<tr><td>PowerState</td><td>string</td><td>Yes</td><td></td><td>read-only</td><td>This is the current power state of the switch.<br />Possible Values:<br />&nbsp;&nbsp;&nbsp;&nbsp;On: The state is powered On.<br />&nbsp;&nbsp;&nbsp;&nbsp;Off: The state is powered Off.<br />&nbsp;&nbsp;&nbsp;&nbsp;PoweringOn: A temporary state between Off and On.<br />&nbsp;&nbsp;&nbsp;&nbsp;PoweringOff: A temporary state between On and Off.</td></tr>
+<tr><td>IndicatorLED</td><td>string</td><td>Yes</td><td></td><td>read-write</td><td>The state of the indicator LED, used to identify the switch.<br />Possible Values:<ul>
+<li>Lit: The Indicator LED is lit.</li>
+<li>Blinking: The Indicator LED is blinking.</li>
+<li>Off: The Indicator LED is off.</li>
+</ul></td></tr>
+<tr><td>PowerState</td><td>string</td><td>Yes</td><td></td><td>read-only</td><td>This is the current power state of the switch.<br />Possible Values:<ul>
+<li>On: The state is powered On.</li>
+<li>Off: The state is powered Off.</li>
+<li>PoweringOn: A temporary state between Off and On.</li>
+<li>PoweringOff: A temporary state between On and Off.</li>
+</ul></td></tr>
 <tr><td>Links {</td><td>object</td><td></td><td></td><td>read-write</td><td>Contains references to other resources that are related to this resource.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;Oem { }</td><td>object</td><td></td><td></td><td>read-write</td><td>Oem extension object.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;Chassis {</td><td>reference(<a href="chassis.html#chassis">Chassis</a>)</td><td></td><td></td><td>read-only</td><td>A reference to the chassis which contains this switch.</td></tr>
@@ -217,13 +265,38 @@ Switch contains properties describing a simple fabric switch.
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;Oem { }</td><td>object</td><td></td><td></td><td>read-write</td><td>This is the manufacturer/provider specific extension moniker used to divide the Oem object into sections.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;MemberId</td><td>string</td><td></td><td></td><td>read-only</td><td>This is the identifier for the member within the collection.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;Name</td><td>string</td><td></td><td>GET</td><td>read-only</td><td>The name of the resource or array element.</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;Mode</td><td>string</td><td>Yes</td><td>GET</td><td>read-only</td><td>This is the redundancy mode of the group.<br />Possible Values:<br />&nbsp;&nbsp;&nbsp;&nbsp;Failover: Failure of one unit will automatically cause its functions to be taken over by a standby or offline unit in the redundancy set.<br />&nbsp;&nbsp;&nbsp;&nbsp;N+m: Multiple units are available and active such that normal operation will continue if one or more units fail.<br />&nbsp;&nbsp;&nbsp;&nbsp;Sharing: Multiple units contribute or share such that operation will continue, but at a reduced capacity, if one or more units fail.<br />&nbsp;&nbsp;&nbsp;&nbsp;Sparing: One or more spare units are available to take over the function of a failed unit, but takeover is not automatic.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;Mode</td><td>string</td><td>Yes</td><td>GET</td><td>read-only</td><td>This is the redundancy mode of the group.<br />Possible Values:<ul>
+<li>Failover: Failure of one unit will automatically cause its functions to be taken over by a standby or offline unit in the redundancy set.</li>
+<li>N+m: Multiple units are available and active such that normal operation will continue if one or more units fail.</li>
+<li>Sharing: Multiple units contribute or share such that operation will continue, but at a reduced capacity, if one or more units fail.</li>
+<li>Sparing: One or more spare units are available to take over the function of a failed unit, but takeover is not automatic.</li>
+</ul></td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;MaxNumSupported</td><td>number</td><td>Yes</td><td>GET</td><td>read-only</td><td>This is the maximum number of members allowable for this particular redundancy group.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;MinNumNeeded</td><td>number</td><td>Yes</td><td>GET</td><td>read-only</td><td>This is the minumum number of members needed for this group to be redundant.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;Status {</td><td>object</td><td></td><td>GET</td><td>read-only</td><td></td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;State</td><td>string</td><td>Yes</td><td></td><td>read-only</td><td>This indicates the known state of the resource, such as if it is enabled.<br />Possible Values:<br />&nbsp;&nbsp;&nbsp;&nbsp;Enabled: This function or resource has been enabled.<br />&nbsp;&nbsp;&nbsp;&nbsp;Disabled: This function or resource has been disabled.<br />&nbsp;&nbsp;&nbsp;&nbsp;StandbyOffline: This function or resource is enabled, but awaiting an external action to activate it.<br />&nbsp;&nbsp;&nbsp;&nbsp;StandbySpare: This function or resource is part of a redundancy set and is awaiting a failover or other external action to activate it.<br />&nbsp;&nbsp;&nbsp;&nbsp;InTest: This function or resource is undergoing testing.<br />&nbsp;&nbsp;&nbsp;&nbsp;Starting: This function or resource is starting.<br />&nbsp;&nbsp;&nbsp;&nbsp;Absent: This function or resource is not present or not detected.<br />&nbsp;&nbsp;&nbsp;&nbsp;UnavailableOffline: This function or resource is present but cannot be used.<br />&nbsp;&nbsp;&nbsp;&nbsp;Deferring: The element will not process any commands but will queue new requests.<br />&nbsp;&nbsp;&nbsp;&nbsp;Quiesced: The element is enabled but only processes a restricted set of commands.<br />&nbsp;&nbsp;&nbsp;&nbsp;Updating: The element is updating and may be unavailable or degraded.</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;HealthRollup</td><td>string</td><td>Yes</td><td></td><td>read-only</td><td>This represents the overall health state from the view of this resource.<br />Possible Values:<br />&nbsp;&nbsp;&nbsp;&nbsp;OK: Normal.<br />&nbsp;&nbsp;&nbsp;&nbsp;Warning: A condition exists that requires attention.<br />&nbsp;&nbsp;&nbsp;&nbsp;Critical: A critical condition exists that requires immediate attention.</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Health</td><td>string</td><td>Yes</td><td></td><td>read-only</td><td>This represents the health state of this resource in the absence of its dependent resources.<br />Possible Values:<br />&nbsp;&nbsp;&nbsp;&nbsp;OK: Normal.<br />&nbsp;&nbsp;&nbsp;&nbsp;Warning: A condition exists that requires attention.<br />&nbsp;&nbsp;&nbsp;&nbsp;Critical: A critical condition exists that requires immediate attention.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;State</td><td>string</td><td>Yes</td><td></td><td>read-only</td><td>This indicates the known state of the resource, such as if it is enabled.<br />Possible Values:<ul>
+<li>Enabled: This function or resource has been enabled.</li>
+<li>Disabled: This function or resource has been disabled.</li>
+<li>StandbyOffline: This function or resource is enabled, but awaiting an external action to activate it.</li>
+<li>StandbySpare: This function or resource is part of a redundancy set and is awaiting a failover or other external action to activate it.</li>
+<li>InTest: This function or resource is undergoing testing.</li>
+<li>Starting: This function or resource is starting.</li>
+<li>Absent: This function or resource is not present or not detected.</li>
+<li>UnavailableOffline: This function or resource is present but cannot be used.</li>
+<li>Deferring: The element will not process any commands but will queue new requests.</li>
+<li>Quiesced: The element is enabled but only processes a restricted set of commands.</li>
+<li>Updating: The element is updating and may be unavailable or degraded.</li>
+</ul></td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;HealthRollup</td><td>string</td><td>Yes</td><td></td><td>read-only</td><td>This represents the overall health state from the view of this resource.<br />Possible Values:<ul>
+<li>OK: Normal.</li>
+<li>Warning: A condition exists that requires attention.</li>
+<li>Critical: A critical condition exists that requires immediate attention.</li>
+</ul></td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Health</td><td>string</td><td>Yes</td><td></td><td>read-only</td><td>This represents the health state of this resource in the absence of its dependent resources.<br />Possible Values:<ul>
+<li>OK: Normal.</li>
+<li>Warning: A condition exists that requires attention.</li>
+<li>Critical: A critical condition exists that requires immediate attention.</li>
+</ul></td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Oem { }</td><td>object</td><td></td><td></td><td>read-write</td><td>Oem extension object.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;}</td><td></td><td></td><td></td><td></td><td></td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;RedundancySet@odata.count</td><td>number</td><td></td><td></td><td>read-only</td><td>The number of items in a collection.</td></tr>
@@ -241,7 +314,16 @@ Switch contains properties describing a simple fabric switch.
 <h4 id="#switch.reset">#Switch.Reset</h4>
 <table class="datatable">
 <tr><th>Property</th><th>Type</th><th>Nullable</th><th>Required</th><th>Permission</th><th>Description</th></tr>
-<tr><td>ResetType</td><td>string</td><td></td><td>POST</td><td>read-write</td><td>The type of reset to be performed.<br />Possible Values:<br />&nbsp;&nbsp;&nbsp;&nbsp;On: Turn the system on.<br />&nbsp;&nbsp;&nbsp;&nbsp;ForceOff: Turn the system off immediately (non-graceful) shutdown.<br />&nbsp;&nbsp;&nbsp;&nbsp;GracefulShutdown: Perform a graceful system shutdown and power off.<br />&nbsp;&nbsp;&nbsp;&nbsp;GracefulRestart: Perform a graceful system shutdown followed by a restart of the system.<br />&nbsp;&nbsp;&nbsp;&nbsp;ForceRestart: Perform an immediate (non-graceful) shutdown, followed by a restart of the system.<br />&nbsp;&nbsp;&nbsp;&nbsp;Nmi: Generate a Diagnostic Interrupt (usually an NMI on x86 systems) to cease normal operations, perform diagnostic actions and typically halt the system.<br />&nbsp;&nbsp;&nbsp;&nbsp;ForceOn: Turn the system on immediately.<br />&nbsp;&nbsp;&nbsp;&nbsp;PushPowerButton: Simulate the pressing of the physical power button on this system.</td></tr>
+<tr><td>ResetType</td><td>string</td><td></td><td>POST</td><td>read-write</td><td>The type of reset to be performed.<br />Possible Values:<ul>
+<li>On: Turn the system on.</li>
+<li>ForceOff: Turn the system off immediately (non-graceful) shutdown.</li>
+<li>GracefulShutdown: Perform a graceful system shutdown and power off.</li>
+<li>GracefulRestart: Perform a graceful system shutdown followed by a restart of the system.</li>
+<li>ForceRestart: Perform an immediate (non-graceful) shutdown, followed by a restart of the system.</li>
+<li>Nmi: Generate a Diagnostic Interrupt (usually an NMI on x86 systems) to cease normal operations, perform diagnostic actions and typically halt the system.</li>
+<li>ForceOn: Turn the system on immediately.</li>
+<li>PushPowerButton: Simulate the pressing of the physical power button on this system.</li>
+</ul></td></tr>
 </table>
 <h2 id="operations">Operations</h2>
 In this section the URL endpoints and corresponding operations, such as GET, POST, PATCH and DELETE, will be described with JSON payload examples.

@@ -172,11 +172,50 @@ Fabric contains properties describing a simple fabric consisting of one or more 
 <tr><td>Id</td><td>string</td><td></td><td>GET</td><td>read-only</td><td>Uniquely identifies the resource within the collection of like resources.</td></tr>
 <tr><td>Description</td><td>string</td><td>Yes</td><td></td><td>read-only</td><td>Provides a description of this resource and is used for commonality  in the schema definitions.</td></tr>
 <tr><td>Name</td><td>string</td><td></td><td>GET</td><td>read-only</td><td>The name of the resource or array element.</td></tr>
-<tr><td>FabricType</td><td>string</td><td>Yes</td><td></td><td>read-only</td><td>The protocol being sent over this fabric.<br />Possible Values:<br />&nbsp;&nbsp;&nbsp;&nbsp;PCIe: PCI Express (Vendor Proprietary)<br />&nbsp;&nbsp;&nbsp;&nbsp;AHCI: Advanced Host Controller Interface<br />&nbsp;&nbsp;&nbsp;&nbsp;UHCI: Universal Host Controller Interface<br />&nbsp;&nbsp;&nbsp;&nbsp;SAS: Serial Attached SCSI<br />&nbsp;&nbsp;&nbsp;&nbsp;SATA: Serial AT Attachment<br />&nbsp;&nbsp;&nbsp;&nbsp;USB: Universal Serial Bus<br />&nbsp;&nbsp;&nbsp;&nbsp;NVMe: Non-Volatile Memory Express<br />&nbsp;&nbsp;&nbsp;&nbsp;FC: Fibre Channel<br />&nbsp;&nbsp;&nbsp;&nbsp;iSCSI: Internet SCSI<br />&nbsp;&nbsp;&nbsp;&nbsp;FCoE: Fibre Channel over Ethernet<br />&nbsp;&nbsp;&nbsp;&nbsp;NVMeOverFabrics: NVMe over Fabrics<br />&nbsp;&nbsp;&nbsp;&nbsp;SMB: Server Message Block (aka CIFS Common Internet File System)<br />&nbsp;&nbsp;&nbsp;&nbsp;NFSv3: Network File System version 3<br />&nbsp;&nbsp;&nbsp;&nbsp;NFSv4: Network File System version 4<br />&nbsp;&nbsp;&nbsp;&nbsp;HTTP: Hypertext Transport Protocol<br />&nbsp;&nbsp;&nbsp;&nbsp;HTTPS: Secure Hypertext Transport Protocol<br />&nbsp;&nbsp;&nbsp;&nbsp;FTP: File Transfer Protocol<br />&nbsp;&nbsp;&nbsp;&nbsp;SFTP: Secure File Transfer Protocol</td></tr>
+<tr><td>FabricType</td><td>string</td><td>Yes</td><td></td><td>read-only</td><td>The protocol being sent over this fabric.<br />Possible Values:<ul>
+<li>PCIe: PCI Express (Vendor Proprietary)</li>
+<li>AHCI: Advanced Host Controller Interface</li>
+<li>UHCI: Universal Host Controller Interface</li>
+<li>SAS: Serial Attached SCSI</li>
+<li>SATA: Serial AT Attachment</li>
+<li>USB: Universal Serial Bus</li>
+<li>NVMe: Non-Volatile Memory Express</li>
+<li>FC: Fibre Channel</li>
+<li>iSCSI: Internet SCSI</li>
+<li>FCoE: Fibre Channel over Ethernet</li>
+<li>NVMeOverFabrics: NVMe over Fabrics</li>
+<li>SMB: Server Message Block (aka CIFS Common Internet File System)</li>
+<li>NFSv3: Network File System version 3</li>
+<li>NFSv4: Network File System version 4</li>
+<li>HTTP: Hypertext Transport Protocol</li>
+<li>HTTPS: Secure Hypertext Transport Protocol</li>
+<li>FTP: File Transfer Protocol</li>
+<li>SFTP: Secure File Transfer Protocol</li>
+</ul></td></tr>
 <tr><td>Status {</td><td>object</td><td></td><td></td><td>read-only</td><td></td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;State</td><td>string</td><td>Yes</td><td></td><td>read-only</td><td>This indicates the known state of the resource, such as if it is enabled.<br />Possible Values:<br />&nbsp;&nbsp;&nbsp;&nbsp;Enabled: This function or resource has been enabled.<br />&nbsp;&nbsp;&nbsp;&nbsp;Disabled: This function or resource has been disabled.<br />&nbsp;&nbsp;&nbsp;&nbsp;StandbyOffline: This function or resource is enabled, but awaiting an external action to activate it.<br />&nbsp;&nbsp;&nbsp;&nbsp;StandbySpare: This function or resource is part of a redundancy set and is awaiting a failover or other external action to activate it.<br />&nbsp;&nbsp;&nbsp;&nbsp;InTest: This function or resource is undergoing testing.<br />&nbsp;&nbsp;&nbsp;&nbsp;Starting: This function or resource is starting.<br />&nbsp;&nbsp;&nbsp;&nbsp;Absent: This function or resource is not present or not detected.<br />&nbsp;&nbsp;&nbsp;&nbsp;UnavailableOffline: This function or resource is present but cannot be used.<br />&nbsp;&nbsp;&nbsp;&nbsp;Deferring: The element will not process any commands but will queue new requests.<br />&nbsp;&nbsp;&nbsp;&nbsp;Quiesced: The element is enabled but only processes a restricted set of commands.<br />&nbsp;&nbsp;&nbsp;&nbsp;Updating: The element is updating and may be unavailable or degraded.</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;HealthRollup</td><td>string</td><td>Yes</td><td></td><td>read-only</td><td>This represents the overall health state from the view of this resource.<br />Possible Values:<br />&nbsp;&nbsp;&nbsp;&nbsp;OK: Normal.<br />&nbsp;&nbsp;&nbsp;&nbsp;Warning: A condition exists that requires attention.<br />&nbsp;&nbsp;&nbsp;&nbsp;Critical: A critical condition exists that requires immediate attention.</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;Health</td><td>string</td><td>Yes</td><td></td><td>read-only</td><td>This represents the health state of this resource in the absence of its dependent resources.<br />Possible Values:<br />&nbsp;&nbsp;&nbsp;&nbsp;OK: Normal.<br />&nbsp;&nbsp;&nbsp;&nbsp;Warning: A condition exists that requires attention.<br />&nbsp;&nbsp;&nbsp;&nbsp;Critical: A critical condition exists that requires immediate attention.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;State</td><td>string</td><td>Yes</td><td></td><td>read-only</td><td>This indicates the known state of the resource, such as if it is enabled.<br />Possible Values:<ul>
+<li>Enabled: This function or resource has been enabled.</li>
+<li>Disabled: This function or resource has been disabled.</li>
+<li>StandbyOffline: This function or resource is enabled, but awaiting an external action to activate it.</li>
+<li>StandbySpare: This function or resource is part of a redundancy set and is awaiting a failover or other external action to activate it.</li>
+<li>InTest: This function or resource is undergoing testing.</li>
+<li>Starting: This function or resource is starting.</li>
+<li>Absent: This function or resource is not present or not detected.</li>
+<li>UnavailableOffline: This function or resource is present but cannot be used.</li>
+<li>Deferring: The element will not process any commands but will queue new requests.</li>
+<li>Quiesced: The element is enabled but only processes a restricted set of commands.</li>
+<li>Updating: The element is updating and may be unavailable or degraded.</li>
+</ul></td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;HealthRollup</td><td>string</td><td>Yes</td><td></td><td>read-only</td><td>This represents the overall health state from the view of this resource.<br />Possible Values:<ul>
+<li>OK: Normal.</li>
+<li>Warning: A condition exists that requires attention.</li>
+<li>Critical: A critical condition exists that requires immediate attention.</li>
+</ul></td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;Health</td><td>string</td><td>Yes</td><td></td><td>read-only</td><td>This represents the health state of this resource in the absence of its dependent resources.<br />Possible Values:<ul>
+<li>OK: Normal.</li>
+<li>Warning: A condition exists that requires attention.</li>
+<li>Critical: A critical condition exists that requires immediate attention.</li>
+</ul></td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;Oem { }</td><td>object</td><td></td><td></td><td>read-write</td><td>Oem extension object.</td></tr>
 <tr><td>}</td><td></td><td></td><td></td><td></td><td></td></tr>
 <tr><td>MaxZones</td><td>number</td><td>Yes</td><td></td><td>read-only</td><td>The value of this property shall contain the maximum number of zones the switch can currently configure.</td></tr>

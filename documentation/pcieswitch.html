@@ -201,8 +201,17 @@ This schema defines a PCIeSwitch and its respective properties.
 <tr><td>SKU</td><td>string</td><td>Yes</td><td></td><td>read-only</td><td>The manufacturer SKU for this Switch</td></tr>
 <tr><td>SerialNumber</td><td>string</td><td>Yes</td><td></td><td>read-only</td><td>The serial number for this switch</td></tr>
 <tr><td>PartNumber</td><td>string</td><td>Yes</td><td></td><td>read-only</td><td>The part number for this switch</td></tr>
-<tr><td>IndicatorLED</td><td>string</td><td>Yes</td><td></td><td>read-write</td><td>The state of the indicator LED, used to identify the Switch<br />Possible Values:<br />&nbsp;&nbsp;&nbsp;&nbsp;Lit: The Indicator LED is lit.<br />&nbsp;&nbsp;&nbsp;&nbsp;Blinking: The Indicator LED is blinking.<br />&nbsp;&nbsp;&nbsp;&nbsp;Off: The Indicator LED is off.</td></tr>
-<tr><td>PowerState</td><td>string</td><td>Yes</td><td></td><td>read-only</td><td>This is the current power state of the Switch<br />Possible Values:<br />&nbsp;&nbsp;&nbsp;&nbsp;On: The system is powered on.<br />&nbsp;&nbsp;&nbsp;&nbsp;Off: The system is powered off, although some components may continue to have AUX power such as management controller.<br />&nbsp;&nbsp;&nbsp;&nbsp;PoweringOn: A temporary state between Off and On. This temporary state can be very short.<br />&nbsp;&nbsp;&nbsp;&nbsp;PoweringOff: A temporary state between On and Off. The power off action can take time while the OS is in the shutdown process.</td></tr>
+<tr><td>IndicatorLED</td><td>string</td><td>Yes</td><td></td><td>read-write</td><td>The state of the indicator LED, used to identify the Switch<br />Possible Values:<ul>
+<li>Lit: The Indicator LED is lit.</li>
+<li>Blinking: The Indicator LED is blinking.</li>
+<li>Off: The Indicator LED is off.</li>
+</ul></td></tr>
+<tr><td>PowerState</td><td>string</td><td>Yes</td><td></td><td>read-only</td><td>This is the current power state of the Switch<br />Possible Values:<ul>
+<li>On: The system is powered on.</li>
+<li>Off: The system is powered off, although some components may continue to have AUX power such as management controller.</li>
+<li>PoweringOn: A temporary state between Off and On. This temporary state can be very short.</li>
+<li>PoweringOff: A temporary state between On and Off. The power off action can take time while the OS is in the shutdown process.</li>
+</ul></td></tr>
 <tr><td>Actions {</td><td>object</td><td></td><td></td><td>read-only</td><td>The Actions object contains the available custom actions on this resource.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;Oem { }</td><td>object</td><td>Yes</td><td></td><td>read-write</td><td></td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;#PCIeSwitch.Reset {</td><td>object</td><td></td><td></td><td>read-write</td><td>This action is used to reset the system.</td></tr>
@@ -211,9 +220,29 @@ This schema defines a PCIeSwitch and its respective properties.
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;}</td><td></td><td></td><td></td><td></td><td></td></tr>
 <tr><td>}</td><td></td><td></td><td></td><td></td><td></td></tr>
 <tr><td>Status {</td><td>object</td><td>Yes</td><td></td><td>read-only</td><td></td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;State</td><td>string</td><td>Yes</td><td></td><td>read-only</td><td>This indicates the known state of the resource, such as if it is enabled.<br />Possible Values:<br />&nbsp;&nbsp;&nbsp;&nbsp;Enabled: This function or resource has been enabled.<br />&nbsp;&nbsp;&nbsp;&nbsp;Disabled: This function or resource has been disabled.<br />&nbsp;&nbsp;&nbsp;&nbsp;StandbyOffline: This function or resource is enabled, but awaiting an external action to activate it.<br />&nbsp;&nbsp;&nbsp;&nbsp;StandbySpare: This function or resource is part of a redundancy set and is awaiting a failover or other external action to activate it.<br />&nbsp;&nbsp;&nbsp;&nbsp;InTest: This function or resource is undergoing testing.<br />&nbsp;&nbsp;&nbsp;&nbsp;Starting: This function or resource is starting.<br />&nbsp;&nbsp;&nbsp;&nbsp;Absent: This function or resource is not present or not detected.<br />&nbsp;&nbsp;&nbsp;&nbsp;UnavailableOffline: This function or resource is present but cannot be used.<br />&nbsp;&nbsp;&nbsp;&nbsp;Deferring: The element will not process any commands but will queue new requests.<br />&nbsp;&nbsp;&nbsp;&nbsp;Quiesced: The element is enabled but only processes a restricted set of commands.<br />&nbsp;&nbsp;&nbsp;&nbsp;Updating: The element is updating and may be unavailable or degraded.</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;HealthRollup</td><td>string</td><td>Yes</td><td></td><td>read-only</td><td>This represents the overall health state from the view of this resource.<br />Possible Values:<br />&nbsp;&nbsp;&nbsp;&nbsp;OK: Normal.<br />&nbsp;&nbsp;&nbsp;&nbsp;Warning: A condition exists that requires attention.<br />&nbsp;&nbsp;&nbsp;&nbsp;Critical: A critical condition exists that requires immediate attention.</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;Health</td><td>string</td><td>Yes</td><td></td><td>read-only</td><td>This represents the health state of this resource in the absence of its dependent resources.<br />Possible Values:<br />&nbsp;&nbsp;&nbsp;&nbsp;OK: Normal.<br />&nbsp;&nbsp;&nbsp;&nbsp;Warning: A condition exists that requires attention.<br />&nbsp;&nbsp;&nbsp;&nbsp;Critical: A critical condition exists that requires immediate attention.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;State</td><td>string</td><td>Yes</td><td></td><td>read-only</td><td>This indicates the known state of the resource, such as if it is enabled.<br />Possible Values:<ul>
+<li>Enabled: This function or resource has been enabled.</li>
+<li>Disabled: This function or resource has been disabled.</li>
+<li>StandbyOffline: This function or resource is enabled, but awaiting an external action to activate it.</li>
+<li>StandbySpare: This function or resource is part of a redundancy set and is awaiting a failover or other external action to activate it.</li>
+<li>InTest: This function or resource is undergoing testing.</li>
+<li>Starting: This function or resource is starting.</li>
+<li>Absent: This function or resource is not present or not detected.</li>
+<li>UnavailableOffline: This function or resource is present but cannot be used.</li>
+<li>Deferring: The element will not process any commands but will queue new requests.</li>
+<li>Quiesced: The element is enabled but only processes a restricted set of commands.</li>
+<li>Updating: The element is updating and may be unavailable or degraded.</li>
+</ul></td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;HealthRollup</td><td>string</td><td>Yes</td><td></td><td>read-only</td><td>This represents the overall health state from the view of this resource.<br />Possible Values:<ul>
+<li>OK: Normal.</li>
+<li>Warning: A condition exists that requires attention.</li>
+<li>Critical: A critical condition exists that requires immediate attention.</li>
+</ul></td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;Health</td><td>string</td><td>Yes</td><td></td><td>read-only</td><td>This represents the health state of this resource in the absence of its dependent resources.<br />Possible Values:<ul>
+<li>OK: Normal.</li>
+<li>Warning: A condition exists that requires attention.</li>
+<li>Critical: A critical condition exists that requires immediate attention.</li>
+</ul></td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;Oem { }</td><td>object</td><td></td><td></td><td>read-write</td><td>Oem extension object.</td></tr>
 <tr><td>}</td><td></td><td></td><td></td><td></td><td></td></tr>
 <tr><td>Zones {</td><td>reference(<a href="pciezonecollection.html#pciezonecollection">PCIeZoneCollection</a>)</td><td>Yes</td><td></td><td>read-only</td><td>A reference to the collection of Zones associated with this Switch</td></tr>
@@ -235,7 +264,16 @@ This schema defines a PCIeSwitch and its respective properties.
 <h4 id="#pcieswitch.reset">#PCIeSwitch.Reset</h4>
 <table class="datatable">
 <tr><th>Property</th><th>Type</th><th>Nullable</th><th>Required</th><th>Permission</th><th>Description</th></tr>
-<tr><td>ResetType</td><td>string</td><td></td><td>POST</td><td>read-write</td><td>The type of reset to be performed<br />Possible Values:<br />&nbsp;&nbsp;&nbsp;&nbsp;On: Turn the system on.<br />&nbsp;&nbsp;&nbsp;&nbsp;ForceOff: Turn the system off immediately (non-graceful) shutdown.<br />&nbsp;&nbsp;&nbsp;&nbsp;GracefulShutdown: Perform a graceful system shutdown and power off.<br />&nbsp;&nbsp;&nbsp;&nbsp;GracefulRestart: Perform a graceful system shutdown followed by a restart of the system.<br />&nbsp;&nbsp;&nbsp;&nbsp;ForceRestart: Perform an immediate (non-graceful) shutdown, followed by a restart of the system.<br />&nbsp;&nbsp;&nbsp;&nbsp;Nmi: Generate a Diagnostic Interrupt (usually an NMI on x86 systems) to cease normal operations, perform diagnostic actions and typically halt the system.<br />&nbsp;&nbsp;&nbsp;&nbsp;ForceOn: Turn the system on immediately.<br />&nbsp;&nbsp;&nbsp;&nbsp;PushPowerButton: Simulate the pressing of the physical power button on this system.</td></tr>
+<tr><td>ResetType</td><td>string</td><td></td><td>POST</td><td>read-write</td><td>The type of reset to be performed<br />Possible Values:<ul>
+<li>On: Turn the system on.</li>
+<li>ForceOff: Turn the system off immediately (non-graceful) shutdown.</li>
+<li>GracefulShutdown: Perform a graceful system shutdown and power off.</li>
+<li>GracefulRestart: Perform a graceful system shutdown followed by a restart of the system.</li>
+<li>ForceRestart: Perform an immediate (non-graceful) shutdown, followed by a restart of the system.</li>
+<li>Nmi: Generate a Diagnostic Interrupt (usually an NMI on x86 systems) to cease normal operations, perform diagnostic actions and typically halt the system.</li>
+<li>ForceOn: Turn the system on immediately.</li>
+<li>PushPowerButton: Simulate the pressing of the physical power button on this system.</li>
+</ul></td></tr>
 </table>
 <h2 id="operations">Operations</h2>
 In this section the URL endpoints and corresponding operations, such as GET, POST, PATCH and DELETE, will be described with JSON payload examples.

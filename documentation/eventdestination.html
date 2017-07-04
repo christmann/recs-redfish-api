@@ -173,9 +173,17 @@ An Event Destination desribes the target of an event subscription, including the
 <tr><td>Description</td><td>string</td><td>Yes</td><td></td><td>read-only</td><td>Provides a description of this resource and is used for commonality  in the schema definitions.</td></tr>
 <tr><td>Name</td><td>string</td><td></td><td>GET</td><td>read-only</td><td>The name of the resource or array element.</td></tr>
 <tr><td>Destination</td><td>string</td><td></td><td>POST</td><td>read-only</td><td>The URI of the destination Event Service.<br />Format: uri</td></tr>
-<tr><td>EventTypes [ ]</td><td>array[string]</td><td></td><td>POST</td><td>read-only</td><td>This property shall contain the types of events that shall be sent to the desination.<br />Possible Values:<br />&nbsp;&nbsp;&nbsp;&nbsp;StatusChange: The status of this resource has changed<br />&nbsp;&nbsp;&nbsp;&nbsp;ResourceUpdated: The value of this resource has been updated<br />&nbsp;&nbsp;&nbsp;&nbsp;ResourceAdded: A resource has been added<br />&nbsp;&nbsp;&nbsp;&nbsp;ResourceRemoved: A resource has been removed<br />&nbsp;&nbsp;&nbsp;&nbsp;Alert: A condition exists which requires attention</td></tr>
+<tr><td>EventTypes [ ]</td><td>array[string]</td><td></td><td>POST</td><td>read-only</td><td>This property shall contain the types of events that shall be sent to the desination.<br />Possible Values:<ul>
+<li>StatusChange: The status of this resource has changed</li>
+<li>ResourceUpdated: The value of this resource has been updated</li>
+<li>ResourceAdded: A resource has been added</li>
+<li>ResourceRemoved: A resource has been removed</li>
+<li>Alert: A condition exists which requires attention</li>
+</ul></td></tr>
 <tr><td>Context</td><td>string</td><td></td><td>POST</td><td>read-write</td><td>A client-supplied string that is stored with the event destination subscription.</td></tr>
-<tr><td>Protocol</td><td>string</td><td></td><td>POST</td><td>read-only</td><td>The protocol type of the event connection.<br />Possible Values:<br />&nbsp;&nbsp;&nbsp;&nbsp;Redfish</td></tr>
+<tr><td>Protocol</td><td>string</td><td></td><td>POST</td><td>read-only</td><td>The protocol type of the event connection.<br />Possible Values:<ul>
+<li>Redfish</li>
+</ul></td></tr>
 <tr><td>HttpHeaders [ { } ]</td><td>array[object]</td><td></td><td></td><td>read-write</td><td>This is for setting HTTP headers, such as authorization information.  This object will be null on a GET.</td></tr>
 <tr><td>MessageIds [ ]</td><td>array[string]</td><td></td><td></td><td>read-only</td><td>A list of MessageIds that the service will only send.</td></tr>
 <tr><td>OriginResources@odata.count</td><td>number</td><td></td><td></td><td>read-only</td><td>The number of items in a collection.</td></tr>

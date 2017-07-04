@@ -192,7 +192,16 @@ table { border-collapse: collapse; }
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Model</td><td>string</td><td>Yes</td><td></td><td>read-write</td><td>The exact model of the processor</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;TotalCores</td><td>number</td><td>Yes</td><td></td><td>read-write</td><td>The minimum number of cores of the processor</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;AchievableSpeedMHz</td><td>number</td><td>Yes</td><td></td><td>read-write</td><td>The minimum speed of the processor<br />Unit: MHz</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;InstructionSet</td><td>string</td><td>Yes</td><td></td><td>read-write</td><td>The instruction set of the processor<br />Possible Values:<br />&nbsp;&nbsp;&nbsp;&nbsp;x86: x86 32-bit<br />&nbsp;&nbsp;&nbsp;&nbsp;x86-64: x86 64-bit<br />&nbsp;&nbsp;&nbsp;&nbsp;IA-64: Intel IA-64<br />&nbsp;&nbsp;&nbsp;&nbsp;ARM-A32: ARM 32-bit<br />&nbsp;&nbsp;&nbsp;&nbsp;ARM-A64: ARM 64-bit<br />&nbsp;&nbsp;&nbsp;&nbsp;MIPS32: MIPS 32-bit<br />&nbsp;&nbsp;&nbsp;&nbsp;MIPS64: MIPS 64-bit<br />&nbsp;&nbsp;&nbsp;&nbsp;OEM: OEM-defined</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;InstructionSet</td><td>string</td><td>Yes</td><td></td><td>read-write</td><td>The instruction set of the processor<br />Possible Values:<ul>
+<li>x86: x86 32-bit</li>
+<li>x86-64: x86 64-bit</li>
+<li>IA-64: Intel IA-64</li>
+<li>ARM-A32: ARM 32-bit</li>
+<li>ARM-A64: ARM 64-bit</li>
+<li>MIPS32: MIPS 32-bit</li>
+<li>MIPS64: MIPS 64-bit</li>
+<li>OEM: OEM-defined</li>
+</ul></td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Resource {</td><td>reference(<a href="processor.html#processor">Processor</a>)</td><td>Yes</td><td></td><td>read-write</td><td>The URI of a concrete resource</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@odata.id</td><td>string</td><td></td><td></td><td>read-only</td><td>The unique identifier for a resource.<br />Format: uri</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</td><td></td><td></td><td></td><td></td><td></td></tr>
@@ -208,7 +217,27 @@ table { border-collapse: collapse; }
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;} ]</td><td></td><td></td><td></td><td></td><td></td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;Memory [ {</td><td>array[object]</td><td></td><td></td><td>read-write</td><td>The requirements for one or more memory configurations</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CapacityMiB</td><td>number</td><td>Yes</td><td></td><td>read-write</td><td>The minimum capacity of the memory<br />Unit: MiBy</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DimmDeviceType</td><td>string</td><td>Yes</td><td></td><td>read-write</td><td>The exact type of the memory<br />Possible Values:<br />&nbsp;&nbsp;&nbsp;&nbsp;DDR: DDR<br />&nbsp;&nbsp;&nbsp;&nbsp;DDR2: DDR2<br />&nbsp;&nbsp;&nbsp;&nbsp;DDR3: DDR3<br />&nbsp;&nbsp;&nbsp;&nbsp;DDR4: DDR4<br />&nbsp;&nbsp;&nbsp;&nbsp;DDR4_SDRAM: DDR4 SDRAM<br />&nbsp;&nbsp;&nbsp;&nbsp;DDR4E_SDRAM: DDR4E SDRAM<br />&nbsp;&nbsp;&nbsp;&nbsp;LPDDR4_SDRAM: LPDDR4 SDRAM<br />&nbsp;&nbsp;&nbsp;&nbsp;DDR3_SDRAM: DDR3 SDRAM<br />&nbsp;&nbsp;&nbsp;&nbsp;LPDDR3_SDRAM: LPDDR3 SDRAM<br />&nbsp;&nbsp;&nbsp;&nbsp;DDR2_SDRAM: DDR2 SDRAM<br />&nbsp;&nbsp;&nbsp;&nbsp;DDR2_SDRAM_FB_DIMM: DDR2 SDRAM FB_DIMM<br />&nbsp;&nbsp;&nbsp;&nbsp;DDR2_SDRAM_FB_DIMM_PROBE: DDR2 SDRAM FB_DIMM PROBE<br />&nbsp;&nbsp;&nbsp;&nbsp;DDR_SGRAM: DDR SGRAM<br />&nbsp;&nbsp;&nbsp;&nbsp;DDR_SDRAM: DDR SDRAM<br />&nbsp;&nbsp;&nbsp;&nbsp;ROM: ROM<br />&nbsp;&nbsp;&nbsp;&nbsp;SDRAM: SDRAM<br />&nbsp;&nbsp;&nbsp;&nbsp;EDO: EDO<br />&nbsp;&nbsp;&nbsp;&nbsp;FastPageMode: Fast Page Mode<br />&nbsp;&nbsp;&nbsp;&nbsp;PipelinedNibble: Pipelined Nibble</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DimmDeviceType</td><td>string</td><td>Yes</td><td></td><td>read-write</td><td>The exact type of the memory<br />Possible Values:<ul>
+<li>DDR: DDR</li>
+<li>DDR2: DDR2</li>
+<li>DDR3: DDR3</li>
+<li>DDR4: DDR4</li>
+<li>DDR4_SDRAM: DDR4 SDRAM</li>
+<li>DDR4E_SDRAM: DDR4E SDRAM</li>
+<li>LPDDR4_SDRAM: LPDDR4 SDRAM</li>
+<li>DDR3_SDRAM: DDR3 SDRAM</li>
+<li>LPDDR3_SDRAM: LPDDR3 SDRAM</li>
+<li>DDR2_SDRAM: DDR2 SDRAM</li>
+<li>DDR2_SDRAM_FB_DIMM: DDR2 SDRAM FB_DIMM</li>
+<li>DDR2_SDRAM_FB_DIMM_PROBE: DDR2 SDRAM FB_DIMM PROBE</li>
+<li>DDR_SGRAM: DDR SGRAM</li>
+<li>DDR_SDRAM: DDR SDRAM</li>
+<li>ROM: ROM</li>
+<li>SDRAM: SDRAM</li>
+<li>EDO: EDO</li>
+<li>FastPageMode: Fast Page Mode</li>
+<li>PipelinedNibble: Pipelined Nibble</li>
+</ul></td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SpeedMHz</td><td>number</td><td>Yes</td><td></td><td>read-write</td><td>The minimum speed of the memory<br />Unit: MHz</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Manufacturer</td><td>string</td><td>Yes</td><td></td><td>read-write</td><td>The exact manufacturer of the memory</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DataWidthBits</td><td>number</td><td>Yes</td><td></td><td>read-write</td><td>The minimum data width of the memory<br />Unit: bits</td></tr>
@@ -227,10 +256,33 @@ table { border-collapse: collapse; }
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;} ]</td><td></td><td></td><td></td><td></td><td></td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;LocalDrives [ {</td><td>array[object]</td><td></td><td></td><td>read-write</td><td>The requirements for one or more local drives</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CapacityBytes</td><td>number</td><td>Yes</td><td></td><td>read-write</td><td>The minimum capacity of the local drive<br />Unit: By</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Type</td><td>string</td><td>Yes</td><td></td><td>read-write</td><td>The exact media type of the local drive<br />Possible Values:<br />&nbsp;&nbsp;&nbsp;&nbsp;HDD: The drive media type is traditional magnetic platters<br />&nbsp;&nbsp;&nbsp;&nbsp;SSD: The drive media type is solid state or flash memory<br />&nbsp;&nbsp;&nbsp;&nbsp;SMR: The drive media type is shingled magnetic recording</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Type</td><td>string</td><td>Yes</td><td></td><td>read-write</td><td>The exact media type of the local drive<br />Possible Values:<ul>
+<li>HDD: The drive media type is traditional magnetic platters</li>
+<li>SSD: The drive media type is solid state or flash memory</li>
+<li>SMR: The drive media type is shingled magnetic recording</li>
+</ul></td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MinRPM</td><td>number</td><td>Yes</td><td></td><td>read-write</td><td>The minimum RPM value of the local drive</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SerialNumber</td><td>string</td><td>Yes</td><td></td><td>read-write</td><td>The exact serial number of the local drive</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Protocol</td><td>string</td><td>Yes</td><td></td><td>read-write</td><td>The exact protocol of the local drive<br />Possible Values:<br />&nbsp;&nbsp;&nbsp;&nbsp;PCIe: PCI Express (Vendor Proprietary)<br />&nbsp;&nbsp;&nbsp;&nbsp;AHCI: Advanced Host Controller Interface<br />&nbsp;&nbsp;&nbsp;&nbsp;UHCI: Universal Host Controller Interface<br />&nbsp;&nbsp;&nbsp;&nbsp;SAS: Serial Attached SCSI<br />&nbsp;&nbsp;&nbsp;&nbsp;SATA: Serial AT Attachment<br />&nbsp;&nbsp;&nbsp;&nbsp;USB: Universal Serial Bus<br />&nbsp;&nbsp;&nbsp;&nbsp;NVMe: Non-Volatile Memory Express<br />&nbsp;&nbsp;&nbsp;&nbsp;FC: Fibre Channel<br />&nbsp;&nbsp;&nbsp;&nbsp;iSCSI: Internet SCSI<br />&nbsp;&nbsp;&nbsp;&nbsp;FCoE: Fibre Channel over Ethernet<br />&nbsp;&nbsp;&nbsp;&nbsp;NVMeOverFabrics: NVMe over Fabrics<br />&nbsp;&nbsp;&nbsp;&nbsp;SMB: Server Message Block (aka CIFS Common Internet File System)<br />&nbsp;&nbsp;&nbsp;&nbsp;NFSv3: Network File System version 3<br />&nbsp;&nbsp;&nbsp;&nbsp;NFSv4: Network File System version 4<br />&nbsp;&nbsp;&nbsp;&nbsp;HTTP: Hypertext Transport Protocol<br />&nbsp;&nbsp;&nbsp;&nbsp;HTTPS: Secure Hypertext Transport Protocol<br />&nbsp;&nbsp;&nbsp;&nbsp;FTP: File Transfer Protocol<br />&nbsp;&nbsp;&nbsp;&nbsp;SFTP: Secure File Transfer Protocol</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Protocol</td><td>string</td><td>Yes</td><td></td><td>read-write</td><td>The exact protocol of the local drive<br />Possible Values:<ul>
+<li>PCIe: PCI Express (Vendor Proprietary)</li>
+<li>AHCI: Advanced Host Controller Interface</li>
+<li>UHCI: Universal Host Controller Interface</li>
+<li>SAS: Serial Attached SCSI</li>
+<li>SATA: Serial AT Attachment</li>
+<li>USB: Universal Serial Bus</li>
+<li>NVMe: Non-Volatile Memory Express</li>
+<li>FC: Fibre Channel</li>
+<li>iSCSI: Internet SCSI</li>
+<li>FCoE: Fibre Channel over Ethernet</li>
+<li>NVMeOverFabrics: NVMe over Fabrics</li>
+<li>SMB: Server Message Block (aka CIFS Common Internet File System)</li>
+<li>NFSv3: Network File System version 3</li>
+<li>NFSv4: Network File System version 4</li>
+<li>HTTP: Hypertext Transport Protocol</li>
+<li>HTTPS: Secure Hypertext Transport Protocol</li>
+<li>FTP: File Transfer Protocol</li>
+<li>SFTP: Secure File Transfer Protocol</li>
+</ul></td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Resource {</td><td>reference(<a href="drive.html#drive">Drive</a>)</td><td>Yes</td><td></td><td>read-write</td><td>The URI of a concrete resource</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@odata.id</td><td>string</td><td></td><td></td><td>read-only</td><td>The unique identifier for a resource.<br />Format: uri</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</td><td></td><td></td><td></td><td></td><td></td></tr>
@@ -286,10 +338,41 @@ table { border-collapse: collapse; }
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;Manufacturer</td><td>string</td><td>Yes</td><td></td><td>read-write</td><td>The exact manufacturer of the PCIe device</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;Model</td><td>string</td><td>Yes</td><td></td><td>read-write</td><td>The exact model of the PCIe device</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;SerialNumber</td><td>string</td><td>Yes</td><td></td><td>read-write</td><td>The exact serial number of the PCIe device</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;Type</td><td>string</td><td>Yes</td><td></td><td>read-write</td><td>The exact type of the PCIe device<br />Possible Values:<br />&nbsp;&nbsp;&nbsp;&nbsp;SingleFunction: A single-function PCIe device<br />&nbsp;&nbsp;&nbsp;&nbsp;MultiFunction: A multi-function PCIe device<br />&nbsp;&nbsp;&nbsp;&nbsp;Simulated: A PCIe device which is not currently physically present, but is being simulated by the PCIe infrastructure</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;Type</td><td>string</td><td>Yes</td><td></td><td>read-write</td><td>The exact type of the PCIe device<br />Possible Values:<ul>
+<li>SingleFunction: A single-function PCIe device</li>
+<li>MultiFunction: A multi-function PCIe device</li>
+<li>Simulated: A PCIe device which is not currently physically present, but is being simulated by the PCIe infrastructure</li>
+</ul></td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;PCIeFunctions [ {</td><td>array[object]</td><td></td><td></td><td>read-write</td><td>The minimal required set of PCIe functions exposed by the PCIe device</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FunctionType</td><td>string</td><td>Yes</td><td></td><td>read-write</td><td>The type of the PCIe Function<br />Possible Values:<br />&nbsp;&nbsp;&nbsp;&nbsp;Physical: A physical PCie function<br />&nbsp;&nbsp;&nbsp;&nbsp;Virtual: A virtual PCIe function</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DeviceClass</td><td>string</td><td>Yes</td><td></td><td>read-write</td><td>The class for this PCIe Function<br />Possible Values:<br />&nbsp;&nbsp;&nbsp;&nbsp;UnclassifiedDevice: An unclassified device<br />&nbsp;&nbsp;&nbsp;&nbsp;MassStorageController: A mass storage controller<br />&nbsp;&nbsp;&nbsp;&nbsp;NetworkController: A network controller<br />&nbsp;&nbsp;&nbsp;&nbsp;DisplayController: A display controller<br />&nbsp;&nbsp;&nbsp;&nbsp;MultimediaController: A multimedia controller<br />&nbsp;&nbsp;&nbsp;&nbsp;MemoryController: A memory controller<br />&nbsp;&nbsp;&nbsp;&nbsp;Bridge: A bridge<br />&nbsp;&nbsp;&nbsp;&nbsp;CommunicationController: A communication controller<br />&nbsp;&nbsp;&nbsp;&nbsp;GenericSystemPeripheral: A generic system peripheral<br />&nbsp;&nbsp;&nbsp;&nbsp;InputDeviceController: An input device controller<br />&nbsp;&nbsp;&nbsp;&nbsp;DockingStation: A docking station<br />&nbsp;&nbsp;&nbsp;&nbsp;Processor: A processor<br />&nbsp;&nbsp;&nbsp;&nbsp;SerialBusController: A serial bus controller<br />&nbsp;&nbsp;&nbsp;&nbsp;WirelessController: A wireless controller<br />&nbsp;&nbsp;&nbsp;&nbsp;IntelligentController: An intelligent controller<br />&nbsp;&nbsp;&nbsp;&nbsp;SatelliteCommunicationsController: A satellite communications controller<br />&nbsp;&nbsp;&nbsp;&nbsp;EncryptionController: An encryption controller<br />&nbsp;&nbsp;&nbsp;&nbsp;SignalProcessingController: A signal processing controller<br />&nbsp;&nbsp;&nbsp;&nbsp;ProcessingAccelerators: A processing accelerators<br />&nbsp;&nbsp;&nbsp;&nbsp;NonEssentialInstrumentation: A non-essential instrumentation<br />&nbsp;&nbsp;&nbsp;&nbsp;Coprocessor: A coprocessor<br />&nbsp;&nbsp;&nbsp;&nbsp;UnassignedClass: An unassigned class<br />&nbsp;&nbsp;&nbsp;&nbsp;Other: A other class. The function Device Class Id needs to be verified</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FunctionType</td><td>string</td><td>Yes</td><td></td><td>read-write</td><td>The type of the PCIe Function<br />Possible Values:<ul>
+<li>Physical: A physical PCie function</li>
+<li>Virtual: A virtual PCIe function</li>
+</ul></td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DeviceClass</td><td>string</td><td>Yes</td><td></td><td>read-write</td><td>The class for this PCIe Function<br />Possible Values:<ul>
+<li>UnclassifiedDevice: An unclassified device</li>
+<li>MassStorageController: A mass storage controller</li>
+<li>NetworkController: A network controller</li>
+<li>DisplayController: A display controller</li>
+<li>MultimediaController: A multimedia controller</li>
+<li>MemoryController: A memory controller</li>
+<li>Bridge: A bridge</li>
+<li>CommunicationController: A communication controller</li>
+<li>GenericSystemPeripheral: A generic system peripheral</li>
+<li>InputDeviceController: An input device controller</li>
+<li>DockingStation: A docking station</li>
+<li>Processor: A processor</li>
+<li>SerialBusController: A serial bus controller</li>
+<li>WirelessController: A wireless controller</li>
+<li>IntelligentController: An intelligent controller</li>
+<li>SatelliteCommunicationsController: A satellite communications controller</li>
+<li>EncryptionController: An encryption controller</li>
+<li>SignalProcessingController: A signal processing controller</li>
+<li>ProcessingAccelerators: A processing accelerators</li>
+<li>NonEssentialInstrumentation: A non-essential instrumentation</li>
+<li>Coprocessor: A coprocessor</li>
+<li>UnassignedClass: An unassigned class</li>
+<li>Other: A other class. The function Device Class Id needs to be verified</li>
+</ul></td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DeviceId</td><td>string</td><td>Yes</td><td></td><td>read-write</td><td>The Device ID of this PCIe function.<br />Pattern: /0[xX](([a-fA-F]|[0-9]){2}){2}</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;VendorId</td><td>string</td><td>Yes</td><td></td><td>read-write</td><td>The Vendor ID of this PCIe function.<br />Pattern: /0[xX](([a-fA-F]|[0-9]){2}){2}</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ClassCode</td><td>string</td><td>Yes</td><td></td><td>read-write</td><td>The Class Code of this PCIe function.<br />Pattern: /0[xX](([a-fA-F]|[0-9]){2}){3}</td></tr>

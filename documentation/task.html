@@ -172,10 +172,26 @@ This resource contains information about a specific Task scheduled by or being e
 <tr><td>Id</td><td>string</td><td></td><td>GET</td><td>read-only</td><td>Uniquely identifies the resource within the collection of like resources.</td></tr>
 <tr><td>Description</td><td>string</td><td>Yes</td><td></td><td>read-only</td><td>Provides a description of this resource and is used for commonality  in the schema definitions.</td></tr>
 <tr><td>Name</td><td>string</td><td></td><td>GET</td><td>read-only</td><td>The name of the resource or array element.</td></tr>
-<tr><td>TaskState</td><td>string</td><td></td><td></td><td>read-only</td><td>The state of the task.<br />Possible Values:<br />&nbsp;&nbsp;&nbsp;&nbsp;New: A new task.<br />&nbsp;&nbsp;&nbsp;&nbsp;Starting: Task is starting.<br />&nbsp;&nbsp;&nbsp;&nbsp;Running: Task is running normally.<br />&nbsp;&nbsp;&nbsp;&nbsp;Suspended: Task has been suspended.<br />&nbsp;&nbsp;&nbsp;&nbsp;Interrupted: Task has been interrupted.<br />&nbsp;&nbsp;&nbsp;&nbsp;Pending: Task is pending and has not started.<br />&nbsp;&nbsp;&nbsp;&nbsp;Stopping: Task is in the process of stopping.<br />&nbsp;&nbsp;&nbsp;&nbsp;Completed: Task has completed.<br />&nbsp;&nbsp;&nbsp;&nbsp;Killed: Task was terminated.<br />&nbsp;&nbsp;&nbsp;&nbsp;Exception: Task has stopped due to an exception condition.<br />&nbsp;&nbsp;&nbsp;&nbsp;Service: Task is running as a service.</td></tr>
+<tr><td>TaskState</td><td>string</td><td></td><td></td><td>read-only</td><td>The state of the task.<br />Possible Values:<ul>
+<li>New: A new task.</li>
+<li>Starting: Task is starting.</li>
+<li>Running: Task is running normally.</li>
+<li>Suspended: Task has been suspended.</li>
+<li>Interrupted: Task has been interrupted.</li>
+<li>Pending: Task is pending and has not started.</li>
+<li>Stopping: Task is in the process of stopping.</li>
+<li>Completed: Task has completed.</li>
+<li>Killed: Task was terminated.</li>
+<li>Exception: Task has stopped due to an exception condition.</li>
+<li>Service: Task is running as a service.</li>
+</ul></td></tr>
 <tr><td>StartTime</td><td>string</td><td></td><td></td><td>read-only</td><td>The date-time stamp that the task was last started.<br />Format: date-time</td></tr>
 <tr><td>EndTime</td><td>string</td><td></td><td></td><td>read-only</td><td>The date-time stamp that the task was last completed.<br />Format: date-time</td></tr>
-<tr><td>TaskStatus</td><td>string</td><td></td><td></td><td>read-only</td><td>This is the completion status of the task.<br />Possible Values:<br />&nbsp;&nbsp;&nbsp;&nbsp;OK: Normal.<br />&nbsp;&nbsp;&nbsp;&nbsp;Warning: A condition exists that requires attention.<br />&nbsp;&nbsp;&nbsp;&nbsp;Critical: A critical condition exists that requires immediate attention.</td></tr>
+<tr><td>TaskStatus</td><td>string</td><td></td><td></td><td>read-only</td><td>This is the completion status of the task.<br />Possible Values:<ul>
+<li>OK: Normal.</li>
+<li>Warning: A condition exists that requires attention.</li>
+<li>Critical: A critical condition exists that requires immediate attention.</li>
+</ul></td></tr>
 <tr><td>Messages [ { } ]</td><td>array[object]</td><td></td><td></td><td>read-write</td><td>This is an array of messages associated with the task.</td></tr>
 </table>
 <h2 id="operations">Operations</h2>

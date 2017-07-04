@@ -172,14 +172,40 @@ A Chassis represents the physical components for any system.  This resource repr
 <tr><td>Id</td><td>string</td><td></td><td>GET</td><td>read-only</td><td>Uniquely identifies the resource within the collection of like resources.</td></tr>
 <tr><td>Description</td><td>string</td><td>Yes</td><td></td><td>read-only</td><td>Provides a description of this resource and is used for commonality  in the schema definitions.</td></tr>
 <tr><td>Name</td><td>string</td><td></td><td>GET</td><td>read-only</td><td>The name of the resource or array element.</td></tr>
-<tr><td>ChassisType</td><td>string</td><td></td><td>GET</td><td>read-only</td><td>This property indicates the type of physical form factor of this resource.<br />Possible Values:<br />&nbsp;&nbsp;&nbsp;&nbsp;Rack: An equipment rack, typically a 19-inch wide freestanding unit.<br />&nbsp;&nbsp;&nbsp;&nbsp;Blade: An enclosed or semi-enclosed, typically vertically-oriented, system chassis which must be plugged into a multi-system chassis to function normally.<br />&nbsp;&nbsp;&nbsp;&nbsp;Enclosure: A generic term for a chassis that does not fit any other description.<br />&nbsp;&nbsp;&nbsp;&nbsp;StandAlone: A single, free-standing system, commonly called a tower or desktop chassis.<br />&nbsp;&nbsp;&nbsp;&nbsp;RackMount: A single system chassis designed specifically for mounting in an equipment rack.<br />&nbsp;&nbsp;&nbsp;&nbsp;Card: A loose device or circuit board intended to be installed in a system or other enclosure.<br />&nbsp;&nbsp;&nbsp;&nbsp;Cartridge: A small self-contained system intended to be plugged into a multi-system chassis.<br />&nbsp;&nbsp;&nbsp;&nbsp;Row: A collection of equipment racks.<br />&nbsp;&nbsp;&nbsp;&nbsp;Pod: A collection of equipment racks in a large, likely transportable, container.<br />&nbsp;&nbsp;&nbsp;&nbsp;Expansion: A chassis which expands the capabilities or capacity of another chassis.<br />&nbsp;&nbsp;&nbsp;&nbsp;Sidecar: A chassis that mates mechanically with another chassis to expand its capabilities or capacity.<br />&nbsp;&nbsp;&nbsp;&nbsp;Zone: A logical division or portion of a physical chassis that contains multiple devices or systems that cannot be physically separated.<br />&nbsp;&nbsp;&nbsp;&nbsp;Sled: An enclosed or semi-enclosed, system chassis which must be plugged into a multi-system chassis to function normally similar to a blade type chassis.<br />&nbsp;&nbsp;&nbsp;&nbsp;Shelf: An enclosed or semi-enclosed, typically horizontally-oriented, system chassis which must be plugged into a multi-system chassis to function normally.<br />&nbsp;&nbsp;&nbsp;&nbsp;Drawer: An enclosed or semi-enclosed, typically horizontally-oriented, system chassis which may be slid into a multi-system chassis.<br />&nbsp;&nbsp;&nbsp;&nbsp;Module: A small, typically removable, chassis or card which contains devices for a particular subsystem or function.<br />&nbsp;&nbsp;&nbsp;&nbsp;Component: A small chassis, card, or device which contains devices for a particular subsystem or function.<br />&nbsp;&nbsp;&nbsp;&nbsp;IPBasedDrive: A chassis in a drive form factor with IP-based network connections.<br />&nbsp;&nbsp;&nbsp;&nbsp;RackGroup: A group of racks which form a single entity or share infrastructure.<br />&nbsp;&nbsp;&nbsp;&nbsp;Other: A chassis that does not fit any of these definitions.</td></tr>
+<tr><td>ChassisType</td><td>string</td><td></td><td>GET</td><td>read-only</td><td>This property indicates the type of physical form factor of this resource.<br />Possible Values:<ul>
+<li>Rack: An equipment rack, typically a 19-inch wide freestanding unit.</li>
+<li>Blade: An enclosed or semi-enclosed, typically vertically-oriented, system chassis which must be plugged into a multi-system chassis to function normally.</li>
+<li>Enclosure: A generic term for a chassis that does not fit any other description.</li>
+<li>StandAlone: A single, free-standing system, commonly called a tower or desktop chassis.</li>
+<li>RackMount: A single system chassis designed specifically for mounting in an equipment rack.</li>
+<li>Card: A loose device or circuit board intended to be installed in a system or other enclosure.</li>
+<li>Cartridge: A small self-contained system intended to be plugged into a multi-system chassis.</li>
+<li>Row: A collection of equipment racks.</li>
+<li>Pod: A collection of equipment racks in a large, likely transportable, container.</li>
+<li>Expansion: A chassis which expands the capabilities or capacity of another chassis.</li>
+<li>Sidecar: A chassis that mates mechanically with another chassis to expand its capabilities or capacity.</li>
+<li>Zone: A logical division or portion of a physical chassis that contains multiple devices or systems that cannot be physically separated.</li>
+<li>Sled: An enclosed or semi-enclosed, system chassis which must be plugged into a multi-system chassis to function normally similar to a blade type chassis.</li>
+<li>Shelf: An enclosed or semi-enclosed, typically horizontally-oriented, system chassis which must be plugged into a multi-system chassis to function normally.</li>
+<li>Drawer: An enclosed or semi-enclosed, typically horizontally-oriented, system chassis which may be slid into a multi-system chassis.</li>
+<li>Module: A small, typically removable, chassis or card which contains devices for a particular subsystem or function.</li>
+<li>Component: A small chassis, card, or device which contains devices for a particular subsystem or function.</li>
+<li>IPBasedDrive: A chassis in a drive form factor with IP-based network connections.</li>
+<li>RackGroup: A group of racks which form a single entity or share infrastructure.</li>
+<li>Other: A chassis that does not fit any of these definitions.</li>
+</ul></td></tr>
 <tr><td>Manufacturer</td><td>string</td><td>Yes</td><td></td><td>read-only</td><td>This is the manufacturer of this chassis.</td></tr>
 <tr><td>Model</td><td>string</td><td>Yes</td><td></td><td>read-only</td><td>This is the model number for the chassis.</td></tr>
 <tr><td>SKU</td><td>string</td><td>Yes</td><td></td><td>read-only</td><td>This is the SKU for this chassis.</td></tr>
 <tr><td>SerialNumber</td><td>string</td><td>Yes</td><td></td><td>read-only</td><td>The serial number for this chassis.</td></tr>
 <tr><td>PartNumber</td><td>string</td><td>Yes</td><td></td><td>read-only</td><td>The part number for this chassis.</td></tr>
 <tr><td>AssetTag</td><td>string</td><td>Yes</td><td></td><td>read-write</td><td>The user assigned asset tag for this chassis.</td></tr>
-<tr><td>IndicatorLED</td><td>string</td><td>Yes</td><td></td><td>read-write</td><td>The state of the indicator LED, used to identify the chassis.<br />Possible Values:<br />&nbsp;&nbsp;&nbsp;&nbsp;Unknown: The state of the Indicator LED cannot be determined. Deprecated: Return null if state is unknown.<br />&nbsp;&nbsp;&nbsp;&nbsp;Lit: The Indicator LED is lit.<br />&nbsp;&nbsp;&nbsp;&nbsp;Blinking: The Indicator LED is blinking.<br />&nbsp;&nbsp;&nbsp;&nbsp;Off: The Indicator LED is off.</td></tr>
+<tr><td>IndicatorLED</td><td>string</td><td>Yes</td><td></td><td>read-write</td><td>The state of the indicator LED, used to identify the chassis.<br />Possible Values:<ul>
+<li>Unknown: The state of the Indicator LED cannot be determined. Deprecated: Return null if state is unknown.</li>
+<li>Lit: The Indicator LED is lit.</li>
+<li>Blinking: The Indicator LED is blinking.</li>
+<li>Off: The Indicator LED is off.</li>
+</ul></td></tr>
 <tr><td>Links {</td><td>object</td><td></td><td></td><td>read-write</td><td>Contains references to other resources that are related to this resource.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;Oem {</td><td>object</td><td></td><td></td><td>read-write</td><td>Oem extension object.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;EID_47597 {</td><td>object</td><td></td><td></td><td>read-only</td><td>RECS|Box Chassis Links extension</td></tr>
@@ -262,9 +288,29 @@ A Chassis represents the physical components for any system.  This resource repr
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;}</td><td></td><td></td><td></td><td></td><td></td></tr>
 <tr><td>}</td><td></td><td></td><td></td><td></td><td></td></tr>
 <tr><td>Status {</td><td>object</td><td></td><td></td><td>read-only</td><td></td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;State</td><td>string</td><td>Yes</td><td></td><td>read-only</td><td>This indicates the known state of the resource, such as if it is enabled.<br />Possible Values:<br />&nbsp;&nbsp;&nbsp;&nbsp;Enabled: This function or resource has been enabled.<br />&nbsp;&nbsp;&nbsp;&nbsp;Disabled: This function or resource has been disabled.<br />&nbsp;&nbsp;&nbsp;&nbsp;StandbyOffline: This function or resource is enabled, but awaiting an external action to activate it.<br />&nbsp;&nbsp;&nbsp;&nbsp;StandbySpare: This function or resource is part of a redundancy set and is awaiting a failover or other external action to activate it.<br />&nbsp;&nbsp;&nbsp;&nbsp;InTest: This function or resource is undergoing testing.<br />&nbsp;&nbsp;&nbsp;&nbsp;Starting: This function or resource is starting.<br />&nbsp;&nbsp;&nbsp;&nbsp;Absent: This function or resource is not present or not detected.<br />&nbsp;&nbsp;&nbsp;&nbsp;UnavailableOffline: This function or resource is present but cannot be used.<br />&nbsp;&nbsp;&nbsp;&nbsp;Deferring: The element will not process any commands but will queue new requests.<br />&nbsp;&nbsp;&nbsp;&nbsp;Quiesced: The element is enabled but only processes a restricted set of commands.<br />&nbsp;&nbsp;&nbsp;&nbsp;Updating: The element is updating and may be unavailable or degraded.</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;HealthRollup</td><td>string</td><td>Yes</td><td></td><td>read-only</td><td>This represents the overall health state from the view of this resource.<br />Possible Values:<br />&nbsp;&nbsp;&nbsp;&nbsp;OK: Normal.<br />&nbsp;&nbsp;&nbsp;&nbsp;Warning: A condition exists that requires attention.<br />&nbsp;&nbsp;&nbsp;&nbsp;Critical: A critical condition exists that requires immediate attention.</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;Health</td><td>string</td><td>Yes</td><td></td><td>read-only</td><td>This represents the health state of this resource in the absence of its dependent resources.<br />Possible Values:<br />&nbsp;&nbsp;&nbsp;&nbsp;OK: Normal.<br />&nbsp;&nbsp;&nbsp;&nbsp;Warning: A condition exists that requires attention.<br />&nbsp;&nbsp;&nbsp;&nbsp;Critical: A critical condition exists that requires immediate attention.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;State</td><td>string</td><td>Yes</td><td></td><td>read-only</td><td>This indicates the known state of the resource, such as if it is enabled.<br />Possible Values:<ul>
+<li>Enabled: This function or resource has been enabled.</li>
+<li>Disabled: This function or resource has been disabled.</li>
+<li>StandbyOffline: This function or resource is enabled, but awaiting an external action to activate it.</li>
+<li>StandbySpare: This function or resource is part of a redundancy set and is awaiting a failover or other external action to activate it.</li>
+<li>InTest: This function or resource is undergoing testing.</li>
+<li>Starting: This function or resource is starting.</li>
+<li>Absent: This function or resource is not present or not detected.</li>
+<li>UnavailableOffline: This function or resource is present but cannot be used.</li>
+<li>Deferring: The element will not process any commands but will queue new requests.</li>
+<li>Quiesced: The element is enabled but only processes a restricted set of commands.</li>
+<li>Updating: The element is updating and may be unavailable or degraded.</li>
+</ul></td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;HealthRollup</td><td>string</td><td>Yes</td><td></td><td>read-only</td><td>This represents the overall health state from the view of this resource.<br />Possible Values:<ul>
+<li>OK: Normal.</li>
+<li>Warning: A condition exists that requires attention.</li>
+<li>Critical: A critical condition exists that requires immediate attention.</li>
+</ul></td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;Health</td><td>string</td><td>Yes</td><td></td><td>read-only</td><td>This represents the health state of this resource in the absence of its dependent resources.<br />Possible Values:<ul>
+<li>OK: Normal.</li>
+<li>Warning: A condition exists that requires attention.</li>
+<li>Critical: A critical condition exists that requires immediate attention.</li>
+</ul></td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;Oem { }</td><td>object</td><td></td><td></td><td>read-write</td><td>Oem extension object.</td></tr>
 <tr><td>}</td><td></td><td></td><td></td><td></td><td></td></tr>
 <tr><td>LogServices {</td><td>reference(<a href="logservicecollection.html#logservicecollection">LogServiceCollection</a>)</td><td></td><td></td><td>read-only</td><td>A reference to the logs for this chassis.</td></tr>
@@ -276,11 +322,23 @@ A Chassis represents the physical components for any system.  This resource repr
 <tr><td>Power {</td><td>reference(<a href="power.html#power">Power</a>)</td><td></td><td></td><td>read-only</td><td>A reference to the power properties (power supplies, power policies, sensors) for this chassis.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;@odata.id</td><td>string</td><td></td><td></td><td>read-only</td><td>The unique identifier for a resource.<br />Format: uri</td></tr>
 <tr><td>}</td><td></td><td></td><td></td><td></td><td></td></tr>
-<tr><td>PowerState</td><td>string</td><td>Yes</td><td></td><td>read-only</td><td>This is the current power state of the chassis.<br />Possible Values:<br />&nbsp;&nbsp;&nbsp;&nbsp;On: The components within the chassis has power on.<br />&nbsp;&nbsp;&nbsp;&nbsp;Off: The components within the chassis has no power, except some components may continue to have AUX power such as management controller.<br />&nbsp;&nbsp;&nbsp;&nbsp;PoweringOn: A temporary state between Off and On. The components within the chassis can take time to process the power on action.<br />&nbsp;&nbsp;&nbsp;&nbsp;PoweringOff: A temporary state between On and Off. The components within the chassis can take time to process the power off action.</td></tr>
+<tr><td>PowerState</td><td>string</td><td>Yes</td><td></td><td>read-only</td><td>This is the current power state of the chassis.<br />Possible Values:<ul>
+<li>On: The components within the chassis has power on.</li>
+<li>Off: The components within the chassis has no power, except some components may continue to have AUX power such as management controller.</li>
+<li>PoweringOn: A temporary state between Off and On. The components within the chassis can take time to process the power on action.</li>
+<li>PoweringOff: A temporary state between On and Off. The components within the chassis can take time to process the power off action.</li>
+</ul></td></tr>
 <tr><td>PhysicalSecurity {</td><td>object</td><td></td><td></td><td>read-write</td><td>The state of the physical security sensor.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;IntrusionSensorNumber</td><td>number</td><td>Yes</td><td></td><td>read-only</td><td>A numerical identifier to represent the physical security sensor.</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;IntrusionSensor</td><td>string</td><td>Yes</td><td></td><td>read-write</td><td>This indicates the known state of the physical security sensor, such as if it is hardware intrusion detected.<br />Possible Values:<br />&nbsp;&nbsp;&nbsp;&nbsp;Normal: No abnormal physical security conditions are detected at this time.<br />&nbsp;&nbsp;&nbsp;&nbsp;HardwareIntrusion: A door, lock, or other mechanism protecting the internal system hardware from being accessed is detected as being in an insecure state.<br />&nbsp;&nbsp;&nbsp;&nbsp;TamperingDetected: Physical tampering of the monitored entity is detected.</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;IntrusionSensorReArm</td><td>string</td><td>Yes</td><td></td><td>read-only</td><td>This indicates how the Normal state to be restored.<br />Possible Values:<br />&nbsp;&nbsp;&nbsp;&nbsp;Manual: This sensor would be restored to the Normal state by a manual re-arm.<br />&nbsp;&nbsp;&nbsp;&nbsp;Automatic: This sensor would be restored to the Normal state automatically as no abnormal physical security conditions are detected.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;IntrusionSensor</td><td>string</td><td>Yes</td><td></td><td>read-write</td><td>This indicates the known state of the physical security sensor, such as if it is hardware intrusion detected.<br />Possible Values:<ul>
+<li>Normal: No abnormal physical security conditions are detected at this time.</li>
+<li>HardwareIntrusion: A door, lock, or other mechanism protecting the internal system hardware from being accessed is detected as being in an insecure state.</li>
+<li>TamperingDetected: Physical tampering of the monitored entity is detected.</li>
+</ul></td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;IntrusionSensorReArm</td><td>string</td><td>Yes</td><td></td><td>read-only</td><td>This indicates how the Normal state to be restored.<br />Possible Values:<ul>
+<li>Manual: This sensor would be restored to the Normal state by a manual re-arm.</li>
+<li>Automatic: This sensor would be restored to the Normal state automatically as no abnormal physical security conditions are detected.</li>
+</ul></td></tr>
 <tr><td>}</td><td></td><td></td><td></td><td></td><td></td></tr>
 <tr><td>Location {</td><td>object</td><td></td><td></td><td>read-only</td><td></td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;Info</td><td>string</td><td>Yes</td><td></td><td>read-only</td><td>This indicates the location of the resource.</td></tr>
@@ -299,7 +357,16 @@ A Chassis represents the physical components for any system.  This resource repr
 <h4 id="#chassis.reset">#Chassis.Reset</h4>
 <table class="datatable">
 <tr><th>Property</th><th>Type</th><th>Nullable</th><th>Required</th><th>Permission</th><th>Description</th></tr>
-<tr><td>ResetType</td><td>string</td><td></td><td>POST</td><td>read-write</td><td>This is the type of reset to be performed.<br />Possible Values:<br />&nbsp;&nbsp;&nbsp;&nbsp;On: Turn the system on.<br />&nbsp;&nbsp;&nbsp;&nbsp;ForceOff: Turn the system off immediately (non-graceful) shutdown.<br />&nbsp;&nbsp;&nbsp;&nbsp;GracefulShutdown: Perform a graceful system shutdown and power off.<br />&nbsp;&nbsp;&nbsp;&nbsp;GracefulRestart: Perform a graceful system shutdown followed by a restart of the system.<br />&nbsp;&nbsp;&nbsp;&nbsp;ForceRestart: Perform an immediate (non-graceful) shutdown, followed by a restart of the system.<br />&nbsp;&nbsp;&nbsp;&nbsp;Nmi: Generate a Diagnostic Interrupt (usually an NMI on x86 systems) to cease normal operations, perform diagnostic actions and typically halt the system.<br />&nbsp;&nbsp;&nbsp;&nbsp;ForceOn: Turn the system on immediately.<br />&nbsp;&nbsp;&nbsp;&nbsp;PushPowerButton: Simulate the pressing of the physical power button on this system.</td></tr>
+<tr><td>ResetType</td><td>string</td><td></td><td>POST</td><td>read-write</td><td>This is the type of reset to be performed.<br />Possible Values:<ul>
+<li>On: Turn the system on.</li>
+<li>ForceOff: Turn the system off immediately (non-graceful) shutdown.</li>
+<li>GracefulShutdown: Perform a graceful system shutdown and power off.</li>
+<li>GracefulRestart: Perform a graceful system shutdown followed by a restart of the system.</li>
+<li>ForceRestart: Perform an immediate (non-graceful) shutdown, followed by a restart of the system.</li>
+<li>Nmi: Generate a Diagnostic Interrupt (usually an NMI on x86 systems) to cease normal operations, perform diagnostic actions and typically halt the system.</li>
+<li>ForceOn: Turn the system on immediately.</li>
+<li>PushPowerButton: Simulate the pressing of the physical power button on this system.</li>
+</ul></td></tr>
 </table>
 <h2 id="operations">Operations</h2>
 In this section the URL endpoints and corresponding operations, such as GET, POST, PATCH and DELETE, will be described with JSON payload examples.

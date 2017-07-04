@@ -172,7 +172,13 @@ This is the schema definition for a Manager.  Examples of managers are BMCs, Enc
 <tr><td>Id</td><td>string</td><td></td><td>GET</td><td>read-only</td><td>Uniquely identifies the resource within the collection of like resources.</td></tr>
 <tr><td>Description</td><td>string</td><td>Yes</td><td></td><td>read-only</td><td>Provides a description of this resource and is used for commonality  in the schema definitions.</td></tr>
 <tr><td>Name</td><td>string</td><td></td><td>GET</td><td>read-only</td><td>The name of the resource or array element.</td></tr>
-<tr><td>ManagerType</td><td>string</td><td></td><td></td><td>read-only</td><td>This property represents the type of manager that this resource represents.<br />Possible Values:<br />&nbsp;&nbsp;&nbsp;&nbsp;ManagementController: A controller used primarily to monitor or manage the operation of a device or system.<br />&nbsp;&nbsp;&nbsp;&nbsp;EnclosureManager: A controller which provides management functions for a chassis or group of devices or systems.<br />&nbsp;&nbsp;&nbsp;&nbsp;BMC: A controller which provides management functions for a single computer system.<br />&nbsp;&nbsp;&nbsp;&nbsp;RackManager: A controller which provides management functions for a whole or part of a rack.<br />&nbsp;&nbsp;&nbsp;&nbsp;AuxiliaryController: A controller which provides management functions for a particular subsystem or group of devices.</td></tr>
+<tr><td>ManagerType</td><td>string</td><td></td><td></td><td>read-only</td><td>This property represents the type of manager that this resource represents.<br />Possible Values:<ul>
+<li>ManagementController: A controller used primarily to monitor or manage the operation of a device or system.</li>
+<li>EnclosureManager: A controller which provides management functions for a chassis or group of devices or systems.</li>
+<li>BMC: A controller which provides management functions for a single computer system.</li>
+<li>RackManager: A controller which provides management functions for a whole or part of a rack.</li>
+<li>AuxiliaryController: A controller which provides management functions for a particular subsystem or group of devices.</li>
+</ul></td></tr>
 <tr><td>Links {</td><td>object</td><td></td><td></td><td>read-write</td><td>Contains references to other resources that are related to this resource.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;Oem { }</td><td>object</td><td></td><td></td><td>read-write</td><td>Oem extension object.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;ManagerForServers@odata.count</td><td>number</td><td></td><td></td><td>read-only</td><td>The number of items in a collection.</td></tr>
@@ -198,17 +204,30 @@ This is the schema definition for a Manager.  Examples of managers are BMCs, Enc
 <tr><td>SerialConsole {</td><td>object</td><td></td><td></td><td>read-write</td><td>Information about the Serial Console service provided by this manager.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;ServiceEnabled</td><td>boolean</td><td></td><td></td><td>read-write</td><td>Indicates if the service is enabled for this manager.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;MaxConcurrentSessions</td><td>number</td><td></td><td></td><td>read-only</td><td>Indicates the maximum number of service sessions, regardless of protocol, this manager is able to support.<br />Minimum: 0</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;ConnectTypesSupported [ ]</td><td>array[string]</td><td></td><td></td><td>read-only</td><td>This object is used to enumerate the Serial Console connection types allowed by the implementation.<br />Possible Values:<br />&nbsp;&nbsp;&nbsp;&nbsp;SSH: The controller supports a Serial Console connection using the SSH protocol.<br />&nbsp;&nbsp;&nbsp;&nbsp;Telnet: The controller supports a Serial Console connection using the Telnet protocol.<br />&nbsp;&nbsp;&nbsp;&nbsp;IPMI: The controller supports a Serial Console connection using the IPMI Serial-over-LAN (SOL) protocol.<br />&nbsp;&nbsp;&nbsp;&nbsp;Oem: The controller supports a Serial Console connection using an OEM-specific protocol.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;ConnectTypesSupported [ ]</td><td>array[string]</td><td></td><td></td><td>read-only</td><td>This object is used to enumerate the Serial Console connection types allowed by the implementation.<br />Possible Values:<ul>
+<li>SSH: The controller supports a Serial Console connection using the SSH protocol.</li>
+<li>Telnet: The controller supports a Serial Console connection using the Telnet protocol.</li>
+<li>IPMI: The controller supports a Serial Console connection using the IPMI Serial-over-LAN (SOL) protocol.</li>
+<li>Oem: The controller supports a Serial Console connection using an OEM-specific protocol.</li>
+</ul></td></tr>
 <tr><td>}</td><td></td><td></td><td></td><td></td><td></td></tr>
 <tr><td>CommandShell {</td><td>object</td><td></td><td></td><td>read-write</td><td>Information about the Command Shell service provided by this manager.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;ServiceEnabled</td><td>boolean</td><td></td><td></td><td>read-write</td><td>Indicates if the service is enabled for this manager.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;MaxConcurrentSessions</td><td>number</td><td></td><td></td><td>read-only</td><td>Indicates the maximum number of service sessions, regardless of protocol, this manager is able to support.<br />Minimum: 0</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;ConnectTypesSupported [ ]</td><td>array[string]</td><td></td><td></td><td>read-only</td><td>This object is used to enumerate the Command Shell connection types allowed by the implementation.<br />Possible Values:<br />&nbsp;&nbsp;&nbsp;&nbsp;SSH: The controller supports a Command Shell connection using the SSH protocol.<br />&nbsp;&nbsp;&nbsp;&nbsp;Telnet: The controller supports a Command Shell connection using the SSH protocol.<br />&nbsp;&nbsp;&nbsp;&nbsp;IPMI: The controller supports a Command Shell connection using the SSH protocol.<br />&nbsp;&nbsp;&nbsp;&nbsp;Oem: The controller supports a Command Shell connection using an OEM-specific protocol.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;ConnectTypesSupported [ ]</td><td>array[string]</td><td></td><td></td><td>read-only</td><td>This object is used to enumerate the Command Shell connection types allowed by the implementation.<br />Possible Values:<ul>
+<li>SSH: The controller supports a Command Shell connection using the SSH protocol.</li>
+<li>Telnet: The controller supports a Command Shell connection using the SSH protocol.</li>
+<li>IPMI: The controller supports a Command Shell connection using the SSH protocol.</li>
+<li>Oem: The controller supports a Command Shell connection using an OEM-specific protocol.</li>
+</ul></td></tr>
 <tr><td>}</td><td></td><td></td><td></td><td></td><td></td></tr>
 <tr><td>GraphicalConsole {</td><td>object</td><td></td><td></td><td>read-write</td><td>The value of this property shall contain the information about the Graphical Console (KVM-IP) service of this manager.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;ServiceEnabled</td><td>boolean</td><td></td><td></td><td>read-write</td><td>Indicates if the service is enabled for this manager.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;MaxConcurrentSessions</td><td>number</td><td></td><td></td><td>read-only</td><td>Indicates the maximum number of service sessions, regardless of protocol, this manager is able to support.<br />Minimum: 0</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;ConnectTypesSupported [ ]</td><td>array[string]</td><td></td><td></td><td>read-only</td><td>This object is used to enumerate the Graphical Console connection types allowed by the implementation.<br />Possible Values:<br />&nbsp;&nbsp;&nbsp;&nbsp;KVMIP: The controller supports a Graphical Console connection using a KVM-IP (redirection of Keyboard, Video, Mouse over IP) protocol.<br />&nbsp;&nbsp;&nbsp;&nbsp;Oem: The controller supports a Graphical Console connection using an OEM-specific protocol.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;ConnectTypesSupported [ ]</td><td>array[string]</td><td></td><td></td><td>read-only</td><td>This object is used to enumerate the Graphical Console connection types allowed by the implementation.<br />Possible Values:<ul>
+<li>KVMIP: The controller supports a Graphical Console connection using a KVM-IP (redirection of Keyboard, Video, Mouse over IP) protocol.</li>
+<li>Oem: The controller supports a Graphical Console connection using an OEM-specific protocol.</li>
+</ul></td></tr>
 <tr><td>}</td><td></td><td></td><td></td><td></td><td></td></tr>
 <tr><td>Actions {</td><td>object</td><td></td><td></td><td>read-write</td><td>The available actions for this resource.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;Oem { }</td><td>object</td><td></td><td></td><td>read-write</td><td></td></tr>
@@ -226,9 +245,29 @@ This is the schema definition for a Manager.  Examples of managers are BMCs, Enc
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;}</td><td></td><td></td><td></td><td></td><td></td></tr>
 <tr><td>}</td><td></td><td></td><td></td><td></td><td></td></tr>
 <tr><td>Status {</td><td>object</td><td></td><td></td><td>read-only</td><td></td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;State</td><td>string</td><td>Yes</td><td></td><td>read-only</td><td>This indicates the known state of the resource, such as if it is enabled.<br />Possible Values:<br />&nbsp;&nbsp;&nbsp;&nbsp;Enabled: This function or resource has been enabled.<br />&nbsp;&nbsp;&nbsp;&nbsp;Disabled: This function or resource has been disabled.<br />&nbsp;&nbsp;&nbsp;&nbsp;StandbyOffline: This function or resource is enabled, but awaiting an external action to activate it.<br />&nbsp;&nbsp;&nbsp;&nbsp;StandbySpare: This function or resource is part of a redundancy set and is awaiting a failover or other external action to activate it.<br />&nbsp;&nbsp;&nbsp;&nbsp;InTest: This function or resource is undergoing testing.<br />&nbsp;&nbsp;&nbsp;&nbsp;Starting: This function or resource is starting.<br />&nbsp;&nbsp;&nbsp;&nbsp;Absent: This function or resource is not present or not detected.<br />&nbsp;&nbsp;&nbsp;&nbsp;UnavailableOffline: This function or resource is present but cannot be used.<br />&nbsp;&nbsp;&nbsp;&nbsp;Deferring: The element will not process any commands but will queue new requests.<br />&nbsp;&nbsp;&nbsp;&nbsp;Quiesced: The element is enabled but only processes a restricted set of commands.<br />&nbsp;&nbsp;&nbsp;&nbsp;Updating: The element is updating and may be unavailable or degraded.</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;HealthRollup</td><td>string</td><td>Yes</td><td></td><td>read-only</td><td>This represents the overall health state from the view of this resource.<br />Possible Values:<br />&nbsp;&nbsp;&nbsp;&nbsp;OK: Normal.<br />&nbsp;&nbsp;&nbsp;&nbsp;Warning: A condition exists that requires attention.<br />&nbsp;&nbsp;&nbsp;&nbsp;Critical: A critical condition exists that requires immediate attention.</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;Health</td><td>string</td><td>Yes</td><td></td><td>read-only</td><td>This represents the health state of this resource in the absence of its dependent resources.<br />Possible Values:<br />&nbsp;&nbsp;&nbsp;&nbsp;OK: Normal.<br />&nbsp;&nbsp;&nbsp;&nbsp;Warning: A condition exists that requires attention.<br />&nbsp;&nbsp;&nbsp;&nbsp;Critical: A critical condition exists that requires immediate attention.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;State</td><td>string</td><td>Yes</td><td></td><td>read-only</td><td>This indicates the known state of the resource, such as if it is enabled.<br />Possible Values:<ul>
+<li>Enabled: This function or resource has been enabled.</li>
+<li>Disabled: This function or resource has been disabled.</li>
+<li>StandbyOffline: This function or resource is enabled, but awaiting an external action to activate it.</li>
+<li>StandbySpare: This function or resource is part of a redundancy set and is awaiting a failover or other external action to activate it.</li>
+<li>InTest: This function or resource is undergoing testing.</li>
+<li>Starting: This function or resource is starting.</li>
+<li>Absent: This function or resource is not present or not detected.</li>
+<li>UnavailableOffline: This function or resource is present but cannot be used.</li>
+<li>Deferring: The element will not process any commands but will queue new requests.</li>
+<li>Quiesced: The element is enabled but only processes a restricted set of commands.</li>
+<li>Updating: The element is updating and may be unavailable or degraded.</li>
+</ul></td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;HealthRollup</td><td>string</td><td>Yes</td><td></td><td>read-only</td><td>This represents the overall health state from the view of this resource.<br />Possible Values:<ul>
+<li>OK: Normal.</li>
+<li>Warning: A condition exists that requires attention.</li>
+<li>Critical: A critical condition exists that requires immediate attention.</li>
+</ul></td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;Health</td><td>string</td><td>Yes</td><td></td><td>read-only</td><td>This represents the health state of this resource in the absence of its dependent resources.<br />Possible Values:<ul>
+<li>OK: Normal.</li>
+<li>Warning: A condition exists that requires attention.</li>
+<li>Critical: A critical condition exists that requires immediate attention.</li>
+</ul></td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;Oem { }</td><td>object</td><td></td><td></td><td>read-write</td><td>Oem extension object.</td></tr>
 <tr><td>}</td><td></td><td></td><td></td><td></td><td></td></tr>
 <tr><td>EthernetInterfaces {</td><td>reference(<a href="ethernetinterfacecollection.html#ethernetinterfacecollection">EthernetInterfaceCollection</a>)</td><td></td><td></td><td>read-only</td><td>This is a reference to a collection of NICs that this manager uses for network communication.  It is here that clients will find NIC configuration options and settings.</td></tr>
@@ -252,13 +291,38 @@ This is the schema definition for a Manager.  Examples of managers are BMCs, Enc
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;Oem { }</td><td>object</td><td></td><td></td><td>read-write</td><td>This is the manufacturer/provider specific extension moniker used to divide the Oem object into sections.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;MemberId</td><td>string</td><td></td><td></td><td>read-only</td><td>This is the identifier for the member within the collection.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;Name</td><td>string</td><td></td><td>GET</td><td>read-only</td><td>The name of the resource or array element.</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;Mode</td><td>string</td><td>Yes</td><td>GET</td><td>read-only</td><td>This is the redundancy mode of the group.<br />Possible Values:<br />&nbsp;&nbsp;&nbsp;&nbsp;Failover: Failure of one unit will automatically cause its functions to be taken over by a standby or offline unit in the redundancy set.<br />&nbsp;&nbsp;&nbsp;&nbsp;N+m: Multiple units are available and active such that normal operation will continue if one or more units fail.<br />&nbsp;&nbsp;&nbsp;&nbsp;Sharing: Multiple units contribute or share such that operation will continue, but at a reduced capacity, if one or more units fail.<br />&nbsp;&nbsp;&nbsp;&nbsp;Sparing: One or more spare units are available to take over the function of a failed unit, but takeover is not automatic.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;Mode</td><td>string</td><td>Yes</td><td>GET</td><td>read-only</td><td>This is the redundancy mode of the group.<br />Possible Values:<ul>
+<li>Failover: Failure of one unit will automatically cause its functions to be taken over by a standby or offline unit in the redundancy set.</li>
+<li>N+m: Multiple units are available and active such that normal operation will continue if one or more units fail.</li>
+<li>Sharing: Multiple units contribute or share such that operation will continue, but at a reduced capacity, if one or more units fail.</li>
+<li>Sparing: One or more spare units are available to take over the function of a failed unit, but takeover is not automatic.</li>
+</ul></td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;MaxNumSupported</td><td>number</td><td>Yes</td><td>GET</td><td>read-only</td><td>This is the maximum number of members allowable for this particular redundancy group.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;MinNumNeeded</td><td>number</td><td>Yes</td><td>GET</td><td>read-only</td><td>This is the minumum number of members needed for this group to be redundant.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;Status {</td><td>object</td><td></td><td>GET</td><td>read-only</td><td></td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;State</td><td>string</td><td>Yes</td><td></td><td>read-only</td><td>This indicates the known state of the resource, such as if it is enabled.<br />Possible Values:<br />&nbsp;&nbsp;&nbsp;&nbsp;Enabled: This function or resource has been enabled.<br />&nbsp;&nbsp;&nbsp;&nbsp;Disabled: This function or resource has been disabled.<br />&nbsp;&nbsp;&nbsp;&nbsp;StandbyOffline: This function or resource is enabled, but awaiting an external action to activate it.<br />&nbsp;&nbsp;&nbsp;&nbsp;StandbySpare: This function or resource is part of a redundancy set and is awaiting a failover or other external action to activate it.<br />&nbsp;&nbsp;&nbsp;&nbsp;InTest: This function or resource is undergoing testing.<br />&nbsp;&nbsp;&nbsp;&nbsp;Starting: This function or resource is starting.<br />&nbsp;&nbsp;&nbsp;&nbsp;Absent: This function or resource is not present or not detected.<br />&nbsp;&nbsp;&nbsp;&nbsp;UnavailableOffline: This function or resource is present but cannot be used.<br />&nbsp;&nbsp;&nbsp;&nbsp;Deferring: The element will not process any commands but will queue new requests.<br />&nbsp;&nbsp;&nbsp;&nbsp;Quiesced: The element is enabled but only processes a restricted set of commands.<br />&nbsp;&nbsp;&nbsp;&nbsp;Updating: The element is updating and may be unavailable or degraded.</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;HealthRollup</td><td>string</td><td>Yes</td><td></td><td>read-only</td><td>This represents the overall health state from the view of this resource.<br />Possible Values:<br />&nbsp;&nbsp;&nbsp;&nbsp;OK: Normal.<br />&nbsp;&nbsp;&nbsp;&nbsp;Warning: A condition exists that requires attention.<br />&nbsp;&nbsp;&nbsp;&nbsp;Critical: A critical condition exists that requires immediate attention.</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Health</td><td>string</td><td>Yes</td><td></td><td>read-only</td><td>This represents the health state of this resource in the absence of its dependent resources.<br />Possible Values:<br />&nbsp;&nbsp;&nbsp;&nbsp;OK: Normal.<br />&nbsp;&nbsp;&nbsp;&nbsp;Warning: A condition exists that requires attention.<br />&nbsp;&nbsp;&nbsp;&nbsp;Critical: A critical condition exists that requires immediate attention.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;State</td><td>string</td><td>Yes</td><td></td><td>read-only</td><td>This indicates the known state of the resource, such as if it is enabled.<br />Possible Values:<ul>
+<li>Enabled: This function or resource has been enabled.</li>
+<li>Disabled: This function or resource has been disabled.</li>
+<li>StandbyOffline: This function or resource is enabled, but awaiting an external action to activate it.</li>
+<li>StandbySpare: This function or resource is part of a redundancy set and is awaiting a failover or other external action to activate it.</li>
+<li>InTest: This function or resource is undergoing testing.</li>
+<li>Starting: This function or resource is starting.</li>
+<li>Absent: This function or resource is not present or not detected.</li>
+<li>UnavailableOffline: This function or resource is present but cannot be used.</li>
+<li>Deferring: The element will not process any commands but will queue new requests.</li>
+<li>Quiesced: The element is enabled but only processes a restricted set of commands.</li>
+<li>Updating: The element is updating and may be unavailable or degraded.</li>
+</ul></td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;HealthRollup</td><td>string</td><td>Yes</td><td></td><td>read-only</td><td>This represents the overall health state from the view of this resource.<br />Possible Values:<ul>
+<li>OK: Normal.</li>
+<li>Warning: A condition exists that requires attention.</li>
+<li>Critical: A critical condition exists that requires immediate attention.</li>
+</ul></td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Health</td><td>string</td><td>Yes</td><td></td><td>read-only</td><td>This represents the health state of this resource in the absence of its dependent resources.<br />Possible Values:<ul>
+<li>OK: Normal.</li>
+<li>Warning: A condition exists that requires attention.</li>
+<li>Critical: A critical condition exists that requires immediate attention.</li>
+</ul></td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Oem { }</td><td>object</td><td></td><td></td><td>read-write</td><td>Oem extension object.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;}</td><td></td><td></td><td></td><td></td><td></td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;RedundancySet@odata.count</td><td>number</td><td></td><td></td><td>read-only</td><td>The number of items in a collection.</td></tr>
@@ -268,7 +332,12 @@ This is the schema definition for a Manager.  Examples of managers are BMCs, Enc
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;} ]</td><td></td><td></td><td></td><td></td><td></td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;RedundancyEnabled</td><td>boolean</td><td>Yes</td><td></td><td>read-write</td><td>This indicates whether redundancy is enabled.</td></tr>
 <tr><td>} ]</td><td></td><td></td><td></td><td></td><td></td></tr>
-<tr><td>PowerState</td><td>string</td><td>Yes</td><td></td><td>read-only</td><td>This is the current power state of the Manager.<br />Possible Values:<br />&nbsp;&nbsp;&nbsp;&nbsp;On: The state is powered On.<br />&nbsp;&nbsp;&nbsp;&nbsp;Off: The state is powered Off.<br />&nbsp;&nbsp;&nbsp;&nbsp;PoweringOn: A temporary state between Off and On.<br />&nbsp;&nbsp;&nbsp;&nbsp;PoweringOff: A temporary state between On and Off.</td></tr>
+<tr><td>PowerState</td><td>string</td><td>Yes</td><td></td><td>read-only</td><td>This is the current power state of the Manager.<br />Possible Values:<ul>
+<li>On: The state is powered On.</li>
+<li>Off: The state is powered Off.</li>
+<li>PoweringOn: A temporary state between Off and On.</li>
+<li>PoweringOff: A temporary state between On and Off.</li>
+</ul></td></tr>
 <tr><td>HostInterfaces {</td><td>reference(<a href="hostinterfacecollection.html#hostinterfacecollection">HostInterfaceCollection</a>)</td><td></td><td></td><td>read-only</td><td>This is a reference to a collection of Host Interfaces that this manager uses for local host communication.  It is here that clients will find Host Interface configuration options and settings.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;@odata.id</td><td>string</td><td></td><td></td><td>read-only</td><td>The unique identifier for a resource.<br />Format: uri</td></tr>
 <tr><td>}</td><td></td><td></td><td></td><td></td><td></td></tr>
@@ -294,7 +363,16 @@ This is the schema definition for a Manager.  Examples of managers are BMCs, Enc
 <h4 id="#manager.reset">#Manager.Reset</h4>
 <table class="datatable">
 <tr><th>Property</th><th>Type</th><th>Nullable</th><th>Required</th><th>Permission</th><th>Description</th></tr>
-<tr><td>ResetType</td><td>string</td><td></td><td>POST</td><td>read-write</td><td>This is the type of reset to be performed.<br />Possible Values:<br />&nbsp;&nbsp;&nbsp;&nbsp;On: Turn the system on.<br />&nbsp;&nbsp;&nbsp;&nbsp;ForceOff: Turn the system off immediately (non-graceful) shutdown.<br />&nbsp;&nbsp;&nbsp;&nbsp;GracefulShutdown: Perform a graceful system shutdown and power off.<br />&nbsp;&nbsp;&nbsp;&nbsp;GracefulRestart: Perform a graceful system shutdown followed by a restart of the system.<br />&nbsp;&nbsp;&nbsp;&nbsp;ForceRestart: Perform an immediate (non-graceful) shutdown, followed by a restart of the system.<br />&nbsp;&nbsp;&nbsp;&nbsp;Nmi: Generate a Diagnostic Interrupt (usually an NMI on x86 systems) to cease normal operations, perform diagnostic actions and typically halt the system.<br />&nbsp;&nbsp;&nbsp;&nbsp;ForceOn: Turn the system on immediately.<br />&nbsp;&nbsp;&nbsp;&nbsp;PushPowerButton: Simulate the pressing of the physical power button on this system.</td></tr>
+<tr><td>ResetType</td><td>string</td><td></td><td>POST</td><td>read-write</td><td>This is the type of reset to be performed.<br />Possible Values:<ul>
+<li>On: Turn the system on.</li>
+<li>ForceOff: Turn the system off immediately (non-graceful) shutdown.</li>
+<li>GracefulShutdown: Perform a graceful system shutdown and power off.</li>
+<li>GracefulRestart: Perform a graceful system shutdown followed by a restart of the system.</li>
+<li>ForceRestart: Perform an immediate (non-graceful) shutdown, followed by a restart of the system.</li>
+<li>Nmi: Generate a Diagnostic Interrupt (usually an NMI on x86 systems) to cease normal operations, perform diagnostic actions and typically halt the system.</li>
+<li>ForceOn: Turn the system on immediately.</li>
+<li>PushPowerButton: Simulate the pressing of the physical power button on this system.</li>
+</ul></td></tr>
 </table>
 <h2 id="operations">Operations</h2>
 In this section the URL endpoints and corresponding operations, such as GET, POST, PATCH and DELETE, will be described with JSON payload examples.

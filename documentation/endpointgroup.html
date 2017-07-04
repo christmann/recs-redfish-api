@@ -174,10 +174,25 @@ A group of endpoints that are managed as a unit.
 <tr><td>Name</td><td>string</td><td></td><td>GET</td><td>read-only</td><td>The name of the resource or array element.</td></tr>
 <tr><td>Identifier {</td><td>object</td><td>Yes</td><td></td><td>read-only</td><td>The value identifies this resource.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;DurableName</td><td>string</td><td>Yes</td><td></td><td>read-only</td><td>This indicates the world wide, persistent name of the resource.</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;DurableNameFormat</td><td>string</td><td>Yes</td><td></td><td>read-only</td><td>This represents the format of the DurableName property.<br />Possible Values:<br />&nbsp;&nbsp;&nbsp;&nbsp;NAA: Name Address Authority Format<br />&nbsp;&nbsp;&nbsp;&nbsp;iQN: iSCSI Qualified Name<br />&nbsp;&nbsp;&nbsp;&nbsp;FC_WWN: Fibre Channel World Wide Name<br />&nbsp;&nbsp;&nbsp;&nbsp;UUID: Universally Unique Identifier<br />&nbsp;&nbsp;&nbsp;&nbsp;EUI: IEEE-defined 64-bit Extended Unique Identifier</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;DurableNameFormat</td><td>string</td><td>Yes</td><td></td><td>read-only</td><td>This represents the format of the DurableName property.<br />Possible Values:<ul>
+<li>NAA: Name Address Authority Format</li>
+<li>iQN: iSCSI Qualified Name</li>
+<li>FC_WWN: Fibre Channel World Wide Name</li>
+<li>UUID: Universally Unique Identifier</li>
+<li>EUI: IEEE-defined 64-bit Extended Unique Identifier</li>
+</ul></td></tr>
 <tr><td>}</td><td></td><td></td><td></td><td></td><td></td></tr>
-<tr><td>GroupType</td><td>string</td><td>Yes</td><td></td><td>read-write</td><td>Endpoint group type.<br />Possible Values:<br />&nbsp;&nbsp;&nbsp;&nbsp;Client: The group contains the client (initiator) endpoints.<br />&nbsp;&nbsp;&nbsp;&nbsp;Server: The group contains the server (target) endpoints.</td></tr>
-<tr><td>AccessState</td><td>string</td><td>Yes</td><td></td><td>read-write</td><td>Access State for this group.<br />Possible Values:<br />&nbsp;&nbsp;&nbsp;&nbsp;Optimized: The endpoint(s) are in an Active/Optimized state.<br />&nbsp;&nbsp;&nbsp;&nbsp;NonOptimized: The endpoint(s) are in an Active/NonOptimized state.<br />&nbsp;&nbsp;&nbsp;&nbsp;Standby: The endpoint(s) are in a Standby state.<br />&nbsp;&nbsp;&nbsp;&nbsp;Unavailable: The endpoint(s) are unavailable.<br />&nbsp;&nbsp;&nbsp;&nbsp;Transitioning: The endpoint(s) are transitioning to a new AccesState.</td></tr>
+<tr><td>GroupType</td><td>string</td><td>Yes</td><td></td><td>read-write</td><td>Endpoint group type.<br />Possible Values:<ul>
+<li>Client: The group contains the client (initiator) endpoints.</li>
+<li>Server: The group contains the server (target) endpoints.</li>
+</ul></td></tr>
+<tr><td>AccessState</td><td>string</td><td>Yes</td><td></td><td>read-write</td><td>Access State for this group.<br />Possible Values:<ul>
+<li>Optimized: The endpoint(s) are in an Active/Optimized state.</li>
+<li>NonOptimized: The endpoint(s) are in an Active/NonOptimized state.</li>
+<li>Standby: The endpoint(s) are in a Standby state.</li>
+<li>Unavailable: The endpoint(s) are unavailable.</li>
+<li>Transitioning: The endpoint(s) are transitioning to a new AccesState.</li>
+</ul></td></tr>
 <tr><td>TargetEndpointGroupIdentifier</td><td>number</td><td>Yes</td><td></td><td>read-write</td><td>A defined identifier for this group.</td></tr>
 <tr><td>Preferred</td><td>boolean</td><td>Yes</td><td></td><td>read-write</td><td>Access to resource is preferred.</td></tr>
 <tr><td>Links {</td><td>object</td><td></td><td></td><td>read-only</td><td>Contains links to other resources that are related to this resource.</td></tr>

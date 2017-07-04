@@ -173,7 +173,11 @@ This is the schema definition of a Memory Chunk and its configuration.
 <tr><td>Description</td><td>string</td><td>Yes</td><td></td><td>read-only</td><td>Provides a description of this resource and is used for commonality  in the schema definitions.</td></tr>
 <tr><td>Name</td><td>string</td><td></td><td>GET</td><td>read-only</td><td>The name of the resource or array element.</td></tr>
 <tr><td>MemoryChunkSizeMiB</td><td>number</td><td>Yes</td><td></td><td>read-only</td><td>Size of the memory chunk in MiB.</td></tr>
-<tr><td>AddressRangeType</td><td>string</td><td>Yes</td><td></td><td>read-only</td><td>Memory type of this memory chunk.<br />Possible Values:<br />&nbsp;&nbsp;&nbsp;&nbsp;Volatile: Volatile memory.<br />&nbsp;&nbsp;&nbsp;&nbsp;PMEM: Byte accessible persistent memory.<br />&nbsp;&nbsp;&nbsp;&nbsp;Block: Block accesible memory.</td></tr>
+<tr><td>AddressRangeType</td><td>string</td><td>Yes</td><td></td><td>read-only</td><td>Memory type of this memory chunk.<br />Possible Values:<ul>
+<li>Volatile: Volatile memory.</li>
+<li>PMEM: Byte accessible persistent memory.</li>
+<li>Block: Block accesible memory.</li>
+</ul></td></tr>
 <tr><td>IsMirrorEnabled</td><td>boolean</td><td>Yes</td><td></td><td>read-only</td><td>Mirror Enabled status.</td></tr>
 <tr><td>IsSpare</td><td>boolean</td><td>Yes</td><td></td><td>read-only</td><td>Spare enabled status.</td></tr>
 <tr><td>InterleaveSets [ {</td><td>array[object]</td><td></td><td></td><td>read-write</td><td>This is the interleave sets for the memory chunk.</td></tr>

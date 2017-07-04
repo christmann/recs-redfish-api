@@ -186,7 +186,13 @@ This schema defines a computer system and its respective properties.  A computer
 <tr><td>Id</td><td>string</td><td></td><td>GET</td><td>read-only</td><td>Uniquely identifies the resource within the collection of like resources.</td></tr>
 <tr><td>Description</td><td>string</td><td>Yes</td><td></td><td>read-only</td><td>Provides a description of this resource and is used for commonality  in the schema definitions.</td></tr>
 <tr><td>Name</td><td>string</td><td></td><td>GET</td><td>read-only</td><td>The name of the resource or array element.</td></tr>
-<tr><td>SystemType</td><td>string</td><td></td><td></td><td>read-only</td><td>The type of computer system represented by this resource.<br />Possible Values:<br />&nbsp;&nbsp;&nbsp;&nbsp;Physical: A computer system.<br />&nbsp;&nbsp;&nbsp;&nbsp;Virtual: A virtual machine instance running on this system.<br />&nbsp;&nbsp;&nbsp;&nbsp;OS: An operating system instance.<br />&nbsp;&nbsp;&nbsp;&nbsp;PhysicallyPartitioned: A hardware-based partition of a computer system.<br />&nbsp;&nbsp;&nbsp;&nbsp;VirtuallyPartitioned: A virtual or software-based partition of a computer system.</td></tr>
+<tr><td>SystemType</td><td>string</td><td></td><td></td><td>read-only</td><td>The type of computer system represented by this resource.<br />Possible Values:<ul>
+<li>Physical: A computer system.</li>
+<li>Virtual: A virtual machine instance running on this system.</li>
+<li>OS: An operating system instance.</li>
+<li>PhysicallyPartitioned: A hardware-based partition of a computer system.</li>
+<li>VirtuallyPartitioned: A virtual or software-based partition of a computer system.</li>
+</ul></td></tr>
 <tr><td>Links {</td><td>object</td><td></td><td></td><td>read-write</td><td>Contains references to other resources that are related to this resource.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;Oem {</td><td>object</td><td></td><td></td><td>read-write</td><td>Oem extension object.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;EID_47597 {</td><td>object</td><td></td><td></td><td>read-only</td><td>RECS|Box ComputerSystem Links extension</td></tr>
@@ -231,34 +237,111 @@ This schema defines a computer system and its respective properties.  A computer
 <tr><td>PartNumber</td><td>string</td><td>Yes</td><td></td><td>read-only</td><td>The part number for this system.</td></tr>
 <tr><td>UUID</td><td>string</td><td>Yes</td><td></td><td>read-only</td><td>The universal unique identifier (UUID) for this system.<br />Pattern: ([0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})</td></tr>
 <tr><td>HostName</td><td>string</td><td>Yes</td><td></td><td>read-write</td><td>The DNS Host Name, without any domain information.</td></tr>
-<tr><td>IndicatorLED</td><td>string</td><td>Yes</td><td></td><td>read-write</td><td>The state of the indicator LED, used to identify the system.<br />Possible Values:<br />&nbsp;&nbsp;&nbsp;&nbsp;Unknown: The state of the Indicator LED cannot be determined. Deprecated: Return null if state is unknown.<br />&nbsp;&nbsp;&nbsp;&nbsp;Lit: The Indicator LED is lit.<br />&nbsp;&nbsp;&nbsp;&nbsp;Blinking: The Indicator LED is blinking.<br />&nbsp;&nbsp;&nbsp;&nbsp;Off: The Indicator LED is off.</td></tr>
-<tr><td>PowerState</td><td>string</td><td>Yes</td><td></td><td>read-only</td><td>This is the current power state of the system.<br />Possible Values:<br />&nbsp;&nbsp;&nbsp;&nbsp;On: The system is powered on.<br />&nbsp;&nbsp;&nbsp;&nbsp;Off: The system is powered off, although some components may continue to have AUX power such as management controller.<br />&nbsp;&nbsp;&nbsp;&nbsp;PoweringOn: A temporary state between Off and On. This temporary state can be very short.<br />&nbsp;&nbsp;&nbsp;&nbsp;PoweringOff: A temporary state between On and Off. The power off action can take time while the OS is in the shutdown process.</td></tr>
+<tr><td>IndicatorLED</td><td>string</td><td>Yes</td><td></td><td>read-write</td><td>The state of the indicator LED, used to identify the system.<br />Possible Values:<ul>
+<li>Unknown: The state of the Indicator LED cannot be determined. Deprecated: Return null if state is unknown.</li>
+<li>Lit: The Indicator LED is lit.</li>
+<li>Blinking: The Indicator LED is blinking.</li>
+<li>Off: The Indicator LED is off.</li>
+</ul></td></tr>
+<tr><td>PowerState</td><td>string</td><td>Yes</td><td></td><td>read-only</td><td>This is the current power state of the system.<br />Possible Values:<ul>
+<li>On: The system is powered on.</li>
+<li>Off: The system is powered off, although some components may continue to have AUX power such as management controller.</li>
+<li>PoweringOn: A temporary state between Off and On. This temporary state can be very short.</li>
+<li>PoweringOff: A temporary state between On and Off. The power off action can take time while the OS is in the shutdown process.</li>
+</ul></td></tr>
 <tr><td>Boot {</td><td>object</td><td></td><td></td><td>read-write</td><td>Information about the boot settings for this system.</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;BootSourceOverrideTarget</td><td>string</td><td>Yes</td><td></td><td>read-write</td><td>The current boot source to be used at next boot instead of the normal boot device, if BootSourceOverrideEnabled is true.<br />Possible Values:<br />&nbsp;&nbsp;&nbsp;&nbsp;None: Boot from the normal boot device.<br />&nbsp;&nbsp;&nbsp;&nbsp;Pxe: Boot from the Pre-Boot EXecution (PXE) environment.<br />&nbsp;&nbsp;&nbsp;&nbsp;Floppy: Boot from the floppy disk drive.<br />&nbsp;&nbsp;&nbsp;&nbsp;Cd: Boot from the CD/DVD disc.<br />&nbsp;&nbsp;&nbsp;&nbsp;Usb: Boot from a USB device as specified by the system BIOS.<br />&nbsp;&nbsp;&nbsp;&nbsp;Hdd: Boot from a hard drive.<br />&nbsp;&nbsp;&nbsp;&nbsp;BiosSetup: Boot to the BIOS Setup Utility.<br />&nbsp;&nbsp;&nbsp;&nbsp;Utilities: Boot the manufacturer's Utilities program(s).<br />&nbsp;&nbsp;&nbsp;&nbsp;Diags: Boot the manufacturer's Diagnostics program.<br />&nbsp;&nbsp;&nbsp;&nbsp;UefiShell: Boot to the UEFI Shell.<br />&nbsp;&nbsp;&nbsp;&nbsp;UefiTarget: Boot to the UEFI Device specified in the UefiTargetBootSourceOverride property.<br />&nbsp;&nbsp;&nbsp;&nbsp;SDCard: Boot from an SD Card.<br />&nbsp;&nbsp;&nbsp;&nbsp;UefiHttp: Boot from a UEFI HTTP network location.<br />&nbsp;&nbsp;&nbsp;&nbsp;RemoteDrive: Boot from a remote drive (e.g. iSCSI).</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;BootSourceOverrideEnabled</td><td>string</td><td>Yes</td><td></td><td>read-write</td><td>Describes the state of the Boot Source Override feature.<br />Possible Values:<br />&nbsp;&nbsp;&nbsp;&nbsp;Disabled: The system will boot normally.<br />&nbsp;&nbsp;&nbsp;&nbsp;Once: On its next boot cycle, the system will boot (one time) to the Boot Source Override Target. The value of BootSourceOverrideEnabled is then reset back to Disabled.<br />&nbsp;&nbsp;&nbsp;&nbsp;Continuous: The system will boot to the target specified in the BootSourceOverrideTarget until this property is set to Disabled.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;BootSourceOverrideTarget</td><td>string</td><td>Yes</td><td></td><td>read-write</td><td>The current boot source to be used at next boot instead of the normal boot device, if BootSourceOverrideEnabled is true.<br />Possible Values:<ul>
+<li>None: Boot from the normal boot device.</li>
+<li>Pxe: Boot from the Pre-Boot EXecution (PXE) environment.</li>
+<li>Floppy: Boot from the floppy disk drive.</li>
+<li>Cd: Boot from the CD/DVD disc.</li>
+<li>Usb: Boot from a USB device as specified by the system BIOS.</li>
+<li>Hdd: Boot from a hard drive.</li>
+<li>BiosSetup: Boot to the BIOS Setup Utility.</li>
+<li>Utilities: Boot the manufacturer's Utilities program(s).</li>
+<li>Diags: Boot the manufacturer's Diagnostics program.</li>
+<li>UefiShell: Boot to the UEFI Shell.</li>
+<li>UefiTarget: Boot to the UEFI Device specified in the UefiTargetBootSourceOverride property.</li>
+<li>SDCard: Boot from an SD Card.</li>
+<li>UefiHttp: Boot from a UEFI HTTP network location.</li>
+<li>RemoteDrive: Boot from a remote drive (e.g. iSCSI).</li>
+</ul></td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;BootSourceOverrideEnabled</td><td>string</td><td>Yes</td><td></td><td>read-write</td><td>Describes the state of the Boot Source Override feature.<br />Possible Values:<ul>
+<li>Disabled: The system will boot normally.</li>
+<li>Once: On its next boot cycle, the system will boot (one time) to the Boot Source Override Target. The value of BootSourceOverrideEnabled is then reset back to Disabled.</li>
+<li>Continuous: The system will boot to the target specified in the BootSourceOverrideTarget until this property is set to Disabled.</li>
+</ul></td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;UefiTargetBootSourceOverride</td><td>string</td><td>Yes</td><td></td><td>read-write</td><td>This property is the UEFI Device Path of the device to boot from when BootSourceOverrideSupported is UefiTarget.</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;BootSourceOverrideMode</td><td>string</td><td>Yes</td><td></td><td>read-write</td><td>The BIOS Boot Mode (either Legacy or UEFI) to be used when BootSourceOverrideTarget boot source is booted from.<br />Possible Values:<br />&nbsp;&nbsp;&nbsp;&nbsp;Legacy: The system will boot in non-UEFI boot mode to the Boot Source Override Target.<br />&nbsp;&nbsp;&nbsp;&nbsp;UEFI: The system will boot in UEFI boot mode to the Boot Source Override Target.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;BootSourceOverrideMode</td><td>string</td><td>Yes</td><td></td><td>read-write</td><td>The BIOS Boot Mode (either Legacy or UEFI) to be used when BootSourceOverrideTarget boot source is booted from.<br />Possible Values:<ul>
+<li>Legacy: The system will boot in non-UEFI boot mode to the Boot Source Override Target.</li>
+<li>UEFI: The system will boot in UEFI boot mode to the Boot Source Override Target.</li>
+</ul></td></tr>
 <tr><td>}</td><td></td><td></td><td></td><td></td><td></td></tr>
 <tr><td>BiosVersion</td><td>string</td><td>Yes</td><td></td><td>read-only</td><td>The version of the system BIOS or primary system firmware.</td></tr>
 <tr><td>ProcessorSummary {</td><td>object</td><td></td><td></td><td>read-write</td><td>This object describes the central processors of the system in general detail.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;Count</td><td>number</td><td>Yes</td><td></td><td>read-only</td><td>The number of processors in the system.<br />Minimum: 0</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;Model</td><td>string</td><td>Yes</td><td></td><td>read-only</td><td>The processor model for the primary or majority of processors in this system.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;Status {</td><td>object</td><td></td><td></td><td>read-only</td><td></td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;State</td><td>string</td><td>Yes</td><td></td><td>read-only</td><td>This indicates the known state of the resource, such as if it is enabled.<br />Possible Values:<br />&nbsp;&nbsp;&nbsp;&nbsp;Enabled: This function or resource has been enabled.<br />&nbsp;&nbsp;&nbsp;&nbsp;Disabled: This function or resource has been disabled.<br />&nbsp;&nbsp;&nbsp;&nbsp;StandbyOffline: This function or resource is enabled, but awaiting an external action to activate it.<br />&nbsp;&nbsp;&nbsp;&nbsp;StandbySpare: This function or resource is part of a redundancy set and is awaiting a failover or other external action to activate it.<br />&nbsp;&nbsp;&nbsp;&nbsp;InTest: This function or resource is undergoing testing.<br />&nbsp;&nbsp;&nbsp;&nbsp;Starting: This function or resource is starting.<br />&nbsp;&nbsp;&nbsp;&nbsp;Absent: This function or resource is not present or not detected.<br />&nbsp;&nbsp;&nbsp;&nbsp;UnavailableOffline: This function or resource is present but cannot be used.<br />&nbsp;&nbsp;&nbsp;&nbsp;Deferring: The element will not process any commands but will queue new requests.<br />&nbsp;&nbsp;&nbsp;&nbsp;Quiesced: The element is enabled but only processes a restricted set of commands.<br />&nbsp;&nbsp;&nbsp;&nbsp;Updating: The element is updating and may be unavailable or degraded.</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;HealthRollup</td><td>string</td><td>Yes</td><td></td><td>read-only</td><td>This represents the overall health state from the view of this resource.<br />Possible Values:<br />&nbsp;&nbsp;&nbsp;&nbsp;OK: Normal.<br />&nbsp;&nbsp;&nbsp;&nbsp;Warning: A condition exists that requires attention.<br />&nbsp;&nbsp;&nbsp;&nbsp;Critical: A critical condition exists that requires immediate attention.</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Health</td><td>string</td><td>Yes</td><td></td><td>read-only</td><td>This represents the health state of this resource in the absence of its dependent resources.<br />Possible Values:<br />&nbsp;&nbsp;&nbsp;&nbsp;OK: Normal.<br />&nbsp;&nbsp;&nbsp;&nbsp;Warning: A condition exists that requires attention.<br />&nbsp;&nbsp;&nbsp;&nbsp;Critical: A critical condition exists that requires immediate attention.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;State</td><td>string</td><td>Yes</td><td></td><td>read-only</td><td>This indicates the known state of the resource, such as if it is enabled.<br />Possible Values:<ul>
+<li>Enabled: This function or resource has been enabled.</li>
+<li>Disabled: This function or resource has been disabled.</li>
+<li>StandbyOffline: This function or resource is enabled, but awaiting an external action to activate it.</li>
+<li>StandbySpare: This function or resource is part of a redundancy set and is awaiting a failover or other external action to activate it.</li>
+<li>InTest: This function or resource is undergoing testing.</li>
+<li>Starting: This function or resource is starting.</li>
+<li>Absent: This function or resource is not present or not detected.</li>
+<li>UnavailableOffline: This function or resource is present but cannot be used.</li>
+<li>Deferring: The element will not process any commands but will queue new requests.</li>
+<li>Quiesced: The element is enabled but only processes a restricted set of commands.</li>
+<li>Updating: The element is updating and may be unavailable or degraded.</li>
+</ul></td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;HealthRollup</td><td>string</td><td>Yes</td><td></td><td>read-only</td><td>This represents the overall health state from the view of this resource.<br />Possible Values:<ul>
+<li>OK: Normal.</li>
+<li>Warning: A condition exists that requires attention.</li>
+<li>Critical: A critical condition exists that requires immediate attention.</li>
+</ul></td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Health</td><td>string</td><td>Yes</td><td></td><td>read-only</td><td>This represents the health state of this resource in the absence of its dependent resources.<br />Possible Values:<ul>
+<li>OK: Normal.</li>
+<li>Warning: A condition exists that requires attention.</li>
+<li>Critical: A critical condition exists that requires immediate attention.</li>
+</ul></td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Oem { }</td><td>object</td><td></td><td></td><td>read-write</td><td>Oem extension object.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;}</td><td></td><td></td><td></td><td></td><td></td></tr>
 <tr><td>}</td><td></td><td></td><td></td><td></td><td></td></tr>
 <tr><td>MemorySummary {</td><td>object</td><td></td><td></td><td>read-write</td><td>This object describes the central memory of the system in general detail.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;TotalSystemMemoryGiB</td><td>number</td><td>Yes</td><td></td><td>read-only</td><td>The total installed, operating system-accessible memory (RAM), measured in GiB.<br />Minimum: 0</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;Status {</td><td>object</td><td></td><td></td><td>read-only</td><td></td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;State</td><td>string</td><td>Yes</td><td></td><td>read-only</td><td>This indicates the known state of the resource, such as if it is enabled.<br />Possible Values:<br />&nbsp;&nbsp;&nbsp;&nbsp;Enabled: This function or resource has been enabled.<br />&nbsp;&nbsp;&nbsp;&nbsp;Disabled: This function or resource has been disabled.<br />&nbsp;&nbsp;&nbsp;&nbsp;StandbyOffline: This function or resource is enabled, but awaiting an external action to activate it.<br />&nbsp;&nbsp;&nbsp;&nbsp;StandbySpare: This function or resource is part of a redundancy set and is awaiting a failover or other external action to activate it.<br />&nbsp;&nbsp;&nbsp;&nbsp;InTest: This function or resource is undergoing testing.<br />&nbsp;&nbsp;&nbsp;&nbsp;Starting: This function or resource is starting.<br />&nbsp;&nbsp;&nbsp;&nbsp;Absent: This function or resource is not present or not detected.<br />&nbsp;&nbsp;&nbsp;&nbsp;UnavailableOffline: This function or resource is present but cannot be used.<br />&nbsp;&nbsp;&nbsp;&nbsp;Deferring: The element will not process any commands but will queue new requests.<br />&nbsp;&nbsp;&nbsp;&nbsp;Quiesced: The element is enabled but only processes a restricted set of commands.<br />&nbsp;&nbsp;&nbsp;&nbsp;Updating: The element is updating and may be unavailable or degraded.</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;HealthRollup</td><td>string</td><td>Yes</td><td></td><td>read-only</td><td>This represents the overall health state from the view of this resource.<br />Possible Values:<br />&nbsp;&nbsp;&nbsp;&nbsp;OK: Normal.<br />&nbsp;&nbsp;&nbsp;&nbsp;Warning: A condition exists that requires attention.<br />&nbsp;&nbsp;&nbsp;&nbsp;Critical: A critical condition exists that requires immediate attention.</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Health</td><td>string</td><td>Yes</td><td></td><td>read-only</td><td>This represents the health state of this resource in the absence of its dependent resources.<br />Possible Values:<br />&nbsp;&nbsp;&nbsp;&nbsp;OK: Normal.<br />&nbsp;&nbsp;&nbsp;&nbsp;Warning: A condition exists that requires attention.<br />&nbsp;&nbsp;&nbsp;&nbsp;Critical: A critical condition exists that requires immediate attention.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;State</td><td>string</td><td>Yes</td><td></td><td>read-only</td><td>This indicates the known state of the resource, such as if it is enabled.<br />Possible Values:<ul>
+<li>Enabled: This function or resource has been enabled.</li>
+<li>Disabled: This function or resource has been disabled.</li>
+<li>StandbyOffline: This function or resource is enabled, but awaiting an external action to activate it.</li>
+<li>StandbySpare: This function or resource is part of a redundancy set and is awaiting a failover or other external action to activate it.</li>
+<li>InTest: This function or resource is undergoing testing.</li>
+<li>Starting: This function or resource is starting.</li>
+<li>Absent: This function or resource is not present or not detected.</li>
+<li>UnavailableOffline: This function or resource is present but cannot be used.</li>
+<li>Deferring: The element will not process any commands but will queue new requests.</li>
+<li>Quiesced: The element is enabled but only processes a restricted set of commands.</li>
+<li>Updating: The element is updating and may be unavailable or degraded.</li>
+</ul></td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;HealthRollup</td><td>string</td><td>Yes</td><td></td><td>read-only</td><td>This represents the overall health state from the view of this resource.<br />Possible Values:<ul>
+<li>OK: Normal.</li>
+<li>Warning: A condition exists that requires attention.</li>
+<li>Critical: A critical condition exists that requires immediate attention.</li>
+</ul></td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Health</td><td>string</td><td>Yes</td><td></td><td>read-only</td><td>This represents the health state of this resource in the absence of its dependent resources.<br />Possible Values:<ul>
+<li>OK: Normal.</li>
+<li>Warning: A condition exists that requires attention.</li>
+<li>Critical: A critical condition exists that requires immediate attention.</li>
+</ul></td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Oem { }</td><td>object</td><td></td><td></td><td>read-write</td><td>Oem extension object.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;}</td><td></td><td></td><td></td><td></td><td></td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;MemoryMirroring</td><td>string</td><td>Yes</td><td></td><td>read-only</td><td>The ability and type of memory mirroring supported by this system.<br />Possible Values:<br />&nbsp;&nbsp;&nbsp;&nbsp;System: The system supports DIMM mirroring at the System level.  Individual DIMMs are not paired for mirroring in this mode.<br />&nbsp;&nbsp;&nbsp;&nbsp;DIMM: The system supports DIMM mirroring at the DIMM level.  Individual DIMMs can be mirrored.<br />&nbsp;&nbsp;&nbsp;&nbsp;Hybrid: The system supports a hybrid mirroring at the system and DIMM levels.  Individual DIMMs can be mirrored.<br />&nbsp;&nbsp;&nbsp;&nbsp;None: The system does not support DIMM mirroring.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;MemoryMirroring</td><td>string</td><td>Yes</td><td></td><td>read-only</td><td>The ability and type of memory mirroring supported by this system.<br />Possible Values:<ul>
+<li>System: The system supports DIMM mirroring at the System level.  Individual DIMMs are not paired for mirroring in this mode.</li>
+<li>DIMM: The system supports DIMM mirroring at the DIMM level.  Individual DIMMs can be mirrored.</li>
+<li>Hybrid: The system supports a hybrid mirroring at the system and DIMM levels.  Individual DIMMs can be mirrored.</li>
+<li>None: The system does not support DIMM mirroring.</li>
+</ul></td></tr>
 <tr><td>}</td><td></td><td></td><td></td><td></td><td></td></tr>
 <tr><td>Actions {</td><td>object</td><td></td><td></td><td>read-write</td><td>The available actions for this resource.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;Oem { }</td><td>object</td><td></td><td></td><td>read-write</td><td></td></tr>
@@ -268,9 +351,29 @@ This schema defines a computer system and its respective properties.  A computer
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;}</td><td></td><td></td><td></td><td></td><td></td></tr>
 <tr><td>}</td><td></td><td></td><td></td><td></td><td></td></tr>
 <tr><td>Status {</td><td>object</td><td></td><td></td><td>read-only</td><td></td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;State</td><td>string</td><td>Yes</td><td></td><td>read-only</td><td>This indicates the known state of the resource, such as if it is enabled.<br />Possible Values:<br />&nbsp;&nbsp;&nbsp;&nbsp;Enabled: This function or resource has been enabled.<br />&nbsp;&nbsp;&nbsp;&nbsp;Disabled: This function or resource has been disabled.<br />&nbsp;&nbsp;&nbsp;&nbsp;StandbyOffline: This function or resource is enabled, but awaiting an external action to activate it.<br />&nbsp;&nbsp;&nbsp;&nbsp;StandbySpare: This function or resource is part of a redundancy set and is awaiting a failover or other external action to activate it.<br />&nbsp;&nbsp;&nbsp;&nbsp;InTest: This function or resource is undergoing testing.<br />&nbsp;&nbsp;&nbsp;&nbsp;Starting: This function or resource is starting.<br />&nbsp;&nbsp;&nbsp;&nbsp;Absent: This function or resource is not present or not detected.<br />&nbsp;&nbsp;&nbsp;&nbsp;UnavailableOffline: This function or resource is present but cannot be used.<br />&nbsp;&nbsp;&nbsp;&nbsp;Deferring: The element will not process any commands but will queue new requests.<br />&nbsp;&nbsp;&nbsp;&nbsp;Quiesced: The element is enabled but only processes a restricted set of commands.<br />&nbsp;&nbsp;&nbsp;&nbsp;Updating: The element is updating and may be unavailable or degraded.</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;HealthRollup</td><td>string</td><td>Yes</td><td></td><td>read-only</td><td>This represents the overall health state from the view of this resource.<br />Possible Values:<br />&nbsp;&nbsp;&nbsp;&nbsp;OK: Normal.<br />&nbsp;&nbsp;&nbsp;&nbsp;Warning: A condition exists that requires attention.<br />&nbsp;&nbsp;&nbsp;&nbsp;Critical: A critical condition exists that requires immediate attention.</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;Health</td><td>string</td><td>Yes</td><td></td><td>read-only</td><td>This represents the health state of this resource in the absence of its dependent resources.<br />Possible Values:<br />&nbsp;&nbsp;&nbsp;&nbsp;OK: Normal.<br />&nbsp;&nbsp;&nbsp;&nbsp;Warning: A condition exists that requires attention.<br />&nbsp;&nbsp;&nbsp;&nbsp;Critical: A critical condition exists that requires immediate attention.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;State</td><td>string</td><td>Yes</td><td></td><td>read-only</td><td>This indicates the known state of the resource, such as if it is enabled.<br />Possible Values:<ul>
+<li>Enabled: This function or resource has been enabled.</li>
+<li>Disabled: This function or resource has been disabled.</li>
+<li>StandbyOffline: This function or resource is enabled, but awaiting an external action to activate it.</li>
+<li>StandbySpare: This function or resource is part of a redundancy set and is awaiting a failover or other external action to activate it.</li>
+<li>InTest: This function or resource is undergoing testing.</li>
+<li>Starting: This function or resource is starting.</li>
+<li>Absent: This function or resource is not present or not detected.</li>
+<li>UnavailableOffline: This function or resource is present but cannot be used.</li>
+<li>Deferring: The element will not process any commands but will queue new requests.</li>
+<li>Quiesced: The element is enabled but only processes a restricted set of commands.</li>
+<li>Updating: The element is updating and may be unavailable or degraded.</li>
+</ul></td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;HealthRollup</td><td>string</td><td>Yes</td><td></td><td>read-only</td><td>This represents the overall health state from the view of this resource.<br />Possible Values:<ul>
+<li>OK: Normal.</li>
+<li>Warning: A condition exists that requires attention.</li>
+<li>Critical: A critical condition exists that requires immediate attention.</li>
+</ul></td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;Health</td><td>string</td><td>Yes</td><td></td><td>read-only</td><td>This represents the health state of this resource in the absence of its dependent resources.<br />Possible Values:<ul>
+<li>OK: Normal.</li>
+<li>Warning: A condition exists that requires attention.</li>
+<li>Critical: A critical condition exists that requires immediate attention.</li>
+</ul></td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;Oem { }</td><td>object</td><td></td><td></td><td>read-write</td><td>Oem extension object.</td></tr>
 <tr><td>}</td><td></td><td></td><td></td><td></td><td></td></tr>
 <tr><td>Processors {</td><td>reference(<a href="processorcollection.html#processorcollection">ProcessorCollection</a>)</td><td></td><td></td><td>read-only</td><td>A reference to the collection of Processors associated with this system.</td></tr>
@@ -287,16 +390,45 @@ This schema defines a computer system and its respective properties.  A computer
 <tr><td>}</td><td></td><td></td><td></td><td></td><td></td></tr>
 <tr><td>TrustedModules [ {</td><td>array[object]</td><td></td><td></td><td>read-write</td><td>This object describes the array of Trusted Modules in the system.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;FirmwareVersion</td><td>string</td><td>Yes</td><td></td><td>read-only</td><td>The firmware version of this Trusted Module.</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;InterfaceType</td><td>string</td><td>Yes</td><td></td><td>read-only</td><td>This property indicates the interface type of the Trusted Module.<br />Possible Values:<br />&nbsp;&nbsp;&nbsp;&nbsp;TPM1_2: Trusted Platform Module (TPM) 1.2.<br />&nbsp;&nbsp;&nbsp;&nbsp;TPM2_0: Trusted Platform Module (TPM) 2.0.<br />&nbsp;&nbsp;&nbsp;&nbsp;TCM1_0: Trusted Cryptography Module (TCM) 1.0.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;InterfaceType</td><td>string</td><td>Yes</td><td></td><td>read-only</td><td>This property indicates the interface type of the Trusted Module.<br />Possible Values:<ul>
+<li>TPM1_2: Trusted Platform Module (TPM) 1.2.</li>
+<li>TPM2_0: Trusted Platform Module (TPM) 2.0.</li>
+<li>TCM1_0: Trusted Cryptography Module (TCM) 1.0.</li>
+</ul></td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;Status {</td><td>object</td><td></td><td></td><td>read-only</td><td></td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;State</td><td>string</td><td>Yes</td><td></td><td>read-only</td><td>This indicates the known state of the resource, such as if it is enabled.<br />Possible Values:<br />&nbsp;&nbsp;&nbsp;&nbsp;Enabled: This function or resource has been enabled.<br />&nbsp;&nbsp;&nbsp;&nbsp;Disabled: This function or resource has been disabled.<br />&nbsp;&nbsp;&nbsp;&nbsp;StandbyOffline: This function or resource is enabled, but awaiting an external action to activate it.<br />&nbsp;&nbsp;&nbsp;&nbsp;StandbySpare: This function or resource is part of a redundancy set and is awaiting a failover or other external action to activate it.<br />&nbsp;&nbsp;&nbsp;&nbsp;InTest: This function or resource is undergoing testing.<br />&nbsp;&nbsp;&nbsp;&nbsp;Starting: This function or resource is starting.<br />&nbsp;&nbsp;&nbsp;&nbsp;Absent: This function or resource is not present or not detected.<br />&nbsp;&nbsp;&nbsp;&nbsp;UnavailableOffline: This function or resource is present but cannot be used.<br />&nbsp;&nbsp;&nbsp;&nbsp;Deferring: The element will not process any commands but will queue new requests.<br />&nbsp;&nbsp;&nbsp;&nbsp;Quiesced: The element is enabled but only processes a restricted set of commands.<br />&nbsp;&nbsp;&nbsp;&nbsp;Updating: The element is updating and may be unavailable or degraded.</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;HealthRollup</td><td>string</td><td>Yes</td><td></td><td>read-only</td><td>This represents the overall health state from the view of this resource.<br />Possible Values:<br />&nbsp;&nbsp;&nbsp;&nbsp;OK: Normal.<br />&nbsp;&nbsp;&nbsp;&nbsp;Warning: A condition exists that requires attention.<br />&nbsp;&nbsp;&nbsp;&nbsp;Critical: A critical condition exists that requires immediate attention.</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Health</td><td>string</td><td>Yes</td><td></td><td>read-only</td><td>This represents the health state of this resource in the absence of its dependent resources.<br />Possible Values:<br />&nbsp;&nbsp;&nbsp;&nbsp;OK: Normal.<br />&nbsp;&nbsp;&nbsp;&nbsp;Warning: A condition exists that requires attention.<br />&nbsp;&nbsp;&nbsp;&nbsp;Critical: A critical condition exists that requires immediate attention.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;State</td><td>string</td><td>Yes</td><td></td><td>read-only</td><td>This indicates the known state of the resource, such as if it is enabled.<br />Possible Values:<ul>
+<li>Enabled: This function or resource has been enabled.</li>
+<li>Disabled: This function or resource has been disabled.</li>
+<li>StandbyOffline: This function or resource is enabled, but awaiting an external action to activate it.</li>
+<li>StandbySpare: This function or resource is part of a redundancy set and is awaiting a failover or other external action to activate it.</li>
+<li>InTest: This function or resource is undergoing testing.</li>
+<li>Starting: This function or resource is starting.</li>
+<li>Absent: This function or resource is not present or not detected.</li>
+<li>UnavailableOffline: This function or resource is present but cannot be used.</li>
+<li>Deferring: The element will not process any commands but will queue new requests.</li>
+<li>Quiesced: The element is enabled but only processes a restricted set of commands.</li>
+<li>Updating: The element is updating and may be unavailable or degraded.</li>
+</ul></td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;HealthRollup</td><td>string</td><td>Yes</td><td></td><td>read-only</td><td>This represents the overall health state from the view of this resource.<br />Possible Values:<ul>
+<li>OK: Normal.</li>
+<li>Warning: A condition exists that requires attention.</li>
+<li>Critical: A critical condition exists that requires immediate attention.</li>
+</ul></td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Health</td><td>string</td><td>Yes</td><td></td><td>read-only</td><td>This represents the health state of this resource in the absence of its dependent resources.<br />Possible Values:<ul>
+<li>OK: Normal.</li>
+<li>Warning: A condition exists that requires attention.</li>
+<li>Critical: A critical condition exists that requires immediate attention.</li>
+</ul></td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Oem { }</td><td>object</td><td></td><td></td><td>read-write</td><td>Oem extension object.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;}</td><td></td><td></td><td></td><td></td><td></td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;Oem { }</td><td>object</td><td></td><td></td><td>read-write</td><td>Oem extension object.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;FirmwareVersion2</td><td>string</td><td>Yes</td><td></td><td>read-only</td><td>The 2nd firmware version of this Trusted Module, if applicable.</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;InterfaceTypeSelection</td><td>string</td><td>Yes</td><td></td><td>read-only</td><td>The Interface Type selection supported by this Trusted Module.<br />Possible Values:<br />&nbsp;&nbsp;&nbsp;&nbsp;None: The TrustedModule does not support switching the InterfaceType.<br />&nbsp;&nbsp;&nbsp;&nbsp;FirmwareUpdate: The TrustedModule supports switching InterfaceType via a firmware update.<br />&nbsp;&nbsp;&nbsp;&nbsp;BiosSetting: The TrustedModule supports switching InterfaceType via platform software, such as a BIOS configuration Attribute.<br />&nbsp;&nbsp;&nbsp;&nbsp;OemMethod: The TrustedModule supports switching InterfaceType via an OEM proprietary mechanism.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;InterfaceTypeSelection</td><td>string</td><td>Yes</td><td></td><td>read-only</td><td>The Interface Type selection supported by this Trusted Module.<br />Possible Values:<ul>
+<li>None: The TrustedModule does not support switching the InterfaceType.</li>
+<li>FirmwareUpdate: The TrustedModule supports switching InterfaceType via a firmware update.</li>
+<li>BiosSetting: The TrustedModule supports switching InterfaceType via platform software, such as a BIOS configuration Attribute.</li>
+<li>OemMethod: The TrustedModule supports switching InterfaceType via an OEM proprietary mechanism.</li>
+</ul></td></tr>
 <tr><td>} ]</td><td></td><td></td><td></td><td></td><td></td></tr>
 <tr><td>SecureBoot {</td><td>reference(<a href="secureboot.html#secureboot">SecureBoot</a>)</td><td></td><td></td><td>read-only</td><td>A reference to the UEFI SecureBoot resource associated with this system.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;@odata.id</td><td>string</td><td></td><td></td><td>read-only</td><td>The unique identifier for a resource.<br />Format: uri</td></tr>
@@ -310,7 +442,11 @@ This schema defines a computer system and its respective properties.  A computer
 <tr><td>Storage {</td><td>reference(<a href="storagecollection.html#storagecollection">StorageCollection</a>)</td><td></td><td></td><td>read-only</td><td>A reference to the collection of storage devices associated with this system.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;@odata.id</td><td>string</td><td></td><td></td><td>read-only</td><td>The unique identifier for a resource.<br />Format: uri</td></tr>
 <tr><td>}</td><td></td><td></td><td></td><td></td><td></td></tr>
-<tr><td>HostingRoles [ ]</td><td>array[string]</td><td></td><td></td><td>read-only</td><td>The hosing roles that this computer system supports.<br />Possible Values:<br />&nbsp;&nbsp;&nbsp;&nbsp;ApplicationServer: The system hosts functionality that supports general purpose applications.<br />&nbsp;&nbsp;&nbsp;&nbsp;StorageServer: The system hosts functionality that supports the system acting as a storage server.<br />&nbsp;&nbsp;&nbsp;&nbsp;Switch: The system hosts functionality that supports the system acting as a switch.</td></tr>
+<tr><td>HostingRoles [ ]</td><td>array[string]</td><td></td><td></td><td>read-only</td><td>The hosing roles that this computer system supports.<br />Possible Values:<ul>
+<li>ApplicationServer: The system hosts functionality that supports general purpose applications.</li>
+<li>StorageServer: The system hosts functionality that supports the system acting as a storage server.</li>
+<li>Switch: The system hosts functionality that supports the system acting as a switch.</li>
+</ul></td></tr>
 <tr><td>HostedServices {</td><td>object</td><td></td><td></td><td>read-write</td><td>The services that this computer system supports.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;Oem { }</td><td>object</td><td></td><td></td><td>read-write</td><td>Oem extension object.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;StorageServices {</td><td>object</td><td></td><td></td><td>read-only</td><td>A reference to a collection of storage services supported by this computer system.</td></tr>
@@ -348,7 +484,16 @@ This schema defines a computer system and its respective properties.  A computer
 <h4 id="#computersystem.reset">#ComputerSystem.Reset</h4>
 <table class="datatable">
 <tr><th>Property</th><th>Type</th><th>Nullable</th><th>Required</th><th>Permission</th><th>Description</th></tr>
-<tr><td>ResetType</td><td>string</td><td></td><td>POST</td><td>read-write</td><td>The type of reset to be performed.<br />Possible Values:<br />&nbsp;&nbsp;&nbsp;&nbsp;On: Turn the system on.<br />&nbsp;&nbsp;&nbsp;&nbsp;ForceOff: Turn the system off immediately (non-graceful) shutdown.<br />&nbsp;&nbsp;&nbsp;&nbsp;GracefulShutdown: Perform a graceful system shutdown and power off.<br />&nbsp;&nbsp;&nbsp;&nbsp;GracefulRestart: Perform a graceful system shutdown followed by a restart of the system.<br />&nbsp;&nbsp;&nbsp;&nbsp;ForceRestart: Perform an immediate (non-graceful) shutdown, followed by a restart of the system.<br />&nbsp;&nbsp;&nbsp;&nbsp;Nmi: Generate a Diagnostic Interrupt (usually an NMI on x86 systems) to cease normal operations, perform diagnostic actions and typically halt the system.<br />&nbsp;&nbsp;&nbsp;&nbsp;ForceOn: Turn the system on immediately.<br />&nbsp;&nbsp;&nbsp;&nbsp;PushPowerButton: Simulate the pressing of the physical power button on this system.</td></tr>
+<tr><td>ResetType</td><td>string</td><td></td><td>POST</td><td>read-write</td><td>The type of reset to be performed.<br />Possible Values:<ul>
+<li>On: Turn the system on.</li>
+<li>ForceOff: Turn the system off immediately (non-graceful) shutdown.</li>
+<li>GracefulShutdown: Perform a graceful system shutdown and power off.</li>
+<li>GracefulRestart: Perform a graceful system shutdown followed by a restart of the system.</li>
+<li>ForceRestart: Perform an immediate (non-graceful) shutdown, followed by a restart of the system.</li>
+<li>Nmi: Generate a Diagnostic Interrupt (usually an NMI on x86 systems) to cease normal operations, perform diagnostic actions and typically halt the system.</li>
+<li>ForceOn: Turn the system on immediately.</li>
+<li>PushPowerButton: Simulate the pressing of the physical power button on this system.</li>
+</ul></td></tr>
 </table>
 <h2 id="operations">Operations</h2>
 In this section the URL endpoints and corresponding operations, such as GET, POST, PATCH and DELETE, will be described with JSON payload examples.

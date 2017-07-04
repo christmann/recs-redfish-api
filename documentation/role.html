@@ -173,7 +173,13 @@ This resource defines a user role to be used in conjunction with a Manager Accou
 <tr><td>Description</td><td>string</td><td>Yes</td><td></td><td>read-write</td><td>Provides a description of this resource and is used for commonality  in the schema definitions.</td></tr>
 <tr><td>Name</td><td>string</td><td></td><td>GET</td><td>read-write</td><td>The name of the resource or array element.</td></tr>
 <tr><td>IsPredefined</td><td>boolean</td><td></td><td></td><td>read-only</td><td>This property is used to indicate if the Role is one of the Redfish Predefined Roles vs a Custom role.</td></tr>
-<tr><td>AssignedPrivileges [ ]</td><td>array[string]</td><td></td><td></td><td>read-write</td><td>The redfish privileges that this role includes.<br />Possible Values:<br />&nbsp;&nbsp;&nbsp;&nbsp;Login: Able to log into the service and read resources.<br />&nbsp;&nbsp;&nbsp;&nbsp;ConfigureManager: Able to configure Manager resources.<br />&nbsp;&nbsp;&nbsp;&nbsp;ConfigureUsers: Able to configure Users and their Accounts.<br />&nbsp;&nbsp;&nbsp;&nbsp;ConfigureSelf: Able to change the password for the current user Account.<br />&nbsp;&nbsp;&nbsp;&nbsp;ConfigureComponents: Able to configure components managed by this service.</td></tr>
+<tr><td>AssignedPrivileges [ ]</td><td>array[string]</td><td></td><td></td><td>read-write</td><td>The redfish privileges that this role includes.<br />Possible Values:<ul>
+<li>Login: Able to log into the service and read resources.</li>
+<li>ConfigureManager: Able to configure Manager resources.</li>
+<li>ConfigureUsers: Able to configure Users and their Accounts.</li>
+<li>ConfigureSelf: Able to change the password for the current user Account.</li>
+<li>ConfigureComponents: Able to configure components managed by this service.</li>
+</ul></td></tr>
 <tr><td>OemPrivileges [ ]</td><td>array[string]</td><td></td><td></td><td>read-write</td><td>The OEM privileges that this role includes.</td></tr>
 </table>
 <h2 id="operations">Operations</h2>

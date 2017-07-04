@@ -173,9 +173,20 @@ A Ethernet Switch Port represents a port for switch.
 <tr><td>Description</td><td>string</td><td>Yes</td><td></td><td>read-only</td><td>Provides a description of this resource and is used for commonality  in the schema definitions.</td></tr>
 <tr><td>Name</td><td>string</td><td></td><td>GET</td><td>read-only</td><td>The name of the resource or array element.</td></tr>
 <tr><td>PortId</td><td>string</td><td>Yes</td><td></td><td>read-only</td><td>Switch port unique identifier.</td></tr>
-<tr><td>LinkType</td><td>string</td><td>Yes</td><td></td><td>read-only</td><td>Type of port link<br />Possible Values:<br />&nbsp;&nbsp;&nbsp;&nbsp;Ethernet<br />&nbsp;&nbsp;&nbsp;&nbsp;PCIe<br />&nbsp;&nbsp;&nbsp;&nbsp;Unknown</td></tr>
-<tr><td>OperationalState</td><td>string</td><td>Yes</td><td></td><td>read-only</td><td>Port link operational state<br />Possible Values:<br />&nbsp;&nbsp;&nbsp;&nbsp;Up<br />&nbsp;&nbsp;&nbsp;&nbsp;Down<br />&nbsp;&nbsp;&nbsp;&nbsp;Unknown</td></tr>
-<tr><td>AdministrativeState</td><td>string</td><td>Yes</td><td></td><td>read-write</td><td>Port link state forced by user.<br />Possible Values:<br />&nbsp;&nbsp;&nbsp;&nbsp;Up<br />&nbsp;&nbsp;&nbsp;&nbsp;Down</td></tr>
+<tr><td>LinkType</td><td>string</td><td>Yes</td><td></td><td>read-only</td><td>Type of port link<br />Possible Values:<ul>
+<li>Ethernet</li>
+<li>PCIe</li>
+<li>Unknown</li>
+</ul></td></tr>
+<tr><td>OperationalState</td><td>string</td><td>Yes</td><td></td><td>read-only</td><td>Port link operational state<br />Possible Values:<ul>
+<li>Up</li>
+<li>Down</li>
+<li>Unknown</li>
+</ul></td></tr>
+<tr><td>AdministrativeState</td><td>string</td><td>Yes</td><td></td><td>read-write</td><td>Port link state forced by user.<br />Possible Values:<ul>
+<li>Up</li>
+<li>Down</li>
+</ul></td></tr>
 <tr><td>LinkSpeedMbps</td><td>number</td><td>Yes</td><td></td><td>read-write</td><td>Port speed<br />Minimum: 0</td></tr>
 <tr><td>NeighborInfo {</td><td>object</td><td>Yes</td><td></td><td>read-write</td><td>For Upstream port type this property provide information about neighbor switch (and switch port if available) connected to this port</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;SwitchId</td><td>string</td><td>Yes</td><td></td><td>read-write</td><td></td></tr>
@@ -191,23 +202,71 @@ A Ethernet Switch Port represents a port for switch.
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;Oem { }</td><td>object</td><td></td><td></td><td>read-write</td><td>Oem extension object.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;Address</td><td>string</td><td>Yes</td><td></td><td>read-write</td><td>This is the IPv4 Address.<br />Pattern: ^(?:[0-9]{1,3}\.){3}[0-9]{1,3}$</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;SubnetMask</td><td>string</td><td>Yes</td><td></td><td>read-write</td><td>This is the IPv4 Subnet mask.<br />Pattern: ^(?:[0-9]{1,3}\.){3}[0-9]{1,3}$</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;AddressOrigin</td><td>string</td><td>Yes</td><td></td><td>read-only</td><td>This indicates how the address was determined.<br />Possible Values:<br />&nbsp;&nbsp;&nbsp;&nbsp;Static: A static address as configured by the user<br />&nbsp;&nbsp;&nbsp;&nbsp;DHCP: Address is provided by a DHCPv4 service<br />&nbsp;&nbsp;&nbsp;&nbsp;BOOTP: Address is provided by a BOOTP service<br />&nbsp;&nbsp;&nbsp;&nbsp;IPv4LinkLocal: Address is valid only for this network segment (link)</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;AddressOrigin</td><td>string</td><td>Yes</td><td></td><td>read-only</td><td>This indicates how the address was determined.<br />Possible Values:<ul>
+<li>Static: A static address as configured by the user</li>
+<li>DHCP: Address is provided by a DHCPv4 service</li>
+<li>BOOTP: Address is provided by a BOOTP service</li>
+<li>IPv4LinkLocal: Address is valid only for this network segment (link)</li>
+</ul></td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;Gateway</td><td>string</td><td>Yes</td><td></td><td>read-write</td><td>This is the IPv4 gateway for this address.</td></tr>
 <tr><td>} ]</td><td></td><td></td><td></td><td></td><td></td></tr>
 <tr><td>IPv6Addresses [ {</td><td>array[object]</td><td></td><td></td><td>read-write</td><td>Array of following IPv6 address</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;Oem { }</td><td>object</td><td></td><td></td><td>read-write</td><td>Oem extension object.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;Address</td><td>string</td><td>Yes</td><td></td><td>read-write</td><td>This is the IPv6 Address.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;PrefixLength</td><td>number</td><td>Yes</td><td></td><td>read-only</td><td>This is the IPv6 Address Prefix Length.<br />Minimum: 1<br />Maximum: 128</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;AddressOrigin</td><td>string</td><td>Yes</td><td></td><td>read-only</td><td>This indicates how the address was determined.<br />Possible Values:<br />&nbsp;&nbsp;&nbsp;&nbsp;Static: A static address as configured by the user<br />&nbsp;&nbsp;&nbsp;&nbsp;DHCPv6: Address is provided by a DHCPv6 service<br />&nbsp;&nbsp;&nbsp;&nbsp;LinkLocal: Address is valid only for this network segment (link)<br />&nbsp;&nbsp;&nbsp;&nbsp;SLAAC: Address is provided by a Stateless Address AutoConfiguration (SLAAC) service</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;AddressState</td><td>string</td><td>Yes</td><td></td><td>read-only</td><td>The current state of this address as defined in RFC 4862.<br />Possible Values:<br />&nbsp;&nbsp;&nbsp;&nbsp;Preferred: This address is currently within both it's valid and preferred lifetimes as defined in RFC 4862.<br />&nbsp;&nbsp;&nbsp;&nbsp;Deprecated: This address is currently within it's valid lifetime, but is now outside of it's preferred lifetime as defined in RFC 4862.<br />&nbsp;&nbsp;&nbsp;&nbsp;Tentative: This address is currently undergoing Duplicate Address Detection testing as defined in RFC 4862 section 5.4.<br />&nbsp;&nbsp;&nbsp;&nbsp;Failed: This address has failed Duplicate Address Detection testing as defined in RFC 4862 section 5.4 and is not currently in use.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;AddressOrigin</td><td>string</td><td>Yes</td><td></td><td>read-only</td><td>This indicates how the address was determined.<br />Possible Values:<ul>
+<li>Static: A static address as configured by the user</li>
+<li>DHCPv6: Address is provided by a DHCPv6 service</li>
+<li>LinkLocal: Address is valid only for this network segment (link)</li>
+<li>SLAAC: Address is provided by a Stateless Address AutoConfiguration (SLAAC) service</li>
+</ul></td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;AddressState</td><td>string</td><td>Yes</td><td></td><td>read-only</td><td>The current state of this address as defined in RFC 4862.<br />Possible Values:<ul>
+<li>Preferred: This address is currently within both it's valid and preferred lifetimes as defined in RFC 4862.</li>
+<li>Deprecated: This address is currently within it's valid lifetime, but is now outside of it's preferred lifetime as defined in RFC 4862.</li>
+<li>Tentative: This address is currently undergoing Duplicate Address Detection testing as defined in RFC 4862 section 5.4.</li>
+<li>Failed: This address has failed Duplicate Address Detection testing as defined in RFC 4862 section 5.4 and is not currently in use.</li>
+</ul></td></tr>
 <tr><td>} ]</td><td></td><td></td><td></td><td></td><td></td></tr>
-<tr><td>PortClass</td><td>string</td><td>Yes</td><td></td><td>read-write</td><td>Port class<br />Possible Values:<br />&nbsp;&nbsp;&nbsp;&nbsp;Physical<br />&nbsp;&nbsp;&nbsp;&nbsp;Logical<br />&nbsp;&nbsp;&nbsp;&nbsp;Reserved</td></tr>
-<tr><td>PortMode</td><td>string</td><td>Yes</td><td></td><td>read-write</td><td>Port working mode. The value shall correspond to the port class (especially to the logical port definition).<br />Possible Values:<br />&nbsp;&nbsp;&nbsp;&nbsp;LinkAggregationStatic<br />&nbsp;&nbsp;&nbsp;&nbsp;LinkAggregationDynamic<br />&nbsp;&nbsp;&nbsp;&nbsp;Unknown</td></tr>
-<tr><td>PortType</td><td>string</td><td>Yes</td><td></td><td>read-write</td><td>PortType<br />Possible Values:<br />&nbsp;&nbsp;&nbsp;&nbsp;Upstream<br />&nbsp;&nbsp;&nbsp;&nbsp;Downstream<br />&nbsp;&nbsp;&nbsp;&nbsp;MeshPort<br />&nbsp;&nbsp;&nbsp;&nbsp;Unknown</td></tr>
+<tr><td>PortClass</td><td>string</td><td>Yes</td><td></td><td>read-write</td><td>Port class<br />Possible Values:<ul>
+<li>Physical</li>
+<li>Logical</li>
+<li>Reserved</li>
+</ul></td></tr>
+<tr><td>PortMode</td><td>string</td><td>Yes</td><td></td><td>read-write</td><td>Port working mode. The value shall correspond to the port class (especially to the logical port definition).<br />Possible Values:<ul>
+<li>LinkAggregationStatic</li>
+<li>LinkAggregationDynamic</li>
+<li>Unknown</li>
+</ul></td></tr>
+<tr><td>PortType</td><td>string</td><td>Yes</td><td></td><td>read-write</td><td>PortType<br />Possible Values:<ul>
+<li>Upstream</li>
+<li>Downstream</li>
+<li>MeshPort</li>
+<li>Unknown</li>
+</ul></td></tr>
 <tr><td>Status {</td><td>object</td><td>Yes</td><td></td><td>read-only</td><td></td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;State</td><td>string</td><td>Yes</td><td></td><td>read-only</td><td>This indicates the known state of the resource, such as if it is enabled.<br />Possible Values:<br />&nbsp;&nbsp;&nbsp;&nbsp;Enabled: This function or resource has been enabled.<br />&nbsp;&nbsp;&nbsp;&nbsp;Disabled: This function or resource has been disabled.<br />&nbsp;&nbsp;&nbsp;&nbsp;StandbyOffline: This function or resource is enabled, but awaiting an external action to activate it.<br />&nbsp;&nbsp;&nbsp;&nbsp;StandbySpare: This function or resource is part of a redundancy set and is awaiting a failover or other external action to activate it.<br />&nbsp;&nbsp;&nbsp;&nbsp;InTest: This function or resource is undergoing testing.<br />&nbsp;&nbsp;&nbsp;&nbsp;Starting: This function or resource is starting.<br />&nbsp;&nbsp;&nbsp;&nbsp;Absent: This function or resource is not present or not detected.<br />&nbsp;&nbsp;&nbsp;&nbsp;UnavailableOffline: This function or resource is present but cannot be used.<br />&nbsp;&nbsp;&nbsp;&nbsp;Deferring: The element will not process any commands but will queue new requests.<br />&nbsp;&nbsp;&nbsp;&nbsp;Quiesced: The element is enabled but only processes a restricted set of commands.<br />&nbsp;&nbsp;&nbsp;&nbsp;Updating: The element is updating and may be unavailable or degraded.</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;HealthRollup</td><td>string</td><td>Yes</td><td></td><td>read-only</td><td>This represents the overall health state from the view of this resource.<br />Possible Values:<br />&nbsp;&nbsp;&nbsp;&nbsp;OK: Normal.<br />&nbsp;&nbsp;&nbsp;&nbsp;Warning: A condition exists that requires attention.<br />&nbsp;&nbsp;&nbsp;&nbsp;Critical: A critical condition exists that requires immediate attention.</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;Health</td><td>string</td><td>Yes</td><td></td><td>read-only</td><td>This represents the health state of this resource in the absence of its dependent resources.<br />Possible Values:<br />&nbsp;&nbsp;&nbsp;&nbsp;OK: Normal.<br />&nbsp;&nbsp;&nbsp;&nbsp;Warning: A condition exists that requires attention.<br />&nbsp;&nbsp;&nbsp;&nbsp;Critical: A critical condition exists that requires immediate attention.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;State</td><td>string</td><td>Yes</td><td></td><td>read-only</td><td>This indicates the known state of the resource, such as if it is enabled.<br />Possible Values:<ul>
+<li>Enabled: This function or resource has been enabled.</li>
+<li>Disabled: This function or resource has been disabled.</li>
+<li>StandbyOffline: This function or resource is enabled, but awaiting an external action to activate it.</li>
+<li>StandbySpare: This function or resource is part of a redundancy set and is awaiting a failover or other external action to activate it.</li>
+<li>InTest: This function or resource is undergoing testing.</li>
+<li>Starting: This function or resource is starting.</li>
+<li>Absent: This function or resource is not present or not detected.</li>
+<li>UnavailableOffline: This function or resource is present but cannot be used.</li>
+<li>Deferring: The element will not process any commands but will queue new requests.</li>
+<li>Quiesced: The element is enabled but only processes a restricted set of commands.</li>
+<li>Updating: The element is updating and may be unavailable or degraded.</li>
+</ul></td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;HealthRollup</td><td>string</td><td>Yes</td><td></td><td>read-only</td><td>This represents the overall health state from the view of this resource.<br />Possible Values:<ul>
+<li>OK: Normal.</li>
+<li>Warning: A condition exists that requires attention.</li>
+<li>Critical: A critical condition exists that requires immediate attention.</li>
+</ul></td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;Health</td><td>string</td><td>Yes</td><td></td><td>read-only</td><td>This represents the health state of this resource in the absence of its dependent resources.<br />Possible Values:<ul>
+<li>OK: Normal.</li>
+<li>Warning: A condition exists that requires attention.</li>
+<li>Critical: A critical condition exists that requires immediate attention.</li>
+</ul></td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;Oem { }</td><td>object</td><td></td><td></td><td>read-write</td><td>Oem extension object.</td></tr>
 <tr><td>}</td><td></td><td></td><td></td><td></td><td></td></tr>
 <tr><td>Links {</td><td>object</td><td></td><td></td><td>read-write</td><td></td></tr>
