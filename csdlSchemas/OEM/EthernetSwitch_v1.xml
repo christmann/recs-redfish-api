@@ -74,7 +74,7 @@
 				</Property>
 				<Property Name="SerialNumber" Type="Edm.String">
 					<Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
-					<Annotation Term="OData.Description" String="Switch serial numberSS"/>
+					<Annotation Term="OData.Description" String="Switch serial number"/>
 					<Annotation Term="OData.LongDescription" String="Switch serial number" />
 				</Property>
 				<Property Name="PartNumber" Type="Edm.String">

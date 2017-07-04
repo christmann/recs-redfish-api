@@ -88,7 +88,7 @@
                         "null"
                     ],
                     "readonly": true,
-                    "description": "Switch serial numberSS",
+                    "description": "Switch serial number",
                     "longDescription": "Switch serial number"
                 },
                 "PartNumber": {
