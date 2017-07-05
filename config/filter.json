@@ -1,3 +1,118 @@
 {
-
+	"ServiceRoot": {
+		"Links": {
+			"Sessions": true
+		},
+		"Managers": false,
+		"Tasks": true,
+		"SessionService": true,
+		"EventService": true,
+		"Registries": true,
+		"StorageSystems": true,
+		"StorageServices": true,
+		"Fabrics": true,
+		"UpdateService": false
+	},
+	"Chassis": {
+		"AssetTag": true,
+		"Links": {
+			"ManagedBy": false,
+			"ContainedBy": true,
+			"Contains": true,
+			"ManagersInChassis": false,
+			"Drives": true,
+			"Storage": true
+		},
+		"LogServices": true,
+		"Thermal": false,
+		"Power": false,
+		"PhysicalSecurity": true,
+		"Location": true,
+		"HeightMm": true,
+		"WidthMm": true,
+		"DepthMm": true,
+		"WeightKg": true,
+		"NetworkAdapters": true
+	},
+	"ComputerSystem": {
+		"Links": {
+			"ManagedBy": false,
+			"Endpoints": true
+		},
+		"AssetTag": true,
+		"HostName": true,
+		"MemoryMirroring": true,
+		"LogServices": true,
+		"TrustedModules": true,
+		"SecureBoot": true,
+		"Bios": true,
+		"Storage": true,
+		"HostingRoles": true,
+		"HostedServices": true,
+		"MemoryDomains": true,
+		"NetworkInterfaces": true
+	},
+	"Drive": {
+		"Links": {
+			"Volumes": true,
+			"Endpoints": true
+		},
+		"Operations": true
+	},
+	"EthernetInterface": {
+		"Links": {
+			"Endpoints": true,
+			"HostInterface": true
+		}
+	},
+	"EthernetSwitch": {
+		"Links": {
+			"ManagedBy": false
+		}
+	},
+	"Manager": {
+		"LogServices": true
+	},
+	"Memory": {
+		"FunctionClasses": true,
+		"MaxTDPMilliWatts": true,
+		"SecurityCapabilities": true,
+		"SpareDeviceCount": true,
+		"DeviceLocator": true,
+		"VolatileRegionSizeLimitMiB": true,
+		"PersistentRegionSizeLimitMiB": true,
+		"Regions": true,
+		"OperatingMemoryModes": true,
+		"PowerManagementPolicy": true,
+		"IsSpareDeviceEnabled": true,
+		"IsRankSpareEnabled": true,
+		"Actions": {
+			"#Memory.DisablePassphrase": true,
+			"#Memory.SecureEraseUnit": true,
+			"#Memory.SetPassphrase": true,
+			"#Memory.UnlockUnit": true
+		},
+		"Metrics": true
+	},
+	"PCIeDevice": {
+		"AssetTag": true,
+		"Links": {
+			"Endpoints": true,
+			"HostInterface": true
+		}
+	},
+	"PCIeFunction": {
+		"AssetTag": true,
+		"Links": {
+			"Endpoints": true,
+			"Drives": true,
+			"StorageControllers": true
+		}
+	},
+	"PCIeSwitch": {
+		"Links": {
+			"ManagedBy": false
+		},
+		"LogServices": true
+	}
 }
