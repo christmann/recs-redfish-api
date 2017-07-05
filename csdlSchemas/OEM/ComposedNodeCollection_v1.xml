@@ -32,12 +32,8 @@
 		<edmx:Include Namespace="Memory"/>
 		<edmx:Include Namespace="Memory.v1_0_0"/>
 	</edmx:Reference>
-	<edmx:Reference Uri="http://redfish.dmtf.org/schemas/v1/Drive_v1.xml">
-		<edmx:Include Namespace="Drive"/>
-		<edmx:Include Namespace="Drive.v1_0_0"/>
-	</edmx:Reference>
-	<edmx:Reference Uri="http://redfish.dmtf.org/schemas/v1/Storage_v1.xml">
-		<edmx:Include Namespace="Storage.v1_0_0"/>
+	<edmx:Reference Uri="http://redfish.dmtf.org/schemas/v1/SimpleStorage_v1.xml">
+		<edmx:Include Namespace="SimpleStorage"/>
 	</edmx:Reference>
 	<edmx:Reference Uri="http://redfish.dmtf.org/schemas/v1/EthernetInterface_v1.xml">
 		<edmx:Include Namespace="EthernetInterface"/>
@@ -53,7 +49,7 @@
 		<edmx:Include Namespace="PCIeFunction.v1_0_0"/>
 	</edmx:Reference>
 	<edmx:Reference Uri="PCIePort_v1.xml">
-		<edmx:Include Namespace="PCIePort.v0_9_0"/>
+		<edmx:Include Namespace="PCIePort"/>
 	</edmx:Reference>
 
 	<edmx:DataServices>
@@ -100,8 +96,8 @@
 				<Property Name="Memory" Type="Collection(ComposedNodeAllocationSystemRequirement.v0_1_0.Memory)">
 					<Annotation Term="OData.Description" String="The requirements for one or more memory configurations" />
 				</Property>
-				<Property Name="LocalDrives" Type="Collection(ComposedNodeAllocationSystemRequirement.v0_1_0.LocalDrive)">
-					<Annotation Term="OData.Description" String="The requirements for one or more local drives" />
+				<Property Name="LocalStorage" Type="Collection(ComposedNodeAllocationSystemRequirement.v0_1_0.LocalStorage)">
+					<Annotation Term="OData.Description" String="The requirements for one or more local storage devices" />
 				</Property>
 				<Property Name="EthernetInterfaces" Type="Collection(ComposedNodeAllocationSystemRequirement.v0_1_0.EthernetInterface)">
 					<Annotation Term="OData.Description" String="The requirements for one or more ethernet interfaces" />
@@ -184,26 +180,14 @@
 				</NavigationProperty>
 			</ComplexType>
 
-			<ComplexType Name="LocalDrive">
+			<ComplexType Name="LocalStorage">
 				<Annotation Term="OData.AdditionalProperties" Bool="false"/>
-				<Annotation Term="OData.Description" String="The requirements for a local drive" />
+				<Annotation Term="OData.Description" String="The requirements for a local storage" />
 				<Property Name="CapacityBytes" Type="Edm.Int64">
-					<Annotation Term="OData.Description" String="The minimum capacity of the local drive" />
+					<Annotation Term="OData.Description" String="The minimum capacity of the local storage" />
 					<Annotation Term="Measures.Unit" String="By"/>
 				</Property>
-				<Property Name="Type" Type="Drive.v1_0_0.MediaType">
-					<Annotation Term="OData.Description" String="The exact media type of the local drive" />
-				</Property>
-				<Property Name="MinRPM" Type="Edm.Int32">
-					<Annotation Term="OData.Description" String="The minimum RPM value of the local drive" />
-				</Property>
-				<Property Name="SerialNumber" Type="Edm.String">
-					<Annotation Term="OData.Description" String="The exact serial number of the local drive" />
-				</Property>
-				<Property Name="Protocol" Type="Storage.v1_0_0.Protocol">
-					<Annotation Term="OData.Description" String="The exact protocol of the local drive" />
-				</Property>
-				<NavigationProperty Name="Resource" Type="Drive.Drive">
+				<NavigationProperty Name="Resource" Type="SimpleStorage.SimpleStorage">
 					<Annotation Term="OData.Description" String="The URI of a concrete resource" />
 					<Annotation Term="OData.AutoExpandReferences"/>
 				</NavigationProperty>
@@ -391,7 +375,7 @@
 				<Property Name="MaxWidth" Type="Edm.Int32">
 					<Annotation Term="OData.Description" String="The minimal value of the maximum lanes of the port" />
 				</Property>
-				<NavigationProperty Name="Resource" Type="PCIePort.v0_9_0.PCIePort">
+				<NavigationProperty Name="Resource" Type="PCIePort.PCIePort">
 					<Annotation Term="OData.Description" String="The URI of a concrete resource" />
 					<Annotation Term="OData.AutoExpandReferences"/>
 				</NavigationProperty>

@@ -254,36 +254,9 @@ table { border-collapse: collapse; }
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@odata.id</td><td>string</td><td></td><td></td><td>read-only</td><td>The unique identifier for a resource.<br />Format: uri</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</td><td></td><td></td><td></td><td></td><td></td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;} ]</td><td></td><td></td><td></td><td></td><td></td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;LocalDrives [ {</td><td>array[object]</td><td></td><td></td><td>read-write</td><td>The requirements for one or more local drives</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CapacityBytes</td><td>number</td><td>Yes</td><td></td><td>read-write</td><td>The minimum capacity of the local drive<br />Unit: By</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Type</td><td>string</td><td>Yes</td><td></td><td>read-write</td><td>The exact media type of the local drive<br />Possible Values:<ul>
-<li>HDD: The drive media type is traditional magnetic platters</li>
-<li>SSD: The drive media type is solid state or flash memory</li>
-<li>SMR: The drive media type is shingled magnetic recording</li>
-</ul></td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MinRPM</td><td>number</td><td>Yes</td><td></td><td>read-write</td><td>The minimum RPM value of the local drive</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SerialNumber</td><td>string</td><td>Yes</td><td></td><td>read-write</td><td>The exact serial number of the local drive</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Protocol</td><td>string</td><td>Yes</td><td></td><td>read-write</td><td>The exact protocol of the local drive<br />Possible Values:<ul>
-<li>PCIe: PCI Express (Vendor Proprietary)</li>
-<li>AHCI: Advanced Host Controller Interface</li>
-<li>UHCI: Universal Host Controller Interface</li>
-<li>SAS: Serial Attached SCSI</li>
-<li>SATA: Serial AT Attachment</li>
-<li>USB: Universal Serial Bus</li>
-<li>NVMe: Non-Volatile Memory Express</li>
-<li>FC: Fibre Channel</li>
-<li>iSCSI: Internet SCSI</li>
-<li>FCoE: Fibre Channel over Ethernet</li>
-<li>NVMeOverFabrics: NVMe over Fabrics</li>
-<li>SMB: Server Message Block (aka CIFS Common Internet File System)</li>
-<li>NFSv3: Network File System version 3</li>
-<li>NFSv4: Network File System version 4</li>
-<li>HTTP: Hypertext Transport Protocol</li>
-<li>HTTPS: Secure Hypertext Transport Protocol</li>
-<li>FTP: File Transfer Protocol</li>
-<li>SFTP: Secure File Transfer Protocol</li>
-</ul></td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Resource {</td><td>reference(<a href="drive.html#drive">Drive</a>)</td><td>Yes</td><td></td><td>read-write</td><td>The URI of a concrete resource</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;LocalStorage [ {</td><td>array[object]</td><td></td><td></td><td>read-write</td><td>The requirements for one or more local storage devices</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CapacityBytes</td><td>number</td><td>Yes</td><td></td><td>read-write</td><td>The minimum capacity of the local storage<br />Unit: By</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Resource {</td><td>reference(<a href="simplestorage.html#simplestorage">SimpleStorage</a>)</td><td>Yes</td><td></td><td>read-write</td><td>The URI of a concrete resource</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@odata.id</td><td>string</td><td></td><td></td><td>read-only</td><td>The unique identifier for a resource.<br />Format: uri</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</td><td></td><td></td><td></td><td></td><td></td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Baseboard {</td><td>reference(<a href="baseboard.html#baseboard">Baseboard</a>)</td><td>Yes</td><td></td><td>read-write</td><td>The Baseboard where applicable resources are located</td></tr>
