@@ -52,8 +52,8 @@
 	<edmx:Reference Uri="http://redfish.dmtf.org/schemas/v1/PCIeFunction_v1.xml">
 		<edmx:Include Namespace="PCIeFunction.v1_0_0"/>
 	</edmx:Reference>
-	<edmx:Reference Uri="http://redfish.dmtf.org/schemas/v1/Port_v1.xml">
-		<edmx:Include Namespace="Port"/>
+	<edmx:Reference Uri="PCIePort_v1.xml">
+		<edmx:Include Namespace="PCIePort.v0_9_0"/>
 	</edmx:Reference>
 
 	<edmx:DataServices>
@@ -391,7 +391,7 @@
 				<Property Name="MaxWidth" Type="Edm.Int32">
 					<Annotation Term="OData.Description" String="The minimal value of the maximum lanes of the port" />
 				</Property>
-				<NavigationProperty Name="Resource" Type="Port.Port">
+				<NavigationProperty Name="Resource" Type="PCIePort.v0_9_0.PCIePort">
 					<Annotation Term="OData.Description" String="The URI of a concrete resource" />
 					<Annotation Term="OData.AutoExpandReferences"/>
 				</NavigationProperty>

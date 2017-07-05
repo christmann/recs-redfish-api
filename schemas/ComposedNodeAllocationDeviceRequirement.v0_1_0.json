@@ -224,7 +224,7 @@
                 },
                 "Resource": {
                     "anyOf": [
-                        {"$ref": "http://redfish.dmtf.org/schemas/v1/Port.json#/definitions/Port"},
+                        {"$ref": "http://redfish.dmtf.org/schemas/v1/PCIePort.v0_9_0.json#/definitions/PCIePort"},
                         {"type": "null"}
                     ],
                     "description": "The URI of a concrete resource"
