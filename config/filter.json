@@ -1,9 +1,12 @@
 {
+	"AccountService": {
+		"Accounts": true
+	},
 	"ServiceRoot": {
 		"Links": {
 			"Sessions": true
 		},
-		"Managers": false,
+		"Managers": true,
 		"Tasks": true,
 		"SessionService": true,
 		"EventService": true,
@@ -11,21 +14,21 @@
 		"StorageSystems": true,
 		"StorageServices": true,
 		"Fabrics": true,
-		"UpdateService": false
+		"UpdateService": true
 	},
 	"Chassis": {
 		"AssetTag": true,
 		"Links": {
-			"ManagedBy": false,
+			"ManagedBy": true,
 			"ContainedBy": true,
 			"Contains": true,
-			"ManagersInChassis": false,
+			"ManagersInChassis": true,
 			"Drives": true,
 			"Storage": true
 		},
 		"LogServices": true,
-		"Thermal": false,
-		"Power": false,
+		"Thermal": true,
+		"Power": true,
 		"PhysicalSecurity": true,
 		"Location": true,
 		"HeightMm": true,
@@ -36,7 +39,7 @@
 	},
 	"ComputerSystem": {
 		"Links": {
-			"ManagedBy": false,
+			"ManagedBy": true,
 			"Endpoints": true
 		},
 		"AssetTag": true,
@@ -67,11 +70,14 @@
 	},
 	"EthernetSwitch": {
 		"Links": {
-			"ManagedBy": false
+			"ManagedBy": true
 		}
 	},
 	"Manager": {
-		"LogServices": true
+		"LogServices": true,
+		"HostInterfaces": true,
+		"SerialInterfaces": true,
+		"VirtualMedia": true
 	},
 	"Memory": {
 		"FunctionClasses": true,
@@ -111,7 +117,7 @@
 	},
 	"PCIeSwitch": {
 		"Links": {
-			"ManagedBy": false
+			"ManagedBy": true
 		},
 		"LogServices": true
 	}
