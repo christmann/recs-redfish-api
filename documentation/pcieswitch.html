@@ -98,16 +98,6 @@ This schema defines a PCIeSwitch and its respective properties.
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;Chassis [ {</td><td>array[reference(<a href="chassis.html#chassis">Chassis</a>)]</td><td></td><td></td><td>read-only</td><td>An array of references to the chassis in which this switch is contained</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@odata.id</td><td>string</td><td></td><td></td><td>read-only</td><td>The unique identifier for a resource.<br />Format: uri</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;} ]</td><td></td><td></td><td></td><td></td><td></td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;PoweredBy@odata.count</td><td>number</td><td></td><td></td><td>read-only</td><td>The number of items in a collection.</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;PoweredBy@odata.navigationLink</td><td>string</td><td></td><td></td><td>read-write</td><td>Format: uri</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;PoweredBy [ {</td><td>array[reference]</td><td></td><td></td><td>read-only</td><td>An array of ID[s] of resources that power this Switch. </td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@odata.id</td><td>string</td><td></td><td></td><td>read-only</td><td>The unique identifier for a resource.<br />Format: uri</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;} ]</td><td></td><td></td><td></td><td></td><td></td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;CooledBy@odata.count</td><td>number</td><td></td><td></td><td>read-only</td><td>The number of items in a collection.</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;CooledBy@odata.navigationLink</td><td>string</td><td></td><td></td><td>read-write</td><td>Format: uri</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;CooledBy [ {</td><td>array[reference]</td><td></td><td></td><td>read-only</td><td>An array of ID[s] of resources that cool this switch. </td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@odata.id</td><td>string</td><td></td><td></td><td>read-only</td><td>The unique identifier for a resource.<br />Format: uri</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;} ]</td><td></td><td></td><td></td><td></td><td></td></tr>
 <tr><td>}</td><td></td><td></td><td></td><td></td><td></td></tr>
 <tr><td>MaxZones</td><td>number</td><td>Yes</td><td></td><td>read-write</td><td>Maximum number of MR zones supported by the switch<br />Minimum: 0</td></tr>
 <tr><td>Manufacturer</td><td>string</td><td>Yes</td><td></td><td>read-only</td><td>The manufacturer or OEM of this Switch.</td></tr>
