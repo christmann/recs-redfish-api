@@ -1,8 +1,6 @@
 {
-	"AccountService": {
-		"Accounts": true
-	},
 	"ServiceRoot": {
+		"AccountService": true,
 		"Links": {
 			"Sessions": true
 		},
