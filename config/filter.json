@@ -26,6 +26,9 @@
 			"Drives": true,
 			"Storage": true
 		},
+		"Actions": {
+			"#Chassis.Reset": true
+		},
 		"LogServices": true,
 		"Thermal": true,
 		"Power": true,
