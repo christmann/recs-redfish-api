@@ -26,6 +26,7 @@ table { border-collapse: collapse; }
 .datatable tr.hidden td { color: #aaaaaa; }
 .columntable td { padding-right: 20px; }
 .menu { float: right; padding-left: 10px; margin-left: 10px; border-left: 1px solid #B6C9C9;}
+.code { font-family: 'Courier New', Courier, monospace; background-color: #E2E9E9; }
 </style>
 </head>
 <body>
@@ -92,7 +93,43 @@ table { border-collapse: collapse; }
 <tr><td>} ]</td><td></td><td></td><td></td><td></td><td></td></tr>
 </table>
 <h2 id="operations">Operations</h2>
-In this section the URL endpoints and corresponding operations, such as GET, POST, PATCH and DELETE, will be described with JSON payload examples.
+<h3 id="get">GET</h3>
+<h4 id="request">Request</h4>
+<div class="code">
+GET /redfish/v1/Chassis
+<br />
+Content-Type: application/json
+<br />
+</div>
+<h4 id="response">Response</h4>
+<div class="code">
+{
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;"@odata.context": "uri"
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;"@odata.id": /redfish/v1/Chassis
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;"@odata.type": "string"
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;"Description": "string"
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;"Name": "string"
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;"Oem": { }
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;"Members@odata.count": 1
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;"Members@odata.navigationLink": "uri"
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;"Members": [{
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"@odata.id": "/redfish/v1/Chassis/Chassis1"
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;}]
+<br />
+}
+<br />
+</div>
 </div>
 </body>
 </html>
