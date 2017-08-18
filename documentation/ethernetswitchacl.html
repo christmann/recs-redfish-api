@@ -111,21 +111,67 @@ A Ethernet Switch ACL represents Access Control List for switch.
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;@odata.id</td><td>string</td><td></td><td></td><td>read-only</td><td>The unique identifier for a resource.<br />Format: uri</td></tr>
 <tr><td>}</td><td></td><td></td><td></td><td></td><td></td></tr>
 </table>
-<h3 id="action parameters">Action Parameters</h3>
-<h4 id="#ethernetswitchacl.bind">#EthernetSwitchACL.Bind</h4>
+<h2 id="actions">Actions</h2>
+<h3 id="#ethernetswitchacl.bind">#EthernetSwitchACL.Bind</h3>
+<h4 id="parameters">Parameters</h4>
 <table class="datatable">
 <tr><th>Property</th><th>Type</th><th>Nullable</th><th>Required</th><th>Permission</th><th>Description</th></tr>
 <tr><td>Port [ {</td><td>array[reference(<a href="ethernetswitchport.html#ethernetswitchport">EthernetSwitchPort</a>)]</td><td></td><td>POST</td><td>read-write</td><td>This is array of ports that this ACL should be binded.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;@odata.id</td><td>string</td><td></td><td></td><td>read-only</td><td>The unique identifier for a resource.<br />Format: uri</td></tr>
 <tr><td>} ]</td><td></td><td></td><td></td><td></td><td></td></tr>
 </table>
-<h4 id="#ethernetswitchacl.unbind">#EthernetSwitchACL.Unbind</h4>
+<h4 id="request">Request</h4>
+<div class="code">
+POST /redfish/v1/EthernetSwitches/EthernetSwitch1/ACLs/EthernetSwitchACL1/Actions/EthernetSwitchACL.Bind
+<br />
+Content-Type: application/json
+<br />
+{
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;"Port": [{
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"@odata.id": "/redfish/v1/EthernetSwitches/EthernetSwitch1/Ports/EthernetSwitchPort1"
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;}]
+<br />
+}
+<br />
+</div>
+<h4 id="response">Response</h4>
+<div class="code">
+HTTP/1.1 204 No Content
+<br />
+</div>
+<h3 id="#ethernetswitchacl.unbind">#EthernetSwitchACL.Unbind</h3>
+<h4 id="parameters">Parameters</h4>
 <table class="datatable">
 <tr><th>Property</th><th>Type</th><th>Nullable</th><th>Required</th><th>Permission</th><th>Description</th></tr>
 <tr><td>Port [ {</td><td>array[reference(<a href="ethernetswitchport.html#ethernetswitchport">EthernetSwitchPort</a>)]</td><td></td><td>POST</td><td>read-write</td><td>This is array of ports that this ACL should be unbinded.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;@odata.id</td><td>string</td><td></td><td></td><td>read-only</td><td>The unique identifier for a resource.<br />Format: uri</td></tr>
 <tr><td>} ]</td><td></td><td></td><td></td><td></td><td></td></tr>
 </table>
+<h4 id="request">Request</h4>
+<div class="code">
+POST /redfish/v1/EthernetSwitches/EthernetSwitch1/ACLs/EthernetSwitchACL1/Actions/EthernetSwitchACL.Unbind
+<br />
+Content-Type: application/json
+<br />
+{
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;"Port": [{
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"@odata.id": "/redfish/v1/EthernetSwitches/EthernetSwitch1/Ports/EthernetSwitchPort1"
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;}]
+<br />
+}
+<br />
+</div>
+<h4 id="response">Response</h4>
+<div class="code">
+HTTP/1.1 204 No Content
+<br />
+</div>
 <h2 id="operations">Operations</h2>
 <h3 id="get">GET</h3>
 <h4 id="request">Request</h4>
@@ -177,7 +223,7 @@ Content-Type: application/json
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"title": "string"
 <br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"target": "uri"
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"target": /redfish/v1/EthernetSwitches/EthernetSwitch1/ACLs/EthernetSwitchACL1/Actions/EthernetSwitchACL.Bind
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
 <br />
@@ -185,7 +231,7 @@ Content-Type: application/json
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"title": "string"
 <br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"target": "uri"
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"target": /redfish/v1/EthernetSwitches/EthernetSwitch1/ACLs/EthernetSwitchACL1/Actions/EthernetSwitchACL.Unbind
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
 <br />
@@ -201,8 +247,29 @@ Content-Type: application/json
 <br />
 </div>
 <h3 id="post">POST</h3>
-<h4 id="request">Request</h4>
-<h4 id="response">Response</h4>
+This operation is not supported on this resource and will result in the following response:
+<br />
+<br />
+<div class="code">
+HTTP/1.1 405 Method Not Allowed
+<br />
+</div>
+<h3 id="patch">PATCH</h3>
+This operation is not supported on this resource and will result in the following response:
+<br />
+<br />
+<div class="code">
+HTTP/1.1 405 Method Not Allowed
+<br />
+</div>
+<h3 id="delete">DELETE</h3>
+This operation is not supported on this resource and will result in the following response:
+<br />
+<br />
+<div class="code">
+HTTP/1.1 405 Method Not Allowed
+<br />
+</div>
 </div>
 </body>
 </html>

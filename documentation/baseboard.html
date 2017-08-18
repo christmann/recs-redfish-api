@@ -164,8 +164,9 @@ This is the schema definition for the Baseboard resource.
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;@odata.id</td><td>string</td><td></td><td></td><td>read-only</td><td>The unique identifier for a resource.<br />Format: uri</td></tr>
 <tr><td>} ]</td><td></td><td></td><td></td><td></td><td></td></tr>
 </table>
-<h3 id="action parameters">Action Parameters</h3>
-<h4 id="#baseboard.reset">#Baseboard.Reset</h4>
+<h2 id="actions">Actions</h2>
+<h3 id="#baseboard.reset">#Baseboard.Reset</h3>
+<h4 id="parameters">Parameters</h4>
 <table class="datatable">
 <tr><th>Property</th><th>Type</th><th>Nullable</th><th>Required</th><th>Permission</th><th>Description</th></tr>
 <tr><td>ResetType</td><td>string</td><td></td><td>POST</td><td>read-write</td><td>The type of reset to be performed.<br />Possible Values:<ul>
@@ -179,6 +180,24 @@ This is the schema definition for the Baseboard resource.
 <li>PushPowerButton: Simulate the pressing of the physical power button on this system.</li>
 </ul></td></tr>
 </table>
+<h4 id="request">Request</h4>
+<div class="code">
+POST /redfish/v1/Systems/ComputerSystem1/Baseboard/Actions/Baseboard.Reset
+<br />
+Content-Type: application/json
+<br />
+{
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;"ResetType": "On"
+<br />
+}
+<br />
+</div>
+<h4 id="response">Response</h4>
+<div class="code">
+HTTP/1.1 204 No Content
+<br />
+</div>
 <h2 id="operations">Operations</h2>
 <h3 id="get">GET</h3>
 <h4 id="request">Request</h4>
@@ -248,7 +267,7 @@ Content-Type: application/json
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"title": "string"
 <br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"target": "uri"
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"target": /redfish/v1/Systems/ComputerSystem1/Baseboard/Actions/Baseboard.Reset
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
 <br />
@@ -312,8 +331,29 @@ Content-Type: application/json
 <br />
 </div>
 <h3 id="post">POST</h3>
-<h4 id="request">Request</h4>
-<h4 id="response">Response</h4>
+This operation is not supported on this resource and will result in the following response:
+<br />
+<br />
+<div class="code">
+HTTP/1.1 405 Method Not Allowed
+<br />
+</div>
+<h3 id="patch">PATCH</h3>
+This operation is not supported on this resource and will result in the following response:
+<br />
+<br />
+<div class="code">
+HTTP/1.1 405 Method Not Allowed
+<br />
+</div>
+<h3 id="delete">DELETE</h3>
+This operation is not supported on this resource and will result in the following response:
+<br />
+<br />
+<div class="code">
+HTTP/1.1 405 Method Not Allowed
+<br />
+</div>
 </div>
 </body>
 </html>

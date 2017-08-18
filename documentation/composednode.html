@@ -146,17 +146,58 @@ This is the schema definition for the ComposedNode resource.
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;@odata.id</td><td>string</td><td></td><td></td><td>read-only</td><td>The unique identifier for a resource.<br />Format: uri</td></tr>
 <tr><td>}</td><td></td><td></td><td></td><td></td><td></td></tr>
 </table>
-<h3 id="action parameters">Action Parameters</h3>
-<h4 id="#composednode.assemble">#ComposedNode.Assemble</h4>
+<h2 id="actions">Actions</h2>
+<h3 id="#composednode.assemble">#ComposedNode.Assemble</h3>
+<h4 id="parameters">Parameters</h4>
 <table class="datatable">
 <tr><th>Property</th><th>Type</th><th>Nullable</th><th>Required</th><th>Permission</th><th>Description</th></tr>
 <tr><td>Connections [ {</td><td>array[reference(<a href="hssconnection.html#hssconnection">HSSConnection</a>)]</td><td></td><td>POST</td><td>read-write</td><td>This is the schema definition for the HSSConnection resource.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;@odata.id</td><td>string</td><td></td><td></td><td>read-only</td><td>The unique identifier for a resource.<br />Format: uri</td></tr>
 <tr><td>} ]</td><td></td><td></td><td></td><td></td><td></td></tr>
 </table>
-<h4 id="#composednode.reject">#ComposedNode.Reject</h4>
+<h4 id="request">Request</h4>
+<div class="code">
+POST /redfish/v1/ComposedNodes/ComposedNode1/Actions/ComposedNode.Assemble
+<br />
+Content-Type: application/json
+<br />
+{
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;"Connections": [{
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"@odata.id": "/redfish/v1/ComposedNodes/ComposedNode1/HSSConnection1"
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;}]
+<br />
+}
+<br />
+</div>
+<h4 id="response">Response</h4>
+<div class="code">
+HTTP/1.1 204 No Content
+<br />
+</div>
+<h3 id="#composednode.reject">#ComposedNode.Reject</h3>
+<h4 id="parameters">Parameters</h4>
 This action has no parameters.
-<h4 id="#composednode.reset">#ComposedNode.Reset</h4>
+<h4 id="request">Request</h4>
+<div class="code">
+POST /redfish/v1/ComposedNodes/ComposedNode1/Actions/ComposedNode.Reject
+<br />
+Content-Type: application/json
+<br />
+{
+<br />
+}
+<br />
+</div>
+<h4 id="response">Response</h4>
+<div class="code">
+HTTP/1.1 204 No Content
+<br />
+</div>
+<h3 id="#composednode.reset">#ComposedNode.Reset</h3>
+<h4 id="parameters">Parameters</h4>
 <table class="datatable">
 <tr><th>Property</th><th>Type</th><th>Nullable</th><th>Required</th><th>Permission</th><th>Description</th></tr>
 <tr><td>ResetType</td><td>string</td><td></td><td>POST</td><td>read-write</td><td>The type of reset to be performed.<br />Possible Values:<ul>
@@ -170,6 +211,24 @@ This action has no parameters.
 <li>PushPowerButton: Simulate the pressing of the physical power button on this system.</li>
 </ul></td></tr>
 </table>
+<h4 id="request">Request</h4>
+<div class="code">
+POST /redfish/v1/ComposedNodes/ComposedNode1/Actions/ComposedNode.Reset
+<br />
+Content-Type: application/json
+<br />
+{
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;"ResetType": "On"
+<br />
+}
+<br />
+</div>
+<h4 id="response">Response</h4>
+<div class="code">
+HTTP/1.1 204 No Content
+<br />
+</div>
 <h2 id="operations">Operations</h2>
 <h3 id="get">GET</h3>
 <h4 id="request">Request</h4>
@@ -223,7 +282,7 @@ Content-Type: application/json
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"title": "string"
 <br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"target": "uri"
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"target": /redfish/v1/ComposedNodes/ComposedNode1/Actions/ComposedNode.Assemble
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
 <br />
@@ -231,7 +290,7 @@ Content-Type: application/json
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"title": "string"
 <br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"target": "uri"
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"target": /redfish/v1/ComposedNodes/ComposedNode1/Actions/ComposedNode.Reject
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
 <br />
@@ -239,7 +298,7 @@ Content-Type: application/json
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"title": "string"
 <br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"target": "uri"
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"target": /redfish/v1/ComposedNodes/ComposedNode1/Actions/ComposedNode.Reset
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
 <br />
@@ -275,8 +334,29 @@ Content-Type: application/json
 <br />
 </div>
 <h3 id="post">POST</h3>
-<h4 id="request">Request</h4>
-<h4 id="response">Response</h4>
+This operation is not supported on this resource and will result in the following response:
+<br />
+<br />
+<div class="code">
+HTTP/1.1 405 Method Not Allowed
+<br />
+</div>
+<h3 id="patch">PATCH</h3>
+This operation is not supported on this resource and will result in the following response:
+<br />
+<br />
+<div class="code">
+HTTP/1.1 405 Method Not Allowed
+<br />
+</div>
+<h3 id="delete">DELETE</h3>
+This operation is not supported on this resource and will result in the following response:
+<br />
+<br />
+<div class="code">
+HTTP/1.1 405 Method Not Allowed
+<br />
+</div>
 </div>
 </body>
 </html>
