@@ -19,20 +19,6 @@
             },
             "additionalProperties": false,
             "properties": {
-                "Manufacturer": {
-                    "type": [
-                        "string",
-                        "null"
-                    ],
-                    "description": "The exact manufacturer of the PCIe device"
-                },
-                "Model": {
-                    "type": [
-                        "string",
-                        "null"
-                    ],
-                    "description": "The exact model of the PCIe device"
-                },
                 "SerialNumber": {
                     "type": [
                         "string",

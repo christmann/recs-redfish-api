@@ -93,12 +93,6 @@
 				<Property Name="Processors" Type="Collection(ComposedNodeAllocationSystemRequirement.v0_1_0.Processor)">
 					<Annotation Term="OData.Description" String="The requirements for one or more processors" />
 				</Property>
-				<Property Name="Memory" Type="Collection(ComposedNodeAllocationSystemRequirement.v0_1_0.Memory)">
-					<Annotation Term="OData.Description" String="The requirements for one or more memory configurations" />
-				</Property>
-				<Property Name="LocalStorage" Type="Collection(ComposedNodeAllocationSystemRequirement.v0_1_0.LocalStorage)">
-					<Annotation Term="OData.Description" String="The requirements for one or more local storage devices" />
-				</Property>
 				<Property Name="EthernetInterfaces" Type="Collection(ComposedNodeAllocationSystemRequirement.v0_1_0.EthernetInterface)">
 					<Annotation Term="OData.Description" String="The requirements for one or more ethernet interfaces" />
 				</Property>
@@ -285,12 +279,6 @@
 			<ComplexType Name="ComposedNodeAllocationDeviceRequirement">
 				<Annotation Term="OData.AdditionalProperties" Bool="false"/>
 				<Annotation Term="OData.Description" String="The requirements for a PCIe device" />
-				<Property Name="Manufacturer" Type="Edm.String">
-					<Annotation Term="OData.Description" String="The exact manufacturer of the PCIe device" />
-				</Property>
-				<Property Name="Model" Type="Edm.String">
-					<Annotation Term="OData.Description" String="The exact model of the PCIe device" />
-				</Property>
 				<Property Name="SerialNumber" Type="Edm.String">
 					<Annotation Term="OData.Description" String="The exact serial number of the PCIe device" />
 				</Property>

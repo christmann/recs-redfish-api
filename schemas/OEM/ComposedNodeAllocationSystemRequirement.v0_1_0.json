@@ -29,26 +29,6 @@
                     },
                     "description": "The requirements for one or more processors"
                 },
-                "Memory": {
-                    "type": "array",
-                    "items": {
-                        "anyOf": [
-                            {"$ref": "#/definitions/Memory"},
-                            {"type": "null"}
-                        ]
-                    },
-                    "description": "The requirements for one or more memory configurations"
-                },
-                "LocalStorage": {
-                    "type": "array",
-                    "items": {
-                        "anyOf": [
-                            {"$ref": "#/definitions/LocalStorage"},
-                            {"type": "null"}
-                        ]
-                    },
-                    "description": "The requirements for one or more local storage devices"
-                },
                 "EthernetInterfaces": {
                     "type": "array",
                     "items": {

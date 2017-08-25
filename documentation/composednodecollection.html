@@ -132,60 +132,6 @@ table { border-collapse: collapse; }
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@odata.id</td><td>string</td><td></td><td></td><td>read-only</td><td>The unique identifier for a resource.<br />Format: uri</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</td><td></td><td></td><td></td><td></td><td></td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;} ]</td><td></td><td></td><td></td><td></td><td></td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;Memory [ {</td><td>array[object]</td><td></td><td></td><td>read-write</td><td>The requirements for one or more memory configurations</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CapacityMiB</td><td>number</td><td>Yes</td><td></td><td>read-write</td><td>The minimum capacity of the memory<br />Unit: MiBy</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DimmDeviceType</td><td>string</td><td>Yes</td><td></td><td>read-write</td><td>The exact type of the memory<br />Possible Values:<ul>
-<li>DDR: DDR</li>
-<li>DDR2: DDR2</li>
-<li>DDR3: DDR3</li>
-<li>DDR4: DDR4</li>
-<li>DDR4_SDRAM: DDR4 SDRAM</li>
-<li>DDR4E_SDRAM: DDR4E SDRAM</li>
-<li>LPDDR4_SDRAM: LPDDR4 SDRAM</li>
-<li>DDR3_SDRAM: DDR3 SDRAM</li>
-<li>LPDDR3_SDRAM: LPDDR3 SDRAM</li>
-<li>DDR2_SDRAM: DDR2 SDRAM</li>
-<li>DDR2_SDRAM_FB_DIMM: DDR2 SDRAM FB_DIMM</li>
-<li>DDR2_SDRAM_FB_DIMM_PROBE: DDR2 SDRAM FB_DIMM PROBE</li>
-<li>DDR_SGRAM: DDR SGRAM</li>
-<li>DDR_SDRAM: DDR SDRAM</li>
-<li>ROM: ROM</li>
-<li>SDRAM: SDRAM</li>
-<li>EDO: EDO</li>
-<li>FastPageMode: Fast Page Mode</li>
-<li>PipelinedNibble: Pipelined Nibble</li>
-</ul></td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SpeedMHz</td><td>number</td><td>Yes</td><td></td><td>read-write</td><td>The minimum speed of the memory<br />Unit: MHz</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Manufacturer</td><td>string</td><td>Yes</td><td></td><td>read-write</td><td>The exact manufacturer of the memory</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DataWidthBits</td><td>number</td><td>Yes</td><td></td><td>read-write</td><td>The minimum data width of the memory<br />Unit: bits</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Resource {</td><td>reference(<a href="memory.html#memory">Memory</a>)</td><td>Yes</td><td></td><td>read-write</td><td>The URI of a concrete resource</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@odata.id</td><td>string</td><td></td><td></td><td>read-only</td><td>The unique identifier for a resource.<br />Format: uri</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</td><td></td><td></td><td></td><td></td><td></td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Baseboard {</td><td>reference(<a href="baseboard.html#baseboard">Baseboard</a>)</td><td>Yes</td><td></td><td>read-write</td><td>The Baseboard where applicable resources are located</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@odata.id</td><td>string</td><td></td><td></td><td>read-only</td><td>The unique identifier for a resource.<br />Format: uri</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</td><td></td><td></td><td></td><td></td><td></td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Backplane {</td><td>reference(<a href="backplane.html#backplane">Backplane</a>)</td><td>Yes</td><td></td><td>read-write</td><td>The Backplane where applicable resources are located</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@odata.id</td><td>string</td><td></td><td></td><td>read-only</td><td>The unique identifier for a resource.<br />Format: uri</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</td><td></td><td></td><td></td><td></td><td></td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Chassis {</td><td>reference(<a href="chassis.html#chassis">Chassis</a>)</td><td>Yes</td><td></td><td>read-write</td><td>The Chassis in which applicable resources are located</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@odata.id</td><td>string</td><td></td><td></td><td>read-only</td><td>The unique identifier for a resource.<br />Format: uri</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</td><td></td><td></td><td></td><td></td><td></td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;} ]</td><td></td><td></td><td></td><td></td><td></td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;LocalStorage [ {</td><td>array[object]</td><td></td><td></td><td>read-write</td><td>The requirements for one or more local storage devices</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CapacityBytes</td><td>number</td><td>Yes</td><td></td><td>read-write</td><td>The minimum capacity of the local storage<br />Unit: By</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Resource {</td><td>reference(<a href="simplestorage.html#simplestorage">SimpleStorage</a>)</td><td>Yes</td><td></td><td>read-write</td><td>The URI of a concrete resource</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@odata.id</td><td>string</td><td></td><td></td><td>read-only</td><td>The unique identifier for a resource.<br />Format: uri</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</td><td></td><td></td><td></td><td></td><td></td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Baseboard {</td><td>reference(<a href="baseboard.html#baseboard">Baseboard</a>)</td><td>Yes</td><td></td><td>read-write</td><td>The Baseboard where applicable resources are located</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@odata.id</td><td>string</td><td></td><td></td><td>read-only</td><td>The unique identifier for a resource.<br />Format: uri</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</td><td></td><td></td><td></td><td></td><td></td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Backplane {</td><td>reference(<a href="backplane.html#backplane">Backplane</a>)</td><td>Yes</td><td></td><td>read-write</td><td>The Backplane where applicable resources are located</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@odata.id</td><td>string</td><td></td><td></td><td>read-only</td><td>The unique identifier for a resource.<br />Format: uri</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</td><td></td><td></td><td></td><td></td><td></td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Chassis {</td><td>reference(<a href="chassis.html#chassis">Chassis</a>)</td><td>Yes</td><td></td><td>read-write</td><td>The Chassis in which applicable resources are located</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@odata.id</td><td>string</td><td></td><td></td><td>read-only</td><td>The unique identifier for a resource.<br />Format: uri</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</td><td></td><td></td><td></td><td></td><td></td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;} ]</td><td></td><td></td><td></td><td></td><td></td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;EthernetInterfaces [ {</td><td>array[object]</td><td></td><td></td><td>read-write</td><td>The requirements for one or more ethernet interfaces</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SpeedMbps</td><td>number</td><td>Yes</td><td></td><td>read-write</td><td>The minimum speed of the ethernet interface<br />Unit: Mbit/s</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PrimaryVLAN</td><td>number</td><td>Yes</td><td></td><td>read-write</td><td>The primary VLAN ID of the ethernet interface</td></tr>
@@ -225,8 +171,6 @@ table { border-collapse: collapse; }
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;} ]</td><td></td><td></td><td></td><td></td><td></td></tr>
 <tr><td>} ]</td><td></td><td></td><td></td><td></td><td></td></tr>
 <tr><td>Devices [ {</td><td>array[object]</td><td></td><td>POST</td><td>read-write</td><td>The requirements for a PCIe device</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;Manufacturer</td><td>string</td><td>Yes</td><td></td><td>read-write</td><td>The exact manufacturer of the PCIe device</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;Model</td><td>string</td><td>Yes</td><td></td><td>read-write</td><td>The exact model of the PCIe device</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;SerialNumber</td><td>string</td><td>Yes</td><td></td><td>read-write</td><td>The exact serial number of the PCIe device</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;Type</td><td>string</td><td>Yes</td><td></td><td>read-write</td><td>The exact type of the PCIe device<br />Possible Values:<ul>
 <li>SingleFunction: A single-function PCIe device</li>
@@ -347,74 +291,6 @@ Content-Type: application/json
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}]
 <br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Memory": [{
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"CapacityMiB": 0
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"DimmDeviceType": "DDR"
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"SpeedMHz": 0
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Manufacturer": "string"
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"DataWidthBits": 0
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Resource": {
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"@odata.id": "/redfish/v1/Systems/ComputerSystem1/Memory/Memory1"
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Baseboard": {
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"@odata.id": "/redfish/v1/Systems/ComputerSystem1/Baseboard"
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Backplane": {
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"@odata.id": "/redfish/v1/Systems/ComputerSystem1/Baseboard/Backplane1"
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Chassis": {
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"@odata.id": "/redfish/v1/Chassis/Chassis1"
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}]
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"LocalStorage": [{
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"CapacityBytes": 0
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Resource": {
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"@odata.id": "/redfish/v1/Systems/ComputerSystem1/SimpleStorage/SimpleStorage1"
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Baseboard": {
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"@odata.id": "/redfish/v1/Systems/ComputerSystem1/Baseboard"
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Backplane": {
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"@odata.id": "/redfish/v1/Systems/ComputerSystem1/Baseboard/Backplane1"
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Chassis": {
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"@odata.id": "/redfish/v1/Chassis/Chassis1"
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}]
-<br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"EthernetInterfaces": [{
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"SpeedMbps": 0
@@ -492,10 +368,6 @@ Content-Type: application/json
 &nbsp;&nbsp;&nbsp;&nbsp;}]
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;"Devices": [{
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Manufacturer": "string"
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Model": "string"
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"SerialNumber": "string"
 <br />
