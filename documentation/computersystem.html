@@ -491,34 +491,11 @@ HTTP/1.1 405 Method Not Allowed
 <br />
 </div>
 <h3 id="patch">PATCH</h3>
-<h4 id="request">Request</h4>
+This operation is not supported on this resource and will result in the following response:
+<br />
+<br />
 <div class="code">
-PATCH /redfish/v1/Systems/ComputerSystem1
-<br />
-Content-Type: application/json
-<br />
-{
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;"IndicatorLED": "Unknown"
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;"Boot": {
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"BootSourceOverrideTarget": "None"
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"BootSourceOverrideEnabled": "Disabled"
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"UefiTargetBootSourceOverride": "string"
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"BootSourceOverrideMode": "Legacy"
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;}
-<br />
-}
-<br />
-</div>
-<h4 id="response">Response</h4>
-<div class="code">
-HTTP/1.1 204 No Content
+HTTP/1.1 405 Method Not Allowed
 <br />
 </div>
 <h3 id="delete">DELETE</h3>
