@@ -269,19 +269,109 @@ HTTP/1.1 405 Method Not Allowed
 <br />
 </div>
 <h3 id="patch">PATCH</h3>
-This operation is not supported on this resource and will result in the following response:
-<br />
-<br />
+<h4 id="request">Request</h4>
 <div class="code">
-HTTP/1.1 405 Method Not Allowed
+PATCH /redfish/v1/EthernetSwitches/EthernetSwitch1/ACLs/EthernetSwitchACL1/Rules/EthernetSwitchACLRule1
+<br />
+Content-Type: application/json
+<br />
+{
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;"RuleId": 0
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;"Action": "Permit"
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;"MirrorType": "Egress"
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;"Condition": {
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"IPSource": {
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"IPv4Address": "string"
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Mask": "string"
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"IPDestination": {
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"IPv4Address": "string"
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Mask": "string"
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"MACSource": {
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"MACAddress": "string"
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Mask": "string"
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"MACDestination": {
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"MACAddress": "string"
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Mask": "string"
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"VLANId": {
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Id": 0
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Mask": 0
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"L4SourcePort": {
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Port": 0
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Mask": 0
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"L4DestinationPort": {
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Port": 0
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Mask": 0
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;}
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;"ForwardMirrorInterface": {
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"@odata.id": "/redfish/v1/EthernetSwitches/EthernetSwitch1/ACLs/EthernetSwitchACL1/Rules/EthernetSwitchACLRule1/ForwardMirrorInterface"
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;}
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;"MirrorPortRegion": [{
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"@odata.id": "/redfish/v1/EthernetSwitches/EthernetSwitch1/ACLs/EthernetSwitchACL1/Rules/EthernetSwitchACLRule1/EthernetSwitchPort1"
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;}]
+<br />
+}
+<br />
+</div>
+<h4 id="response">Response</h4>
+<div class="code">
+HTTP/1.1 204 No Content
 <br />
 </div>
 <h3 id="delete">DELETE</h3>
-This operation is not supported on this resource and will result in the following response:
-<br />
-<br />
+<h4 id="request">Request</h4>
 <div class="code">
-HTTP/1.1 405 Method Not Allowed
+DELETE /redfish/v1/EthernetSwitches/EthernetSwitch1/ACLs/EthernetSwitchACL1/Rules/EthernetSwitchACLRule1
+<br />
+</div>
+<h4 id="response">Response</h4>
+<div class="code">
+HTTP/1.1 204 No Content
 <br />
 </div>
 </div>

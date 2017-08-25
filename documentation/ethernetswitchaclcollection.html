@@ -127,11 +127,28 @@ Content-Type: application/json
 <br />
 </div>
 <h3 id="post">POST</h3>
-This operation is not supported on this resource and will result in the following response:
-<br />
-<br />
+<h4 id="request">Request</h4>
 <div class="code">
-HTTP/1.1 405 Method Not Allowed
+POST /redfish/v1/EthernetSwitches/EthernetSwitch1/ACLs
+<br />
+Content-Type: application/json
+<br />
+{
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;"Rules": {
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"@odata.id": "/redfish/v1/EthernetSwitches/EthernetSwitch1/ACLs/EthernetSwitchACL1/Rules"
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;}
+<br />
+}
+<br />
+</div>
+<h4 id="response">Response</h4>
+<div class="code">
+HTTP/1.1 201 Created
+<br />
+Location: http://{IP}:{PORT}/redfish/v1/EthernetSwitches/EthernetSwitch1/ACLs/EthernetSwitchACL1
 <br />
 </div>
 <h3 id="patch">PATCH</h3>

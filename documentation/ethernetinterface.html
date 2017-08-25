@@ -325,11 +325,76 @@ HTTP/1.1 405 Method Not Allowed
 <br />
 </div>
 <h3 id="patch">PATCH</h3>
-This operation is not supported on this resource and will result in the following response:
-<br />
-<br />
+<h4 id="request">Request</h4>
 <div class="code">
-HTTP/1.1 405 Method Not Allowed
+PATCH /redfish/v1/Systems/ComputerSystem1/EthernetInterfaces/EthernetInterface1
+<br />
+Content-Type: application/json
+<br />
+{
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;"InterfaceEnabled": "boolean"
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;"MACAddress": "string"
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;"SpeedMbps": 0
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;"AutoNeg": "boolean"
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;"FullDuplex": "boolean"
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;"MTUSize": 0
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;"HostName": "string"
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;"FQDN": "string"
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;"VLAN": {
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"VLANEnable": "boolean"
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"VLANId": 0
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;}
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;"IPv4Addresses": [{
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Address": "string"
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"SubnetMask": "string"
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Gateway": "string"
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;}]
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;"IPv6AddressPolicyTable": [{
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Prefix": "string"
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Precedence": 1
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Label": 0
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;}]
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;"IPv6Addresses": [{
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Address": "string"
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;}]
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;"IPv6StaticAddresses": [{
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Address": "string"
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;}]
+<br />
+}
+<br />
+</div>
+<h4 id="response">Response</h4>
+<div class="code">
+HTTP/1.1 204 No Content
 <br />
 </div>
 <h3 id="delete">DELETE</h3>
