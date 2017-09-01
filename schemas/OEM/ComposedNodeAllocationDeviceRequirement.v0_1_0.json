@@ -70,13 +70,6 @@
                         {"type": "null"}
                     ],
                     "description": "The Backplane where applicable resources are located"
-                },
-                "Chassis": {
-                    "anyOf": [
-                        {"$ref": "http://redfish.dmtf.org/schemas/v1/Chassis.json#/definitions/Chassis"},
-                        {"type": "null"}
-                    ],
-                    "description": "The Chassis in which applicable resources are located"
                 }
             },
             "description": "The requirements for a PCIe device"
@@ -228,13 +221,6 @@
                         {"type": "null"}
                     ],
                     "description": "The Backplane where applicable resources are located"
-                },
-                "Chassis": {
-                    "anyOf": [
-                        {"$ref": "http://redfish.dmtf.org/schemas/v1/Chassis.json#/definitions/Chassis"},
-                        {"type": "null"}
-                    ],
-                    "description": "The Chassis in which applicable resources are located"
                 }
             },
             "description": "The requirements for a PCIe device port"

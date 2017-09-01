@@ -53,6 +53,7 @@ table { border-collapse: collapse; }
 <a href="ethernetswitchstaticmac.html#ethernetswitchstaticmac">EthernetSwitchStaticMAC</a><br />
 <a href="ethernetswitchstaticmaccollection.html#ethernetswitchstaticmaccollection">EthernetSwitchStaticMACCollection</a><br />
 <a href="hsllconnection.html#hsllconnection">HSLLConnection</a><br />
+<a href="hsllconnectioncollection.html#hsllconnectioncollection">HSLLConnectionCollection</a><br />
 <a href="hsllinterface.html#hsllinterface">HSLLInterface</a><br />
 <a href="jsonschemafile.html#jsonschemafile">JsonSchemaFile</a><br />
 <a href="jsonschemafilecollection.html#jsonschemafilecollection">JsonSchemaFileCollection</a><br />
@@ -99,7 +100,7 @@ This is the schema definition for the HSLLConnection resource.
 <h3 id="get">GET</h3>
 <h4 id="request">Request</h4>
 <div class="code">
-GET /redfish/v1/ComposedNodes/ComposedNode1/HSLLConnection1
+GET /redfish/v1/Connections/HSLLConnection1
 <br />
 Content-Type: application/json
 <br />
@@ -110,7 +111,7 @@ Content-Type: application/json
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;"@odata.context": "uri"
 <br />
-&nbsp;&nbsp;&nbsp;&nbsp;"@odata.id": /redfish/v1/ComposedNodes/ComposedNode1/HSLLConnection1
+&nbsp;&nbsp;&nbsp;&nbsp;"@odata.id": /redfish/v1/Connections/HSLLConnection1
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;"@odata.type": "string"
 <br />
@@ -132,7 +133,7 @@ Content-Type: application/json
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;"EndpointA": {
 <br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"@odata.id": "/redfish/v1/ComposedNodes/ComposedNode1/HSLLConnection1/EndpointA"
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"@odata.id": "/redfish/v1/Connections/HSLLConnection1/EndpointA"
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;}
 <br />
@@ -162,11 +163,14 @@ HTTP/1.1 405 Method Not Allowed
 <br />
 </div>
 <h3 id="delete">DELETE</h3>
-This operation is not supported on this resource and will result in the following response:
-<br />
-<br />
+<h4 id="request">Request</h4>
 <div class="code">
-HTTP/1.1 405 Method Not Allowed
+DELETE /redfish/v1/Connections/HSLLConnection1
+<br />
+</div>
+<h4 id="response">Response</h4>
+<div class="code">
+HTTP/1.1 204 No Content
 <br />
 </div>
 </div>

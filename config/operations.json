@@ -22,6 +22,12 @@
 	"EthernetSwitchACLRuleCollection": [
 		"POST"
 	],
+	"HSLLConnection": [
+		"DELETE"
+	],
+	"HSLLConnectionCollection": [
+		"POST"
+	],
 	"VLanNetworkInterface": [
 		"PATCH",
 		"DELETE"

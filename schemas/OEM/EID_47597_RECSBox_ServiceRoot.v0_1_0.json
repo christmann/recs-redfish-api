@@ -43,6 +43,12 @@
                     "readonly": true,
                     "description": "This is a link to a collection of PCIeSwitches.",
                     "longDescription": "This object shall only contain a reference to a collection of resources that comply to the PCIeSwitch schema."
+                },
+                "Connections": {
+                    "$ref": "http://redfish.dmtf.org/schemas/v1/HSLLConnectionCollection.json#/definitions/HSLLConnectionCollection",
+                    "readonly": false,
+                    "description": "A reference to a collection of HSLLConnections.",
+                    "longDescription": "This object shall only contain a reference that complies to the HSLLConnectionCollection schema."
                 }
             },
             "description": "RECS|Box ServiceRoot extension",

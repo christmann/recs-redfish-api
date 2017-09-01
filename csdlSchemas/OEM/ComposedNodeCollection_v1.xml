@@ -114,6 +114,12 @@
 					<Annotation Term="OData.Description" String="The minimum speed of the processor" />
 					<Annotation Term="Measures.Unit" String="MHz"/>
 				</Property>
+				<Property Name="ProcessorType" Type="Processor.v1_0_0.ProcessorType">
+					<Annotation Term="OData.Description" String="The type of processor" />
+				</Property>
+				<Property Name="ProcessorArchitecture" Type="Processor.v1_0_0.ProcessorArchitecture">
+					<Annotation Term="OData.Description" String="The architecture of the processor" />
+				</Property>
 				<Property Name="InstructionSet" Type="Processor.v1_0_0.InstructionSet">
 					<Annotation Term="OData.Description" String="The instruction set of the processor" />
 				</Property>
@@ -127,10 +133,6 @@
 				</NavigationProperty>
 				<NavigationProperty Name="Backplane" Type="Backplane.Backplane">
 					<Annotation Term="OData.Description" String="The Backplane where applicable resources are located" />
-					<Annotation Term="OData.AutoExpandReferences"/>
-				</NavigationProperty>
-				<NavigationProperty Name="Chassis" Type="Chassis.Chassis">
-					<Annotation Term="OData.Description" String="The Chassis in which applicable resources are located" />
 					<Annotation Term="OData.AutoExpandReferences"/>
 				</NavigationProperty>
 			</ComplexType>
@@ -168,10 +170,6 @@
 					<Annotation Term="OData.Description" String="The Backplane where applicable resources are located" />
 					<Annotation Term="OData.AutoExpandReferences"/>
 				</NavigationProperty>
-				<NavigationProperty Name="Chassis" Type="Chassis.Chassis">
-					<Annotation Term="OData.Description" String="The Chassis in which applicable resources are located" />
-					<Annotation Term="OData.AutoExpandReferences"/>
-				</NavigationProperty>
 			</ComplexType>
 
 			<ComplexType Name="LocalStorage">
@@ -191,10 +189,6 @@
 				</NavigationProperty>
 				<NavigationProperty Name="Backplane" Type="Backplane.Backplane">
 					<Annotation Term="OData.Description" String="The Backplane where applicable resources are located" />
-					<Annotation Term="OData.AutoExpandReferences"/>
-				</NavigationProperty>
-				<NavigationProperty Name="Chassis" Type="Chassis.Chassis">
-					<Annotation Term="OData.Description" String="The Chassis in which applicable resources are located" />
 					<Annotation Term="OData.AutoExpandReferences"/>
 				</NavigationProperty>
 			</ComplexType>
@@ -222,10 +216,6 @@
 				</NavigationProperty>
 				<NavigationProperty Name="Backplane" Type="Backplane.Backplane">
 					<Annotation Term="OData.Description" String="The Backplane where applicable resources are located" />
-					<Annotation Term="OData.AutoExpandReferences"/>
-				</NavigationProperty>
-				<NavigationProperty Name="Chassis" Type="Chassis.Chassis">
-					<Annotation Term="OData.Description" String="The Chassis in which applicable resources are located" />
 					<Annotation Term="OData.AutoExpandReferences"/>
 				</NavigationProperty>
 			</ComplexType>
@@ -266,10 +256,6 @@
 					<Annotation Term="OData.Description" String="The Backplane where applicable resources are located" />
 					<Annotation Term="OData.AutoExpandReferences"/>
 				</NavigationProperty>
-				<NavigationProperty Name="Chassis" Type="Chassis.Chassis">
-					<Annotation Term="OData.Description" String="The Chassis in which applicable resources are located" />
-					<Annotation Term="OData.AutoExpandReferences"/>
-				</NavigationProperty>
 			</ComplexType>
 
 		</Schema>
@@ -301,10 +287,6 @@
 				</NavigationProperty>
 				<NavigationProperty Name="Backplane" Type="Backplane.Backplane">
 					<Annotation Term="OData.Description" String="The Backplane where applicable resources are located" />
-					<Annotation Term="OData.AutoExpandReferences"/>
-				</NavigationProperty>
-				<NavigationProperty Name="Chassis" Type="Chassis.Chassis">
-					<Annotation Term="OData.Description" String="The Chassis in which applicable resources are located" />
 					<Annotation Term="OData.AutoExpandReferences"/>
 				</NavigationProperty>
 			</ComplexType>
@@ -373,10 +355,6 @@
 				</NavigationProperty>
 				<NavigationProperty Name="Backplane" Type="Backplane.Backplane">
 					<Annotation Term="OData.Description" String="The Backplane where applicable resources are located" />
-					<Annotation Term="OData.AutoExpandReferences"/>
-				</NavigationProperty>
-				<NavigationProperty Name="Chassis" Type="Chassis.Chassis">
-					<Annotation Term="OData.Description" String="The Chassis in which applicable resources are located" />
 					<Annotation Term="OData.AutoExpandReferences"/>
 				</NavigationProperty>
 			</ComplexType>

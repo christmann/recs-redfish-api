@@ -233,21 +233,11 @@
                     "description": "An array of references to the nodes this ComposedNode consists of. This can either be a ComputerSystem, a ComposedNode or a PCIeDevice.",
                     "longDescription": "This object shall only contain an array of references that comply to the ComputerSystem, ComposedNode or PCIeDevice schema."
                 },
-                "Connections@odata.count": {
-                    "$ref": "http://redfish.dmtf.org/schemas/v1/odata.4.0.0.json#/definitions/count"
-                },
-                "Connections@odata.navigationLink": {
-                    "type": "string",
-                    "format": "uri"
-                },
                 "Connections": {
-                    "type": "array",
-                    "items": {
-                        "$ref": "http://redfish.dmtf.org/schemas/v1/HSLLConnection.json#/definitions/HSLLConnection"
-                    },
+                    "$ref": "http://redfish.dmtf.org/schemas/v1/HSLLConnectionCollection.json#/definitions/HSLLConnectionCollection",
                     "readonly": false,
-                    "description": "An array of references to the HSLLConnections that connect the nodes within this composition.",
-                    "longDescription": "This object shall only contain an array of references that comply to the HSLLConnection schema."
+                    "description": "A reference to a collection of HSLLConnections that connect the nodes within this composition.",
+                    "longDescription": "This object shall only contain a reference that complies to the HSLLConnectionCollection schema."
                 },
                 "ComposedIn": {
                     "anyOf": [
