@@ -85,26 +85,7 @@ A Chassis represents the physical components for any system.  This resource repr
 <tr><td>Description</td><td>string</td><td>Yes</td><td></td><td>read-only</td><td>Provides a description of this resource and is used for commonality  in the schema definitions.</td></tr>
 <tr><td>Name</td><td>string</td><td></td><td>GET</td><td>read-only</td><td>The name of the resource or array element.</td></tr>
 <tr><td>ChassisType</td><td>string</td><td></td><td>GET</td><td>read-only</td><td>This property indicates the type of physical form factor of this resource.<br />Possible Values:<ul>
-<li>Rack: An equipment rack, typically a 19-inch wide freestanding unit.</li>
-<li>Blade: An enclosed or semi-enclosed, typically vertically-oriented, system chassis which must be plugged into a multi-system chassis to function normally.</li>
 <li>Enclosure: A generic term for a chassis that does not fit any other description.</li>
-<li>StandAlone: A single, free-standing system, commonly called a tower or desktop chassis.</li>
-<li>RackMount: A single system chassis designed specifically for mounting in an equipment rack.</li>
-<li>Card: A loose device or circuit board intended to be installed in a system or other enclosure.</li>
-<li>Cartridge: A small self-contained system intended to be plugged into a multi-system chassis.</li>
-<li>Row: A collection of equipment racks.</li>
-<li>Pod: A collection of equipment racks in a large, likely transportable, container.</li>
-<li>Expansion: A chassis which expands the capabilities or capacity of another chassis.</li>
-<li>Sidecar: A chassis that mates mechanically with another chassis to expand its capabilities or capacity.</li>
-<li>Zone: A logical division or portion of a physical chassis that contains multiple devices or systems that cannot be physically separated.</li>
-<li>Sled: An enclosed or semi-enclosed, system chassis which must be plugged into a multi-system chassis to function normally similar to a blade type chassis.</li>
-<li>Shelf: An enclosed or semi-enclosed, typically horizontally-oriented, system chassis which must be plugged into a multi-system chassis to function normally.</li>
-<li>Drawer: An enclosed or semi-enclosed, typically horizontally-oriented, system chassis which may be slid into a multi-system chassis.</li>
-<li>Module: A small, typically removable, chassis or card which contains devices for a particular subsystem or function.</li>
-<li>Component: A small chassis, card, or device which contains devices for a particular subsystem or function.</li>
-<li>IPBasedDrive: A chassis in a drive form factor with IP-based network connections.</li>
-<li>RackGroup: A group of racks which form a single entity or share infrastructure.</li>
-<li>Other: A chassis that does not fit any of these definitions.</li>
 </ul></td></tr>
 <tr><td>Manufacturer</td><td>string</td><td>Yes</td><td></td><td>read-only</td><td>This is the manufacturer of this chassis.</td></tr>
 <tr><td>Model</td><td>string</td><td>Yes</td><td></td><td>read-only</td><td>This is the model number for the chassis.</td></tr>
@@ -216,7 +197,7 @@ Content-Type: application/json
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;"Name": "string"
 <br />
-&nbsp;&nbsp;&nbsp;&nbsp;"ChassisType": "Rack"
+&nbsp;&nbsp;&nbsp;&nbsp;"ChassisType": "Enclosure"
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;"Manufacturer": "string"
 <br />

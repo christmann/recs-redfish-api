@@ -14,8 +14,26 @@
 		"Fabrics": true,
 		"UpdateService": true
 	},
+	"Baseboard": {
+		"Actions": {
+			"#Baseboard.Reset": {
+				"ResetType": [
+					"On",
+					"ForceOff",
+					"GracefulShutdown",
+					"GracefulRestart",
+					"ForceRestart",
+					"ForceOn",
+					"PushPowerButton"
+				]
+			}
+		}
+	},
 	"Chassis": {
 		"AssetTag": true,
+		"ChassisType": [
+			"Enclosure"
+		],
 		"Links": {
 			"ManagedBy": true,
 			"PoweredBy": true,
@@ -40,12 +58,49 @@
 		"WeightKg": true,
 		"NetworkAdapters": true
 	},
+	"ComposedNode": {
+		"Actions": {
+			"#ComposedNode.Reset": {
+				"ResetType": [
+					"On",
+					"ForceOff",
+					"GracefulShutdown",
+					"GracefulRestart",
+					"ForceRestart",
+					"ForceOn",
+					"PushPowerButton"
+				]
+			}
+		}
+	},
 	"ComputerSystem": {
+		"Boot": {
+			"BootSourceOverrideTarget": [
+				"None",
+				"Pxe",
+				"Cd",
+				"Usb",
+				"Hdd"
+			]
+		},
 		"Links": {
 			"ManagedBy": true,
 			"PoweredBy": true,
 			"CooledBy": true,
 			"Endpoints": true
+		},
+		"Actions": {
+			"#ComputerSystem.Reset": {
+				"ResetType": [
+					"On",
+					"ForceOff",
+					"GracefulShutdown",
+					"GracefulRestart",
+					"ForceRestart",
+					"ForceOn",
+					"PushPowerButton"
+				]
+			}
 		},
 		"AssetTag": true,
 		"HostName": true,
@@ -134,6 +189,19 @@
 			"ManagedBy": true,
 			"PoweredBy": true,
 			"CooledBy": true
+		},
+		"Actions": {
+			"#PCIeSwitch.Reset": {
+				"ResetType": [
+					"On",
+					"ForceOff",
+					"GracefulShutdown",
+					"GracefulRestart",
+					"ForceRestart",
+					"ForceOn",
+					"PushPowerButton"
+				]
+			}
 		},
 		"LogServices": true
 	}
