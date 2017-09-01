@@ -20,43 +20,43 @@
 	<edmx:Reference Uri="http://redfish.dmtf.org/schemas/v1/ComputerSystem_v1.xml">
 		<edmx:Include Namespace="ComputerSystem"/>
 	</edmx:Reference>
-	<edmx:Reference Uri="HSSInterface_v1.xml">
-		<edmx:Include Namespace="HSSInterface"/>
+	<edmx:Reference Uri="HSLLInterface_v1.xml">
+		<edmx:Include Namespace="HSLLInterface"/>
 	</edmx:Reference>
 
 	<edmx:DataServices>
-		<Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="HSSConnection">
+		<Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="HSLLConnection">
 
-			<EntityType Name="HSSConnection" BaseType="Resource.v1_0_0.Resource">
-				<Annotation Term="OData.Description" String="This is the schema definition for the HSSConnection resource." />
-				<Annotation Term="OData.LongDescription" String="This is the schema definition for the HSSConnection resource. It represents the properties of a HSSConnection." />
+			<EntityType Name="HSLLConnection" BaseType="Resource.v1_0_0.Resource">
+				<Annotation Term="OData.Description" String="This is the schema definition for the HSLLConnection resource." />
+				<Annotation Term="OData.LongDescription" String="This is the schema definition for the HSLLConnection resource. It represents the properties of a HSLLConnection." />
 			</EntityType>
 
 		</Schema>
 
-		<Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="HSSConnection.v0_1_0">
+		<Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="HSLLConnection.v0_1_0">
 
-			<EntityType Name="HSSConnection" BaseType="HSSConnection.HSSConnection">
-				<Property Name="Links" Type="HSSConnection.v0_1_0.Links" Nullable="false">
+			<EntityType Name="HSLLConnection" BaseType="HSLLConnection.HSLLConnection">
+				<Property Name="Links" Type="HSLLConnection.v0_1_0.Links" Nullable="false">
 					<Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
 					<Annotation Term="OData.Description" String="The links object contains the links to other resources that are related to this resource."/>
 				</Property>
-				<NavigationProperty Name="EndpointA" Type="HSSInterface.HSSInterface" Nullable="false">
+				<NavigationProperty Name="EndpointA" Type="HSLLInterface.HSLLInterface" Nullable="false">
 					<Annotation Term="OData.Permissions" EnumMember="OData.Permission/ReadWrite"/>
 					<Annotation Term="OData.Description" String="The first endpoint of this connection"/>
-					<Annotation Term="OData.LongDescription" String="This object shall only contain a reference that complies to the HSSInterface schema."/>
+					<Annotation Term="OData.LongDescription" String="This object shall only contain a reference that complies to the HSLLInterface schema."/>
 					<Annotation Term="OData.AutoExpandReferences"/>
 				</NavigationProperty>
 				<NavigationProperty Name="EndpointB" Type="Resource.Item" Nullable="false">
 					<Annotation Term="OData.Permissions" EnumMember="OData.Permission/ReadWrite"/>
-					<Annotation Term="OData.Description" String="The second endpoint of this connection. This can either be an HSSInterface of a ComputerSystem or a PCIePort of a PCIeSwitch or a PCIePort of a Baseboard, where a PCIeDevice can be attached."/>
-					<Annotation Term="OData.LongDescription" String="This object shall only contain a reference that complies to the HSSInterface or PCIePort schema."/>
+					<Annotation Term="OData.Description" String="The second endpoint of this connection. This can either be an HSLLInterface of a ComputerSystem or a PCIePort of a PCIeSwitch or a PCIePort of a Baseboard, where a PCIeDevice can be attached."/>
+					<Annotation Term="OData.LongDescription" String="This object shall only contain a reference that complies to the HSLLInterface or PCIePort schema."/>
 					<Annotation Term="OData.AutoExpandReferences"/>
 				</NavigationProperty>
 				<Property Name="Width" Type="Edm.Int64">
 					<Annotation Term="OData.Permissions" EnumMember="OData.Permissions/ReadWrite"/>
-					<Annotation Term="OData.Description" String="Connection width of the HSSConnection specified in number of lanes"/>
-					<Annotation Term="OData.LongDescription" String="The value of this property shall contain the connection width of the HSSConnection specified in number of lanes."/>
+					<Annotation Term="OData.Description" String="Connection width of the HSLLConnection specified in number of lanes"/>
+					<Annotation Term="OData.LongDescription" String="The value of this property shall contain the connection width of the HSLLConnection specified in number of lanes."/>
 					<Annotation Term="Validation.Minimum" Int="0"/>
 				</Property>
 			</EntityType>

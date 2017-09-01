@@ -109,11 +109,11 @@
                 "Connections": {
                     "type": "array",
                     "items": {
-                        "$ref": "http://redfish.dmtf.org/schemas/v1/HSSConnection.json#/definitions/HSSConnection"
+                        "$ref": "http://redfish.dmtf.org/schemas/v1/HSLLConnection.json#/definitions/HSLLConnection"
                     },
                     "readonly": false,
                     "description": "An array of references to the connections that use this port.",
-                    "longDescription": "This object shall only contain an array of references that comply to the HSSConnection schema."
+                    "longDescription": "This object shall only contain an array of references that comply to the HSLLConnection schema."
                 }
             },
             "description": "RECS|Box PCIePort extension",

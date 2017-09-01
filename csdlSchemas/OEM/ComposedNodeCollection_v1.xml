@@ -38,8 +38,8 @@
 	<edmx:Reference Uri="http://redfish.dmtf.org/schemas/v1/EthernetInterface_v1.xml">
 		<edmx:Include Namespace="EthernetInterface"/>
 	</edmx:Reference>
-	<edmx:Reference Uri="HSSInterface_v1.xml">
-		<edmx:Include Namespace="HSSInterface"/>
+	<edmx:Reference Uri="HSLLInterface_v1.xml">
+		<edmx:Include Namespace="HSLLInterface"/>
 	</edmx:Reference>
 	<edmx:Reference Uri="http://redfish.dmtf.org/schemas/v1/PCIeDevice_v1.xml">
 		<edmx:Include Namespace="PCIeDevice"/>
@@ -96,8 +96,8 @@
 				<Property Name="EthernetInterfaces" Type="Collection(ComposedNodeAllocationSystemRequirement.v0_1_0.EthernetInterface)">
 					<Annotation Term="OData.Description" String="The requirements for one or more ethernet interfaces" />
 				</Property>
-				<Property Name="HSSInterfaces" Type="Collection(ComposedNodeAllocationSystemRequirement.v0_1_0.HSSInterface)">
-					<Annotation Term="OData.Description" String="The requirements for one or more HSS interfaces" />
+				<Property Name="HSLLInterfaces" Type="Collection(ComposedNodeAllocationSystemRequirement.v0_1_0.HSLLInterface)">
+					<Annotation Term="OData.Description" String="The requirements for one or more HSLL interfaces" />
 				</Property>
 			</ComplexType>
 
@@ -241,20 +241,20 @@
 				</Property>
 			</ComplexType>
 
-			<ComplexType Name="HSSInterface">
+			<ComplexType Name="HSLLInterface">
 				<Annotation Term="OData.AdditionalProperties" Bool="false"/>
-				<Annotation Term="OData.Description" String="The requirements for a HSS interface" />
+				<Annotation Term="OData.Description" String="The requirements for a HSLL interface" />
 				<Property Name="MaxSpeedGBps" Type="Edm.Int32">
-					<Annotation Term="OData.Description" String="The minimal value of the maximum speed of the HSS interface" />
+					<Annotation Term="OData.Description" String="The minimal value of the maximum speed of the HSLL interface" />
 					<Annotation Term="Measures.Unit" String="GBytes/s"/>
 				</Property>
 				<Property Name="AvailableWidth" Type="Edm.Int32">
-					<Annotation Term="OData.Description" String="The number of unused lanes of the HSS interface" />
+					<Annotation Term="OData.Description" String="The number of unused lanes of the HSLL interface" />
 				</Property>
 				<Property Name="MaxWidth" Type="Edm.Int32">
-					<Annotation Term="OData.Description" String="The minimal value of the maximum lanes of the HSS interface" />
+					<Annotation Term="OData.Description" String="The minimal value of the maximum lanes of the HSLL interface" />
 				</Property>
-				<NavigationProperty Name="Resource" Type="HSSInterface.HSSInterface">
+				<NavigationProperty Name="Resource" Type="HSLLInterface.HSLLInterface">
 					<Annotation Term="OData.Description" String="The URI of a concrete resource" />
 					<Annotation Term="OData.AutoExpandReferences"/>
 				</NavigationProperty>

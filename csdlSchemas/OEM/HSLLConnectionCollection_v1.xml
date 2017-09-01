@@ -12,15 +12,15 @@
 	<edmx:Reference Uri="http://redfish.dmtf.org/schemas/v1/Resource_v1.xml">
 		<edmx:Include Namespace="Resource.v1_0_0"	/>
 	</edmx:Reference>
-	<edmx:Reference Uri="HSSConnection_v1.xml">
-		<edmx:Include Namespace="HSSConnection" />
+	<edmx:Reference Uri="HSLLConnection_v1.xml">
+		<edmx:Include Namespace="HSLLConnection" />
 	</edmx:Reference>
 
 	<edmx:DataServices>
-		<Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="HSSConnectionCollection">
+		<Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="HSLLConnectionCollection">
 
-			<EntityType Name="HSSConnectionCollection" BaseType="Resource.v1_0_0.ResourceCollection">
-				<NavigationProperty Name="Members" Type="Collection(HSSConnection.HSSConnection)">
+			<EntityType Name="HSLLConnectionCollection" BaseType="Resource.v1_0_0.ResourceCollection">
+				<NavigationProperty Name="Members" Type="Collection(HSLLConnection.HSLLConnection)">
 					<Annotation Term="OData.Permissions" EnumMember="OData.Permissions/Read" />
 					<Annotation Term="OData.Description" String="Contains the members of this collection." />
 					<Annotation Term="OData.AutoExpandReferences" />

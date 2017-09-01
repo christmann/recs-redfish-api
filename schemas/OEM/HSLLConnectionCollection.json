@@ -1,9 +1,9 @@
 {
     "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema.v1_2_0.json",
-    "title": "#HSSConnectionCollection.HSSConnectionCollection",
-    "$ref": "#/definitions/HSSConnectionCollection",
+    "title": "#HSLLConnectionCollection.HSLLConnectionCollection",
+    "$ref": "#/definitions/HSLLConnectionCollection",
     "definitions": {
-        "HSSConnectionCollection": {
+        "HSLLConnectionCollection": {
             "anyOf": [
                 {
                     "$ref": "http://redfish.dmtf.org/schemas/v1/odata.4.0.0.json#/definitions/idRef"
@@ -60,7 +60,7 @@
                         "Members": {
                             "type": "array",
                             "items": {
-                                "$ref": "http://redfish.dmtf.org/schemas/v1/HSSConnection.json#/definitions/HSSConnection"
+                                "$ref": "http://redfish.dmtf.org/schemas/v1/HSLLConnection.json#/definitions/HSLLConnection"
                             },
                             "readonly": true,
                             "description": "Contains the members of this collection."

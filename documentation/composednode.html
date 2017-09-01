@@ -52,8 +52,8 @@ table { border-collapse: collapse; }
 <a href="ethernetswitchportcollection.html#ethernetswitchportcollection">EthernetSwitchPortCollection</a><br />
 <a href="ethernetswitchstaticmac.html#ethernetswitchstaticmac">EthernetSwitchStaticMAC</a><br />
 <a href="ethernetswitchstaticmaccollection.html#ethernetswitchstaticmaccollection">EthernetSwitchStaticMACCollection</a><br />
-<a href="hssconnection.html#hssconnection">HSSConnection</a><br />
-<a href="hssinterface.html#hssinterface">HSSInterface</a><br />
+<a href="hsllconnection.html#hsllconnection">HSLLConnection</a><br />
+<a href="hsllinterface.html#hsllinterface">HSLLInterface</a><br />
 <a href="jsonschemafile.html#jsonschemafile">JsonSchemaFile</a><br />
 <a href="jsonschemafilecollection.html#jsonschemafilecollection">JsonSchemaFileCollection</a><br />
 <a href="pciedevice.html#pciedevice">PCIeDevice</a><br />
@@ -135,7 +135,7 @@ This is the schema definition for the ComposedNode resource.
 <tr><td>} ]</td><td></td><td></td><td></td><td></td><td></td></tr>
 <tr><td>Connections@odata.count</td><td>number</td><td></td><td></td><td>read-only</td><td>The number of items in a collection.</td></tr>
 <tr><td>Connections@odata.navigationLink</td><td>string</td><td></td><td></td><td>read-write</td><td>Format: uri</td></tr>
-<tr><td>Connections [ {</td><td>array[reference(<a href="hssconnection.html#hssconnection">HSSConnection</a>)]</td><td></td><td></td><td>read-write</td><td>An array of references to the HSSConnections that connect the nodes within this composition.</td></tr>
+<tr><td>Connections [ {</td><td>array[reference(<a href="hsllconnection.html#hsllconnection">HSLLConnection</a>)]</td><td></td><td></td><td>read-write</td><td>An array of references to the HSLLConnections that connect the nodes within this composition.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;@odata.id</td><td>string</td><td></td><td></td><td>read-only</td><td>The unique identifier for a resource.<br />Format: uri</td></tr>
 <tr><td>} ]</td><td></td><td></td><td></td><td></td><td></td></tr>
 <tr><td>ComposedIn {</td><td>reference(<a href="composednode.html#composednode">ComposedNode</a>)</td><td>Yes</td><td></td><td>read-only</td><td>This is a link to the ComposedNode, this ComposedNode is composed in.</td></tr>
@@ -147,7 +147,7 @@ This is the schema definition for the ComposedNode resource.
 <h4 id="parameters">Parameters</h4>
 <table class="datatable">
 <tr><th>Property</th><th>Type</th><th>Nullable</th><th>Required</th><th>Permission</th><th>Description</th></tr>
-<tr><td>Connections [ {</td><td>array[reference(<a href="hssconnection.html#hssconnection">HSSConnection</a>)]</td><td></td><td>POST</td><td>read-write</td><td>This is the schema definition for the HSSConnection resource.</td></tr>
+<tr><td>Connections [ {</td><td>array[reference(<a href="hsllconnection.html#hsllconnection">HSLLConnection</a>)]</td><td></td><td>POST</td><td>read-write</td><td>This is the schema definition for the HSLLConnection resource.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;@odata.id</td><td>string</td><td></td><td></td><td>read-only</td><td>The unique identifier for a resource.<br />Format: uri</td></tr>
 <tr><td>} ]</td><td></td><td></td><td></td><td></td><td></td></tr>
 </table>
@@ -161,7 +161,7 @@ Content-Type: application/json
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;"Connections": [{
 <br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"@odata.id": "/redfish/v1/ComposedNodes/ComposedNode1/HSSConnection1"
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"@odata.id": "/redfish/v1/ComposedNodes/ComposedNode1/HSLLConnection1"
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;}]
 <br />
@@ -315,7 +315,7 @@ Content-Type: application/json
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;"Connections": [{
 <br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"@odata.id": "/redfish/v1/ComposedNodes/ComposedNode1/HSSConnection1"
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"@odata.id": "/redfish/v1/ComposedNodes/ComposedNode1/HSLLConnection1"
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;}]
 <br />

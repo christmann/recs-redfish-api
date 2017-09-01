@@ -39,15 +39,15 @@
                     },
                     "description": "The requirements for one or more ethernet interfaces"
                 },
-                "HSSInterfaces": {
+                "HSLLInterfaces": {
                     "type": "array",
                     "items": {
                         "anyOf": [
-                            {"$ref": "#/definitions/HSSInterface"},
+                            {"$ref": "#/definitions/HSLLInterface"},
                             {"type": "null"}
                         ]
                     },
-                    "description": "The requirements for one or more HSS interfaces"
+                    "description": "The requirements for one or more HSLL interfaces"
                 }
             },
             "description": "The requirements for a system"
@@ -125,7 +125,7 @@
             },
             "description": "The requirements for a ethernet interface"
         },
-        "HSSInterface": {
+        "HSLLInterface": {
             "type": "object",
             "patternProperties": {
                 "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message|Privileges)\\.[a-zA-Z_][a-zA-Z0-9_.]+$": {
@@ -148,25 +148,25 @@
                         "null"
                     ],
                     "units": "GBytes/s",
-                    "description": "The minimal value of the maximum speed of the HSS interface"
+                    "description": "The minimal value of the maximum speed of the HSLL interface"
                 },
                 "AvailableWidth": {
                     "type": [
                         "number",
                         "null"
                     ],
-                    "description": "The number of unused lanes of the HSS interface"
+                    "description": "The number of unused lanes of the HSLL interface"
                 },
                 "MaxWidth": {
                     "type": [
                         "number",
                         "null"
                     ],
-                    "description": "The minimal value of the maximum lanes of the HSS interface"
+                    "description": "The minimal value of the maximum lanes of the HSLL interface"
                 },
                 "Resource": {
                     "anyOf": [
-                        {"$ref": "http://redfish.dmtf.org/schemas/v1/HSSInterface.json#/definitions/HSSInterface"},
+                        {"$ref": "http://redfish.dmtf.org/schemas/v1/HSLLInterface.json#/definitions/HSLLInterface"},
                         {"type": "null"}
                     ],
                     "description": "The URI of a concrete resource"
@@ -193,7 +193,7 @@
                     "description": "The Chassis in which applicable resources are located"
                 }
             },
-            "description": "The requirements for a HSS interface"
+            "description": "The requirements for a HSLL interface"
         },
         "LocalStorage": {
             "type": "object",

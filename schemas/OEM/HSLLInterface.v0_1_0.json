@@ -1,9 +1,9 @@
 {
     "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema.v1_2_0.json",
-    "title": "#HSSInterface.v0_1_0.HSSInterface",
-    "$ref": "#/definitions/HSSInterface",
+    "title": "#HSLLInterface.v0_1_0.HSLLInterface",
+    "$ref": "#/definitions/HSLLInterface",
     "definitions": {
-        "HSSInterface": {
+        "HSLLInterface": {
             "type": "object",
             "patternProperties": {
                 "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message|Privileges)\\.[a-zA-Z_][a-zA-Z0-9_.]+$": {
@@ -137,8 +137,8 @@
                     "units": "GBytes/s",
                     "minimum": 0,
                     "readonly": true,
-                    "description": "The speed of current operating speed of this HSSInterface in GBps",
-                    "longDescription": "The value of this property shall contain current operating speed of this HSSInterface in GBps"
+                    "description": "The speed of current operating speed of this HSLLInterface in GBps",
+                    "longDescription": "The value of this property shall contain current operating speed of this HSLLInterface in GBps"
                 },
                 "Width": {
                     "type": [
@@ -147,8 +147,8 @@
                     ],
                     "minimum": 0,
                     "readonly": true,
-                    "description": "operating width of the HSSInterface specified in number of lanes",
-                    "longDescription": "The value of this property shall contain the operating width of the HSSInterface specified in number of lanes."
+                    "description": "operating width of the HSLLInterface specified in number of lanes",
+                    "longDescription": "The value of this property shall contain the operating width of the HSLLInterface specified in number of lanes."
                 },
                 "MaxSpeedGBps": {
                     "type": [
@@ -158,8 +158,8 @@
                     "units": "GBytes/s",
                     "minimum": 0,
                     "readonly": true,
-                    "description": "The speed of Maximum speed of this HSSInterface in GBps",
-                    "longDescription": "The value of this property shall contain Maximum speed of this HSSInterface in GBps"
+                    "description": "The speed of Maximum speed of this HSLLInterface in GBps",
+                    "longDescription": "The value of this property shall contain Maximum speed of this HSLLInterface in GBps"
                 },
                 "MaxWidth": {
                     "type": [
@@ -168,13 +168,13 @@
                     ],
                     "minimum": 0,
                     "readonly": true,
-                    "description": "Maximum width of the HSSInterface specified in number of lanes",
-                    "longDescription": "The value of this property shall contain the Maximum width of the HSSInterface specified in number of lanes."
+                    "description": "Maximum width of the HSLLInterface specified in number of lanes",
+                    "longDescription": "The value of this property shall contain the Maximum width of the HSLLInterface specified in number of lanes."
                 },
                 "Host": {
                     "$ref": "http://redfish.dmtf.org/schemas/v1/ComputerSystem.json#/definitions/ComputerSystem",
                     "readonly": true,
-                    "description": "The ComputerSystem hosting this HSSInterface",
+                    "description": "The ComputerSystem hosting this HSLLInterface",
                     "longDescription": "This object shall only contain a reference that complies to the ComputerSystem schema."
                 },
                 "Connections@odata.count": {
@@ -187,19 +187,19 @@
                 "Connections": {
                     "type": "array",
                     "items": {
-                        "$ref": "http://redfish.dmtf.org/schemas/v1/HSSConnection.json#/definitions/HSSConnection"
+                        "$ref": "http://redfish.dmtf.org/schemas/v1/HSLLConnection.json#/definitions/HSLLConnection"
                     },
                     "readonly": false,
                     "description": "An array of references to the connections that use this interface.",
-                    "longDescription": "This object shall only contain an array of references that comply to the HSSConnection schema."
+                    "longDescription": "This object shall only contain an array of references that comply to the HSLLConnection schema."
                 }
             },
             "required": [
                 "Id",
                 "Name"
             ],
-            "description": "This is the schema definition for the HSSInterface resource.",
-            "longDescription": "This is the schema definition for the HSSInterface resource. It represents the properties of a HSSInterface."
+            "description": "This is the schema definition for the HSLLInterface resource.",
+            "longDescription": "This is the schema definition for the HSLLInterface resource. It represents the properties of a HSLLInterface."
         }
     },
     "copyright": "Copyright 2014-2017 Distributed Management Task Force, Inc. (DMTF). For the full DMTF copyright policy, see http://www.dmtf.org/about/policies/copyright"

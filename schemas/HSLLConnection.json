@@ -1,15 +1,15 @@
 {
     "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema.v1_2_0.json",
-    "title": "#HSSConnection.HSSConnection",
-    "$ref": "#/definitions/HSSConnection",
+    "title": "#HSLLConnection.HSLLConnection",
+    "$ref": "#/definitions/HSLLConnection",
     "definitions": {
-        "HSSConnection": {
+        "HSLLConnection": {
             "anyOf": [
                 {
                     "$ref": "http://redfish.dmtf.org/schemas/v1/odata.4.0.0.json#/definitions/idRef"
                 },
                 {
-                    "$ref": "http://redfish.dmtf.org/schemas/v1/HSSConnection.v0_1_0.json#/definitions/HSSConnection"
+                    "$ref": "http://redfish.dmtf.org/schemas/v1/HSLLConnection.v0_1_0.json#/definitions/HSLLConnection"
                 }
             ]
         }

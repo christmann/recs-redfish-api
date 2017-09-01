@@ -52,8 +52,8 @@ table { border-collapse: collapse; }
 <a href="ethernetswitchportcollection.html#ethernetswitchportcollection">EthernetSwitchPortCollection</a><br />
 <a href="ethernetswitchstaticmac.html#ethernetswitchstaticmac">EthernetSwitchStaticMAC</a><br />
 <a href="ethernetswitchstaticmaccollection.html#ethernetswitchstaticmaccollection">EthernetSwitchStaticMACCollection</a><br />
-<a href="hssconnection.html#hssconnection">HSSConnection</a><br />
-<a href="hssinterface.html#hssinterface">HSSInterface</a><br />
+<a href="hsllconnection.html#hsllconnection">HSLLConnection</a><br />
+<a href="hsllinterface.html#hsllinterface">HSLLInterface</a><br />
 <a href="jsonschemafile.html#jsonschemafile">JsonSchemaFile</a><br />
 <a href="jsonschemafilecollection.html#jsonschemafilecollection">JsonSchemaFileCollection</a><br />
 <a href="pciedevice.html#pciedevice">PCIeDevice</a><br />
@@ -148,11 +148,11 @@ table { border-collapse: collapse; }
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@odata.id</td><td>string</td><td></td><td></td><td>read-only</td><td>The unique identifier for a resource.<br />Format: uri</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</td><td></td><td></td><td></td><td></td><td></td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;} ]</td><td></td><td></td><td></td><td></td><td></td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;HSSInterfaces [ {</td><td>array[object]</td><td></td><td></td><td>read-write</td><td>The requirements for one or more HSS interfaces</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MaxSpeedGBps</td><td>number</td><td>Yes</td><td></td><td>read-write</td><td>The minimal value of the maximum speed of the HSS interface<br />Unit: GBytes/s</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;AvailableWidth</td><td>number</td><td>Yes</td><td></td><td>read-write</td><td>The number of unused lanes of the HSS interface</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MaxWidth</td><td>number</td><td>Yes</td><td></td><td>read-write</td><td>The minimal value of the maximum lanes of the HSS interface</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Resource {</td><td>reference(<a href="hssinterface.html#hssinterface">HSSInterface</a>)</td><td>Yes</td><td></td><td>read-write</td><td>The URI of a concrete resource</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;HSLLInterfaces [ {</td><td>array[object]</td><td></td><td></td><td>read-write</td><td>The requirements for one or more HSLL interfaces</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MaxSpeedGBps</td><td>number</td><td>Yes</td><td></td><td>read-write</td><td>The minimal value of the maximum speed of the HSLL interface<br />Unit: GBytes/s</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;AvailableWidth</td><td>number</td><td>Yes</td><td></td><td>read-write</td><td>The number of unused lanes of the HSLL interface</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MaxWidth</td><td>number</td><td>Yes</td><td></td><td>read-write</td><td>The minimal value of the maximum lanes of the HSLL interface</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Resource {</td><td>reference(<a href="hsllinterface.html#hsllinterface">HSLLInterface</a>)</td><td>Yes</td><td></td><td>read-write</td><td>The URI of a concrete resource</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@odata.id</td><td>string</td><td></td><td></td><td>read-only</td><td>The unique identifier for a resource.<br />Format: uri</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</td><td></td><td></td><td></td><td></td><td></td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Baseboard {</td><td>reference(<a href="baseboard.html#baseboard">Baseboard</a>)</td><td>Yes</td><td></td><td>read-write</td><td>The Baseboard where applicable resources are located</td></tr>
@@ -327,7 +327,7 @@ Content-Type: application/json
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}]
 <br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"HSSInterfaces": [{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"HSLLInterfaces": [{
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"MaxSpeedGBps": 0
 <br />
@@ -337,7 +337,7 @@ Content-Type: application/json
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Resource": {
 <br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"@odata.id": "/redfish/v1/Systems/ComputerSystem1/HSSInterface1"
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"@odata.id": "/redfish/v1/Systems/ComputerSystem1/HSLLInterface1"
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
 <br />

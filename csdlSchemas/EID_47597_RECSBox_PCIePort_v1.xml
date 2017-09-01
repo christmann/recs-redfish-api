@@ -19,8 +19,8 @@
 	<edmx:Reference Uri="http://redfish.dmtf.org/schemas/v1/ComputerSystem_v1.xml">
 		<edmx:Include Namespace="ComputerSystem"/>
 	</edmx:Reference>
-	<edmx:Reference Uri="HSSConnection_v1.xml">
-		<edmx:Include Namespace="HSSConnection"/>
+	<edmx:Reference Uri="HSLLConnection_v1.xml">
+		<edmx:Include Namespace="HSLLConnection"/>
 	</edmx:Reference>
 	<edmx:Reference Uri="http://redfish.dmtf.org/schemas/v1/PCIeDevice_v1.xml">
 		<edmx:Include Namespace="PCIeDevice"/>
@@ -44,10 +44,10 @@
 					<Annotation Term="OData.LongDescription" String="This object shall only contain a reference that complies to the ComputerSystem, PCIeSwitch or Baseboard schema."/>
 					<Annotation Term="OData.AutoExpandReferences"/>
 				</NavigationProperty>
-				<NavigationProperty Name="Connections" Type="Collection(HSSConnection.HSSConnection)" Nullable="false">
+				<NavigationProperty Name="Connections" Type="Collection(HSLLConnection.HSLLConnection)" Nullable="false">
 					<Annotation Term="OData.Permissions" EnumMember="OData.Permission/ReadWrite"/>
 					<Annotation Term="OData.Description" String="An array of references to the connections that use this port."/>
-					<Annotation Term="OData.LongDescription" String="This object shall only contain an array of references that comply to the HSSConnection schema."/>
+					<Annotation Term="OData.LongDescription" String="This object shall only contain an array of references that comply to the HSLLConnection schema."/>
 					<Annotation Term="OData.AutoExpandReferences"/>
 				</NavigationProperty>
 				<Annotation Term="OData.AdditionalProperties" Bool="false"/>

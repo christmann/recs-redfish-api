@@ -17,8 +17,8 @@
 		<edmx:Include Namespace="Resource"/>
 		<edmx:Include Namespace="Resource.v1_0_0" />
 	</edmx:Reference>
-	<edmx:Reference Uri="HSSConnection_v1.xml">
-		<edmx:Include Namespace="HSSConnection"/>
+	<edmx:Reference Uri="HSLLConnection_v1.xml">
+		<edmx:Include Namespace="HSLLConnection"/>
 	</edmx:Reference>
 
 	<edmx:DataServices>
@@ -41,7 +41,7 @@
 
 			<Action Name="Assemble" IsBound="true">
 				<Parameter Name="ComposedNode" Type="ComposedNode.v0_1_0.Actions"/>
-				<Parameter Name="Connections" Type="Collection(HSSConnection.HSSConnection)"/>
+				<Parameter Name="Connections" Type="Collection(HSLLConnection.HSLLConnection)"/>
 				<Annotation Term="OData.Description" String="This action is used to assemble a composed node with optional concrete connections."/>
 			</Action>
 
@@ -70,10 +70,10 @@
 					<Annotation Term="OData.LongDescription" String="This object shall only contain an array of references that comply to the ComputerSystem, ComposedNode or PCIeDevice schema."/>
 					<Annotation Term="OData.AutoExpandReferences"/>
 				</NavigationProperty>
-				<NavigationProperty Name="Connections" Type="Collection(HSSConnection.HSSConnection)" Nullable="false">
+				<NavigationProperty Name="Connections" Type="Collection(HSLLConnection.HSLLConnection)" Nullable="false">
 					<Annotation Term="OData.Permissions" EnumMember="OData.Permission/ReadWrite"/>
-					<Annotation Term="OData.Description" String="An array of references to the HSSConnections that connect the nodes within this composition."/>
-					<Annotation Term="OData.LongDescription" String="This object shall only contain an array of references that comply to the HSSConnection schema."/>
+					<Annotation Term="OData.Description" String="An array of references to the HSLLConnections that connect the nodes within this composition."/>
+					<Annotation Term="OData.LongDescription" String="This object shall only contain an array of references that comply to the HSLLConnection schema."/>
 					<Annotation Term="OData.AutoExpandReferences"/>
 				</NavigationProperty>
 				<NavigationProperty Name="ComposedIn" Type="ComposedNode.ComposedNode">

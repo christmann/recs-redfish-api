@@ -1,9 +1,9 @@
 {
     "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema.v1_2_0.json",
-    "title": "#HSSInterfaceCollection.HSSInterfaceCollection",
-    "$ref": "#/definitions/HSSInterfaceCollection",
+    "title": "#HSLLInterfaceCollection.HSLLInterfaceCollection",
+    "$ref": "#/definitions/HSLLInterfaceCollection",
     "definitions": {
-        "HSSInterfaceCollection": {
+        "HSLLInterfaceCollection": {
             "anyOf": [
                 {
                     "$ref": "http://redfish.dmtf.org/schemas/v1/odata.4.0.0.json#/definitions/idRef"
@@ -60,7 +60,7 @@
                         "Members": {
                             "type": "array",
                             "items": {
-                                "$ref": "http://redfish.dmtf.org/schemas/v1/HSSInterface.json#/definitions/HSSInterface"
+                                "$ref": "http://redfish.dmtf.org/schemas/v1/HSLLInterface.json#/definitions/HSLLInterface"
                             },
                             "readonly": true,
                             "description": "Contains the members of this collection."

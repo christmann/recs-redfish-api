@@ -243,11 +243,11 @@
                 "Connections": {
                     "type": "array",
                     "items": {
-                        "$ref": "http://redfish.dmtf.org/schemas/v1/HSSConnection.json#/definitions/HSSConnection"
+                        "$ref": "http://redfish.dmtf.org/schemas/v1/HSLLConnection.json#/definitions/HSLLConnection"
                     },
                     "readonly": false,
-                    "description": "An array of references to the HSSConnections that connect the nodes within this composition.",
-                    "longDescription": "This object shall only contain an array of references that comply to the HSSConnection schema."
+                    "description": "An array of references to the HSLLConnections that connect the nodes within this composition.",
+                    "longDescription": "This object shall only contain an array of references that comply to the HSLLConnection schema."
                 },
                 "ComposedIn": {
                     "anyOf": [

@@ -19,8 +19,8 @@
 	<edmx:Reference Uri="http://redfish.dmtf.org/schemas/v1/ComputerSystem_v1.xml">
 		<edmx:Include Namespace="ComputerSystem"/>
 	</edmx:Reference>
-	<edmx:Reference Uri="HSSConnection_v1.xml">
-		<edmx:Include Namespace="HSSConnection"/>
+	<edmx:Reference Uri="HSLLConnection_v1.xml">
+		<edmx:Include Namespace="HSLLConnection"/>
 	</edmx:Reference>
 	<edmx:Reference Uri="http://redfish.dmtf.org/schemas/v1/PCIeDevice_v1.xml">
 		<edmx:Include Namespace="PCIeDevice"/>
