@@ -100,10 +100,6 @@ This schema defines a computer system and its respective properties.  A computer
 <tr><td>Name</td><td>string</td><td></td><td>GET</td><td>read-only</td><td>The name of the resource or array element.</td></tr>
 <tr><td>SystemType</td><td>string</td><td></td><td></td><td>read-only</td><td>The type of computer system represented by this resource.<br />Possible Values:<ul>
 <li>Physical: A computer system.</li>
-<li>Virtual: A virtual machine instance running on this system.</li>
-<li>OS: An operating system instance.</li>
-<li>PhysicallyPartitioned: A hardware-based partition of a computer system.</li>
-<li>VirtuallyPartitioned: A virtual or software-based partition of a computer system.</li>
 </ul></td></tr>
 <tr><td>Links {</td><td>object</td><td></td><td></td><td>read-write</td><td>Contains references to other resources that are related to this resource.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;Oem {</td><td>object</td><td></td><td></td><td>read-write</td><td>Oem extension object.</td></tr>
@@ -158,7 +154,6 @@ This schema defines a computer system and its respective properties.  A computer
 <li>UEFI: The system will boot in UEFI boot mode to the Boot Source Override Target.</li>
 </ul></td></tr>
 <tr><td>}</td><td></td><td></td><td></td><td></td><td></td></tr>
-<tr><td>BiosVersion</td><td>string</td><td>Yes</td><td></td><td>read-only</td><td>The version of the system BIOS or primary system firmware.</td></tr>
 <tr><td>ProcessorSummary {</td><td>object</td><td></td><td></td><td>read-write</td><td>This object describes the central processors of the system in general detail.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;Count</td><td>number</td><td>Yes</td><td></td><td>read-only</td><td>The number of processors in the system.<br />Minimum: 0</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;Model</td><td>string</td><td>Yes</td><td></td><td>read-only</td><td>The processor model for the primary or majority of processors in this system.</td></tr>
@@ -388,8 +383,6 @@ Content-Type: application/json
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"BootSourceOverrideMode": "Legacy"
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;}
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;"BiosVersion": "string"
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;"ProcessorSummary": {
 <br />

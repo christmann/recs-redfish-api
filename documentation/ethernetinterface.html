@@ -123,7 +123,7 @@ This schema defines a simple ethernet NIC resource.
 <tr><td>MaxIPv6StaticAddresses</td><td>number</td><td>Yes</td><td></td><td>read-only</td><td>This indicates the maximum number of Static IPv6 addresses that can be configured on this interface.</td></tr>
 <tr><td>VLAN {</td><td>object</td><td>Yes</td><td></td><td>read-write</td><td>If this Network Interface supports more than one VLAN, this property will not be present and the client should look for VLANs collection in the link section of this resource.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;VLANEnable</td><td>boolean</td><td>Yes</td><td>POST</td><td>read-write</td><td>This indicates if this VLAN is enabled.</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;VLANId</td><td>number</td><td>Yes</td><td>POST</td><td>read-write</td><td>This indicates the VLAN identifier for this VLAN.<br />Minimum: 0<br />Maximum: 4094</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;VLANId</td><td>number</td><td>Yes</td><td>POST</td><td>read-write</td><td>This indicates the VLAN identifier for this VLAN.<br />Minimum: 0<br />Maximum: 4090</td></tr>
 <tr><td>}</td><td></td><td></td><td></td><td></td><td></td></tr>
 <tr><td>IPv4Addresses [ {</td><td>array[object]</td><td></td><td></td><td>read-write</td><td>The IPv4 addresses assigned to this interface.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;Oem { }</td><td>object</td><td></td><td></td><td>read-write</td><td>Oem extension object.</td></tr>
