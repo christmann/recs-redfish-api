@@ -48,6 +48,28 @@
                         ]
                     },
                     "description": "The requirements for one or more HSLL interfaces"
+                },
+                "Resource": {
+                    "anyOf": [
+                        {"$ref": "http://redfish.dmtf.org/schemas/v1/odata.4.0.0.json#/definitions/idRef"},
+                        {"type": "null"}
+                    ],
+                    "description": "A reference to a concrete node. This can either be a ComputerSystem, a ComposedNode or a PCIeDevice.",
+                    "longDescription": "This object shall only contain a reference that complies to the ComputerSystem, ComposedNode or PCIeDevice schema."
+                },
+                "Baseboard": {
+                    "anyOf": [
+                        {"$ref": "http://redfish.dmtf.org/schemas/v1/Baseboard.json#/definitions/Baseboard"},
+                        {"type": "null"}
+                    ],
+                    "description": "The Baseboard where applicable resources are located"
+                },
+                "Backplane": {
+                    "anyOf": [
+                        {"$ref": "http://redfish.dmtf.org/schemas/v1/Backplane.json#/definitions/Backplane"},
+                        {"type": "null"}
+                    ],
+                    "description": "The Backplane where applicable resources are located"
                 }
             },
             "description": "The requirements for a system"

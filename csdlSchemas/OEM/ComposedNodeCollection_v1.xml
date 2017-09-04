@@ -99,6 +99,19 @@
 				<Property Name="HSLLInterfaces" Type="Collection(ComposedNodeAllocationSystemRequirement.v0_1_0.HSLLInterface)">
 					<Annotation Term="OData.Description" String="The requirements for one or more HSLL interfaces" />
 				</Property>
+				<NavigationProperty Name="Resource" Type="Resource.Item">
+					<Annotation Term="OData.Description" String="A reference to a concrete node. This can either be a ComputerSystem, a ComposedNode or a PCIeDevice."/>
+					<Annotation Term="OData.LongDescription" String="This object shall only contain a reference that complies to the ComputerSystem, ComposedNode or PCIeDevice schema."/>
+					<Annotation Term="OData.AutoExpandReferences"/>
+				</NavigationProperty>
+				<NavigationProperty Name="Baseboard" Type="Baseboard.Baseboard">
+					<Annotation Term="OData.Description" String="The Baseboard where applicable resources are located" />
+					<Annotation Term="OData.AutoExpandReferences"/>
+				</NavigationProperty>
+				<NavigationProperty Name="Backplane" Type="Backplane.Backplane">
+					<Annotation Term="OData.Description" String="The Backplane where applicable resources are located" />
+					<Annotation Term="OData.AutoExpandReferences"/>
+				</NavigationProperty>
 			</ComplexType>
 
 			<ComplexType Name="Processor">
