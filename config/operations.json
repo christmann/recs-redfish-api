@@ -2,6 +2,14 @@
 	"ComposedNode": [
 		"DELETE"
 	],
+	"ComposedNodeCollection": {
+		"#ComposedNodeCollection.Allocate": {
+			"Status": "201 Created",
+			"Headers": {
+				"Location": "ComposedNode"
+			}
+		}
+	},
 	"ComputerSystem": [
 		"PATCH"
 	],
