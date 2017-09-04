@@ -238,6 +238,8 @@ Content-Type: application/json
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;"AdministrativeState": "Up"
 <br />
+&nbsp;&nbsp;&nbsp;&nbsp;"AdministrativeState@Redfish.AllowableValues": ["Up", "Down"]
+<br />
 &nbsp;&nbsp;&nbsp;&nbsp;"LinkSpeedMbps": 0
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;"NeighborInfo": {
@@ -290,9 +292,15 @@ Content-Type: application/json
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;"PortClass": "Physical"
 <br />
+&nbsp;&nbsp;&nbsp;&nbsp;"PortClass@Redfish.AllowableValues": ["Physical", "Logical", "Reserved"]
+<br />
 &nbsp;&nbsp;&nbsp;&nbsp;"PortMode": "LinkAggregationStatic"
 <br />
+&nbsp;&nbsp;&nbsp;&nbsp;"PortMode@Redfish.AllowableValues": ["LinkAggregationStatic", "LinkAggregationDynamic", "Unknown"]
+<br />
 &nbsp;&nbsp;&nbsp;&nbsp;"PortType": "Upstream"
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;"PortType@Redfish.AllowableValues": ["Upstream", "Downstream", "MeshPort", "Unknown"]
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;"Status": {
 <br />
