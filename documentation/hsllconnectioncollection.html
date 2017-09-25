@@ -93,7 +93,7 @@ table { border-collapse: collapse; }
 <h3 id="get">GET</h3>
 <h4 id="request">Request</h4>
 <div class="code">
-GET /redfish/v1/Connections
+GET /redfish/v1/Root/Connections
 <br />
 Content-Type: application/json
 <br />
@@ -104,7 +104,7 @@ Content-Type: application/json
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;"@odata.context": "uri"
 <br />
-&nbsp;&nbsp;&nbsp;&nbsp;"@odata.id": /redfish/v1/Connections
+&nbsp;&nbsp;&nbsp;&nbsp;"@odata.id": /redfish/v1/Root/Connections
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;"@odata.type": "string"
 <br />
@@ -120,7 +120,7 @@ Content-Type: application/json
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;"Members": [{
 <br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"@odata.id": "/redfish/v1/Connections/HSLLConnection1"
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"@odata.id": "/redfish/v1/Root/Connections/HSLLConnection1"
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;}]
 <br />
@@ -130,7 +130,7 @@ Content-Type: application/json
 <h3 id="post">POST</h3>
 <h4 id="request">Request</h4>
 <div class="code">
-POST /redfish/v1/Connections
+POST /redfish/v1/Root/Connections
 <br />
 Content-Type: application/json
 <br />
@@ -140,7 +140,7 @@ Content-Type: application/json
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;"EndpointA": {
 <br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"@odata.id": "/redfish/v1/Connections/HSLLConnection1/EndpointA"
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"@odata.id": "/redfish/v1/Root/Connections/HSLLConnection1/EndpointA"
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;}
 <br />
@@ -151,7 +151,7 @@ Content-Type: application/json
 <div class="code">
 HTTP/1.1 201 Created
 <br />
-Location: http://{IP}:{PORT}/redfish/v1/Connections/HSLLConnection1
+Location: http://{IP}:{PORT}/redfish/v1/Root/Connections/HSLLConnection1
 <br />
 </div>
 <h3 id="patch">PATCH</h3>

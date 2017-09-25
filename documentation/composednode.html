@@ -152,7 +152,7 @@ This is the schema definition for the ComposedNode resource.
 </table>
 <h4 id="request">Request</h4>
 <div class="code">
-POST /redfish/v1/ComposedNodes/ComposedNode1/Actions/ComposedNode.Assemble
+POST /redfish/v1/Root/ComposedNodes/ComposedNode1/Actions/ComposedNode.Assemble
 <br />
 Content-Type: application/json
 <br />
@@ -160,7 +160,7 @@ Content-Type: application/json
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;"Connections": [{
 <br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"@odata.id": "/redfish/v1/Connections/HSLLConnection1"
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"@odata.id": "/redfish/v1/Root/Connections/HSLLConnection1"
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;}]
 <br />
@@ -177,7 +177,7 @@ HTTP/1.1 204 No Content
 This action has no parameters.
 <h4 id="request">Request</h4>
 <div class="code">
-POST /redfish/v1/ComposedNodes/ComposedNode1/Actions/ComposedNode.Reject
+POST /redfish/v1/Root/ComposedNodes/ComposedNode1/Actions/ComposedNode.Reject
 <br />
 Content-Type: application/json
 <br />
@@ -207,7 +207,7 @@ HTTP/1.1 204 No Content
 </table>
 <h4 id="request">Request</h4>
 <div class="code">
-POST /redfish/v1/ComposedNodes/ComposedNode1/Actions/ComposedNode.Reset
+POST /redfish/v1/Root/ComposedNodes/ComposedNode1/Actions/ComposedNode.Reset
 <br />
 Content-Type: application/json
 <br />
@@ -229,7 +229,7 @@ HTTP/1.1 204 No Content
 <h3 id="get">GET</h3>
 <h4 id="request">Request</h4>
 <div class="code">
-GET /redfish/v1/ComposedNodes/ComposedNode1
+GET /redfish/v1/Root/ComposedNodes/ComposedNode1
 <br />
 Content-Type: application/json
 <br />
@@ -240,7 +240,7 @@ Content-Type: application/json
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;"@odata.context": "uri"
 <br />
-&nbsp;&nbsp;&nbsp;&nbsp;"@odata.id": /redfish/v1/ComposedNodes/ComposedNode1
+&nbsp;&nbsp;&nbsp;&nbsp;"@odata.id": /redfish/v1/Root/ComposedNodes/ComposedNode1
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;"@odata.type": "string"
 <br />
@@ -278,7 +278,7 @@ Content-Type: application/json
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"title": "string"
 <br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"target": /redfish/v1/ComposedNodes/ComposedNode1/Actions/ComposedNode.Assemble
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"target": /redfish/v1/Root/ComposedNodes/ComposedNode1/Actions/ComposedNode.Assemble
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
 <br />
@@ -286,7 +286,7 @@ Content-Type: application/json
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"title": "string"
 <br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"target": /redfish/v1/ComposedNodes/ComposedNode1/Actions/ComposedNode.Reject
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"target": /redfish/v1/Root/ComposedNodes/ComposedNode1/Actions/ComposedNode.Reject
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
 <br />
@@ -294,7 +294,7 @@ Content-Type: application/json
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"title": "string"
 <br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"target": /redfish/v1/ComposedNodes/ComposedNode1/Actions/ComposedNode.Reset
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"target": /redfish/v1/Root/ComposedNodes/ComposedNode1/Actions/ComposedNode.Reset
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
 <br />
@@ -312,13 +312,13 @@ Content-Type: application/json
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;"Connections": {
 <br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"@odata.id": "/redfish/v1/ComposedNodes/ComposedNode1/Connections"
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"@odata.id": "/redfish/v1/Root/ComposedNodes/ComposedNode1/Connections"
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;}
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;"ComposedIn": {
 <br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"@odata.id": "/redfish/v1/ComposedNodes/ComposedNode1/ComposedIn"
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"@odata.id": "/redfish/v1/Root/ComposedNodes/ComposedNode1/ComposedIn"
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;}
 <br />
@@ -344,7 +344,7 @@ HTTP/1.1 405 Method Not Allowed
 <h3 id="delete">DELETE</h3>
 <h4 id="request">Request</h4>
 <div class="code">
-DELETE /redfish/v1/ComposedNodes/ComposedNode1
+DELETE /redfish/v1/Root/ComposedNodes/ComposedNode1
 <br />
 </div>
 <h4 id="response">Response</h4>

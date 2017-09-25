@@ -172,7 +172,7 @@ This schema defines a PCIeSwitch and its respective properties.
 </table>
 <h4 id="request">Request</h4>
 <div class="code">
-POST /redfish/v1/PCIeSwitches/PCIeSwitch1/Actions/PCIeSwitch.Reset
+POST /redfish/v1/Root/PCIeSwitches/PCIeSwitch1/Actions/PCIeSwitch.Reset
 <br />
 Content-Type: application/json
 <br />
@@ -194,7 +194,7 @@ HTTP/1.1 204 No Content
 <h3 id="get">GET</h3>
 <h4 id="request">Request</h4>
 <div class="code">
-GET /redfish/v1/PCIeSwitches/PCIeSwitch1
+GET /redfish/v1/Root/PCIeSwitches/PCIeSwitch1
 <br />
 Content-Type: application/json
 <br />
@@ -205,7 +205,7 @@ Content-Type: application/json
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;"@odata.context": "uri"
 <br />
-&nbsp;&nbsp;&nbsp;&nbsp;"@odata.id": /redfish/v1/PCIeSwitches/PCIeSwitch1
+&nbsp;&nbsp;&nbsp;&nbsp;"@odata.id": /redfish/v1/Root/PCIeSwitches/PCIeSwitch1
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;"@odata.type": "string"
 <br />
@@ -227,7 +227,7 @@ Content-Type: application/json
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Chassis": [{
 <br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"@odata.id": "/redfish/v1/PCIeSwitches/PCIeSwitch1/Chassis1"
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"@odata.id": "/redfish/v1/Root/PCIeSwitches/PCIeSwitch1/Chassis1"
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}]
 <br />
@@ -259,7 +259,7 @@ Content-Type: application/json
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"title": "string"
 <br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"target": /redfish/v1/PCIeSwitches/PCIeSwitch1/Actions/PCIeSwitch.Reset
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"target": /redfish/v1/Root/PCIeSwitches/PCIeSwitch1/Actions/PCIeSwitch.Reset
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
 <br />
@@ -279,13 +279,13 @@ Content-Type: application/json
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;"Zones": {
 <br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"@odata.id": "/redfish/v1/PCIeSwitches/PCIeSwitch1/Zones"
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"@odata.id": "/redfish/v1/Root/PCIeSwitches/PCIeSwitch1/Zones"
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;}
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;"PCIePorts": {
 <br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"@odata.id": "/redfish/v1/PCIeSwitches/PCIeSwitch1/PCIePorts"
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"@odata.id": "/redfish/v1/Root/PCIeSwitches/PCIeSwitch1/PCIePorts"
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;}
 <br />
@@ -295,7 +295,7 @@ Content-Type: application/json
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;"AttachedDevices": [{
 <br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"@odata.id": "/redfish/v1/PCIeSwitches/PCIeSwitch1/PCIeDevice1"
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"@odata.id": "/redfish/v1/Root/PCIeSwitches/PCIeSwitch1/PCIeDevice1"
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;}]
 <br />
