@@ -96,6 +96,15 @@
                     "readonly": false,
                     "description": "The second endpoint of this connection. This can either be an HSLLInterface of a ComputerSystem or a PCIePort of a PCIeSwitch or a PCIePort of a Baseboard, where a PCIeDevice can be attached.",
                     "longDescription": "This object shall only contain a reference that complies to the HSLLInterface or PCIePort schema."
+                },
+                "PCIeFunction": {
+                    "anyOf": [
+                        {"$ref": "http://redfish.dmtf.org/schemas/v1/PCIeFunction.json#/definitions/PCIeFunction"},
+                        {"type": "null"}
+                    ],
+                    "readonly": false,
+                    "description": "The reference to the PCIeFunction of this connection.",
+                    "longDescription": "This object shall only contain a reference that complies to the PCIeFunction schema."
                 }
             },
             "required": [
