@@ -149,6 +149,7 @@ This is the schema definition for the ComposedNode resource.
 <tr><td>Connections [ {</td><td>array[reference(<a href="hsllconnection.html#hsllconnection">HSLLConnection</a>)]</td><td></td><td>POST</td><td>read-write</td><td>This is the schema definition for the HSLLConnection resource.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;@odata.id</td><td>string</td><td></td><td></td><td>read-only</td><td>The unique identifier for a resource.<br />Format: uri</td></tr>
 <tr><td>} ]</td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>ResetNetworkSettings</td><td>boolean</td><td></td><td>POST</td><td>read-write</td><td>If set to true, all network settings within the composed node are reset.</td></tr>
 </table>
 <h4 id="request">Request</h4>
 <div class="code">
@@ -163,6 +164,8 @@ Content-Type: application/json
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"@odata.id": "/redfish/v1/Root/Connections/HSLLConnection1"
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;}]
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;"ResetNetworkSettings": "boolean"
 <br />
 }
 <br />

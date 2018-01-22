@@ -42,6 +42,9 @@
 			<Action Name="Assemble" IsBound="true">
 				<Parameter Name="ComposedNode" Type="ComposedNode.v0_1_0.Actions"/>
 				<Parameter Name="Connections" Type="Collection(HSLLConnection.HSLLConnection)"/>
+				<Parameter Name="ResetNetworkSettings" Type="Edm.Boolean">
+					<Annotation Term="OData.Description" String="If set to true, all network settings within the composed node are reset."/>
+				</Parameter>
 				<Annotation Term="OData.Description" String="This action is used to assemble a composed node with optional concrete connections."/>
 			</Action>
 
