@@ -136,7 +136,6 @@ A Ethernet Switch ACL Rule represents Access Control List rule for switch.
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;@odata.id</td><td>string</td><td></td><td></td><td>read-only</td><td>The unique identifier for a resource.<br />Format: uri</td></tr>
 <tr><td>}</td><td></td><td></td><td></td><td></td><td></td></tr>
 <tr><td>MirrorPortRegion@odata.count</td><td>number</td><td></td><td></td><td>read-only</td><td>The number of items in a collection.</td></tr>
-<tr><td>MirrorPortRegion@odata.navigationLink</td><td>string</td><td></td><td></td><td>read-write</td><td>Format: uri</td></tr>
 <tr><td>MirrorPortRegion [ {</td><td>array[reference(<a href="ethernetswitchport.html#ethernetswitchport">EthernetSwitchPort</a>)]</td><td></td><td></td><td>read-write</td><td>Group of interfaces (ports) which should be mirrored.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;@odata.id</td><td>string</td><td></td><td></td><td>read-only</td><td>The unique identifier for a resource.<br />Format: uri</td></tr>
 <tr><td>} ]</td><td></td><td></td><td></td><td></td><td></td></tr>
@@ -253,8 +252,6 @@ Content-Type: application/json
 &nbsp;&nbsp;&nbsp;&nbsp;}
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;"MirrorPortRegion@odata.count": 1
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;"MirrorPortRegion@odata.navigationLink": "uri"
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;"MirrorPortRegion": [{
 <br />
