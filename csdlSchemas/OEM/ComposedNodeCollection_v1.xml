@@ -78,6 +78,12 @@
 
 			<Action Name="Allocate" IsBound="true">
 				<Parameter Name="ComposedNodeCollection" Type="ComposedNodeCollection.Actions"/>
+				<Parameter Name="Name" Type="Edm.String">
+					<Annotation Term="OData.Description" String="The name of the ComposedNode" />
+				</Parameter>
+				<Parameter Name="Description" Type="Edm.String">
+					<Annotation Term="OData.Description" String="The description of the ComposedNode" />
+				</Parameter>
 				<Parameter Name="Systems" Type="Collection(ComposedNodeAllocationSystemRequirement.v0_1_0.ComposedNodeAllocationSystemRequirement)"/>
 				<Parameter Name="Devices" Type="Collection(ComposedNodeAllocationDeviceRequirement.v0_1_0.ComposedNodeAllocationDeviceRequirement)"/>
 				<Annotation Term="OData.Description" String="This action is used to allocate a composed node."/>
@@ -98,6 +104,9 @@
 				</Property>
 				<Property Name="HSLLInterfaces" Type="Collection(ComposedNodeAllocationSystemRequirement.v0_1_0.HSLLInterface)">
 					<Annotation Term="OData.Description" String="The requirements for one or more HSLL interfaces" />
+				</Property>
+				<Property Name="TotalProcessorCoreCount" Type="Edm.Int64">
+					<Annotation Term="OData.Description" String="The total amount of processor cores for this system." />
 				</Property>
 				<NavigationProperty Name="Resource" Type="Resource.Item">
 					<Annotation Term="OData.Description" String="A reference to a concrete node. This can either be a ComputerSystem, a ComposedNode or a PCIeDevice."/>

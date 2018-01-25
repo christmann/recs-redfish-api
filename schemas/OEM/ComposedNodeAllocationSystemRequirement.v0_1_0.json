@@ -49,6 +49,13 @@
                     },
                     "description": "The requirements for one or more HSLL interfaces"
                 },
+                "TotalProcessorCoreCount": {
+                    "type": [
+                        "number",
+                        "null"
+                    ],
+                    "description": "The total amount of processor cores for this system."
+                },
                 "Resource": {
                     "anyOf": [
                         {"$ref": "http://redfish.dmtf.org/schemas/v1/odata.4.0.0.json#/definitions/idRef"},
