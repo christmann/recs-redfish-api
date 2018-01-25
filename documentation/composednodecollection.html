@@ -134,9 +134,9 @@ table { border-collapse: collapse; }
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;} ]</td><td></td><td></td><td></td><td></td><td></td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;EthernetInterfaces [ {</td><td>array[object]</td><td></td><td></td><td>read-write</td><td>The requirements for one or more ethernet interfaces</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SpeedMbps</td><td>number</td><td>Yes</td><td></td><td>read-write</td><td>The minimum speed of the ethernet interface<br />Unit: Mbit/s</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PrimaryVLAN</td><td>number</td><td>Yes</td><td></td><td>read-write</td><td>The primary VLAN ID of the ethernet interface</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PrimaryVLAN</td><td>number</td><td>Yes</td><td></td><td>read-write</td><td>The primary VLAN ID of the ethernet interface<br />Minimum: 0<br />Maximum: 4090</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;VLANs [ {</td><td>array[object]</td><td></td><td></td><td>read-write</td><td>The VLANs of the ethernet interface</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;VLANId</td><td>number</td><td>Yes</td><td></td><td>read-write</td><td>The ID of the VLAN</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;VLANId</td><td>number</td><td>Yes</td><td></td><td>read-write</td><td>The ID of the VLAN<br />Minimum: 0<br />Maximum: 4090</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Tagged</td><td>boolean</td><td>Yes</td><td></td><td>read-write</td><td>The tagged value of the VLAN</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;} ]</td><td></td><td></td><td></td><td></td><td></td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Resource {</td><td>reference(<a href="ethernetinterface.html#ethernetinterface">EthernetInterface</a>)</td><td>Yes</td><td></td><td>read-write</td><td>The URI of a concrete resource</td></tr>

@@ -107,9 +107,9 @@
                     "description": "The minimum speed of the ethernet interface"
                 },
                 "PrimaryVLAN": {
-                    "type": [
-                        "number",
-                        "null"
+                    "anyOf": [
+                        {"$ref": "http://redfish.dmtf.org/schemas/v1/VLanNetworkInterface.v1_0_0.json#/definitions/VLANId"},
+                        {"type": "null"}
                     ],
                     "description": "The primary VLAN ID of the ethernet interface"
                 },
@@ -440,9 +440,9 @@
             "additionalProperties": false,
             "properties": {
                 "VLANId": {
-                    "type": [
-                        "number",
-                        "null"
+                    "anyOf": [
+                        {"$ref": "http://redfish.dmtf.org/schemas/v1/VLanNetworkInterface.v1_0_0.json#/definitions/VLANId"},
+                        {"type": "null"}
                     ],
                     "description": "The ID of the VLAN"
                 },

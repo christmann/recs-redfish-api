@@ -51,6 +51,9 @@
 	<edmx:Reference Uri="PCIePort_v1.xml">
 		<edmx:Include Namespace="PCIePort"/>
 	</edmx:Reference>
+	<edmx:Reference Uri="http://redfish.dmtf.org/schemas/v1/VLanNetworkInterface_v1.xml">
+		<edmx:Include Namespace="VLanNetworkInterface.v1_0_0"/>
+	</edmx:Reference>
 
 	<edmx:DataServices>
 		<Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="ComposedNodeCollection">
@@ -222,7 +225,7 @@
 					<Annotation Term="OData.Description" String="The minimum speed of the ethernet interface" />
 					<Annotation Term="Measures.Unit" String="Mbit/s"/>
 				</Property>
-				<Property Name="PrimaryVLAN" Type="Edm.Int32">
+				<Property Name="PrimaryVLAN" Type="VLanNetworkInterface.v1_0_0.VLANId">
 					<Annotation Term="OData.Description" String="The primary VLAN ID of the ethernet interface" />
 				</Property>
 				<Property Name="VLANs" Type="Collection(ComposedNodeAllocationSystemRequirement.v0_1_0.VLAN)">
@@ -245,7 +248,7 @@
 			<ComplexType Name="VLAN">
 				<Annotation Term="OData.AdditionalProperties" Bool="false"/>
 				<Annotation Term="OData.Description" String="The VLAN ID and tagged property" />
-				<Property Name="VLANId" Type="Edm.Int32">
+				<Property Name="VLANId" Type="VLanNetworkInterface.v1_0_0.VLANId">
 					<Annotation Term="OData.Description" String="The ID of the VLAN" />
 				</Property>
 				<Property Name="Tagged" Type="Edm.Boolean">
