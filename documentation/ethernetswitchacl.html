@@ -119,7 +119,7 @@ A Ethernet Switch ACL represents Access Control List for switch.
 </table>
 <h4 id="request">Request</h4>
 <div class="code">
-POST /redfish/v1/Root/EthernetSwitches/EthernetSwitch1/ACLs/EthernetSwitchACL1/Actions/EthernetSwitchACL.Bind
+POST /redfish/v1/EthernetSwitches/EthernetSwitch1/ACLs/EthernetSwitchACL1/Actions/EthernetSwitchACL.Bind
 <br />
 Content-Type: application/json
 <br />
@@ -127,7 +127,7 @@ Content-Type: application/json
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;"Port": [{
 <br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"@odata.id": "/redfish/v1/Root/EthernetSwitches/EthernetSwitch1/Ports/EthernetSwitchPort1"
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"@odata.id": "/redfish/v1/EthernetSwitches/EthernetSwitch1/Ports/EthernetSwitchPort1"
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;}]
 <br />
@@ -149,7 +149,7 @@ HTTP/1.1 204 No Content
 </table>
 <h4 id="request">Request</h4>
 <div class="code">
-POST /redfish/v1/Root/EthernetSwitches/EthernetSwitch1/ACLs/EthernetSwitchACL1/Actions/EthernetSwitchACL.Unbind
+POST /redfish/v1/EthernetSwitches/EthernetSwitch1/ACLs/EthernetSwitchACL1/Actions/EthernetSwitchACL.Unbind
 <br />
 Content-Type: application/json
 <br />
@@ -157,7 +157,7 @@ Content-Type: application/json
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;"Port": [{
 <br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"@odata.id": "/redfish/v1/Root/EthernetSwitches/EthernetSwitch1/Ports/EthernetSwitchPort1"
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"@odata.id": "/redfish/v1/EthernetSwitches/EthernetSwitch1/Ports/EthernetSwitchPort1"
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;}]
 <br />
@@ -173,7 +173,7 @@ HTTP/1.1 204 No Content
 <h3 id="get">GET</h3>
 <h4 id="request">Request</h4>
 <div class="code">
-GET /redfish/v1/Root/EthernetSwitches/EthernetSwitch1/ACLs/EthernetSwitchACL1
+GET /redfish/v1/EthernetSwitches/EthernetSwitch1/ACLs/EthernetSwitchACL1
 <br />
 Content-Type: application/json
 <br />
@@ -184,7 +184,7 @@ Content-Type: application/json
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;"@odata.context": "uri"
 <br />
-&nbsp;&nbsp;&nbsp;&nbsp;"@odata.id": /redfish/v1/Root/EthernetSwitches/EthernetSwitch1/ACLs/EthernetSwitchACL1
+&nbsp;&nbsp;&nbsp;&nbsp;"@odata.id": /redfish/v1/EthernetSwitches/EthernetSwitch1/ACLs/EthernetSwitchACL1
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;"@odata.type": "string"
 <br />
@@ -206,7 +206,7 @@ Content-Type: application/json
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"BoundPorts": [{
 <br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"@odata.id": "/redfish/v1/Root/EthernetSwitches/EthernetSwitch1/ACLs/EthernetSwitchACL1/EthernetSwitchPort1"
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"@odata.id": "/redfish/v1/EthernetSwitches/EthernetSwitch1/ACLs/EthernetSwitchACL1/EthernetSwitchPort1"
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}]
 <br />
@@ -220,7 +220,7 @@ Content-Type: application/json
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"title": "string"
 <br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"target": /redfish/v1/Root/EthernetSwitches/EthernetSwitch1/ACLs/EthernetSwitchACL1/Actions/EthernetSwitchACL.Bind
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"target": /redfish/v1/EthernetSwitches/EthernetSwitch1/ACLs/EthernetSwitchACL1/Actions/EthernetSwitchACL.Bind
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
 <br />
@@ -228,7 +228,7 @@ Content-Type: application/json
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"title": "string"
 <br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"target": /redfish/v1/Root/EthernetSwitches/EthernetSwitch1/ACLs/EthernetSwitchACL1/Actions/EthernetSwitchACL.Unbind
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"target": /redfish/v1/EthernetSwitches/EthernetSwitch1/ACLs/EthernetSwitchACL1/Actions/EthernetSwitchACL.Unbind
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
 <br />
@@ -236,7 +236,7 @@ Content-Type: application/json
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;"Rules": {
 <br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"@odata.id": "/redfish/v1/Root/EthernetSwitches/EthernetSwitch1/ACLs/EthernetSwitchACL1/Rules"
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"@odata.id": "/redfish/v1/EthernetSwitches/EthernetSwitch1/ACLs/EthernetSwitchACL1/Rules"
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;}
 <br />
@@ -254,7 +254,7 @@ HTTP/1.1 405 Method Not Allowed
 <h3 id="patch">PATCH</h3>
 <h4 id="request">Request</h4>
 <div class="code">
-PATCH /redfish/v1/Root/EthernetSwitches/EthernetSwitch1/ACLs/EthernetSwitchACL1
+PATCH /redfish/v1/EthernetSwitches/EthernetSwitch1/ACLs/EthernetSwitchACL1
 <br />
 Content-Type: application/json
 <br />
@@ -262,7 +262,7 @@ Content-Type: application/json
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;"Rules": {
 <br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"@odata.id": "/redfish/v1/Root/EthernetSwitches/EthernetSwitch1/ACLs/EthernetSwitchACL1/Rules"
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"@odata.id": "/redfish/v1/EthernetSwitches/EthernetSwitch1/ACLs/EthernetSwitchACL1/Rules"
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;}
 <br />
@@ -277,7 +277,7 @@ HTTP/1.1 204 No Content
 <h3 id="delete">DELETE</h3>
 <h4 id="request">Request</h4>
 <div class="code">
-DELETE /redfish/v1/Root/EthernetSwitches/EthernetSwitch1/ACLs/EthernetSwitchACL1
+DELETE /redfish/v1/EthernetSwitches/EthernetSwitch1/ACLs/EthernetSwitchACL1
 <br />
 </div>
 <h4 id="response">Response</h4>
