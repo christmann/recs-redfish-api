@@ -111,26 +111,16 @@ table { border-collapse: collapse; }
 <li>CPU: A Central Processing Unit</li>
 <li>GPU: A Graphics Processing Unit</li>
 <li>FPGA: A Field Programmable Gate Array</li>
-<li>DSP: A Digital Signal Processor</li>
-<li>Accelerator: An Accelerator</li>
-<li>OEM: An OEM-defined Processing Unit</li>
 </ul></td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ProcessorArchitecture</td><td>string</td><td>Yes</td><td></td><td>read-write</td><td>The architecture of the processor<br />Possible Values:<ul>
 <li>x86: x86 or x86-64</li>
-<li>IA-64: Intel Itanium</li>
 <li>ARM: ARM</li>
-<li>MIPS: MIPS</li>
-<li>OEM: OEM-defined</li>
 </ul></td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;InstructionSet</td><td>string</td><td>Yes</td><td></td><td>read-write</td><td>The instruction set of the processor<br />Possible Values:<ul>
 <li>x86: x86 32-bit</li>
 <li>x86-64: x86 64-bit</li>
-<li>IA-64: Intel IA-64</li>
 <li>ARM-A32: ARM 32-bit</li>
 <li>ARM-A64: ARM 64-bit</li>
-<li>MIPS32: MIPS 32-bit</li>
-<li>MIPS64: MIPS 64-bit</li>
-<li>OEM: OEM-defined</li>
 </ul></td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Resource {</td><td>reference(<a href="processor.html#processor">Processor</a>)</td><td>Yes</td><td></td><td>read-write</td><td>The URI of a concrete resource</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@odata.id</td><td>string</td><td></td><td></td><td>read-only</td><td>The unique identifier for a resource.<br />Format: uri</td></tr>
@@ -277,15 +267,15 @@ Content-Type: application/json
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"ProcessorType": "CPU"
 <br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"ProcessorType@Redfish.AllowableValues": ["CPU", "GPU", "FPGA", "DSP", "Accelerator", "OEM"]
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"ProcessorType@Redfish.AllowableValues": ["CPU", "GPU", "FPGA"]
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"ProcessorArchitecture": "x86"
 <br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"ProcessorArchitecture@Redfish.AllowableValues": ["x86", "IA-64", "ARM", "MIPS", "OEM"]
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"ProcessorArchitecture@Redfish.AllowableValues": ["x86", "ARM"]
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"InstructionSet": "x86"
 <br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"InstructionSet@Redfish.AllowableValues": ["x86", "x86-64", "IA-64", "ARM-A32", "ARM-A64", "MIPS32", "MIPS64", "OEM"]
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"InstructionSet@Redfish.AllowableValues": ["x86", "x86-64", "ARM-A32", "ARM-A64"]
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Resource": {
 <br />
