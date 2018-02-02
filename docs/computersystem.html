@@ -256,8 +256,6 @@ Content-Type: application/json
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;"ResetType": "On"
 <br />
-&nbsp;&nbsp;&nbsp;&nbsp;"ResetType@Redfish.AllowableValues": ["On", "ForceOff", "GracefulShutdown", "GracefulRestart", "ForceRestart", "ForceOn", "PushPowerButton"]
-<br />
 }
 <br />
 </div>
@@ -483,23 +481,15 @@ Content-Type: application/json
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;"IndicatorLED": "Unknown"
 <br />
-&nbsp;&nbsp;&nbsp;&nbsp;"IndicatorLED@Redfish.AllowableValues": ["Unknown", "Lit", "Blinking", "Off"]
-<br />
 &nbsp;&nbsp;&nbsp;&nbsp;"Boot": {
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"BootSourceOverrideTarget": "None"
 <br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"BootSourceOverrideTarget@Redfish.AllowableValues": ["None", "Pxe", "Cd", "Usb", "Hdd"]
-<br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"BootSourceOverrideEnabled": "Disabled"
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"BootSourceOverrideEnabled@Redfish.AllowableValues": ["Disabled", "Once", "Continuous"]
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"UefiTargetBootSourceOverride": "string"
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"BootSourceOverrideMode": "Legacy"
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"BootSourceOverrideMode@Redfish.AllowableValues": ["Legacy", "UEFI"]
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;}
 <br />
