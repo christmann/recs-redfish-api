@@ -150,7 +150,6 @@ This is the schema definition for the PCIeFunction resource.  It represents the 
 <tr><td>Links {</td><td>object</td><td></td><td></td><td>read-write</td><td>The links object contains the links to other resources that are related to this resource.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;Oem { }</td><td>object</td><td></td><td></td><td>read-write</td><td>Oem extension object.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;EthernetInterfaces@odata.count</td><td>number</td><td></td><td></td><td>read-only</td><td>The number of items in a collection.</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;EthernetInterfaces@odata.navigationLink</td><td>string</td><td></td><td></td><td>read-write</td><td>Format: uri</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;EthernetInterfaces [ {</td><td>array[reference(<a href="ethernetinterface.html#ethernetinterface">EthernetInterface</a>)]</td><td></td><td></td><td>read-only</td><td>An array of references to the ethernet interfaces which the PCIe device produces.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@odata.id</td><td>string</td><td></td><td></td><td>read-only</td><td>The unique identifier for a resource.<br />Format: uri</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;} ]</td><td></td><td></td><td></td><td></td><td></td></tr>
@@ -221,8 +220,6 @@ Content-Type: application/json
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Oem": { }
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"EthernetInterfaces@odata.count": 1
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"EthernetInterfaces@odata.navigationLink": "uri"
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"EthernetInterfaces": [{
 <br />

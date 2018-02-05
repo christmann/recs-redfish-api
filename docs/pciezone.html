@@ -114,12 +114,10 @@ This is the schema definition for the PCIe zone resource.
 <tr><td>Links {</td><td>object</td><td></td><td></td><td>read-only</td><td>The links object contains the links to other resources that are related to this resource.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;Oem { }</td><td>object</td><td></td><td></td><td>read-write</td><td>Oem extension object.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;PortsInZone@odata.count</td><td>number</td><td></td><td></td><td>read-only</td><td>The number of items in a collection.</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;PortsInZone@odata.navigationLink</td><td>string</td><td></td><td></td><td>read-write</td><td>Format: uri</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;PortsInZone [ {</td><td>array[reference(<a href="pcieport.html#pcieport">PCIePort</a>)]</td><td></td><td></td><td>read-only</td><td>An array of references to the PCIe upstream ports associated with this PCIe zone</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@odata.id</td><td>string</td><td></td><td></td><td>read-only</td><td>The unique identifier for a resource.<br />Format: uri</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;} ]</td><td></td><td></td><td></td><td></td><td></td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;DeviceFunctionsInZone@odata.count</td><td>number</td><td></td><td></td><td>read-only</td><td>The number of items in a collection.</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;DeviceFunctionsInZone@odata.navigationLink</td><td>string</td><td></td><td></td><td>read-write</td><td>Format: uri</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;DeviceFunctionsInZone [ {</td><td>array[reference(<a href="pciefunction.html#pciefunction">PCIeFunction</a>)]</td><td></td><td></td><td>read-only</td><td>An array of references to the PCIeFunctions associated with this PCIe zone</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@odata.id</td><td>string</td><td></td><td></td><td>read-only</td><td>The unique identifier for a resource.<br />Format: uri</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;} ]</td><td></td><td></td><td></td><td></td><td></td></tr>
@@ -170,8 +168,6 @@ Content-Type: application/json
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"PortsInZone@odata.count": 1
 <br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"PortsInZone@odata.navigationLink": "uri"
-<br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"PortsInZone": [{
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"@odata.id": "/redfish/v1/PCIeSwitches/PCIeSwitch1/Zones/PCIeZone1/PCIePort1"
@@ -179,8 +175,6 @@ Content-Type: application/json
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}]
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"DeviceFunctionsInZone@odata.count": 1
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"DeviceFunctionsInZone@odata.navigationLink": "uri"
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"DeviceFunctionsInZone": [{
 <br />

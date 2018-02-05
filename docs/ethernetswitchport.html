@@ -191,7 +191,6 @@ A Ethernet Switch Port represents a port for switch.
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@odata.id</td><td>string</td><td></td><td></td><td>read-only</td><td>The unique identifier for a resource.<br />Format: uri</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;}</td><td></td><td></td><td></td><td></td><td></td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;ActiveACLs@odata.count</td><td>number</td><td></td><td></td><td>read-only</td><td>The number of items in a collection.</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;ActiveACLs@odata.navigationLink</td><td>string</td><td></td><td></td><td>read-write</td><td>Format: uri</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;ActiveACLs [ {</td><td>array[reference(<a href="ethernetswitchacl.html#ethernetswitchacl">EthernetSwitchACL</a>)]</td><td></td><td></td><td>read-write</td><td>A Ethernet Switch ACL represents Access Control List for switch.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@odata.id</td><td>string</td><td></td><td></td><td>read-only</td><td>The unique identifier for a resource.<br />Format: uri</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;} ]</td><td></td><td></td><td></td><td></td><td></td></tr>
@@ -331,8 +330,6 @@ Content-Type: application/json
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"ActiveACLs@odata.count": 1
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"ActiveACLs@odata.navigationLink": "uri"
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"ActiveACLs": [{
 <br />
