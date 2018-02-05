@@ -25,21 +25,11 @@
                     "description": "The Baseboard hosting the PCIePort this PCIeDevice is attached to",
                     "longDescription": "This object shall only contain a reference that complies to the Baseboard schema."
                 },
-                "Backplanes@odata.count": {
-                    "$ref": "http://redfish.dmtf.org/schemas/v1/odata.4.0.0.json#/definitions/count"
-                },
-                "Backplanes@odata.navigationLink": {
-                    "type": "string",
-                    "format": "uri"
-                },
-                "Backplanes": {
-                    "type": "array",
-                    "items": {
-                        "$ref": "http://redfish.dmtf.org/schemas/v1/Backplane.json#/definitions/Backplane"
-                    },
+                "Backplane": {
+                    "$ref": "http://redfish.dmtf.org/schemas/v1/Backplane.json#/definitions/Backplane",
                     "readonly": true,
-                    "description": "An array of references to the Backplanes the Baseboard of this PCIeDevice is connected to.",
-                    "longDescription": "This object shall only contain an array of references that comply to the Backplane schema."
+                    "description": "A reference to the Backplane the Baseboard of this PCIeDevice is connected to.",
+                    "longDescription": "This object shall only contain a reference that complies to the Backplane schema."
                 }
             },
             "description": "Base type for an Oem object.",

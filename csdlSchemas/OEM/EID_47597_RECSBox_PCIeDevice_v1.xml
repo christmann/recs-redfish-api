@@ -62,10 +62,10 @@
 					<Annotation Term="OData.LongDescription" String="This object shall only contain a reference that complies to the Baseboard schema."/>
 					<Annotation Term="OData.AutoExpandReferences"/>
 				</NavigationProperty>
-				<NavigationProperty Name="Backplanes" Type="Collection(Backplane.Backplane)" Nullable="false">
+				<NavigationProperty Name="Backplane" Type="Backplane.Backplane" Nullable="false">
 					<Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
-					<Annotation Term="OData.Description" String="An array of references to the Backplanes the Baseboard of this PCIeDevice is connected to."/>
-					<Annotation Term="OData.LongDescription" String="This object shall only contain an array of references that comply to the Backplane schema."/>
+					<Annotation Term="OData.Description" String="A reference to the Backplane the Baseboard of this PCIeDevice is connected to."/>
+					<Annotation Term="OData.LongDescription" String="This object shall only contain a reference that complies to the Backplane schema."/>
 					<Annotation Term="OData.AutoExpandReferences"/>
 				</NavigationProperty>
 			</ComplexType>
