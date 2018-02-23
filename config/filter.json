@@ -30,7 +30,8 @@
 					"PushPowerButton"
 				]
 			}
-		}
+		},
+		"Backplane": true
 	},
 	"Chassis": {
 		"AssetTag": true,
@@ -45,7 +46,12 @@
 			"Contains": true,
 			"ManagersInChassis": true,
 			"Drives": true,
-			"Storage": true
+			"Storage": true,
+			"Oem" : {
+				"EID_47597": {
+					"Backplanes": true
+				}
+			}
 		},
 		"Actions": {
 			"#Chassis.Reset": true
@@ -95,7 +101,8 @@
 							"x86-64",
 							"ARM-A32",
 							"ARM-A64"
-						]
+						],
+						"Backplane": true
 					}
 				}
 			}
@@ -115,7 +122,12 @@
 			"ManagedBy": true,
 			"PoweredBy": true,
 			"CooledBy": true,
-			"Endpoints": true
+			"Endpoints": true,
+			"Oem" : {
+				"EID_47597": {
+					"Backplane": true
+				}
+			}
 		},
 		"Actions": {
 			"#ComputerSystem.Reset": {
@@ -205,7 +217,12 @@
 		"AssetTag": true,
 		"Links": {
 			"Endpoints": true,
-			"HostInterface": true
+			"HostInterface": true,
+			"Oem" : {
+				"EID_47597": {
+					"Backplane": true
+				}
+			}
 		}
 	},
 	"PCIeFunction": {

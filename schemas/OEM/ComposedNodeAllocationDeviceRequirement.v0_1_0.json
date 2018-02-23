@@ -63,13 +63,6 @@
                         {"type": "null"}
                     ],
                     "description": "The Baseboard where applicable resources are located"
-                },
-                "Backplane": {
-                    "anyOf": [
-                        {"$ref": "http://redfish.dmtf.org/schemas/v1/Backplane.json#/definitions/Backplane"},
-                        {"type": "null"}
-                    ],
-                    "description": "The Backplane where applicable resources are located"
                 }
             },
             "description": "The requirements for a PCIe device"
@@ -214,13 +207,6 @@
                         {"type": "null"}
                     ],
                     "description": "The Baseboard where applicable resources are located"
-                },
-                "Backplane": {
-                    "anyOf": [
-                        {"$ref": "http://redfish.dmtf.org/schemas/v1/Backplane.json#/definitions/Backplane"},
-                        {"type": "null"}
-                    ],
-                    "description": "The Backplane where applicable resources are located"
                 }
             },
             "description": "The requirements for a PCIe device port"

@@ -70,13 +70,6 @@
                         {"type": "null"}
                     ],
                     "description": "The Baseboard where applicable resources are located"
-                },
-                "Backplane": {
-                    "anyOf": [
-                        {"$ref": "http://redfish.dmtf.org/schemas/v1/Backplane.json#/definitions/Backplane"},
-                        {"type": "null"}
-                    ],
-                    "description": "The Backplane where applicable resources are located"
                 }
             },
             "description": "The requirements for a system"
@@ -136,13 +129,6 @@
                         {"type": "null"}
                     ],
                     "description": "The Baseboard where applicable resources are located"
-                },
-                "Backplane": {
-                    "anyOf": [
-                        {"$ref": "http://redfish.dmtf.org/schemas/v1/Backplane.json#/definitions/Backplane"},
-                        {"type": "null"}
-                    ],
-                    "description": "The Backplane where applicable resources are located"
                 }
             },
             "description": "The requirements for a ethernet interface"
@@ -199,13 +185,6 @@
                         {"type": "null"}
                     ],
                     "description": "The Baseboard where applicable resources are located"
-                },
-                "Backplane": {
-                    "anyOf": [
-                        {"$ref": "http://redfish.dmtf.org/schemas/v1/Backplane.json#/definitions/Backplane"},
-                        {"type": "null"}
-                    ],
-                    "description": "The Backplane where applicable resources are located"
                 }
             },
             "description": "The requirements for a HSLL interface"
@@ -248,13 +227,6 @@
                         {"type": "null"}
                     ],
                     "description": "The Baseboard where applicable resources are located"
-                },
-                "Backplane": {
-                    "anyOf": [
-                        {"$ref": "http://redfish.dmtf.org/schemas/v1/Backplane.json#/definitions/Backplane"},
-                        {"type": "null"}
-                    ],
-                    "description": "The Backplane where applicable resources are located"
                 }
             },
             "description": "The requirements for a local storage"
@@ -327,13 +299,6 @@
                         {"type": "null"}
                     ],
                     "description": "The Baseboard where applicable resources are located"
-                },
-                "Backplane": {
-                    "anyOf": [
-                        {"$ref": "http://redfish.dmtf.org/schemas/v1/Backplane.json#/definitions/Backplane"},
-                        {"type": "null"}
-                    ],
-                    "description": "The Backplane where applicable resources are located"
                 }
             },
             "description": "The requirements for a memory configuration"
@@ -411,13 +376,6 @@
                         {"type": "null"}
                     ],
                     "description": "The Baseboard where applicable resources are located"
-                },
-                "Backplane": {
-                    "anyOf": [
-                        {"$ref": "http://redfish.dmtf.org/schemas/v1/Backplane.json#/definitions/Backplane"},
-                        {"type": "null"}
-                    ],
-                    "description": "The Backplane where applicable resources are located"
                 }
             },
             "description": "The requirements for a processor"

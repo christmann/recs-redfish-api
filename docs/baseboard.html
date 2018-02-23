@@ -32,7 +32,6 @@ table { border-collapse: collapse; }
 <body>
 <div class="menu">
 <h3 id="schema navigation">Schema Navigation</h3>
-<a href="backplane.html#backplane">Backplane</a><br />
 <a href="baseboard.html#baseboard">Baseboard</a><br />
 <a href="chassis.html#chassis">Chassis</a><br />
 <a href="chassiscollection.html#chassiscollection">ChassisCollection</a><br />
@@ -142,9 +141,6 @@ This is the schema definition for the Baseboard resource.
 <tr><td>PCIeSwitches [ {</td><td>array[reference(<a href="pcieswitch.html#pcieswitch">PCIeSwitch</a>)]</td><td></td><td></td><td>read-only</td><td>An array of references to the PCIeSwitches hosted on this Baseboard.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;@odata.id</td><td>string</td><td></td><td></td><td>read-only</td><td>The unique identifier for a resource.<br />Format: uri</td></tr>
 <tr><td>} ]</td><td></td><td></td><td></td><td></td><td></td></tr>
-<tr><td>Backplane {</td><td>reference(<a href="backplane.html#backplane">Backplane</a>)</td><td></td><td></td><td>read-only</td><td>A reference to the Backplane this Baseboard is connected to.</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;@odata.id</td><td>string</td><td></td><td></td><td>read-only</td><td>The unique identifier for a resource.<br />Format: uri</td></tr>
-<tr><td>}</td><td></td><td></td><td></td><td></td><td></td></tr>
 </table>
 <h2 id="actions">Actions</h2>
 <h3 id="#baseboard.reset">#Baseboard.Reset</h3>
@@ -271,12 +267,6 @@ Content-Type: application/json
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"@odata.id": "/redfish/v1/Systems/ComputerSystem1/Baseboard/PCIeSwitch1"
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;}]
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;"Backplane": {
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"@odata.id": "/redfish/v1/Systems/ComputerSystem1/Baseboard/Backplane"
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;}
 <br />
 }
 <br />
