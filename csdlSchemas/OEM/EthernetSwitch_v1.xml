@@ -28,8 +28,8 @@
 		<edmx:Include Namespace="Resource"/>
 		<edmx:Include Namespace="Resource.v1_0_0" />
 	</edmx:Reference>
-	<edmx:Reference Uri="http://redfish.dmtf.org/schemas/v1/Manager_v1.xml">
-		<edmx:Include Namespace="Manager"/>
+	<edmx:Reference Uri="http://redfish.dmtf.org/schemas/v1/ManagerCollection_v1.xml">
+		<edmx:Include Namespace="ManagerCollection"/>
 	</edmx:Reference>
 	<edmx:Reference Uri="http://redfish.dmtf.org/schemas/v1/Chassis_v1.xml">
 		<edmx:Include Namespace="Chassis"/>
@@ -116,8 +116,10 @@
 				<NavigationProperty Name="Chassis" Type="Chassis.Chassis">
 					<Annotation Term="OData.AutoExpandReferences"/>
 				</NavigationProperty>
-				<NavigationProperty Name="ManagedBy" Type="Collection(Manager.Manager)">
+				<NavigationProperty Name="ManagedBy" Type="ManagerCollection.ManagerCollection">
 					<Annotation Term="OData.AutoExpandReferences"/>
+					<Annotation Term="OData.Description" String="This is a link to a collection of Managers associated with this switch."/>
+					<Annotation Term="OData.LongDescription" String="This object shall only contain a reference to a collection of resources that comply to the Manager schema."/>
 				</NavigationProperty>
 			</ComplexType>
 		</Schema>

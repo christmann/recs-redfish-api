@@ -45,69 +45,29 @@
             },
             "additionalProperties": true,
             "properties": {
-                "Backplanes@odata.count": {
-                    "$ref": "http://redfish.dmtf.org/schemas/v1/odata.4.0.0.json#/definitions/count"
-                },
-                "Backplanes@odata.navigationLink": {
-                    "type": "string",
-                    "format": "uri"
-                },
                 "Backplanes": {
-                    "type": "array",
-                    "items": {
-                        "$ref": "http://redfish.dmtf.org/schemas/v1/Backplane.json#/definitions/Backplane"
-                    },
+                    "$ref": "http://redfish.dmtf.org/schemas/v1/BackplaneCollection.json#/definitions/BackplaneCollection",
                     "readonly": true,
-                    "description": "An array of references to the Backplanes within this Chassis.",
-                    "longDescription": "This object shall only contain an array of references that comply to the Backplane schema."
-                },
-                "Baseboards@odata.count": {
-                    "$ref": "http://redfish.dmtf.org/schemas/v1/odata.4.0.0.json#/definitions/count"
-                },
-                "Baseboards@odata.navigationLink": {
-                    "type": "string",
-                    "format": "uri"
+                    "description": "This is a link to a collection of Backplanes within this Chassis.",
+                    "longDescription": "This object shall only contain a reference to a collection of resources that comply to the Backplane schema."
                 },
                 "Baseboards": {
-                    "type": "array",
-                    "items": {
-                        "$ref": "http://redfish.dmtf.org/schemas/v1/Baseboard.json#/definitions/Baseboard"
-                    },
+                    "$ref": "http://redfish.dmtf.org/schemas/v1/BaseboardCollection.json#/definitions/BaseboardCollection",
                     "readonly": true,
-                    "description": "An array of references to the Baseboards within this Chassis.",
-                    "longDescription": "This object shall only contain an array of references that comply to the Baseboard schema."
-                },
-                "EthernetSwitches@odata.count": {
-                    "$ref": "http://redfish.dmtf.org/schemas/v1/odata.4.0.0.json#/definitions/count"
-                },
-                "EthernetSwitches@odata.navigationLink": {
-                    "type": "string",
-                    "format": "uri"
+                    "description": "This is a link to a collection of Baseboards within this Chassis.",
+                    "longDescription": "This object shall only contain a reference to a collection of resources that comply to the Baseboard schema."
                 },
                 "EthernetSwitches": {
-                    "type": "array",
-                    "items": {
-                        "$ref": "http://redfish.dmtf.org/schemas/v1/EthernetSwitch.json#/definitions/EthernetSwitch"
-                    },
+                    "$ref": "http://redfish.dmtf.org/schemas/v1/EthernetSwitchCollection.json#/definitions/EthernetSwitchCollection",
                     "readonly": true,
-                    "description": "An array of references to the EthernetSwitches hosted on the Backplanes of this Chassis.",
-                    "longDescription": "This object shall only contain an array of references that comply to the EthernetSwitch schema."
-                },
-                "PCIeSwitches@odata.count": {
-                    "$ref": "http://redfish.dmtf.org/schemas/v1/odata.4.0.0.json#/definitions/count"
-                },
-                "PCIeSwitches@odata.navigationLink": {
-                    "type": "string",
-                    "format": "uri"
+                    "description": "This is a link to a collection of EthernetSwitches hosted on the Backplanes of this Chassis.",
+                    "longDescription": "This object shall only contain a reference to a collection of resources that comply to the EthernetSwitch schema."
                 },
                 "PCIeSwitches": {
-                    "type": "array",
-                    "items": {
-                        "$ref": "http://redfish.dmtf.org/schemas/v1/PCIeSwitch.json#/definitions/PCIeSwitch"
-                    },
+                    "$ref": "http://redfish.dmtf.org/schemas/v1/PCIeSwitchCollection.json#/definitions/PCIeSwitchCollection",
                     "readonly": true,
-                    "description": "An array of references to the PCIeSwitches hosted on the Backplanes of this Chassis.",
-                    "longDescription": "This object shall only contain an array of references that comply to the PCIeSwitch schema."
+                    "description": "This is a link to a collection of PCIeSwitches hosted on the Backplanes of this Chassis.",
+                    "longDescription": "This object shall only contain a reference to a collection of resources that comply to the PCIeSwitch schema."
                 }
             },
             "description": "Base type for an Oem object.",

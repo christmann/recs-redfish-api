@@ -31,6 +31,9 @@
 	<edmx:Reference Uri="EthernetSwitchPort_v1.xml">
 		<edmx:Include Namespace="EthernetSwitchPort"/>
 	</edmx:Reference>
+	<edmx:Reference Uri="EthernetSwitchPortCollection_v1.xml">
+		<edmx:Include Namespace="EthernetSwitchPortCollection"/>
+	</edmx:Reference>
 	<edmx:Reference Uri="EthernetSwitchACLRuleCollection_v1.xml">
 		<edmx:Include Namespace="EthernetSwitchACLRuleCollection"/>
 	</edmx:Reference>
@@ -77,8 +80,10 @@
 			</EntityType>
 
 			<ComplexType Name="Links" BaseType="Resource.Links">
-				<NavigationProperty Name="BoundPorts" Type="Collection(EthernetSwitchPort.EthernetSwitchPort)">
+				<NavigationProperty Name="BoundPorts" Type="EthernetSwitchPortCollection.EthernetSwitchPortCollection">
 					<Annotation Term="OData.AutoExpandReferences"/>
+					<Annotation Term="OData.Description" String="This is a link to a collection of EthernetSwitchPorts associated with this switch ACL."/>
+					<Annotation Term="OData.LongDescription" String="This object shall only contain a reference to a collection of resources that comply to the EthernetSwitchPort schema."/>
 				</NavigationProperty>
 			</ComplexType>
 

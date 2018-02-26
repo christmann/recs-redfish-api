@@ -177,53 +177,23 @@
                     "description": "The one-based position of the blade slot containing this Baseboard within the Chassis.",
                     "longDescription": "The value of this property shall contain the zero-based numeric position of the blade slot containing this Baseboard within the Chassis."
                 },
-                "ComputerSystems@odata.count": {
-                    "$ref": "http://redfish.dmtf.org/schemas/v1/odata.4.0.0.json#/definitions/count"
-                },
-                "ComputerSystems@odata.navigationLink": {
-                    "type": "string",
-                    "format": "uri"
-                },
                 "ComputerSystems": {
-                    "type": "array",
-                    "items": {
-                        "$ref": "http://redfish.dmtf.org/schemas/v1/ComputerSystem.json#/definitions/ComputerSystem"
-                    },
+                    "$ref": "http://redfish.dmtf.org/schemas/v1/ComputerSystemCollection.json#/definitions/ComputerSystemCollection",
                     "readonly": true,
-                    "description": "An array of references to the ComputerSystems hosted on this Baseboard.",
-                    "longDescription": "This object shall only contain an array of references that comply to the ComputerSystem schema."
-                },
-                "PCIeDevices@odata.count": {
-                    "$ref": "http://redfish.dmtf.org/schemas/v1/odata.4.0.0.json#/definitions/count"
-                },
-                "PCIeDevices@odata.navigationLink": {
-                    "type": "string",
-                    "format": "uri"
+                    "description": "This is a link to a collection of ComputerSystems hosted on this Baseboard.",
+                    "longDescription": "This object shall only contain a reference to a collection of resources that comply to the ComputerSystem schema."
                 },
                 "PCIeDevices": {
-                    "type": "array",
-                    "items": {
-                        "$ref": "http://redfish.dmtf.org/schemas/v1/PCIeDevice.json#/definitions/PCIeDevice"
-                    },
+                    "$ref": "http://redfish.dmtf.org/schemas/v1/PCIeDeviceCollection.json#/definitions/PCIeDeviceCollection",
                     "readonly": true,
-                    "description": "An array of references to the PCIeDevices attached to PCIePorts on this Baseboard.",
-                    "longDescription": "This object shall only contain an array of references that comply to the PCIeDevice schema."
-                },
-                "PCIeSwitches@odata.count": {
-                    "$ref": "http://redfish.dmtf.org/schemas/v1/odata.4.0.0.json#/definitions/count"
-                },
-                "PCIeSwitches@odata.navigationLink": {
-                    "type": "string",
-                    "format": "uri"
+                    "description": "This is a link to a collection of PCIeDevices attached to PCIePorts on this Baseboard.",
+                    "longDescription": "This object shall only contain a reference to a collection of resources that comply to the PCIeDevice schema."
                 },
                 "PCIeSwitches": {
-                    "type": "array",
-                    "items": {
-                        "$ref": "http://redfish.dmtf.org/schemas/v1/PCIeSwitch.json#/definitions/PCIeSwitch"
-                    },
+                    "$ref": "http://redfish.dmtf.org/schemas/v1/PCIeSwitchCollection.json#/definitions/PCIeSwitchCollection",
                     "readonly": true,
-                    "description": "An array of references to the PCIeSwitches hosted on this Baseboard.",
-                    "longDescription": "This object shall only contain an array of references that comply to the PCIeSwitch schema."
+                    "description": "This is a link to a collection of PCIeSwitches hosted on this Baseboard.",
+                    "longDescription": "This object shall only contain a reference to a collection of resources that comply to the PCIeSwitch schema."
                 },
                 "Backplane": {
                     "$ref": "http://redfish.dmtf.org/schemas/v1/Backplane.json#/definitions/Backplane",

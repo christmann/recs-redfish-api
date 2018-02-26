@@ -165,18 +165,13 @@
                                 {"type": "null"}
                             ]
                         },
-                        "ManagedBy@odata.count": {
-                            "$ref": "http://redfish.dmtf.org/schemas/v1/odata.4.0.0.json#/definitions/count"
-                        },
-                        "ManagedBy@odata.navigationLink": {
-                            "type": "string",
-                            "format": "uri"
-                        },
                         "ManagedBy": {
-                            "type": "array",
-                            "items": {
-                                "$ref": "http://redfish.dmtf.org/schemas/v1/Manager.json#/definitions/Manager"
-                            }
+                            "anyOf": [
+                                {"$ref": "http://redfish.dmtf.org/schemas/v1/ManagerCollection.json#/definitions/ManagerCollection"},
+                                {"type": "null"}
+                            ],
+                            "description": "This is a link to a collection of Managers associated with this switch.",
+                            "longDescription": "This object shall only contain a reference to a collection of resources that comply to the Manager schema."
                         }
                     }
                 },

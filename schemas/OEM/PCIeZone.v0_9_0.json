@@ -77,37 +77,17 @@
                             "description": "Oem extension object.",
                             "longDescription": "This object represents the Oem property.  All values for resources described by this schema shall comply to the requirements as described in the Redfish specification."
                         },
-                        "PortsInZone@odata.count": {
-                            "$ref": "http://redfish.dmtf.org/schemas/v1/odata.4.0.0.json#/definitions/count"
-                        },
-                        "PortsInZone@odata.navigationLink": {
-                            "type": "string",
-                            "format": "uri"
-                        },
                         "PortsInZone": {
-                            "type": "array",
-                            "items": {
-                                "$ref": "http://redfish.dmtf.org/schemas/v1/PCIePort.json#/definitions/PCIePort"
-                            },
+                            "$ref": "http://redfish.dmtf.org/schemas/v1/PCIePortCollection.json#/definitions/PCIePortCollection",
                             "readonly": true,
-                            "description": "An array of references to the PCIe upstream ports associated with this PCIe zone",
-                            "longDescription": "An array of references to the PCIe upstream ports associated with this PCIe zone"
-                        },
-                        "DeviceFunctionsInZone@odata.count": {
-                            "$ref": "http://redfish.dmtf.org/schemas/v1/odata.4.0.0.json#/definitions/count"
-                        },
-                        "DeviceFunctionsInZone@odata.navigationLink": {
-                            "type": "string",
-                            "format": "uri"
+                            "description": "This is a link to a collection of PCIe upstream ports associated with this PCIe zone.",
+                            "longDescription": "This object shall only contain a reference to a collection of resources that comply to the PCIePort schema."
                         },
                         "DeviceFunctionsInZone": {
-                            "type": "array",
-                            "items": {
-                                "$ref": "http://redfish.dmtf.org/schemas/v1/PCIeFunction.json#/definitions/PCIeFunction"
-                            },
+                            "$ref": "http://redfish.dmtf.org/schemas/v1/PCIeFunctionCollection.json#/definitions/PCIeFunctionCollection",
                             "readonly": true,
-                            "description": "An array of references to the PCIeFunctions associated with this PCIe zone",
-                            "longDescription": "An array of references to the PCIeFunctions associated with this PCIe zone"
+                            "description": "This is a link to a collection of PCIeFunctions associated with this PCIe zone.",
+                            "longDescription": "This object shall only contain a reference to a collection of resources that comply to the PCIeFunction schema."
                         }
                     },
                     "readonly": true,

@@ -44,8 +44,11 @@
 	<edmx:Reference Uri="EthernetSwitch_v1.xml">
 		<edmx:Include Namespace="EthernetSwitch"/>
 	</edmx:Reference>
-	<edmx:Reference Uri="EthernetSwitchACL_v1.xml">
-		<edmx:Include Namespace="EthernetSwitchACL"/>
+	<edmx:Reference Uri="EthernetSwitchPortCollection_v1.xml">
+		<edmx:Include Namespace="EthernetSwitchPortCollection"/>
+	</edmx:Reference>
+	<edmx:Reference Uri="EthernetSwitchACLCollection_v1.xml">
+		<edmx:Include Namespace="EthernetSwitchACLCollection"/>
 	</edmx:Reference>
 	<edmx:Reference Uri="EthernetSwitchStaticMACCollection_v1.xml">
 		<edmx:Include Namespace="EthernetSwitchStaticMACCollection"/>
@@ -208,12 +211,16 @@
 				<NavigationProperty Name="MemberOfPort" Type="EthernetSwitchPort.EthernetSwitchPort">
 					<Annotation Term="OData.AutoExpandReferences"/>
 				</NavigationProperty>
-				<NavigationProperty Name="PortMembers" Type="Collection(EthernetSwitchPort.EthernetSwitchPort)">
+				<NavigationProperty Name="PortMembers" Type="EthernetSwitchPortCollection.EthernetSwitchPortCollection">
 					<Annotation Term="OData.Permissions" EnumMember="OData.Permission/ReadWrite"/>
 					<Annotation Term="OData.AutoExpandReferences"/>
+					<Annotation Term="OData.Description" String="This is a link to a collection of EthernetSwitchPorts associated with this switch port."/>
+					<Annotation Term="OData.LongDescription" String="This object shall only contain a reference to a collection of resources that comply to the EthernetSwitchPort schema."/>
 				</NavigationProperty>
-				<NavigationProperty Name="ActiveACLs" Type="Collection(EthernetSwitchACL.EthernetSwitchACL)">
+				<NavigationProperty Name="ActiveACLs" Type="EthernetSwitchACLCollection.EthernetSwitchACLCollection">
 					<Annotation Term="OData.AutoExpandReferences"/>
+					<Annotation Term="OData.Description" String="This is a link to a collection of EthernetSwitchACLs associated with this switch port."/>
+					<Annotation Term="OData.LongDescription" String="This object shall only contain a reference to a collection of resources that comply to the EthernetSwitchACL schema."/>
 				</NavigationProperty>
 			</ComplexType>
 		</Schema>

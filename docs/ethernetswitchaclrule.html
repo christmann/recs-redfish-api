@@ -54,10 +54,13 @@ table { border-collapse: collapse; }
 <a href="hsllconnection.html#hsllconnection">HSLLConnection</a><br />
 <a href="hsllconnectioncollection.html#hsllconnectioncollection">HSLLConnectionCollection</a><br />
 <a href="hsllinterface.html#hsllinterface">HSLLInterface</a><br />
+<a href="hsllinterfacecollection.html#hsllinterfacecollection">HSLLInterfaceCollection</a><br />
 <a href="jsonschemafile.html#jsonschemafile">JsonSchemaFile</a><br />
 <a href="jsonschemafilecollection.html#jsonschemafilecollection">JsonSchemaFileCollection</a><br />
 <a href="pciedevice.html#pciedevice">PCIeDevice</a><br />
+<a href="pciedevicecollection.html#pciedevicecollection">PCIeDeviceCollection</a><br />
 <a href="pciefunction.html#pciefunction">PCIeFunction</a><br />
+<a href="pciefunctioncollection.html#pciefunctioncollection">PCIeFunctionCollection</a><br />
 <a href="pcieport.html#pcieport">PCIePort</a><br />
 <a href="pcieportcollection.html#pcieportcollection">PCIePortCollection</a><br />
 <a href="pcieswitch.html#pcieswitch">PCIeSwitch</a><br />
@@ -134,10 +137,9 @@ A Ethernet Switch ACL Rule represents Access Control List rule for switch.
 <tr><td>ForwardMirrorInterface {</td><td>reference(<a href="ethernetswitchport.html#ethernetswitchport">EthernetSwitchPort</a>)</td><td>Yes</td><td></td><td>read-write</td><td>Reference to interface (port) to which traffic should be mirrored/forwarded.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;@odata.id</td><td>string</td><td></td><td></td><td>read-only</td><td>The unique identifier for a resource.<br />Format: uri</td></tr>
 <tr><td>}</td><td></td><td></td><td></td><td></td><td></td></tr>
-<tr><td>MirrorPortRegion@odata.count</td><td>number</td><td></td><td></td><td>read-only</td><td>The number of items in a collection.</td></tr>
-<tr><td>MirrorPortRegion [ {</td><td>array[reference(<a href="ethernetswitchport.html#ethernetswitchport">EthernetSwitchPort</a>)]</td><td></td><td></td><td>read-write</td><td>Group of interfaces (ports) which should be mirrored.</td></tr>
+<tr><td>MirrorPortRegion {</td><td>reference(<a href="ethernetswitchportcollection.html#ethernetswitchportcollection">EthernetSwitchPortCollection</a>)</td><td>Yes</td><td></td><td>read-write</td><td>Group of interfaces (ports) which should be mirrored.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;@odata.id</td><td>string</td><td></td><td></td><td>read-only</td><td>The unique identifier for a resource.<br />Format: uri</td></tr>
-<tr><td>} ]</td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>}</td><td></td><td></td><td></td><td></td><td></td></tr>
 </table>
 <h2 id="operations">Operations</h2>
 <h3 id="get">GET</h3>
@@ -250,13 +252,11 @@ Content-Type: application/json
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;}
 <br />
-&nbsp;&nbsp;&nbsp;&nbsp;"MirrorPortRegion@odata.count": 1
+&nbsp;&nbsp;&nbsp;&nbsp;"MirrorPortRegion": {
 <br />
-&nbsp;&nbsp;&nbsp;&nbsp;"MirrorPortRegion": [{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"@odata.id": "/redfish/v1/EthernetSwitches/EthernetSwitch1/ACLs/EthernetSwitchACL1/Rules/EthernetSwitchACLRule1/MirrorPortRegion"
 <br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"@odata.id": "/redfish/v1/EthernetSwitches/EthernetSwitch1/ACLs/EthernetSwitchACL1/Rules/EthernetSwitchACLRule1/EthernetSwitchPort1"
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;}]
+&nbsp;&nbsp;&nbsp;&nbsp;}
 <br />
 }
 <br />
@@ -350,11 +350,11 @@ Content-Type: application/json
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;}
 <br />
-&nbsp;&nbsp;&nbsp;&nbsp;"MirrorPortRegion": [{
+&nbsp;&nbsp;&nbsp;&nbsp;"MirrorPortRegion": {
 <br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"@odata.id": "/redfish/v1/EthernetSwitches/EthernetSwitch1/ACLs/EthernetSwitchACL1/Rules/EthernetSwitchACLRule1/EthernetSwitchPort1"
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"@odata.id": "/redfish/v1/EthernetSwitches/EthernetSwitch1/ACLs/EthernetSwitchACL1/Rules/EthernetSwitchACLRule1/MirrorPortRegion"
 <br />
-&nbsp;&nbsp;&nbsp;&nbsp;}]
+&nbsp;&nbsp;&nbsp;&nbsp;}
 <br />
 }
 <br />

@@ -20,17 +20,17 @@
 	<edmx:Reference Uri="http://redfish.dmtf.org/schemas/v1/Chassis_v1.xml">
 		<edmx:Include Namespace="Chassis"/>
 	</edmx:Reference>
-	<edmx:Reference Uri="http://redfish.dmtf.org/schemas/v1/ComputerSystem_v1.xml">
-		<edmx:Include Namespace="ComputerSystem"/>
+	<edmx:Reference Uri="http://redfish.dmtf.org/schemas/v1/ComputerSystemCollection_v1.xml">
+		<edmx:Include Namespace="ComputerSystemCollection"/>
 	</edmx:Reference>
-	<edmx:Reference Uri="PCIeDevice_v1.xml">
-		<edmx:Include Namespace="PCIeDevice"/>
+	<edmx:Reference Uri="PCIeDeviceCollection_v1.xml">
+		<edmx:Include Namespace="PCIeDeviceCollection"/>
 	</edmx:Reference>
-	<edmx:Reference Uri="PCIeSwitch_v1.xml">
-		<edmx:Include Namespace="PCIeSwitch"/>
+	<edmx:Reference Uri="PCIeSwitchCollection_v1.xml">
+		<edmx:Include Namespace="PCIeSwitchCollection"/>
 	</edmx:Reference>
-	<edmx:Reference Uri="Baseboard_v1.xml">
-		<edmx:Include Namespace="Baseboard"/>
+	<edmx:Reference Uri="BaseboardCollection_v1.xml">
+		<edmx:Include Namespace="BaseboardCollection"/>
 	</edmx:Reference>
 
 	<edmx:DataServices>
@@ -53,18 +53,18 @@
 				</Property>
 				<Property Name="BackplaneType" Type="Backplane.v0_1_0.BackplaneType">
 					<Annotation Term="OData.Permissions" EnumMember="OData.Permissions/Read"/>
-					<Annotation Term="OData.Description" String="The type of the Baseboard."/>
+					<Annotation Term="OData.Description" String="The type of the Backplane."/>
 				</Property>
-				<NavigationProperty Name="Baseboards" Type="Collection(Baseboard.Baseboard)" Nullable="false">
+				<NavigationProperty Name="Baseboards" Type="BaseboardCollection.BaseboardCollection" Nullable="false">
 					<Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
-					<Annotation Term="OData.Description" String="An array of references to the Baseboards this Backplane is connected to."/>
-					<Annotation Term="OData.LongDescription" String="This object shall only contain an array of references that comply to the Baseboard schema."/>
+					<Annotation Term="OData.Description" String="This is a link to a collection of Baseboards this Backplane is connected to."/>
+					<Annotation Term="OData.LongDescription" String="This object shall only contain a reference to a collection of resources that comply to the Baseboard schema."/>
 					<Annotation Term="OData.AutoExpandReferences"/>
 				</NavigationProperty>
-				<NavigationProperty Name="PCIeSwitches" Type="Collection(PCIeSwitch.PCIeSwitch)" Nullable="false">
+				<NavigationProperty Name="PCIeSwitches" Type="PCIeSwitchCollection.PCIeSwitchCollection" Nullable="false">
 					<Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
-					<Annotation Term="OData.Description" String="An array of references to the PCIeSwitches hosted on this Backplane."/>
-					<Annotation Term="OData.LongDescription" String="This object shall only contain an array of references that comply to the PCIeSwitch schema."/>
+					<Annotation Term="OData.Description" String="This is a link to a collection of PCIeSwitches hosted on this Backplane."/>
+					<Annotation Term="OData.LongDescription" String="This object shall only contain a reference to a collection of resources that comply to the PCIeSwitch schema."/>
 					<Annotation Term="OData.AutoExpandReferences"/>
 				</NavigationProperty>
 				<NavigationProperty Name="Chassis" Type="Chassis.Chassis" Nullable="false">
@@ -76,16 +76,16 @@
 			</EntityType>
 
 			<ComplexType Name="Links" BaseType="Resource.Links">
-				<NavigationProperty Name="ComputerSystems" Type="Collection(ComputerSystem.ComputerSystem)" Nullable="false">
+				<NavigationProperty Name="ComputerSystems" Type="ComputerSystemCollection.ComputerSystemCollection" Nullable="false">
 					<Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
-					<Annotation Term="OData.Description" String="An array of references to the ComputerSystems hosted on the Baseboards connected to this Backplane."/>
-					<Annotation Term="OData.LongDescription" String="This object shall only contain an array of references that comply to the ComputerSystem schema."/>
+					<Annotation Term="OData.Description" String="This is a link to a collection of ComputerSystems hosted on the Baseboards connected to this Backplane."/>
+					<Annotation Term="OData.LongDescription" String="This object shall only contain a reference to a collection of resources that comply to the ComputerSystem schema."/>
 					<Annotation Term="OData.AutoExpandReferences"/>
 				</NavigationProperty>
-				<NavigationProperty Name="PCIeDevices" Type="Collection(PCIeDevice.PCIeDevice)" Nullable="false">
+				<NavigationProperty Name="PCIeDevices" Type="PCIeDeviceCollection.PCIeDeviceCollection" Nullable="false">
 					<Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
-					<Annotation Term="OData.Description" String="An array of references to the PCIeDevices hosted on the Baseboards connected to this Backplane."/>
-					<Annotation Term="OData.LongDescription" String="This object shall only contain an array of references that comply to the PCIeDevice schema."/>
+					<Annotation Term="OData.Description" String="This is a link to a collection of PCIeDevices hosted on the Baseboards connected to this Backplane."/>
+					<Annotation Term="OData.LongDescription" String="This object shall only contain a reference to a collection of resources that comply to the PCIeDevice schema."/>
 					<Annotation Term="OData.AutoExpandReferences"/>
 				</NavigationProperty>
 			</ComplexType>

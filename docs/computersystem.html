@@ -54,10 +54,13 @@ table { border-collapse: collapse; }
 <a href="hsllconnection.html#hsllconnection">HSLLConnection</a><br />
 <a href="hsllconnectioncollection.html#hsllconnectioncollection">HSLLConnectionCollection</a><br />
 <a href="hsllinterface.html#hsllinterface">HSLLInterface</a><br />
+<a href="hsllinterfacecollection.html#hsllinterfacecollection">HSLLInterfaceCollection</a><br />
 <a href="jsonschemafile.html#jsonschemafile">JsonSchemaFile</a><br />
 <a href="jsonschemafilecollection.html#jsonschemafilecollection">JsonSchemaFileCollection</a><br />
 <a href="pciedevice.html#pciedevice">PCIeDevice</a><br />
+<a href="pciedevicecollection.html#pciedevicecollection">PCIeDeviceCollection</a><br />
 <a href="pciefunction.html#pciefunction">PCIeFunction</a><br />
+<a href="pciefunctioncollection.html#pciefunctioncollection">PCIeFunctionCollection</a><br />
 <a href="pcieport.html#pcieport">PCIePort</a><br />
 <a href="pcieportcollection.html#pcieportcollection">PCIePortCollection</a><br />
 <a href="pcieswitch.html#pcieswitch">PCIeSwitch</a><br />
@@ -82,10 +85,9 @@ This schema defines a computer system and its respective properties.  A computer
 <tr><td>@odata.type</td><td>string</td><td></td><td></td><td>read-only</td><td>The type of a resource.</td></tr>
 <tr><td>Oem {</td><td>object</td><td></td><td></td><td>read-write</td><td>This is the manufacturer/provider specific extension moniker used to divide the Oem object into sections.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;EID_47597 {</td><td>object</td><td></td><td></td><td>read-write</td><td>RECS|Box ComputerSystem extension</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;HSLLInterfaces@odata.count</td><td>number</td><td></td><td></td><td>read-only</td><td>The number of items in a collection.</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;HSLLInterfaces [ {</td><td>array[reference(<a href="hsllinterface.html#hsllinterface">HSLLInterface</a>)]</td><td></td><td></td><td>read-only</td><td>An array of references to the HSLLInterfaces hosted by this system</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;HSLLInterfaces {</td><td>reference(<a href="hsllinterfacecollection.html#hsllinterfacecollection">HSLLInterfaceCollection</a>)</td><td>Yes</td><td></td><td>read-only</td><td>This is a link to a collection of HSLLInterfaces hosted by this system</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@odata.id</td><td>string</td><td></td><td></td><td>read-only</td><td>The unique identifier for a resource.<br />Format: uri</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;} ]</td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</td><td></td><td></td><td></td><td></td><td></td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Baseboard {</td><td>reference(<a href="baseboard.html#baseboard">Baseboard</a>)</td><td></td><td></td><td>read-only</td><td>The Baseboard hosting this ComputerSystem</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@odata.id</td><td>string</td><td></td><td></td><td>read-only</td><td>The unique identifier for a resource.<br />Format: uri</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</td><td></td><td></td><td></td><td></td><td></td></tr>
@@ -129,9 +131,18 @@ This schema defines a computer system and its respective properties.  A computer
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;BootSourceOverrideTarget</td><td>string</td><td>Yes</td><td></td><td>read-write</td><td>The current boot source to be used at next boot instead of the normal boot device, if BootSourceOverrideEnabled is true.<br />Possible Values:<ul>
 <li>None: Boot from the normal boot device.</li>
 <li>Pxe: Boot from the Pre-Boot EXecution (PXE) environment.</li>
+<li>Floppy: Boot from the floppy disk drive.</li>
 <li>Cd: Boot from the CD/DVD disc.</li>
 <li>Usb: Boot from a USB device as specified by the system BIOS.</li>
 <li>Hdd: Boot from a hard drive.</li>
+<li>BiosSetup: Boot to the BIOS Setup Utility.</li>
+<li>Utilities: Boot the manufacturer's Utilities program(s).</li>
+<li>Diags: Boot the manufacturer's Diagnostics program.</li>
+<li>UefiShell: Boot to the UEFI Shell.</li>
+<li>UefiTarget: Boot to the UEFI Device specified in the UefiTargetBootSourceOverride property.</li>
+<li>SDCard: Boot from an SD Card.</li>
+<li>UefiHttp: Boot from a UEFI HTTP network location.</li>
+<li>RemoteDrive: Boot from a remote drive (e.g. iSCSI).</li>
 </ul></td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;BootSourceOverrideEnabled</td><td>string</td><td>Yes</td><td></td><td>read-write</td><td>Describes the state of the Boot Source Override feature.<br />Possible Values:<ul>
 <li>Disabled: The system will boot normally.</li>
@@ -278,13 +289,11 @@ Content-Type: application/json
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"EID_47597": {
 <br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"HSLLInterfaces@odata.count": 1
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"HSLLInterfaces": {
 <br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"HSLLInterfaces": [{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"@odata.id": "/redfish/v1/Systems/ComputerSystem1/HSLLInterfaces"
 <br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"@odata.id": "/redfish/v1/Systems/ComputerSystem1/HSLLInterface1"
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}]
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Baseboard": {
 <br />
@@ -346,7 +355,7 @@ Content-Type: application/json
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"BootSourceOverrideTarget": "None"
 <br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"BootSourceOverrideTarget@Redfish.AllowableValues": ["None", "Pxe", "Cd", "Usb", "Hdd"]
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"BootSourceOverrideTarget@Redfish.AllowableValues": ["None", "Pxe", "Floppy", "Cd", "Usb", "Hdd", "BiosSetup", "Utilities", "Diags", "UefiShell", "UefiTarget", "SDCard", "UefiHttp", "RemoteDrive"]
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"BootSourceOverrideEnabled": "Disabled"
 <br />

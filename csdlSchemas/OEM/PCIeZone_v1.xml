@@ -13,11 +13,11 @@
 		<edmx:Include Namespace="Resource"/>
 		<edmx:Include Namespace="Resource.v1_0_0" />
 	</edmx:Reference>
-	<edmx:Reference Uri="http://redfish.dmtf.org/schemas/v1/PCIePort_v1.xml">
-		<edmx:Include Namespace="PCIePort"/>
+	<edmx:Reference Uri="http://redfish.dmtf.org/schemas/v1/PCIePortCollection_v1.xml">
+		<edmx:Include Namespace="PCIePortCollection"/>
 	</edmx:Reference>
-	<edmx:Reference Uri="http://redfish.dmtf.org/schemas/v1/PCIeFunction_v1.xml">
-		<edmx:Include Namespace="PCIeFunction"/>
+	<edmx:Reference Uri="PCIeFunctionCollection_v1.xml">
+		<edmx:Include Namespace="PCIeFunctionCollection"/>
 	</edmx:Reference>
 
 	<edmx:DataServices>
@@ -43,15 +43,15 @@
 			</EntityType>
 
 			<ComplexType Name="Links" BaseType="Resource.Links">
-				<NavigationProperty Name="PortsInZone" Type="Collection(PCIePort.PCIePort)" Nullable="false">
+				<NavigationProperty Name="PortsInZone" Type="PCIePortCollection.PCIePortCollection" Nullable="false">
 					<Annotation Term="OData.Permissions" EnumMember="OData.Permissions/Read"/>
-					<Annotation Term="OData.Description" String="An array of references to the PCIe upstream ports associated with this PCIe zone"/>
-					<Annotation Term="OData.LongDescription" String="An array of references to the PCIe upstream ports associated with this PCIe zone"/>
+					<Annotation Term="OData.Description" String="This is a link to a collection of PCIe upstream ports associated with this PCIe zone."/>
+					<Annotation Term="OData.LongDescription" String="This object shall only contain a reference to a collection of resources that comply to the PCIePort schema."/>
 				</NavigationProperty>
-				<NavigationProperty Name="DeviceFunctionsInZone" Type="Collection(PCIeFunction.PCIeFunction)" Nullable="false">
+				<NavigationProperty Name="DeviceFunctionsInZone" Type="PCIeFunctionCollection.PCIeFunctionCollection" Nullable="false">
 					<Annotation Term="OData.Permissions" EnumMember="OData.Permissions/Read"/>
-					<Annotation Term="OData.Description" String="An array of references to the PCIeFunctions associated with this PCIe zone"/>
-					<Annotation Term="OData.LongDescription" String="An array of references to the PCIeFunctions associated with this PCIe zone"/>
+					<Annotation Term="OData.Description" String="This is a link to a collection of PCIeFunctions associated with this PCIe zone."/>
+					<Annotation Term="OData.LongDescription" String="This object shall only contain a reference to a collection of resources that comply to the PCIeFunction schema."/>
 				</NavigationProperty>
 			</ComplexType>
 

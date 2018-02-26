@@ -114,69 +114,41 @@
                             "description": "Oem extension object.",
                             "longDescription": "This object represents the Oem property.  All values for resources described by this schema shall comply to the requirements as described in the Redfish specification."
                         },
-                        "Chassis@odata.count": {
-                            "$ref": "http://redfish.dmtf.org/schemas/v1/odata.4.0.0.json#/definitions/count"
-                        },
-                        "Chassis@odata.navigationLink": {
-                            "type": "string",
-                            "format": "uri"
-                        },
                         "Chassis": {
-                            "type": "array",
-                            "items": {
-                                "$ref": "http://redfish.dmtf.org/schemas/v1/Chassis.json#/definitions/Chassis"
-                            },
+                            "anyOf": [
+                                {"$ref": "http://redfish.dmtf.org/schemas/v1/ChassisCollection.json#/definitions/ChassisCollection"},
+                                {"type": "null"}
+                            ],
                             "readonly": true,
-                            "description": "An array of references to the chassis in which this switch is contained",
-                            "longDescription": ""
-                        },
-                        "ManagedBy@odata.count": {
-                            "$ref": "http://redfish.dmtf.org/schemas/v1/odata.4.0.0.json#/definitions/count"
-                        },
-                        "ManagedBy@odata.navigationLink": {
-                            "type": "string",
-                            "format": "uri"
+                            "description": "This is a link to a collection of chassis in which this switch is contained",
+                            "longDescription": "This object shall only contain a reference to a collection of resources that comply to the Chassis schema."
                         },
                         "ManagedBy": {
-                            "type": "array",
-                            "items": {
-                                "$ref": "http://redfish.dmtf.org/schemas/v1/Manager.json#/definitions/Manager"
-                            },
+                            "anyOf": [
+                                {"$ref": "http://redfish.dmtf.org/schemas/v1/ManagerCollection.json#/definitions/ManagerCollection"},
+                                {"type": "null"}
+                            ],
                             "readonly": true,
-                            "description": "An array of references to the Managers responsible for this switch",
-                            "longDescription": ""
-                        },
-                        "PoweredBy@odata.count": {
-                            "$ref": "http://redfish.dmtf.org/schemas/v1/odata.4.0.0.json#/definitions/count"
-                        },
-                        "PoweredBy@odata.navigationLink": {
-                            "type": "string",
-                            "format": "uri"
+                            "description": "This is a link to a collection of Managers responsible for this switch.",
+                            "longDescription": "This object shall only contain a reference to a collection of resources that comply to the Manager schema."
                         },
                         "PoweredBy": {
-                            "type": "array",
-                            "items": {
-                                "$ref": "http://redfish.dmtf.org/schemas/v1/odata.4.0.0.json#/definitions/idRef"
-                            },
+                            "anyOf": [
+                                {"$ref": "http://redfish.dmtf.org/schemas/v1/Resource.v1_0_0.json#/definitions/ResourceCollection"},
+                                {"type": "null"}
+                            ],
                             "readonly": true,
-                            "description": "An array of ID[s] of resources that power this Switch. ",
-                            "longDescription": ""
-                        },
-                        "CooledBy@odata.count": {
-                            "$ref": "http://redfish.dmtf.org/schemas/v1/odata.4.0.0.json#/definitions/count"
-                        },
-                        "CooledBy@odata.navigationLink": {
-                            "type": "string",
-                            "format": "uri"
+                            "description": "An array of ID[s] of resources that power this switch.",
+                            "longDescription": "This object shall only contain a reference to a collection of resources that comply to the Resource schema."
                         },
                         "CooledBy": {
-                            "type": "array",
-                            "items": {
-                                "$ref": "http://redfish.dmtf.org/schemas/v1/odata.4.0.0.json#/definitions/idRef"
-                            },
+                            "anyOf": [
+                                {"$ref": "http://redfish.dmtf.org/schemas/v1/Resource.v1_0_0.json#/definitions/ResourceCollection"},
+                                {"type": "null"}
+                            ],
                             "readonly": true,
-                            "description": "An array of ID[s] of resources that cool this switch. ",
-                            "longDescription": ""
+                            "description": "An array of ID[s] of resources that cool this switch.",
+                            "longDescription": "This object shall only contain a reference to a collection of resources that comply to the Resource schema."
                         }
                     },
                     "readonly": true,
@@ -324,21 +296,14 @@
                     "description": "A reference to the collection of PCIe Ports associated with this Switch",
                     "longDescription": ""
                 },
-                "AttachedDevices@odata.count": {
-                    "$ref": "http://redfish.dmtf.org/schemas/v1/odata.4.0.0.json#/definitions/count"
-                },
-                "AttachedDevices@odata.navigationLink": {
-                    "type": "string",
-                    "format": "uri"
-                },
                 "AttachedDevices": {
-                    "type": "array",
-                    "items": {
-                        "$ref": "http://redfish.dmtf.org/schemas/v1/PCIeDevice.json#/definitions/PCIeDevice"
-                    },
+                    "anyOf": [
+                        {"$ref": "http://redfish.dmtf.org/schemas/v1/PCIeDeviceCollection.json#/definitions/PCIeDeviceCollection"},
+                        {"type": "null"}
+                    ],
                     "readonly": true,
-                    "description": "An array of references to the Physical Devices attached to this switch",
-                    "longDescription": ""
+                    "description": "This is a link to a collection of PCIeDevices attached to this switch.",
+                    "longDescription": "This object shall only contain a reference to a collection of resources that comply to the PCIeDevice schema."
                 },
                 "LogServices": {
                     "anyOf": [

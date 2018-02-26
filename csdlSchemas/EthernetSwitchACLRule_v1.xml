@@ -31,6 +31,9 @@
 	<edmx:Reference Uri="EthernetSwitchPort_v1.xml">
 		<edmx:Include Namespace="EthernetSwitchPort"/>
 	</edmx:Reference>
+	<edmx:Reference Uri="EthernetSwitchPortCollection_v1.xml">
+		<edmx:Include Namespace="EthernetSwitchPortCollection"/>
+	</edmx:Reference>
 
 
 	<edmx:DataServices>
@@ -65,7 +68,7 @@
 				<Annotation Term="OData.Description" String="Reference to interface (port) to which traffic should be mirrored/forwarded."/>
 			</NavigationProperty>
 
-			<NavigationProperty Name="MirrorPortRegion" Type="Collection(EthernetSwitchPort.EthernetSwitchPort)" ContainsTarget="true">
+			<NavigationProperty Name="MirrorPortRegion" Type="EthernetSwitchPortCollection.EthernetSwitchPortCollection" ContainsTarget="true">
 				<Annotation Term="OData.Permissions" EnumMember="OData.Permission/ReadWrite"/>
 				<Annotation Term="OData.AutoExpandReferences"/>
 				<Annotation Term="OData.Description" String="Group of interfaces (ports)	which should be mirrored."/>

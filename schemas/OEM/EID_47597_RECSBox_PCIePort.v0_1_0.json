@@ -19,53 +19,23 @@
             },
             "additionalProperties": true,
             "properties": {
-                "ConnectedSystems@odata.count": {
-                    "$ref": "http://redfish.dmtf.org/schemas/v1/odata.4.0.0.json#/definitions/count"
-                },
-                "ConnectedSystems@odata.navigationLink": {
-                    "type": "string",
-                    "format": "uri"
-                },
                 "ConnectedSystems": {
-                    "type": "array",
-                    "items": {
-                        "$ref": "http://redfish.dmtf.org/schemas/v1/ComputerSystem.json#/definitions/ComputerSystem"
-                    },
+                    "$ref": "http://redfish.dmtf.org/schemas/v1/ComputerSystemCollection.json#/definitions/ComputerSystemCollection",
                     "readonly": false,
-                    "description": "An array of references to the ComputerSystems connected to this port.",
-                    "longDescription": "This object shall only contain an array of references that comply to the ComputerSystem schema."
-                },
-                "ConnectedDevices@odata.count": {
-                    "$ref": "http://redfish.dmtf.org/schemas/v1/odata.4.0.0.json#/definitions/count"
-                },
-                "ConnectedDevices@odata.navigationLink": {
-                    "type": "string",
-                    "format": "uri"
+                    "description": "This is a link to a collection of ComputerSystems connected to this port.",
+                    "longDescription": "This object shall only contain a reference to a collection of resources that comply to the ComputerSystem schema."
                 },
                 "ConnectedDevices": {
-                    "type": "array",
-                    "items": {
-                        "$ref": "http://redfish.dmtf.org/schemas/v1/PCIeDevice.json#/definitions/PCIeDevice"
-                    },
+                    "$ref": "http://redfish.dmtf.org/schemas/v1/PCIeDeviceCollection.json#/definitions/PCIeDeviceCollection",
                     "readonly": false,
-                    "description": "An array of references to the PCIeDevices connected to this port.",
-                    "longDescription": "This object shall only contain an array of references that comply to the PCIeDevice schema."
-                },
-                "ConnectedSwitches@odata.count": {
-                    "$ref": "http://redfish.dmtf.org/schemas/v1/odata.4.0.0.json#/definitions/count"
-                },
-                "ConnectedSwitches@odata.navigationLink": {
-                    "type": "string",
-                    "format": "uri"
+                    "description": "This is a link to a collection of PCIeDevices connected to this port.",
+                    "longDescription": "This object shall only contain a reference to a collection of resources that comply to the PCIeDevice schema."
                 },
                 "ConnectedSwitches": {
-                    "type": "array",
-                    "items": {
-                        "$ref": "http://redfish.dmtf.org/schemas/v1/PCIeSwitch.json#/definitions/PCIeSwitch"
-                    },
+                    "$ref": "http://redfish.dmtf.org/schemas/v1/PCIeSwitchCollection.json#/definitions/PCIeSwitchCollection",
                     "readonly": false,
-                    "description": "An array of references to the PCIeSwitches connected to this port.",
-                    "longDescription": "This object shall only contain an array of references that comply to the PCIeSwitch schema."
+                    "description": "This is a link to a collection of PCIeSwitches connected to this port.",
+                    "longDescription": "This object shall only contain a reference to a collection of resources that comply to the PCIeSwitch schema."
                 }
             },
             "description": "Base type for an Oem object.",
@@ -99,21 +69,11 @@
                     "description": "The host of this PCIePort. This can either be a ComputerSystem, a PCIeSwitch or a Baseboard.",
                     "longDescription": "This object shall only contain a reference that complies to the ComputerSystem, PCIeSwitch or Baseboard schema."
                 },
-                "Connections@odata.count": {
-                    "$ref": "http://redfish.dmtf.org/schemas/v1/odata.4.0.0.json#/definitions/count"
-                },
-                "Connections@odata.navigationLink": {
-                    "type": "string",
-                    "format": "uri"
-                },
                 "Connections": {
-                    "type": "array",
-                    "items": {
-                        "$ref": "http://redfish.dmtf.org/schemas/v1/HSLLConnection.json#/definitions/HSLLConnection"
-                    },
+                    "$ref": "http://redfish.dmtf.org/schemas/v1/HSLLConnectionCollection.json#/definitions/HSLLConnectionCollection",
                     "readonly": false,
-                    "description": "An array of references to the connections that use this port.",
-                    "longDescription": "This object shall only contain an array of references that comply to the HSLLConnection schema."
+                    "description": "This is a link to a collection of connections that use this port.",
+                    "longDescription": "This object shall only contain a reference to a collection of resources that comply to the HSLLConnection schema."
                 }
             },
             "description": "RECS|Box PCIePort extension",

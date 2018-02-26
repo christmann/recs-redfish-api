@@ -16,17 +16,17 @@
 	<edmx:Reference Uri="http://redfish.dmtf.org/schemas/v1/Resource_v1.xml">
 		<edmx:Include Namespace="Resource"/>
 	</edmx:Reference>
-	<edmx:Reference Uri="http://redfish.dmtf.org/schemas/v1/ComputerSystem_v1.xml">
-		<edmx:Include Namespace="ComputerSystem"/>
+	<edmx:Reference Uri="http://redfish.dmtf.org/schemas/v1/ComputerSystemCollection_v1.xml">
+		<edmx:Include Namespace="ComputerSystemCollection"/>
 	</edmx:Reference>
-	<edmx:Reference Uri="HSLLConnection_v1.xml">
-		<edmx:Include Namespace="HSLLConnection"/>
+	<edmx:Reference Uri="HSLLConnectionCollection_v1.xml">
+		<edmx:Include Namespace="HSLLConnectionCollection"/>
 	</edmx:Reference>
-	<edmx:Reference Uri="http://redfish.dmtf.org/schemas/v1/PCIeDevice_v1.xml">
-		<edmx:Include Namespace="PCIeDevice"/>
+	<edmx:Reference Uri="http://redfish.dmtf.org/schemas/v1/PCIeDeviceCollection_v1.xml">
+		<edmx:Include Namespace="PCIeDeviceCollection"/>
 	</edmx:Reference>
-	<edmx:Reference Uri="http://redfish.dmtf.org/schemas/v1/PCIeSwitch_v1.xml">
-		<edmx:Include Namespace="PCIeSwitch"/>
+	<edmx:Reference Uri="http://redfish.dmtf.org/schemas/v1/PCIeSwitchCollection_v1.xml">
+		<edmx:Include Namespace="PCIeSwitchCollection"/>
 	</edmx:Reference>
 
 	<edmx:DataServices>
@@ -44,10 +44,10 @@
 					<Annotation Term="OData.LongDescription" String="This object shall only contain a reference that complies to the ComputerSystem, PCIeSwitch or Baseboard schema."/>
 					<Annotation Term="OData.AutoExpandReferences"/>
 				</NavigationProperty>
-				<NavigationProperty Name="Connections" Type="Collection(HSLLConnection.HSLLConnection)" Nullable="false">
+				<NavigationProperty Name="Connections" Type="HSLLConnectionCollection.HSLLConnectionCollection" Nullable="false">
 					<Annotation Term="OData.Permissions" EnumMember="OData.Permission/ReadWrite"/>
-					<Annotation Term="OData.Description" String="An array of references to the connections that use this port."/>
-					<Annotation Term="OData.LongDescription" String="This object shall only contain an array of references that comply to the HSLLConnection schema."/>
+					<Annotation Term="OData.Description" String="This is a link to a collection of connections that use this port."/>
+					<Annotation Term="OData.LongDescription" String="This object shall only contain a reference to a collection of resources that comply to the HSLLConnection schema."/>
 					<Annotation Term="OData.AutoExpandReferences"/>
 				</NavigationProperty>
 				<Annotation Term="OData.AdditionalProperties" Bool="false"/>
@@ -56,22 +56,22 @@
 			</ComplexType>
 
 			<ComplexType Name="Links" BaseType="Resource.OemObject">
-				<NavigationProperty Name="ConnectedSystems" Type="Collection(ComputerSystem.ComputerSystem)" Nullable="false">
+				<NavigationProperty Name="ConnectedSystems" Type="ComputerSystemCollection.ComputerSystemCollection" Nullable="false">
 					<Annotation Term="OData.Permissions" EnumMember="OData.Permission/ReadWrite"/>
-					<Annotation Term="OData.Description" String="An array of references to the ComputerSystems connected to this port."/>
-					<Annotation Term="OData.LongDescription" String="This object shall only contain an array of references that comply to the ComputerSystem schema."/>
+					<Annotation Term="OData.Description" String="This is a link to a collection of ComputerSystems connected to this port."/>
+					<Annotation Term="OData.LongDescription" String="This object shall only contain a reference to a collection of resources that comply to the ComputerSystem schema."/>
 					<Annotation Term="OData.AutoExpandReferences"/>
 				</NavigationProperty>
-				<NavigationProperty Name="ConnectedDevices" Type="Collection(PCIeDevice.PCIeDevice)" Nullable="false">
+				<NavigationProperty Name="ConnectedDevices" Type="PCIeDeviceCollection.PCIeDeviceCollection" Nullable="false">
 					<Annotation Term="OData.Permissions" EnumMember="OData.Permission/ReadWrite"/>
-					<Annotation Term="OData.Description" String="An array of references to the PCIeDevices connected to this port."/>
-					<Annotation Term="OData.LongDescription" String="This object shall only contain an array of references that comply to the PCIeDevice schema."/>
+					<Annotation Term="OData.Description" String="This is a link to a collection of PCIeDevices connected to this port."/>
+					<Annotation Term="OData.LongDescription" String="This object shall only contain a reference to a collection of resources that comply to the PCIeDevice schema."/>
 					<Annotation Term="OData.AutoExpandReferences"/>
 				</NavigationProperty>
-				<NavigationProperty Name="ConnectedSwitches" Type="Collection(PCIeSwitch.PCIeSwitch)" Nullable="false">
+				<NavigationProperty Name="ConnectedSwitches" Type="PCIeSwitchCollection.PCIeSwitchCollection" Nullable="false">
 					<Annotation Term="OData.Permissions" EnumMember="OData.Permission/ReadWrite"/>
-					<Annotation Term="OData.Description" String="An array of references to the PCIeSwitches connected to this port."/>
-					<Annotation Term="OData.LongDescription" String="This object shall only contain an array of references that comply to the PCIeSwitch schema."/>
+					<Annotation Term="OData.Description" String="This is a link to a collection of PCIeSwitches connected to this port."/>
+					<Annotation Term="OData.LongDescription" String="This object shall only contain a reference to a collection of resources that comply to the PCIeSwitch schema."/>
 					<Annotation Term="OData.AutoExpandReferences"/>
 				</NavigationProperty>
 			</ComplexType>

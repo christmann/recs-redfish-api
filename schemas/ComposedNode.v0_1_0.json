@@ -217,27 +217,17 @@
                     "description": "The available actions for this resource.",
                     "longDescription": "The Actions property shall contain the available actions for this resource."
                 },
-                "ContainedNodes@odata.count": {
-                    "$ref": "http://redfish.dmtf.org/schemas/v1/odata.4.0.0.json#/definitions/count"
-                },
-                "ContainedNodes@odata.navigationLink": {
-                    "type": "string",
-                    "format": "uri"
-                },
                 "ContainedNodes": {
-                    "type": "array",
-                    "items": {
-                        "$ref": "http://redfish.dmtf.org/schemas/v1/odata.4.0.0.json#/definitions/idRef"
-                    },
+                    "$ref": "http://redfish.dmtf.org/schemas/v1/Resource.v1_0_0.json#/definitions/ResourceCollection",
                     "readonly": false,
-                    "description": "An array of references to the nodes this ComposedNode consists of. This can either be a ComputerSystem, a ComposedNode or a PCIeDevice.",
-                    "longDescription": "This object shall only contain an array of references that comply to the ComputerSystem, ComposedNode or PCIeDevice schema."
+                    "description": "This is a link to a collection of nodes this ComposedNode consists of. This can either be a ComputerSystem, a ComposedNode or a PCIeDevice.",
+                    "longDescription": "This object shall only contain a reference to a collection of resources that comply to the ComputerSystem, ComposedNode or PCIeDevice schema."
                 },
                 "Connections": {
                     "$ref": "http://redfish.dmtf.org/schemas/v1/HSLLConnectionCollection.json#/definitions/HSLLConnectionCollection",
                     "readonly": false,
-                    "description": "A reference to a collection of HSLLConnections that connect the nodes within this composition.",
-                    "longDescription": "This object shall only contain a reference that complies to the HSLLConnectionCollection schema."
+                    "description": "This is a link to a collection of HSLLConnections that connect the nodes within this composition.",
+                    "longDescription": "This object shall only contain a reference to a collection of resources that comply to the HSLLConnection schema."
                 },
                 "ComposedIn": {
                     "anyOf": [

@@ -24,21 +24,14 @@
                     "readonly": true,
                     "description": "RECS|Box ComputerSystem Links extension"
                 },
-                "HSLLInterfaces@odata.count": {
-                    "$ref": "http://redfish.dmtf.org/schemas/v1/odata.4.0.0.json#/definitions/count"
-                },
-                "HSLLInterfaces@odata.navigationLink": {
-                    "type": "string",
-                    "format": "uri"
-                },
                 "HSLLInterfaces": {
-                    "type": "array",
-                    "items": {
-                        "$ref": "http://redfish.dmtf.org/schemas/v1/HSLLInterface.json#/definitions/HSLLInterface"
-                    },
+                    "anyOf": [
+                        {"$ref": "http://redfish.dmtf.org/schemas/v1/HSLLInterfaceCollection.json#/definitions/HSLLInterfaceCollection"},
+                        {"type": "null"}
+                    ],
                     "readonly": true,
-                    "description": "An array of references to the HSLLInterfaces hosted by this system",
-                    "longDescription": "This object shall only contain an array of references that comply to the HSLLInterface schema."
+                    "description": "This is a link to a collection of HSLLInterfaces hosted by this system",
+                    "longDescription": "This object shall only contain a reference to a collection of resources that comply to the HSLLInterface schema."
                 },
                 "Baseboard": {
                     "$ref": "http://redfish.dmtf.org/schemas/v1/Baseboard.json#/definitions/Baseboard",

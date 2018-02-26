@@ -77,53 +77,23 @@
                             "description": "Oem extension object.",
                             "longDescription": "This object represents the Oem property.  All values for resources described by this schema shall comply to the requirements as described in the Redfish specification."
                         },
-                        "ConnectedSystems@odata.count": {
-                            "$ref": "http://redfish.dmtf.org/schemas/v1/odata.4.0.0.json#/definitions/count"
-                        },
-                        "ConnectedSystems@odata.navigationLink": {
-                            "type": "string",
-                            "format": "uri"
-                        },
                         "ConnectedSystems": {
-                            "type": "array",
-                            "items": {
-                                "$ref": "http://redfish.dmtf.org/schemas/v1/ComputerSystem.json#/definitions/ComputerSystem"
-                            },
+                            "$ref": "http://redfish.dmtf.org/schemas/v1/ComputerSystemCollection.json#/definitions/ComputerSystemCollection",
                             "readonly": false,
-                            "description": "An array of references to the ComputerSystems connected to this interface.",
-                            "longDescription": "This object shall only contain an array of references that comply to the ComputerSystem schema."
-                        },
-                        "ConnectedDevices@odata.count": {
-                            "$ref": "http://redfish.dmtf.org/schemas/v1/odata.4.0.0.json#/definitions/count"
-                        },
-                        "ConnectedDevices@odata.navigationLink": {
-                            "type": "string",
-                            "format": "uri"
+                            "description": "This is a link to a collection of ComputerSystems connected to this interface.",
+                            "longDescription": "This object shall only contain a reference to a collection of resources that comply to the ComputerSystem schema."
                         },
                         "ConnectedDevices": {
-                            "type": "array",
-                            "items": {
-                                "$ref": "http://redfish.dmtf.org/schemas/v1/PCIeDevice.json#/definitions/PCIeDevice"
-                            },
+                            "$ref": "http://redfish.dmtf.org/schemas/v1/PCIeDeviceCollection.json#/definitions/PCIeDeviceCollection",
                             "readonly": false,
-                            "description": "An array of references to the PCIeDevices connected to this interface.",
-                            "longDescription": "This object shall only contain an array of references that comply to the PCIeDevice schema."
-                        },
-                        "ConnectedSwitches@odata.count": {
-                            "$ref": "http://redfish.dmtf.org/schemas/v1/odata.4.0.0.json#/definitions/count"
-                        },
-                        "ConnectedSwitches@odata.navigationLink": {
-                            "type": "string",
-                            "format": "uri"
+                            "description": "This is a link to a collection of PCIeDevices connected to this interface.",
+                            "longDescription": "This object shall only contain a reference to a collection of resources that comply to the PCIeDevice schema."
                         },
                         "ConnectedSwitches": {
-                            "type": "array",
-                            "items": {
-                                "$ref": "http://redfish.dmtf.org/schemas/v1/PCIeSwitch.json#/definitions/PCIeSwitch"
-                            },
+                            "$ref": "http://redfish.dmtf.org/schemas/v1/PCIeSwitchCollection.json#/definitions/PCIeSwitchCollection",
                             "readonly": false,
-                            "description": "An array of references to the PCIeSwitches connected to this interface.",
-                            "longDescription": "This object shall only contain an array of references that comply to the PCIeSwitch schema."
+                            "description": "This is a link to a collection of PCIeSwitches connected to this interface.",
+                            "longDescription": "This object shall only contain a reference to a collection of resources that comply to the PCIeSwitch schema."
                         }
                     },
                     "readonly": true,
@@ -177,21 +147,11 @@
                     "description": "The ComputerSystem hosting this HSLLInterface",
                     "longDescription": "This object shall only contain a reference that complies to the ComputerSystem schema."
                 },
-                "Connections@odata.count": {
-                    "$ref": "http://redfish.dmtf.org/schemas/v1/odata.4.0.0.json#/definitions/count"
-                },
-                "Connections@odata.navigationLink": {
-                    "type": "string",
-                    "format": "uri"
-                },
                 "Connections": {
-                    "type": "array",
-                    "items": {
-                        "$ref": "http://redfish.dmtf.org/schemas/v1/HSLLConnection.json#/definitions/HSLLConnection"
-                    },
+                    "$ref": "http://redfish.dmtf.org/schemas/v1/HSLLConnectionCollection.json#/definitions/HSLLConnectionCollection",
                     "readonly": false,
-                    "description": "An array of references to the connections that use this interface.",
-                    "longDescription": "This object shall only contain an array of references that comply to the HSLLConnection schema."
+                    "description": "This is a link to a collection of connections that use this interface.",
+                    "longDescription": "This object shall only contain a reference to a collection of resources that comply to the HSLLConnection schema."
                 }
             },
             "required": [

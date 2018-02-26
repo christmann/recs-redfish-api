@@ -54,10 +54,13 @@ table { border-collapse: collapse; }
 <a href="hsllconnection.html#hsllconnection">HSLLConnection</a><br />
 <a href="hsllconnectioncollection.html#hsllconnectioncollection">HSLLConnectionCollection</a><br />
 <a href="hsllinterface.html#hsllinterface">HSLLInterface</a><br />
+<a href="hsllinterfacecollection.html#hsllinterfacecollection">HSLLInterfaceCollection</a><br />
 <a href="jsonschemafile.html#jsonschemafile">JsonSchemaFile</a><br />
 <a href="jsonschemafilecollection.html#jsonschemafilecollection">JsonSchemaFileCollection</a><br />
 <a href="pciedevice.html#pciedevice">PCIeDevice</a><br />
+<a href="pciedevicecollection.html#pciedevicecollection">PCIeDeviceCollection</a><br />
 <a href="pciefunction.html#pciefunction">PCIeFunction</a><br />
+<a href="pciefunctioncollection.html#pciefunctioncollection">PCIeFunctionCollection</a><br />
 <a href="pcieport.html#pcieport">PCIePort</a><br />
 <a href="pcieportcollection.html#pcieportcollection">PCIePortCollection</a><br />
 <a href="pcieswitch.html#pcieswitch">PCIeSwitch</a><br />
@@ -86,10 +89,9 @@ This schema defines a PCIeSwitch and its respective properties.
 <tr><td>Name</td><td>string</td><td></td><td>GET</td><td>read-only</td><td>The name of the resource or array element.</td></tr>
 <tr><td>Links {</td><td>object</td><td></td><td></td><td>read-only</td><td>Contains links to other resources that are related to this resource.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;Oem { }</td><td>object</td><td></td><td></td><td>read-write</td><td>Oem extension object.</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;Chassis@odata.count</td><td>number</td><td></td><td></td><td>read-only</td><td>The number of items in a collection.</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;Chassis [ {</td><td>array[reference(<a href="chassis.html#chassis">Chassis</a>)]</td><td></td><td></td><td>read-only</td><td>An array of references to the chassis in which this switch is contained</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;Chassis {</td><td>reference(<a href="chassiscollection.html#chassiscollection">ChassisCollection</a>)</td><td>Yes</td><td></td><td>read-only</td><td>This is a link to a collection of chassis in which this switch is contained</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@odata.id</td><td>string</td><td></td><td></td><td>read-only</td><td>The unique identifier for a resource.<br />Format: uri</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;} ]</td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;}</td><td></td><td></td><td></td><td></td><td></td></tr>
 <tr><td>}</td><td></td><td></td><td></td><td></td><td></td></tr>
 <tr><td>MaxZones</td><td>number</td><td>Yes</td><td></td><td>read-write</td><td>Maximum number of MR zones supported by the switch<br />Minimum: 0</td></tr>
 <tr><td>Manufacturer</td><td>string</td><td>Yes</td><td></td><td>read-only</td><td>The manufacturer or OEM of this Switch.</td></tr>
@@ -147,10 +149,9 @@ This schema defines a PCIeSwitch and its respective properties.
 <tr><td>PCIePorts {</td><td>reference(<a href="pcieportcollection.html#pcieportcollection">PCIePortCollection</a>)</td><td>Yes</td><td></td><td>read-only</td><td>A reference to the collection of PCIe Ports associated with this Switch</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;@odata.id</td><td>string</td><td></td><td></td><td>read-only</td><td>The unique identifier for a resource.<br />Format: uri</td></tr>
 <tr><td>}</td><td></td><td></td><td></td><td></td><td></td></tr>
-<tr><td>AttachedDevices@odata.count</td><td>number</td><td></td><td></td><td>read-only</td><td>The number of items in a collection.</td></tr>
-<tr><td>AttachedDevices [ {</td><td>array[reference(<a href="pciedevice.html#pciedevice">PCIeDevice</a>)]</td><td></td><td></td><td>read-only</td><td>An array of references to the Physical Devices attached to this switch</td></tr>
+<tr><td>AttachedDevices {</td><td>reference(<a href="pciedevicecollection.html#pciedevicecollection">PCIeDeviceCollection</a>)</td><td>Yes</td><td></td><td>read-only</td><td>This is a link to a collection of PCIeDevices attached to this switch.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;@odata.id</td><td>string</td><td></td><td></td><td>read-only</td><td>The unique identifier for a resource.<br />Format: uri</td></tr>
-<tr><td>} ]</td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>}</td><td></td><td></td><td></td><td></td><td></td></tr>
 </table>
 <h2 id="actions">Actions</h2>
 <h3 id="#pcieswitch.reset">#PCIeSwitch.Reset</h3>
@@ -216,13 +217,11 @@ Content-Type: application/json
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Oem": { }
 <br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Chassis@odata.count": 1
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Chassis": {
 <br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Chassis": [{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"@odata.id": "/redfish/v1/PCIeSwitches/PCIeSwitch1/Chassis"
 <br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"@odata.id": "/redfish/v1/PCIeSwitches/PCIeSwitch1/Chassis1"
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}]
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;}
 <br />
@@ -282,13 +281,11 @@ Content-Type: application/json
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;}
 <br />
-&nbsp;&nbsp;&nbsp;&nbsp;"AttachedDevices@odata.count": 1
+&nbsp;&nbsp;&nbsp;&nbsp;"AttachedDevices": {
 <br />
-&nbsp;&nbsp;&nbsp;&nbsp;"AttachedDevices": [{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"@odata.id": "/redfish/v1/PCIeSwitches/PCIeSwitch1/AttachedDevices"
 <br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"@odata.id": "/redfish/v1/PCIeSwitches/PCIeSwitch1/PCIeDevice1"
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;}]
+&nbsp;&nbsp;&nbsp;&nbsp;}
 <br />
 }
 <br />

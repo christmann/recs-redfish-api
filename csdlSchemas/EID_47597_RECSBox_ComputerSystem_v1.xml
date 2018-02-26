@@ -19,8 +19,8 @@
 	<edmx:Reference Uri="ComposedNode_v1.xml">
 		<edmx:Include Namespace="ComposedNode"/>
 	</edmx:Reference>
-	<edmx:Reference Uri="HSLLInterface_v1.xml">
-		<edmx:Include Namespace="HSLLInterface"/>
+	<edmx:Reference Uri="HSLLInterfaceCollection_v1.xml">
+		<edmx:Include Namespace="HSLLInterfaceCollection"/>
 	</edmx:Reference>
 	<edmx:Reference Uri="Baseboard_v1.xml">
 		<edmx:Include Namespace="Baseboard"/>
@@ -38,10 +38,10 @@
 					<Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
 					<Annotation Term="OData.Description" String="RECS|Box ComputerSystem Links extension"/>
 				</Property>
-				<NavigationProperty Name="HSLLInterfaces" Type="Collection(HSLLInterface.HSLLInterface)">
+				<NavigationProperty Name="HSLLInterfaces" Type="HSLLInterfaceCollection.HSLLInterfaceCollection">
 					<Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
-					<Annotation Term="OData.Description" String="An array of references to the HSLLInterfaces hosted by this system"/>
-					<Annotation Term="OData.LongDescription" String="This object shall only contain an array of references that comply to the HSLLInterface schema."/>
+					<Annotation Term="OData.Description" String="This is a link to a collection of HSLLInterfaces hosted by this system"/>
+					<Annotation Term="OData.LongDescription" String="This object shall only contain a reference to a collection of resources that comply to the HSLLInterface schema."/>
 					<Annotation Term="OData.AutoExpandReferences"/>
 				</NavigationProperty>
 				<NavigationProperty Name="Baseboard" Type="Baseboard.Baseboard" Nullable="false">
