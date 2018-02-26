@@ -47,6 +47,7 @@
 			"ManagersInChassis": true,
 			"Drives": true,
 			"Storage": true,
+			"PCIeDevices": true,
 			"Oem" : {
 				"EID_47597": {
 					"Backplanes": true
@@ -119,6 +120,7 @@
 			]
 		},
 		"Links": {
+			"Chassis": true,
 			"ManagedBy": true,
 			"PoweredBy": true,
 			"CooledBy": true,
@@ -155,6 +157,7 @@
 		"LogServices": true,
 		"TrustedModules": true,
 		"SecureBoot": true,
+		"PCIeDevices": true,
 		"Bios": true,
 		"Storage": true,
 		"HostingRoles": true,
@@ -216,6 +219,7 @@
 	"PCIeDevice": {
 		"AssetTag": true,
 		"Links": {
+			"Chassis": true,
 			"Endpoints": true,
 			"HostInterface": true,
 			"Oem" : {
@@ -230,7 +234,8 @@
 		"Links": {
 			"Endpoints": true,
 			"Drives": true,
-			"StorageControllers": true
+			"StorageControllers": true,
+			"EthernetInterfaces": true
 		}
 	},
 	"PCIeSwitch": {
