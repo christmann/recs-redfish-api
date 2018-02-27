@@ -158,6 +158,7 @@
 		"TrustedModules": true,
 		"SecureBoot": true,
 		"PCIeDevices": true,
+		"PCIeFunctions": true,
 		"Bios": true,
 		"Storage": true,
 		"HostingRoles": true,
