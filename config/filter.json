@@ -195,7 +195,6 @@
 		"IPv6StaticAddresses": true,
 		"IPv6DefaultGateway": true,
 		"NameServers": true,
-		"VLANs": true,
 		"LinkStatus": true
 	},
 	"EthernetSwitch": {
@@ -289,7 +288,8 @@
 		"LogServices": true,
 		"MaxZones": true,
 		"Zones": true,
-		"IndicatorLED": true
+		"IndicatorLED": true,
+		"AttachedDevices": true
 	},
 	"PCIePort": {
 		"SpeedGBps": true,

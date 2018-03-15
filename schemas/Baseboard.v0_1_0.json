@@ -106,12 +106,6 @@
                             "$ref": "http://redfish.dmtf.org/schemas/v1/Resource.json#/definitions/Oem",
                             "description": "Oem extension object.",
                             "longDescription": "This object represents the Oem property.  All values for resources described by this schema shall comply to the requirements as described in the Redfish specification."
-                        },
-                        "Chassis": {
-                            "$ref": "http://redfish.dmtf.org/schemas/v1/Chassis.json#/definitions/Chassis",
-                            "readonly": true,
-                            "description": "The Chassis hosting this Baseboard",
-                            "longDescription": "This object shall only contain a reference that complies to the Chassis schema."
                         }
                     },
                     "readonly": true,
@@ -176,6 +170,12 @@
                     "readonly": true,
                     "description": "The one-based position of the blade slot containing this Baseboard within the Chassis.",
                     "longDescription": "The value of this property shall contain the zero-based numeric position of the blade slot containing this Baseboard within the Chassis."
+                },
+                "Chassis": {
+                    "$ref": "http://redfish.dmtf.org/schemas/v1/Chassis.json#/definitions/Chassis",
+                    "readonly": true,
+                    "description": "The Chassis hosting this Baseboard",
+                    "longDescription": "This object shall only contain a reference that complies to the Chassis schema."
                 },
                 "ComputerSystems": {
                     "$ref": "http://redfish.dmtf.org/schemas/v1/ComputerSystemCollection.json#/definitions/ComputerSystemCollection",

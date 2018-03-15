@@ -69,6 +69,12 @@
 					<Annotation Term="OData.Permissions" EnumMember="OData.Permissions/Read"/>
 					<Annotation Term="OData.Description" String="The type of the Baseboard."/>
 				</Property>
+				<NavigationProperty Name="Chassis" Type="Chassis.Chassis" Nullable="false">
+					<Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+					<Annotation Term="OData.Description" String="The Chassis hosting this Baseboard"/>
+					<Annotation Term="OData.LongDescription" String="This object shall only contain a reference that complies to the Chassis schema."/>
+					<Annotation Term="OData.AutoExpandReferences"/>
+				</NavigationProperty>
 				<NavigationProperty Name="ComputerSystems" Type="ComputerSystemCollection.ComputerSystemCollection" Nullable="false">
 					<Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
 					<Annotation Term="OData.Description" String="This is a link to a collection of ComputerSystems hosted on this Baseboard."/>
@@ -102,12 +108,6 @@
 			</EntityType>
 
 			<ComplexType Name="Links" BaseType="Resource.Links">
-				<NavigationProperty Name="Chassis" Type="Chassis.Chassis" Nullable="false">
-					<Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
-					<Annotation Term="OData.Description" String="The Chassis hosting this Baseboard"/>
-					<Annotation Term="OData.LongDescription" String="This object shall only contain a reference that complies to the Chassis schema."/>
-					<Annotation Term="OData.AutoExpandReferences"/>
-				</NavigationProperty>
 			</ComplexType>
 
 			<ComplexType Name="Actions">

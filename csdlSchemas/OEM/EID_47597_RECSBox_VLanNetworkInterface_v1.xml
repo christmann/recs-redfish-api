@@ -16,18 +16,9 @@
 	<edmx:Reference Uri="http://redfish.dmtf.org/schemas/v1/Resource_v1.xml">
 		<edmx:Include Namespace="Resource"/>
 	</edmx:Reference>
-	<edmx:Reference Uri="http://redfish.dmtf.org/schemas/v1/ComputerSystem_v1.xml">
-		<edmx:Include Namespace="ComputerSystem"/>
-	</edmx:Reference>
-	<edmx:Reference Uri="HSLLConnection_v1.xml">
-		<edmx:Include Namespace="HSLLConnection"/>
-	</edmx:Reference>
-	<edmx:Reference Uri="http://redfish.dmtf.org/schemas/v1/PCIeDevice_v1.xml">
-		<edmx:Include Namespace="PCIeDevice"/>
-	</edmx:Reference>
-	<edmx:Reference Uri="http://redfish.dmtf.org/schemas/v1/PCIeSwitch_v1.xml">
-		<edmx:Include Namespace="PCIeSwitch"/>
-	</edmx:Reference>
+  <edmx:Reference Uri="http://redfish.dmtf.org/schemas/v1/EthernetInterface_v1.xml">
+    <edmx:Include Namespace="EthernetInterface"/>
+  </edmx:Reference>
 
 	<edmx:DataServices>
 
@@ -39,6 +30,12 @@
 					<Annotation Term="OData.Description" String="This indicates if VLAN is tagged (as defined in IEEE 802.1Q)."/>
 					<Annotation Term="OData.LongDescription" String="This indicates if VLAN is tagged (as defined in IEEE 802.1Q)." />
 				</Property>
+				<NavigationProperty Name="EthernetInterface" Type="EthernetInterface.EthernetInterface" Nullable="false">
+					<Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+					<Annotation Term="OData.Description" String="A reference to the Ethernet interface of this VLanNetworkInterface."/>
+					<Annotation Term="OData.LongDescription" String="The value of this property shall be a link to an EthernetInterface."/>
+					<Annotation Term="OData.AutoExpandReferences"/>
+				</NavigationProperty>
 			</ComplexType>
 
 		</Schema>

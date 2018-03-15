@@ -16,28 +16,25 @@
 	<edmx:Reference Uri="http://redfish.dmtf.org/schemas/v1/Resource_v1.xml">
 		<edmx:Include Namespace="Resource"/>
 	</edmx:Reference>
-  <edmx:Reference Uri="http://redfish.dmtf.org/schemas/v1/EthernetInterface_v1.xml">
-    <edmx:Include Namespace="EthernetInterface"/>
-  </edmx:Reference>
+	<edmx:Reference Uri="Baseboard_v1.xml">
+		<edmx:Include Namespace="Baseboard"/>
+	</edmx:Reference>
 
 	<edmx:DataServices>
 
-		<Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="EID_47597_RECSBox_VLanNetworkInterface.v0_1_0">
+		<Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="EID_47597_RECSBox_PCIeSwitch.v0_1_0">
 			
-			<ComplexType Name="VLanNetworkInterface" BaseType="Resource.OemObject">
-				<Property Name="Tagged" Type="Edm.Boolean">
-					<Annotation Term="OData.Permissions" EnumMember="OData.Permission/ReadWrite"/>
-					<Annotation Term="OData.Description" String="This indicates if VLAN is tagged (as defined in IEEE 802.1Q)."/>
-					<Annotation Term="OData.LongDescription" String="This indicates if VLAN is tagged (as defined in IEEE 802.1Q)." />
-				</Property>
-				<NavigationProperty Name="EthernetInterface" Type="EthernetInterface.EthernetInterface" Nullable="false">
+			<ComplexType Name="PCIeSwitch" BaseType="Resource.OemObject">
+				<NavigationProperty Name="Baseboard" Type="Resource.Item">
 					<Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
-					<Annotation Term="OData.Description" String="A reference to the Ethernet interface of this VLanNetworkInterface."/>
-					<Annotation Term="OData.LongDescription" String="The value of this property shall be a link to an EthernetInterface."/>
+					<Annotation Term="OData.Description" String="The Baseboard, the PCIeSwitch is hosted on, or null if it is not hosted on a Baseboard."/>
+					<Annotation Term="OData.LongDescription" String="This object shall only contain a reference that complies to the Baseboard schema."/>
 					<Annotation Term="OData.AutoExpandReferences"/>
 				</NavigationProperty>
+				<Annotation Term="OData.AdditionalProperties" Bool="false"/>
+				<Annotation Term="OData.Description" String="RECS|Box PCIeSwitch extension"/>
+				<Annotation Term="OData.LongDescription" String="RECS|Box PCIeSwitch extension" />
 			</ComplexType>
-
 		</Schema>
 
 	</edmx:DataServices>

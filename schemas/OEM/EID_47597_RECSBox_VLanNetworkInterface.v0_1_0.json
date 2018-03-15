@@ -27,6 +27,12 @@
                     "readonly": false,
                     "description": "This indicates if VLAN is tagged (as defined in IEEE 802.1Q).",
                     "longDescription": "This indicates if VLAN is tagged (as defined in IEEE 802.1Q)."
+                },
+                "EthernetInterface": {
+                    "$ref": "http://redfish.dmtf.org/schemas/v1/EthernetInterface.json#/definitions/EthernetInterface",
+                    "readonly": true,
+                    "description": "A reference to the Ethernet interface of this VLanNetworkInterface.",
+                    "longDescription": "The value of this property shall be a link to an EthernetInterface."
                 }
             },
             "description": "Base type for an Oem object.",

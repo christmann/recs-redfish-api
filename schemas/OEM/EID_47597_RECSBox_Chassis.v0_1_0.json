@@ -23,6 +23,24 @@
                     "$ref": "#/definitions/Links",
                     "readonly": true,
                     "description": "RECS|Box Chassis Links extension"
+                },
+                "Baseboards": {
+                    "$ref": "http://redfish.dmtf.org/schemas/v1/BaseboardCollection.json#/definitions/BaseboardCollection",
+                    "readonly": true,
+                    "description": "This is a link to a collection of Baseboards within this Chassis.",
+                    "longDescription": "This object shall only contain a reference to a collection of resources that comply to the Baseboard schema."
+                },
+                "EthernetSwitch": {
+                    "$ref": "http://redfish.dmtf.org/schemas/v1/EthernetSwitch.json#/definitions/EthernetSwitch",
+                    "readonly": true,
+                    "description": "This is a link to the EthernetSwitch hosted in this Chassis.",
+                    "longDescription": "This object shall only contain a reference to a resource that complies to the EthernetSwitch schema."
+                },
+                "PCIeSwitches": {
+                    "$ref": "http://redfish.dmtf.org/schemas/v1/PCIeSwitchCollection.json#/definitions/PCIeSwitchCollection",
+                    "readonly": true,
+                    "description": "This is a link to a collection of PCIeSwitches hosted on the Backplanes of this Chassis.",
+                    "longDescription": "This object shall only contain a reference to a collection of resources that comply to the PCIeSwitch schema."
                 }
             },
             "description": "RECS|Box Chassis extension",
@@ -50,24 +68,6 @@
                     "readonly": true,
                     "description": "This is a link to a collection of Backplanes within this Chassis.",
                     "longDescription": "This object shall only contain a reference to a collection of resources that comply to the Backplane schema."
-                },
-                "Baseboards": {
-                    "$ref": "http://redfish.dmtf.org/schemas/v1/BaseboardCollection.json#/definitions/BaseboardCollection",
-                    "readonly": true,
-                    "description": "This is a link to a collection of Baseboards within this Chassis.",
-                    "longDescription": "This object shall only contain a reference to a collection of resources that comply to the Baseboard schema."
-                },
-                "EthernetSwitches": {
-                    "$ref": "http://redfish.dmtf.org/schemas/v1/EthernetSwitchCollection.json#/definitions/EthernetSwitchCollection",
-                    "readonly": true,
-                    "description": "This is a link to a collection of EthernetSwitches hosted on the Backplanes of this Chassis.",
-                    "longDescription": "This object shall only contain a reference to a collection of resources that comply to the EthernetSwitch schema."
-                },
-                "PCIeSwitches": {
-                    "$ref": "http://redfish.dmtf.org/schemas/v1/PCIeSwitchCollection.json#/definitions/PCIeSwitchCollection",
-                    "readonly": true,
-                    "description": "This is a link to a collection of PCIeSwitches hosted on the Backplanes of this Chassis.",
-                    "longDescription": "This object shall only contain a reference to a collection of resources that comply to the PCIeSwitch schema."
                 }
             },
             "description": "Base type for an Oem object.",
