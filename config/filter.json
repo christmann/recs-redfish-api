@@ -250,6 +250,7 @@
 			"Chassis": true,
 			"Endpoints": true,
 			"HostInterface": true,
+			"PCIeFunctions": true,
 			"Oem" : {
 				"EID_47597": {
 					"Backplane": true

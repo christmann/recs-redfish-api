@@ -22,6 +22,9 @@
 	<edmx:Reference Uri="PCIePort_v1.xml">
 		<edmx:Include Namespace="PCIePort"/>
 	</edmx:Reference>
+	<edmx:Reference Uri="PCIeFunctionCollection_v1.xml">
+		<edmx:Include Namespace="PCIeFunctionCollection"/>
+	</edmx:Reference>
 	<edmx:Reference Uri="Baseboard_v1.xml">
 		<edmx:Include Namespace="Baseboard"/>
 	</edmx:Reference>
@@ -48,6 +51,12 @@
 					<Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
 					<Annotation Term="OData.Description" String="This is a link to the ComposedNode, this PCIeDevice is composed in."/>
 					<Annotation Term="OData.LongDescription" String="This object shall only contain a reference to a resource that comply to the ComposedNode schema."/>
+					<Annotation Term="OData.AutoExpandReferences"/>
+				</NavigationProperty>
+				<NavigationProperty Name="PCIeFunctions" Type="PCIeFunctionCollection.PCIeFunctionCollection">
+					<Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+					<Annotation Term="OData.Description" String="This is a link to a collection of PCIeFunctions exposed by this device"/>
+					<Annotation Term="OData.LongDescription" String="This object shall only contain a reference to a collection of resources that comply to the PCIeFunction schema."/>
 					<Annotation Term="OData.AutoExpandReferences"/>
 				</NavigationProperty>
 				<Annotation Term="OData.AdditionalProperties" Bool="false"/>

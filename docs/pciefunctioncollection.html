@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="utf-8" />
-<title>JsonSchemaFile</title>
+<title>PCIeFunctionCollection</title>
 <style type="text/css">
 body { font-family: Georgia, 'Times New Roman', Times, serif; }
 h1 { font-size: 2.2em; }
@@ -71,34 +71,27 @@ table { border-collapse: collapse; }
 <a href="error.html#error">Error</a><br />
 </div>
 <div class="content">
-<h1 id="jsonschemafile">JsonSchemaFile</h1>
+<h1 id="pciefunctioncollection">PCIeFunctionCollection</h1>
 <h2 id="schema definition">Schema Definition</h2>
-This is the schema definition for the Schema File locator resource.
 <h3 id="properties">Properties</h3>
 <table class="datatable">
 <tr><th>Property</th><th>Type</th><th>Nullable</th><th>Required</th><th>Permission</th><th>Description</th></tr>
 <tr><td>@odata.context</td><td>string</td><td></td><td></td><td>read-only</td><td>The OData description of a payload.<br />Format: uri</td></tr>
 <tr><td>@odata.id</td><td>string</td><td></td><td></td><td>read-only</td><td>The unique identifier for a resource.<br />Format: uri</td></tr>
 <tr><td>@odata.type</td><td>string</td><td></td><td></td><td>read-only</td><td>The type of a resource.</td></tr>
-<tr><td>Oem { }</td><td>object</td><td></td><td></td><td>read-write</td><td>This is the manufacturer/provider specific extension moniker used to divide the Oem object into sections.</td></tr>
-<tr><td>Id</td><td>string</td><td></td><td>GET</td><td>read-only</td><td>Uniquely identifies the resource within the collection of like resources.</td></tr>
 <tr><td>Description</td><td>string</td><td>Yes</td><td></td><td>read-only</td><td>Provides a description of this resource and is used for commonality  in the schema definitions.</td></tr>
-<tr><td>Name</td><td>string</td><td></td><td>GET</td><td>read-only</td><td>The name of the resource or array element.</td></tr>
-<tr><td>Languages [ ]</td><td>array[string]</td><td></td><td>GET</td><td>read-only</td><td>Language codes for the schemas available.</td></tr>
-<tr><td>Schema</td><td>string</td><td></td><td>GET</td><td>read-only</td><td>The @odata.type name this schema describes.</td></tr>
-<tr><td>Location [ {</td><td>array[object]</td><td></td><td>GET</td><td>read-write</td><td>Location information for this schema file.</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;Language</td><td>string</td><td></td><td></td><td>read-only</td><td>The language code for the file the schema is in.</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;Uri</td><td>string</td><td></td><td></td><td>read-only</td><td>Link to locally available URI for schema.<br />Format: uri</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;ArchiveUri</td><td>string</td><td></td><td></td><td>read-only</td><td>If the schema is hosted on the service in an archive file, this is the link to the archive file.<br />Format: uri</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;PublicationUri</td><td>string</td><td></td><td></td><td>read-only</td><td>Link to publicly available (canonical) URI for schema.<br />Format: uri</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;ArchiveFile</td><td>string</td><td></td><td></td><td>read-only</td><td>If the schema is hosted on the service in an archive file, this is the name of the file within the archive.</td></tr>
+<tr><td>Name</td><td>string</td><td></td><td></td><td>read-only</td><td>The name of the resource or array element.</td></tr>
+<tr><td>Oem { }</td><td>object</td><td></td><td></td><td>read-write</td><td>This is the manufacturer/provider specific extension moniker used to divide the Oem object into sections.</td></tr>
+<tr><td>Members@odata.count</td><td>number</td><td></td><td></td><td>read-only</td><td>The number of items in a collection.</td></tr>
+<tr><td>Members [ {</td><td>array[reference(<a href="pciefunction.html#pciefunction">PCIeFunction</a>)]</td><td></td><td></td><td>read-only</td><td>Contains the members of this collection.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;@odata.id</td><td>string</td><td></td><td></td><td>read-only</td><td>The unique identifier for a resource.<br />Format: uri</td></tr>
 <tr><td>} ]</td><td></td><td></td><td></td><td></td><td></td></tr>
 </table>
 <h2 id="operations">Operations</h2>
 <h3 id="get">GET</h3>
 <h4 id="request">Request</h4>
 <div class="code">
-GET /redfish/v1/JsonSchemas/JsonSchemaFile1
+GET /redfish/v1/PCIeSwitches/PCIeSwitch1/AttachedDevices/PCIeDevice1/PCIeFunctions
 <br />
 Content-Type: application/json
 <br />
@@ -109,33 +102,21 @@ Content-Type: application/json
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;"@odata.context": "uri"
 <br />
-&nbsp;&nbsp;&nbsp;&nbsp;"@odata.id": /redfish/v1/JsonSchemas/JsonSchemaFile1
+&nbsp;&nbsp;&nbsp;&nbsp;"@odata.id": /redfish/v1/PCIeSwitches/PCIeSwitch1/AttachedDevices/PCIeDevice1/PCIeFunctions
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;"@odata.type": "string"
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;"Oem": { }
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;"Id": "string"
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;"Description": "string"
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;"Name": "string"
 <br />
-&nbsp;&nbsp;&nbsp;&nbsp;"Languages": [ "string" ]
+&nbsp;&nbsp;&nbsp;&nbsp;"Oem": { }
 <br />
-&nbsp;&nbsp;&nbsp;&nbsp;"Schema": "string"
+&nbsp;&nbsp;&nbsp;&nbsp;"Members@odata.count": 1
 <br />
-&nbsp;&nbsp;&nbsp;&nbsp;"Location": [{
+&nbsp;&nbsp;&nbsp;&nbsp;"Members": [{
 <br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Language": "string"
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Uri": "uri"
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"ArchiveUri": "uri"
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"PublicationUri": "uri"
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"ArchiveFile": "string"
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"@odata.id": "/redfish/v1/PCIeSwitches/PCIeSwitch1/AttachedDevices/PCIeDevice1/PCIeFunctions/PCIeFunction1"
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;}]
 <br />
