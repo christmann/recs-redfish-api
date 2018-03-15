@@ -46,15 +46,9 @@ table { border-collapse: collapse; }
 <a href="ethernetinterface.html#ethernetinterface">EthernetInterface</a><br />
 <a href="ethernetinterfacecollection.html#ethernetinterfacecollection">EthernetInterfaceCollection</a><br />
 <a href="ethernetswitch.html#ethernetswitch">EthernetSwitch</a><br />
-<a href="ethernetswitchacl.html#ethernetswitchacl">EthernetSwitchACL</a><br />
-<a href="ethernetswitchaclcollection.html#ethernetswitchaclcollection">EthernetSwitchACLCollection</a><br />
-<a href="ethernetswitchaclrule.html#ethernetswitchaclrule">EthernetSwitchACLRule</a><br />
-<a href="ethernetswitchaclrulecollection.html#ethernetswitchaclrulecollection">EthernetSwitchACLRuleCollection</a><br />
 <a href="ethernetswitchcollection.html#ethernetswitchcollection">EthernetSwitchCollection</a><br />
 <a href="ethernetswitchport.html#ethernetswitchport">EthernetSwitchPort</a><br />
 <a href="ethernetswitchportcollection.html#ethernetswitchportcollection">EthernetSwitchPortCollection</a><br />
-<a href="ethernetswitchstaticmac.html#ethernetswitchstaticmac">EthernetSwitchStaticMAC</a><br />
-<a href="ethernetswitchstaticmaccollection.html#ethernetswitchstaticmaccollection">EthernetSwitchStaticMACCollection</a><br />
 <a href="hsllconnection.html#hsllconnection">HSLLConnection</a><br />
 <a href="hsllconnectioncollection.html#hsllconnectioncollection">HSLLConnectionCollection</a><br />
 <a href="hsllinterface.html#hsllinterface">HSLLInterface</a><br />
@@ -64,13 +58,10 @@ table { border-collapse: collapse; }
 <a href="pciedevice.html#pciedevice">PCIeDevice</a><br />
 <a href="pciedevicecollection.html#pciedevicecollection">PCIeDeviceCollection</a><br />
 <a href="pciefunction.html#pciefunction">PCIeFunction</a><br />
-<a href="pciefunctioncollection.html#pciefunctioncollection">PCIeFunctionCollection</a><br />
 <a href="pcieport.html#pcieport">PCIePort</a><br />
 <a href="pcieportcollection.html#pcieportcollection">PCIePortCollection</a><br />
 <a href="pcieswitch.html#pcieswitch">PCIeSwitch</a><br />
 <a href="pcieswitchcollection.html#pcieswitchcollection">PCIeSwitchCollection</a><br />
-<a href="pciezone.html#pciezone">PCIeZone</a><br />
-<a href="pciezonecollection.html#pciezonecollection">PCIeZoneCollection</a><br />
 <a href="processor.html#processor">Processor</a><br />
 <a href="processorcollection.html#processorcollection">ProcessorCollection</a><br />
 <a href="serviceroot.html#serviceroot">ServiceRoot</a><br />
@@ -102,12 +93,6 @@ A Chassis represents the physical components for any system.  This resource repr
 <tr><td>SKU</td><td>string</td><td>Yes</td><td></td><td>read-only</td><td>This is the SKU for this chassis.</td></tr>
 <tr><td>SerialNumber</td><td>string</td><td>Yes</td><td></td><td>read-only</td><td>The serial number for this chassis.</td></tr>
 <tr><td>PartNumber</td><td>string</td><td>Yes</td><td></td><td>read-only</td><td>The part number for this chassis.</td></tr>
-<tr><td>IndicatorLED</td><td>string</td><td>Yes</td><td></td><td>read-write</td><td>The state of the indicator LED, used to identify the chassis.<br />Possible Values:<ul>
-<li>Unknown: The state of the Indicator LED cannot be determined. Deprecated: Return null if state is unknown.</li>
-<li>Lit: The Indicator LED is lit.</li>
-<li>Blinking: The Indicator LED is blinking.</li>
-<li>Off: The Indicator LED is off.</li>
-</ul></td></tr>
 <tr><td>Links {</td><td>object</td><td></td><td></td><td>read-write</td><td>Contains references to other resources that are related to this resource.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;Oem {</td><td>object</td><td></td><td></td><td>read-write</td><td>Oem extension object.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;EID_47597 {</td><td>object</td><td></td><td></td><td>read-only</td><td>RECS|Box Chassis Links extension</td></tr>
@@ -205,10 +190,6 @@ Content-Type: application/json
 &nbsp;&nbsp;&nbsp;&nbsp;"SerialNumber": "string"
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;"PartNumber": "string"
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;"IndicatorLED": "Unknown"
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;"IndicatorLED@Redfish.AllowableValues": ["Unknown", "Lit", "Blinking", "Off"]
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;"Links": {
 <br />

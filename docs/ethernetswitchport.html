@@ -46,15 +46,9 @@ table { border-collapse: collapse; }
 <a href="ethernetinterface.html#ethernetinterface">EthernetInterface</a><br />
 <a href="ethernetinterfacecollection.html#ethernetinterfacecollection">EthernetInterfaceCollection</a><br />
 <a href="ethernetswitch.html#ethernetswitch">EthernetSwitch</a><br />
-<a href="ethernetswitchacl.html#ethernetswitchacl">EthernetSwitchACL</a><br />
-<a href="ethernetswitchaclcollection.html#ethernetswitchaclcollection">EthernetSwitchACLCollection</a><br />
-<a href="ethernetswitchaclrule.html#ethernetswitchaclrule">EthernetSwitchACLRule</a><br />
-<a href="ethernetswitchaclrulecollection.html#ethernetswitchaclrulecollection">EthernetSwitchACLRuleCollection</a><br />
 <a href="ethernetswitchcollection.html#ethernetswitchcollection">EthernetSwitchCollection</a><br />
 <a href="ethernetswitchport.html#ethernetswitchport">EthernetSwitchPort</a><br />
 <a href="ethernetswitchportcollection.html#ethernetswitchportcollection">EthernetSwitchPortCollection</a><br />
-<a href="ethernetswitchstaticmac.html#ethernetswitchstaticmac">EthernetSwitchStaticMAC</a><br />
-<a href="ethernetswitchstaticmaccollection.html#ethernetswitchstaticmaccollection">EthernetSwitchStaticMACCollection</a><br />
 <a href="hsllconnection.html#hsllconnection">HSLLConnection</a><br />
 <a href="hsllconnectioncollection.html#hsllconnectioncollection">HSLLConnectionCollection</a><br />
 <a href="hsllinterface.html#hsllinterface">HSLLInterface</a><br />
@@ -64,13 +58,10 @@ table { border-collapse: collapse; }
 <a href="pciedevice.html#pciedevice">PCIeDevice</a><br />
 <a href="pciedevicecollection.html#pciedevicecollection">PCIeDeviceCollection</a><br />
 <a href="pciefunction.html#pciefunction">PCIeFunction</a><br />
-<a href="pciefunctioncollection.html#pciefunctioncollection">PCIeFunctionCollection</a><br />
 <a href="pcieport.html#pcieport">PCIePort</a><br />
 <a href="pcieportcollection.html#pcieportcollection">PCIePortCollection</a><br />
 <a href="pcieswitch.html#pcieswitch">PCIeSwitch</a><br />
 <a href="pcieswitchcollection.html#pcieswitchcollection">PCIeSwitchCollection</a><br />
-<a href="pciezone.html#pciezone">PCIeZone</a><br />
-<a href="pciezonecollection.html#pciezonecollection">PCIeZoneCollection</a><br />
 <a href="processor.html#processor">Processor</a><br />
 <a href="processorcollection.html#processorcollection">ProcessorCollection</a><br />
 <a href="serviceroot.html#serviceroot">ServiceRoot</a><br />
@@ -197,14 +188,8 @@ A Ethernet Switch Port represents a port for switch.
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;Switch {</td><td>reference(<a href="ethernetswitch.html#ethernetswitch">EthernetSwitch</a>)</td><td>Yes</td><td></td><td>read-write</td><td>An EthernetSwitch represents an ethernet switch.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@odata.id</td><td>string</td><td></td><td></td><td>read-only</td><td>The unique identifier for a resource.<br />Format: uri</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;}</td><td></td><td></td><td></td><td></td><td></td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;ActiveACLs {</td><td>reference(<a href="ethernetswitchaclcollection.html#ethernetswitchaclcollection">EthernetSwitchACLCollection</a>)</td><td>Yes</td><td></td><td>read-write</td><td>This is a link to a collection of EthernetSwitchACLs associated with this switch port.</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@odata.id</td><td>string</td><td></td><td></td><td>read-only</td><td>The unique identifier for a resource.<br />Format: uri</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;}</td><td></td><td></td><td></td><td></td><td></td></tr>
 <tr><td>}</td><td></td><td></td><td></td><td></td><td></td></tr>
 <tr><td>VLANs {</td><td>reference(<a href="vlannetworkinterfacecollection.html#vlannetworkinterfacecollection">VLanNetworkInterfaceCollection</a>)</td><td>Yes</td><td></td><td>read-write</td><td></td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;@odata.id</td><td>string</td><td></td><td></td><td>read-only</td><td>The unique identifier for a resource.<br />Format: uri</td></tr>
-<tr><td>}</td><td></td><td></td><td></td><td></td><td></td></tr>
-<tr><td>StaticMACs {</td><td>reference(<a href="ethernetswitchstaticmaccollection.html#ethernetswitchstaticmaccollection">EthernetSwitchStaticMACCollection</a>)</td><td>Yes</td><td></td><td>read-write</td><td></td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;@odata.id</td><td>string</td><td></td><td></td><td>read-only</td><td>The unique identifier for a resource.<br />Format: uri</td></tr>
 <tr><td>}</td><td></td><td></td><td></td><td></td><td></td></tr>
 </table>
@@ -335,23 +320,11 @@ Content-Type: application/json
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
 <br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"ActiveACLs": {
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"@odata.id": "/redfish/v1/EthernetSwitches/EthernetSwitch1/Ports/EthernetSwitchPort1/ActiveACLs"
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
-<br />
 &nbsp;&nbsp;&nbsp;&nbsp;}
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;"VLANs": {
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"@odata.id": "/redfish/v1/EthernetSwitches/EthernetSwitch1/Ports/EthernetSwitchPort1/VLANs"
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;}
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;"StaticMACs": {
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"@odata.id": "/redfish/v1/EthernetSwitches/EthernetSwitch1/Ports/EthernetSwitchPort1/StaticMACs"
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;}
 <br />

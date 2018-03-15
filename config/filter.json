@@ -66,7 +66,8 @@
 		"WidthMm": true,
 		"DepthMm": true,
 		"WeightKg": true,
-		"NetworkAdapters": true
+		"NetworkAdapters": true,
+		"IndicatorLED": true
 	},
 	"ComposedNode": {
 		"Actions": {
@@ -144,9 +145,8 @@
 				]
 			}
 		},
-		"SystemType": [
-			"Physical"
-		],
+		"SystemType": true,
+		"PartNumber": true,
 		"BiosVersion": true,
 		"AssetTag": true,
 		"HostName": true,
@@ -174,21 +174,48 @@
 		"Operations": true
 	},
 	"EthernetInterface": {
+		"VLAN": true,
 		"Links": {
 			"Endpoints": true,
 			"HostInterface": true
-		}
+		},
+		"Status": true,
+		"InterfaceEnabled": true,
+		"MACAddress": true,
+		"SpeedMbps": true,
+		"AutoNeg": true,
+		"FullDuplex": true,
+		"MTUSize": true,
+		"HostName": true,
+		"FQDN": true,
+		"MaxIPv6StaticAddresses": true,
+		"IPv4Addresses": true,
+		"IPv6AddressPolicyTable": true,
+		"IPv6Addresses": true,
+		"IPv6StaticAddresses": true,
+		"IPv6DefaultGateway": true,
+		"NameServers": true,
+		"VLANs": true,
+		"LinkStatus": true
 	},
 	"EthernetSwitch": {
 		"Links": {
 			"ManagedBy": true
-		}
+		},
+		"ACLs": true,
+		"ManufacturingDate": true,
+		"FirmwareName": true,
+		"FirmwareVersion": true,
+		"Role": true,
+		"MaxACLNumber": true
 	},
 	"EthernetSwitchPort": {
 		"Links": {
 			"MemberOfPort": true,
-			"PortMembers": true
-		}
+			"PortMembers": true,
+			"ActiveACLs": true
+		},
+		"StaticMACs": true
 	},
 	"Manager": {
 		"LogServices": true,
@@ -258,6 +285,16 @@
 				]
 			}
 		},
-		"LogServices": true
+		"LogServices": true,
+		"MaxZones": true,
+		"Zones": true,
+		"IndicatorLED": true
+	},
+	"PCIePort": {
+		"SpeedGBps": true,
+		"Width": true
+	},
+	"Processor": {
+		"Status": true
 	}
 }

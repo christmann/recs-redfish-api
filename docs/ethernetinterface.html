@@ -46,15 +46,9 @@ table { border-collapse: collapse; }
 <a href="ethernetinterface.html#ethernetinterface">EthernetInterface</a><br />
 <a href="ethernetinterfacecollection.html#ethernetinterfacecollection">EthernetInterfaceCollection</a><br />
 <a href="ethernetswitch.html#ethernetswitch">EthernetSwitch</a><br />
-<a href="ethernetswitchacl.html#ethernetswitchacl">EthernetSwitchACL</a><br />
-<a href="ethernetswitchaclcollection.html#ethernetswitchaclcollection">EthernetSwitchACLCollection</a><br />
-<a href="ethernetswitchaclrule.html#ethernetswitchaclrule">EthernetSwitchACLRule</a><br />
-<a href="ethernetswitchaclrulecollection.html#ethernetswitchaclrulecollection">EthernetSwitchACLRuleCollection</a><br />
 <a href="ethernetswitchcollection.html#ethernetswitchcollection">EthernetSwitchCollection</a><br />
 <a href="ethernetswitchport.html#ethernetswitchport">EthernetSwitchPort</a><br />
 <a href="ethernetswitchportcollection.html#ethernetswitchportcollection">EthernetSwitchPortCollection</a><br />
-<a href="ethernetswitchstaticmac.html#ethernetswitchstaticmac">EthernetSwitchStaticMAC</a><br />
-<a href="ethernetswitchstaticmaccollection.html#ethernetswitchstaticmaccollection">EthernetSwitchStaticMACCollection</a><br />
 <a href="hsllconnection.html#hsllconnection">HSLLConnection</a><br />
 <a href="hsllconnectioncollection.html#hsllconnectioncollection">HSLLConnectionCollection</a><br />
 <a href="hsllinterface.html#hsllinterface">HSLLInterface</a><br />
@@ -64,13 +58,10 @@ table { border-collapse: collapse; }
 <a href="pciedevice.html#pciedevice">PCIeDevice</a><br />
 <a href="pciedevicecollection.html#pciedevicecollection">PCIeDeviceCollection</a><br />
 <a href="pciefunction.html#pciefunction">PCIeFunction</a><br />
-<a href="pciefunctioncollection.html#pciefunctioncollection">PCIeFunctionCollection</a><br />
 <a href="pcieport.html#pcieport">PCIePort</a><br />
 <a href="pcieportcollection.html#pcieportcollection">PCIePortCollection</a><br />
 <a href="pcieswitch.html#pcieswitch">PCIeSwitch</a><br />
 <a href="pcieswitchcollection.html#pcieswitchcollection">PCIeSwitchCollection</a><br />
-<a href="pciezone.html#pciezone">PCIeZone</a><br />
-<a href="pciezonecollection.html#pciezonecollection">PCIeZoneCollection</a><br />
 <a href="processor.html#processor">Processor</a><br />
 <a href="processorcollection.html#processorcollection">ProcessorCollection</a><br />
 <a href="serviceroot.html#serviceroot">ServiceRoot</a><br />
@@ -93,95 +84,7 @@ This schema defines a simple ethernet NIC resource.
 <tr><td>Description</td><td>string</td><td>Yes</td><td></td><td>read-only</td><td>Provides a description of this resource and is used for commonality  in the schema definitions.</td></tr>
 <tr><td>Name</td><td>string</td><td></td><td>GET</td><td>read-only</td><td>The name of the resource or array element.</td></tr>
 <tr><td>UefiDevicePath</td><td>string</td><td>Yes</td><td></td><td>read-only</td><td>The UEFI device path for this interface.</td></tr>
-<tr><td>Status {</td><td>object</td><td>Yes</td><td></td><td>read-only</td><td></td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;State</td><td>string</td><td>Yes</td><td></td><td>read-only</td><td>This indicates the known state of the resource, such as if it is enabled.<br />Possible Values:<ul>
-<li>Enabled: This function or resource has been enabled.</li>
-<li>Disabled: This function or resource has been disabled.</li>
-<li>StandbyOffline: This function or resource is enabled, but awaiting an external action to activate it.</li>
-<li>StandbySpare: This function or resource is part of a redundancy set and is awaiting a failover or other external action to activate it.</li>
-<li>InTest: This function or resource is undergoing testing.</li>
-<li>Starting: This function or resource is starting.</li>
-<li>Absent: This function or resource is not present or not detected.</li>
-<li>UnavailableOffline: This function or resource is present but cannot be used.</li>
-<li>Deferring: The element will not process any commands but will queue new requests.</li>
-<li>Quiesced: The element is enabled but only processes a restricted set of commands.</li>
-<li>Updating: The element is updating and may be unavailable or degraded.</li>
-</ul></td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;HealthRollup</td><td>string</td><td>Yes</td><td></td><td>read-only</td><td>This represents the overall health state from the view of this resource.<br />Possible Values:<ul>
-<li>OK: Normal.</li>
-<li>Warning: A condition exists that requires attention.</li>
-<li>Critical: A critical condition exists that requires immediate attention.</li>
-</ul></td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;Health</td><td>string</td><td>Yes</td><td></td><td>read-only</td><td>This represents the health state of this resource in the absence of its dependent resources.<br />Possible Values:<ul>
-<li>OK: Normal.</li>
-<li>Warning: A condition exists that requires attention.</li>
-<li>Critical: A critical condition exists that requires immediate attention.</li>
-</ul></td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;Oem { }</td><td>object</td><td></td><td></td><td>read-write</td><td>Oem extension object.</td></tr>
-<tr><td>}</td><td></td><td></td><td></td><td></td><td></td></tr>
-<tr><td>InterfaceEnabled</td><td>boolean</td><td>Yes</td><td></td><td>read-write</td><td>This indicates whether this interface is enabled.</td></tr>
 <tr><td>PermanentMACAddress</td><td>string</td><td>Yes</td><td></td><td>read-only</td><td>This is the permanent MAC address assigned to this interface (port).<br />Pattern: ^([0-9A-Fa-f]{2}[:-]){5}([0-9A-Fa-f]{2})$</td></tr>
-<tr><td>MACAddress</td><td>string</td><td>Yes</td><td></td><td>read-write</td><td>This is the currently configured MAC address of the (logical port) interface.<br />Pattern: ^([0-9A-Fa-f]{2}[:-]){5}([0-9A-Fa-f]{2})$</td></tr>
-<tr><td>SpeedMbps</td><td>number</td><td>Yes</td><td></td><td>read-write</td><td>This is the current speed in Mbps of this interface.<br />Unit: Mbit/s</td></tr>
-<tr><td>AutoNeg</td><td>boolean</td><td>Yes</td><td></td><td>read-write</td><td>This indicates if the speed and duplex are automatically negotiated and configured on this interface.</td></tr>
-<tr><td>FullDuplex</td><td>boolean</td><td>Yes</td><td></td><td>read-write</td><td>This indicates if the interface is in Full Duplex mode or not.</td></tr>
-<tr><td>MTUSize</td><td>number</td><td>Yes</td><td></td><td>read-write</td><td>This is the currently configured Maximum Transmission Unit (MTU) in bytes on this interface.</td></tr>
-<tr><td>HostName</td><td>string</td><td>Yes</td><td></td><td>read-write</td><td>The DNS Host Name, without any domain information.</td></tr>
-<tr><td>FQDN</td><td>string</td><td>Yes</td><td></td><td>read-write</td><td>This is the complete, fully qualified domain name obtained by DNS for this interface.</td></tr>
-<tr><td>MaxIPv6StaticAddresses</td><td>number</td><td>Yes</td><td></td><td>read-only</td><td>This indicates the maximum number of Static IPv6 addresses that can be configured on this interface.</td></tr>
-<tr><td>VLAN {</td><td>object</td><td>Yes</td><td></td><td>read-write</td><td>If this Network Interface supports more than one VLAN, this property will not be present and the client should look for VLANs collection in the link section of this resource.</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;VLANEnable</td><td>boolean</td><td>Yes</td><td>POST</td><td>read-write</td><td>This indicates if this VLAN is enabled.</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;VLANId</td><td>number</td><td>Yes</td><td>POST</td><td>read-write</td><td>This indicates the VLAN identifier for this VLAN.<br />Minimum: 0<br />Maximum: 4090</td></tr>
-<tr><td>}</td><td></td><td></td><td></td><td></td><td></td></tr>
-<tr><td>IPv4Addresses [ {</td><td>array[object]</td><td></td><td></td><td>read-write</td><td>The IPv4 addresses assigned to this interface.</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;Oem { }</td><td>object</td><td></td><td></td><td>read-write</td><td>Oem extension object.</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;Address</td><td>string</td><td>Yes</td><td></td><td>read-write</td><td>This is the IPv4 Address.<br />Pattern: ^(?:[0-9]{1,3}\.){3}[0-9]{1,3}$</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;SubnetMask</td><td>string</td><td>Yes</td><td></td><td>read-write</td><td>This is the IPv4 Subnet mask.<br />Pattern: ^(?:[0-9]{1,3}\.){3}[0-9]{1,3}$</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;AddressOrigin</td><td>string</td><td>Yes</td><td></td><td>read-only</td><td>This indicates how the address was determined.<br />Possible Values:<ul>
-<li>Static: A static address as configured by the user</li>
-<li>DHCP: Address is provided by a DHCPv4 service</li>
-<li>BOOTP: Address is provided by a BOOTP service</li>
-<li>IPv4LinkLocal: Address is valid only for this network segment (link)</li>
-</ul></td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;Gateway</td><td>string</td><td>Yes</td><td></td><td>read-write</td><td>This is the IPv4 gateway for this address.</td></tr>
-<tr><td>} ]</td><td></td><td></td><td></td><td></td><td></td></tr>
-<tr><td>IPv6AddressPolicyTable [ {</td><td>array[object]</td><td></td><td></td><td>read-write</td><td>An array representing the RFC 6724 Address Selection Policy Table.</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;Prefix</td><td>string</td><td>Yes</td><td></td><td>read-write</td><td>The IPv6 Address Prefix (as defined in RFC 6724 section 2.1).</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;Precedence</td><td>number</td><td>Yes</td><td></td><td>read-write</td><td>The IPv6 Precedence (as defined in RFC 6724 section 2.1.<br />Minimum: 1<br />Maximum: 100</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;Label</td><td>number</td><td>Yes</td><td></td><td>read-write</td><td>The IPv6 Label (as defined in RFC 6724 section 2.1).<br />Minimum: 0<br />Maximum: 100</td></tr>
-<tr><td>} ]</td><td></td><td></td><td></td><td></td><td></td></tr>
-<tr><td>IPv6Addresses [ {</td><td>array[object]</td><td></td><td></td><td>read-write</td><td>This array of objects enumerates all of the currently assigned IPv6 addresses on this interface.</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;Oem { }</td><td>object</td><td></td><td></td><td>read-write</td><td>Oem extension object.</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;Address</td><td>string</td><td>Yes</td><td></td><td>read-write</td><td>This is the IPv6 Address.</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;PrefixLength</td><td>number</td><td>Yes</td><td></td><td>read-only</td><td>This is the IPv6 Address Prefix Length.<br />Minimum: 1<br />Maximum: 128</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;AddressOrigin</td><td>string</td><td>Yes</td><td></td><td>read-only</td><td>This indicates how the address was determined.<br />Possible Values:<ul>
-<li>Static: A static address as configured by the user</li>
-<li>DHCPv6: Address is provided by a DHCPv6 service</li>
-<li>LinkLocal: Address is valid only for this network segment (link)</li>
-<li>SLAAC: Address is provided by a Stateless Address AutoConfiguration (SLAAC) service</li>
-</ul></td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;AddressState</td><td>string</td><td>Yes</td><td></td><td>read-only</td><td>The current state of this address as defined in RFC 4862.<br />Possible Values:<ul>
-<li>Preferred: This address is currently within both it's valid and preferred lifetimes as defined in RFC 4862.</li>
-<li>Deprecated: This address is currently within it's valid lifetime, but is now outside of it's preferred lifetime as defined in RFC 4862.</li>
-<li>Tentative: This address is currently undergoing Duplicate Address Detection testing as defined in RFC 4862 section 5.4.</li>
-<li>Failed: This address has failed Duplicate Address Detection testing as defined in RFC 4862 section 5.4 and is not currently in use.</li>
-</ul></td></tr>
-<tr><td>} ]</td><td></td><td></td><td></td><td></td><td></td></tr>
-<tr><td>IPv6StaticAddresses [ {</td><td>array[object]</td><td></td><td></td><td>read-write</td><td>This array of objects represents all of the IPv6 static addresses to be assigned on this interface.</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;Oem { }</td><td>object</td><td></td><td></td><td>read-write</td><td>Oem extension object.</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;Address</td><td>string</td><td>Yes</td><td>GET</td><td>read-write</td><td>A valid IPv6 address.</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;PrefixLength</td><td>number</td><td>Yes</td><td>GET</td><td>read-only</td><td>The Prefix Length of this IPv6 address.<br />Minimum: 1<br />Maximum: 128</td></tr>
-<tr><td>} ]</td><td></td><td></td><td></td><td></td><td></td></tr>
-<tr><td>IPv6DefaultGateway</td><td>string</td><td>Yes</td><td></td><td>read-only</td><td>This is the IPv6 default gateway address that is currently in use on this interface.</td></tr>
-<tr><td>NameServers [ ]</td><td>array[string]</td><td></td><td></td><td>read-only</td><td>This represents DNS name servers that are currently in use on this interface.</td></tr>
-<tr><td>VLANs {</td><td>reference(<a href="vlannetworkinterfacecollection.html#vlannetworkinterfacecollection">VLanNetworkInterfaceCollection</a>)</td><td></td><td></td><td>read-only</td><td>This is a reference to a collection of VLANs and is only used if the interface supports more than one VLANs.</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;@odata.id</td><td>string</td><td></td><td></td><td>read-only</td><td>The unique identifier for a resource.<br />Format: uri</td></tr>
-<tr><td>}</td><td></td><td></td><td></td><td></td><td></td></tr>
-<tr><td>LinkStatus</td><td>string</td><td>Yes</td><td></td><td>read-only</td><td>The link status of this interface (port).<br />Possible Values:<ul>
-<li>LinkUp: The link is available for communication on this interface.</li>
-<li>NoLink: There is no link or connection detected on this interface.</li>
-<li>LinkDown: There is no link on this interface, but the interface is connected.</li>
-</ul></td></tr>
 <tr><td>Links {</td><td>object</td><td></td><td></td><td>read-write</td><td>Contains references to other resources that are related to this resource.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;Oem { }</td><td>object</td><td></td><td></td><td>read-write</td><td>Oem extension object.</td></tr>
 <tr><td>}</td><td></td><td></td><td></td><td></td><td></td></tr>
@@ -215,105 +118,7 @@ Content-Type: application/json
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;"UefiDevicePath": "string"
 <br />
-&nbsp;&nbsp;&nbsp;&nbsp;"Status": {
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"State": "Enabled"
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"HealthRollup": "OK"
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Health": "OK"
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Oem": { }
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;}
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;"InterfaceEnabled": "boolean"
-<br />
 &nbsp;&nbsp;&nbsp;&nbsp;"PermanentMACAddress": "string"
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;"MACAddress": "string"
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;"SpeedMbps": 0
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;"AutoNeg": "boolean"
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;"FullDuplex": "boolean"
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;"MTUSize": 0
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;"HostName": "string"
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;"FQDN": "string"
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;"MaxIPv6StaticAddresses": 0
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;"VLAN": {
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"VLANEnable": "boolean"
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"VLANId": 0
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;}
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;"IPv4Addresses": [{
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Oem": { }
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Address": "string"
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"SubnetMask": "string"
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"AddressOrigin": "Static"
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Gateway": "string"
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;}]
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;"IPv6AddressPolicyTable": [{
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Prefix": "string"
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Precedence": 1
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Label": 0
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;}]
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;"IPv6Addresses": [{
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Oem": { }
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Address": "string"
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"PrefixLength": 1
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"AddressOrigin": "Static"
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"AddressState": "Preferred"
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;}]
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;"IPv6StaticAddresses": [{
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Oem": { }
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Address": "string"
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"PrefixLength": 1
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;}]
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;"IPv6DefaultGateway": "string"
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;"NameServers": [ "string" ]
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;"VLANs": {
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"@odata.id": "/redfish/v1/Systems/ComputerSystem1/EthernetInterfaces/EthernetInterface1/VLANs"
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;}
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;"LinkStatus": "LinkUp"
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;"Links": {
 <br />
@@ -340,62 +145,6 @@ PATCH /redfish/v1/Systems/ComputerSystem1/EthernetInterfaces/EthernetInterface1
 Content-Type: application/json
 <br />
 {
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;"InterfaceEnabled": "boolean"
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;"MACAddress": "string"
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;"SpeedMbps": 0
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;"AutoNeg": "boolean"
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;"FullDuplex": "boolean"
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;"MTUSize": 0
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;"HostName": "string"
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;"FQDN": "string"
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;"VLAN": {
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"VLANEnable": "boolean"
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"VLANId": 0
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;}
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;"IPv4Addresses": [{
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Address": "string"
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"SubnetMask": "string"
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Gateway": "string"
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;}]
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;"IPv6AddressPolicyTable": [{
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Prefix": "string"
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Precedence": 1
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Label": 0
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;}]
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;"IPv6Addresses": [{
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Address": "string"
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;}]
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;"IPv6StaticAddresses": [{
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Address": "string"
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;}]
 <br />
 }
 <br />

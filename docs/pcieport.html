@@ -46,15 +46,9 @@ table { border-collapse: collapse; }
 <a href="ethernetinterface.html#ethernetinterface">EthernetInterface</a><br />
 <a href="ethernetinterfacecollection.html#ethernetinterfacecollection">EthernetInterfaceCollection</a><br />
 <a href="ethernetswitch.html#ethernetswitch">EthernetSwitch</a><br />
-<a href="ethernetswitchacl.html#ethernetswitchacl">EthernetSwitchACL</a><br />
-<a href="ethernetswitchaclcollection.html#ethernetswitchaclcollection">EthernetSwitchACLCollection</a><br />
-<a href="ethernetswitchaclrule.html#ethernetswitchaclrule">EthernetSwitchACLRule</a><br />
-<a href="ethernetswitchaclrulecollection.html#ethernetswitchaclrulecollection">EthernetSwitchACLRuleCollection</a><br />
 <a href="ethernetswitchcollection.html#ethernetswitchcollection">EthernetSwitchCollection</a><br />
 <a href="ethernetswitchport.html#ethernetswitchport">EthernetSwitchPort</a><br />
 <a href="ethernetswitchportcollection.html#ethernetswitchportcollection">EthernetSwitchPortCollection</a><br />
-<a href="ethernetswitchstaticmac.html#ethernetswitchstaticmac">EthernetSwitchStaticMAC</a><br />
-<a href="ethernetswitchstaticmaccollection.html#ethernetswitchstaticmaccollection">EthernetSwitchStaticMACCollection</a><br />
 <a href="hsllconnection.html#hsllconnection">HSLLConnection</a><br />
 <a href="hsllconnectioncollection.html#hsllconnectioncollection">HSLLConnectionCollection</a><br />
 <a href="hsllinterface.html#hsllinterface">HSLLInterface</a><br />
@@ -64,13 +58,10 @@ table { border-collapse: collapse; }
 <a href="pciedevice.html#pciedevice">PCIeDevice</a><br />
 <a href="pciedevicecollection.html#pciedevicecollection">PCIeDeviceCollection</a><br />
 <a href="pciefunction.html#pciefunction">PCIeFunction</a><br />
-<a href="pciefunctioncollection.html#pciefunctioncollection">PCIeFunctionCollection</a><br />
 <a href="pcieport.html#pcieport">PCIePort</a><br />
 <a href="pcieportcollection.html#pcieportcollection">PCIePortCollection</a><br />
 <a href="pcieswitch.html#pcieswitch">PCIeSwitch</a><br />
 <a href="pcieswitchcollection.html#pcieswitchcollection">PCIeSwitchCollection</a><br />
-<a href="pciezone.html#pciezone">PCIeZone</a><br />
-<a href="pciezonecollection.html#pciezonecollection">PCIeZoneCollection</a><br />
 <a href="processor.html#processor">Processor</a><br />
 <a href="processorcollection.html#processorcollection">ProcessorCollection</a><br />
 <a href="serviceroot.html#serviceroot">ServiceRoot</a><br />
@@ -144,8 +135,6 @@ This is the schema definition for the PCIePort resource. It represents the prope
 <li>DevicePort: This PCIe port is intended for connecting to a PCIe device.</li>
 <li>InterSwitchPort: This PCIe port is intended for connecting to another PCIe switch.</li>
 </ul></td></tr>
-<tr><td>SpeedGBps</td><td>number</td><td>Yes</td><td></td><td>read-only</td><td>The speed of current operating speed of this PCIe Port in GBps<br />Unit: GBytes/s<br />Minimum: 0</td></tr>
-<tr><td>Width</td><td>number</td><td>Yes</td><td></td><td>read-only</td><td>operating width of the PCIe Port specified in number of PCIe lanes<br />Minimum: 0</td></tr>
 <tr><td>MaxSpeedGBps</td><td>number</td><td>Yes</td><td></td><td>read-only</td><td>The speed of Maximum speed of this PCIe Port in GBps<br />Unit: GBytes/s<br />Minimum: 0</td></tr>
 <tr><td>MaxWidth</td><td>number</td><td>Yes</td><td></td><td>read-only</td><td>Maximum width of the PCIe Port specified in number of PCIe lanes<br />Minimum: 0</td></tr>
 </table>
@@ -231,10 +220,6 @@ Content-Type: application/json
 &nbsp;&nbsp;&nbsp;&nbsp;"PortId": "string"
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;"PortType": "HostPort"
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;"SpeedGBps": 0
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;"Width": 0
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;"MaxSpeedGBps": 0
 <br />

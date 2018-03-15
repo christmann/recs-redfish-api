@@ -46,15 +46,9 @@ table { border-collapse: collapse; }
 <a href="ethernetinterface.html#ethernetinterface">EthernetInterface</a><br />
 <a href="ethernetinterfacecollection.html#ethernetinterfacecollection">EthernetInterfaceCollection</a><br />
 <a href="ethernetswitch.html#ethernetswitch">EthernetSwitch</a><br />
-<a href="ethernetswitchacl.html#ethernetswitchacl">EthernetSwitchACL</a><br />
-<a href="ethernetswitchaclcollection.html#ethernetswitchaclcollection">EthernetSwitchACLCollection</a><br />
-<a href="ethernetswitchaclrule.html#ethernetswitchaclrule">EthernetSwitchACLRule</a><br />
-<a href="ethernetswitchaclrulecollection.html#ethernetswitchaclrulecollection">EthernetSwitchACLRuleCollection</a><br />
 <a href="ethernetswitchcollection.html#ethernetswitchcollection">EthernetSwitchCollection</a><br />
 <a href="ethernetswitchport.html#ethernetswitchport">EthernetSwitchPort</a><br />
 <a href="ethernetswitchportcollection.html#ethernetswitchportcollection">EthernetSwitchPortCollection</a><br />
-<a href="ethernetswitchstaticmac.html#ethernetswitchstaticmac">EthernetSwitchStaticMAC</a><br />
-<a href="ethernetswitchstaticmaccollection.html#ethernetswitchstaticmaccollection">EthernetSwitchStaticMACCollection</a><br />
 <a href="hsllconnection.html#hsllconnection">HSLLConnection</a><br />
 <a href="hsllconnectioncollection.html#hsllconnectioncollection">HSLLConnectionCollection</a><br />
 <a href="hsllinterface.html#hsllinterface">HSLLInterface</a><br />
@@ -64,13 +58,10 @@ table { border-collapse: collapse; }
 <a href="pciedevice.html#pciedevice">PCIeDevice</a><br />
 <a href="pciedevicecollection.html#pciedevicecollection">PCIeDeviceCollection</a><br />
 <a href="pciefunction.html#pciefunction">PCIeFunction</a><br />
-<a href="pciefunctioncollection.html#pciefunctioncollection">PCIeFunctionCollection</a><br />
 <a href="pcieport.html#pcieport">PCIePort</a><br />
 <a href="pcieportcollection.html#pcieportcollection">PCIePortCollection</a><br />
 <a href="pcieswitch.html#pcieswitch">PCIeSwitch</a><br />
 <a href="pcieswitchcollection.html#pcieswitchcollection">PCIeSwitchCollection</a><br />
-<a href="pciezone.html#pciezone">PCIeZone</a><br />
-<a href="pciezonecollection.html#pciezonecollection">PCIeZoneCollection</a><br />
 <a href="processor.html#processor">Processor</a><br />
 <a href="processorcollection.html#processorcollection">ProcessorCollection</a><br />
 <a href="serviceroot.html#serviceroot">ServiceRoot</a><br />
@@ -99,7 +90,7 @@ table { border-collapse: collapse; }
 <h3 id="get">GET</h3>
 <h4 id="request">Request</h4>
 <div class="code">
-GET /redfish/v1/Systems/ComputerSystem1/EthernetInterfaces/EthernetInterface1/VLANs
+GET /redfish/v1/EthernetSwitches/EthernetSwitch1/Ports/EthernetSwitchPort1/VLANs
 <br />
 Content-Type: application/json
 <br />
@@ -110,7 +101,7 @@ Content-Type: application/json
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;"@odata.context": "uri"
 <br />
-&nbsp;&nbsp;&nbsp;&nbsp;"@odata.id": /redfish/v1/Systems/ComputerSystem1/EthernetInterfaces/EthernetInterface1/VLANs
+&nbsp;&nbsp;&nbsp;&nbsp;"@odata.id": /redfish/v1/EthernetSwitches/EthernetSwitch1/Ports/EthernetSwitchPort1/VLANs
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;"@odata.type": "string"
 <br />
@@ -124,7 +115,7 @@ Content-Type: application/json
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;"Members": [{
 <br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"@odata.id": "/redfish/v1/Systems/ComputerSystem1/EthernetInterfaces/EthernetInterface1/VLANs/VLanNetworkInterface1"
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"@odata.id": "/redfish/v1/EthernetSwitches/EthernetSwitch1/Ports/EthernetSwitchPort1/VLANs/VLanNetworkInterface1"
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;}]
 <br />
@@ -134,7 +125,7 @@ Content-Type: application/json
 <h3 id="post">POST</h3>
 <h4 id="request">Request</h4>
 <div class="code">
-POST /redfish/v1/Systems/ComputerSystem1/EthernetInterfaces/EthernetInterface1/VLANs
+POST /redfish/v1/EthernetSwitches/EthernetSwitch1/Ports/EthernetSwitchPort1/VLANs
 <br />
 Content-Type: application/json
 <br />
@@ -161,7 +152,7 @@ Content-Type: application/json
 <div class="code">
 HTTP/1.1 201 Created
 <br />
-Location: http://{IP}:{PORT}/redfish/v1/Systems/ComputerSystem1/EthernetInterfaces/EthernetInterface1/VLANs/VLanNetworkInterface1
+Location: http://{IP}:{PORT}/redfish/v1/EthernetSwitches/EthernetSwitch1/Ports/EthernetSwitchPort1/PrimaryVLAN
 <br />
 </div>
 <h3 id="patch">PATCH</h3>
