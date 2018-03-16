@@ -28,6 +28,9 @@
 	<edmx:Reference Uri="HSLLConnectionCollection_v1.xml">
 		<edmx:Include Namespace="HSLLConnectionCollection"/>
 	</edmx:Reference>
+	<edmx:Reference Uri="BaseboardCollection_v1.xml">
+		<edmx:Include Namespace="BaseboardCollection"/>
+	</edmx:Reference>
 
 	<edmx:DataServices>
 
@@ -44,6 +47,12 @@
 					<Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
 					<Annotation Term="OData.Description" String="This is a link to a collection of ComposedNodes."/>
 					<Annotation Term="OData.LongDescription" String="This object shall only contain a reference to a collection of resources that comply to the ComposedNode schema."/>
+					<Annotation Term="OData.AutoExpandReferences"/>
+				</NavigationProperty>
+				<NavigationProperty Name="Baseboards" Type="BaseboardCollection.BaseboardCollection" Nullable="false">
+					<Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+					<Annotation Term="OData.Description" String="This is a link to a collection of Baseboards."/>
+					<Annotation Term="OData.LongDescription" String="This object shall only contain a reference to a collection of resources that comply to the Baseboard schema."/>
 					<Annotation Term="OData.AutoExpandReferences"/>
 				</NavigationProperty>
 				<NavigationProperty Name="EthernetSwitches" Type="EthernetSwitchCollection.EthernetSwitchCollection" Nullable="false">

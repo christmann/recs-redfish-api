@@ -32,6 +32,12 @@
                     "description": "This is a link to a collection of ComposedNodes.",
                     "longDescription": "This object shall only contain a reference to a collection of resources that comply to the ComposedNode schema."
                 },
+                "Baseboards": {
+                    "$ref": "http://redfish.dmtf.org/schemas/v1/BaseboardCollection.json#/definitions/BaseboardCollection",
+                    "readonly": true,
+                    "description": "This is a link to a collection of Baseboards.",
+                    "longDescription": "This object shall only contain a reference to a collection of resources that comply to the Baseboard schema."
+                },
                 "EthernetSwitches": {
                     "$ref": "http://redfish.dmtf.org/schemas/v1/EthernetSwitchCollection.json#/definitions/EthernetSwitchCollection",
                     "readonly": true,
