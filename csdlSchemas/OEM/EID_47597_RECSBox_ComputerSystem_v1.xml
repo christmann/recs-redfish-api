@@ -56,6 +56,11 @@
 					<Annotation Term="OData.LongDescription" String="This object shall only contain a reference to a resource that comply to the ComposedNode schema."/>
 					<Annotation Term="OData.AutoExpandReferences"/>
 				</NavigationProperty>
+				<Property Name="FormFactor" Type="EID_47597_RECSBox_ComputerSystem.v0_1_0.FormFactor" Nullable="false">
+					<Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+					<Annotation Term="OData.Description" String="The form factor of the computer system."/>
+					<Annotation Term="OData.LongDescription" String="An enumeration that indicates the form factor of the computer system."/>
+				</Property>
 				<Annotation Term="OData.AdditionalProperties" Bool="false"/>
 				<Annotation Term="OData.Description" String="RECS|Box ComputerSystem extension"/>
 				<Annotation Term="OData.LongDescription" String="RECS|Box ComputerSystem extension" />
@@ -69,6 +74,17 @@
 					<Annotation Term="OData.AutoExpandReferences"/>
 				</NavigationProperty>
 			</ComplexType>
+
+			<EnumType Name="FormFactor">
+				<Member Name="COM Express" />
+				<Member Name="COM Express Type 1/2" />
+				<Member Name="COM Express Type 6" />
+				<Member Name="COM Express Type 7" />
+				<Member Name="COM Express Type 10" />
+				<Member Name="Apalis" />
+				<Member Name="Jetson" />
+			</EnumType>
+	  
 		</Schema>
 
 	</edmx:DataServices>
