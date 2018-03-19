@@ -129,18 +129,9 @@ This schema defines a computer system and its respective properties.  A computer
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;BootSourceOverrideTarget</td><td>string</td><td>Yes</td><td></td><td>read-write</td><td>The current boot source to be used at next boot instead of the normal boot device, if BootSourceOverrideEnabled is true.<br />Possible Values:<ul>
 <li>None: Boot from the normal boot device.</li>
 <li>Pxe: Boot from the Pre-Boot EXecution (PXE) environment.</li>
-<li>Floppy: Boot from the floppy disk drive.</li>
 <li>Cd: Boot from the CD/DVD disc.</li>
 <li>Usb: Boot from a USB device as specified by the system BIOS.</li>
 <li>Hdd: Boot from a hard drive.</li>
-<li>BiosSetup: Boot to the BIOS Setup Utility.</li>
-<li>Utilities: Boot the manufacturer's Utilities program(s).</li>
-<li>Diags: Boot the manufacturer's Diagnostics program.</li>
-<li>UefiShell: Boot to the UEFI Shell.</li>
-<li>UefiTarget: Boot to the UEFI Device specified in the UefiTargetBootSourceOverride property.</li>
-<li>SDCard: Boot from an SD Card.</li>
-<li>UefiHttp: Boot from a UEFI HTTP network location.</li>
-<li>RemoteDrive: Boot from a remote drive (e.g. iSCSI).</li>
 </ul></td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;BootSourceOverrideEnabled</td><td>string</td><td>Yes</td><td></td><td>read-write</td><td>Describes the state of the Boot Source Override feature.<br />Possible Values:<ul>
 <li>Disabled: The system will boot normally.</li>
@@ -335,7 +326,7 @@ Content-Type: application/json
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"BootSourceOverrideTarget": "None"
 <br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"BootSourceOverrideTarget@Redfish.AllowableValues": ["None", "Pxe", "Floppy", "Cd", "Usb", "Hdd", "BiosSetup", "Utilities", "Diags", "UefiShell", "UefiTarget", "SDCard", "UefiHttp", "RemoteDrive"]
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"BootSourceOverrideTarget@Redfish.AllowableValues": ["None", "Pxe", "Cd", "Usb", "Hdd"]
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"BootSourceOverrideEnabled": "Disabled"
 <br />

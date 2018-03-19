@@ -1,116 +1,167 @@
 {
 	"ServiceRoot": {
-		"AccountService": true,
-		"Links": {
-			"Sessions": true
-		},
-		"Managers": true,
-		"Tasks": true,
-		"SessionService": true,
-		"EventService": true,
-		"Registries": true,
-		"StorageSystems": true,
-		"StorageServices": true,
-		"Fabrics": true,
-		"UpdateService": true
+		"ServiceRoot": {
+			"AccountService": true,
+			"Links": {
+				"Sessions": true
+			},
+			"Managers": true,
+			"Tasks": true,
+			"SessionService": true,
+			"EventService": true,
+			"Registries": true,
+			"StorageSystems": true,
+			"StorageServices": true,
+			"Fabrics": true,
+			"UpdateService": true
+		}
 	},
 	"Backplane": {
-		"BackplaneType": true
+		"Backplane": {
+			"BackplaneType": true
+		}
 	},
 	"Baseboard": {
-		"Actions": {
-			"#Baseboard.Reset": {
-				"ResetType": [
-					"On",
-					"ForceOff",
-					"GracefulShutdown",
-					"GracefulRestart",
-					"ForceRestart",
-					"ForceOn",
-					"PushPowerButton"
-				]
-			}
-		},
-		"Backplane": true
+		"Baseboard": {
+			"Actions": {
+				"#Baseboard.Reset": {
+					"ResetType": [
+						"On",
+						"ForceOff",
+						"GracefulShutdown",
+						"GracefulRestart",
+						"ForceRestart",
+						"ForceOn",
+						"PushPowerButton"
+					]
+				}
+			},
+			"Backplane": true
+		}
 	},
 	"Chassis": {
-		"AssetTag": true,
-		"ChassisType": [
-			"Enclosure"
-		],
-		"Links": {
-			"ManagedBy": true,
-			"PoweredBy": true,
-			"CooledBy": true,
-			"ContainedBy": true,
-			"Contains": true,
-			"ManagersInChassis": true,
-			"Drives": true,
-			"Storage": true,
-			"PCIeDevices": true,
-			"Oem" : {
-				"EID_47597": {
-					"Backplanes": true
+		"Chassis": {
+			"AssetTag": true,
+			"ChassisType": [
+				"Enclosure"
+			],
+			"Links": {
+				"ManagedBy": true,
+				"PoweredBy": true,
+				"CooledBy": true,
+				"ContainedBy": true,
+				"Contains": true,
+				"ManagersInChassis": true,
+				"Drives": true,
+				"Storage": true,
+				"PCIeDevices": true,
+				"Oem" : {
+					"EID_47597": {
+						"Backplanes": true
+					}
 				}
-			}
-		},
-		"Actions": {
-			"#Chassis.Reset": true
-		},
-		"LogServices": true,
-		"Thermal": true,
-		"Power": true,
-		"PhysicalSecurity": true,
-		"Location": true,
-		"HeightMm": true,
-		"WidthMm": true,
-		"DepthMm": true,
-		"WeightKg": true,
-		"NetworkAdapters": true,
-		"IndicatorLED": true
+			},
+			"Actions": {
+				"#Chassis.Reset": true
+			},
+			"LogServices": true,
+			"Thermal": true,
+			"Power": true,
+			"PhysicalSecurity": true,
+			"Location": true,
+			"HeightMm": true,
+			"WidthMm": true,
+			"DepthMm": true,
+			"WeightKg": true,
+			"NetworkAdapters": true,
+			"IndicatorLED": true
+		}
 	},
 	"ComposedNode": {
-		"Actions": {
-			"#ComposedNode.Reset": {
-				"ResetType": [
-					"On",
-					"ForceOff",
-					"GracefulShutdown",
-					"GracefulRestart",
-					"ForceRestart",
-					"ForceOn",
-					"PushPowerButton"
-				]
+		"ComposedNode": {
+			"Actions": {
+				"#ComposedNode.Reset": {
+					"ResetType": [
+						"On",
+						"ForceOff",
+						"GracefulShutdown",
+						"GracefulRestart",
+						"ForceRestart",
+						"ForceOn",
+						"PushPowerButton"
+					]
+				}
 			}
 		}
 	},
-	"ComposedNodeCollection": {
-		"Actions": {
-			"#ComposedNodeCollection.Allocate": {
-				"Systems": {
-					"Processors": {
-						"ProcessorType": [
-							"CPU",
-							"GPU",
-							"FPGA"
-						],
-						"ProcessorArchitecture": [
-							"x86",
-							"ARM"
-						],
-						"InstructionSet": [
-							"x86",
-							"x86-64",
-							"ARM-A32",
-							"ARM-A64"
-						],
-						"Backplane": true
-					}
-				}
-			}
+	"ComposedNodeAllocationSystemRequirement": {
+		"Processor": {
+			"ProcessorType": [
+				"CPU",
+				"GPU",
+				"FPGA"
+			],
+			"ProcessorArchitecture": [
+				"x86",
+				"ARM"
+			],
+			"InstructionSet": [
+				"x86",
+				"x86-64",
+				"ARM-A32",
+				"ARM-A64"
+			],
+			"Backplane": true
 		}
 	},
 	"ComputerSystem": {
+		"ComputerSystem": {
+			"Links": {
+				"Chassis": true,
+				"ManagedBy": true,
+				"PoweredBy": true,
+				"CooledBy": true,
+				"Endpoints": true,
+				"Oem" : {
+					"EID_47597": {
+						"Backplane": true
+					}
+				}
+			},
+			"Actions": {
+				"#ComputerSystem.Reset": {
+					"ResetType": [
+						"On",
+						"ForceOff",
+						"GracefulShutdown",
+						"GracefulRestart",
+						"ForceRestart",
+						"ForceOn",
+						"PushPowerButton"
+					]
+				}
+			},
+			"SystemType": true,
+			"PartNumber": true,
+			"BiosVersion": true,
+			"AssetTag": true,
+			"HostName": true,
+			"MemorySummary": true,
+			"MemoryMirroring": true,
+			"SimpleStorage": true,
+			"Memory": true,
+			"LogServices": true,
+			"TrustedModules": true,
+			"SecureBoot": true,
+			"PCIeDevices": true,
+			"PCIeFunctions": true,
+			"Bios": true,
+			"Storage": true,
+			"HostingRoles": true,
+			"HostedServices": true,
+			"MemoryDomains": true,
+			"NetworkInterfaces": true
+		},
 		"Boot": {
 			"BootSourceOverrideTarget": [
 				"None",
@@ -119,183 +170,181 @@
 				"Usb",
 				"Hdd"
 			]
-		},
-		"Links": {
-			"Chassis": true,
-			"ManagedBy": true,
-			"PoweredBy": true,
-			"CooledBy": true,
-			"Endpoints": true,
-			"Oem" : {
-				"EID_47597": {
-					"Backplane": true
-				}
-			}
-		},
-		"Actions": {
-			"#ComputerSystem.Reset": {
-				"ResetType": [
-					"On",
-					"ForceOff",
-					"GracefulShutdown",
-					"GracefulRestart",
-					"ForceRestart",
-					"ForceOn",
-					"PushPowerButton"
-				]
-			}
-		},
-		"SystemType": true,
-		"PartNumber": true,
-		"BiosVersion": true,
-		"AssetTag": true,
-		"HostName": true,
-		"MemorySummary": true,
-		"MemoryMirroring": true,
-		"SimpleStorage": true,
-		"Memory": true,
-		"LogServices": true,
-		"TrustedModules": true,
-		"SecureBoot": true,
-		"PCIeDevices": true,
-		"PCIeFunctions": true,
-		"Bios": true,
-		"Storage": true,
-		"HostingRoles": true,
-		"HostedServices": true,
-		"MemoryDomains": true,
-		"NetworkInterfaces": true
+		}
 	},
 	"Drive": {
-		"Links": {
-			"Volumes": true,
-			"Endpoints": true
-		},
-		"Operations": true
+		"Drive": {
+			"Links": {
+				"Volumes": true,
+				"Endpoints": true
+			},
+			"Operations": true
+		}
 	},
 	"EthernetInterface": {
-		"VLAN": true,
-		"Links": {
-			"Endpoints": true,
-			"HostInterface": true
-		},
-		"Status": true,
-		"InterfaceEnabled": true,
-		"MACAddress": true,
-		"SpeedMbps": true,
-		"AutoNeg": true,
-		"FullDuplex": true,
-		"MTUSize": true,
-		"HostName": true,
-		"FQDN": true,
-		"MaxIPv6StaticAddresses": true,
-		"IPv4Addresses": true,
-		"IPv6AddressPolicyTable": true,
-		"IPv6Addresses": true,
-		"IPv6StaticAddresses": true,
-		"IPv6DefaultGateway": true,
-		"NameServers": true,
-		"LinkStatus": true
+		"EthernetInterface": {
+			"VLAN": true,
+			"Links": {
+				"Endpoints": true,
+				"HostInterface": true
+			},
+			"Status": true,
+			"InterfaceEnabled": true,
+			"MACAddress": true,
+			"SpeedMbps": true,
+			"AutoNeg": true,
+			"FullDuplex": true,
+			"MTUSize": true,
+			"HostName": true,
+			"FQDN": true,
+			"MaxIPv6StaticAddresses": true,
+			"IPv4Addresses": true,
+			"IPv6AddressPolicyTable": true,
+			"IPv6Addresses": true,
+			"IPv6StaticAddresses": true,
+			"IPv6DefaultGateway": true,
+			"NameServers": true,
+			"LinkStatus": true
+		}
 	},
 	"EthernetSwitch": {
-		"Links": {
-			"ManagedBy": true
-		},
-		"ACLs": true,
-		"ManufacturingDate": true,
-		"FirmwareName": true,
-		"FirmwareVersion": true,
-		"Role": true,
-		"MaxACLNumber": true
+		"EthernetSwitch": {
+			"Links": {
+				"ManagedBy": true
+			},
+			"ACLs": true,
+			"ManufacturingDate": true,
+			"FirmwareName": true,
+			"FirmwareVersion": true,
+			"Role": true,
+			"MaxACLNumber": true
+		}
 	},
 	"EthernetSwitchPort": {
-		"Links": {
-			"MemberOfPort": true,
-			"PortMembers": true,
-			"ActiveACLs": true
-		},
-		"StaticMACs": true
+		"EthernetSwitchPort": {
+			"Links": {
+				"MemberOfPort": true,
+				"PortMembers": true,
+				"ActiveACLs": true
+			},
+			"StaticMACs": true
+		}
+	},
+	"HSLLInterface": {
+		"HSLLInterface": {
+			"SpeedGBps": true,
+			"Width": true
+		}
 	},
 	"Manager": {
-		"LogServices": true,
-		"HostInterfaces": true,
-		"SerialInterfaces": true,
-		"VirtualMedia": true
+		"Manager": {
+			"LogServices": true,
+			"HostInterfaces": true,
+			"SerialInterfaces": true,
+			"VirtualMedia": true
+		}
 	},
 	"Memory": {
-		"FunctionClasses": true,
-		"MaxTDPMilliWatts": true,
-		"SecurityCapabilities": true,
-		"SpareDeviceCount": true,
-		"DeviceLocator": true,
-		"VolatileRegionSizeLimitMiB": true,
-		"PersistentRegionSizeLimitMiB": true,
-		"Regions": true,
-		"OperatingMemoryModes": true,
-		"PowerManagementPolicy": true,
-		"IsSpareDeviceEnabled": true,
-		"IsRankSpareEnabled": true,
-		"Actions": {
-			"#Memory.DisablePassphrase": true,
-			"#Memory.SecureEraseUnit": true,
-			"#Memory.SetPassphrase": true,
-			"#Memory.UnlockUnit": true
-		},
-		"Metrics": true
+		"Memory": {
+			"FunctionClasses": true,
+			"MaxTDPMilliWatts": true,
+			"SecurityCapabilities": true,
+			"SpareDeviceCount": true,
+			"DeviceLocator": true,
+			"VolatileRegionSizeLimitMiB": true,
+			"PersistentRegionSizeLimitMiB": true,
+			"Regions": true,
+			"OperatingMemoryModes": true,
+			"PowerManagementPolicy": true,
+			"IsSpareDeviceEnabled": true,
+			"IsRankSpareEnabled": true,
+			"Actions": {
+				"#Memory.DisablePassphrase": true,
+				"#Memory.SecureEraseUnit": true,
+				"#Memory.SetPassphrase": true,
+				"#Memory.UnlockUnit": true
+			},
+			"Metrics": true
+		}
 	},
 	"PCIeDevice": {
-		"AssetTag": true,
-		"Links": {
-			"Chassis": true,
-			"Endpoints": true,
-			"HostInterface": true,
-			"PCIeFunctions": true,
-			"Oem" : {
-				"EID_47597": {
-					"Backplane": true
+		"PCIeDevice": {
+			"AssetTag": true,
+			"Links": {
+				"Chassis": true,
+				"Endpoints": true,
+				"HostInterface": true,
+				"PCIeFunctions": true,
+				"Oem" : {
+					"EID_47597": {
+						"Backplane": true
+					}
 				}
 			}
 		}
 	},
 	"PCIeFunction": {
-		"AssetTag": true,
-		"Links": {
-			"Endpoints": true,
-			"Drives": true,
-			"StorageControllers": true,
-			"EthernetInterfaces": true
+		"PCIeFunction": {
+			"AssetTag": true,
+			"Links": {
+				"Endpoints": true,
+				"Drives": true,
+				"StorageControllers": true,
+				"EthernetInterfaces": true
+			}
 		}
 	},
 	"PCIeSwitch": {
-		"Links": {
-			"ManagedBy": true,
-			"PoweredBy": true,
-			"CooledBy": true
-		},
-		"Actions": {
-			"#PCIeSwitch.Reset": {
-				"ResetType": [
-					"On",
-					"ForceOff",
-					"GracefulShutdown",
-					"GracefulRestart",
-					"ForceRestart",
-					"ForceOn",
-					"PushPowerButton"
-				]
-			}
-		},
-		"LogServices": true,
-		"MaxZones": true,
-		"Zones": true,
-		"IndicatorLED": true,
-		"AttachedDevices": true
+		"PCIeSwitch": {
+			"Links": {
+				"ManagedBy": true,
+				"PoweredBy": true,
+				"CooledBy": true
+			},
+			"Actions": {
+				"#PCIeSwitch.Reset": {
+					"ResetType": [
+						"On",
+						"ForceOff",
+						"GracefulShutdown",
+						"GracefulRestart",
+						"ForceRestart",
+						"ForceOn",
+						"PushPowerButton"
+					]
+				}
+			},
+			"LogServices": true,
+			"MaxZones": true,
+			"Zones": true,
+			"IndicatorLED": true,
+			"AttachedDevices": true
+		}
 	},
 	"PCIePort": {
-		"SpeedGBps": true,
-		"Width": true
+		"PCIePort": {
+			"SpeedGBps": true,
+			"Width": true
+		}
 	},
 	"Processor": {
-		"Status": true
+		"Processor": {
+			"Status": true,
+			"ProcessorType": [
+				"CPU",
+				"GPU",
+				"FPGA"
+			],
+			"ProcessorArchitecture": [
+				"x86",
+				"ARM"
+			],
+			"InstructionSet": [
+				"x86",
+				"x86-64",
+				"ARM-A32",
+				"ARM-A64"
+			]
+		}
 	}
 }

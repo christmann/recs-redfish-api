@@ -107,7 +107,7 @@
                     "units": "GBytes/s",
                     "minimum": 0,
                     "readonly": true,
-                    "description": "The speed of current operating speed of this HSLLInterface in GBps",
+                    "description": "The current operating speed of this HSLLInterface in GBps",
                     "longDescription": "The value of this property shall contain current operating speed of this HSLLInterface in GBps"
                 },
                 "Width": {
@@ -128,8 +128,8 @@
                     "units": "GBytes/s",
                     "minimum": 0,
                     "readonly": true,
-                    "description": "The speed of Maximum speed of this HSLLInterface in GBps",
-                    "longDescription": "The value of this property shall contain Maximum speed of this HSLLInterface in GBps"
+                    "description": "The maximum speed of this HSLLInterface in GBps",
+                    "longDescription": "The value of this property shall contain nominal speed of this HSLLInterface in GBps"
                 },
                 "MaxWidth": {
                     "type": [
