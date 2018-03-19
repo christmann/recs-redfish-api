@@ -138,11 +138,6 @@ This schema defines a computer system and its respective properties.  A computer
 <li>Once: On its next boot cycle, the system will boot (one time) to the Boot Source Override Target. The value of BootSourceOverrideEnabled is then reset back to Disabled.</li>
 <li>Continuous: The system will boot to the target specified in the BootSourceOverrideTarget until this property is set to Disabled.</li>
 </ul></td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;UefiTargetBootSourceOverride</td><td>string</td><td>Yes</td><td></td><td>read-write</td><td>This property is the UEFI Device Path of the device to boot from when BootSourceOverrideSupported is UefiTarget.</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;BootSourceOverrideMode</td><td>string</td><td>Yes</td><td></td><td>read-write</td><td>The BIOS Boot Mode (either Legacy or UEFI) to be used when BootSourceOverrideTarget boot source is booted from.<br />Possible Values:<ul>
-<li>Legacy: The system will boot in non-UEFI boot mode to the Boot Source Override Target.</li>
-<li>UEFI: The system will boot in UEFI boot mode to the Boot Source Override Target.</li>
-</ul></td></tr>
 <tr><td>}</td><td></td><td></td><td></td><td></td><td></td></tr>
 <tr><td>ProcessorSummary {</td><td>object</td><td></td><td></td><td>read-write</td><td>This object describes the central processors of the system in general detail.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;Count</td><td>number</td><td>Yes</td><td></td><td>read-only</td><td>The number of processors in the system.<br />Minimum: 0</td></tr>
@@ -332,12 +327,6 @@ Content-Type: application/json
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"BootSourceOverrideEnabled@Redfish.AllowableValues": ["Disabled", "Once", "Continuous"]
 <br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"UefiTargetBootSourceOverride": "string"
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"BootSourceOverrideMode": "Legacy"
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"BootSourceOverrideMode@Redfish.AllowableValues": ["Legacy", "UEFI"]
-<br />
 &nbsp;&nbsp;&nbsp;&nbsp;}
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;"ProcessorSummary": {
@@ -425,10 +414,6 @@ Content-Type: application/json
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"BootSourceOverrideTarget": "None"
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"BootSourceOverrideEnabled": "Disabled"
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"UefiTargetBootSourceOverride": "string"
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"BootSourceOverrideMode": "Legacy"
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;}
 <br />
