@@ -1,0 +1,33 @@
+{
+    "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema.v1_3_0.json",
+    "copyright": "Copyright 2014-2017 Distributed Management Task Force, Inc. (DMTF). For the full DMTF copyright policy, see http://www.dmtf.org/about/policies/copyright",
+    "definitions": {
+        "StorageAccessCapability": {
+            "description": "Values of StorageAccessCapability describe abilities to read or write storage.",
+            "enum": [
+                "Read",
+                "Write",
+                "WriteOnce",
+                "Append",
+                "Streaming"
+            ],
+            "enumDescriptions": {
+                "Append": "AppendOnly.",
+                "Read": "Read.",
+                "Streaming": "Streaming.",
+                "Write": "Write Many.",
+                "WriteOnce": "WriteOnce."
+            },
+            "enumLongDescriptions": {
+                "Append": "This enumeration literal shall indicate that the storage may be written only to append.",
+                "Read": "This enumeration literal shall indicate that the storage may be read.",
+                "Streaming": "This enumeration literal shall indicate that the storage may be read sequentially.",
+                "Write": "This enumeration literal shall indicate that the storage may be written multiple times.",
+                "WriteOnce": "This enumeration literal shall indicate that the storage may be written only once."
+            },
+            "longDescription": "StorageAccessCapability enumeration literals may be used to describe abilities to read or write storage.",
+            "type": "string"
+        }
+    },
+    "title": "#StorageAccessCapability.v1_0_0"
+}

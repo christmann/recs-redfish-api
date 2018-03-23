@@ -1,0 +1,226 @@
+{
+    "$ref": "#/definitions/StoragePool",
+    "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema.v1_3_0.json",
+    "copyright": "Copyright 2014-2017 Distributed Management Task Force, Inc. (DMTF). For the full DMTF copyright policy, see http://www.dmtf.org/about/policies/copyright",
+    "definitions": {
+        "Links": {
+            "additionalProperties": false,
+            "patternProperties": {
+                "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message|Privileges)\\.[a-zA-Z_][a-zA-Z0-9_.]+$": {
+                    "description": "This property shall specify a valid odata or Redfish property.",
+                    "type": [
+                        "array",
+                        "boolean",
+                        "number",
+                        "null",
+                        "object",
+                        "string"
+                    ]
+                }
+            },
+            "properties": {
+                "DefaultClassOfService": {
+                    "anyOf": [
+                        {
+                            "$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/ClassOfService.json#/definitions/ClassOfService"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "The default class of service for entities allocated from this storage pool.",
+                    "longDescription": "If present, this property shall reference the default class of service for entities allocated from this storage pool.  If the ClassesOfService collection is not empty, then the value of this property shall be one of its entries. If not present, the default class of service of the containing StorageService entity shall be used.",
+                    "readonly": false
+                },
+                "Oem": {
+                    "$ref": "http://redfish.dmtf.org/schemas/v1/Resource.json#/definitions/Oem",
+                    "description": "Oem extension object.",
+                    "longDescription": "This object represents the Oem property.  All values for resources described by this schema shall comply to the requirements as described in the Redfish specification."
+                }
+            },
+            "type": "object"
+        },
+        "StoragePool": {
+            "additionalProperties": false,
+            "description": "A container of data storage.",
+            "longDescription": "A container of data storage capable of providing capacity conforming to one of its supported classes of service. The storage pool does not support IO to its data storage.",
+            "patternProperties": {
+                "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message|Privileges)\\.[a-zA-Z_][a-zA-Z0-9_.]+$": {
+                    "description": "This property shall specify a valid odata or Redfish property.",
+                    "type": [
+                        "array",
+                        "boolean",
+                        "number",
+                        "null",
+                        "object",
+                        "string"
+                    ]
+                }
+            },
+            "properties": {
+                "@odata.context": {
+                    "$ref": "http://redfish.dmtf.org/schemas/v1/odata.v4_0_1.json#/definitions/context"
+                },
+                "@odata.id": {
+                    "$ref": "http://redfish.dmtf.org/schemas/v1/odata.v4_0_1.json#/definitions/id"
+                },
+                "@odata.type": {
+                    "$ref": "http://redfish.dmtf.org/schemas/v1/odata.v4_0_1.json#/definitions/type"
+                },
+                "AllocatedPools": {
+                    "anyOf": [
+                        {
+                            "$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/StoragePoolCollection.json#/definitions/StoragePoolCollection"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "A reference to the collection of storage pools allocated from this storage pool.",
+                    "longDescription": "The value of this property shall contain a reference to the collection of storage pools allocated from this storage pool.",
+                    "readonly": true
+                },
+                "AllocatedVolumes": {
+                    "anyOf": [
+                        {
+                            "$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/VolumeCollection.json#/definitions/VolumeCollection"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "A reference to the collection of volumes allocated from this storage pool.",
+                    "longDescription": "The value of this property shall contain a reference to the collection of volumes allocated from this storage pool.",
+                    "readonly": true
+                },
+                "BlockSizeBytes": {
+                    "description": "Maximum Block size in bytes.",
+                    "longDescription": "Maximum size in bytes of the blocks which form this Volume. If the block size is variable, then the maximum block size in bytes should be specified. If the block size is unknown or if a block concept is not valid (for example, with Memory), enter a 1.",
+                    "minimum": 0,
+                    "readonly": true,
+                    "type": [
+                        "number",
+                        "null"
+                    ],
+                    "units": "By"
+                },
+                "Capacity": {
+                    "anyOf": [
+                        {
+                            "$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/Capacity.v1_0_0.json#/definitions/Capacity"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "Capacity utilization.",
+                    "longDescription": "The value of this property shall provide an information about the actual utilization of the capacity within this storage pool.",
+                    "readonly": true
+                },
+                "CapacitySources": {
+                    "description": "An array of space allocations to this store.",
+                    "items": {
+                        "anyOf": [
+                            {
+                                "$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/Capacity.v1_0_0.json#/definitions/CapacitySource"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ]
+                    },
+                    "longDescription": "Fully or partially consumed storage from a source resource. Each entry shall provide capacity allocation data from a named source resource.",
+                    "readonly": true,
+                    "type": "array"
+                },
+                "ClassesOfService": {
+                    "anyOf": [
+                        {
+                            "$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/ClassOfServiceCollection.json#/definitions/ClassOfServiceCollection"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "The ClassesOfService supported by this storage pool.",
+                    "longDescription": "This property shall contain references to all classes of service supported by this storage pool. Capacity allocated from this storage pool shall conform to one of the referenced classes of service.",
+                    "readonly": false
+                },
+                "Description": {
+                    "anyOf": [
+                        {
+                            "$ref": "http://redfish.dmtf.org/schemas/v1/Resource.json#/definitions/Description"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "readonly": true
+                },
+                "Id": {
+                    "$ref": "http://redfish.dmtf.org/schemas/v1/Resource.json#/definitions/Id",
+                    "readonly": true
+                },
+                "Identifier": {
+                    "anyOf": [
+                        {
+                            "$ref": "http://redfish.dmtf.org/schemas/v1/Resource.v1_1_0.json#/definitions/Identifier"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "The value identifies this resource.",
+                    "longDescription": "The value identifies this resource. The value shall be unique within the managed ecosystem.",
+                    "readonly": false
+                },
+                "Links": {
+                    "$ref": "#/definitions/Links",
+                    "description": "Contains links to other resources that are related to this resource.",
+                    "longDescription": "This structure shall contain references to resources that are not contained within this resource.",
+                    "readonly": true
+                },
+                "LowSpaceWarningThresholdPercents": {
+                    "description": "Low space warning threshold specified in percents.",
+                    "items": {
+                        "type": [
+                            "number",
+                            "null"
+                        ]
+                    },
+                    "longDescription": "Each time the following value is less than one of the values in the array the LOW_SPACE_THRESHOLD_WARNING event shall be triggered: Across all CapacitySources entries, percent = (SUM(AllocatedBytes) - SUM(ConsumedBytes))/SUM(AllocatedBytes).",
+                    "maximum": 100,
+                    "minimum": 0,
+                    "readonly": false,
+                    "type": "array",
+                    "units": "%"
+                },
+                "Name": {
+                    "$ref": "http://redfish.dmtf.org/schemas/v1/Resource.json#/definitions/Name",
+                    "readonly": true
+                },
+                "Oem": {
+                    "$ref": "http://redfish.dmtf.org/schemas/v1/Resource.json#/definitions/Oem",
+                    "description": "This is the manufacturer/provider specific extension moniker used to divide the Oem object into sections.",
+                    "longDescription": "The value of this string shall be of the format for the reserved word *Oem*."
+                },
+                "Status": {
+                    "anyOf": [
+                        {
+                            "$ref": "http://redfish.dmtf.org/schemas/v1/Resource.json#/definitions/Status"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ]
+                }
+            },
+            "required": [
+                "Id",
+                "Name"
+            ],
+            "type": "object"
+        }
+    },
+    "title": "#StoragePool.v1_0_0.StoragePool"
+}

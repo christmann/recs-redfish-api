@@ -1,0 +1,20 @@
+{
+    "$ref": "#/definitions/IOPerformanceLoSCapabilities",
+    "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema.v1_3_0.json",
+    "copyright": "Copyright 2014-2017 Distributed Management Task Force, Inc. (DMTF). For the full DMTF copyright policy, see http://www.dmtf.org/about/policies/copyright",
+    "definitions": {
+        "IOPerformanceLoSCapabilities": {
+            "anyOf": [
+                {
+                    "$ref": "http://redfish.dmtf.org/schemas/v1/odata.v4_0_1.json#/definitions/idRef"
+                },
+                {
+                    "$ref": "http://redfish.dmtf.org/schemas/v1/IOPerformanceLoSCapabilities.v1_0_0.json#/definitions/IOPerformanceLoSCapabilities"
+                }
+            ],
+            "description": "Describe data protection capabilities",
+            "longDescription": "The capabilities to protect data from loss by the use of a replica. The requirements must be met collectively by the communication path and the replica. There will be one instance associated to a class of service for each replica. Each replica has its own class of service that describes its characteristics."
+        }
+    },
+    "title": "#IOPerformanceLoSCapabilities.IOPerformanceLoSCapabilities"
+}

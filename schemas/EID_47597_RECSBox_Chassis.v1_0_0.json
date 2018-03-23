@@ -1,0 +1,40 @@
+{
+    "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema.v1_3_0.json",
+    "copyright": "Copyright 2014-2017 Distributed Management Task Force, Inc. (DMTF). For the full DMTF copyright policy, see http://www.dmtf.org/about/policies/copyright",
+    "definitions": {
+        "Chassis": {
+            "additionalProperties": false,
+            "description": "RECS|Box Chassis extension",
+            "longDescription": "RECS|Box Chassis extension",
+            "patternProperties": {
+                "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message|Privileges)\\.[a-zA-Z_][a-zA-Z0-9_.]+$": {
+                    "description": "This property shall specify a valid odata or Redfish property.",
+                    "type": [
+                        "array",
+                        "boolean",
+                        "number",
+                        "null",
+                        "object",
+                        "string"
+                    ]
+                }
+            },
+            "properties": {
+                "Baseboards": {
+                    "$ref": "BaseboardCollection_v1.xml/BaseboardCollection.json#/definitions/BaseboardCollection",
+                    "description": "This is a link to a collection of Baseboards within this Chassis.",
+                    "longDescription": "This object shall only contain a reference to a collection of resources that comply to the Baseboard schema.",
+                    "readonly": true
+                },
+                "Switches": {
+                    "$ref": "http://redfish.dmtf.org/schemas/v1/SwitchCollection.json#/definitions/SwitchCollection",
+                    "description": "This is a link to a collection of Ethernet- and PCIeSwitches hosted within this Chassis.",
+                    "longDescription": "This object shall only contain a reference to a collection of resources that comply to the Switch schema.",
+                    "readonly": true
+                }
+            },
+            "type": "object"
+        }
+    },
+    "title": "#EID_47597_RECSBox_Chassis.v1_0_0"
+}

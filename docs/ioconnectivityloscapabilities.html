@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>IOConnectivityLoSCapabilities</title>
+<style type="text/css">
+body { font-family: Georgia, 'Times New Roman', Times, serif; }
+h1 { font-size: 2.2em; }
+h2 { font-size: 1.8em; }
+h3 { font-size: 1.45em; }
+h4 { font-size: 1.25em; }
+h5 { font-size: 1.1em; }
+h6 { font-size: 1.0em; }
+a:link { color: #034A4A; }
+a:visited { color: #567D7D; }
+a:hover { color: #9CB7B7; }
+a:active { color: #9CB7B7; }
+table { margin-top: 15px; margin-bottom: 15px; }
+table { border-collapse: collapse; }
+.datatable tr:nth-child(even) { background-color: #E2E9E9; }
+.datatable tr:hover { background-color: #F3F5F5 }
+.datatable th, .datatable td { border: 1px solid #B6C9C9; padding: 10px; }
+.datatable th { height: 30px; background-color: #CEDADA; }
+.datatable td { vertical-align: top; white-space: nowrap; }
+.datatable td:last-child { white-space: normal; }
+.datatable tr.hidden td { color: #aaaaaa; }
+.columntable td { padding-right: 20px; }
+.menu { float: right; padding-left: 10px; margin-left: 10px; border-left: 1px solid #B6C9C9;}
+.code { font-family: 'Courier New', Courier, monospace; background-color: #E2E9E9; }
+</style>
+</head>
+<body>
+<div class="menu">
+<h3 id="schema navigation">Schema Navigation</h3>
+<a href="index.html#index">Home</a>
+<br />
+<br />
+<a href="assembly.html#assembly">Assembly</a><br />
+<a href="baseboard.html#baseboard">Baseboard</a><br />
+<a href="baseboardcollection.html#baseboardcollection">BaseboardCollection</a><br />
+<a href="bootoption.html#bootoption">BootOption</a><br />
+<a href="bootoptioncollection.html#bootoptioncollection">BootOptionCollection</a><br />
+<a href="chassis.html#chassis">Chassis</a><br />
+<a href="chassiscollection.html#chassiscollection">ChassisCollection</a><br />
+<a href="classofservice.html#classofservice">ClassOfService</a><br />
+<a href="classofservicecollection.html#classofservicecollection">ClassOfServiceCollection</a><br />
+<a href="composednode.html#composednode">ComposedNode</a><br />
+<a href="composednodecollection.html#composednodecollection">ComposedNodeCollection</a><br />
+<a href="computersystem.html#computersystem">ComputerSystem</a><br />
+<a href="computersystemcollection.html#computersystemcollection">ComputerSystemCollection</a><br />
+<a href="dataprotectionloscapabilities.html#dataprotectionloscapabilities">DataProtectionLoSCapabilities</a><br />
+<a href="datasecurityloscapabilities.html#datasecurityloscapabilities">DataSecurityLoSCapabilities</a><br />
+<a href="datastorageloscapabilities.html#datastorageloscapabilities">DataStorageLoSCapabilities</a><br />
+<a href="drive.html#drive">Drive</a><br />
+<a href="drivecollection.html#drivecollection">DriveCollection</a><br />
+<a href="endpoint.html#endpoint">Endpoint</a><br />
+<a href="endpointcollection.html#endpointcollection">EndpointCollection</a><br />
+<a href="endpointgroup.html#endpointgroup">EndpointGroup</a><br />
+<a href="endpointgroupcollection.html#endpointgroupcollection">EndpointGroupCollection</a><br />
+<a href="ethernetinterface.html#ethernetinterface">EthernetInterface</a><br />
+<a href="ethernetinterfacecollection.html#ethernetinterfacecollection">EthernetInterfaceCollection</a><br />
+<a href="fileshare.html#fileshare">FileShare</a><br />
+<a href="filesystem.html#filesystem">FileSystem</a><br />
+<a href="filesystemcollection.html#filesystemcollection">FileSystemCollection</a><br />
+<a href="hostinterface.html#hostinterface">HostInterface</a><br />
+<a href="hsllconnection.html#hsllconnection">HSLLConnection</a><br />
+<a href="hsllconnectioncollection.html#hsllconnectioncollection">HSLLConnectionCollection</a><br />
+<a href="hsllinterface.html#hsllinterface">HSLLInterface</a><br />
+<a href="ioconnectivityloscapabilities.html#ioconnectivityloscapabilities">IOConnectivityLoSCapabilities</a><br />
+<a href="ioperformanceloscapabilities.html#ioperformanceloscapabilities">IOPerformanceLoSCapabilities</a><br />
+<a href="jsonschemafile.html#jsonschemafile">JsonSchemaFile</a><br />
+<a href="jsonschemafilecollection.html#jsonschemafilecollection">JsonSchemaFileCollection</a><br />
+<a href="logentry.html#logentry">LogEntry</a><br />
+<a href="logentrycollection.html#logentrycollection">LogEntryCollection</a><br />
+<a href="logservice.html#logservice">LogService</a><br />
+<a href="logservicecollection.html#logservicecollection">LogServiceCollection</a><br />
+<a href="manager.html#manager">Manager</a><br />
+<a href="managernetworkprotocol.html#managernetworkprotocol">ManagerNetworkProtocol</a><br />
+<a href="memory.html#memory">Memory</a><br />
+<a href="networkadapter.html#networkadapter">NetworkAdapter</a><br />
+<a href="networkdevicefunction.html#networkdevicefunction">NetworkDeviceFunction</a><br />
+<a href="networkdevicefunctioncollection.html#networkdevicefunctioncollection">NetworkDeviceFunctionCollection</a><br />
+<a href="networkinterface.html#networkinterface">NetworkInterface</a><br />
+<a href="networkport.html#networkport">NetworkPort</a><br />
+<a href="networkportcollection.html#networkportcollection">NetworkPortCollection</a><br />
+<a href="pciedevice.html#pciedevice">PCIeDevice</a><br />
+<a href="pciedevicecollection.html#pciedevicecollection">PCIeDeviceCollection</a><br />
+<a href="pciefunction.html#pciefunction">PCIeFunction</a><br />
+<a href="port.html#port">Port</a><br />
+<a href="portcollection.html#portcollection">PortCollection</a><br />
+<a href="processor.html#processor">Processor</a><br />
+<a href="processorcollection.html#processorcollection">ProcessorCollection</a><br />
+<a href="role.html#role">Role</a><br />
+<a href="serviceroot.html#serviceroot">ServiceRoot</a><br />
+<a href="session.html#session">Session</a><br />
+<a href="sessioncollection.html#sessioncollection">SessionCollection</a><br />
+<a href="simplestorage.html#simplestorage">SimpleStorage</a><br />
+<a href="storage.html#storage">Storage</a><br />
+<a href="storagegroup.html#storagegroup">StorageGroup</a><br />
+<a href="storagegroupcollection.html#storagegroupcollection">StorageGroupCollection</a><br />
+<a href="storagepool.html#storagepool">StoragePool</a><br />
+<a href="storagepoolcollection.html#storagepoolcollection">StoragePoolCollection</a><br />
+<a href="storageservice.html#storageservice">StorageService</a><br />
+<a href="switch.html#switch">Switch</a><br />
+<a href="switchcollection.html#switchcollection">SwitchCollection</a><br />
+<a href="task.html#task">Task</a><br />
+<a href="vlannetworkinterface.html#vlannetworkinterface">VLanNetworkInterface</a><br />
+<a href="vlannetworkinterfacecollection.html#vlannetworkinterfacecollection">VLanNetworkInterfaceCollection</a><br />
+<a href="volume.html#volume">Volume</a><br />
+<a href="volumecollection.html#volumecollection">VolumeCollection</a><br />
+<a href="zone.html#zone">Zone</a><br />
+<a href="error.html#error">Error</a><br />
+</div>
+<div class="content">
+<h1 id="ioconnectivityloscapabilities">IOConnectivityLoSCapabilities</h1>
+<h2 id="schema definition">Schema Definition</h2>
+Describe IO Connectivity capabilities.
+<h3 id="properties">Properties</h3>
+<table class="datatable">
+<tr><th>Property</th><th>Type</th><th>Nullable</th><th>Required</th><th>Permission</th><th>Description</th></tr>
+<tr><td>@odata.context</td><td>string</td><td></td><td></td><td>read-only</td><td>The OData description of a payload.<br />Format: uri</td></tr>
+<tr><td>@odata.id</td><td>string</td><td></td><td></td><td>read-only</td><td>The unique identifier for a resource.<br />Format: uri</td></tr>
+<tr><td>@odata.type</td><td>string</td><td></td><td></td><td>read-only</td><td>The type of a resource.</td></tr>
+<tr><td>Oem { }</td><td>object</td><td></td><td></td><td>read-write</td><td>This is the manufacturer/provider specific extension moniker used to divide the Oem object into sections.</td></tr>
+<tr><td>Id</td><td>string</td><td></td><td>GET</td><td>read-only</td><td>Uniquely identifies the resource within the collection of like resources.</td></tr>
+<tr><td>Description</td><td>string</td><td>Yes</td><td></td><td>read-only</td><td>Provides a description of this resource and is used for commonality  in the schema definitions.</td></tr>
+<tr><td>Name</td><td>string</td><td></td><td>GET</td><td>read-only</td><td>The name of the resource or array element.</td></tr>
+<tr><td>Identifier {</td><td>object</td><td>Yes</td><td></td><td>read-only</td><td>The value identifies this resource.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;DurableName</td><td>string</td><td>Yes</td><td></td><td>read-only</td><td>This indicates the world wide, persistent name of the resource.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;DurableNameFormat</td><td>string</td><td>Yes</td><td></td><td>read-only</td><td>This represents the format of the DurableName property.<br />Possible Values:<ul>
+<li>NAA: Name Address Authority Format</li>
+<li>iQN: iSCSI Qualified Name</li>
+<li>FC_WWN: Fibre Channel World Wide Name</li>
+<li>UUID: Universally Unique Identifier</li>
+<li>EUI: IEEE-defined 64-bit Extended Unique Identifier</li>
+</ul></td></tr>
+<tr><td>}</td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>SupportedAccessProtocols [ ]</td><td>array[string]</td><td></td><td></td><td>read-write</td><td>SupportedAccessProtocols.<br />Possible Values:<ul>
+<li>FC: FC2</li>
+<li>FCP: FC4 SCSI Protocol</li>
+<li>iSCSI: Internet SCSI</li>
+<li>SAS: Serial Attached SCSI</li>
+<li>SMB: SMB</li>
+<li>NFSv3: NFSv3</li>
+<li>NFSv4: NFSv4</li>
+<li>HTTP: Hypertext Transfer Protocol</li>
+<li>HTTPS: Secure HTTP</li>
+<li>FTP: File Transfer Protocol</li>
+<li>FTPS: Secure FTP</li>
+<li>SecureNFS: Secure NFS</li>
+<li>FICON: FICON</li>
+<li>FCOE: FC2 over Ethernet</li>
+<li>SMBAndNFS: Both SMB and an NFS protocol</li>
+</ul></td></tr>
+<tr><td>MaxSupportedIOPS</td><td>number</td><td>Yes</td><td></td><td>read-write</td><td>The maximum IOPS that a connection can support.</td></tr>
+<tr><td>SupportedIOConnectivityLinesOfService [ {</td><td>array[object]</td><td></td><td></td><td>read-write</td><td>Collection of known and supported IOConnectivityLinesOfService.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;Name</td><td>string</td><td>Yes</td><td></td><td>read-write</td><td>A friendly name for this line of service.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;AccessProtocol</td><td>string</td><td>Yes</td><td></td><td>read-write</td><td>SupportedAccessProtocols.<br />Possible Values:<ul>
+<li>FC: FC2</li>
+<li>FCP: FC4 SCSI Protocol</li>
+<li>iSCSI: Internet SCSI</li>
+<li>SAS: Serial Attached SCSI</li>
+<li>SMB: SMB</li>
+<li>NFSv3: NFSv3</li>
+<li>NFSv4: NFSv4</li>
+<li>HTTP: Hypertext Transfer Protocol</li>
+<li>HTTPS: Secure HTTP</li>
+<li>FTP: File Transfer Protocol</li>
+<li>FTPS: Secure FTP</li>
+<li>SecureNFS: Secure NFS</li>
+<li>FICON: FICON</li>
+<li>FCOE: FC2 over Ethernet</li>
+<li>SMBAndNFS: Both SMB and an NFS protocol</li>
+</ul></td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;MaxIOPS</td><td>number</td><td>Yes</td><td></td><td>read-write</td><td>The maximum supported IOs per second that the connection will support for the selected access protocol.</td></tr>
+<tr><td>} ]</td><td></td><td></td><td></td><td></td><td></td></tr>
+</table>
+<h2 id="operations">Operations</h2>
+<h3 id="get">GET</h3>
+<h4 id="request">Request</h4>
+<div class="code">
+GET /redfish/v1/Chassis/Chassis1/Storage1/StorageService1/IOConnectivityLoSCapabilities
+<br />
+Content-Type: application/json
+<br />
+</div>
+<h4 id="response">Response</h4>
+<div class="code">
+{
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;"@odata.context": "uri"
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;"@odata.id": /redfish/v1/Chassis/Chassis1/Storage1/StorageService1/IOConnectivityLoSCapabilities
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;"@odata.type": "string"
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;"Oem": { }
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;"Id": "string"
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;"Description": "string"
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;"Name": "string"
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;"Identifier": {
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"DurableName": "string"
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"DurableNameFormat": "NAA"
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;}
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;"SupportedAccessProtocols": [ "FC" ]
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;"SupportedAccessProtocols@Redfish.AllowableValues": ["FC", "FCP", "iSCSI", "SAS", "SMB", "NFSv3", "NFSv4", "HTTP", "HTTPS", "FTP", "FTPS", "SecureNFS", "FICON", "FCOE", "SMBAndNFS"]
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;"MaxSupportedIOPS": 0
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;"SupportedIOConnectivityLinesOfService": [{
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Name": "string"
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"AccessProtocol": "FC"
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"AccessProtocol@Redfish.AllowableValues": ["FC", "FCP", "iSCSI", "SAS", "SMB", "NFSv3", "NFSv4", "HTTP", "HTTPS", "FTP", "FTPS", "SecureNFS", "FICON", "FCOE", "SMBAndNFS"]
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"MaxIOPS": 0
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;}]
+<br />
+}
+<br />
+</div>
+<h3 id="post">POST</h3>
+This operation is not supported on this resource and will result in the following response:
+<br />
+<br />
+<div class="code">
+HTTP/1.1 405 Method Not Allowed
+<br />
+</div>
+<h3 id="patch">PATCH</h3>
+This operation is not supported on this resource and will result in the following response:
+<br />
+<br />
+<div class="code">
+HTTP/1.1 405 Method Not Allowed
+<br />
+</div>
+<h3 id="delete">DELETE</h3>
+This operation is not supported on this resource and will result in the following response:
+<br />
+<br />
+<div class="code">
+HTTP/1.1 405 Method Not Allowed
+<br />
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,70 @@
+{
+    "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema.v1_3_0.json",
+    "copyright": "Copyright 2014-2017 Distributed Management Task Force, Inc. (DMTF). For the full DMTF copyright policy, see http://www.dmtf.org/about/policies/copyright",
+    "definitions": {
+        "Error": {
+            "additionalProperties": false,
+            "description": "This is the schema definition for the Error resource.",
+            "longDescription": "This is the schema definition for the Error resource. It represents the properties of an error response.",
+            "patternProperties": {
+                "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message|Privileges)\\.[a-zA-Z_][a-zA-Z0-9_.]+$": {
+                    "description": "This property shall specify a valid odata or Redfish property.",
+                    "type": [
+                        "array",
+                        "boolean",
+                        "number",
+                        "null",
+                        "object",
+                        "string"
+                    ]
+                }
+            },
+            "properties": {
+                "error": {
+                    "$ref": "#/definitions/ErrorObject",
+                    "description": "The object containing the error information.",
+                    "readonly": true
+                }
+            },
+            "type": "object"
+        },
+        "ErrorObject": {
+            "additionalProperties": false,
+            "patternProperties": {
+                "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message|Privileges)\\.[a-zA-Z_][a-zA-Z0-9_.]+$": {
+                    "description": "This property shall specify a valid odata or Redfish property.",
+                    "type": [
+                        "array",
+                        "boolean",
+                        "number",
+                        "null",
+                        "object",
+                        "string"
+                    ]
+                }
+            },
+            "properties": {
+                "@Message.ExtendedInfo": {
+                    "description": "An array of message objects describing one or more error message(s).",
+                    "items": {
+                        "$ref": "http://redfish.dmtf.org/schemas/v1/Message.json#/definitions/Message"
+                    },
+                    "readonly": true,
+                    "type": "array"
+                },
+                "code": {
+                    "description": "A string indicating a specific MessageId from the message registry. 'Base.1.0.GeneralError' should be used only if there is no better message.",
+                    "readonly": true,
+                    "type": "string"
+                },
+                "message": {
+                    "description": "A human readable error message corresponding to the message in the message registry.",
+                    "readonly": true,
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        }
+    },
+    "title": "#Error.v1_0_0"
+}
