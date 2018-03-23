@@ -118,19 +118,16 @@
                     "longDescription": "The value of this string shall be of the format for the reserved word *Oem*."
                 },
                 "Id": {
-                    "$ref": "http://redfish.dmtf.org/schemas/v1/Resource.json#/definitions/Id",
-                    "readonly": true
+                    "$ref": "http://redfish.dmtf.org/schemas/v1/Resource.json#/definitions/Id"
                 },
                 "Description": {
                     "anyOf": [
                         {"$ref": "http://redfish.dmtf.org/schemas/v1/Resource.json#/definitions/Description"},
                         {"type": "null"}
-                    ],
-                    "readonly": true
+                    ]
                 },
                 "Name": {
-                    "$ref": "http://redfish.dmtf.org/schemas/v1/Resource.json#/definitions/Name",
-                    "readonly": true
+                    "$ref": "http://redfish.dmtf.org/schemas/v1/Resource.json#/definitions/Name"
                 },
                 "Status": {
                     "$ref": "http://redfish.dmtf.org/schemas/v1/Resource.json#/definitions/Status"
@@ -140,7 +137,6 @@
                         "number",
                         "null"
                     ],
-                    "units": "By",
                     "readonly": true,
                     "description": "The size in bytes of this Volume",
                     "longDescription": "This property shall contain the size in bytes of the associated volume."
@@ -151,8 +147,8 @@
                         {"type": "null"}
                     ],
                     "readonly": true,
-                    "description": "The type of this volume",
-                    "longDescription": "This property shall contain the type of the associated Volume."
+                    "description": "Is this drive currently predicting a failure in the near future",
+                    "longDescription": "This property shall contain failure information as defined by the manufacturer for the associated drive."
                 },
                 "Encrypted": {
                     "type": [
@@ -184,10 +180,9 @@
                         "number",
                         "null"
                     ],
-                    "units": "By",
                     "readonly": true,
-                    "description": "The size of the smallest addressable unit (Block) of this volume in bytes",
-                    "longDescription": "This property shall contain size of the smallest addressable unit of the associated volume."
+                    "description": "The size of the smallest addressible unit (Block) of this volume in bytes",
+                    "longDescription": "This property shall contain size of the smallest addressible unit of the associated volume."
                 },
                 "Operations": {
                     "type": "array",
@@ -203,7 +198,6 @@
                         "number",
                         "null"
                     ],
-                    "units": "By",
                     "readonly": true,
                     "description": "The size in bytes of this Volume's optimum IO size.",
                     "longDescription": "This property shall contain the optimum IO size to use when performing IO on this volume. For logical disks, this is the stripe size. For physical disks, this describes the physical sector size."
@@ -322,5 +316,5 @@
             }
         }
     },
-    "copyright": "Copyright 2016-2017 Storage Networking Industry Association (SNIA), USA. All rights reserved. For the full SNIA copyright policy, see http://www.snia.org/about/corporate_info/copyright"
+    "copyright": "Copyright 2014-2016 Distributed Management Task Force, Inc. (DMTF). For the full DMTF copyright policy, see http://www.dmtf.org/about/policies/copyright"
 }

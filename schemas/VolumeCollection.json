@@ -1,5 +1,5 @@
 {
-    "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema.v1_1_0.json",
+    "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema.v1_2_0.json",
     "title": "#VolumeCollection.VolumeCollection",
     "$ref": "#/definitions/VolumeCollection",
     "definitions": {
@@ -60,18 +60,16 @@
                         "Members": {
                             "type": "array",
                             "items": {
-                                "$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/Volume.json#/definitions/Volume"
+                                "$ref": "http://redfish.dmtf.org/schemas/v1/Volume.json#/definitions/Volume"
                             },
-                            "readonly": false,
-                            "description": "The value of each member references a Volume resource.",
-                            "longDescription": "The value of each member entry shall reference a Volume resource."
+                            "readonly": true,
+                            "description": "Contains the members of this collection."
                         }
                     }
                 }
             ],
-            "description": "A Collection of Volume resource instances.",
-            "longDescription": "This collection shall contain references to all Volume resource instances sharing the same parent resource."
+            "description": "A Collection of Storage resource instances."
         }
     },
-    "copyright": "Copyright 2016-2017 Storage Networking Industry Association (SNIA), USA. All rights reserved. For the full SNIA copyright policy, see http://www.snia.org/about/corporate_info/copyright"
+    "copyright": "Copyright 2014-2017 Distributed Management Task Force, Inc. (DMTF). For the full DMTF copyright policy, see http://www.dmtf.org/about/policies/copyright"
 }

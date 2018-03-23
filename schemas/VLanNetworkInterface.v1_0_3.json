@@ -1,5 +1,5 @@
 {
-    "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema.v1_2_0.json",
+    "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema.v1_1_0.json",
     "title": "#VLanNetworkInterface.v1_0_3.VLanNetworkInterface",
     "$ref": "#/definitions/VLanNetworkInterface",
     "definitions": {
@@ -47,7 +47,7 @@
         "VLANId": {
             "type": "number",
             "minimum": 0,
-            "maximum": 4090
+            "maximum": 4094
         },
         "VLanNetworkInterface": {
             "type": "object",
@@ -125,5 +125,5 @@
             "description": "This resource contains information for a Virtual LAN (VLAN) network instance available on a manager, system or other device."
         }
     },
-    "copyright": "Copyright 2014-2017 Distributed Management Task Force, Inc. (DMTF). For the full DMTF copyright policy, see http://www.dmtf.org/about/policies/copyright"
+    "copyright": "Copyright 2014-2016 Distributed Management Task Force, Inc. (DMTF). For the full DMTF copyright policy, see http://www.dmtf.org/about/policies/copyright"
 }
