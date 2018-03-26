@@ -223,13 +223,12 @@
 	},
 	"PCIeFunction": {
 		"PCIeFunction": {
-			"AssetTag": true,
-			"Links": {
-				"Endpoints": true,
-				"Drives": true,
-				"StorageControllers": true,
-				"EthernetInterfaces": true
-			}
+			"AssetTag": true
+		},
+		"Links": {
+			"Drives": true,
+			"StorageControllers": true,
+			"EthernetInterfaces": true
 		}
 	},
 	"PCIeSwitch": {
