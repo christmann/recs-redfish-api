@@ -138,19 +138,17 @@
 		}
 	},
 	"ComposedNode": {
-		"ComposedNode": {
-			"Actions": {
-				"#ComposedNode.Reset": {
-					"ResetType": [
-						"On",
-						"ForceOff",
-						"GracefulShutdown",
-						"GracefulRestart",
-						"ForceRestart",
-						"ForceOn",
-						"PushPowerButton"
-					]
-				}
+		"Actions": {
+			"#ComposedNode.Reset": {
+				"ResetType": [
+					"On",
+					"ForceOff",
+					"GracefulShutdown",
+					"GracefulRestart",
+					"ForceRestart",
+					"ForceOn",
+					"PushPowerButton"
+				]
 			}
 		}
 	},
