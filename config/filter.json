@@ -306,6 +306,19 @@
 		},
 		"Links": {
 			"ManagedBy": true
+		},
+		"Actions": {
+			"#Switch.Reset": {
+				"ResetType": [
+					"On",
+					"ForceOff",
+					"GracefulShutdown",
+					"GracefulRestart",
+					"ForceRestart",
+					"ForceOn",
+					"PushPowerButton"
+				]
+			}
 		}
 	}
 }
