@@ -92,8 +92,6 @@ table { border-collapse: collapse; }
 <a href="processorcollection.html#processorcollection">ProcessorCollection</a><br />
 <a href="role.html#role">Role</a><br />
 <a href="serviceroot.html#serviceroot">ServiceRoot</a><br />
-<a href="session.html#session">Session</a><br />
-<a href="sessioncollection.html#sessioncollection">SessionCollection</a><br />
 <a href="simplestorage.html#simplestorage">SimpleStorage</a><br />
 <a href="storage.html#storage">Storage</a><br />
 <a href="storagegroup.html#storagegroup">StorageGroup</a><br />
@@ -294,7 +292,7 @@ This is the schema definition for a Manager.  Examples of managers are BMCs, Enc
 </table>
 <h4 id="request">Request</h4>
 <div class="code">
-POST /redfish/v1/Chassis/Chassis1/Manager1/Actions/Manager.ForceFailover
+POST /redfish/v1/Systems/ComputerSystem1/Manager1/Actions/Manager.ForceFailover
 <br />
 Content-Type: application/json
 <br />
@@ -302,7 +300,7 @@ Content-Type: application/json
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;"NewManager": {
 <br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"@odata.id": "/redfish/v1/Chassis/Chassis1/Manager1"
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"@odata.id": "/redfish/v1/Systems/ComputerSystem1/Manager1"
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;}
 <br />
@@ -327,7 +325,7 @@ HTTP/1.1 204 No Content
 </table>
 <h4 id="request">Request</h4>
 <div class="code">
-POST /redfish/v1/Chassis/Chassis1/Manager1/Actions/Manager.ModifyRedundancySet
+POST /redfish/v1/Systems/ComputerSystem1/Manager1/Actions/Manager.ModifyRedundancySet
 <br />
 Content-Type: application/json
 <br />
@@ -335,13 +333,13 @@ Content-Type: application/json
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;"Add": [{
 <br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"@odata.id": "/redfish/v1/Chassis/Chassis1/Manager1"
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"@odata.id": "/redfish/v1/Systems/ComputerSystem1/Manager1"
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;}]
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;"Remove": [{
 <br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"@odata.id": "/redfish/v1/Chassis/Chassis1/Manager1"
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"@odata.id": "/redfish/v1/Systems/ComputerSystem1/Manager1"
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;}]
 <br />
@@ -371,7 +369,7 @@ HTTP/1.1 204 No Content
 </table>
 <h4 id="request">Request</h4>
 <div class="code">
-POST /redfish/v1/Chassis/Chassis1/Manager1/Actions/Manager.Reset
+POST /redfish/v1/Systems/ComputerSystem1/Manager1/Actions/Manager.Reset
 <br />
 Content-Type: application/json
 <br />
@@ -391,7 +389,7 @@ HTTP/1.1 204 No Content
 <h3 id="get">GET</h3>
 <h4 id="request">Request</h4>
 <div class="code">
-GET /redfish/v1/Chassis/Chassis1/Manager1
+GET /redfish/v1/Systems/ComputerSystem1/Manager1
 <br />
 Content-Type: application/json
 <br />
@@ -402,7 +400,7 @@ Content-Type: application/json
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;"@odata.context": "uri"
 <br />
-&nbsp;&nbsp;&nbsp;&nbsp;"@odata.id": /redfish/v1/Chassis/Chassis1/Manager1
+&nbsp;&nbsp;&nbsp;&nbsp;"@odata.id": /redfish/v1/Systems/ComputerSystem1/Manager1
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;"@odata.type": "string"
 <br />
@@ -410,7 +408,7 @@ Content-Type: application/json
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"#Manager.ForceFailover": {
 <br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"target": /redfish/v1/Chassis/Chassis1/Manager1/Actions/Manager.ForceFailover
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"target": /redfish/v1/Systems/ComputerSystem1/Manager1/Actions/Manager.ForceFailover
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"title": "string"
 <br />
@@ -418,7 +416,7 @@ Content-Type: application/json
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"#Manager.ModifyRedundancySet": {
 <br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"target": /redfish/v1/Chassis/Chassis1/Manager1/Actions/Manager.ModifyRedundancySet
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"target": /redfish/v1/Systems/ComputerSystem1/Manager1/Actions/Manager.ModifyRedundancySet
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"title": "string"
 <br />
@@ -426,7 +424,7 @@ Content-Type: application/json
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"#Manager.Reset": {
 <br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"target": /redfish/v1/Chassis/Chassis1/Manager1/Actions/Manager.Reset
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"target": /redfish/v1/Systems/ComputerSystem1/Manager1/Actions/Manager.Reset
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"title": "string"
 <br />
@@ -454,7 +452,7 @@ Content-Type: application/json
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;"EthernetInterfaces": {
 <br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"@odata.id": "/redfish/v1/Chassis/Chassis1/Manager1/EthernetInterfaces"
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"@odata.id": "/redfish/v1/Systems/ComputerSystem1/Manager1/EthernetInterfaces"
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;}
 <br />
@@ -476,7 +474,7 @@ Content-Type: application/json
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"ManagerForChassis": [{
 <br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"@odata.id": "/redfish/v1/Chassis/Chassis1/Manager1/Chassis1"
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"@odata.id": "/redfish/v1/Systems/ComputerSystem1/Manager1/Chassis1"
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}]
 <br />
@@ -484,7 +482,7 @@ Content-Type: application/json
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"ManagerForServers": [{
 <br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"@odata.id": "/redfish/v1/Chassis/Chassis1/Manager1/ComputerSystem1"
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"@odata.id": "/redfish/v1/Systems/ComputerSystem1/Manager1/ComputerSystem1"
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}]
 <br />
@@ -492,7 +490,7 @@ Content-Type: application/json
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"ManagerInChassis": {
 <br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"@odata.id": "/redfish/v1/Chassis/Chassis1/Manager1/ManagerInChassis"
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"@odata.id": "/redfish/v1/Systems/ComputerSystem1/Manager1/ManagerInChassis"
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
 <br />
@@ -508,7 +506,7 @@ Content-Type: application/json
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;"NetworkProtocol": {
 <br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"@odata.id": "/redfish/v1/Chassis/Chassis1/Manager1/NetworkProtocol"
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"@odata.id": "/redfish/v1/Systems/ComputerSystem1/Manager1/NetworkProtocol"
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;}
 <br />

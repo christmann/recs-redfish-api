@@ -24,7 +24,7 @@
 	<edmx:DataServices>
 		<Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="HSLLConnection">
 
-			<EntityType Name="HSLLConnection" BaseType="Resource.v1_0_0.Resource">
+			<EntityType Name="HSLLConnection" BaseType="Resource.v1_0_0.Resource" Abstract="true">
 				<Annotation Term="OData.Description" String="This is the schema definition for the HSLLConnection resource." />
 				<Annotation Term="OData.LongDescription" String="This is the schema definition for the HSLLConnection resource. It represents the properties of a HSLLConnection." />
 			</EntityType>

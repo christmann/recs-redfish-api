@@ -92,8 +92,6 @@ table { border-collapse: collapse; }
 <a href="processorcollection.html#processorcollection">ProcessorCollection</a><br />
 <a href="role.html#role">Role</a><br />
 <a href="serviceroot.html#serviceroot">ServiceRoot</a><br />
-<a href="session.html#session">Session</a><br />
-<a href="sessioncollection.html#sessioncollection">SessionCollection</a><br />
 <a href="simplestorage.html#simplestorage">SimpleStorage</a><br />
 <a href="storage.html#storage">Storage</a><br />
 <a href="storagegroup.html#storagegroup">StorageGroup</a><br />
@@ -278,7 +276,7 @@ Collection of resources that are managed and exposed to hosts as a group.
 </table>
 <h4 id="request">Request</h4>
 <div class="code">
-POST /redfish/v1/Chassis/Chassis1/Storage1/StorageService1/Actions/StorageService.SetEncryptionKey
+POST /redfish/v1/Systems/ComputerSystem1/Storage1/StorageService1/Actions/StorageService.SetEncryptionKey
 <br />
 Content-Type: application/json
 <br />
@@ -298,7 +296,7 @@ HTTP/1.1 204 No Content
 <h3 id="get">GET</h3>
 <h4 id="request">Request</h4>
 <div class="code">
-GET /redfish/v1/Chassis/Chassis1/Storage1/StorageService1
+GET /redfish/v1/Systems/ComputerSystem1/Storage1/StorageService1
 <br />
 Content-Type: application/json
 <br />
@@ -309,7 +307,7 @@ Content-Type: application/json
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;"@odata.context": "uri"
 <br />
-&nbsp;&nbsp;&nbsp;&nbsp;"@odata.id": /redfish/v1/Chassis/Chassis1/Storage1/StorageService1
+&nbsp;&nbsp;&nbsp;&nbsp;"@odata.id": /redfish/v1/Systems/ComputerSystem1/Storage1/StorageService1
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;"@odata.type": "string"
 <br />
@@ -347,43 +345,43 @@ Content-Type: application/json
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"HostingSystem": {
 <br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"@odata.id": "/redfish/v1/Chassis/Chassis1/Storage1/StorageService1/HostingSystem"
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"@odata.id": "/redfish/v1/Systems/ComputerSystem1/Storage1/StorageService1/HostingSystem"
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"DefaultClassOfService": {
 <br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"@odata.id": "/redfish/v1/Chassis/Chassis1/Storage1/StorageService1/DefaultClassOfService"
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"@odata.id": "/redfish/v1/Systems/ComputerSystem1/Storage1/StorageService1/DefaultClassOfService"
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"DataProtectionLoSCapabilities": {
 <br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"@odata.id": "/redfish/v1/Chassis/Chassis1/Storage1/StorageService1/DataProtectionLoSCapabilities"
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"@odata.id": "/redfish/v1/Systems/ComputerSystem1/Storage1/StorageService1/DataProtectionLoSCapabilities"
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"DataSecurityLoSCapabilities": {
 <br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"@odata.id": "/redfish/v1/Chassis/Chassis1/Storage1/StorageService1/DataSecurityLoSCapabilities"
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"@odata.id": "/redfish/v1/Systems/ComputerSystem1/Storage1/StorageService1/DataSecurityLoSCapabilities"
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"DataStorageLoSCapabilities": {
 <br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"@odata.id": "/redfish/v1/Chassis/Chassis1/Storage1/StorageService1/DataStorageLoSCapabilities"
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"@odata.id": "/redfish/v1/Systems/ComputerSystem1/Storage1/StorageService1/DataStorageLoSCapabilities"
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"IOConnectivityLoSCapabilities": {
 <br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"@odata.id": "/redfish/v1/Chassis/Chassis1/Storage1/StorageService1/IOConnectivityLoSCapabilities"
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"@odata.id": "/redfish/v1/Systems/ComputerSystem1/Storage1/StorageService1/IOConnectivityLoSCapabilities"
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"IOPerformanceLoSCapabilities": {
 <br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"@odata.id": "/redfish/v1/Chassis/Chassis1/Storage1/StorageService1/IOPerformanceLoSCapabilities"
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"@odata.id": "/redfish/v1/Systems/ComputerSystem1/Storage1/StorageService1/IOPerformanceLoSCapabilities"
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
 <br />
@@ -397,7 +395,7 @@ Content-Type: application/json
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"title": "string"
 <br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"target": /redfish/v1/Chassis/Chassis1/Storage1/StorageService1/Actions/StorageService.SetEncryptionKey
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"target": /redfish/v1/Systems/ComputerSystem1/Storage1/StorageService1/Actions/StorageService.SetEncryptionKey
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
 <br />
@@ -405,49 +403,49 @@ Content-Type: application/json
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;"StorageGroups": {
 <br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"@odata.id": "/redfish/v1/Chassis/Chassis1/Storage1/StorageService1/StorageGroups"
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"@odata.id": "/redfish/v1/Systems/ComputerSystem1/Storage1/StorageService1/StorageGroups"
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;}
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;"ClientEndpointGroups": {
 <br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"@odata.id": "/redfish/v1/Chassis/Chassis1/Storage1/StorageService1/ClientEndpointGroups"
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"@odata.id": "/redfish/v1/Systems/ComputerSystem1/Storage1/StorageService1/ClientEndpointGroups"
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;}
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;"ServerEndpointGroups": {
 <br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"@odata.id": "/redfish/v1/Chassis/Chassis1/Storage1/StorageService1/ServerEndpointGroups"
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"@odata.id": "/redfish/v1/Systems/ComputerSystem1/Storage1/StorageService1/ServerEndpointGroups"
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;}
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;"Volumes": {
 <br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"@odata.id": "/redfish/v1/Chassis/Chassis1/Storage1/StorageService1/Volumes"
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"@odata.id": "/redfish/v1/Systems/ComputerSystem1/Storage1/StorageService1/Volumes"
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;}
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;"FileSystems": {
 <br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"@odata.id": "/redfish/v1/Chassis/Chassis1/Storage1/StorageService1/FileSystems"
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"@odata.id": "/redfish/v1/Systems/ComputerSystem1/Storage1/StorageService1/FileSystems"
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;}
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;"StoragePools": {
 <br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"@odata.id": "/redfish/v1/Chassis/Chassis1/Storage1/StorageService1/StoragePools"
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"@odata.id": "/redfish/v1/Systems/ComputerSystem1/Storage1/StorageService1/StoragePools"
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;}
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;"Drives": {
 <br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"@odata.id": "/redfish/v1/Chassis/Chassis1/Storage1/StorageService1/Drives"
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"@odata.id": "/redfish/v1/Systems/ComputerSystem1/Storage1/StorageService1/Drives"
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;}
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;"Endpoints": {
 <br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"@odata.id": "/redfish/v1/Chassis/Chassis1/Storage1/StorageService1/Endpoints"
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"@odata.id": "/redfish/v1/Systems/ComputerSystem1/Storage1/StorageService1/Endpoints"
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;}
 <br />
@@ -501,7 +499,7 @@ Content-Type: application/json
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;"ClassesOfService": {
 <br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"@odata.id": "/redfish/v1/Chassis/Chassis1/Storage1/StorageService1/ClassesOfService"
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"@odata.id": "/redfish/v1/Systems/ComputerSystem1/Storage1/StorageService1/ClassesOfService"
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;}
 <br />

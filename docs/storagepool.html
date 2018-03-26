@@ -92,8 +92,6 @@ table { border-collapse: collapse; }
 <a href="processorcollection.html#processorcollection">ProcessorCollection</a><br />
 <a href="role.html#role">Role</a><br />
 <a href="serviceroot.html#serviceroot">ServiceRoot</a><br />
-<a href="session.html#session">Session</a><br />
-<a href="sessioncollection.html#sessioncollection">SessionCollection</a><br />
 <a href="simplestorage.html#simplestorage">SimpleStorage</a><br />
 <a href="storage.html#storage">Storage</a><br />
 <a href="storagegroup.html#storagegroup">StorageGroup</a><br />
@@ -239,7 +237,7 @@ A container of data storage.
 <h3 id="get">GET</h3>
 <h4 id="request">Request</h4>
 <div class="code">
-GET /redfish/v1/Chassis/Chassis1/Storage1/StorageService1/StoragePools/StoragePool1
+GET /redfish/v1/Systems/ComputerSystem1/Storage1/StorageService1/StoragePools/StoragePool1
 <br />
 Content-Type: application/json
 <br />
@@ -250,7 +248,7 @@ Content-Type: application/json
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;"@odata.context": "uri"
 <br />
-&nbsp;&nbsp;&nbsp;&nbsp;"@odata.id": /redfish/v1/Chassis/Chassis1/Storage1/StorageService1/StoragePools/StoragePool1
+&nbsp;&nbsp;&nbsp;&nbsp;"@odata.id": /redfish/v1/Systems/ComputerSystem1/Storage1/StorageService1/StoragePools/StoragePool1
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;"@odata.type": "string"
 <br />
@@ -360,25 +358,25 @@ Content-Type: application/json
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"ProvidedClassOfService": {
 <br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"@odata.id": "/redfish/v1/Chassis/Chassis1/Storage1/StorageService1/FileSystems/FileSystem1/ProvidedClassOfService"
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"@odata.id": "/redfish/v1/Systems/ComputerSystem1/Storage1/StorageService1/FileSystems/FileSystem1/ProvidedClassOfService"
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"ProvidingVolumes": {
 <br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"@odata.id": "/redfish/v1/Chassis/Chassis1/Storage1/StorageService1/FileSystems/FileSystem1/ProvidingVolumes"
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"@odata.id": "/redfish/v1/Systems/ComputerSystem1/Storage1/StorageService1/FileSystems/FileSystem1/ProvidingVolumes"
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"ProvidingPools": {
 <br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"@odata.id": "/redfish/v1/Chassis/Chassis1/Storage1/StorageService1/FileSystems/FileSystem1/ProvidingPools"
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"@odata.id": "/redfish/v1/Systems/ComputerSystem1/Storage1/StorageService1/FileSystems/FileSystem1/ProvidingPools"
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"ProvidingDrives": {
 <br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"@odata.id": "/redfish/v1/Chassis/Chassis1/Storage1/StorageService1/FileSystems/FileSystem1/ProvidingDrives"
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"@odata.id": "/redfish/v1/Systems/ComputerSystem1/Storage1/StorageService1/FileSystems/FileSystem1/ProvidingDrives"
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
 <br />
@@ -392,7 +390,7 @@ Content-Type: application/json
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"DefaultClassOfService": {
 <br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"@odata.id": "/redfish/v1/Chassis/Chassis1/Storage1/StorageService1/StoragePools/StoragePool1/DefaultClassOfService"
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"@odata.id": "/redfish/v1/Systems/ComputerSystem1/Storage1/StorageService1/StoragePools/StoragePool1/DefaultClassOfService"
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
 <br />
@@ -412,19 +410,19 @@ Content-Type: application/json
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;"AllocatedVolumes": {
 <br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"@odata.id": "/redfish/v1/Chassis/Chassis1/Storage1/StorageService1/StoragePools/StoragePool1/AllocatedVolumes"
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"@odata.id": "/redfish/v1/Systems/ComputerSystem1/Storage1/StorageService1/StoragePools/StoragePool1/AllocatedVolumes"
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;}
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;"AllocatedPools": {
 <br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"@odata.id": "/redfish/v1/Chassis/Chassis1/Storage1/StorageService1/StoragePools/StoragePool1/AllocatedPools"
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"@odata.id": "/redfish/v1/Systems/ComputerSystem1/Storage1/StorageService1/StoragePools/StoragePool1/AllocatedPools"
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;}
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;"ClassesOfService": {
 <br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"@odata.id": "/redfish/v1/Chassis/Chassis1/Storage1/StorageService1/StoragePools/StoragePool1/ClassesOfService"
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"@odata.id": "/redfish/v1/Systems/ComputerSystem1/Storage1/StorageService1/StoragePools/StoragePool1/ClassesOfService"
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;}
 <br />

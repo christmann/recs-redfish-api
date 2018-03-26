@@ -92,8 +92,6 @@ table { border-collapse: collapse; }
 <a href="processorcollection.html#processorcollection">ProcessorCollection</a><br />
 <a href="role.html#role">Role</a><br />
 <a href="serviceroot.html#serviceroot">ServiceRoot</a><br />
-<a href="session.html#session">Session</a><br />
-<a href="sessioncollection.html#sessioncollection">SessionCollection</a><br />
 <a href="simplestorage.html#simplestorage">SimpleStorage</a><br />
 <a href="storage.html#storage">Storage</a><br />
 <a href="storagegroup.html#storagegroup">StorageGroup</a><br />
@@ -354,7 +352,7 @@ This is the schema definition for definition of a Memory and its configuration.
 </table>
 <h4 id="request">Request</h4>
 <div class="code">
-POST /redfish/v1/Chassis/Chassis1/Memory1/Actions/Memory.DisablePassphrase
+POST /redfish/v1/Systems/ComputerSystem1/Memory1/Actions/Memory.DisablePassphrase
 <br />
 Content-Type: application/json
 <br />
@@ -381,7 +379,7 @@ HTTP/1.1 204 No Content
 </table>
 <h4 id="request">Request</h4>
 <div class="code">
-POST /redfish/v1/Chassis/Chassis1/Memory1/Actions/Memory.SecureEraseUnit
+POST /redfish/v1/Systems/ComputerSystem1/Memory1/Actions/Memory.SecureEraseUnit
 <br />
 Content-Type: application/json
 <br />
@@ -408,7 +406,7 @@ HTTP/1.1 204 No Content
 </table>
 <h4 id="request">Request</h4>
 <div class="code">
-POST /redfish/v1/Chassis/Chassis1/Memory1/Actions/Memory.SetPassphrase
+POST /redfish/v1/Systems/ComputerSystem1/Memory1/Actions/Memory.SetPassphrase
 <br />
 Content-Type: application/json
 <br />
@@ -435,7 +433,7 @@ HTTP/1.1 204 No Content
 </table>
 <h4 id="request">Request</h4>
 <div class="code">
-POST /redfish/v1/Chassis/Chassis1/Memory1/Actions/Memory.UnlockUnit
+POST /redfish/v1/Systems/ComputerSystem1/Memory1/Actions/Memory.UnlockUnit
 <br />
 Content-Type: application/json
 <br />
@@ -457,7 +455,7 @@ HTTP/1.1 204 No Content
 <h3 id="get">GET</h3>
 <h4 id="request">Request</h4>
 <div class="code">
-GET /redfish/v1/Chassis/Chassis1/Memory1
+GET /redfish/v1/Systems/ComputerSystem1/Memory1
 <br />
 Content-Type: application/json
 <br />
@@ -468,7 +466,7 @@ Content-Type: application/json
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;"@odata.context": "uri"
 <br />
-&nbsp;&nbsp;&nbsp;&nbsp;"@odata.id": /redfish/v1/Chassis/Chassis1/Memory1
+&nbsp;&nbsp;&nbsp;&nbsp;"@odata.id": /redfish/v1/Systems/ComputerSystem1/Memory1
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;"@odata.type": "string"
 <br />
@@ -476,7 +474,7 @@ Content-Type: application/json
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"#Memory.DisablePassphrase": {
 <br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"target": /redfish/v1/Chassis/Chassis1/Memory1/Actions/Memory.DisablePassphrase
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"target": /redfish/v1/Systems/ComputerSystem1/Memory1/Actions/Memory.DisablePassphrase
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"title": "string"
 <br />
@@ -484,7 +482,7 @@ Content-Type: application/json
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"#Memory.SecureEraseUnit": {
 <br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"target": /redfish/v1/Chassis/Chassis1/Memory1/Actions/Memory.SecureEraseUnit
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"target": /redfish/v1/Systems/ComputerSystem1/Memory1/Actions/Memory.SecureEraseUnit
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"title": "string"
 <br />
@@ -492,7 +490,7 @@ Content-Type: application/json
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"#Memory.SetPassphrase": {
 <br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"target": /redfish/v1/Chassis/Chassis1/Memory1/Actions/Memory.SetPassphrase
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"target": /redfish/v1/Systems/ComputerSystem1/Memory1/Actions/Memory.SetPassphrase
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"title": "string"
 <br />
@@ -500,7 +498,7 @@ Content-Type: application/json
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"#Memory.UnlockUnit": {
 <br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"target": /redfish/v1/Chassis/Chassis1/Memory1/Actions/Memory.UnlockUnit
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"target": /redfish/v1/Systems/ComputerSystem1/Memory1/Actions/Memory.UnlockUnit
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"title": "string"
 <br />
@@ -518,7 +516,7 @@ Content-Type: application/json
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;"Assembly": {
 <br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"@odata.id": "/redfish/v1/Chassis/Chassis1/Memory1/Assembly"
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"@odata.id": "/redfish/v1/Systems/ComputerSystem1/Memory1/Assembly"
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;}
 <br />
@@ -548,7 +546,7 @@ Content-Type: application/json
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Chassis": {
 <br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"@odata.id": "/redfish/v1/Chassis/Chassis1/Memory1/Chassis"
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"@odata.id": "/redfish/v1/Systems/ComputerSystem1/Memory1/Chassis"
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
 <br />

@@ -1,10 +1,10 @@
 {
 	"ServiceRoot": {
 		"ServiceRoot": {
+			"CompositionService": true,
 			"AccountService": true,
-			"Links": {
-				"Sessions": true
-			},
+			"Product": true,
+			"ProtocolFeaturesSupported": true,
 			"Managers": true,
 			"Tasks": true,
 			"SessionService": true,
@@ -14,11 +14,9 @@
 			"StorageServices": true,
 			"Fabrics": true,
 			"UpdateService": true
-		}
-	},
-	"Backplane": {
-		"Backplane": {
-			"BackplaneType": true
+		},
+		"Links": {
+			"Sessions": true
 		}
 	},
 	"Baseboard": {
@@ -35,35 +33,16 @@
 						"PushPowerButton"
 					]
 				}
-			},
-			"Backplane": true
+			}
 		}
 	},
 	"Chassis": {
 		"Chassis": {
+			"Assembly": true,
 			"AssetTag": true,
 			"ChassisType": [
 				"Enclosure"
 			],
-			"Links": {
-				"ManagedBy": true,
-				"PoweredBy": true,
-				"CooledBy": true,
-				"ContainedBy": true,
-				"Contains": true,
-				"ManagersInChassis": true,
-				"Drives": true,
-				"Storage": true,
-				"PCIeDevices": true,
-				"Oem" : {
-					"EID_47597": {
-						"Backplanes": true
-					}
-				}
-			},
-			"Actions": {
-				"#Chassis.Reset": true
-			},
 			"LogServices": true,
 			"Thermal": true,
 			"Power": true,
@@ -75,6 +54,21 @@
 			"WeightKg": true,
 			"NetworkAdapters": true,
 			"IndicatorLED": true
+		},
+		"Links": {
+			"ManagedBy": true,
+			"PoweredBy": true,
+			"CooledBy": true,
+			"ContainedBy": true,
+			"Contains": true,
+			"ManagersInChassis": true,
+			"Drives": true,
+			"Storage": true,
+			"PCIeDevices": true,
+			"ResourceBlocks" : true
+		},
+		"Actions": {
+			"#Chassis.Reset": true
 		}
 	},
 	"ComposedNode": {

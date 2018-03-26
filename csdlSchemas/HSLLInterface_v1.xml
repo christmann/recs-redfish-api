@@ -27,7 +27,7 @@
 	<edmx:DataServices>
 		<Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="HSLLInterface">
 
-			<EntityType Name="HSLLInterface" BaseType="Resource.v1_0_0.Resource">
+			<EntityType Name="HSLLInterface" BaseType="Resource.v1_0_0.Resource" Abstract="true">
 				<Annotation Term="OData.Description" String="This is the schema definition for the HSLLInterface resource." />
 				<Annotation Term="OData.LongDescription" String="This is the schema definition for the HSLLInterface resource. It represents the properties of a HSLLInterface." />
 			</EntityType>
