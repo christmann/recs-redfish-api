@@ -32,9 +32,22 @@
                     "description": "The Baseboard, the Switch is hosted on, or null if it is not hosted on a Baseboard.",
                     "longDescription": "This object shall only contain a reference that complies to the Baseboard schema.",
                     "readonly": true
+                },
+                "SwitchType": {
+                    "$ref": "#/definitions/SwitchType",
+                    "description": "The type of the switch.",
+                    "longDescription": "An enumeration that indicates the type of the switch.",
+                    "readonly": true
                 }
             },
             "type": "object"
+        },
+        "SwitchType": {
+            "enum": [
+                "Ethernet",
+                "PCIe"
+            ],
+            "type": "string"
         }
     },
     "title": "#EID_47597_RECSBox_Switch.v1_0_0"

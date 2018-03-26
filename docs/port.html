@@ -44,7 +44,6 @@ table { border-collapse: collapse; }
 <a href="composednodecollection.html#composednodecollection">ComposedNodeCollection</a><br />
 <a href="computersystem.html#computersystem">ComputerSystem</a><br />
 <a href="computersystemcollection.html#computersystemcollection">ComputerSystemCollection</a><br />
-<a href="endpoint.html#endpoint">Endpoint</a><br />
 <a href="ethernetinterface.html#ethernetinterface">EthernetInterface</a><br />
 <a href="ethernetinterfacecollection.html#ethernetinterfacecollection">EthernetInterfaceCollection</a><br />
 <a href="hsllconnection.html#hsllconnection">HSLLConnection</a><br />
@@ -52,8 +51,6 @@ table { border-collapse: collapse; }
 <a href="hsllinterface.html#hsllinterface">HSLLInterface</a><br />
 <a href="jsonschemafile.html#jsonschemafile">JsonSchemaFile</a><br />
 <a href="jsonschemafilecollection.html#jsonschemafilecollection">JsonSchemaFileCollection</a><br />
-<a href="networkdevicefunction.html#networkdevicefunction">NetworkDeviceFunction</a><br />
-<a href="networkport.html#networkport">NetworkPort</a><br />
 <a href="pciedevice.html#pciedevice">PCIeDevice</a><br />
 <a href="pciedevicecollection.html#pciedevicecollection">PCIeDeviceCollection</a><br />
 <a href="pciefunction.html#pciefunction">PCIeFunction</a><br />
@@ -86,101 +83,10 @@ Port contains properties describing a port of a switch.
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;}</td><td></td><td></td><td></td><td></td><td></td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;Oem { }</td><td>object</td><td></td><td></td><td>read-write</td><td>The available OEM specific actions for this resource.</td></tr>
 <tr><td>}</td><td></td><td></td><td></td><td></td><td></td></tr>
-<tr><td>CurrentSpeedGbps</td><td>number</td><td>Yes</td><td></td><td>read-only</td><td>The current speed of this port.<br />Unit: Gbit/s</td></tr>
 <tr><td>Description</td><td>string</td><td>Yes</td><td></td><td>read-only</td><td>Provides a description of this resource and is used for commonality  in the schema definitions.</td></tr>
 <tr><td>Id</td><td>string</td><td></td><td>GET</td><td>read-only</td><td>Uniquely identifies the resource within the collection of like resources.</td></tr>
 <tr><td>Links {</td><td>object</td><td></td><td></td><td>read-write</td><td>Contains references to other resources that are related to this resource.</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;AssociatedEndpoints [ {</td><td>array[reference(<a href="endpoint.html#endpoint">Endpoint</a>)]</td><td></td><td></td><td>read-only</td><td>An array of references to the endpoints that connect to the switch through this port.</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@odata.id</td><td>string</td><td></td><td></td><td>read-only</td><td>The unique identifier for a resource.<br />Format: uri</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;} ]</td><td></td><td></td><td></td><td></td><td></td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;AssociatedEndpoints@odata.count</td><td>number</td><td></td><td></td><td>read-only</td><td>The number of items in a collection.</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;ConnectedSwitchPorts [ {</td><td>array[reference(<a href="port.html#port">Port</a>)]</td><td></td><td></td><td>read-only</td><td>An array of references to the ports that connect to the switch through this port.</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@odata.id</td><td>string</td><td></td><td></td><td>read-only</td><td>The unique identifier for a resource.<br />Format: uri</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;} ]</td><td></td><td></td><td></td><td></td><td></td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;ConnectedSwitchPorts@odata.count</td><td>number</td><td></td><td></td><td>read-only</td><td>The number of items in a collection.</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;ConnectedSwitches [ {</td><td>array[reference(<a href="switch.html#switch">Switch</a>)]</td><td></td><td></td><td>read-only</td><td>An array of references to the switches that connect to the switch through this port.</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@odata.id</td><td>string</td><td></td><td></td><td>read-only</td><td>The unique identifier for a resource.<br />Format: uri</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;} ]</td><td></td><td></td><td></td><td></td><td></td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;ConnectedSwitches@odata.count</td><td>number</td><td></td><td></td><td>read-only</td><td>The number of items in a collection.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;Oem { }</td><td>object</td><td></td><td></td><td>read-write</td><td>Oem extension object.</td></tr>
-<tr><td>}</td><td></td><td></td><td></td><td></td><td></td></tr>
-<tr><td>Location {</td><td>object</td><td></td><td></td><td>read-write</td><td>This type describes the location of a resource.</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;AltitudeMeters</td><td>number</td><td>Yes</td><td></td><td>read-only</td><td>The altitude of the resource in meters.<br />Unit: m</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;Info</td><td>string</td><td>Yes</td><td></td><td>read-only</td><td>This indicates the location of the resource.</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;InfoFormat</td><td>string</td><td>Yes</td><td></td><td>read-only</td><td>This represents the format of the Info property.</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;Latitude</td><td>number</td><td>Yes</td><td></td><td>read-only</td><td>The latitude resource.<br />Unit: deg</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;Longitude</td><td>number</td><td>Yes</td><td></td><td>read-only</td><td>The longitude resource in degrees.<br />Unit: deg</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;Oem { }</td><td>object</td><td></td><td></td><td>read-write</td><td>Oem extension object.</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;PartLocation {</td><td>object</td><td>Yes</td><td></td><td>read-write</td><td>Postal address of the addressed resource.</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;LocationOrdinalValue</td><td>number</td><td>Yes</td><td></td><td>read-only</td><td>The number that represents the location of the part.  If LocationType is slot and this unit is in slot 2 then the LocationOrdinalValue will be 2.</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;LocationType</td><td>string</td><td>Yes</td><td></td><td>read-only</td><td>The type of location of the part, such as slot, bay, socket and slot.<br />Possible Values:<ul>
-<li>Slot: Defines a slot as the type of location.</li>
-<li>Bay: Defines a bay as the type of location.</li>
-<li>Connector: Defines a connector as the type of location.</li>
-<li>Socket: Defines a socket as the type of location.</li>
-</ul></td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Orientation</td><td>string</td><td>Yes</td><td></td><td>read-only</td><td>The orientation for the ordering of the slot enumeration used by the LocationOrdinalValue property.<br />Possible Values:<ul>
-<li>FrontToBack: Defines the ordering for the LocationOrdinalValue is front to back.</li>
-<li>BackToFront: Defines the ordering for the LocationOrdinalValue is back to front.</li>
-<li>TopToBottom: Defines the ordering for the LocationOrdinalValue is top to bottom.</li>
-<li>BottomToTop: Defines the ordering for the LocationOrdinalValue is bottom to top.</li>
-<li>LeftToRight: Defines the ordering for the LocationOrdinalValue is left to right.</li>
-<li>RightToLeft: Defines the ordering for the LocationOrdinalValue is right to left.</li>
-</ul></td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Reference</td><td>string</td><td>Yes</td><td></td><td>read-only</td><td>The reference point for the part location.  This is used to give guidance as to the general location of the part.<br />Possible Values:<ul>
-<li>Top: Defines the part as being in the top of the unit.</li>
-<li>Bottom: Defines the part as being in the bottom of the unit.</li>
-<li>Front: Defines the part as being in the front of the unit.</li>
-<li>Rear: Defines the part as being in the rear of the unit.</li>
-<li>Left: Defines the part as being in the left of the unit.</li>
-<li>Right: Defines the part as being in the right of the unit.</li>
-<li>Middle: Defines the part as being in the middle of the unit.</li>
-</ul></td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ServiceLabel</td><td>string</td><td>Yes</td><td></td><td>read-only</td><td>This is the label of the part location, such as a silk screened name or a printed label.</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;}</td><td></td><td></td><td></td><td></td><td></td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;Placement {</td><td>object</td><td>Yes</td><td></td><td>read-write</td><td>A place within the addressed location.</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Rack</td><td>string</td><td>Yes</td><td></td><td>read-write</td><td>Name of a rack location within a row.</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;RackOffset</td><td>number</td><td>Yes</td><td></td><td>read-write</td><td>Vertical location of the item in terms of RackOffsetUnits.</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;RackOffsetUnits</td><td>string</td><td>Yes</td><td></td><td>read-write</td><td>The type of Rack Units in use.<br />Possible Values:<ul>
-<li>OpenU: Defines a rack unit as being equal to 48 mm (1.89 in).</li>
-<li>EIA_310: Defines a rack unit as being equal to 1.75 in (44.45 mm).</li>
-</ul></td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Row</td><td>string</td><td>Yes</td><td></td><td>read-write</td><td>Name of row.</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;}</td><td></td><td></td><td></td><td></td><td></td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;PostalAddress {</td><td>object</td><td>Yes</td><td></td><td>read-write</td><td>Postal address of the addressed resource.</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;AdditionalCode</td><td>string</td><td>Yes</td><td></td><td>read-write</td><td>Additional code.</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Building</td><td>string</td><td>Yes</td><td></td><td>read-write</td><td>Name of the building.</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;City</td><td>string</td><td>Yes</td><td></td><td>read-write</td><td>City, township, or shi (JP).</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Community</td><td>string</td><td>Yes</td><td></td><td>read-write</td><td>Postal community name.</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Country</td><td>string</td><td>Yes</td><td></td><td>read-write</td><td>Country.</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;District</td><td>string</td><td>Yes</td><td></td><td>read-write</td><td>A county, parish, gun (JP), or  district (IN).</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Division</td><td>string</td><td>Yes</td><td></td><td>read-write</td><td>City division, borough, dity district, ward, chou (JP).</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Floor</td><td>string</td><td>Yes</td><td></td><td>read-write</td><td>Floor.</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;GPSCoords</td><td>string</td><td>Yes</td><td></td><td>read-write</td><td>The GPS coordinates of the part.</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;HouseNumber</td><td>number</td><td>Yes</td><td></td><td>read-write</td><td>Numeric portion of house number.</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;HouseNumberSuffix</td><td>string</td><td>Yes</td><td></td><td>read-write</td><td>House number suffix.</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Landmark</td><td>string</td><td>Yes</td><td></td><td>read-write</td><td>Landmark.</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;LeadingStreetDirection</td><td>string</td><td>Yes</td><td></td><td>read-write</td><td>A leading street direction.</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Location</td><td>string</td><td>Yes</td><td></td><td>read-write</td><td>Room designation or other additional info.</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Name</td><td>string</td><td>Yes</td><td></td><td>read-write</td><td>Name.</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Neighborhood</td><td>string</td><td>Yes</td><td></td><td>read-write</td><td>Neighborhood or block.</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;POBox</td><td>string</td><td>Yes</td><td></td><td>read-write</td><td>Post office box (P.O. box).</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PlaceType</td><td>string</td><td>Yes</td><td></td><td>read-write</td><td>A description of the type of place that is addressed.</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PostalCode</td><td>string</td><td>Yes</td><td></td><td>read-write</td><td>Postal code (or zip code).</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Road</td><td>string</td><td>Yes</td><td></td><td>read-write</td><td>A primary road or street.</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;RoadBranch</td><td>string</td><td>Yes</td><td></td><td>read-write</td><td>Road branch.</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;RoadPostModifier</td><td>string</td><td>Yes</td><td></td><td>read-write</td><td>Road post-modifier.</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;RoadPreModifier</td><td>string</td><td>Yes</td><td></td><td>read-write</td><td>Road pre-modifier.</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;RoadSection</td><td>string</td><td>Yes</td><td></td><td>read-write</td><td>Road Section.</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;RoadSubBranch</td><td>string</td><td>Yes</td><td></td><td>read-write</td><td>Road sub branch.</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Room</td><td>string</td><td>Yes</td><td></td><td>read-write</td><td>Name or number of the room.</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Seat</td><td>string</td><td>Yes</td><td></td><td>read-write</td><td>Seat (desk, cubicle, workstation).</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Street</td><td>string</td><td>Yes</td><td></td><td>read-write</td><td>Street name.</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;StreetSuffix</td><td>string</td><td>Yes</td><td></td><td>read-write</td><td>Avenue, Platz, Street, Circle.</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Territory</td><td>string</td><td>Yes</td><td></td><td>read-write</td><td>A top-level subdivision within a country.</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;TrailingStreetSuffix</td><td>string</td><td>Yes</td><td></td><td>read-write</td><td>A trailing street suffix.</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Unit</td><td>string</td><td>Yes</td><td></td><td>read-write</td><td>Name or number of the unit (apartment, suite).</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;}</td><td></td><td></td><td></td><td></td><td></td></tr>
 <tr><td>}</td><td></td><td></td><td></td><td></td><td></td></tr>
 <tr><td>MaxSpeedGbps</td><td>number</td><td>Yes</td><td></td><td>read-only</td><td>The maximum speed of this port as currently configured.<br />Unit: Gbit/s</td></tr>
 <tr><td>Name</td><td>string</td><td></td><td>GET</td><td>read-only</td><td>The name of the resource or array element.</td></tr>
@@ -201,39 +107,6 @@ Port contains properties describing a port of a switch.
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;}</td><td></td><td></td><td></td><td></td><td></td></tr>
 <tr><td>}</td><td></td><td></td><td></td><td></td><td></td></tr>
 <tr><td>PortId</td><td>string</td><td>Yes</td><td></td><td>read-only</td><td>This is the label of this port on the physical switch package.</td></tr>
-<tr><td>PortProtocol</td><td>string</td><td>Yes</td><td></td><td>read-only</td><td>The protocol being sent over this port.<br />Possible Values:<ul>
-<li>PCIe: PCI Express (Vendor Proprietary).</li>
-<li>AHCI: Advanced Host Controller Interface.</li>
-<li>UHCI: Universal Host Controller Interface.</li>
-<li>SAS: Serial Attached SCSI.</li>
-<li>SATA: Serial AT Attachment.</li>
-<li>USB: Universal Serial Bus.</li>
-<li>NVMe: Non-Volatile Memory Express.</li>
-<li>FC: Fibre Channel.</li>
-<li>iSCSI: Internet SCSI.</li>
-<li>FCoE: Fibre Channel over Ethernet.</li>
-<li>FCP: Fibre Channel Protocol for SCSI.</li>
-<li>FICON: FIbre CONnection (FICON).</li>
-<li>NVMeOverFabrics: NVMe over Fabrics.</li>
-<li>SMB: Server Message Block (aka CIFS Common Internet File System).</li>
-<li>NFSv3: Network File System version 3.</li>
-<li>NFSv4: Network File System version 4.</li>
-<li>HTTP: Hypertext Transport Protocol.</li>
-<li>HTTPS: Secure Hypertext Transport Protocol.</li>
-<li>FTP: File Transfer Protocol.</li>
-<li>SFTP: Secure File Transfer Protocol.</li>
-<li>iWARP: Internet Wide Area Remote Direct Memory Access Protocol.</li>
-<li>RoCE: RDMA over Converged Ethernet Protocol.</li>
-<li>RoCEv2: RDMA over Converged Ethernet Protocol Version 2.</li>
-</ul></td></tr>
-<tr><td>PortType</td><td>string</td><td>Yes</td><td></td><td>read-only</td><td>This is the type of this port.<br />Possible Values:<ul>
-<li>UpstreamPort: This port connects to a host device.</li>
-<li>DownstreamPort: This port connects to a target device.</li>
-<li>InterswitchPort: This port connects to another switch.</li>
-<li>ManagementPort: This port connects to a switch manager.</li>
-<li>BidirectionalPort: This port connects to any type of device.</li>
-<li>UnconfiguredPort: This port has not yet been configured.</li>
-</ul></td></tr>
 <tr><td>Status {</td><td>object</td><td></td><td></td><td>read-write</td><td>This type describes the status and health of a resource and its children.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;Health</td><td>string</td><td>Yes</td><td></td><td>read-only</td><td>This represents the health state of this resource in the absence of its dependent resources.<br />Possible Values:<ul>
 <li>OK: Normal.</li>
@@ -273,10 +146,8 @@ Port contains properties describing a port of a switch.
 <li>GracefulShutdown: Perform a graceful shutdown and power off.</li>
 <li>GracefulRestart: Perform a graceful shutdown followed by a restart of the system.</li>
 <li>ForceRestart: Perform an immediate (non-graceful) shutdown, followed by a restart.</li>
-<li>Nmi: Generate a Diagnostic Interrupt (usually an NMI on x86 systems) to cease normal operations, perform diagnostic actions and typically halt the system.</li>
 <li>ForceOn: Turn the unit on immediately.</li>
 <li>PushPowerButton: Simulate the pressing of the physical power button on this unit.</li>
-<li>PowerCycle: Perform a power cycle of the unit.</li>
 </ul></td></tr>
 </table>
 <h4 id="request">Request</h4>
@@ -330,151 +201,13 @@ Content-Type: application/json
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;}
 <br />
-&nbsp;&nbsp;&nbsp;&nbsp;"CurrentSpeedGbps": 0
-<br />
 &nbsp;&nbsp;&nbsp;&nbsp;"Description": "string"
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;"Id": "string"
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;"Links": {
 <br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"AssociatedEndpoints": [{
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"@odata.id": "/redfish/v1/ComposedNodes/ComposedNode1/ProvidedPorts/Port1/Endpoint1"
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}]
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"AssociatedEndpoints@odata.count": 1
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"ConnectedSwitchPorts": [{
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"@odata.id": "/redfish/v1/ComposedNodes/ComposedNode1/ProvidedPorts/Port1/Port1"
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}]
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"ConnectedSwitchPorts@odata.count": 1
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"ConnectedSwitches": [{
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"@odata.id": "/redfish/v1/ComposedNodes/ComposedNode1/ProvidedPorts/Port1/Switch1"
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}]
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"ConnectedSwitches@odata.count": 1
-<br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Oem": { }
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;}
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;"Location": {
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"AltitudeMeters": 0
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Info": "string"
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"InfoFormat": "string"
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Latitude": 0
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Longitude": 0
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Oem": { }
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"PartLocation": {
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"LocationOrdinalValue": 0
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"LocationType": "Slot"
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Orientation": "FrontToBack"
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Reference": "Top"
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"ServiceLabel": "string"
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Placement": {
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Rack": "string"
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"RackOffset": 0
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"RackOffsetUnits": "OpenU"
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"RackOffsetUnits@Redfish.AllowableValues": ["OpenU", "EIA_310"]
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Row": "string"
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"PostalAddress": {
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"AdditionalCode": "string"
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Building": "string"
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"City": "string"
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Community": "string"
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Country": "string"
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"District": "string"
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Division": "string"
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Floor": "string"
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"GPSCoords": "string"
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"HouseNumber": 0
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"HouseNumberSuffix": "string"
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Landmark": "string"
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"LeadingStreetDirection": "string"
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Location": "string"
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Name": "string"
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Neighborhood": "string"
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"POBox": "string"
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"PlaceType": "string"
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"PostalCode": "string"
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Road": "string"
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"RoadBranch": "string"
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"RoadPostModifier": "string"
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"RoadPreModifier": "string"
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"RoadSection": "string"
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"RoadSubBranch": "string"
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Room": "string"
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Seat": "string"
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Street": "string"
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"StreetSuffix": "string"
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Territory": "string"
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"TrailingStreetSuffix": "string"
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Unit": "string"
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;}
 <br />
@@ -515,10 +248,6 @@ Content-Type: application/json
 &nbsp;&nbsp;&nbsp;&nbsp;}
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;"PortId": "string"
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;"PortProtocol": "PCIe"
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;"PortType": "UpstreamPort"
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;"Status": {
 <br />

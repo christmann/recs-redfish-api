@@ -231,47 +231,30 @@
 			"EthernetInterfaces": true
 		}
 	},
-	"PCIeSwitch": {
-		"PCIeSwitch": {
-			"Links": {
-				"ManagedBy": true,
-				"PoweredBy": true,
-				"CooledBy": true
-			},
-			"Actions": {
-				"#PCIeSwitch.Reset": {
-					"ResetType": [
-						"On",
-						"ForceOff",
-						"GracefulShutdown",
-						"GracefulRestart",
-						"ForceRestart",
-						"ForceOn",
-						"PushPowerButton"
-					]
-				}
-			},
-			"LogServices": true,
-			"MaxZones": true,
-			"Zones": true,
-			"IndicatorLED": true,
-			"AttachedDevices": true
-		}
-	},
-	"PCIePort": {
-		"PCIePort": {
-			"SpeedGBps": true,
-			"Width": true
-		}
-	},
 	"Port": {
-		"EthernetSwitchPort": {
-			"Links": {
-				"MemberOfPort": true,
-				"PortMembers": true,
-				"ActiveACLs": true
-			},
-			"StaticMACs": true
+		"Port": {
+			"CurrentSpeedGbps": true,
+			"Location": true,
+			"PortProtocol": true,
+			"PortType": true
+		},
+		"Links": {
+			"AssociatedEndpoints": true,
+			"ConnectedSwitchPorts": true,
+			"ConnectedSwitches": true
+		},
+		"Actions": {
+			"#Port.Reset": {
+				"ResetType": [
+					"On",
+					"ForceOff",
+					"GracefulShutdown",
+					"GracefulRestart",
+					"ForceRestart",
+					"ForceOn",
+					"PushPowerButton"
+				]
+			}
 		}
 	},
 	"Processor": {
@@ -302,7 +285,8 @@
 			"IsManaged": true,
 			"Location": true,
 			"LogServices": true,
-			"Redundancy": true
+			"Redundancy": true,
+			"SwitchType": true
 		},
 		"Links": {
 			"ManagedBy": true

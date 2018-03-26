@@ -44,7 +44,6 @@ table { border-collapse: collapse; }
 <a href="composednodecollection.html#composednodecollection">ComposedNodeCollection</a><br />
 <a href="computersystem.html#computersystem">ComputerSystem</a><br />
 <a href="computersystemcollection.html#computersystemcollection">ComputerSystemCollection</a><br />
-<a href="endpoint.html#endpoint">Endpoint</a><br />
 <a href="ethernetinterface.html#ethernetinterface">EthernetInterface</a><br />
 <a href="ethernetinterfacecollection.html#ethernetinterfacecollection">EthernetInterfaceCollection</a><br />
 <a href="hsllconnection.html#hsllconnection">HSLLConnection</a><br />
@@ -52,8 +51,6 @@ table { border-collapse: collapse; }
 <a href="hsllinterface.html#hsllinterface">HSLLInterface</a><br />
 <a href="jsonschemafile.html#jsonschemafile">JsonSchemaFile</a><br />
 <a href="jsonschemafilecollection.html#jsonschemafilecollection">JsonSchemaFileCollection</a><br />
-<a href="networkdevicefunction.html#networkdevicefunction">NetworkDeviceFunction</a><br />
-<a href="networkport.html#networkport">NetworkPort</a><br />
 <a href="pciedevice.html#pciedevice">PCIeDevice</a><br />
 <a href="pciedevicecollection.html#pciedevicecollection">PCIeDeviceCollection</a><br />
 <a href="pciefunction.html#pciefunction">PCIeFunction</a><br />
@@ -102,6 +99,10 @@ Switch contains properties describing a simple fabric switch.
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Baseboard {</td><td>reference</td><td>Yes</td><td></td><td>read-only</td><td>The Baseboard, the Switch is hosted on, or null if it is not hosted on a Baseboard.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@odata.id</td><td>string</td><td></td><td></td><td>read-only</td><td>The unique identifier for a resource.<br />Format: uri</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SwitchType</td><td>string</td><td></td><td></td><td>read-only</td><td>The type of the switch.<br />Possible Values:<ul>
+<li>Ethernet</li>
+<li>PCIe</li>
+</ul></td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;}</td><td></td><td></td><td></td><td></td><td></td></tr>
 <tr><td>}</td><td></td><td></td><td></td><td></td><td></td></tr>
 <tr><td>PartNumber</td><td>string</td><td>Yes</td><td></td><td>read-only</td><td>The part number for this switch.</td></tr>
@@ -142,31 +143,6 @@ Switch contains properties describing a simple fabric switch.
 <li>Updating: The element is updating and may be unavailable or degraded.</li>
 </ul></td></tr>
 <tr><td>}</td><td></td><td></td><td></td><td></td><td></td></tr>
-<tr><td>SwitchType</td><td>string</td><td>Yes</td><td></td><td>read-only</td><td>The protocol being sent over this switch.<br />Possible Values:<ul>
-<li>PCIe: PCI Express (Vendor Proprietary).</li>
-<li>AHCI: Advanced Host Controller Interface.</li>
-<li>UHCI: Universal Host Controller Interface.</li>
-<li>SAS: Serial Attached SCSI.</li>
-<li>SATA: Serial AT Attachment.</li>
-<li>USB: Universal Serial Bus.</li>
-<li>NVMe: Non-Volatile Memory Express.</li>
-<li>FC: Fibre Channel.</li>
-<li>iSCSI: Internet SCSI.</li>
-<li>FCoE: Fibre Channel over Ethernet.</li>
-<li>FCP: Fibre Channel Protocol for SCSI.</li>
-<li>FICON: FIbre CONnection (FICON).</li>
-<li>NVMeOverFabrics: NVMe over Fabrics.</li>
-<li>SMB: Server Message Block (aka CIFS Common Internet File System).</li>
-<li>NFSv3: Network File System version 3.</li>
-<li>NFSv4: Network File System version 4.</li>
-<li>HTTP: Hypertext Transport Protocol.</li>
-<li>HTTPS: Secure Hypertext Transport Protocol.</li>
-<li>FTP: File Transfer Protocol.</li>
-<li>SFTP: Secure File Transfer Protocol.</li>
-<li>iWARP: Internet Wide Area Remote Direct Memory Access Protocol.</li>
-<li>RoCE: RDMA over Converged Ethernet Protocol.</li>
-<li>RoCEv2: RDMA over Converged Ethernet Protocol Version 2.</li>
-</ul></td></tr>
 <tr><td>TotalSwitchWidth</td><td>number</td><td>Yes</td><td></td><td>read-only</td><td>The total number of lanes, phys, or other physical transport links that this switch contains.</td></tr>
 </table>
 <h2 id="actions">Actions</h2>
@@ -267,6 +243,8 @@ Content-Type: application/json
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
 <br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"SwitchType": "Ethernet"
+<br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;}
@@ -296,8 +274,6 @@ Content-Type: application/json
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"State": "Enabled"
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;}
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;"SwitchType": "PCIe"
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;"TotalSwitchWidth": 0
 <br />
