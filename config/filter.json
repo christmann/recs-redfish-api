@@ -152,7 +152,7 @@
 			}
 		}
 	},
-	"ComposedNodeAllocationSystemRequirement": {
+	"ComposedNodeAllocationRequirement": {
 		"Processor": {
 			"ProcessorType": [
 				"CPU",
@@ -168,26 +168,12 @@
 				"x86-64",
 				"ARM-A32",
 				"ARM-A64"
-			],
-			"Backplane": true
-		}
-	},
-	"Drive": {
-		"Drive": {
-			"Links": {
-				"Volumes": true,
-				"Endpoints": true
-			},
-			"Operations": true
+			]
 		}
 	},
 	"EthernetInterface": {
 		"EthernetInterface": {
 			"VLAN": true,
-			"Links": {
-				"Endpoints": true,
-				"HostInterface": true
-			},
 			"Status": true,
 			"InterfaceEnabled": true,
 			"MACAddress": true,
@@ -199,35 +185,23 @@
 			"FQDN": true,
 			"MaxIPv6StaticAddresses": true,
 			"IPv4Addresses": true,
+			"IPv4StaticAddresses": true,
 			"IPv6AddressPolicyTable": true,
 			"IPv6Addresses": true,
 			"IPv6StaticAddresses": true,
 			"IPv6DefaultGateway": true,
+			"IPv6StaticDefaultGateways": true,
 			"NameServers": true,
-			"LinkStatus": true
-		}
-	},
-	"EthernetSwitch": {
-		"EthernetSwitch": {
-			"Links": {
-				"ManagedBy": true
-			},
-			"ACLs": true,
-			"ManufacturingDate": true,
-			"FirmwareName": true,
-			"FirmwareVersion": true,
-			"Role": true,
-			"MaxACLNumber": true
-		}
-	},
-	"EthernetSwitchPort": {
-		"EthernetSwitchPort": {
-			"Links": {
-				"MemberOfPort": true,
-				"PortMembers": true,
-				"ActiveACLs": true
-			},
-			"StaticMACs": true
+			"LinkStatus": true,
+			"DHCPv4": true,
+			"DHCPv6": true,
+			"StatelessAddressAutoConfig": true,
+			"StaticNameServers": true
+		},
+		"Links": {
+			"Endpoints": true,
+			"HostInterface": true,
+			"Chassis": true
 		}
 	},
 	"HSLLInterface": {
@@ -236,51 +210,15 @@
 			"Width": true
 		}
 	},
-	"Manager": {
-		"Manager": {
-			"LogServices": true,
-			"HostInterfaces": true,
-			"SerialInterfaces": true,
-			"VirtualMedia": true
-		}
-	},
-	"Memory": {
-		"Memory": {
-			"FunctionClasses": true,
-			"MaxTDPMilliWatts": true,
-			"SecurityCapabilities": true,
-			"SpareDeviceCount": true,
-			"DeviceLocator": true,
-			"VolatileRegionSizeLimitMiB": true,
-			"PersistentRegionSizeLimitMiB": true,
-			"Regions": true,
-			"OperatingMemoryModes": true,
-			"PowerManagementPolicy": true,
-			"IsSpareDeviceEnabled": true,
-			"IsRankSpareEnabled": true,
-			"Actions": {
-				"#Memory.DisablePassphrase": true,
-				"#Memory.SecureEraseUnit": true,
-				"#Memory.SetPassphrase": true,
-				"#Memory.UnlockUnit": true
-			},
-			"Metrics": true
-		}
-	},
 	"PCIeDevice": {
 		"PCIeDevice": {
 			"AssetTag": true,
-			"Links": {
-				"Chassis": true,
-				"Endpoints": true,
-				"HostInterface": true,
-				"PCIeFunctions": true,
-				"Oem" : {
-					"EID_47597": {
-						"Backplane": true
-					}
-				}
-			}
+			"Assembly": true,
+			"FirmwareVersion": true
+		},
+		"Links": {
+			"Chassis": true,
+			"HostInterface": true
 		}
 	},
 	"PCIeFunction": {
@@ -327,6 +265,16 @@
 			"Width": true
 		}
 	},
+	"Port": {
+		"EthernetSwitchPort": {
+			"Links": {
+				"MemberOfPort": true,
+				"PortMembers": true,
+				"ActiveACLs": true
+			},
+			"StaticMACs": true
+		}
+	},
 	"Processor": {
 		"Processor": {
 			"Status": true,
@@ -345,6 +293,20 @@
 				"ARM-A32",
 				"ARM-A64"
 			]
+		}
+	},
+	"Switch": {
+		"Switch": {
+			"AssetTag": true,
+			"DomainID": true,
+			"IndicatorLED": true,
+			"IsManaged": true,
+			"Location": true,
+			"LogServices": true,
+			"Redundancy": true
+		},
+		"Links": {
+			"ManagedBy": true
 		}
 	}
 }

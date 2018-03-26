@@ -60,7 +60,6 @@ table { border-collapse: collapse; }
 <a href="fileshare.html#fileshare">FileShare</a><br />
 <a href="filesystem.html#filesystem">FileSystem</a><br />
 <a href="filesystemcollection.html#filesystemcollection">FileSystemCollection</a><br />
-<a href="hostinterface.html#hostinterface">HostInterface</a><br />
 <a href="hsllconnection.html#hsllconnection">HSLLConnection</a><br />
 <a href="hsllconnectioncollection.html#hsllconnectioncollection">HSLLConnectionCollection</a><br />
 <a href="hsllinterface.html#hsllinterface">HSLLInterface</a><br />
@@ -68,12 +67,6 @@ table { border-collapse: collapse; }
 <a href="ioperformanceloscapabilities.html#ioperformanceloscapabilities">IOPerformanceLoSCapabilities</a><br />
 <a href="jsonschemafile.html#jsonschemafile">JsonSchemaFile</a><br />
 <a href="jsonschemafilecollection.html#jsonschemafilecollection">JsonSchemaFileCollection</a><br />
-<a href="logentry.html#logentry">LogEntry</a><br />
-<a href="logentrycollection.html#logentrycollection">LogEntryCollection</a><br />
-<a href="logservice.html#logservice">LogService</a><br />
-<a href="logservicecollection.html#logservicecollection">LogServiceCollection</a><br />
-<a href="manager.html#manager">Manager</a><br />
-<a href="managernetworkprotocol.html#managernetworkprotocol">ManagerNetworkProtocol</a><br />
 <a href="networkdevicefunction.html#networkdevicefunction">NetworkDeviceFunction</a><br />
 <a href="networkport.html#networkport">NetworkPort</a><br />
 <a href="pciedevice.html#pciedevice">PCIeDevice</a><br />
@@ -84,7 +77,6 @@ table { border-collapse: collapse; }
 <a href="portcollection.html#portcollection">PortCollection</a><br />
 <a href="processor.html#processor">Processor</a><br />
 <a href="processorcollection.html#processorcollection">ProcessorCollection</a><br />
-<a href="role.html#role">Role</a><br />
 <a href="serviceroot.html#serviceroot">ServiceRoot</a><br />
 <a href="storagegroup.html#storagegroup">StorageGroup</a><br />
 <a href="storagegroupcollection.html#storagegroupcollection">StorageGroupCollection</a><br />
@@ -247,7 +239,7 @@ A Network Device Function represents a logical interface exposed by the network 
 <h3 id="get">GET</h3>
 <h4 id="request">Request</h4>
 <div class="code">
-GET /redfish/v1/Systems/ComputerSystem1/EthernetInterfaces/EthernetInterface1/Endpoint1/NetworkDeviceFunction1
+GET /redfish/v1/ComposedNodes/ComposedNode1/ProvidedPorts/Port1/Endpoint1/NetworkDeviceFunction1
 <br />
 Content-Type: application/json
 <br />
@@ -258,7 +250,7 @@ Content-Type: application/json
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;"@odata.context": "uri"
 <br />
-&nbsp;&nbsp;&nbsp;&nbsp;"@odata.id": /redfish/v1/Systems/ComputerSystem1/EthernetInterfaces/EthernetInterface1/Endpoint1/NetworkDeviceFunction1
+&nbsp;&nbsp;&nbsp;&nbsp;"@odata.id": /redfish/v1/ComposedNodes/ComposedNode1/ProvidedPorts/Port1/Endpoint1/NetworkDeviceFunction1
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;"@odata.type": "string"
 <br />
@@ -270,7 +262,7 @@ Content-Type: application/json
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;"AssignablePhysicalPorts": [{
 <br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"@odata.id": "/redfish/v1/Systems/ComputerSystem1/EthernetInterfaces/EthernetInterface1/Endpoint1/NetworkDeviceFunction1/NetworkPort1"
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"@odata.id": "/redfish/v1/ComposedNodes/ComposedNode1/ProvidedPorts/Port1/Endpoint1/NetworkDeviceFunction1/NetworkPort1"
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;}]
 <br />
@@ -332,7 +324,7 @@ Content-Type: application/json
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Endpoints": [{
 <br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"@odata.id": "/redfish/v1/Systems/ComputerSystem1/EthernetInterfaces/EthernetInterface1/Endpoint1/NetworkDeviceFunction1/Endpoint1"
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"@odata.id": "/redfish/v1/ComposedNodes/ComposedNode1/ProvidedPorts/Port1/Endpoint1/NetworkDeviceFunction1/Endpoint1"
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}]
 <br />
@@ -340,7 +332,7 @@ Content-Type: application/json
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"PCIeFunction": {
 <br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"@odata.id": "/redfish/v1/Systems/ComputerSystem1/EthernetInterfaces/EthernetInterface1/Endpoint1/NetworkDeviceFunction1/PCIeFunction"
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"@odata.id": "/redfish/v1/ComposedNodes/ComposedNode1/ProvidedPorts/Port1/Endpoint1/NetworkDeviceFunction1/PCIeFunction"
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
 <br />
@@ -360,7 +352,7 @@ Content-Type: application/json
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;"PhysicalPortAssignment": {
 <br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"@odata.id": "/redfish/v1/Systems/ComputerSystem1/EthernetInterfaces/EthernetInterface1/Endpoint1/NetworkDeviceFunction1/PhysicalPortAssignment"
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"@odata.id": "/redfish/v1/ComposedNodes/ComposedNode1/ProvidedPorts/Port1/Endpoint1/NetworkDeviceFunction1/PhysicalPortAssignment"
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;}
 <br />

@@ -60,7 +60,6 @@ table { border-collapse: collapse; }
 <a href="fileshare.html#fileshare">FileShare</a><br />
 <a href="filesystem.html#filesystem">FileSystem</a><br />
 <a href="filesystemcollection.html#filesystemcollection">FileSystemCollection</a><br />
-<a href="hostinterface.html#hostinterface">HostInterface</a><br />
 <a href="hsllconnection.html#hsllconnection">HSLLConnection</a><br />
 <a href="hsllconnectioncollection.html#hsllconnectioncollection">HSLLConnectionCollection</a><br />
 <a href="hsllinterface.html#hsllinterface">HSLLInterface</a><br />
@@ -68,12 +67,6 @@ table { border-collapse: collapse; }
 <a href="ioperformanceloscapabilities.html#ioperformanceloscapabilities">IOPerformanceLoSCapabilities</a><br />
 <a href="jsonschemafile.html#jsonschemafile">JsonSchemaFile</a><br />
 <a href="jsonschemafilecollection.html#jsonschemafilecollection">JsonSchemaFileCollection</a><br />
-<a href="logentry.html#logentry">LogEntry</a><br />
-<a href="logentrycollection.html#logentrycollection">LogEntryCollection</a><br />
-<a href="logservice.html#logservice">LogService</a><br />
-<a href="logservicecollection.html#logservicecollection">LogServiceCollection</a><br />
-<a href="manager.html#manager">Manager</a><br />
-<a href="managernetworkprotocol.html#managernetworkprotocol">ManagerNetworkProtocol</a><br />
 <a href="networkdevicefunction.html#networkdevicefunction">NetworkDeviceFunction</a><br />
 <a href="networkport.html#networkport">NetworkPort</a><br />
 <a href="pciedevice.html#pciedevice">PCIeDevice</a><br />
@@ -84,7 +77,6 @@ table { border-collapse: collapse; }
 <a href="portcollection.html#portcollection">PortCollection</a><br />
 <a href="processor.html#processor">Processor</a><br />
 <a href="processorcollection.html#processorcollection">ProcessorCollection</a><br />
-<a href="role.html#role">Role</a><br />
 <a href="serviceroot.html#serviceroot">ServiceRoot</a><br />
 <a href="storagegroup.html#storagegroup">StorageGroup</a><br />
 <a href="storagegroupcollection.html#storagegroupcollection">StorageGroupCollection</a><br />
@@ -264,6 +256,13 @@ The Drive schema represents a single physical disk drive for a system, including
 <tr><td>Name</td><td>string</td><td></td><td>GET</td><td>read-only</td><td>The name of the resource or array element.</td></tr>
 <tr><td>NegotiatedSpeedGbs</td><td>number</td><td>Yes</td><td></td><td>read-only</td><td>The speed which this drive is currently communicating to the storage controller in Gigabits per second.<br />Unit: Gbit/s</td></tr>
 <tr><td>Oem { }</td><td>object</td><td></td><td></td><td>read-write</td><td>This is the manufacturer/provider specific extension moniker used to divide the Oem object into sections.</td></tr>
+<tr><td>Operations [ {</td><td>array[object]</td><td></td><td></td><td>read-write</td><td>The operations currently running on the Drive.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;AssociatedTask {</td><td>reference(<a href="task.html#task">Task</a>)</td><td></td><td></td><td>read-only</td><td>A reference to the task associated with the operation if any.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@odata.id</td><td>string</td><td></td><td></td><td>read-only</td><td>The unique identifier for a resource.<br />Format: uri</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;}</td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;OperationName</td><td>string</td><td>Yes</td><td></td><td>read-only</td><td>The name of the operation.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;PercentageComplete</td><td>number</td><td>Yes</td><td></td><td>read-only</td><td>The percentage of the operation that has been completed.</td></tr>
+<tr><td>} ]</td><td></td><td></td><td></td><td></td><td></td></tr>
 <tr><td>PartNumber</td><td>string</td><td>Yes</td><td></td><td>read-only</td><td>The part number for this drive.</td></tr>
 <tr><td>PredictedMediaLifeLeftPercent</td><td>number</td><td>Yes</td><td></td><td>read-only</td><td>The percentage of reads and writes that are predicted to still be available for the media.</td></tr>
 <tr><td>Protocol</td><td>string</td><td>Yes</td><td></td><td>read-only</td><td>The protocol this drive is using to communicate to the storage controller.<br />Possible Values:<ul>
@@ -573,6 +572,20 @@ Content-Type: application/json
 &nbsp;&nbsp;&nbsp;&nbsp;"NegotiatedSpeedGbs": 0
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;"Oem": { }
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;"Operations": [{
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"AssociatedTask": {
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"@odata.id": "/redfish/v1/Chassis/Chassis1/PCIeDevice1/PCIeFunction1/Drive1/AssociatedTask"
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"OperationName": "string"
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"PercentageComplete": 0
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;}]
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;"PartNumber": "string"
 <br />

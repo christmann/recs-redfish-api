@@ -60,7 +60,6 @@ table { border-collapse: collapse; }
 <a href="fileshare.html#fileshare">FileShare</a><br />
 <a href="filesystem.html#filesystem">FileSystem</a><br />
 <a href="filesystemcollection.html#filesystemcollection">FileSystemCollection</a><br />
-<a href="hostinterface.html#hostinterface">HostInterface</a><br />
 <a href="hsllconnection.html#hsllconnection">HSLLConnection</a><br />
 <a href="hsllconnectioncollection.html#hsllconnectioncollection">HSLLConnectionCollection</a><br />
 <a href="hsllinterface.html#hsllinterface">HSLLInterface</a><br />
@@ -68,12 +67,6 @@ table { border-collapse: collapse; }
 <a href="ioperformanceloscapabilities.html#ioperformanceloscapabilities">IOPerformanceLoSCapabilities</a><br />
 <a href="jsonschemafile.html#jsonschemafile">JsonSchemaFile</a><br />
 <a href="jsonschemafilecollection.html#jsonschemafilecollection">JsonSchemaFileCollection</a><br />
-<a href="logentry.html#logentry">LogEntry</a><br />
-<a href="logentrycollection.html#logentrycollection">LogEntryCollection</a><br />
-<a href="logservice.html#logservice">LogService</a><br />
-<a href="logservicecollection.html#logservicecollection">LogServiceCollection</a><br />
-<a href="manager.html#manager">Manager</a><br />
-<a href="managernetworkprotocol.html#managernetworkprotocol">ManagerNetworkProtocol</a><br />
 <a href="networkdevicefunction.html#networkdevicefunction">NetworkDeviceFunction</a><br />
 <a href="networkport.html#networkport">NetworkPort</a><br />
 <a href="pciedevice.html#pciedevice">PCIeDevice</a><br />
@@ -84,7 +77,6 @@ table { border-collapse: collapse; }
 <a href="portcollection.html#portcollection">PortCollection</a><br />
 <a href="processor.html#processor">Processor</a><br />
 <a href="processorcollection.html#processorcollection">ProcessorCollection</a><br />
-<a href="role.html#role">Role</a><br />
 <a href="serviceroot.html#serviceroot">ServiceRoot</a><br />
 <a href="storagegroup.html#storagegroup">StorageGroup</a><br />
 <a href="storagegroupcollection.html#storagegroupcollection">StorageGroupCollection</a><br />
@@ -113,55 +105,9 @@ The EthernetInterface schema represents a single, logical ethernet interface or 
 <tr><td>Actions {</td><td>object</td><td></td><td></td><td>read-write</td><td>The available actions for this resource.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;Oem { }</td><td>object</td><td></td><td></td><td>read-write</td><td>The available OEM specific actions for this resource.</td></tr>
 <tr><td>}</td><td></td><td></td><td></td><td></td><td></td></tr>
-<tr><td>DHCPv4 {</td><td>object</td><td>Yes</td><td></td><td>read-write</td><td>DHCPv4 configuration for this interface.</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;DHCPEnabled</td><td>boolean</td><td>Yes</td><td></td><td>read-write</td><td>Determines whether DHCPv4 is enabled on this interface.</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;UseDNSServers</td><td>boolean</td><td>Yes</td><td></td><td>read-write</td><td>Determines whether to use DHCPv4-supplied DNS servers.</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;UseDomainName</td><td>boolean</td><td>Yes</td><td></td><td>read-write</td><td>Determines whether to use a DHCPv4-supplied domain name.</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;UseGateway</td><td>boolean</td><td>Yes</td><td></td><td>read-write</td><td>Determines whether to use a DHCPv4-supplied gateway.</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;UseNTPServers</td><td>boolean</td><td>Yes</td><td></td><td>read-write</td><td>Determines whether to use DHCPv4-supplied NTP servers.</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;UseStaticRoutes</td><td>boolean</td><td>Yes</td><td></td><td>read-write</td><td>Determines whether to use DHCPv4-supplied static routes.</td></tr>
-<tr><td>}</td><td></td><td></td><td></td><td></td><td></td></tr>
-<tr><td>DHCPv6 {</td><td>object</td><td>Yes</td><td></td><td>read-write</td><td>DHCPv6 configuration for this interface.</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;OperatingMode</td><td>string</td><td>Yes</td><td></td><td>read-write</td><td>Determines the DHCPv6 operating mode for this interface.<br />Possible Values:<ul>
-<li>Stateful: DHCPv6 stateful mode.</li>
-<li>Stateless: DHCPv6 stateless mode.</li>
-<li>Disabled: DHCPv6 is disabled.</li>
-</ul></td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;UseDNSServers</td><td>boolean</td><td>Yes</td><td></td><td>read-write</td><td>When enabled, DNS server addresses supplied through DHCPv6 stateless mode will be used.</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;UseDomainName</td><td>boolean</td><td>Yes</td><td></td><td>read-write</td><td>When enabled, the domain name supplied through DHCPv6 stateless mode will be used.</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;UseNTPServers</td><td>boolean</td><td>Yes</td><td></td><td>read-write</td><td>When enabled, NTP server addresses supplied through DHCPv6 stateless mode will be used.</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;UseRapidCommit</td><td>boolean</td><td>Yes</td><td></td><td>read-write</td><td>Determines whether to use DHCPv6 rapid commit mode for stateful mode address assignments. Do not enable in networks where more than one DHCPv6 server is configured to provide address assignments.</td></tr>
-<tr><td>}</td><td></td><td></td><td></td><td></td><td></td></tr>
 <tr><td>Description</td><td>string</td><td>Yes</td><td></td><td>read-only</td><td>Provides a description of this resource and is used for commonality  in the schema definitions.</td></tr>
-<tr><td>IPv4StaticAddresses [ {</td><td>array[object]</td><td></td><td></td><td>read-write</td><td>The IPv4 static addresses assigned to this interface.</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;Address</td><td>string</td><td>Yes</td><td></td><td>read-write</td><td>This is the IPv4 Address.<br />Pattern: ^(?:[0-9]{1,3}\.){3}[0-9]{1,3}$</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;AddressOrigin</td><td>string</td><td>Yes</td><td></td><td>read-only</td><td>This indicates how the address was determined.<br />Possible Values:<ul>
-<li>Static: A static address as configured by the user.</li>
-<li>DHCP: Address is provided by a DHCPv4 service.</li>
-<li>BOOTP: Address is provided by a BOOTP service.</li>
-<li>IPv4LinkLocal: Address is valid only for this network segment (link).</li>
-</ul></td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;Gateway</td><td>string</td><td>Yes</td><td></td><td>read-write</td><td>This is the IPv4 gateway for this address.<br />Pattern: ^(?:[0-9]{1,3}\.){3}[0-9]{1,3}$</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;Oem { }</td><td>object</td><td></td><td></td><td>read-write</td><td>Oem extension object.</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;SubnetMask</td><td>string</td><td>Yes</td><td></td><td>read-write</td><td>This is the IPv4 Subnet mask.<br />Pattern: ^(?:[0-9]{1,3}\.){3}[0-9]{1,3}$</td></tr>
-<tr><td>} ]</td><td></td><td></td><td></td><td></td><td></td></tr>
-<tr><td>IPv6StaticDefaultGateways [ {</td><td>array[object]</td><td></td><td></td><td>read-write</td><td>The IPv6 static default gateways for this interface.</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;Address</td><td>string</td><td>Yes</td><td>GET</td><td>read-write</td><td>A valid IPv6 address.</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;Oem { }</td><td>object</td><td></td><td></td><td>read-write</td><td>Oem extension object.</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;PrefixLength</td><td>number</td><td>Yes</td><td>GET</td><td>read-write</td><td>The Prefix Length of this IPv6 address.<br />Minimum: 1<br />Maximum: 128</td></tr>
-<tr><td>} ]</td><td></td><td></td><td></td><td></td><td></td></tr>
 <tr><td>Id</td><td>string</td><td></td><td>GET</td><td>read-only</td><td>Uniquely identifies the resource within the collection of like resources.</td></tr>
 <tr><td>Links {</td><td>object</td><td></td><td></td><td>read-write</td><td>Contains references to other resources that are related to this resource.</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;Chassis {</td><td>reference(<a href="chassis.html#chassis">Chassis</a>)</td><td></td><td></td><td>read-only</td><td>A reference to the Chassis which contains this Ethernet Interface.</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@odata.id</td><td>string</td><td></td><td></td><td>read-only</td><td>The unique identifier for a resource.<br />Format: uri</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;}</td><td></td><td></td><td></td><td></td><td></td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;Endpoints [ {</td><td>array[reference(<a href="endpoint.html#endpoint">Endpoint</a>)]</td><td></td><td></td><td>read-only</td><td>An array of references to the endpoints that connect to this ethernet interface.</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@odata.id</td><td>string</td><td></td><td></td><td>read-only</td><td>The unique identifier for a resource.<br />Format: uri</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;} ]</td><td></td><td></td><td></td><td></td><td></td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;Endpoints@odata.count</td><td>number</td><td></td><td></td><td>read-only</td><td>The number of items in a collection.</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;HostInterface {</td><td>reference(<a href="hostinterface.html#hostinterface">HostInterface</a>)</td><td></td><td></td><td>read-only</td><td>This is a reference to a Host Interface that is associated with this Ethernet Interface.</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@odata.id</td><td>string</td><td></td><td></td><td>read-only</td><td>The unique identifier for a resource.<br />Format: uri</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;}</td><td></td><td></td><td></td><td></td><td></td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;Oem { }</td><td>object</td><td></td><td></td><td>read-write</td><td>Oem extension object.</td></tr>
 <tr><td>}</td><td></td><td></td><td></td><td></td><td></td></tr>
 <tr><td>Name</td><td>string</td><td></td><td>GET</td><td>read-only</td><td>The name of the resource or array element.</td></tr>
@@ -171,11 +117,6 @@ The EthernetInterface schema represents a single, logical ethernet interface or 
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;}</td><td></td><td></td><td></td><td></td><td></td></tr>
 <tr><td>}</td><td></td><td></td><td></td><td></td><td></td></tr>
 <tr><td>PermanentMACAddress</td><td>string</td><td>Yes</td><td></td><td>read-only</td><td>This is the permanent MAC address assigned to this interface (port).<br />Pattern: ^([0-9A-Fa-f]{2}[:-]){5}([0-9A-Fa-f]{2})$</td></tr>
-<tr><td>StatelessAddressAutoConfig {</td><td>object</td><td>Yes</td><td></td><td>read-write</td><td>Stateless Address Automatic Configuration (SLAAC) parameters for this interface.</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;IPv4AutoConfigEnabled</td><td>boolean</td><td>Yes</td><td></td><td>read-write</td><td>Indicates whether IPv4 SLAAC is enabled for this interface.</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;IPv6AutoConfigEnabled</td><td>boolean</td><td>Yes</td><td></td><td>read-write</td><td>Indicates whether IPv6 SLAAC is enabled for this interface.</td></tr>
-<tr><td>}</td><td></td><td></td><td></td><td></td><td></td></tr>
-<tr><td>StaticNameServers [ ]</td><td>array[string]</td><td></td><td></td><td>read-write</td><td>A statically defined set of DNS server IP addresses (both IPv4 and IPv6).</td></tr>
 <tr><td>UefiDevicePath</td><td>string</td><td>Yes</td><td></td><td>read-only</td><td>The UEFI device path for this interface.</td></tr>
 <tr><td>VLANs {</td><td>reference(<a href="vlannetworkinterfacecollection.html#vlannetworkinterfacecollection">VLanNetworkInterfaceCollection</a>)</td><td></td><td></td><td>read-only</td><td>This is a reference to a collection of VLANs and is only used if the interface supports more than one VLANs.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;@odata.id</td><td>string</td><td></td><td></td><td>read-only</td><td>The unique identifier for a resource.<br />Format: uri</td></tr>
@@ -206,87 +147,11 @@ Content-Type: application/json
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;}
 <br />
-&nbsp;&nbsp;&nbsp;&nbsp;"DHCPv4": {
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"DHCPEnabled": "boolean"
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"UseDNSServers": "boolean"
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"UseDomainName": "boolean"
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"UseGateway": "boolean"
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"UseNTPServers": "boolean"
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"UseStaticRoutes": "boolean"
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;}
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;"DHCPv6": {
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"OperatingMode": "Stateful"
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"OperatingMode@Redfish.AllowableValues": ["Stateful", "Stateless", "Disabled"]
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"UseDNSServers": "boolean"
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"UseDomainName": "boolean"
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"UseNTPServers": "boolean"
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"UseRapidCommit": "boolean"
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;}
-<br />
 &nbsp;&nbsp;&nbsp;&nbsp;"Description": "string"
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;"IPv4StaticAddresses": [{
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Address": "string"
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"AddressOrigin": "Static"
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Gateway": "string"
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Oem": { }
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"SubnetMask": "string"
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;}]
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;"IPv6StaticDefaultGateways": [{
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Address": "string"
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Oem": { }
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"PrefixLength": 1
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;}]
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;"Id": "string"
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;"Links": {
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Chassis": {
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"@odata.id": "/redfish/v1/Systems/ComputerSystem1/EthernetInterfaces/EthernetInterface1/Chassis"
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Endpoints": [{
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"@odata.id": "/redfish/v1/Systems/ComputerSystem1/EthernetInterfaces/EthernetInterface1/Endpoint1"
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}]
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Endpoints@odata.count": 1
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"HostInterface": {
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"@odata.id": "/redfish/v1/Systems/ComputerSystem1/EthernetInterfaces/EthernetInterface1/HostInterface"
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Oem": { }
 <br />
@@ -305,16 +170,6 @@ Content-Type: application/json
 &nbsp;&nbsp;&nbsp;&nbsp;}
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;"PermanentMACAddress": "string"
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;"StatelessAddressAutoConfig": {
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"IPv4AutoConfigEnabled": "boolean"
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"IPv6AutoConfigEnabled": "boolean"
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;}
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;"StaticNameServers": [ "string" ]
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;"UefiDevicePath": "string"
 <br />
@@ -344,54 +199,6 @@ Content-Type: application/json
 <br />
 {
 <br />
-&nbsp;&nbsp;&nbsp;&nbsp;"DHCPv4": {
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"DHCPEnabled": "boolean"
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"UseDNSServers": "boolean"
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"UseDomainName": "boolean"
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"UseGateway": "boolean"
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"UseNTPServers": "boolean"
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"UseStaticRoutes": "boolean"
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;}
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;"DHCPv6": {
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"OperatingMode": "Stateful"
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"UseDNSServers": "boolean"
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"UseDomainName": "boolean"
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"UseNTPServers": "boolean"
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"UseRapidCommit": "boolean"
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;}
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;"IPv4StaticAddresses": [{
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Address": "string"
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Gateway": "string"
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"SubnetMask": "string"
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;}]
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;"IPv6StaticDefaultGateways": [{
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Address": "string"
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"PrefixLength": 1
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;}]
-<br />
 &nbsp;&nbsp;&nbsp;&nbsp;"Oem": {
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"EID_47597": {
@@ -401,16 +208,6 @@ Content-Type: application/json
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;}
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;"StatelessAddressAutoConfig": {
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"IPv4AutoConfigEnabled": "boolean"
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"IPv6AutoConfigEnabled": "boolean"
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;}
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;"StaticNameServers": [ "string" ]
 <br />
 }
 <br />

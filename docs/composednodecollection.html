@@ -60,7 +60,6 @@ table { border-collapse: collapse; }
 <a href="fileshare.html#fileshare">FileShare</a><br />
 <a href="filesystem.html#filesystem">FileSystem</a><br />
 <a href="filesystemcollection.html#filesystemcollection">FileSystemCollection</a><br />
-<a href="hostinterface.html#hostinterface">HostInterface</a><br />
 <a href="hsllconnection.html#hsllconnection">HSLLConnection</a><br />
 <a href="hsllconnectioncollection.html#hsllconnectioncollection">HSLLConnectionCollection</a><br />
 <a href="hsllinterface.html#hsllinterface">HSLLInterface</a><br />
@@ -68,12 +67,6 @@ table { border-collapse: collapse; }
 <a href="ioperformanceloscapabilities.html#ioperformanceloscapabilities">IOPerformanceLoSCapabilities</a><br />
 <a href="jsonschemafile.html#jsonschemafile">JsonSchemaFile</a><br />
 <a href="jsonschemafilecollection.html#jsonschemafilecollection">JsonSchemaFileCollection</a><br />
-<a href="logentry.html#logentry">LogEntry</a><br />
-<a href="logentrycollection.html#logentrycollection">LogEntryCollection</a><br />
-<a href="logservice.html#logservice">LogService</a><br />
-<a href="logservicecollection.html#logservicecollection">LogServiceCollection</a><br />
-<a href="manager.html#manager">Manager</a><br />
-<a href="managernetworkprotocol.html#managernetworkprotocol">ManagerNetworkProtocol</a><br />
 <a href="networkdevicefunction.html#networkdevicefunction">NetworkDeviceFunction</a><br />
 <a href="networkport.html#networkport">NetworkPort</a><br />
 <a href="pciedevice.html#pciedevice">PCIeDevice</a><br />
@@ -84,7 +77,6 @@ table { border-collapse: collapse; }
 <a href="portcollection.html#portcollection">PortCollection</a><br />
 <a href="processor.html#processor">Processor</a><br />
 <a href="processorcollection.html#processorcollection">ProcessorCollection</a><br />
-<a href="role.html#role">Role</a><br />
 <a href="serviceroot.html#serviceroot">ServiceRoot</a><br />
 <a href="storagegroup.html#storagegroup">StorageGroup</a><br />
 <a href="storagegroupcollection.html#storagegroupcollection">StorageGroupCollection</a><br />
@@ -168,28 +160,18 @@ table { border-collapse: collapse; }
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;InstructionSet</td><td>string</td><td>Yes</td><td></td><td>read-write</td><td>The instruction set of the processor<br />Possible Values:<ul>
 <li>x86: x86 32-bit</li>
 <li>x86-64: x86 64-bit</li>
-<li>IA-64: Intel IA-64</li>
 <li>ARM-A32: ARM 32-bit</li>
 <li>ARM-A64: ARM 64-bit</li>
-<li>MIPS32: MIPS 32-bit</li>
-<li>MIPS64: MIPS 64-bit</li>
-<li>OEM: OEM-defined</li>
 </ul></td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Model</td><td>string</td><td>Yes</td><td></td><td>read-write</td><td>The exact model of the processor</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ProcessorArchitecture</td><td>string</td><td>Yes</td><td></td><td>read-write</td><td>The architecture of the processor<br />Possible Values:<ul>
 <li>x86: x86 or x86-64</li>
-<li>IA-64: Intel Itanium</li>
 <li>ARM: ARM</li>
-<li>MIPS: MIPS</li>
-<li>OEM: OEM-defined</li>
 </ul></td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ProcessorType</td><td>string</td><td>Yes</td><td></td><td>read-write</td><td>The type of processor<br />Possible Values:<ul>
 <li>CPU: A Central Processing Unit</li>
 <li>GPU: A Graphics Processing Unit</li>
 <li>FPGA: A Field Programmable Gate Array</li>
-<li>DSP: A Digital Signal Processor</li>
-<li>Accelerator: An Accelerator</li>
-<li>OEM: An OEM-defined Processing Unit</li>
 </ul></td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Resource {</td><td>reference(<a href="processor.html#processor">Processor</a>)</td><td>Yes</td><td></td><td>read-write</td><td>The URI of a concrete resource</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@odata.id</td><td>string</td><td></td><td></td><td>read-only</td><td>The unique identifier for a resource.<br />Format: uri</td></tr>
