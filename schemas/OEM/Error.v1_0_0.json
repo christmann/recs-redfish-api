@@ -47,7 +47,7 @@
                 "@Message.ExtendedInfo": {
                     "description": "An array of message objects describing one or more error message(s).",
                     "items": {
-                        "$ref": "http://redfish.dmtf.org/schemas/v1/Message.json#/definitions/Message"
+                        "$ref": "http://redfish.dmtf.org/schemas/v1/Message.v1_0_5.json#/definitions/Message"
                     },
                     "readonly": true,
                     "type": "array"
