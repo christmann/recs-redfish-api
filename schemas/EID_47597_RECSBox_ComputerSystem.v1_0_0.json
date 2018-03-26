@@ -57,11 +57,6 @@
                     "description": "This is a link to the HSLLInterface provided by this system",
                     "longDescription": "This object shall only contain a reference to a resource that complies to the HSLLInterface schema.",
                     "readonly": true
-                },
-                "Links": {
-                    "$ref": "#/definitions/Links",
-                    "description": "RECS|Box ComputerSystem Links extension",
-                    "readonly": true
                 }
             },
             "type": "object"
@@ -77,31 +72,6 @@
                 "Jetson"
             ],
             "type": "string"
-        },
-        "Links": {
-            "additionalProperties": false,
-            "patternProperties": {
-                "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message|Privileges)\\.[a-zA-Z_][a-zA-Z0-9_.]+$": {
-                    "description": "This property shall specify a valid odata or Redfish property.",
-                    "type": [
-                        "array",
-                        "boolean",
-                        "number",
-                        "null",
-                        "object",
-                        "string"
-                    ]
-                }
-            },
-            "properties": {
-                "Port": {
-                    "$ref": "http://redfish.dmtf.org/schemas/v1/Port.json#/definitions/Port",
-                    "description": "A reference to the Port of the PCIeSwitch this ComputerSystem can be connected to.",
-                    "longDescription": "This object shall only contain a reference that complies to the Port schema.",
-                    "readonly": true
-                }
-            },
-            "type": "object"
         }
     },
     "title": "#EID_47597_RECSBox_ComputerSystem.v1_0_0"

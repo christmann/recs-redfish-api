@@ -64,7 +64,6 @@
 			"ManagersInChassis": true,
 			"Drives": true,
 			"Storage": true,
-			"PCIeDevices": true,
 			"ResourceBlocks" : true
 		},
 		"Actions": {
