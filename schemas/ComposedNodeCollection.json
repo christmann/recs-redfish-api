@@ -19,8 +19,74 @@
                 }
             },
             "properties": {
+                "#ComposedNodeCollection.Allocate": {
+                    "$ref": "#/definitions/Allocate"
+                },
                 "Oem": {
                     "$ref": "#/definitions/OemActions"
+                }
+            },
+            "type": "object"
+        },
+        "Allocate": {
+            "additionalProperties": false,
+            "description": "This action is used to allocate a composed node.",
+            "parameters": {
+                "ComposedNodes": {
+                    "items": {
+                        "$ref": "ComposedNodeAllocationRequirement_v1.xml/ComposedNodeAllocationRequirement.v1_0_0.json#/definitions/ComposedNode"
+                    },
+                    "type": "array"
+                },
+                "Description": {
+                    "description": "The description of the ComposedNode",
+                    "type": "string"
+                },
+                "Devices": {
+                    "items": {
+                        "$ref": "ComposedNodeAllocationRequirement_v1.xml/ComposedNodeAllocationRequirement.v1_0_0.json#/definitions/Device"
+                    },
+                    "type": "array"
+                },
+                "Name": {
+                    "description": "The name of the ComposedNode",
+                    "type": "string"
+                },
+                "Ports": {
+                    "items": {
+                        "$ref": "ComposedNodeAllocationRequirement_v1.xml/ComposedNodeAllocationRequirement.v1_0_0.json#/definitions/Port"
+                    },
+                    "type": "array"
+                },
+                "Systems": {
+                    "items": {
+                        "$ref": "ComposedNodeAllocationRequirement_v1.xml/ComposedNodeAllocationRequirement.v1_0_0.json#/definitions/System"
+                    },
+                    "type": "array"
+                }
+            },
+            "patternProperties": {
+                "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message|Privileges)\\.[a-zA-Z_][a-zA-Z0-9_.]+$": {
+                    "description": "This property shall specify a valid odata or Redfish property.",
+                    "type": [
+                        "array",
+                        "boolean",
+                        "number",
+                        "null",
+                        "object",
+                        "string"
+                    ]
+                }
+            },
+            "properties": {
+                "target": {
+                    "description": "Link to invoke action",
+                    "format": "uri",
+                    "type": "string"
+                },
+                "title": {
+                    "description": "Friendly action name",
+                    "type": "string"
                 }
             },
             "type": "object"

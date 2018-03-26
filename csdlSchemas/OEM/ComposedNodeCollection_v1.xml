@@ -19,7 +19,7 @@
 		<edmx:Include Namespace="Chassis"/>
 	</edmx:Reference>
 	<edmx:Reference Uri="ComposedNodeAllocationRequirement_v1.xml">
-		<edmx:Include Namespace="ComposedNodeAllocationRequirement"/>
+		<edmx:Include Namespace="ComposedNodeAllocationRequirement.v1_0_0"/>
 	</edmx:Reference>
 
 	<edmx:DataServices>

@@ -172,6 +172,7 @@ class CSDLToJSON():
             # Only process the matching namespace
             namespace = self.get_attrib( schema, "Namespace" )
             if namespace == self.namespace_under_process:
+                add_actions = True
                 for child in schema:
                     # Set up the top level title and $ref properties if needed
                     if child.tag == ODATA_TAG_ENTITY:
@@ -192,8 +193,14 @@ class CSDLToJSON():
                             is_abstract = False
                         if is_abstract:
                             self.generate_abstract_object( child, self.json_out[self.namespace_under_process]["definitions"] )
+                            add_actions = False
                         else:
                             self.generate_object( child, self.json_out[self.namespace_under_process]["definitions"] )
+                            add_actions = True
+
+                    # Process Action definitions
+                    if add_actions and child.tag == ODATA_TAG_ACTION:
+                        self.generate_action( child, self.json_out[self.namespace_under_process]["definitions"] )
 
                     # Process EnumType definitions if defined in versioned namespaces
                     if child.tag == ODATA_TAG_ENUM:
