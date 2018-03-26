@@ -259,7 +259,9 @@
 	},
 	"Processor": {
 		"Processor": {
+			"Assembly": true,
 			"Status": true,
+			"Location": true,
 			"ProcessorType": [
 				"CPU",
 				"GPU",
@@ -274,7 +276,12 @@
 				"x86-64",
 				"ARM-A32",
 				"ARM-A64"
-			]
+			],
+			"ProcessorId": true,
+			"Socket": true
+		},
+		"Links": {
+			"Chassis": true
 		}
 	},
 	"Switch": {
