@@ -19,23 +19,6 @@
 			"Sessions": true
 		}
 	},
-	"Baseboard": {
-		"Baseboard": {
-			"Actions": {
-				"#Baseboard.Reset": {
-					"ResetType": [
-						"On",
-						"ForceOff",
-						"GracefulShutdown",
-						"GracefulRestart",
-						"ForceRestart",
-						"ForceOn",
-						"PushPowerButton"
-					]
-				}
-			}
-		}
-	},
 	"Chassis": {
 		"Chassis": {
 			"Assembly": true,
@@ -68,6 +51,90 @@
 		},
 		"Actions": {
 			"#Chassis.Reset": true
+		}
+	},
+	"Baseboard": {
+		"Actions": {
+			"#Baseboard.Reset": {
+				"ResetType": [
+					"On",
+					"ForceOff",
+					"GracefulShutdown",
+					"GracefulRestart",
+					"ForceRestart",
+					"ForceOn",
+					"PushPowerButton"
+				]
+			}
+		}
+	},
+	"ComputerSystem": {
+		"ComputerSystem": {
+			"SystemType": true,
+			"PartNumber": true,
+			"BiosVersion": true,
+			"AssetTag": true,
+			"HostName": true,
+			"MemorySummary": true,
+			"MemoryMirroring": true,
+			"SimpleStorage": true,
+			"Memory": true,
+			"LogServices": true,
+			"TrustedModules": true,
+			"SecureBoot": true,
+			"PCIeDevices": true,
+			"PCIeFunctions": true,
+			"Bios": true,
+			"Storage": true,
+			"HostingRoles": true,
+			"HostedServices": true,
+			"MemoryDomains": true,
+			"NetworkInterfaces": true,
+			"HostWatchdogTimer": true,
+			"Redundancy": true,
+			"SubModel": true
+		},
+		"Actions": {
+			"#ComputerSystem.Reset": {
+				"ResetType": [
+					"On",
+					"ForceOff",
+					"GracefulShutdown",
+					"GracefulRestart",
+					"ForceRestart",
+					"ForceOn",
+					"PushPowerButton"
+				]
+			},
+			"#ComputerSystem.SetDefaultBootOrder": true
+		},
+		"Links": {
+			"Chassis": true,
+			"ManagedBy": true,
+			"PoweredBy": true,
+			"CooledBy": true,
+			"Endpoints": true,
+			"ConsumingComputerSystems": true,
+			"ResourceBlocks": true,
+			"SupplyingComputerSystems": true
+		},
+		"Boot": {
+			"BootSourceOverrideTarget": [
+				"None",
+				"Pxe",
+				"Cd",
+				"Usb",
+				"Hdd"
+			],
+			"UefiTargetBootSourceOverride": true,
+			"BootSourceOverrideMode": true,
+			"BootNext": true,
+			"BootOptions": true,
+			"BootOrder": true
+		},
+		"ProcessorSummary": {
+			"LogicalProcessorCount": true,
+			"Status": true
 		}
 	},
 	"ComposedNode": {
@@ -105,66 +172,6 @@
 				"ARM-A64"
 			],
 			"Backplane": true
-		}
-	},
-	"ComputerSystem": {
-		"ComputerSystem": {
-			"Links": {
-				"Chassis": true,
-				"ManagedBy": true,
-				"PoweredBy": true,
-				"CooledBy": true,
-				"Endpoints": true,
-				"Oem" : {
-					"EID_47597": {
-						"Backplane": true
-					}
-				}
-			},
-			"Actions": {
-				"#ComputerSystem.Reset": {
-					"ResetType": [
-						"On",
-						"ForceOff",
-						"GracefulShutdown",
-						"GracefulRestart",
-						"ForceRestart",
-						"ForceOn",
-						"PushPowerButton"
-					]
-				}
-			},
-			"SystemType": true,
-			"PartNumber": true,
-			"BiosVersion": true,
-			"AssetTag": true,
-			"HostName": true,
-			"MemorySummary": true,
-			"MemoryMirroring": true,
-			"SimpleStorage": true,
-			"Memory": true,
-			"LogServices": true,
-			"TrustedModules": true,
-			"SecureBoot": true,
-			"PCIeDevices": true,
-			"PCIeFunctions": true,
-			"Bios": true,
-			"Storage": true,
-			"HostingRoles": true,
-			"HostedServices": true,
-			"MemoryDomains": true,
-			"NetworkInterfaces": true
-		},
-		"Boot": {
-			"BootSourceOverrideTarget": [
-				"None",
-				"Pxe",
-				"Cd",
-				"Usb",
-				"Hdd"
-			],
-			"UefiTargetBootSourceOverride": true,
-			"BootSourceOverrideMode": true
 		}
 	},
 	"Drive": {

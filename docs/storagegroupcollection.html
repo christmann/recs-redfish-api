@@ -38,8 +38,6 @@ table { border-collapse: collapse; }
 <a href="assembly.html#assembly">Assembly</a><br />
 <a href="baseboard.html#baseboard">Baseboard</a><br />
 <a href="baseboardcollection.html#baseboardcollection">BaseboardCollection</a><br />
-<a href="bootoption.html#bootoption">BootOption</a><br />
-<a href="bootoptioncollection.html#bootoptioncollection">BootOptionCollection</a><br />
 <a href="chassis.html#chassis">Chassis</a><br />
 <a href="chassiscollection.html#chassiscollection">ChassisCollection</a><br />
 <a href="classofservice.html#classofservice">ClassOfService</a><br />
@@ -76,13 +74,8 @@ table { border-collapse: collapse; }
 <a href="logservicecollection.html#logservicecollection">LogServiceCollection</a><br />
 <a href="manager.html#manager">Manager</a><br />
 <a href="managernetworkprotocol.html#managernetworkprotocol">ManagerNetworkProtocol</a><br />
-<a href="memory.html#memory">Memory</a><br />
-<a href="networkadapter.html#networkadapter">NetworkAdapter</a><br />
 <a href="networkdevicefunction.html#networkdevicefunction">NetworkDeviceFunction</a><br />
-<a href="networkdevicefunctioncollection.html#networkdevicefunctioncollection">NetworkDeviceFunctionCollection</a><br />
-<a href="networkinterface.html#networkinterface">NetworkInterface</a><br />
 <a href="networkport.html#networkport">NetworkPort</a><br />
-<a href="networkportcollection.html#networkportcollection">NetworkPortCollection</a><br />
 <a href="pciedevice.html#pciedevice">PCIeDevice</a><br />
 <a href="pciedevicecollection.html#pciedevicecollection">PCIeDeviceCollection</a><br />
 <a href="pciefunction.html#pciefunction">PCIeFunction</a><br />
@@ -92,8 +85,6 @@ table { border-collapse: collapse; }
 <a href="processorcollection.html#processorcollection">ProcessorCollection</a><br />
 <a href="role.html#role">Role</a><br />
 <a href="serviceroot.html#serviceroot">ServiceRoot</a><br />
-<a href="simplestorage.html#simplestorage">SimpleStorage</a><br />
-<a href="storage.html#storage">Storage</a><br />
 <a href="storagegroup.html#storagegroup">StorageGroup</a><br />
 <a href="storagegroupcollection.html#storagegroupcollection">StorageGroupCollection</a><br />
 <a href="storagepool.html#storagepool">StoragePool</a><br />
@@ -106,7 +97,6 @@ table { border-collapse: collapse; }
 <a href="vlannetworkinterfacecollection.html#vlannetworkinterfacecollection">VLanNetworkInterfaceCollection</a><br />
 <a href="volume.html#volume">Volume</a><br />
 <a href="volumecollection.html#volumecollection">VolumeCollection</a><br />
-<a href="zone.html#zone">Zone</a><br />
 <a href="error.html#error">Error</a><br />
 </div>
 <div class="content">
@@ -130,7 +120,7 @@ table { border-collapse: collapse; }
 <h3 id="get">GET</h3>
 <h4 id="request">Request</h4>
 <div class="code">
-GET /redfish/v1/Systems/ComputerSystem1/Storage1/StorageService1/StorageGroups
+GET /redfish/v1/Chassis/Chassis1/PCIeDevice1/PCIeFunction1/StorageService1/StorageGroups
 <br />
 Content-Type: application/json
 <br />
@@ -141,7 +131,7 @@ Content-Type: application/json
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;"@odata.context": "uri"
 <br />
-&nbsp;&nbsp;&nbsp;&nbsp;"@odata.id": /redfish/v1/Systems/ComputerSystem1/Storage1/StorageService1/StorageGroups
+&nbsp;&nbsp;&nbsp;&nbsp;"@odata.id": /redfish/v1/Chassis/Chassis1/PCIeDevice1/PCIeFunction1/StorageService1/StorageGroups
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;"@odata.type": "string"
 <br />
@@ -155,7 +145,7 @@ Content-Type: application/json
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;"Members": [{
 <br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"@odata.id": "/redfish/v1/Systems/ComputerSystem1/Storage1/StorageService1/StorageGroups/StorageGroup1"
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"@odata.id": "/redfish/v1/Chassis/Chassis1/PCIeDevice1/PCIeFunction1/StorageService1/StorageGroups/StorageGroup1"
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;}]
 <br />
