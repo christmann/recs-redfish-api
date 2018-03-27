@@ -61,7 +61,7 @@
 					<Annotation Term="OData.LongDescription" String="The value of this property shall contain the operating width of the HSLLInterface specified in number of lanes."/>
 					<Annotation Term="Validation.Minimum" Int="0"/>
 				</Property>
-				<Property Name="MaxSpeedGBps" Type="Edm.Int64">
+				<Property Name="MaxSpeedGbps" Type="Edm.Int64">
 					<Annotation Term="Measures.Unit" String="GBytes/s"/>
 					<Annotation Term="OData.Permissions" EnumMember="OData.Permissions/Read"/>
 					<Annotation Term="OData.Description" String="The maximum speed of this HSLLInterface in GBps"/>

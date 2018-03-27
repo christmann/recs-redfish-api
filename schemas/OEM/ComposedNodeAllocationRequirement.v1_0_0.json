@@ -231,7 +231,7 @@
                     ],
                     "description": "The Baseboard where applicable resources are located"
                 },
-                "MaxSpeedGBps": {
+                "MaxSpeedGbps": {
                     "description": "The minimal value of the maximum speed of the HSLL interface",
                     "type": [
                         "number",
@@ -528,7 +528,7 @@
                     },
                     "type": "array"
                 },
-                "MaxSpeedGBps": {
+                "MaxSpeedGbps": {
                     "description": "The minimal value of the maximum speed of the port",
                     "type": [
                         "number",

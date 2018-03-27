@@ -106,7 +106,7 @@
 			<ComplexType Name="Port">
 				<Annotation Term="OData.AdditionalProperties" Bool="false"/>
 				<Annotation Term="OData.Description" String="The requirements for a PCIeSwitch port" />
-				<Property Name="MaxSpeedGBps" Type="Edm.Int32">
+				<Property Name="MaxSpeedGbps" Type="Edm.Int32">
 					<Annotation Term="OData.Description" String="The minimal value of the maximum speed of the port" />
 					<Annotation Term="Measures.Unit" String="GBytes/s"/>
 				</Property>
@@ -140,7 +140,7 @@
 			<ComplexType Name="HSLLInterface">
 				<Annotation Term="OData.AdditionalProperties" Bool="false"/>
 				<Annotation Term="OData.Description" String="The requirements for a HSLL interface" />
-				<Property Name="MaxSpeedGBps" Type="Edm.Int32">
+				<Property Name="MaxSpeedGbps" Type="Edm.Int32">
 					<Annotation Term="OData.Description" String="The minimal value of the maximum speed of the HSLL interface" />
 					<Annotation Term="Measures.Unit" String="GBytes/s"/>
 				</Property>

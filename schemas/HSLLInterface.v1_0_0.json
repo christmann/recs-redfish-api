@@ -56,7 +56,7 @@
                     "description": "The links object contains the links to other resources that are related to this resource.",
                     "readonly": true
                 },
-                "MaxSpeedGBps": {
+                "MaxSpeedGbps": {
                     "description": "The maximum speed of this HSLLInterface in GBps",
                     "longDescription": "The value of this property shall contain nominal speed of this HSLLInterface in GBps",
                     "minimum": 0,
