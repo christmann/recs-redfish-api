@@ -20,6 +20,30 @@
                 }
             },
             "properties": {
+                "Links": {
+                    "$ref": "#/definitions/Links",
+                    "description": "RECS|Box Chassis links extension.",
+                    "readonly": true
+                }
+            },
+            "type": "object"
+        },
+        "Links": {
+            "additionalProperties": false,
+            "patternProperties": {
+                "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message|Privileges)\\.[a-zA-Z_][a-zA-Z0-9_.]+$": {
+                    "description": "This property shall specify a valid odata or Redfish property.",
+                    "type": [
+                        "array",
+                        "boolean",
+                        "number",
+                        "null",
+                        "object",
+                        "string"
+                    ]
+                }
+            },
+            "properties": {
                 "Baseboards": {
                     "description": "An array of references to Baseboards within this Chassis.",
                     "items": {

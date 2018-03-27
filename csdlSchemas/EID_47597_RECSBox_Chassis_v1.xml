@@ -28,7 +28,7 @@
 		<Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="EID_47597_RECSBox_Chassis.v1_0_0">
 			
 			<ComplexType Name="Chassis" BaseType="Resource.OemObject">
-				<Property Name="Links" Type="Chassis.v1_0_0.Links" Nullable="false">
+				<Property Name="Links" Type="EID_47597_RECSBox_Chassis.v1_0_0.Links" Nullable="false">
 					<Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
 					<Annotation Term="OData.Description" String="RECS|Box Chassis links extension."/>
 				</Property>
@@ -37,7 +37,7 @@
 				<Annotation Term="OData.LongDescription" String="RECS|Box Chassis extension" />
 			</ComplexType>
 
-			<ComplexType Name="Links" BaseType="Resource.Links">
+			<ComplexType Name="Links" BaseType="Resource.OemObject">
 				<NavigationProperty Name="Baseboards" Type="Collection(Baseboard.Baseboard)" Nullable="false">
 					<Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
 					<Annotation Term="OData.Description" String="An array of references to Baseboards within this Chassis."/>
