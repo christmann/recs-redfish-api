@@ -39,12 +39,6 @@
                     "longDescription": "This object shall only contain a reference to a collection of resources that comply to the ComposedNode schema.",
                     "readonly": true
                 },
-                "Connections": {
-                    "$ref": "HSLLConnectionCollection_v1.xml/HSLLConnectionCollection.json#/definitions/HSLLConnectionCollection",
-                    "description": "A reference to a collection of HSLLConnections.",
-                    "longDescription": "This object shall only contain a reference that complies to the HSLLConnectionCollection schema.",
-                    "readonly": false
-                },
                 "PCIeDevices": {
                     "$ref": "PCIeDeviceCollection_v1.xml/PCIeDeviceCollection.json#/definitions/PCIeDeviceCollection",
                     "description": "This is a link to a collection of PCIeDevices.",

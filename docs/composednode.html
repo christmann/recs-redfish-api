@@ -96,14 +96,10 @@ This is the schema definition for the ComposedNode resource.
 <tr><td>Connections {</td><td>reference(<a href="hsllconnectioncollection.html#hsllconnectioncollection">HSLLConnectionCollection</a>)</td><td></td><td></td><td>read-write</td><td>This is a link to a collection of HSLLConnections that connect the nodes within this composition.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;@odata.id</td><td>string</td><td></td><td></td><td>read-only</td><td>The unique identifier for a resource.<br />Format: uri</td></tr>
 <tr><td>}</td><td></td><td></td><td></td><td></td><td></td></tr>
-<tr><td>ContainedNodes {</td><td>object</td><td></td><td></td><td>read-write</td><td>This is a link to a collection of nodes this ComposedNode consists of. This can either be a ComputerSystem, a PCIeDevice, a Port or a ComposedNode.</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;@odata.context</td><td>string</td><td></td><td></td><td>read-only</td><td>The OData description of a payload.<br />Format: uri</td></tr>
+<tr><td>ContainedNodes [ {</td><td>array[reference]</td><td></td><td></td><td>read-write</td><td>An array of references to nodes this ComposedNode consists of. This can either be a ComputerSystem, a PCIeDevice, a Port or a ComposedNode.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;@odata.id</td><td>string</td><td></td><td></td><td>read-only</td><td>The unique identifier for a resource.<br />Format: uri</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;@odata.type</td><td>string</td><td></td><td></td><td>read-only</td><td>The type of a resource.</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;Description</td><td>string</td><td>Yes</td><td></td><td>read-only</td><td>Provides a description of this resource and is used for commonality  in the schema definitions.</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;Name</td><td>string</td><td></td><td></td><td>read-only</td><td>The name of the resource or array element.</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;Oem { }</td><td>object</td><td></td><td></td><td>read-write</td><td>This is the manufacturer/provider specific extension moniker used to divide the Oem object into sections.</td></tr>
-<tr><td>}</td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>} ]</td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>ContainedNodes@odata.count</td><td>number</td><td></td><td></td><td>read-only</td><td>The number of items in a collection.</td></tr>
 <tr><td>Description</td><td>string</td><td>Yes</td><td></td><td>read-only</td><td>Provides a description of this resource and is used for commonality  in the schema definitions.</td></tr>
 <tr><td>Id</td><td>string</td><td></td><td>GET</td><td>read-only</td><td>Uniquely identifies the resource within the collection of like resources.</td></tr>
 <tr><td>Links {</td><td>object</td><td></td><td></td><td>read-only</td><td>The links object contains the links to other resources that are related to this resource.</td></tr>
@@ -161,7 +157,7 @@ Content-Type: application/json
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;"Connections": [{
 <br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"@odata.id": "/redfish/v1/Connections/HSLLConnection1"
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"@odata.id": "/redfish/v1/ComposedNodes/ComposedNode1/Connections/HSLLConnection1"
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;}]
 <br />
@@ -277,7 +273,7 @@ Content-Type: application/json
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;"ComposedIn": {
 <br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"@odata.id": "/redfish/v1/ComposedNodes/ComposedNode1/ComposedIn"
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"@odata.id": "/redfish/v1/ComposedNodes/ComposedNode1"
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;}
 <br />
@@ -287,21 +283,13 @@ Content-Type: application/json
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;}
 <br />
-&nbsp;&nbsp;&nbsp;&nbsp;"ContainedNodes": {
+&nbsp;&nbsp;&nbsp;&nbsp;"ContainedNodes": [{
 <br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"@odata.context": "uri"
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"@odata.id": "uri"
 <br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"@odata.id": string
+&nbsp;&nbsp;&nbsp;&nbsp;}]
 <br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"@odata.type": "string"
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Description": "string"
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Name": "string"
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Oem": { }
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;}
+&nbsp;&nbsp;&nbsp;&nbsp;"ContainedNodes@odata.count": 1
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;"Description": "string"
 <br />

@@ -89,10 +89,16 @@
                     "readonly": true
                 },
                 "ComputerSystems": {
-                    "$ref": "http://redfish.dmtf.org/schemas/v1/ComputerSystemCollection.json#/definitions/ComputerSystemCollection",
-                    "description": "This is a link to a collection of ComputerSystems hosted on this Baseboard.",
-                    "longDescription": "This object shall only contain a reference to a collection of resources that comply to the ComputerSystem schema.",
-                    "readonly": true
+                    "description": "An array of references to ComputerSystems hosted on this Baseboard.",
+                    "items": {
+                        "$ref": "http://redfish.dmtf.org/schemas/v1/ComputerSystem.json#/definitions/ComputerSystem"
+                    },
+                    "longDescription": "This object shall only contain references to the resource that complies to the ComputerSystem schema.",
+                    "readonly": true,
+                    "type": "array"
+                },
+                "ComputerSystems@odata.count": {
+                    "$ref": "http://redfish.dmtf.org/schemas/v1/odata.v4_0_1.json#/definitions/count"
                 },
                 "Description": {
                     "anyOf": [
@@ -124,10 +130,16 @@
                     "longDescription": "The value of this string shall be of the format for the reserved word *Oem*."
                 },
                 "PCIeDevices": {
-                    "$ref": "PCIeDeviceCollection_v1.xml/PCIeDeviceCollection.json#/definitions/PCIeDeviceCollection",
-                    "description": "This is a link to a collection of PCIeDevices attached to PCIePorts on this Baseboard.",
-                    "longDescription": "This object shall only contain a reference to a collection of resources that comply to the PCIeDevice schema.",
-                    "readonly": true
+                    "description": "An array of references to PCIeDevices hosted on this Baseboard.",
+                    "items": {
+                        "$ref": "http://redfish.dmtf.org/schemas/v1/PCIeDevice.json#/definitions/PCIeDevice"
+                    },
+                    "longDescription": "This object shall only contain references to the resource that complies to the PCIeDevice schema.",
+                    "readonly": true,
+                    "type": "array"
+                },
+                "PCIeDevices@odata.count": {
+                    "$ref": "http://redfish.dmtf.org/schemas/v1/odata.v4_0_1.json#/definitions/count"
                 },
                 "Status": {
                     "anyOf": [
@@ -140,10 +152,16 @@
                     ]
                 },
                 "Switches": {
-                    "$ref": "http://redfish.dmtf.org/schemas/v1/SwitchCollection.json#/definitions/SwitchCollection",
-                    "description": "This is a link to a collection of Ethernet- and PCIeSwitches hosted on this Baseboard.",
-                    "longDescription": "This object shall only contain a reference to a collection of resources that comply to the Switch schema.",
-                    "readonly": true
+                    "description": "An array of references to Ethernet- and PCIeSwitches hosted on this Baseboard.",
+                    "items": {
+                        "$ref": "http://redfish.dmtf.org/schemas/v1/Switch.json#/definitions/Switch"
+                    },
+                    "longDescription": "This object shall only contain references to the resource that complies to the Switch schema.",
+                    "readonly": true,
+                    "type": "array"
+                },
+                "Switches@odata.count": {
+                    "$ref": "http://redfish.dmtf.org/schemas/v1/odata.v4_0_1.json#/definitions/count"
                 }
             },
             "required": [

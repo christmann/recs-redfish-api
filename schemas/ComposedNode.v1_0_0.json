@@ -127,10 +127,16 @@
                     "readonly": false
                 },
                 "ContainedNodes": {
-                    "$ref": "http://redfish.dmtf.org/schemas/v1/Resource.v1_0_0.json#/definitions/ResourceCollection",
-                    "description": "This is a link to a collection of nodes this ComposedNode consists of. This can either be a ComputerSystem, a PCIeDevice, a Port or a ComposedNode.",
-                    "longDescription": "This object shall only contain a reference to a collection of resources that comply to the ComputerSystem, PCIeDevice, Port or ComposedNode schema.",
-                    "readonly": false
+                    "description": "An array of references to nodes this ComposedNode consists of. This can either be a ComputerSystem, a PCIeDevice, a Port or a ComposedNode.",
+                    "items": {
+                        "$ref": "http://redfish.dmtf.org/schemas/v1/odata.v4_0_1.json#/definitions/idRef"
+                    },
+                    "longDescription": "This object shall only contain references to the resource that complies to the ComputerSystem, PCIeDevice, Port or ComposedNode schema.",
+                    "readonly": false,
+                    "type": "array"
+                },
+                "ContainedNodes@odata.count": {
+                    "$ref": "http://redfish.dmtf.org/schemas/v1/odata.v4_0_1.json#/definitions/count"
                 },
                 "Description": {
                     "anyOf": [

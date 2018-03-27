@@ -73,10 +73,10 @@
 					<Annotation Term="OData.Description" String="The available actions for this resource."/>
 					<Annotation Term="OData.LongDescription" String="The Actions property shall contain the available actions for this resource."/>
 				</Property>
-				<NavigationProperty Name="ContainedNodes" Type="Resource.v1_0_0.ResourceCollection" Nullable="false">
+				<NavigationProperty Name="ContainedNodes" Type="Collection(Resource.Item)" Nullable="false">
 					<Annotation Term="OData.Permissions" EnumMember="OData.Permission/ReadWrite"/>
-					<Annotation Term="OData.Description" String="This is a link to a collection of nodes this ComposedNode consists of. This can either be a ComputerSystem, a PCIeDevice, a Port or a ComposedNode."/>
-					<Annotation Term="OData.LongDescription" String="This object shall only contain a reference to a collection of resources that comply to the ComputerSystem, PCIeDevice, Port or ComposedNode schema."/>
+					<Annotation Term="OData.Description" String="An array of references to nodes this ComposedNode consists of. This can either be a ComputerSystem, a PCIeDevice, a Port or a ComposedNode."/>
+					<Annotation Term="OData.LongDescription" String="This object shall only contain references to the resource that complies to the ComputerSystem, PCIeDevice, Port or ComposedNode schema."/>
 					<Annotation Term="OData.AutoExpandReferences"/>
 				</NavigationProperty>
 				<NavigationProperty Name="Connections" Type="HSLLConnectionCollection.HSLLConnectionCollection" Nullable="false">

@@ -20,14 +20,14 @@
 	<edmx:Reference Uri="http://redfish.dmtf.org/schemas/v1/Chassis_v1.xml">
 		<edmx:Include Namespace="Chassis"/>
 	</edmx:Reference>
-	<edmx:Reference Uri="http://redfish.dmtf.org/schemas/v1/ComputerSystemCollection_v1.xml">
-		<edmx:Include Namespace="ComputerSystemCollection"/>
+	<edmx:Reference Uri="http://redfish.dmtf.org/schemas/v1/ComputerSystem_v1.xml">
+		<edmx:Include Namespace="ComputerSystem"/>
 	</edmx:Reference>
-	<edmx:Reference Uri="PCIeDeviceCollection_v1.xml">
-		<edmx:Include Namespace="PCIeDeviceCollection"/>
+	<edmx:Reference Uri="http://redfish.dmtf.org/schemas/v1/PCIeDevice_v1.xml">
+		<edmx:Include Namespace="PCIeDevice"/>
 	</edmx:Reference>
-	<edmx:Reference Uri="http://redfish.dmtf.org/schemas/v1/SwitchCollection_v1.xml">
-		<edmx:Include Namespace="SwitchCollection"/>
+	<edmx:Reference Uri="http://redfish.dmtf.org/schemas/v1/Switch_v1.xml">
+		<edmx:Include Namespace="Switch"/>
 	</edmx:Reference>
 
 	<edmx:DataServices>
@@ -72,22 +72,22 @@
 					<Annotation Term="OData.LongDescription" String="This object shall only contain a reference that complies to the Chassis schema."/>
 					<Annotation Term="OData.AutoExpandReferences"/>
 				</NavigationProperty>
-				<NavigationProperty Name="ComputerSystems" Type="ComputerSystemCollection.ComputerSystemCollection" Nullable="false">
+				<NavigationProperty Name="ComputerSystems" Type="Collection(ComputerSystem.ComputerSystem)" Nullable="false">
 					<Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
-					<Annotation Term="OData.Description" String="This is a link to a collection of ComputerSystems hosted on this Baseboard."/>
-					<Annotation Term="OData.LongDescription" String="This object shall only contain a reference to a collection of resources that comply to the ComputerSystem schema."/>
+					<Annotation Term="OData.Description" String="An array of references to ComputerSystems hosted on this Baseboard."/>
+					<Annotation Term="OData.LongDescription" String="This object shall only contain references to the resource that complies to the ComputerSystem schema."/>
 					<Annotation Term="OData.AutoExpandReferences"/>
 				</NavigationProperty>
-				<NavigationProperty Name="PCIeDevices" Type="PCIeDeviceCollection.PCIeDeviceCollection" Nullable="false">
+				<NavigationProperty Name="PCIeDevices" Type="Collection(PCIeDevice.PCIeDevice)" Nullable="false">
 					<Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
-					<Annotation Term="OData.Description" String="This is a link to a collection of PCIeDevices attached to PCIePorts on this Baseboard."/>
-					<Annotation Term="OData.LongDescription" String="This object shall only contain a reference to a collection of resources that comply to the PCIeDevice schema."/>
+					<Annotation Term="OData.Description" String="An array of references to PCIeDevices hosted on this Baseboard."/>
+					<Annotation Term="OData.LongDescription" String="This object shall only contain references to the resource that complies to the PCIeDevice schema."/>
 					<Annotation Term="OData.AutoExpandReferences"/>
 				</NavigationProperty>
-				<NavigationProperty Name="Switches" Type="SwitchCollection.SwitchCollection" Nullable="false">
+				<NavigationProperty Name="Switches" Type="Collection(Switch.Switch)" Nullable="false">
 					<Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
-					<Annotation Term="OData.Description" String="This is a link to a collection of Ethernet- and PCIeSwitches hosted on this Baseboard."/>
-					<Annotation Term="OData.LongDescription" String="This object shall only contain a reference to a collection of resources that comply to the Switch schema."/>
+					<Annotation Term="OData.Description" String="An array of references to Ethernet- and PCIeSwitches hosted on this Baseboard."/>
+					<Annotation Term="OData.LongDescription" String="This object shall only contain references to the resource that complies to the Switch schema."/>
 					<Annotation Term="OData.AutoExpandReferences"/>
 				</NavigationProperty>
 				<Property Name="BladeSlot" Type="Edm.Int64">
