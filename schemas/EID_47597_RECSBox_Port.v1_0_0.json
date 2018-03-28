@@ -34,14 +34,7 @@
                     "readonly": true
                 },
                 "PCIeFunctions": {
-                    "anyOf": [
-                        {
-                            "$ref": "PCIeFunctionCollection_v1.xml/PCIeFunctionCollection.json#/definitions/PCIeFunctionCollection"
-                        },
-                        {
-                            "type": "null"
-                        }
-                    ],
+                    "$ref": "PCIeFunctionCollection_v1.xml/PCIeFunctionCollection.json#/definitions/PCIeFunctionCollection",
                     "description": "This is a link to a collection of PCIeFunctions exposed by this port",
                     "longDescription": "This object shall only contain a reference to a collection of resources that comply to the PCIeFunction schema.",
                     "readonly": true
