@@ -30,7 +30,7 @@
 					<Annotation Term="OData.Description" String="The type of the switch."/>
 					<Annotation Term="OData.LongDescription" String="An enumeration that indicates the type of the switch."/>
 				</Property>
-				<NavigationProperty Name="Baseboard" Type="Resource.Item">
+				<NavigationProperty Name="Baseboard" Type="Baseboard.Baseboard">
 					<Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
 					<Annotation Term="OData.Description" String="The Baseboard, the Switch is hosted on, or null if it is not hosted on a Baseboard."/>
 					<Annotation Term="OData.LongDescription" String="This object shall only contain a reference that complies to the Baseboard schema."/>
