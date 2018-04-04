@@ -161,7 +161,7 @@ Content-Type: application/json
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;}],
 <br />
-&nbsp;&nbsp;&nbsp;&nbsp;"ResetNetworkSettings": "boolean",
+&nbsp;&nbsp;&nbsp;&nbsp;"ResetNetworkSettings": "boolean"
 <br />
 }
 <br />
@@ -212,7 +212,7 @@ Content-Type: application/json
 <br />
 {
 <br />
-&nbsp;&nbsp;&nbsp;&nbsp;"ResetType": "On",
+&nbsp;&nbsp;&nbsp;&nbsp;"ResetType": "On"
 <br />
 }
 <br />
@@ -262,6 +262,8 @@ Content-Type: application/json
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"#ComposedNode.Reset": {
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"target": "/redfish/v1/ComposedNodes/ComposedNode1/Actions/ComposedNode.Reset",
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"ResetType@Redfish.AllowableValues": ["On", "ForceOff", "GracefulShutdown", "GracefulRestart", "ForceRestart", "ForceOn", "PushPowerButton"],
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"title": "string"
 <br />

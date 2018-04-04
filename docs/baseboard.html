@@ -160,7 +160,7 @@ Content-Type: application/json
 <br />
 {
 <br />
-&nbsp;&nbsp;&nbsp;&nbsp;"ResetType": "On",
+&nbsp;&nbsp;&nbsp;&nbsp;"ResetType": "On"
 <br />
 }
 <br />
@@ -194,6 +194,8 @@ Content-Type: application/json
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"#Baseboard.Reset": {
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"target": "/redfish/v1/Baseboards/Baseboard1/Actions/Baseboard.Reset",
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"ResetType@Redfish.AllowableValues": ["On", "ForceOff", "GracefulShutdown", "GracefulRestart", "ForceRestart", "ForceOn", "PushPowerButton"],
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"title": "string"
 <br />
