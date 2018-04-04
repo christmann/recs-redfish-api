@@ -201,7 +201,7 @@ Content-Type: application/json
 <br />
 {
 <br />
-&nbsp;&nbsp;&nbsp;&nbsp;"ResetType": "On"
+&nbsp;&nbsp;&nbsp;&nbsp;"ResetType": "On",
 <br />
 }
 <br />
@@ -224,17 +224,17 @@ Content-Type: application/json
 <div class="code">
 {
 <br />
-&nbsp;&nbsp;&nbsp;&nbsp;"@odata.context": "uri"
+&nbsp;&nbsp;&nbsp;&nbsp;"@odata.context": "uri",
 <br />
-&nbsp;&nbsp;&nbsp;&nbsp;"@odata.id": "/redfish/v1/Systems/ComputerSystem1"
+&nbsp;&nbsp;&nbsp;&nbsp;"@odata.id": "/redfish/v1/Systems/ComputerSystem1",
 <br />
-&nbsp;&nbsp;&nbsp;&nbsp;"@odata.type": "string"
+&nbsp;&nbsp;&nbsp;&nbsp;"@odata.type": "string",
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;"Actions": {
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"#ComputerSystem.Reset": {
 <br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"target": "/redfish/v1/Systems/ComputerSystem1/Actions/ComputerSystem.Reset"
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"target": "/redfish/v1/Systems/ComputerSystem1/Actions/ComputerSystem.Reset",
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"title": "string"
 <br />
@@ -246,29 +246,29 @@ Content-Type: application/json
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;"Boot": {
 <br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"BootSourceOverrideEnabled": "Disabled"
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"BootSourceOverrideEnabled": "Disabled",
 <br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"BootSourceOverrideEnabled@Redfish.AllowableValues": ["Disabled", "Once", "Continuous"]
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"BootSourceOverrideEnabled@Redfish.AllowableValues": ["Disabled", "Once", "Continuous"],
 <br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"BootSourceOverrideTarget": "None"
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"BootSourceOverrideTarget": "None",
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"BootSourceOverrideTarget@Redfish.AllowableValues": ["None", "Pxe", "Cd", "Usb", "Hdd"]
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;}
 <br />
-&nbsp;&nbsp;&nbsp;&nbsp;"Description": "string"
+&nbsp;&nbsp;&nbsp;&nbsp;"Description": "string",
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;"EthernetInterfaces": {
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"@odata.id": "/redfish/v1/Systems/ComputerSystem1/EthernetInterfaces"
 <br />
-&nbsp;&nbsp;&nbsp;&nbsp;}
+&nbsp;&nbsp;&nbsp;&nbsp;},
 <br />
-&nbsp;&nbsp;&nbsp;&nbsp;"Id": "string"
+&nbsp;&nbsp;&nbsp;&nbsp;"Id": "string",
 <br />
-&nbsp;&nbsp;&nbsp;&nbsp;"IndicatorLED": "Unknown"
+&nbsp;&nbsp;&nbsp;&nbsp;"IndicatorLED": "Unknown",
 <br />
-&nbsp;&nbsp;&nbsp;&nbsp;"IndicatorLED@Redfish.AllowableValues": ["Unknown", "Lit", "Blinking", "Off"]
+&nbsp;&nbsp;&nbsp;&nbsp;"IndicatorLED@Redfish.AllowableValues": ["Unknown", "Lit", "Blinking", "Off"],
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;"Links": {
 <br />
@@ -276,11 +276,11 @@ Content-Type: application/json
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;}
 <br />
-&nbsp;&nbsp;&nbsp;&nbsp;"Manufacturer": "string"
+&nbsp;&nbsp;&nbsp;&nbsp;"Manufacturer": "string",
 <br />
-&nbsp;&nbsp;&nbsp;&nbsp;"Model": "string"
+&nbsp;&nbsp;&nbsp;&nbsp;"Model": "string",
 <br />
-&nbsp;&nbsp;&nbsp;&nbsp;"Name": "string"
+&nbsp;&nbsp;&nbsp;&nbsp;"Name": "string",
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;"Oem": {
 <br />
@@ -290,15 +290,15 @@ Content-Type: application/json
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"@odata.id": "/redfish/v1/Baseboards/Baseboard1"
 <br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"ComposedIn": {
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"@odata.id": "/redfish/v1/ComposedNodes/ComposedNode1"
 <br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},
 <br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"FormFactor": "COM Express"
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"FormFactor": "COM Express",
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"HSLLInterface": {
 <br />
@@ -310,11 +310,11 @@ Content-Type: application/json
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;}
 <br />
-&nbsp;&nbsp;&nbsp;&nbsp;"PowerState": "On"
+&nbsp;&nbsp;&nbsp;&nbsp;"PowerState": "On",
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;"ProcessorSummary": {
 <br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Count": 0
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Count": 0,
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Model": "string"
 <br />
@@ -324,19 +324,19 @@ Content-Type: application/json
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"@odata.id": "/redfish/v1/Systems/ComputerSystem1/Processors"
 <br />
-&nbsp;&nbsp;&nbsp;&nbsp;}
+&nbsp;&nbsp;&nbsp;&nbsp;},
 <br />
-&nbsp;&nbsp;&nbsp;&nbsp;"SKU": "string"
+&nbsp;&nbsp;&nbsp;&nbsp;"SKU": "string",
 <br />
-&nbsp;&nbsp;&nbsp;&nbsp;"SerialNumber": "string"
+&nbsp;&nbsp;&nbsp;&nbsp;"SerialNumber": "string",
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;"Status": {
 <br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Health": "OK"
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Health": "OK",
 <br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"HealthRollup": "OK"
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"HealthRollup": "OK",
 <br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Oem": { }
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Oem": { },
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"State": "Enabled"
 <br />
@@ -366,7 +366,7 @@ Content-Type: application/json
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;"Boot": {
 <br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"BootSourceOverrideEnabled": "Disabled"
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"BootSourceOverrideEnabled": "Disabled",
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"BootSourceOverrideTarget": "None"
 <br />
