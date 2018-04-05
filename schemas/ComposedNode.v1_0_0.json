@@ -122,20 +122,20 @@
                 },
                 "Connections": {
                     "$ref": "HSLLConnectionCollection_v1.xml/HSLLConnectionCollection.json#/definitions/HSLLConnectionCollection",
-                    "description": "This is a link to a collection of HSLLConnections that connect the nodes within this composition.",
+                    "description": "This is a link to a collection of HSLLConnections that connect the resources within this composition.",
                     "longDescription": "This object shall only contain a reference to a collection of resources that comply to the HSLLConnection schema.",
                     "readonly": false
                 },
-                "ContainedNodes": {
-                    "description": "An array of references to nodes this ComposedNode consists of. This can either be a ComputerSystem, a PCIeDevice, a Port or a ComposedNode.",
+                "ContainedResources": {
+                    "description": "An array of references to resources this ComposedNode consists of. This can either be a ComputerSystem, a PCIeDevice or a Port (of a PCIeSwitch or a ComposedNode).",
                     "items": {
                         "$ref": "http://redfish.dmtf.org/schemas/v1/odata.v4_0_1.json#/definitions/idRef"
                     },
-                    "longDescription": "This object shall only contain references to the resource that complies to the ComputerSystem, PCIeDevice, Port or ComposedNode schema.",
+                    "longDescription": "This object shall only contain references to the resource that complies to the ComputerSystem, PCIeDevice or Port schema.",
                     "readonly": false,
                     "type": "array"
                 },
-                "ContainedNodes@odata.count": {
+                "ContainedResources@odata.count": {
                     "$ref": "http://redfish.dmtf.org/schemas/v1/odata.v4_0_1.json#/definitions/count"
                 },
                 "Description": {
