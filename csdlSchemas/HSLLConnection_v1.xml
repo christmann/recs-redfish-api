@@ -20,6 +20,9 @@
 	<edmx:Reference Uri="HSLLInterface_v1.xml">
 		<edmx:Include Namespace="HSLLInterface"/>
 	</edmx:Reference>
+	<edmx:Reference Uri="ComposedNode_v1.xml">
+		<edmx:Include Namespace="ComposedNode"/>
+	</edmx:Reference>
 
 	<edmx:DataServices>
 		<Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="HSLLConnection">
@@ -38,6 +41,12 @@
 					<Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
 					<Annotation Term="OData.Description" String="The links object contains the links to other resources that are related to this resource."/>
 				</Property>
+				<NavigationProperty Name="ComposedNode" Type="ComposedNode.ComposedNode" Nullable="false">
+					<Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+					<Annotation Term="OData.Description" String="The ComposedNode this connection is part of"/>
+					<Annotation Term="OData.LongDescription" String="This object shall only contain a reference that complies to the ComposedNode schema."/>
+					<Annotation Term="OData.AutoExpandReferences"/>
+				</NavigationProperty>
 				<NavigationProperty Name="EndpointA" Type="HSLLInterface.HSLLInterface" Nullable="false">
 					<Annotation Term="OData.Permissions" EnumMember="OData.Permission/ReadWrite"/>
 					<Annotation Term="OData.Description" String="The first endpoint of this connection"/>
@@ -50,7 +59,7 @@
 					<Annotation Term="OData.LongDescription" String="This object shall only contain a reference that complies to the HSLLInterface schema."/>
 					<Annotation Term="OData.AutoExpandReferences"/>
 				</NavigationProperty>
-				<Property Name="Width" Type="Edm.Int64">
+				<Property Name="Width" Type="Edm.Int64" Nullable="false">
 					<Annotation Term="OData.Permissions" EnumMember="OData.Permissions/ReadWrite"/>
 					<Annotation Term="OData.Description" String="Connection width of the HSLLConnection specified in number of lanes"/>
 					<Annotation Term="OData.LongDescription" String="The value of this property shall contain the connection width of the HSLLConnection specified in number of lanes."/>

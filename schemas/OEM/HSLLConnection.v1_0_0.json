@@ -30,6 +30,12 @@
                 "@odata.type": {
                     "$ref": "http://redfish.dmtf.org/schemas/v1/odata.v4_0_1.json#/definitions/type"
                 },
+                "ComposedNode": {
+                    "$ref": "ComposedNode_v1.xml/ComposedNode.json#/definitions/ComposedNode",
+                    "description": "The ComposedNode this connection is part of",
+                    "longDescription": "This object shall only contain a reference that complies to the ComposedNode schema.",
+                    "readonly": true
+                },
                 "Description": {
                     "anyOf": [
                         {
@@ -76,10 +82,7 @@
                     "longDescription": "The value of this property shall contain the connection width of the HSLLConnection specified in number of lanes.",
                     "minimum": 0,
                     "readonly": false,
-                    "type": [
-                        "number",
-                        "null"
-                    ]
+                    "type": "number"
                 }
             },
             "required": [
