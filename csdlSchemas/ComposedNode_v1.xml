@@ -76,26 +76,26 @@
 					<Annotation Term="OData.Description" String="The available actions for this resource."/>
 					<Annotation Term="OData.LongDescription" String="The Actions property shall contain the available actions for this resource."/>
 				</Property>
-				<NavigationProperty Name="Chassis" Type="Chassis.Chassis">
+				<NavigationProperty Name="Chassis" Type="Chassis.Chassis" Nullable="false">
 					<Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
 					<Annotation Term="OData.Description" String="This is a link to the Chassis, this ComposedNode is resides in."/>
 					<Annotation Term="OData.LongDescription" String="This object shall only contain a reference to a resource that complies to the Chassis schema."/>
 					<Annotation Term="OData.AutoExpandReferences"/>
 				</NavigationProperty>
 				<NavigationProperty Name="ContainedResources" Type="Collection(Resource.Item)" Nullable="false">
-					<Annotation Term="OData.Permissions" EnumMember="OData.Permission/ReadWrite"/>
+					<Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
 					<Annotation Term="OData.Description" String="An array of references to resources this ComposedNode consists of. This can either be a ComputerSystem, a PCIeDevice or a Port (of a PCIeSwitch or a ComposedNode)."/>
 					<Annotation Term="OData.LongDescription" String="This object shall only contain references to resources that comply to the ComputerSystem, PCIeDevice or Port schema."/>
 					<Annotation Term="OData.AutoExpandReferences"/>
 				</NavigationProperty>
 				<NavigationProperty Name="Connections" Type="HSLLConnectionCollection.HSLLConnectionCollection" Nullable="false">
-					<Annotation Term="OData.Permissions" EnumMember="OData.Permission/ReadWrite"/>
+					<Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
 					<Annotation Term="OData.Description" String="This is a link to a collection of HSLLConnections that connect the resources within this composition."/>
 					<Annotation Term="OData.LongDescription" String="This object shall only contain a reference to a resource that complies to the HSLLConnectionCollection schema."/>
 					<Annotation Term="OData.AutoExpandReferences"/>
 				</NavigationProperty>
 				<NavigationProperty Name="ProvidedPorts" Type="PortCollection.PortCollection" Nullable="false">
-					<Annotation Term="OData.Permissions" EnumMember="OData.Permission/ReadWrite"/>
+					<Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
 					<Annotation Term="OData.Description" String="This is a link to a collection of Ports that are provided by this composition."/>
 					<Annotation Term="OData.LongDescription" String="This object shall only contain a reference to a resource that complies to the PortCollection schema."/>
 					<Annotation Term="OData.AutoExpandReferences"/>
