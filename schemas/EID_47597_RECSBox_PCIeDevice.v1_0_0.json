@@ -40,14 +40,7 @@
                     "readonly": true
                 },
                 "HSLLInterface": {
-                    "anyOf": [
-                        {
-                            "$ref": "HSLLInterface_v1.xml/HSLLInterface.json#/definitions/HSLLInterface"
-                        },
-                        {
-                            "type": "null"
-                        }
-                    ],
+                    "$ref": "HSLLInterface_v1.xml/HSLLInterface.json#/definitions/HSLLInterface",
                     "description": "This is a link to the HSLLInterface provided by this device",
                     "longDescription": "This object shall only contain a reference to a resource that complies to the HSLLInterface schema.",
                     "readonly": true
