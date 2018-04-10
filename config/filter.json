@@ -227,6 +227,7 @@
 		},
 		"Links": {
 			"Drives": true,
+			"PCIeDevice": true,
 			"StorageControllers": true,
 			"EthernetInterfaces": true
 		}
