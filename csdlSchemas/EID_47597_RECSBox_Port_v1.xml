@@ -43,13 +43,13 @@
 					<Annotation Term="OData.LongDescription" String="This object shall only contain a reference that complies to the Switch or ComposedNode schema."/>
 					<Annotation Term="OData.AutoExpandReferences"/>
 				</NavigationProperty>
-				<NavigationProperty Name="PCIeFunctions" Type="PCIeFunctionCollection.PCIeFunctionCollection" Nullable="false">
+				<NavigationProperty Name="PCIeFunctions" Type="PCIeFunctionCollection.PCIeFunctionCollection">
 					<Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
 					<Annotation Term="OData.Description" String="This is a link to a collection of PCIeFunctions exposed by this port"/>
 					<Annotation Term="OData.LongDescription" String="This object shall only contain a reference to a collection of resources that comply to the PCIeFunction schema."/>
 					<Annotation Term="OData.AutoExpandReferences"/>
 				</NavigationProperty>
-				<NavigationProperty Name="VLANs" Type="VLanNetworkInterfaceCollection.VLanNetworkInterfaceCollection" Nullable="false">
+				<NavigationProperty Name="VLANs" Type="VLanNetworkInterfaceCollection.VLanNetworkInterfaceCollection">
 					<Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
 					<Annotation Term="OData.Description" String="This is a reference to a collection of VLANs."/>
 					<Annotation Term="OData.LongDescription" String="The value of this property shall reference a collection of VLAN resources."/>
