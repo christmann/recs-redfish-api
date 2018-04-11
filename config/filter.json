@@ -237,7 +237,8 @@
 			"CurrentSpeedGbps": true,
 			"Location": true,
 			"PortProtocol": true,
-			"PortType": true
+			"PortType": true,
+			"PortId": true
 		},
 		"Links": {
 			"AssociatedEndpoints": true,
