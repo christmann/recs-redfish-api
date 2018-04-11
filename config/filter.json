@@ -223,7 +223,8 @@
 	},
 	"PCIeFunction": {
 		"PCIeFunction": {
-			"AssetTag": true
+			"AssetTag": true,
+			"Status": true
 		},
 		"Links": {
 			"Drives": true,
