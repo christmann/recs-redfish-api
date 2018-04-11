@@ -16,12 +16,21 @@
 	<edmx:Reference Uri="http://redfish.dmtf.org/schemas/v1/Resource_v1.xml">
 		<edmx:Include Namespace="Resource"/>
 	</edmx:Reference>
+	<edmx:Reference Uri="http://redfish.dmtf.org/schemas/v1/ComputerSystem_v1.xml">
+		<edmx:Include Namespace="ComputerSystem"/>
+	</edmx:Reference>
 
 	<edmx:DataServices>
 
 		<Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="EID_47597_RECSBox_EthernetInterface.v1_0_0">
 			
 			<ComplexType Name="EthernetInterface" BaseType="Resource.OemObject">
+				<NavigationProperty Name="Provider" Type="ComputerSystem.ComputerSystem" Nullable="false">
+					<Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+					<Annotation Term="OData.Description" String="The ComputerSystem providing this Interface."/>
+					<Annotation Term="OData.LongDescription" String="This object shall only contain a reference that complies to the ComputerSystem schema."/>
+					<Annotation Term="OData.AutoExpandReferences"/>
+				</NavigationProperty>
 				<Property Name="MaxSpeedMbps" Type="Edm.Int64">
 					<Annotation Term="OData.Permissions" EnumMember="OData.Permission/ReadWrite"/>
 					<Annotation Term="Measures.Unit" String="Mbit/s"/>

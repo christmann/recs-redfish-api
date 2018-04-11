@@ -27,6 +27,12 @@
                         "null"
                     ],
                     "units": "Mbit/s"
+                },
+                "Provider": {
+                    "$ref": "http://redfish.dmtf.org/schemas/v1/ComputerSystem.json#/definitions/ComputerSystem",
+                    "description": "The ComputerSystem providing this Interface.",
+                    "longDescription": "This object shall only contain a reference that complies to the ComputerSystem schema.",
+                    "readonly": true
                 }
             },
             "type": "object"
