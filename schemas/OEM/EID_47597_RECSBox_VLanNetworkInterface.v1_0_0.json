@@ -18,6 +18,12 @@
                 }
             },
             "properties": {
+                "Provider": {
+                    "$ref": "http://redfish.dmtf.org/schemas/v1/odata.v4_0_1.json#/definitions/idRef",
+                    "description": "The provider of this VLAN. This can either be a Port of an (Ethernet-)Switch or a EthernetInterface.",
+                    "longDescription": "This object shall only contain a reference that complies to the Switch or EthernetInterface schema.",
+                    "readonly": true
+                },
                 "Tagged": {
                     "description": "This indicates if VLAN is tagged (as defined in IEEE 802.1Q).",
                     "longDescription": "This indicates if VLAN is tagged (as defined in IEEE 802.1Q).",

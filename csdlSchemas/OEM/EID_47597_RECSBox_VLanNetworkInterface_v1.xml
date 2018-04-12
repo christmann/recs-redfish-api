@@ -27,6 +27,12 @@
 					<Annotation Term="OData.Description" String="This indicates if VLAN is tagged (as defined in IEEE 802.1Q)."/>
 					<Annotation Term="OData.LongDescription" String="This indicates if VLAN is tagged (as defined in IEEE 802.1Q)." />
 				</Property>
+				<NavigationProperty Name="Provider" Type="Resource.Item" Nullable="false">
+					<Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+					<Annotation Term="OData.Description" String="The provider of this VLAN. This can either be a Port of an (Ethernet-)Switch or a EthernetInterface."/>
+					<Annotation Term="OData.LongDescription" String="This object shall only contain a reference that complies to the Switch or EthernetInterface schema."/>
+					<Annotation Term="OData.AutoExpandReferences"/>
+				</NavigationProperty>
 			</ComplexType>
 
 		</Schema>
