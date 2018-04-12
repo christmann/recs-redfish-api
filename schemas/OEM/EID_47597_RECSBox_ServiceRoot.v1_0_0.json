@@ -50,12 +50,6 @@
                     "description": "This is a link to a collection of Ethernet- and PCIeSwitches.",
                     "longDescription": "This object shall only contain a reference to a collection of resources that comply to the Switch schema.",
                     "readonly": true
-                },
-                "VLANs": {
-                    "$ref": "http://redfish.dmtf.org/schemas/v1/VLanNetworkInterfaceCollection.json#/definitions/VLanNetworkInterfaceCollection",
-                    "description": "This is a link to a collection of VLanNetworkInterfaces.",
-                    "longDescription": "This object shall only contain a reference to a collection of resources that comply to the VLanNetworkInterface schema.",
-                    "readonly": true
                 }
             },
             "type": "object"
