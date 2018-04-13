@@ -29,9 +29,9 @@
                     "units": "Mbit/s"
                 },
                 "Provider": {
-                    "$ref": "http://redfish.dmtf.org/schemas/v1/ComputerSystem.json#/definitions/ComputerSystem",
-                    "description": "The ComputerSystem providing this Interface.",
-                    "longDescription": "This object shall only contain a reference that complies to the ComputerSystem schema.",
+                    "$ref": "http://redfish.dmtf.org/schemas/v1/odata.v4_0_1.json#/definitions/idRef",
+                    "description": "The provider of this EthernetInterface. This can either be a Port of a ComputerSystem or a PCIeFunction.",
+                    "longDescription": "This object shall only contain a reference that complies to the ComputerSystem or PCIeFunction schema.",
                     "readonly": true
                 }
             },
