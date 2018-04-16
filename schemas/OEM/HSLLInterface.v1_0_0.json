@@ -30,12 +30,6 @@
                 "@odata.type": {
                     "$ref": "http://redfish.dmtf.org/schemas/v1/odata.v4_0_1.json#/definitions/type"
                 },
-                "Connections": {
-                    "$ref": "HSLLConnectionCollection_v1.xml/HSLLConnectionCollection.json#/definitions/HSLLConnectionCollection",
-                    "description": "This is a link to a collection of connections that use this interface.",
-                    "longDescription": "This object shall only contain a reference to a collection of resources that comply to the HSLLConnection schema.",
-                    "readonly": false
-                },
                 "Description": {
                     "anyOf": [
                         {
@@ -146,6 +140,18 @@
                 }
             },
             "properties": {
+                "ComposedNodes": {
+                    "description": "An array of references to ComposedNodes that use this interface.",
+                    "items": {
+                        "$ref": "ComposedNode_v1.xml/ComposedNode.json#/definitions/ComposedNode"
+                    },
+                    "longDescription": "This object shall only contain references to resources that comply to the ComposedNode schema.",
+                    "readonly": false,
+                    "type": "array"
+                },
+                "ComposedNodes@odata.count": {
+                    "$ref": "http://redfish.dmtf.org/schemas/v1/odata.v4_0_1.json#/definitions/count"
+                },
                 "Oem": {
                     "$ref": "http://redfish.dmtf.org/schemas/v1/Resource.json#/definitions/Oem",
                     "description": "Oem extension object.",
