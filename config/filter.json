@@ -207,7 +207,8 @@
 	"HSLLInterface": {
 		"HSLLInterface": {
 			"SpeedGBps": true,
-			"Width": true
+			"Width": true,
+			"Status": true
 		}
 	},
 	"PCIeDevice": {
