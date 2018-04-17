@@ -84,9 +84,6 @@ This is the schema definition for the Schema File locator resource.
 <tr><td>Location [ {</td><td>array[object]</td><td></td><td>GET</td><td>read-write</td><td>Location information for this schema file.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;Language</td><td>string</td><td></td><td></td><td>read-only</td><td>The language code for the file the schema is in.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;Uri</td><td>string</td><td></td><td></td><td>read-only</td><td>Link to locally available URI for schema.<br />Format: uri</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;ArchiveUri</td><td>string</td><td></td><td></td><td>read-only</td><td>If the schema is hosted on the service in an archive file, this is the link to the archive file.<br />Format: uri</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;PublicationUri</td><td>string</td><td></td><td></td><td>read-only</td><td>Link to publicly available (canonical) URI for schema.<br />Format: uri</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;ArchiveFile</td><td>string</td><td></td><td></td><td>read-only</td><td>If the schema is hosted on the service in an archive file, this is the name of the file within the archive.</td></tr>
 <tr><td>} ]</td><td></td><td></td><td></td><td></td><td></td></tr>
 <tr><td>Actions {</td><td>object</td><td></td><td></td><td>read-write</td><td>The available actions for this resource.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;Oem { }</td><td>object</td><td></td><td></td><td>read-write</td><td>The available OEM specific actions for this resource.</td></tr>
@@ -127,13 +124,7 @@ Content-Type: application/json
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Language": "string",
 <br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Uri": "uri",
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"ArchiveUri": "uri",
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"PublicationUri": "uri",
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"ArchiveFile": "string"
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Uri": "uri"
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;}]
 <br />

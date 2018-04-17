@@ -211,6 +211,13 @@
 			"Status": true
 		}
 	},
+	"JsonSchemaFile": {
+		"Location": {
+			"ArchiveUri": true,
+			"PublicationUri": true,
+			"ArchiveFile": true
+		}
+	},
 	"PCIeDevice": {
 		"PCIeDevice": {
 			"AssetTag": true,
