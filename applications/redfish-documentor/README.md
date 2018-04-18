@@ -23,9 +23,26 @@ This parameter points to the folder where the HTML documentation files will be g
 
 #### --oem
 
-This parameter accepts a comma-separared list of prefixes to identify OEM extension namespaces.
+This optional parameter accepts a comma-separared list of prefixes to identify OEM extension namespaces.
 
 #### --filter
 
-This parameter points to a filter file, which specifies the properties to be ignored during the documentation generation. It has to be a valid JSON file. An example can be seen in the **config** folder.  
+This optional parameter points to a filter file, which specifies the properties to be ignored during the documentation generation. It has to be a valid JSON file. An example can be seen in the **config** folder.  
 Note: Setting the value __true__ for a property within that filter file will completely ignore the corresponding property, whereas properties with the value __false__ will be documented but greyed out in the documentation.
+
+#### --operations
+
+This optional parameter points to a operations file, which specifies the available operations (other than GET) per defined Resource. If not specified, only GET operations will be available.
+
+#### --schema
+
+This optional parameter points to the folder where the used schema files will be copied to. If not specified, no schema files will be copied.
+
+#### --generatecode
+
+This optional parameter points to the base folder where the java files will be generated. This folder will be cleared automatically before new code is generated. If not specified, no code is generated.
+
+#### --basepackage
+
+This optional parameter specifies the name of the base java package for the generated java classes. This parameter has to be set, if 'generatecode' is set.
+
