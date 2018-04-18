@@ -32,7 +32,18 @@
 	<edmx:DataServices>
 
 		<Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="EID_47597_RECSBox_ServiceRoot.v1_0_0">
-			
+
+			<EntityContainer Name="ServiceContainer">
+				<Singleton Name="Service" Type="ServiceRoot.ServiceRoot"/>
+				<Singleton Name="Systems" Type="ComputerSystemCollection.ComputerSystemCollection"/>
+				<Singleton Name="Chassis" Type="ChassisCollection.ChassisCollection"/>
+				<Singleton Name="JsonSchemas" Type="JsonSchemaFileCollection.JsonSchemaFileCollection"/>
+				<Singleton Name="Baseboards" Type="BaseboardCollection.BaseboardCollection"/>
+				<Singleton Name="ComposedNodes" Type="ComposedNodeCollection.ComposedNodeCollection"/>
+				<Singleton Name="PCIeDevices" Type="PCIeDeviceCollection.PCIeDeviceCollection"/>
+				<Singleton Name="Switches" Type="SwitchCollection.SwitchCollection"/>
+			</EntityContainer>
+
 			<ComplexType Name="ServiceRoot" BaseType="Resource.OemObject">
 				<Property Name="APIVersion" Type="Edm.String" Nullable="false">
 					<Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
