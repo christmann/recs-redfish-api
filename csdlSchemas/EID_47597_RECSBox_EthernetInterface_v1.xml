@@ -29,7 +29,7 @@
 					<Annotation Term="OData.AutoExpandReferences"/>
 				</NavigationProperty>
 				<Property Name="MaxSpeedMbps" Type="Edm.Int64">
-					<Annotation Term="OData.Permissions" EnumMember="OData.Permission/ReadWrite"/>
+					<Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
 					<Annotation Term="Measures.Unit" String="Mbit/s"/>
 					<Annotation Term="OData.Description" String="This is the maximum speed in Mbps of this interface."/>
 					<Annotation Term="OData.LongDescription" String="The value of this property shall be the nominal link speed of the interface in Mbps."/>

@@ -21,7 +21,7 @@
                 "MaxSpeedMbps": {
                     "description": "This is the maximum speed in Mbps of this interface.",
                     "longDescription": "The value of this property shall be the nominal link speed of the interface in Mbps.",
-                    "readonly": false,
+                    "readonly": true,
                     "type": [
                         "number",
                         "null"

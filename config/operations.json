@@ -13,23 +13,6 @@
 	"ComputerSystem": [
 		"PATCH"
 	],
-	"EthernetInterface": [
-		"PATCH"
-	],
-	"EthernetSwitchACL": [
-		"PATCH",
-		"DELETE"
-	],
-	"EthernetSwitchACLCollection": [
-		"POST"
-	],
-	"EthernetSwitchACLRule": [
-		"PATCH",
-		"DELETE"
-	],
-	"EthernetSwitchACLRuleCollection": [
-		"POST"
-	],
 	"HSLLConnection": [
 		"DELETE"
 	],
