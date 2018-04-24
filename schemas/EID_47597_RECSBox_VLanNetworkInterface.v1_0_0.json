@@ -34,6 +34,9 @@
                     ]
                 }
             },
+            "requiredOnCreate": [
+                "Tagged"
+            ],
             "type": "object"
         }
     },

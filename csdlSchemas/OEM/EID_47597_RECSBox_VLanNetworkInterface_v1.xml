@@ -23,6 +23,7 @@
 			
 			<ComplexType Name="VLanNetworkInterface" BaseType="Resource.OemObject">
 				<Property Name="Tagged" Type="Edm.Boolean">
+					<Annotation Term="Redfish.RequiredOnCreate"/>
 					<Annotation Term="OData.Permissions" EnumMember="OData.Permission/ReadWrite"/>
 					<Annotation Term="OData.Description" String="This indicates if VLAN is tagged (as defined in IEEE 802.1Q)."/>
 					<Annotation Term="OData.LongDescription" String="This indicates if VLAN is tagged (as defined in IEEE 802.1Q)." />

@@ -89,6 +89,11 @@
                 "Id",
                 "Name"
             ],
+            "requiredOnCreate": [
+                "EndpointA",
+                "EndpointB",
+                "Width"
+            ],
             "type": "object"
         },
         "Links": {
