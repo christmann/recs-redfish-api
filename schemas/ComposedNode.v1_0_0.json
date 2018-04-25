@@ -40,7 +40,7 @@
             "parameters": {
                 "Connections": {
                     "items": {
-                        "$ref": "HSLLConnection_v1.xml/HSLLConnection.json#/definitions/HSLLConnection"
+                        "$ref": "ComposedNodeAssemblingParameter_v1.xml/ComposedNodeAssemblingParameter.v1_0_0.json#/definitions/Connection"
                     },
                     "type": "array"
                 },

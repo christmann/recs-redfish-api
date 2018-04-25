@@ -23,8 +23,8 @@
 	<edmx:Reference Uri="http://redfish.dmtf.org/schemas/v1/PortCollection_v1.xml">
 		<edmx:Include Namespace="PortCollection"/>
 	</edmx:Reference>
-	<edmx:Reference Uri="HSLLConnection_v1.xml">
-		<edmx:Include Namespace="HSLLConnection"/>
+	<edmx:Reference Uri="ComposedNodeAssemblingParameter_v1.xml">
+		<edmx:Include Namespace="ComposedNodeAssemblingParameter.v1_0_0"/>
 	</edmx:Reference>
 	<edmx:Reference Uri="HSLLConnectionCollection_v1.xml">
 		<edmx:Include Namespace="HSLLConnectionCollection"/>
@@ -50,7 +50,7 @@
 
 			<Action Name="Assemble" IsBound="true">
 				<Parameter Name="ComposedNode" Type="ComposedNode.v1_0_0.Actions"/>
-				<Parameter Name="Connections" Type="Collection(HSLLConnection.HSLLConnection)"/>
+				<Parameter Name="Connections" Type="Collection(ComposedNodeAssemblingParameter.v1_0_0.Connection)"/>
 				<Parameter Name="ResetNetworkSettings" Type="Edm.Boolean">
 					<Annotation Term="OData.Description" String="If set to true, all network settings within the composed node are reset."/>
 				</Parameter>

@@ -13,12 +13,6 @@
 	"ComputerSystem": [
 		"PATCH"
 	],
-	"HSLLConnection": [
-		"DELETE"
-	],
-	"HSLLConnectionCollection": [
-		"POST"
-	],
 	"VLanNetworkInterface": [
 		"PATCH",
 		"DELETE"

@@ -119,36 +119,11 @@ Content-Type: application/json
 <br />
 </div>
 <h3 id="post">POST</h3>
-<h4 id="request">Request</h4>
+This operation is not supported on this resource and will result in the following response:
+<br />
+<br />
 <div class="code">
-POST /redfish/v1/ComposedNodes/ComposedNode1/Connections
-<br />
-Content-Type: application/json
-<br />
-{
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;"EndpointA": {
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"@odata.id": "/redfish/v1/ComposedNodes/ComposedNode1/Connections/HSLLConnection1/EndpointA"
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;},
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;"EndpointB": {
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"@odata.id": "/redfish/v1/ComposedNodes/ComposedNode1/Connections/HSLLConnection1/EndpointB"
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;},
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;"Width": 0
-<br />
-}
-<br />
-</div>
-<h4 id="response">Response</h4>
-<div class="code">
-HTTP/1.1 201 Created
-<br />
-Location: http://{IP}:{PORT}/redfish/v1/ComposedNodes/ComposedNode1/Connections/HSLLConnection1
+HTTP/1.1 405 Method Not Allowed
 <br />
 </div>
 <h3 id="patch">PATCH</h3>
