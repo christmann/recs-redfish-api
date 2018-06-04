@@ -90,7 +90,7 @@
 					<Annotation Term="OData.LongDescription" String="This object shall only contain references to the resource that complies to the Switch schema."/>
 					<Annotation Term="OData.AutoExpandReferences"/>
 				</NavigationProperty>
-				<Property Name="BladeSlot" Type="Edm.Int64">
+				<Property Name="BladeSlot" Type="Edm.Int64" Nullable="false">
 					<Annotation Term="OData.Permissions" EnumMember="OData.Permissions/Read"/>
 					<Annotation Term="OData.Description" String="The one-based position of the blade slot containing this Baseboard within the Chassis."/>
 					<Annotation Term="OData.LongDescription" String="The value of this property shall contain the zero-based numeric position of the blade slot containing this Baseboard within the Chassis."/>

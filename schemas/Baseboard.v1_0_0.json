@@ -77,10 +77,7 @@
                     "longDescription": "The value of this property shall contain the zero-based numeric position of the blade slot containing this Baseboard within the Chassis.",
                     "minimum": 1,
                     "readonly": true,
-                    "type": [
-                        "number",
-                        "null"
-                    ]
+                    "type": "number"
                 },
                 "Chassis": {
                     "$ref": "http://redfish.dmtf.org/schemas/v1/Chassis.json#/definitions/Chassis",
