@@ -126,6 +126,17 @@
                     "longDescription": "This object shall only contain a reference to a resource that complies to the ComposedNode schema.",
                     "readonly": true
                 },
+                "ComposedNodeState": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/definitions/ComposedNodeState"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "readonly": true
+                },
                 "Connections": {
                     "$ref": "HSLLConnectionCollection_v1.xml/HSLLConnectionCollection.json#/definitions/HSLLConnectionCollection",
                     "description": "This is a link to a collection of HSLLConnections that connect the resources within this composition.",
@@ -195,6 +206,23 @@
                 "Name"
             ],
             "type": "object"
+        },
+        "ComposedNodeState": {
+            "enum": [
+                "Allocating",
+                "Allocated",
+                "Assembling",
+                "Failed",
+                "Assembled"
+            ],
+            "enumDescriptions": {
+                "Allocated": "Node resources has been allocated, but assembly not started yet. After ComposedNode.Assemble action state will progress to Assembling.",
+                "Allocating": "Allocating resources for node is in progress. Next state can be Allocated or Failed.",
+                "Assembled": "Node successfully assembled.",
+                "Assembling": "Assembly process initiated, but not finished yet. When assembly is done it will change into  Assembled.",
+                "Failed": "Allocation or assembly process failed, or in runtime one of composing components was removed or transitioned in error state."
+            },
+            "type": "string"
         },
         "Links": {
             "additionalProperties": false,

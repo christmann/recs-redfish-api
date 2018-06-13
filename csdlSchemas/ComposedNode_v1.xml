@@ -68,6 +68,9 @@
 
 			<EntityType Name="ComposedNode" BaseType="ComposedNode.ComposedNode">
 				<Property Name="Status" Type="Resource.Status" />
+				<Property Name="ComposedNodeState" Type="ComposedNode.v1_0_0.ComposedNodeState">
+					<Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+				</Property>
 				<Property Name="Links" Type="ComposedNode.v1_0_0.Links" Nullable="false">
 					<Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
 					<Annotation Term="OData.Description" String="The links object contains the links to other resources that are related to this resource."/>
@@ -118,7 +121,25 @@
 
 			<ComplexType Name="OemActions">
 				<Annotation Term="OData.AdditionalProperties" Bool="true"/>
-			</ComplexType>
+			</ComplexType>      
+
+			<EnumType Name="ComposedNodeState">
+				<Member Name="Allocating">
+				  <Annotation Term="OData.Description" String="Allocating resources for node is in progress. Next state can be Allocated or Failed."/>
+				</Member>
+				<Member Name="Allocated">
+				  <Annotation Term="OData.Description" String="Node resources has been allocated, but assembly not started yet. After ComposedNode.Assemble action state will progress to Assembling."/>
+				</Member>
+				<Member Name="Assembling">
+				  <Annotation Term="OData.Description" String="Assembly process initiated, but not finished yet. When assembly is done it will change into  Assembled."/>
+				</Member>
+				<Member Name="Failed">
+				  <Annotation Term="OData.Description" String="Allocation or assembly process failed, or in runtime one of composing components was removed or transitioned in error state."/>
+				</Member>
+				<Member Name="Assembled">
+				  <Annotation Term="OData.Description" String="Node successfully assembled."/>
+				</Member>
+			</EnumType>
 
 		</Schema>
 

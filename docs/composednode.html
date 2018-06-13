@@ -96,6 +96,13 @@ This is the schema definition for the ComposedNode resource.
 <tr><td>ComposedIn {</td><td>reference(<a href="composednode.html#composednode">ComposedNode</a>)</td><td>Yes</td><td></td><td>read-only</td><td>This is a link to the ComposedNode, this ComposedNode is composed in.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;@odata.id</td><td>string</td><td></td><td></td><td>read-only</td><td>The unique identifier for a resource.<br />Format: uri</td></tr>
 <tr><td>}</td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>ComposedNodeState</td><td>string</td><td>Yes</td><td></td><td>read-only</td><td>Possible Values:<ul>
+<li>Allocating: Allocating resources for node is in progress. Next state can be Allocated or Failed.</li>
+<li>Allocated: Node resources has been allocated, but assembly not started yet. After ComposedNode.Assemble action state will progress to Assembling.</li>
+<li>Assembling: Assembly process initiated, but not finished yet. When assembly is done it will change into  Assembled.</li>
+<li>Failed: Allocation or assembly process failed, or in runtime one of composing components was removed or transitioned in error state.</li>
+<li>Assembled: Node successfully assembled.</li>
+</ul></td></tr>
 <tr><td>Connections {</td><td>reference(<a href="hsllconnectioncollection.html#hsllconnectioncollection">HSLLConnectionCollection</a>)</td><td></td><td></td><td>read-only</td><td>This is a link to a collection of HSLLConnections that connect the resources within this composition.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;@odata.id</td><td>string</td><td></td><td></td><td>read-only</td><td>The unique identifier for a resource.<br />Format: uri</td></tr>
 <tr><td>}</td><td></td><td></td><td></td><td></td><td></td></tr>
@@ -305,6 +312,8 @@ Content-Type: application/json
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"@odata.id": "/redfish/v1/ComposedNodes/ComposedNode1"
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;},
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;"ComposedNodeState": "Allocating",
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;"Connections": {
 <br />
