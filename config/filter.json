@@ -254,17 +254,7 @@
 			"ConnectedSwitches": true
 		},
 		"Actions": {
-			"#Port.Reset": {
-				"ResetType": [
-					"On",
-					"ForceOff",
-					"GracefulShutdown",
-					"GracefulRestart",
-					"ForceRestart",
-					"ForceOn",
-					"PushPowerButton"
-				]
-			}
+			"#Port.Reset": true
 		}
 	},
 	"Processor": {
@@ -309,17 +299,7 @@
 			"ManagedBy": true
 		},
 		"Actions": {
-			"#Switch.Reset": {
-				"ResetType": [
-					"On",
-					"ForceOff",
-					"GracefulShutdown",
-					"GracefulRestart",
-					"ForceRestart",
-					"ForceOn",
-					"PushPowerButton"
-				]
-			}
+			"#Switch.Reset": true
 		}
 	}
 }
