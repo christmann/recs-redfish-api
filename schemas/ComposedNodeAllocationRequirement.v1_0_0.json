@@ -140,17 +140,6 @@
                 }
             },
             "properties": {
-                "Baseboard": {
-                    "anyOf": [
-                        {
-                            "$ref": "Baseboard_v1.xml/Baseboard.json#/definitions/Baseboard"
-                        },
-                        {
-                            "type": "null"
-                        }
-                    ],
-                    "description": "The Baseboard where applicable resources are located"
-                },
                 "PrimaryVLAN": {
                     "anyOf": [
                         {
@@ -223,17 +212,6 @@
                         "null"
                     ]
                 },
-                "Baseboard": {
-                    "anyOf": [
-                        {
-                            "$ref": "Baseboard_v1.xml/Baseboard.json#/definitions/Baseboard"
-                        },
-                        {
-                            "type": "null"
-                        }
-                    ],
-                    "description": "The Baseboard where applicable resources are located"
-                },
                 "MaxSpeedGbps": {
                     "description": "The minimal value of the maximum speed of the HSLL interface",
                     "type": [
@@ -281,17 +259,6 @@
                 }
             },
             "properties": {
-                "Baseboard": {
-                    "anyOf": [
-                        {
-                            "$ref": "Baseboard_v1.xml/Baseboard.json#/definitions/Baseboard"
-                        },
-                        {
-                            "type": "null"
-                        }
-                    ],
-                    "description": "The Baseboard where applicable resources are located"
-                },
                 "CapacityBytes": {
                     "description": "The minimum capacity of the local storage",
                     "type": [
@@ -332,17 +299,6 @@
                 }
             },
             "properties": {
-                "Baseboard": {
-                    "anyOf": [
-                        {
-                            "$ref": "Baseboard_v1.xml/Baseboard.json#/definitions/Baseboard"
-                        },
-                        {
-                            "type": "null"
-                        }
-                    ],
-                    "description": "The Baseboard where applicable resources are located"
-                },
                 "CapacityMiB": {
                     "description": "The minimum capacity of the memory",
                     "type": [
@@ -602,17 +558,6 @@
                         "null"
                     ],
                     "units": "MHz"
-                },
-                "Baseboard": {
-                    "anyOf": [
-                        {
-                            "$ref": "Baseboard_v1.xml/Baseboard.json#/definitions/Baseboard"
-                        },
-                        {
-                            "type": "null"
-                        }
-                    ],
-                    "description": "The Baseboard where applicable resources are located"
                 },
                 "InstructionSet": {
                     "anyOf": [
