@@ -18,6 +18,9 @@
 	<edmx:Reference Uri="Baseboard_v1.xml">
 		<edmx:Include Namespace="Baseboard"/>
 	</edmx:Reference>
+	<edmx:Reference Uri="http://redfish.dmtf.org/schemas/v1/ComputerSystem_v1.xml">
+		<edmx:Include Namespace="ComputerSystem"/>
+	</edmx:Reference>
 	<edmx:Reference Uri="http://redfish.dmtf.org/schemas/v1/Processor_v1.xml">
 		<edmx:Include Namespace="Processor"/>
 		<edmx:Include Namespace="Processor.v1_0_0"/>
@@ -67,9 +70,9 @@
 				<Property Name="TotalProcessorCoreCount" Type="Edm.Int64">
 					<Annotation Term="OData.Description" String="The total amount of processor cores for this system." />
 				</Property>
-				<NavigationProperty Name="Resource" Type="Resource.Item">
-					<Annotation Term="OData.Description" String="A reference to a concrete node. This can either be a ComputerSystem, a PCIeDevice, a Port or a ComposedNode."/>
-					<Annotation Term="OData.LongDescription" String="This object shall only contain a reference that complies to the ComputerSystem, PCIeDevice, Port or ComposedNode schema."/>
+				<NavigationProperty Name="Resource" Type="ComputerSystem.ComputerSystem">
+					<Annotation Term="OData.Description" String="The URI of a ComputerSystem resource. If this property is set, all other system requirements are ignored."/>
+					<Annotation Term="OData.LongDescription" String="This object shall only contain a reference that complies to the ComputerSystem schema."/>
 					<Annotation Term="OData.AutoExpandReferences"/>
 				</NavigationProperty>
 				<NavigationProperty Name="Baseboard" Type="Baseboard.Baseboard">
@@ -94,7 +97,8 @@
 					<Annotation Term="OData.Description" String="The requirements for one or more HSLL interfaces" />
 				</Property>
 				<NavigationProperty Name="Resource" Type="PCIeDevice.PCIeDevice">
-					<Annotation Term="OData.Description" String="The URI of a concrete resource" />
+					<Annotation Term="OData.Description" String="The URI of a PCIeDevice resource. If this property is set, all other PCIe device requirements are ignored."/>
+					<Annotation Term="OData.LongDescription" String="This object shall only contain a reference that complies to the PCIeDevice schema."/>
 					<Annotation Term="OData.AutoExpandReferences"/>
 				</NavigationProperty>
 				<NavigationProperty Name="Baseboard" Type="Baseboard.Baseboard">
@@ -105,7 +109,7 @@
 		
 			<ComplexType Name="Port">
 				<Annotation Term="OData.AdditionalProperties" Bool="false"/>
-				<Annotation Term="OData.Description" String="The requirements for a PCIeSwitch port" />
+				<Annotation Term="OData.Description" String="The requirements for a port of a PCIeSwitch or a ComposedNode" />
 				<Property Name="MaxSpeedGbps" Type="Edm.Int32">
 					<Annotation Term="OData.Description" String="The minimal value of the maximum speed of the port" />
 					<Annotation Term="Measures.Unit" String="GBytes/s"/>
@@ -123,7 +127,8 @@
 					<Annotation Term="OData.Description" String="The requirements for one or more HSLL interfaces" />
 				</Property>
 				<NavigationProperty Name="Resource" Type="Port.Port">
-					<Annotation Term="OData.Description" String="The URI of a concrete resource" />
+					<Annotation Term="OData.Description" String="The URI of a Port resource, belonging to a PCIeSwitch or a ComposedNode. If this property is set, all other port requirements are ignored."/>
+					<Annotation Term="OData.LongDescription" String="This object shall only contain a reference that complies to the Port schema."/>
 					<Annotation Term="OData.AutoExpandReferences"/>
 				</NavigationProperty>
 			</ComplexType>
@@ -132,7 +137,8 @@
 				<Annotation Term="OData.AdditionalProperties" Bool="false"/>
 				<Annotation Term="OData.Description" String="The requirements for a ComposedNode" />
 				<NavigationProperty Name="Resource" Type="ComposedNode.ComposedNode">
-					<Annotation Term="OData.Description" String="The URI of a concrete ComposedNode" />
+					<Annotation Term="OData.Description" String="The URI of a ComposedNode resource. If this property is set, all other ComposedNode requirements are ignored."/>
+					<Annotation Term="OData.LongDescription" String="This object shall only contain a reference that complies to the ComposedNode schema."/>
 					<Annotation Term="OData.AutoExpandReferences"/>
 				</NavigationProperty>
 			</ComplexType>
@@ -151,7 +157,8 @@
 					<Annotation Term="OData.Description" String="The minimal value of the maximum lanes of the HSLL interface" />
 				</Property>
 				<NavigationProperty Name="Resource" Type="HSLLInterface.HSLLInterface">
-					<Annotation Term="OData.Description" String="The URI of a concrete resource" />
+					<Annotation Term="OData.Description" String="The URI of a HSLLInterface resource. If this property is set, all other HSLL interface requirements are ignored."/>
+					<Annotation Term="OData.LongDescription" String="This object shall only contain a reference that complies to the HSLLInterface schema."/>
 					<Annotation Term="OData.AutoExpandReferences"/>
 				</NavigationProperty>
 				<NavigationProperty Name="Baseboard" Type="Baseboard.Baseboard">
@@ -183,7 +190,8 @@
 					<Annotation Term="OData.Description" String="The instruction set of the processor" />
 				</Property>
 				<NavigationProperty Name="Resource" Type="Processor.Processor">
-					<Annotation Term="OData.Description" String="The URI of a concrete resource" />
+					<Annotation Term="OData.Description" String="The URI of a Processor resource. If this property is set, all other processor requirements are ignored."/>
+					<Annotation Term="OData.LongDescription" String="This object shall only contain a reference that complies to the Processor schema."/>
 					<Annotation Term="OData.AutoExpandReferences"/>
 				</NavigationProperty>
 				<NavigationProperty Name="Baseboard" Type="Baseboard.Baseboard">
@@ -214,7 +222,8 @@
 					<Annotation Term="Measures.Unit" String="bits"/>
 				</Property>
 				<NavigationProperty Name="Resource" Type="Memory.Memory">
-					<Annotation Term="OData.Description" String="The URI of a concrete resource" />
+					<Annotation Term="OData.Description" String="The URI of a Memory resource. If this property is set, all other memory requirements are ignored."/>
+					<Annotation Term="OData.LongDescription" String="This object shall only contain a reference that complies to the Memory schema."/>
 					<Annotation Term="OData.AutoExpandReferences"/>
 				</NavigationProperty>
 				<NavigationProperty Name="Baseboard" Type="Baseboard.Baseboard">
@@ -231,7 +240,8 @@
 					<Annotation Term="Measures.Unit" String="By"/>
 				</Property>
 				<NavigationProperty Name="Resource" Type="SimpleStorage.SimpleStorage">
-					<Annotation Term="OData.Description" String="The URI of a concrete resource" />
+					<Annotation Term="OData.Description" String="The URI of a SimpleStorage resource. If this property is set, all other local storage requirements are ignored."/>
+					<Annotation Term="OData.LongDescription" String="This object shall only contain a reference that complies to the SimpleStorage schema."/>
 					<Annotation Term="OData.AutoExpandReferences"/>
 				</NavigationProperty>
 				<NavigationProperty Name="Baseboard" Type="Baseboard.Baseboard">
@@ -254,7 +264,8 @@
 					<Annotation Term="OData.Description" String="The VLANs of the ethernet interface" />
 				</Property>
 				<NavigationProperty Name="Resource" Type="EthernetInterface.EthernetInterface">
-					<Annotation Term="OData.Description" String="The URI of a concrete resource" />
+					<Annotation Term="OData.Description" String="The URI of a EthernetInterface resource. If this property is set, all other ethernet interface requirements are ignored."/>
+					<Annotation Term="OData.LongDescription" String="This object shall only contain a reference that complies to the EthernetInterface schema."/>
 					<Annotation Term="OData.AutoExpandReferences"/>
 				</NavigationProperty>
 				<NavigationProperty Name="Baseboard" Type="Baseboard.Baseboard">

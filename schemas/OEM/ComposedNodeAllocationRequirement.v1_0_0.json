@@ -28,7 +28,8 @@
                             "type": "null"
                         }
                     ],
-                    "description": "The URI of a concrete ComposedNode"
+                    "description": "The URI of a ComposedNode resource. If this property is set, all other ComposedNode requirements are ignored.",
+                    "longDescription": "This object shall only contain a reference that complies to the ComposedNode schema."
                 }
             },
             "type": "object"
@@ -98,7 +99,8 @@
                             "type": "null"
                         }
                     ],
-                    "description": "The URI of a concrete resource"
+                    "description": "The URI of a PCIeDevice resource. If this property is set, all other PCIe device requirements are ignored.",
+                    "longDescription": "This object shall only contain a reference that complies to the PCIeDevice schema."
                 },
                 "SerialNumber": {
                     "description": "The exact serial number of the PCIe device",
@@ -169,7 +171,8 @@
                             "type": "null"
                         }
                     ],
-                    "description": "The URI of a concrete resource"
+                    "description": "The URI of a EthernetInterface resource. If this property is set, all other ethernet interface requirements are ignored.",
+                    "longDescription": "This object shall only contain a reference that complies to the EthernetInterface schema."
                 },
                 "SpeedMbps": {
                     "description": "The minimum speed of the ethernet interface",
@@ -255,7 +258,8 @@
                             "type": "null"
                         }
                     ],
-                    "description": "The URI of a concrete resource"
+                    "description": "The URI of a HSLLInterface resource. If this property is set, all other HSLL interface requirements are ignored.",
+                    "longDescription": "This object shall only contain a reference that complies to the HSLLInterface schema."
                 }
             },
             "type": "object"
@@ -305,7 +309,8 @@
                             "type": "null"
                         }
                     ],
-                    "description": "The URI of a concrete resource"
+                    "description": "The URI of a SimpleStorage resource. If this property is set, all other local storage requirements are ignored.",
+                    "longDescription": "This object shall only contain a reference that complies to the SimpleStorage schema."
                 }
             },
             "type": "object"
@@ -381,7 +386,8 @@
                             "type": "null"
                         }
                     ],
-                    "description": "The URI of a concrete resource"
+                    "description": "The URI of a Memory resource. If this property is set, all other memory requirements are ignored.",
+                    "longDescription": "This object shall only contain a reference that complies to the Memory schema."
                 },
                 "SpeedMHz": {
                     "description": "The minimum speed of the memory",
@@ -492,7 +498,7 @@
         },
         "Port": {
             "additionalProperties": false,
-            "description": "The requirements for a PCIeSwitch port",
+            "description": "The requirements for a port of a PCIeSwitch or a ComposedNode",
             "patternProperties": {
                 "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message|Privileges)\\.[a-zA-Z_][a-zA-Z0-9_.]+$": {
                     "description": "This property shall specify a valid odata or Redfish property.",
@@ -566,7 +572,8 @@
                             "type": "null"
                         }
                     ],
-                    "description": "The URI of a concrete resource"
+                    "description": "The URI of a Port resource, belonging to a PCIeSwitch or a ComposedNode. If this property is set, all other port requirements are ignored.",
+                    "longDescription": "This object shall only contain a reference that complies to the Port schema."
                 }
             },
             "type": "object"
@@ -656,7 +663,8 @@
                             "type": "null"
                         }
                     ],
-                    "description": "The URI of a concrete resource"
+                    "description": "The URI of a Processor resource. If this property is set, all other processor requirements are ignored.",
+                    "longDescription": "This object shall only contain a reference that complies to the Processor schema."
                 },
                 "TotalCores": {
                     "description": "The minimum number of cores of the processor",
@@ -741,14 +749,14 @@
                 "Resource": {
                     "anyOf": [
                         {
-                            "$ref": "http://redfish.dmtf.org/schemas/v1/odata.v4_0_1.json#/definitions/idRef"
+                            "$ref": "http://redfish.dmtf.org/schemas/v1/ComputerSystem.json#/definitions/ComputerSystem"
                         },
                         {
                             "type": "null"
                         }
                     ],
-                    "description": "A reference to a concrete node. This can either be a ComputerSystem, a PCIeDevice, a Port or a ComposedNode.",
-                    "longDescription": "This object shall only contain a reference that complies to the ComputerSystem, PCIeDevice, Port or ComposedNode schema."
+                    "description": "The URI of a ComputerSystem resource. If this property is set, all other system requirements are ignored.",
+                    "longDescription": "This object shall only contain a reference that complies to the ComputerSystem schema."
                 },
                 "TotalProcessorCoreCount": {
                     "description": "The total amount of processor cores for this system.",
