@@ -138,6 +138,9 @@
 		}
 	},
 	"ComposedNode": {
+		"ComposedNode": {
+			"Chassis": true
+		},
 		"Actions": {
 			"#ComposedNode.Reset": {
 				"ResetType": [
