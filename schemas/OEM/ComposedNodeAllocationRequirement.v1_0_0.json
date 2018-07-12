@@ -455,13 +455,6 @@
                 }
             },
             "properties": {
-                "AvailableWidth": {
-                    "description": "The number of unused lanes of the port",
-                    "type": [
-                        "number",
-                        "null"
-                    ]
-                },
                 "HSLLInterface": {
                     "anyOf": [
                         {
@@ -472,21 +465,6 @@
                         }
                     ],
                     "description": "The requirements for a HSLL interface"
-                },
-                "MaxSpeedGbps": {
-                    "description": "The minimal value of the maximum speed of the port",
-                    "type": [
-                        "number",
-                        "null"
-                    ],
-                    "units": "GBytes/s"
-                },
-                "MaxWidth": {
-                    "description": "The minimal value of the maximum lanes of the port",
-                    "type": [
-                        "number",
-                        "null"
-                    ]
                 },
                 "PCIeFunctions": {
                     "description": "The minimal required set of PCIe functions exposed by the PCIeSwitch port",

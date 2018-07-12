@@ -110,16 +110,6 @@
 			<ComplexType Name="Port">
 				<Annotation Term="OData.AdditionalProperties" Bool="false"/>
 				<Annotation Term="OData.Description" String="The requirements for a port of a PCIeSwitch or a ComposedNode" />
-				<Property Name="MaxSpeedGbps" Type="Edm.Int32">
-					<Annotation Term="OData.Description" String="The minimal value of the maximum speed of the port" />
-					<Annotation Term="Measures.Unit" String="GBytes/s"/>
-				</Property>
-				<Property Name="AvailableWidth" Type="Edm.Int32">
-					<Annotation Term="OData.Description" String="The number of unused lanes of the port" />
-				</Property>
-				<Property Name="MaxWidth" Type="Edm.Int32">
-					<Annotation Term="OData.Description" String="The minimal value of the maximum lanes of the port" />
-				</Property>
 				<Property Name="PCIeFunctions" Type="Collection(ComposedNodeAllocationRequirement.v1_0_0.PCIeFunction)">
 					<Annotation Term="OData.Description" String="The minimal required set of PCIe functions exposed by the PCIeSwitch port" />
 				</Property>
