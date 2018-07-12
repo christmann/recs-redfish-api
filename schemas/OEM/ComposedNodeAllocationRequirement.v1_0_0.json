@@ -62,19 +62,16 @@
                     ],
                     "description": "The Baseboard where applicable resources are located"
                 },
-                "HSLLInterfaces": {
-                    "description": "The requirements for one or more HSLL interfaces",
-                    "items": {
-                        "anyOf": [
-                            {
-                                "$ref": "#/definitions/HSLLInterface"
-                            },
-                            {
-                                "type": "null"
-                            }
-                        ]
-                    },
-                    "type": "array"
+                "HSLLInterface": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/definitions/HSLLInterface"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "The requirements for a HSLL interface"
                 },
                 "PCIeFunctions": {
                     "description": "The minimal required set of PCIe functions exposed by the PCIe device",
@@ -476,19 +473,16 @@
                         "null"
                     ]
                 },
-                "HSLLInterfaces": {
-                    "description": "The requirements for one or more HSLL interfaces",
-                    "items": {
-                        "anyOf": [
-                            {
-                                "$ref": "#/definitions/HSLLInterface"
-                            },
-                            {
-                                "type": "null"
-                            }
-                        ]
-                    },
-                    "type": "array"
+                "HSLLInterface": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/definitions/HSLLInterface"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "The requirements for a HSLL interface"
                 },
                 "MaxSpeedGbps": {
                     "description": "The minimal value of the maximum speed of the port",
@@ -663,19 +657,16 @@
                     },
                     "type": "array"
                 },
-                "HSLLInterfaces": {
-                    "description": "The requirements for one or more HSLL interfaces",
-                    "items": {
-                        "anyOf": [
-                            {
-                                "$ref": "#/definitions/HSLLInterface"
-                            },
-                            {
-                                "type": "null"
-                            }
-                        ]
-                    },
-                    "type": "array"
+                "HSLLInterface": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/definitions/HSLLInterface"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "The requirements for a HSLL interface"
                 },
                 "Processors": {
                     "description": "The requirements for one or more processors",

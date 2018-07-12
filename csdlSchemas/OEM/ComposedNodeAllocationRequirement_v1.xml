@@ -64,8 +64,8 @@
 				<Property Name="EthernetInterfaces" Type="Collection(ComposedNodeAllocationRequirement.v1_0_0.EthernetInterface)">
 					<Annotation Term="OData.Description" String="The requirements for one or more ethernet interfaces" />
 				</Property>
-				<Property Name="HSLLInterfaces" Type="Collection(ComposedNodeAllocationRequirement.v1_0_0.HSLLInterface)">
-					<Annotation Term="OData.Description" String="The requirements for one or more HSLL interfaces" />
+				<Property Name="HSLLInterface" Type="ComposedNodeAllocationRequirement.v1_0_0.HSLLInterface">
+					<Annotation Term="OData.Description" String="The requirements for a HSLL interface" />
 				</Property>
 				<Property Name="TotalProcessorCoreCount" Type="Edm.Int64">
 					<Annotation Term="OData.Description" String="The total amount of processor cores for this system." />
@@ -93,8 +93,8 @@
 				<Property Name="PCIeFunctions" Type="Collection(ComposedNodeAllocationRequirement.v1_0_0.PCIeFunction)">
 					<Annotation Term="OData.Description" String="The minimal required set of PCIe functions exposed by the PCIe device" />
 				</Property>
-				<Property Name="HSLLInterfaces" Type="Collection(ComposedNodeAllocationRequirement.v1_0_0.HSLLInterface)">
-					<Annotation Term="OData.Description" String="The requirements for one or more HSLL interfaces" />
+				<Property Name="HSLLInterface" Type="ComposedNodeAllocationRequirement.v1_0_0.HSLLInterface">
+					<Annotation Term="OData.Description" String="The requirements for a HSLL interface" />
 				</Property>
 				<NavigationProperty Name="Resource" Type="PCIeDevice.PCIeDevice">
 					<Annotation Term="OData.Description" String="The URI of a PCIeDevice resource. If this property is set, all other PCIe device requirements are ignored."/>
@@ -123,8 +123,8 @@
 				<Property Name="PCIeFunctions" Type="Collection(ComposedNodeAllocationRequirement.v1_0_0.PCIeFunction)">
 					<Annotation Term="OData.Description" String="The minimal required set of PCIe functions exposed by the PCIeSwitch port" />
 				</Property>
-				<Property Name="HSLLInterfaces" Type="Collection(ComposedNodeAllocationRequirement.v1_0_0.HSLLInterface)">
-					<Annotation Term="OData.Description" String="The requirements for one or more HSLL interfaces" />
+				<Property Name="HSLLInterface" Type="ComposedNodeAllocationRequirement.v1_0_0.HSLLInterface">
+					<Annotation Term="OData.Description" String="The requirements for a HSLL interface" />
 				</Property>
 				<NavigationProperty Name="Resource" Type="Port.Port">
 					<Annotation Term="OData.Description" String="The URI of a Port resource, belonging to a PCIeSwitch or a ComposedNode. If this property is set, all other port requirements are ignored."/>
