@@ -16,6 +16,9 @@
 	<edmx:Reference Uri="http://redfish.dmtf.org/schemas/v1/Resource_v1.xml">
 		<edmx:Include Namespace="Resource"/>
 	</edmx:Reference>
+	<edmx:Reference Uri="http://redfish.dmtf.org/schemas/v1/Port_v1.xml">
+		<edmx:Include Namespace="Port"/>
+	</edmx:Reference>
 
 	<edmx:DataServices>
 
@@ -34,6 +37,12 @@
 					<Annotation Term="OData.Description" String="This is the maximum speed in Mbps of this interface."/>
 					<Annotation Term="OData.LongDescription" String="The value of this property shall be the nominal link speed of the interface in Mbps."/>
 				</Property>
+				<NavigationProperty Name="ConnectedPort" Type="Port.Port" Nullable="false">
+					<Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+					<Annotation Term="OData.Description" String="The Port of the EthernetSwitch this interface is connected to."/>
+					<Annotation Term="OData.LongDescription" String="This object shall only contain a reference that complies to the Port schema."/>
+					<Annotation Term="OData.AutoExpandReferences"/>
+				</NavigationProperty>
 			</ComplexType>
 
 		</Schema>

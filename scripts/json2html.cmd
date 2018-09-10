@@ -1,6 +1,6 @@
 @echo off
 
-SET JAVA_EXE=%ProgramFiles%\Java\jdk1.8.0_131\bin\java.exe
+SET JAVA_EXE=%ProgramFiles%\Java\jre\bin\java.exe
 
 SET PROJECT_DIR=..
 SET APPLICATION=%PROJECT_DIR%\applications\redfish-documentor\RedfishDocumentor.jar

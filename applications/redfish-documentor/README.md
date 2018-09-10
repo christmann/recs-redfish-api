@@ -1,10 +1,10 @@
 # Redfish Documentor
 
-The Redfish Documentor is a **Java 8** application, with which a HTML documatation can be generated from a set of JSON- and CSDL schema files.
+The Redfish Documentor is a **Java** application, with which a HTML documentation can be generated from a set of JSON- and CSDL schema files.
 
 ## Usage
 
-The application can be started by running the **RedfishDocumentor.jar** with Java 8.  
+The application can be started by running the **RedfishDocumentor.jar**.  
 One can adapt the **json2html.cmd** file in the **scripts** folder to conveniently run this application on a Windows system.
 
 ### Parameters
