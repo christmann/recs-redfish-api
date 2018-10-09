@@ -13,6 +13,18 @@
 	"ComputerSystem": [
 		"PATCH"
 	],
+	"PCIeFunction": [
+		"DELETE"
+	],
+	"PCIeFunctionCollection": [
+		"POST"
+	],
+	"Port": [
+		"DELETE"
+	],
+	"PortCollection": [
+		"POST"
+	],
 	"VLanNetworkInterface": [
 		"PATCH",
 		"DELETE"
