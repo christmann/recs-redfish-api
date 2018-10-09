@@ -1,7 +1,13 @@
 {
-	"ComposedNode": [
-		"DELETE"
-	],
+	"ComposedNode": {
+		"DELETE": true,
+		"#ComposedNode.ExposePort": {
+			"Status": 201,
+			"Headers": {
+				"Location": "Port"
+			}
+		}
+	},
 	"ComposedNodeCollection": {
 		"#ComposedNodeCollection.Allocate": {
 			"Status": 201,
@@ -10,26 +16,14 @@
 			}
 		}
 	},
-	"ComputerSystem": [
-		"PATCH"
-	],
-	"PCIeFunction": [
-		"DELETE"
-	],
-	"PCIeFunctionCollection": [
-		"POST"
-	],
-	"Port": [
-		"DELETE"
-	],
-	"PortCollection": [
-		"POST"
-	],
-	"VLanNetworkInterface": [
-		"PATCH",
-		"DELETE"
-	],
-	"VLanNetworkInterfaceCollection": [
-		"POST"
-	]
+	"ComputerSystem": {
+		"PATCH": true
+	},
+	"VLanNetworkInterface": {
+		"PATCH": true,
+		"DELETE": true
+	},
+	"VLanNetworkInterfaceCollection": {
+		"POST": true
+	}
 }

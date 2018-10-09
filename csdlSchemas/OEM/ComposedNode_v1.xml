@@ -29,6 +29,15 @@
 	<edmx:Reference Uri="HSLLConnectionCollection_v1.xml">
 		<edmx:Include Namespace="HSLLConnectionCollection"/>
 	</edmx:Reference>
+	<edmx:Reference Uri="HSLLInterface_v1.xml">
+		<edmx:Include Namespace="HSLLInterface"/>
+	</edmx:Reference>
+	<edmx:Reference Uri="PCIeFunctionParameter_v1.xml">
+		<edmx:Include Namespace="PCIeFunctionParameter.v1_0_0"/>
+	</edmx:Reference>
+	<edmx:Reference Uri="http://redfish.dmtf.org/schemas/v1/Port_v1.xml">
+		<edmx:Include Namespace="Port"/>
+	</edmx:Reference>
 
 	<edmx:DataServices>
 		<Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="ComposedNode">
@@ -60,6 +69,34 @@
 			<Action Name="Reject" IsBound="true">
 				<Parameter Name="ComposedNode" Type="ComposedNode.v1_0_0.Actions"/>
 				<Annotation Term="OData.Description" String="This action is used to reject an allocated but not assembled composed node."/>
+			</Action>
+
+			<Action Name="ExposePort" IsBound="true">
+				<Parameter Name="ComposedNode" Type="ComposedNode.v1_0_0.Actions"/>
+				<Parameter Name="Name" Type="Edm.String">
+					<Annotation Term="OData.Description" String="The name of the Port" />
+				</Parameter>
+				<Parameter Name="Description" Type="Edm.String">
+					<Annotation Term="OData.Description" String="The description of the Port" />
+				</Parameter>
+				<Parameter Name="Width" Type="Edm.Int64">
+					<Annotation Term="OData.Description" String="The number of (usable) lanes that this port contains." />
+				</Parameter>
+				<Parameter Name="HSLLInterface" Type="HSLLInterface.HSLLInterface">
+					<Annotation Term="OData.Description" String="The URI of a HSLLInterface resource, on which the Port is exposed." />
+				</Parameter>
+				<Parameter Name="PCIeFunctions" Type="Collection(PCIeFunctionParameter.v1_0_0.PCIeFunction)">
+					<Annotation Term="OData.Description" String="An array of PCIeFunctions, provided by this port." />
+				</Parameter>
+				<Annotation Term="OData.Description" String="This action is used to expose a port of a composed node."/>
+			</Action>
+
+			<Action Name="RemovePort" IsBound="true">
+				<Parameter Name="ComposedNode" Type="ComposedNode.v1_0_0.Actions"/>
+				<Parameter Name="Port" Type="Port.Port">
+					<Annotation Term="OData.Description" String="The URI of the Port resource to remove." />
+				</Parameter>
+				<Annotation Term="OData.Description" String="This action is used to expose a port of a composed node."/>
 			</Action>
 
 		</Schema>

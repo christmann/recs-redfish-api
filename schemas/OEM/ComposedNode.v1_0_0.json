@@ -22,8 +22,14 @@
                 "#ComposedNode.Assemble": {
                     "$ref": "#/definitions/Assemble"
                 },
+                "#ComposedNode.ExposePort": {
+                    "$ref": "#/definitions/ExposePort"
+                },
                 "#ComposedNode.Reject": {
                     "$ref": "#/definitions/Reject"
+                },
+                "#ComposedNode.RemovePort": {
+                    "$ref": "#/definitions/RemovePort"
                 },
                 "#ComposedNode.Reset": {
                     "$ref": "#/definitions/Reset"
@@ -224,6 +230,60 @@
             },
             "type": "string"
         },
+        "ExposePort": {
+            "additionalProperties": false,
+            "description": "This action is used to expose a port of a composed node.",
+            "parameters": {
+                "Description": {
+                    "description": "The description of the Port",
+                    "type": "string"
+                },
+                "HSLLInterface": {
+                    "$ref": "HSLLInterface_v1.xml/HSLLInterface.json#/definitions/HSLLInterface",
+                    "description": "The URI of a HSLLInterface resource, on which the Port is exposed."
+                },
+                "Name": {
+                    "description": "The name of the Port",
+                    "type": "string"
+                },
+                "PCIeFunctions": {
+                    "description": "An array of PCIeFunctions, provided by this port.",
+                    "items": {
+                        "$ref": "PCIeFunctionParameter_v1.xml/PCIeFunctionParameter.v1_0_0.json#/definitions/PCIeFunction"
+                    },
+                    "type": "array"
+                },
+                "Width": {
+                    "description": "The number of (usable) lanes that this port contains.",
+                    "type": "number"
+                }
+            },
+            "patternProperties": {
+                "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message|Privileges)\\.[a-zA-Z_][a-zA-Z0-9_.]+$": {
+                    "description": "This property shall specify a valid odata or Redfish property.",
+                    "type": [
+                        "array",
+                        "boolean",
+                        "number",
+                        "null",
+                        "object",
+                        "string"
+                    ]
+                }
+            },
+            "properties": {
+                "target": {
+                    "description": "Link to invoke action",
+                    "format": "uri",
+                    "type": "string"
+                },
+                "title": {
+                    "description": "Friendly action name",
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        },
         "Links": {
             "additionalProperties": false,
             "patternProperties": {
@@ -270,6 +330,41 @@
             "additionalProperties": false,
             "description": "This action is used to reject an allocated but not assembled composed node.",
             "parameters": {},
+            "patternProperties": {
+                "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message|Privileges)\\.[a-zA-Z_][a-zA-Z0-9_.]+$": {
+                    "description": "This property shall specify a valid odata or Redfish property.",
+                    "type": [
+                        "array",
+                        "boolean",
+                        "number",
+                        "null",
+                        "object",
+                        "string"
+                    ]
+                }
+            },
+            "properties": {
+                "target": {
+                    "description": "Link to invoke action",
+                    "format": "uri",
+                    "type": "string"
+                },
+                "title": {
+                    "description": "Friendly action name",
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        },
+        "RemovePort": {
+            "additionalProperties": false,
+            "description": "This action is used to expose a port of a composed node.",
+            "parameters": {
+                "Port": {
+                    "$ref": "http://redfish.dmtf.org/schemas/v1/Port.json#/definitions/Port",
+                    "description": "The URI of the Port resource to remove."
+                }
+            },
             "patternProperties": {
                 "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message|Privileges)\\.[a-zA-Z_][a-zA-Z0-9_.]+$": {
                     "description": "This property shall specify a valid odata or Redfish property.",
