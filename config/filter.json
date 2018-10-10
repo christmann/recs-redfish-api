@@ -296,7 +296,12 @@
 			"Location": true,
 			"LogServices": true,
 			"Redundancy": true,
-			"SwitchType": true
+			"SwitchType": true,
+			"Manufacturer": true,
+			"Model": true,
+			"PartNumber": true,
+			"SKU": true,
+			"SerialNumber": true
 		},
 		"Links": {
 			"ManagedBy": true

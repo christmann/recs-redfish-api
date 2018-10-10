@@ -86,21 +86,15 @@ Switch contains properties describing a simple fabric switch.
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;}</td><td></td><td></td><td></td><td></td><td></td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;Oem { }</td><td>object</td><td></td><td></td><td>read-write</td><td>Oem extension object.</td></tr>
 <tr><td>}</td><td></td><td></td><td></td><td></td><td></td></tr>
-<tr><td>Manufacturer</td><td>string</td><td>Yes</td><td></td><td>read-only</td><td>This is the manufacturer of this switch.</td></tr>
-<tr><td>Model</td><td>string</td><td>Yes</td><td></td><td>read-only</td><td>The product model number of this switch.</td></tr>
 <tr><td>Name</td><td>string</td><td></td><td>GET</td><td>read-only</td><td>The name of the resource or array element.</td></tr>
 <tr><td>Oem {</td><td>object</td><td></td><td></td><td>read-write</td><td>This is the manufacturer/provider specific extension moniker used to divide the Oem object into sections.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;EID_47597 {</td><td>object</td><td></td><td></td><td>read-write</td><td>RECS|Box Switch extension</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Baseboard {</td><td>reference(<a href="baseboard.html#baseboard">Baseboard</a>)</td><td>Yes</td><td></td><td>read-only</td><td>The Baseboard, the Switch is hosted on, or null if it is not hosted on a Baseboard.</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@odata.id</td><td>string</td><td></td><td></td><td>read-only</td><td>The unique identifier for a resource.<br />Format: uri</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</td><td></td><td></td><td></td><td></td><td></td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SwitchType</td><td>string</td><td></td><td></td><td>read-only</td><td>The type of the switch.<br />Possible Values:<ul>
 <li>Ethernet</li>
 <li>PCIe</li>
 </ul></td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;}</td><td></td><td></td><td></td><td></td><td></td></tr>
 <tr><td>}</td><td></td><td></td><td></td><td></td><td></td></tr>
-<tr><td>PartNumber</td><td>string</td><td>Yes</td><td></td><td>read-only</td><td>The part number for this switch.</td></tr>
 <tr><td>Ports {</td><td>reference(<a href="portcollection.html#portcollection">PortCollection</a>)</td><td></td><td></td><td>read-only</td><td>A collection of references to the ports for this switch.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;@odata.id</td><td>string</td><td></td><td></td><td>read-only</td><td>The unique identifier for a resource.<br />Format: uri</td></tr>
 <tr><td>}</td><td></td><td></td><td></td><td></td><td></td></tr>
@@ -110,8 +104,6 @@ Switch contains properties describing a simple fabric switch.
 <li>PoweringOn: A temporary state between Off and On.</li>
 <li>PoweringOff: A temporary state between On and Off.</li>
 </ul></td></tr>
-<tr><td>SKU</td><td>string</td><td>Yes</td><td></td><td>read-only</td><td>This is the SKU for this switch.</td></tr>
-<tr><td>SerialNumber</td><td>string</td><td>Yes</td><td></td><td>read-only</td><td>The serial number for this switch.</td></tr>
 <tr><td>Status {</td><td>object</td><td></td><td></td><td>read-write</td><td>This type describes the status and health of a resource and its children.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;Health</td><td>string</td><td>Yes</td><td></td><td>read-only</td><td>This represents the health state of this resource in the absence of its dependent resources.<br />Possible Values:<ul>
 <li>OK: Normal.</li>
@@ -181,29 +173,17 @@ Content-Type: application/json
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;}
 <br />
-&nbsp;&nbsp;&nbsp;&nbsp;"Manufacturer": "string",
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;"Model": "string",
-<br />
 &nbsp;&nbsp;&nbsp;&nbsp;"Name": "string",
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;"Oem": {
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"EID_47597": {
 <br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Baseboard": {
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"@odata.id": "/redfish/v1/Baseboards/Baseboard1"
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},
-<br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"SwitchType": "Ethernet"
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;}
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;"PartNumber": "string",
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;"Ports": {
 <br />
@@ -212,10 +192,6 @@ Content-Type: application/json
 &nbsp;&nbsp;&nbsp;&nbsp;},
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;"PowerState": "On",
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;"SKU": "string",
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;"SerialNumber": "string",
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;"Status": {
 <br />
