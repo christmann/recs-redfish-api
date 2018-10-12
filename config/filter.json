@@ -54,6 +54,9 @@
 		}
 	},
 	"Baseboard": {
+		"Baseboard": {
+			"Switches": true
+		},
 		"Actions": {
 			"#Baseboard.Reset": {
 				"ResetType": [

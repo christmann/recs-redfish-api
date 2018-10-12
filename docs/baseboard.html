@@ -132,10 +132,6 @@ This is the schema definition for the Baseboard resource.
 <li>Updating: The element is updating and may be unavailable or degraded.</li>
 </ul></td></tr>
 <tr><td>}</td><td></td><td></td><td></td><td></td><td></td></tr>
-<tr><td>Switches [ {</td><td>array[reference(<a href="switch.html#switch">Switch</a>)]</td><td></td><td></td><td>read-only</td><td>An array of references to Ethernet- and PCIeSwitches hosted on this Baseboard.</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;@odata.id</td><td>string</td><td></td><td></td><td>read-only</td><td>The unique identifier for a resource.<br />Format: uri</td></tr>
-<tr><td>} ]</td><td></td><td></td><td></td><td></td><td></td></tr>
-<tr><td>Switches@odata.count</td><td>number</td><td></td><td></td><td>read-only</td><td>The number of items in a collection.</td></tr>
 </table>
 <h2 id="actions">Actions</h2>
 <h3 id="#baseboard.reset">#Baseboard.Reset</h3>
@@ -256,14 +252,6 @@ Content-Type: application/json
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"State": "Enabled"
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;}
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;"Switches": [{
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"@odata.id": "/redfish/v1/Switches/Switch1"
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;}],
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;"Switches@odata.count": 1
 <br />
 }
 <br />
