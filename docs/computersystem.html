@@ -46,7 +46,7 @@ table { border-collapse: collapse; }
 <a href="ethernetinterface.html#ethernetinterface">EthernetInterface</a><br />
 <a href="ethernetinterfacecollection.html#ethernetinterfacecollection">EthernetInterfaceCollection</a><br />
 <a href="hsllconnection.html#hsllconnection">HSLLConnection</a><br />
-<a href="hsllconnectioncollection.html#hsllconnectioncollection">HSLLConnectionCollection</a><br />
+<a href="hsllconnectionset.html#hsllconnectionset">HSLLConnectionSet</a><br />
 <a href="hsllinterface.html#hsllinterface">HSLLInterface</a><br />
 <a href="jsonschemafile.html#jsonschemafile">JsonSchemaFile</a><br />
 <a href="jsonschemafilecollection.html#jsonschemafilecollection">JsonSchemaFileCollection</a><br />
@@ -183,7 +183,7 @@ This schema defines a computer system and its respective properties.  A computer
 <h4 id="parameters">Parameters</h4>
 <table class="datatable">
 <tr><th>Property</th><th>Type</th><th>Nullable</th><th>Required</th><th>Permission</th><th>Description</th></tr>
-<tr><td>ResetType</td><td>string</td><td></td><td>POST</td><td>read-write</td><td>The type of reset to be performed.<br />Possible Values:<ul>
+<tr><td>ResetType</td><td>string</td><td>Yes</td><td></td><td>read-write</td><td>The type of reset to be performed.<br />Possible Values:<ul>
 <li>On: Turn the unit on.</li>
 <li>ForceOff: Turn the unit off immediately (non-graceful shutdown).</li>
 <li>GracefulShutdown: Perform a graceful shutdown and power off.</li>

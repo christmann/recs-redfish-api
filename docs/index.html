@@ -46,7 +46,7 @@ table { border-collapse: collapse; }
 <a href="ethernetinterface.html#ethernetinterface">EthernetInterface</a><br />
 <a href="ethernetinterfacecollection.html#ethernetinterfacecollection">EthernetInterfaceCollection</a><br />
 <a href="hsllconnection.html#hsllconnection">HSLLConnection</a><br />
-<a href="hsllconnectioncollection.html#hsllconnectioncollection">HSLLConnectionCollection</a><br />
+<a href="hsllconnectionset.html#hsllconnectionset">HSLLConnectionSet</a><br />
 <a href="hsllinterface.html#hsllinterface">HSLLInterface</a><br />
 <a href="jsonschemafile.html#jsonschemafile">JsonSchemaFile</a><br />
 <a href="jsonschemafilecollection.html#jsonschemafilecollection">JsonSchemaFileCollection</a><br />
@@ -66,8 +66,8 @@ table { border-collapse: collapse; }
 <a href="error.html#error">Error</a><br />
 </div>
 <div class="content">
-<h1 id="recs|box redfish api v1.0.0">RECS|Box Redfish API v1.0.0</h1>
-This is the documentation of the RECS|Box Redfish API v1.0.0.
+<h1 id="recs|box redfish api v1.1.0">RECS|Box Redfish API v1.1.0</h1>
+This is the documentation of the RECS|Box Redfish API v1.1.0.
 <br />
 The entry point of this API (and any Redfish API) is the <a href="serviceroot.html#serviceroot">ServiceRoot</a>.
 One should start exploring at that Schema.
@@ -81,7 +81,7 @@ In addition to that, an error description will be returned in the format describ
 <li>DMTF Redfish Scalable Platforms Management API Specification <a href="http://redfish.dmtf.org/schemas/DSP0266_1.4.0.html">1.4.0</a></li>
 <li>DMTF Redfish Schema Version <a href="https://www.dmtf.org/sites/default/files/DSP8010_2017.3.zip">2017.3</a></li>
 </ul>
-All other referred versions, such as JSON, ODATA and SSDP, are corresponding to the <a href="http://redfish.dmtf.org/schemas/DSP0266_1.4.0.html#normative-references">normative references</a> of the Redfish Scalable Platforms Management API Specification of the version noted above.
+All other referred versions, such as JSON, ODATA and SSDP, are corresponding to the normative references of the Redfish Scalable Platforms Management API Specification of the version noted above.
 <h2 id="schema definitions">Schema Definitions</h2>
 <table class="columntable">
 <tr>
@@ -104,7 +104,7 @@ All other referred versions, such as JSON, ODATA and SSDP, are corresponding to 
 </tr>
 <tr>
 <td><a href="chassiscollection.html#chassiscollection">ChassisCollection</a></td>
-<td><a href="hsllconnectioncollection.html#hsllconnectioncollection">HSLLConnectionCollection</a></td>
+<td><a href="hsllconnectionset.html#hsllconnectionset">HSLLConnectionSet</a></td>
 <td><a href="port.html#port">Port</a></td>
 <td><a href="vlannetworkinterfacecollection.html#vlannetworkinterfacecollection">VLanNetworkInterfaceCollection</a></td>
 </tr>
@@ -143,9 +143,9 @@ All other referred versions, such as JSON, ODATA and SSDP, are corresponding to 
 <tr><td><a href="computersystemcollection.html#computersystemcollection">ComputerSystemCollection</a></td><td>/redfish/v1/Systems</td></tr>
 <tr><td><a href="ethernetinterface.html#ethernetinterface">EthernetInterface</a></td><td>/redfish/v1/Systems/{ComputerSystemID}/EthernetInterfaces/{EthernetInterfaceID}<br />/redfish/v1/PCIeDevices/{PCIeDeviceID}/{PCIeFunctionID}/{EthernetInterfaceID}<br />/redfish/v1/ComposedNodes/{ComposedNodeID}/ProvidedPorts/{PortID}/PCIeFunctions/{PCIeFunctionID}/{EthernetInterfaceID}<br />/redfish/v1/Switches/{SwitchID}/Ports/{PortID}/PCIeFunctions/{PCIeFunctionID}/{EthernetInterfaceID}</td></tr>
 <tr><td><a href="ethernetinterfacecollection.html#ethernetinterfacecollection">EthernetInterfaceCollection</a></td><td>/redfish/v1/Systems/{ComputerSystemID}/EthernetInterfaces</td></tr>
-<tr><td><a href="hsllconnection.html#hsllconnection">HSLLConnection</a></td><td>/redfish/v1/ComposedNodes/{ComposedNodeID}/Connections/{HSLLConnectionID}</td></tr>
-<tr><td><a href="hsllconnectioncollection.html#hsllconnectioncollection">HSLLConnectionCollection</a></td><td>/redfish/v1/ComposedNodes/{ComposedNodeID}/Connections</td></tr>
-<tr><td><a href="hsllinterface.html#hsllinterface">HSLLInterface</a></td><td>/redfish/v1/Systems/{ComputerSystemID}/HSLLInterface<br />/redfish/v1/PCIeDevices/{PCIeDeviceID}/HSLLInterface<br />/redfish/v1/ComposedNodes/{ComposedNodeID}/Connections/{HSLLConnectionID}/EndpointA<br />/redfish/v1/ComposedNodes/{ComposedNodeID}/Connections/{HSLLConnectionID}/EndpointB<br />/redfish/v1/ComposedNodes/{ComposedNodeID}/ProvidedPorts/{PortID}/HSLLInterface<br />/redfish/v1/Switches/{SwitchID}/Ports/{PortID}/HSLLInterface</td></tr>
+<tr><td><a href="hsllconnection.html#hsllconnection">HSLLConnection</a></td><td>/redfish/v1/ComposedNodes/{ComposedNodeID}/{HSLLConnectionSetID}/{HSLLConnectionID}</td></tr>
+<tr><td><a href="hsllconnectionset.html#hsllconnectionset">HSLLConnectionSet</a></td><td>/redfish/v1/ComposedNodes/{ComposedNodeID}/{HSLLConnectionSetID}</td></tr>
+<tr><td><a href="hsllinterface.html#hsllinterface">HSLLInterface</a></td><td>/redfish/v1/Systems/{ComputerSystemID}/HSLLInterface<br />/redfish/v1/PCIeDevices/{PCIeDeviceID}/HSLLInterface<br />/redfish/v1/ComposedNodes/{ComposedNodeID}/{HSLLConnectionSetID}/{HSLLConnectionID}/EndpointA<br />/redfish/v1/ComposedNodes/{ComposedNodeID}/{HSLLConnectionSetID}/{HSLLConnectionID}/EndpointB<br />/redfish/v1/ComposedNodes/{ComposedNodeID}/ProvidedPorts/{PortID}/HSLLInterface<br />/redfish/v1/Switches/{SwitchID}/Ports/{PortID}/HSLLInterface</td></tr>
 <tr><td><a href="jsonschemafile.html#jsonschemafile">JsonSchemaFile</a></td><td>/redfish/v1/JsonSchemas/{JsonSchemaFileID}</td></tr>
 <tr><td><a href="jsonschemafilecollection.html#jsonschemafilecollection">JsonSchemaFileCollection</a></td><td>/redfish/v1/JsonSchemas</td></tr>
 <tr><td><a href="pciedevice.html#pciedevice">PCIeDevice</a></td><td>/redfish/v1/PCIeDevices/{PCIeDeviceID}</td></tr>

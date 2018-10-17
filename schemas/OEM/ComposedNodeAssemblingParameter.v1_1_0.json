@@ -1,0 +1,84 @@
+{
+    "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema.v1_3_0.json",
+    "copyright": "Copyright 2014-2017 Distributed Management Task Force, Inc. (DMTF). For the full DMTF copyright policy, see http://www.dmtf.org/about/policies/copyright",
+    "definitions": {
+        "Connection": {
+            "additionalProperties": false,
+            "description": "The connection within a ComposedNode",
+            "patternProperties": {
+                "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message|Privileges)\\.[a-zA-Z_][a-zA-Z0-9_.]+$": {
+                    "description": "This property shall specify a valid odata or Redfish property.",
+                    "type": [
+                        "array",
+                        "boolean",
+                        "number",
+                        "null",
+                        "object",
+                        "string"
+                    ]
+                }
+            },
+            "properties": {
+                "EndpointA": {
+                    "$ref": "HSLLInterface_v1.xml/HSLLInterface.json#/definitions/HSLLInterface",
+                    "description": "The first endpoint of this connection",
+                    "longDescription": "This object shall only contain a reference that complies to the HSLLInterface schema."
+                },
+                "EndpointB": {
+                    "$ref": "HSLLInterface_v1.xml/HSLLInterface.json#/definitions/HSLLInterface",
+                    "description": "The second endpoint of this connection.",
+                    "longDescription": "This object shall only contain a reference that complies to the HSLLInterface schema."
+                },
+                "Width": {
+                    "description": "Connection width of the HSLLConnection specified in number of lanes",
+                    "longDescription": "The value of this property shall contain the connection width of the HSLLConnection specified in number of lanes.",
+                    "minimum": 0,
+                    "type": "number"
+                }
+            },
+            "type": "object"
+        },
+        "ConnectionSet": {
+            "additionalProperties": false,
+            "description": "A set of connections within a ComposedNode",
+            "patternProperties": {
+                "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message|Privileges)\\.[a-zA-Z_][a-zA-Z0-9_.]+$": {
+                    "description": "This property shall specify a valid odata or Redfish property.",
+                    "type": [
+                        "array",
+                        "boolean",
+                        "number",
+                        "null",
+                        "object",
+                        "string"
+                    ]
+                }
+            },
+            "properties": {
+                "Connections": {
+                    "description": "The connections of the ConnectionSet",
+                    "items": {
+                        "$ref": "#/definitions/Connection"
+                    },
+                    "readonly": false,
+                    "type": "array"
+                },
+                "Description": {
+                    "description": "The description of the ConnectionSet",
+                    "readonly": false,
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "Name": {
+                    "description": "The name of the ConnectionSet",
+                    "readonly": false,
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        }
+    },
+    "title": "#ComposedNodeAssemblingParameter.v1_1_0"
+}

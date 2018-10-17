@@ -42,16 +42,22 @@
         },
         "Assemble": {
             "additionalProperties": false,
-            "description": "This action is used to assemble a composed node with optional concrete connections.",
+            "description": "This action is used to assemble a composed node with concrete connections.",
             "parameters": {
-                "Connections": {
+                "ActiveConnectionSet": {
+                    "description": "The name of the ConnectionSet within the specified ConnectionSets, that will be activated first. May only be null, if only one set is specified.",
+                    "type": "string"
+                },
+                "ConnectionSets": {
                     "items": {
-                        "$ref": "ComposedNodeAssemblingParameter_v1.xml/ComposedNodeAssemblingParameter.v1_0_0.json#/definitions/Connection"
+                        "$ref": "ComposedNodeAssemblingParameter_v1.xml/ComposedNodeAssemblingParameter.v1_1_0.json#/definitions/ConnectionSet"
                     },
+                    "requiredParameter": true,
                     "type": "array"
                 },
                 "ResetNetworkSettings": {
                     "description": "If set to true, all network settings within the composed node are reset.",
+                    "requiredParameter": true,
                     "type": "boolean"
                 }
             },
@@ -113,6 +119,14 @@
                     "description": "The available actions for this resource.",
                     "longDescription": "The Actions property shall contain the available actions for this resource."
                 },
+                "ActiveConnectionSet": {
+                    "description": "The name of the active ConnectionSet within the specified ConnectionSets.",
+                    "readonly": false,
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "Chassis": {
                     "$ref": "http://redfish.dmtf.org/schemas/v1/Chassis.json#/definitions/Chassis",
                     "description": "This is a link to the Chassis, this ComposedNode is resides in.",
@@ -143,11 +157,17 @@
                     ],
                     "readonly": true
                 },
-                "Connections": {
-                    "$ref": "HSLLConnectionCollection_v1.xml/HSLLConnectionCollection.json#/definitions/HSLLConnectionCollection",
-                    "description": "This is a link to a collection of HSLLConnections that connect the resources within this composition.",
-                    "longDescription": "This object shall only contain a reference to a resource that complies to the HSLLConnectionCollection schema.",
-                    "readonly": true
+                "ConnectionSets": {
+                    "description": "This is a link to a collection of HSLLConnectionSets that are selectable for this composition.",
+                    "items": {
+                        "$ref": "HSLLConnectionSet_v1.xml/HSLLConnectionSet.json#/definitions/HSLLConnectionSet"
+                    },
+                    "longDescription": "This object shall only contain references to resources that comply to the HSLLConnectionSet schema.",
+                    "readonly": true,
+                    "type": "array"
+                },
+                "ConnectionSets@odata.count": {
+                    "$ref": "http://redfish.dmtf.org/schemas/v1/odata.v4_0_1.json#/definitions/count"
                 },
                 "ContainedResources": {
                     "description": "An array of references to resources this ComposedNode consists of. This can either be a ComputerSystem, a PCIeDevice or a Port (of a PCIeSwitch or a ComposedNode).",
@@ -240,7 +260,8 @@
                 },
                 "HSLLInterface": {
                     "$ref": "HSLLInterface_v1.xml/HSLLInterface.json#/definitions/HSLLInterface",
-                    "description": "The URI of a HSLLInterface resource, on which the Port is exposed."
+                    "description": "The URI of a HSLLInterface resource, on which the Port is exposed.",
+                    "requiredParameter": true
                 },
                 "Name": {
                     "description": "The name of the Port",

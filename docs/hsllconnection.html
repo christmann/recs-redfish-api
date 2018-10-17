@@ -46,7 +46,7 @@ table { border-collapse: collapse; }
 <a href="ethernetinterface.html#ethernetinterface">EthernetInterface</a><br />
 <a href="ethernetinterfacecollection.html#ethernetinterfacecollection">EthernetInterfaceCollection</a><br />
 <a href="hsllconnection.html#hsllconnection">HSLLConnection</a><br />
-<a href="hsllconnectioncollection.html#hsllconnectioncollection">HSLLConnectionCollection</a><br />
+<a href="hsllconnectionset.html#hsllconnectionset">HSLLConnectionSet</a><br />
 <a href="hsllinterface.html#hsllinterface">HSLLInterface</a><br />
 <a href="jsonschemafile.html#jsonschemafile">JsonSchemaFile</a><br />
 <a href="jsonschemafilecollection.html#jsonschemafilecollection">JsonSchemaFileCollection</a><br />
@@ -97,7 +97,7 @@ This is the schema definition for the HSLLConnection resource.
 <h3 id="get">GET</h3>
 <h4 id="request">Request</h4>
 <div class="code">
-GET /redfish/v1/ComposedNodes/ComposedNode1/Connections/HSLLConnection1
+GET /redfish/v1/ComposedNodes/ComposedNode1/HSLLConnectionSet1/HSLLConnection1
 <br />
 Content-Type: application/json
 <br />
@@ -108,7 +108,7 @@ Content-Type: application/json
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;"@odata.context": "uri",
 <br />
-&nbsp;&nbsp;&nbsp;&nbsp;"@odata.id": "/redfish/v1/ComposedNodes/ComposedNode1/Connections/HSLLConnection1",
+&nbsp;&nbsp;&nbsp;&nbsp;"@odata.id": "/redfish/v1/ComposedNodes/ComposedNode1/HSLLConnectionSet1/HSLLConnection1",
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;"@odata.type": "string",
 <br />
@@ -122,13 +122,13 @@ Content-Type: application/json
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;"EndpointA": {
 <br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"@odata.id": "/redfish/v1/ComposedNodes/ComposedNode1/Connections/HSLLConnection1/EndpointA"
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"@odata.id": "/redfish/v1/ComposedNodes/ComposedNode1/HSLLConnectionSet1/HSLLConnection1/EndpointA"
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;},
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;"EndpointB": {
 <br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"@odata.id": "/redfish/v1/ComposedNodes/ComposedNode1/Connections/HSLLConnection1/EndpointB"
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"@odata.id": "/redfish/v1/ComposedNodes/ComposedNode1/HSLLConnectionSet1/HSLLConnection1/EndpointB"
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;},
 <br />

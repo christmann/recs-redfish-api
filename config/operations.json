@@ -1,5 +1,6 @@
 {
 	"ComposedNode": {
+		"PATCH": true,
 		"DELETE": true,
 		"#ComposedNode.ExposePort": {
 			"Status": 201,
