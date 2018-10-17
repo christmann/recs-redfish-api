@@ -34,6 +34,10 @@ Note: Setting the value __true__ for a property within that filter file will com
 
 This optional parameter points to a operations file, which specifies the available operations (other than GET) per defined Resource. If not specified, only GET operations will be available.
 
+#### -l, --literals
+
+This optional parameter points to a literals file, which specifies literals for the documentation.
+
 #### -s, --schema
 
 This optional parameter points to the folder where the used schema files will be copied to. If not specified, no schema files will be copied.

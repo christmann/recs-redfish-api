@@ -1,0 +1,21 @@
+{
+	"API": {
+		"Name": "RECS|Box Redfish API",
+		"Version": {
+			"Major": 1,
+			"Minor": 1,
+			"Errata": 0
+		}
+	},
+	"ReferencedDocuments": [{
+			"Name": "DMTF Redfish Scalable Platforms Management API Specification",
+			"Version": "1.4.0",
+			"URL": "http://redfish.dmtf.org/schemas/DSP0266_1.4.0.html"
+		},
+		{
+			"Name": "DMTF Redfish Schema Version",
+			"Version": "2017.3",
+			"URL": "https://www.dmtf.org/sites/default/files/DSP8010_2017.3.zip"
+		}
+	]
+}
