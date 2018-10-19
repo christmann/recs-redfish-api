@@ -7,6 +7,22 @@
 			"Errata": 0
 		}
 	},
+	"Redfish": {
+		"Version": {
+			"Major": 1,
+			"Minor": 4,
+			"Errata": 0
+		}
+	},
+	"ODATA": {
+		"Version": {
+			"Major": 4,
+			"Minor": 0
+		}
+	},
+	"UUIDs": {
+		"ServiceRoot": "23ee9981-a581-427f-8d81-473c64623cea"
+	},
 	"ReferencedDocuments": [{
 			"Name": "DMTF Redfish Scalable Platforms Management API Specification",
 			"Version": "1.4.0",
