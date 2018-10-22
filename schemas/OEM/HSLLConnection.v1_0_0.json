@@ -36,6 +36,12 @@
                     "longDescription": "This object shall only contain a reference that complies to the ComposedNode schema.",
                     "readonly": true
                 },
+                "ConnectionSet": {
+                    "$ref": "HSLLConnectionSet_v1.xml/HSLLConnectionSet.json#/definitions/HSLLConnectionSet",
+                    "description": "The HSLLConnectionSet this connection is part of",
+                    "longDescription": "This object shall only contain a reference that complies to the HSLLConnectionSet schema.",
+                    "readonly": true
+                },
                 "Description": {
                     "anyOf": [
                         {

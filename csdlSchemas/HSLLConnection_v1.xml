@@ -23,6 +23,9 @@
 	<edmx:Reference Uri="ComposedNode_v1.xml">
 		<edmx:Include Namespace="ComposedNode"/>
 	</edmx:Reference>
+	<edmx:Reference Uri="HSLLConnectionSet_v1.xml">
+		<edmx:Include Namespace="HSLLConnectionSet"/>
+	</edmx:Reference>
 
 	<edmx:DataServices>
 		<Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="HSLLConnection">
@@ -45,6 +48,12 @@
 					<Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
 					<Annotation Term="OData.Description" String="The ComposedNode this connection is part of"/>
 					<Annotation Term="OData.LongDescription" String="This object shall only contain a reference that complies to the ComposedNode schema."/>
+					<Annotation Term="OData.AutoExpandReferences"/>
+				</NavigationProperty>
+				<NavigationProperty Name="ConnectionSet" Type="HSLLConnectionSet.HSLLConnectionSet" Nullable="false">
+					<Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+					<Annotation Term="OData.Description" String="The HSLLConnectionSet this connection is part of"/>
+					<Annotation Term="OData.LongDescription" String="This object shall only contain a reference that complies to the HSLLConnectionSet schema."/>
 					<Annotation Term="OData.AutoExpandReferences"/>
 				</NavigationProperty>
 				<NavigationProperty Name="EndpointA" Type="HSLLInterface.HSLLInterface" Nullable="false">

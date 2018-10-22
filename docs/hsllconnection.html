@@ -78,6 +78,9 @@ This is the schema definition for the HSLLConnection resource.
 <tr><td>ComposedNode {</td><td>reference(<a href="composednode.html#composednode">ComposedNode</a>)</td><td></td><td></td><td>read-only</td><td>The ComposedNode this connection is part of</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;@odata.id</td><td>string</td><td></td><td></td><td>read-only</td><td>The unique identifier for a resource.<br />Format: uri</td></tr>
 <tr><td>}</td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>ConnectionSet {</td><td>reference(<a href="hsllconnectionset.html#hsllconnectionset">HSLLConnectionSet</a>)</td><td></td><td></td><td>read-only</td><td>The HSLLConnectionSet this connection is part of</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;@odata.id</td><td>string</td><td></td><td></td><td>read-only</td><td>The unique identifier for a resource.<br />Format: uri</td></tr>
+<tr><td>}</td><td></td><td></td><td></td><td></td><td></td></tr>
 <tr><td>Description</td><td>string</td><td>Yes</td><td></td><td>read-only</td><td>Provides a description of this resource and is used for commonality  in the schema definitions.</td></tr>
 <tr><td>EndpointA {</td><td>reference(<a href="hsllinterface.html#hsllinterface">HSLLInterface</a>)</td><td></td><td>POST</td><td>read-write</td><td>The first endpoint of this connection</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;@odata.id</td><td>string</td><td></td><td></td><td>read-only</td><td>The unique identifier for a resource.<br />Format: uri</td></tr>
@@ -115,6 +118,12 @@ Content-Type: application/json
 &nbsp;&nbsp;&nbsp;&nbsp;"ComposedNode": {
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"@odata.id": "/redfish/v1/ComposedNodes/ComposedNode1"
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;},
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;"ConnectionSet": {
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"@odata.id": "/redfish/v1/ComposedNodes/ComposedNode1/HSLLConnectionSet1"
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;},
 <br />
