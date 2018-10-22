@@ -72,7 +72,7 @@
                     ]
                 },
                 "Name": {
-                    "description": "The name of the ConnectionSet",
+                    "description": "The name of the ConnectionSet. It has to be unique within the ComposedNode.",
                     "readonly": false,
                     "type": "string"
                 }

@@ -45,7 +45,7 @@
 				<Annotation Term="OData.Description" String="A set of connections within a ComposedNode" />
 				<Property Name="Name" Type="Edm.String" Nullable="false">
 					<Annotation Term="OData.Permissions" EnumMember="OData.Permission/ReadWrite"/>
-					<Annotation Term="OData.Description" String="The name of the ConnectionSet" />
+					<Annotation Term="OData.Description" String="The name of the ConnectionSet. It has to be unique within the ComposedNode." />
 				</Property>
 				<Property Name="Description" Type="Edm.String">
 					<Annotation Term="OData.Permissions" EnumMember="OData.Permission/ReadWrite"/>
