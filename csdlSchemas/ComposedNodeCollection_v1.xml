@@ -48,10 +48,10 @@
 
 			<Action Name="Allocate" IsBound="true">
 				<Parameter Name="ComposedNodeCollection" Type="ComposedNodeCollection.Actions"/>
-				<Parameter Name="Name" Type="Edm.String">
+				<Parameter Name="Name" Type="Edm.String" Nullable="false">
 					<Annotation Term="OData.Description" String="The name of the ComposedNode" />
 				</Parameter>
-				<Parameter Name="Description" Type="Edm.String">
+				<Parameter Name="Description" Type="Edm.String" Nullable="false">
 					<Annotation Term="OData.Description" String="The description of the ComposedNode" />
 				</Parameter>
 				<Parameter Name="Systems" Type="Collection(ComposedNodeAllocationRequirement.v1_0_0.System)"/>

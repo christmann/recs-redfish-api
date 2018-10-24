@@ -265,6 +265,7 @@
                 },
                 "Name": {
                     "description": "The name of the Port",
+                    "requiredParameter": true,
                     "type": "string"
                 },
                 "PCIeFunctions": {
@@ -275,7 +276,7 @@
                     "type": "array"
                 },
                 "Width": {
-                    "description": "The number of (usable) lanes that this port contains.",
+                    "description": "The number of (usable) lanes that this port contains. All available lanes of the HSLLInterface will be used, if set to null.",
                     "type": "number"
                 }
             },
@@ -383,7 +384,8 @@
             "parameters": {
                 "Port": {
                     "$ref": "http://redfish.dmtf.org/schemas/v1/Port.json#/definitions/Port",
-                    "description": "The URI of the Port resource to remove."
+                    "description": "The URI of the Port resource to remove.",
+                    "requiredParameter": true
                 }
             },
             "patternProperties": {

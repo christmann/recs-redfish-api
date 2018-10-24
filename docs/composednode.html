@@ -225,9 +225,9 @@ HTTP/1.1 204
 <h4 id="parameters">Parameters</h4>
 <table class="datatable">
 <tr><th>Property</th><th>Type</th><th>Nullable</th><th>Required</th><th>Permission</th><th>Description</th></tr>
-<tr><td>Name</td><td>string</td><td>Yes</td><td></td><td>read-write</td><td>The name of the Port</td></tr>
+<tr><td>Name</td><td>string</td><td></td><td>POST</td><td>read-write</td><td>The name of the Port</td></tr>
 <tr><td>Description</td><td>string</td><td>Yes</td><td></td><td>read-write</td><td>The description of the Port</td></tr>
-<tr><td>Width</td><td>number</td><td>Yes</td><td></td><td>read-write</td><td>The number of (usable) lanes that this port contains.</td></tr>
+<tr><td>Width</td><td>number</td><td>Yes</td><td></td><td>read-write</td><td>The number of (usable) lanes that this port contains. All available lanes of the HSLLInterface will be used, if set to null.</td></tr>
 <tr><td>HSLLInterface {</td><td>reference(<a href="hsllinterface.html#hsllinterface">HSLLInterface</a>)</td><td></td><td>POST</td><td>read-write</td><td>The URI of a HSLLInterface resource, on which the Port is exposed.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;@odata.id</td><td>string</td><td></td><td></td><td>read-only</td><td>The unique identifier for a resource.<br />Format: uri</td></tr>
 <tr><td>}</td><td></td><td></td><td></td><td></td><td></td></tr>
@@ -351,7 +351,7 @@ HTTP/1.1 204
 <h4 id="parameters">Parameters</h4>
 <table class="datatable">
 <tr><th>Property</th><th>Type</th><th>Nullable</th><th>Required</th><th>Permission</th><th>Description</th></tr>
-<tr><td>Port {</td><td>reference(<a href="port.html#port">Port</a>)</td><td>Yes</td><td></td><td>read-write</td><td>The URI of the Port resource to remove.</td></tr>
+<tr><td>Port {</td><td>reference(<a href="port.html#port">Port</a>)</td><td></td><td>POST</td><td>read-write</td><td>The URI of the Port resource to remove.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;@odata.id</td><td>string</td><td></td><td></td><td>read-only</td><td>The unique identifier for a resource.<br />Format: uri</td></tr>
 <tr><td>}</td><td></td><td></td><td></td><td></td><td></td></tr>
 </table>

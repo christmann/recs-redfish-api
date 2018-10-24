@@ -76,14 +76,14 @@
 
 			<Action Name="ExposePort" IsBound="true">
 				<Parameter Name="ComposedNode" Type="ComposedNode.v1_0_0.Actions"/>
-				<Parameter Name="Name" Type="Edm.String">
+				<Parameter Name="Name" Type="Edm.String" Nullable="false">
 					<Annotation Term="OData.Description" String="The name of the Port" />
 				</Parameter>
 				<Parameter Name="Description" Type="Edm.String">
 					<Annotation Term="OData.Description" String="The description of the Port" />
 				</Parameter>
 				<Parameter Name="Width" Type="Edm.Int64">
-					<Annotation Term="OData.Description" String="The number of (usable) lanes that this port contains." />
+					<Annotation Term="OData.Description" String="The number of (usable) lanes that this port contains. All available lanes of the HSLLInterface will be used, if set to null." />
 				</Parameter>
 				<Parameter Name="HSLLInterface" Type="HSLLInterface.HSLLInterface" Nullable="false">
 					<Annotation Term="OData.Description" String="The URI of a HSLLInterface resource, on which the Port is exposed." />
@@ -96,7 +96,7 @@
 
 			<Action Name="RemovePort" IsBound="true">
 				<Parameter Name="ComposedNode" Type="ComposedNode.v1_0_0.Actions"/>
-				<Parameter Name="Port" Type="Port.Port">
+				<Parameter Name="Port" Type="Port.Port" Nullable="false">
 					<Annotation Term="OData.Description" String="The URI of the Port resource to remove." />
 				</Parameter>
 				<Annotation Term="OData.Description" String="This action is used to expose a port of a composed node."/>
