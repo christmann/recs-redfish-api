@@ -16,11 +16,14 @@
 	<edmx:Reference Uri="http://redfish.dmtf.org/schemas/v1/Resource_v1.xml">
 		<edmx:Include Namespace="Resource"/>
 	</edmx:Reference>
+	<edmx:Reference Uri="ComposedNode_v1.xml">
+		<edmx:Include Namespace="ComposedNode"/>
+	</edmx:Reference>
 	<edmx:Reference Uri="HSLLInterface_v1.xml">
 		<edmx:Include Namespace="HSLLInterface"/>
 	</edmx:Reference>
-	<edmx:Reference Uri="PCIeFunctionCollection_v1.xml">
-		<edmx:Include Namespace="PCIeFunctionCollection"/>
+	<edmx:Reference Uri="PCIeFunction_v1.xml">
+		<edmx:Include Namespace="PCIeFunction"/>
 	</edmx:Reference>
 	<edmx:Reference Uri="http://redfish.dmtf.org/schemas/v1/VLanNetworkInterfaceCollection_v1.xml">
 		<edmx:Include Namespace="VLanNetworkInterfaceCollection"/>
@@ -43,10 +46,16 @@
 					<Annotation Term="OData.LongDescription" String="This object shall only contain a reference that complies to the Switch or ComposedNode schema."/>
 					<Annotation Term="OData.AutoExpandReferences"/>
 				</NavigationProperty>
-				<NavigationProperty Name="PCIeFunctions" Type="PCIeFunctionCollection.PCIeFunctionCollection">
+				<NavigationProperty Name="PCIeFunctions" Type="Collection(PCIeFunction.PCIeFunction)" Nullable="false">
+					<Annotation Term="OData.Permissions" EnumMember="OData.Permission/ReadWrite"/>
+					<Annotation Term="OData.Description" String="An array of references to PCIeFunctions exposed by this port. This property is patchable for ports of a PCIe switch only and has to be a subset of PCIeFunctions provided by the switch."/>
+					<Annotation Term="OData.LongDescription" String="This object shall only contain references to resources that comply to the PCIeFunction schema."/>
+					<Annotation Term="OData.AutoExpandReferences"/>
+				</NavigationProperty>
+				<NavigationProperty Name="ComposedIn" Type="ComposedNode.ComposedNode">
 					<Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
-					<Annotation Term="OData.Description" String="This is a link to a collection of PCIeFunctions exposed by this port"/>
-					<Annotation Term="OData.LongDescription" String="This object shall only contain a reference to a collection of resources that comply to the PCIeFunction schema."/>
+					<Annotation Term="OData.Description" String="This is a link to the ComposedNode, this Port is composed in. It can only be non-null for PCIe ports."/>
+					<Annotation Term="OData.LongDescription" String="This object shall only contain a reference to a resource that complies to the ComposedNode schema."/>
 					<Annotation Term="OData.AutoExpandReferences"/>
 				</NavigationProperty>
 				<NavigationProperty Name="VLANs" Type="VLanNetworkInterfaceCollection.VLanNetworkInterfaceCollection">

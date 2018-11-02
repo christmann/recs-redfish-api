@@ -20,6 +20,19 @@
                 }
             },
             "properties": {
+                "PCIeFunctions": {
+                    "anyOf": [
+                        {
+                            "$ref": "PCIeFunctionCollection_v1.xml/PCIeFunctionCollection.json#/definitions/PCIeFunctionCollection"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "This is a link to a collection of PCIeFunctions provided by this switch. They can be exposed by ports of this switch.",
+                    "longDescription": "This object shall only contain a reference to a collection of resources that comply to the PCIeFunction schema.",
+                    "readonly": true
+                },
                 "SwitchType": {
                     "$ref": "#/definitions/SwitchType",
                     "description": "The type of the switch.",

@@ -68,7 +68,7 @@
                     "readonly": true
                 },
                 "Connections": {
-                    "description": "An array of references to HSLLConnection this HSLLConnectionSet consists of.",
+                    "description": "An array of references to HSLLConnections this HSLLConnectionSet consists of.",
                     "items": {
                         "$ref": "HSLLConnection_v1.xml/HSLLConnection.json#/definitions/HSLLConnection"
                     },

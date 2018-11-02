@@ -20,6 +20,19 @@
                 }
             },
             "properties": {
+                "ComposedIn": {
+                    "anyOf": [
+                        {
+                            "$ref": "ComposedNode_v1.xml/ComposedNode.json#/definitions/ComposedNode"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "This is a link to the ComposedNode, this Port is composed in. It can only be non-null for PCIe ports.",
+                    "longDescription": "This object shall only contain a reference to a resource that complies to the ComposedNode schema.",
+                    "readonly": true
+                },
                 "HSLLInterface": {
                     "anyOf": [
                         {
@@ -34,17 +47,16 @@
                     "readonly": true
                 },
                 "PCIeFunctions": {
-                    "anyOf": [
-                        {
-                            "$ref": "PCIeFunctionCollection_v1.xml/PCIeFunctionCollection.json#/definitions/PCIeFunctionCollection"
-                        },
-                        {
-                            "type": "null"
-                        }
-                    ],
-                    "description": "This is a link to a collection of PCIeFunctions exposed by this port",
-                    "longDescription": "This object shall only contain a reference to a collection of resources that comply to the PCIeFunction schema.",
-                    "readonly": true
+                    "description": "An array of references to PCIeFunctions exposed by this port. This property is patchable for ports of a PCIe switch only and has to be a subset of PCIeFunctions provided by the switch.",
+                    "items": {
+                        "$ref": "PCIeFunction_v1.xml/PCIeFunction.json#/definitions/PCIeFunction"
+                    },
+                    "longDescription": "This object shall only contain references to resources that comply to the PCIeFunction schema.",
+                    "readonly": false,
+                    "type": "array"
+                },
+                "PCIeFunctions@odata.count": {
+                    "$ref": "http://redfish.dmtf.org/schemas/v1/odata.v4_0_1.json#/definitions/count"
                 },
                 "Provider": {
                     "$ref": "http://redfish.dmtf.org/schemas/v1/odata.v4_0_1.json#/definitions/idRef",

@@ -56,7 +56,7 @@
 				</NavigationProperty>
 				<NavigationProperty Name="Connections" Type="Collection(HSLLConnection.HSLLConnection)" Nullable="false">
 					<Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
-					<Annotation Term="OData.Description" String="An array of references to HSLLConnection this HSLLConnectionSet consists of."/>
+					<Annotation Term="OData.Description" String="An array of references to HSLLConnections this HSLLConnectionSet consists of."/>
 					<Annotation Term="OData.LongDescription" String="This object shall only contain references to resources that comply to the HSLLConnection schema."/>
 					<Annotation Term="OData.AutoExpandReferences"/>
 				</NavigationProperty>
