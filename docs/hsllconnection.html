@@ -94,6 +94,10 @@ This is the schema definition for the HSLLConnection resource.
 <tr><td>}</td><td></td><td></td><td></td><td></td><td></td></tr>
 <tr><td>Name</td><td>string</td><td></td><td>GET</td><td>read-only</td><td>The name of the resource or array element.</td></tr>
 <tr><td>Oem { }</td><td>object</td><td></td><td></td><td>read-write</td><td>This is the manufacturer/provider specific extension moniker used to divide the Oem object into sections.</td></tr>
+<tr><td>PCIeFunctions [ {</td><td>array[reference(<a href="pciefunction.html#pciefunction">PCIeFunction</a>)]</td><td></td><td></td><td>read-write</td><td>An array of references to PCIeFunctions offered by the port. This property is only usable, if one of the endpoints is a port of a PCIe switch and has to be a subset of PCIeFunctions provided by the switch.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;@odata.id</td><td>string</td><td></td><td></td><td>read-only</td><td>The unique identifier for a resource.<br />Format: uri</td></tr>
+<tr><td>} ]</td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>PCIeFunctions@odata.count</td><td>number</td><td></td><td></td><td>read-only</td><td>The number of items in a collection.</td></tr>
 <tr><td>Width</td><td>number</td><td></td><td>POST</td><td>read-write</td><td>Connection width of the HSLLConnection specified in number of lanes<br />Minimum: 0</td></tr>
 </table>
 <h2 id="operations">Operations</h2>
@@ -152,6 +156,14 @@ Content-Type: application/json
 &nbsp;&nbsp;&nbsp;&nbsp;"Name": "string",
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;"Oem": { },
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;"PCIeFunctions": [{
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"@odata.id": "/redfish/v1/ComposedNodes/ComposedNode1/HSLLConnectionSet1/HSLLConnection1/PCIeFunction1"
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;}],
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;"PCIeFunctions@odata.count": 1,
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;"Width": 0
 <br />

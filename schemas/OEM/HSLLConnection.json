@@ -10,6 +10,9 @@
                 },
                 {
                     "$ref": "http://redfish.dmtf.org/schemas/v1/HSLLConnection.v1_0_0.json#/definitions/HSLLConnection"
+                },
+                {
+                    "$ref": "http://redfish.dmtf.org/schemas/v1/HSLLConnection.v1_1_0.json#/definitions/HSLLConnection"
                 }
             ],
             "description": "This is the schema definition for the HSLLConnection resource.",
