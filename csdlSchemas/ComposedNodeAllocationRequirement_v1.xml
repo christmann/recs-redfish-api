@@ -294,6 +294,24 @@
 			</ComplexType>
 		
 		</Schema>
+		<Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="ComposedNodeAllocationRequirement.v1_1_0">
+		
+			<ComplexType Name="Port">
+				<Annotation Term="OData.AdditionalProperties" Bool="false"/>
+				<Annotation Term="OData.Description" String="The requirements for a port of a PCIeSwitch or a ComposedNode" />
+				<Property Name="SystemIndex" Type="Edm.Int32">
+					<Annotation Term="OData.Description" String="The zero-based index of the system in the systems array, whose PCIe Port is required. SystemIndex and DeviceIndex cannot be used together."/>
+					<Annotation Term="OData.LongDescription" String="The value of this property shall be the zero-based index of a system in the systems array of the JSON body of this POST."/>
+					<Annotation Term="Validation.Minimum" Int="0"/>
+				</Property>
+				<Property Name="DeviceIndex" Type="Edm.Int32">
+					<Annotation Term="OData.Description" String="The zero-based index of the device in the devices array, whose PCIe Port is required. SystemIndex and DeviceIndex cannot be used together."/>
+					<Annotation Term="OData.LongDescription" String="The value of this property shall be the zero-based index of a device in the devices array of the JSON body of this POST."/>
+					<Annotation Term="Validation.Minimum" Int="0"/>
+				</Property>
+			</ComplexType>
+
+		</Schema>
 
 
 	</edmx:DataServices>

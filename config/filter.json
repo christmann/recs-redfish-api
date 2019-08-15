@@ -175,6 +175,11 @@
 				"ARM-A32",
 				"ARM-A64"
 			]
+		},
+		"Port": {
+			"PCIeFunctions": true,
+			"HSLLInterface": true,
+			"Resource": true
 		}
 	},
 	"EthernetInterface": {
