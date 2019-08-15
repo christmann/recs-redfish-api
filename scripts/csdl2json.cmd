@@ -1,6 +1,6 @@
 @echo off
 
-SET PYTHON_EXE=%LOCALAPPDATA%\Programs\Python\Python36-32\python.exe
+SET PYTHON_EXE=python.exe
 
 SET PROJECT_DIR=..
 SET APPLICATION=%PROJECT_DIR%\applications\csdl-to-json-convertor\csdl-to-json.py
