@@ -12,6 +12,9 @@
 	<edmx:Reference Uri="HSLLInterface_v1.xml">
 		<edmx:Include Namespace="HSLLInterface"/>
 	</edmx:Reference>
+	<edmx:Reference Uri="ComposedNodeAllocationRequirement_v1.xml">
+		<edmx:Include Namespace="ComposedNodeAllocationRequirement.v1_0_0"/>
+	</edmx:Reference>
 
 	<edmx:DataServices>
 		<Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="ComposedNodeAssemblingParameter.v1_0_0">
@@ -54,6 +57,23 @@
 				<Property Name="Connections" Type="Collection(ComposedNodeAssemblingParameter.v1_0_0.Connection)" Nullable="false">
 					<Annotation Term="OData.Permissions" EnumMember="OData.Permission/ReadWrite"/>
 					<Annotation Term="OData.Description" String="The connections of the ConnectionSet" />
+				</Property>
+			</ComplexType>
+		
+		</Schema>
+		
+		<Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="ComposedNodeAssemblingParameter.v1_2_0">
+
+			<ComplexType Name="ConnectionSet">
+				<Property Name="Connections" Type="Collection(ComposedNodeAssemblingParameter.v1_2_0.Connection)" Nullable="false">
+					<Annotation Term="OData.Permissions" EnumMember="OData.Permission/ReadWrite"/>
+					<Annotation Term="OData.Description" String="The connections of the ConnectionSet" />
+				</Property>
+			</ComplexType>
+
+			<ComplexType Name="Connection">
+				<Property Name="PCIeFunctions" Type="Collection(ComposedNodeAllocationRequirement.v1_0_0.PCIeFunction)">
+					<Annotation Term="OData.Description" String="The set of PCIe function requirements the PCIeSwitch port shall be assigned. This property is only usable, if one of the endpoints is a port of a PCIe switch. The requirements have to match the functions provided by the switch." />
 				</Property>
 			</ComplexType>
 		

@@ -24,7 +24,7 @@
 		<edmx:Include Namespace="PortCollection"/>
 	</edmx:Reference>
 	<edmx:Reference Uri="ComposedNodeAssemblingParameter_v1.xml">
-		<edmx:Include Namespace="ComposedNodeAssemblingParameter.v1_1_0"/>
+		<edmx:Include Namespace="ComposedNodeAssemblingParameter.v1_2_0"/>
 	</edmx:Reference>
 	<edmx:Reference Uri="HSLLConnectionSet_v1.xml">
 		<edmx:Include Namespace="HSLLConnectionSet"/>
@@ -59,7 +59,7 @@
 
 			<Action Name="Assemble" IsBound="true">
 				<Parameter Name="ComposedNode" Type="ComposedNode.v1_0_0.Actions"/>
-				<Parameter Name="ConnectionSets" Type="Collection(ComposedNodeAssemblingParameter.v1_1_0.ConnectionSet)" Nullable="false"/>
+				<Parameter Name="ConnectionSets" Type="Collection(ComposedNodeAssemblingParameter.v1_2_0.ConnectionSet)" Nullable="false"/>
 				<Parameter Name="ActiveConnectionSet" Type="Edm.String">
 					<Annotation Term="OData.Description" String="The name of the ConnectionSet within the specified ConnectionSets, that will be activated first. May only be null, if only one set is specified." />
 				</Parameter>

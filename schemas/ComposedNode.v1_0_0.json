@@ -50,7 +50,7 @@
                 },
                 "ConnectionSets": {
                     "items": {
-                        "$ref": "ComposedNodeAssemblingParameter_v1.xml/ComposedNodeAssemblingParameter.v1_1_0.json#/definitions/ConnectionSet"
+                        "$ref": "ComposedNodeAssemblingParameter_v1.xml/ComposedNodeAssemblingParameter.v1_2_0.json#/definitions/ConnectionSet"
                     },
                     "requiredParameter": true,
                     "type": "array"
