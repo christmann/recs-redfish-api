@@ -20,6 +20,9 @@
 		<edmx:Include Namespace="Resource"/>
 		<edmx:Include Namespace="Resource.v1_0_0" />
 	</edmx:Reference>
+	<edmx:Reference Uri="http://redfish.dmtf.org/schemas/v1/Port_v1.xml">
+		<edmx:Include Namespace="Port"/>
+	</edmx:Reference>
 	<edmx:Reference Uri="ComposedNode_v1.xml">
 		<edmx:Include Namespace="ComposedNode"/>
 	</edmx:Reference>
@@ -85,6 +88,19 @@
 				</NavigationProperty>
 			</ComplexType>
 
+		</Schema>
+
+		<Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="HSLLInterface.v1_1_0">
+		
+			<EntityType Name="HSLLInterface" BaseType="HSLLInterface.v1_0_0.HSLLInterface">
+				<NavigationProperty Name="AssociatedPort" Type="Port.Port" Nullable="true">
+					<Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+					<Annotation Term="OData.Description" String="The Port of the PCIeSwitch this interface can be connected to. This property is null, if the provider of this HSLLInterface is a Port."/>
+					<Annotation Term="OData.LongDescription" String="This object shall only contain a reference that complies to the Port schema."/>
+					<Annotation Term="OData.AutoExpandReferences"/>
+				</NavigationProperty>
+			</EntityType>
+			
 		</Schema>
 	</edmx:DataServices>
 </edmx:Edmx>

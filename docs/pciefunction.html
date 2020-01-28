@@ -127,7 +127,20 @@ This is the schema definition for the PCIeFunction resource.  It represents the 
 <tr><td>}</td><td></td><td></td><td></td><td></td><td></td></tr>
 <tr><td>Name</td><td>string</td><td></td><td>GET</td><td>read-only</td><td>The name of the resource or array element.</td></tr>
 <tr><td>Oem {</td><td>object</td><td></td><td></td><td>read-write</td><td>This is the manufacturer/provider specific extension moniker used to divide the Oem object into sections.</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;EID_47597 { }</td><td>object</td><td></td><td></td><td>read-write</td><td>RECS|Box PCIeFunction extension</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;EID_47597 {</td><td>object</td><td></td><td></td><td>read-write</td><td>RECS|Box PCIeFunction extension</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;BusId</td><td>number</td><td>Yes</td><td></td><td>read-only</td><td>The bus ID of this PCIe function.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DomainId</td><td>string</td><td>Yes</td><td></td><td>read-only</td><td>The domain ID of this PCIe function.<br />Pattern: ^0[xX](([a-fA-F]|[0-9]){2}){2}$</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FunctionNumber</td><td>number</td><td>Yes</td><td></td><td>read-only</td><td>The function number of this PCIe function.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;InstanceNumber</td><td>number</td><td>Yes</td><td></td><td>read-only</td><td>The instance number of this PCIe function.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PhysicalSuperFunction {</td><td>reference(<a href="pciefunction.html#pciefunction">PCIeFunction</a>)</td><td>Yes</td><td></td><td>read-only</td><td>Reference to the physical PCIeFunction that provides this PCIeFunction, if it is a virtual function.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@odata.id</td><td>string</td><td></td><td></td><td>read-only</td><td>The unique identifier for a resource.<br />Format: uri</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SlotId</td><td>number</td><td>Yes</td><td></td><td>read-only</td><td>The slot ID of this PCIe function.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;VirtualSubFunctions [ {</td><td>array[reference(<a href="pciefunction.html#pciefunction">PCIeFunction</a>)]</td><td></td><td></td><td>read-only</td><td>An array of references to virtual PCIeFunctions provided by this PCIeFunction, if it is a physical function.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@odata.id</td><td>string</td><td></td><td></td><td>read-only</td><td>The unique identifier for a resource.<br />Format: uri</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;} ]</td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;VirtualSubFunctions@odata.count</td><td>number</td><td></td><td></td><td>read-only</td><td>The number of items in a collection.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;}</td><td></td><td></td><td></td><td></td><td></td></tr>
 <tr><td>}</td><td></td><td></td><td></td><td></td><td></td></tr>
 <tr><td>RevisionId</td><td>string</td><td>Yes</td><td></td><td>read-only</td><td>The Revision ID of this PCIe function.<br />Pattern: ^0[xX](([a-fA-F]|[0-9]){2}){1}$</td></tr>
 <tr><td>SubsystemId</td><td>string</td><td>Yes</td><td></td><td>read-only</td><td>The Subsystem ID of this PCIe function.<br />Pattern: ^0[xX](([a-fA-F]|[0-9]){2}){2}$</td></tr>
@@ -177,7 +190,7 @@ Content-Type: application/json
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"EthernetInterfaces": [{
 <br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"@odata.id": "/redfish/v1/Switches/Switch1/Ports/Port1/PCIeFunction1/EthernetInterface1"
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"@odata.id": "/redfish/v1/ComposedNodes/ComposedNode1/HSLLConnectionSet1/HSLLConnection1/EndpointB/AssociatedPort/PCIeFunction1/EthernetInterface1"
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}],
 <br />
@@ -203,7 +216,33 @@ Content-Type: application/json
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;"Oem": {
 <br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"EID_47597": { }
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"EID_47597": {
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"BusId": 0,
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"DomainId": "string",
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"FunctionNumber": 0,
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"InstanceNumber": 0,
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"PhysicalSuperFunction": {
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"@odata.id": "/redfish/v1/PCIeDevices/PCIeDevice1/PCIeFunction1"
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"SlotId": 0,
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"VirtualSubFunctions": [{
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"@odata.id": "/redfish/v1/PCIeDevices/PCIeDevice1/PCIeFunction1"
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}],
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"VirtualSubFunctions@odata.count": 1
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;}
 <br />
