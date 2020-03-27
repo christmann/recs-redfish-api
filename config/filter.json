@@ -27,8 +27,6 @@
 				"Enclosure"
 			],
 			"LogServices": true,
-			"Thermal": true,
-			"Power": true,
 			"PhysicalSecurity": true,
 			"Location": true,
 			"HeightMm": true,
@@ -269,6 +267,21 @@
 			"#Port.Reset": true
 		}
 	},
+	"Power": {
+		"Power": {
+			"PowerSupplies": true,
+			"Redundancy": true
+		},
+		"PowerControl": {
+			"PowerRequestedWatts": true,
+			"PowerAvailableWatts": true,
+			"PowerCapacityWatts": true,
+			"PowerAllocatedWatts": true,
+			"PowerLimit": true,
+			"Status": true,
+			"PhysicalContext": true
+		}
+	},
 	"Processor": {
 		"Processor": {
 			"Assembly": true,
@@ -317,6 +330,27 @@
 		},
 		"Actions": {
 			"#Switch.Reset": true
+		}
+	},
+	"Thermal": {
+		"Fan": {
+			"FanName": true,
+			"Location": true,
+			"Assembly": true,
+			"Manufacturer": true,
+			"Model": true,
+			"SerialNumber": true,
+			"PartNumber": true,
+			"SparePartNumber": true,
+			"IndicatorLED": true
+		},
+		"Temperature": {
+			"DeltaReadingCelsius": true,
+			"DeltaPhysicalContext": true,
+			"MaxAllowableOperatingValue": true,
+			"MinAllowableOperatingValue": true,
+			"AdjustedMaxAllowableOperatingValue": true,
+			"AdjustedMinAllowableOperatingValue": true
 		}
 	}
 }

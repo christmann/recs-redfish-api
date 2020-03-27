@@ -56,11 +56,13 @@ table { border-collapse: collapse; }
 <a href="pciefunctioncollection.html#pciefunctioncollection">PCIeFunctionCollection</a><br />
 <a href="port.html#port">Port</a><br />
 <a href="portcollection.html#portcollection">PortCollection</a><br />
+<a href="power.html#power">Power</a><br />
 <a href="processor.html#processor">Processor</a><br />
 <a href="processorcollection.html#processorcollection">ProcessorCollection</a><br />
 <a href="serviceroot.html#serviceroot">ServiceRoot</a><br />
 <a href="switch.html#switch">Switch</a><br />
 <a href="switchcollection.html#switchcollection">SwitchCollection</a><br />
+<a href="thermal.html#thermal">Thermal</a><br />
 <a href="vlannetworkinterface.html#vlannetworkinterface">VLanNetworkInterface</a><br />
 <a href="vlannetworkinterfacecollection.html#vlannetworkinterfacecollection">VLanNetworkInterfaceCollection</a><br />
 <a href="error.html#error">Error</a><br />
@@ -112,6 +114,9 @@ The Chassis schema represents the physical components of a system.  This resourc
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;EID_47597 { }</td><td>object</td><td></td><td></td><td>read-write</td><td>RECS|Box Chassis extension</td></tr>
 <tr><td>}</td><td></td><td></td><td></td><td></td><td></td></tr>
 <tr><td>PartNumber</td><td>string</td><td>Yes</td><td></td><td>read-only</td><td>The part number of the chassis.</td></tr>
+<tr><td>Power {</td><td>reference(<a href="power.html#power">Power</a>)</td><td></td><td></td><td>read-only</td><td>A reference to the power properties (power supplies, power policies, sensors) of this chassis.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;@odata.id</td><td>string</td><td></td><td></td><td>read-only</td><td>The unique identifier for a resource.<br />Format: uri</td></tr>
+<tr><td>}</td><td></td><td></td><td></td><td></td><td></td></tr>
 <tr><td>PowerState</td><td>string</td><td>Yes</td><td></td><td>read-only</td><td>The current power state of the chassis.<br />Possible Values:<ul>
 <li>On: The components within the chassis has power on.</li>
 <li>Off: The components within the chassis has no power, except some components may continue to have AUX power such as management controller.</li>
@@ -145,6 +150,9 @@ The Chassis schema represents the physical components of a system.  This resourc
 <li>Quiesced: The element is enabled but only processes a restricted set of commands.</li>
 <li>Updating: The element is updating and may be unavailable or degraded.</li>
 </ul></td></tr>
+<tr><td>}</td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>Thermal {</td><td>reference(<a href="thermal.html#thermal">Thermal</a>)</td><td></td><td></td><td>read-only</td><td>A reference to the thermal properties (fans, cooling, sensors) of this chassis.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;@odata.id</td><td>string</td><td></td><td></td><td>read-only</td><td>The unique identifier for a resource.<br />Format: uri</td></tr>
 <tr><td>}</td><td></td><td></td><td></td><td></td><td></td></tr>
 </table>
 <h2 id="operations">Operations</h2>
@@ -236,6 +244,12 @@ Content-Type: application/json
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;"PartNumber": "string",
 <br />
+&nbsp;&nbsp;&nbsp;&nbsp;"Power": {
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"@odata.id": "/redfish/v1/Chassis/Chassis1/Power"
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;},
+<br />
 &nbsp;&nbsp;&nbsp;&nbsp;"PowerState": "On",
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;"SKU": "string",
@@ -251,6 +265,12 @@ Content-Type: application/json
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Oem": { },
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"State": "Enabled"
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;}
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;"Thermal": {
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"@odata.id": "/redfish/v1/Chassis/Chassis1/Thermal"
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;}
 <br />

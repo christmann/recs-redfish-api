@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!---->
 <!--################################################################################ -->
-<!--# Copyright 2017-2019 christmann informationstechnik + medien GmbH & Co. KG      -->
+<!--# Copyright 2017-2019 christmann informationstechnik + medien GmbH & Co. KG			-->
 <!--################################################################################ -->
 <!---->
 <edmx:Edmx xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx" Version="4.0">
@@ -29,6 +29,12 @@
 	<edmx:Reference Uri="http://redfish.dmtf.org/schemas/v1/Switch_v1.xml">
 		<edmx:Include Namespace="Switch"/>
 	</edmx:Reference>
+	<edmx:Reference Uri="http://redfish.dmtf.org/schemas/v1/Thermal_v1.xml">
+		<edmx:Include Namespace="Thermal"/>
+	</edmx:Reference>
+	<edmx:Reference Uri="http://redfish.dmtf.org/schemas/v1/Power_v1.xml">
+		<edmx:Include Namespace="Power"/>
+	</edmx:Reference>
 
 	<edmx:DataServices>
 		<Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="Baseboard">
@@ -45,7 +51,7 @@
 					<Annotation Term="OData.LongDescription" String="This defines the property name for the action."/>
 				</Parameter>
 				<Annotation Term="OData.Description" String="This action is used to reset all systems hosted on this Baseboard."/>
-				<Annotation Term="OData.LongDescription" String="This action shall perform a reset of all systems hosted on this Baseboard.  For systems which implement APCI Power Button functionality, the PushPowerButton value shall perform or emulate an ACPI Power Button push.  The ForceOff value shall remove power from the system or perform an ACPI Power Button Override (commonly known as a 4-second hold of the Power Button).  The ForceRestart value shall perform a ForceOff action followed by a On action."/>
+				<Annotation Term="OData.LongDescription" String="This action shall perform a reset of all systems hosted on this Baseboard.	For systems which implement APCI Power Button functionality, the PushPowerButton value shall perform or emulate an ACPI Power Button push.	The ForceOff value shall remove power from the system or perform an ACPI Power Button Override (commonly known as a 4-second hold of the Power Button).	The ForceRestart value shall perform a ForceOff action followed by a On action."/>
 			</Action>
 
 		</Schema>
@@ -122,6 +128,23 @@
 				</Member>
 			</EnumType>
 
+		</Schema>
+
+		<Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="Baseboard.v1_1_0">
+			<EntityType Name="Baseboard" BaseType="Baseboard.v1_0_0.Baseboard">
+				<NavigationProperty Name="Thermal" Type="Thermal.Thermal" ContainsTarget="true" Nullable="false">
+					<Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+					<Annotation Term="OData.Description" String="A reference to the thermal properties (fans, cooling, sensors) of this baseboard."/>
+					<Annotation Term="OData.LongDescription" String="The value of this property shall be a reference to the resource that represents the thermal characteristics of this baseboard and shall be of type Thermal."/>
+					<Annotation Term="OData.AutoExpandReferences"/>
+				</NavigationProperty>
+				<NavigationProperty Name="Power" Type="Power.Power" ContainsTarget="true" Nullable="false">
+					<Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+					<Annotation Term="OData.Description" String="A reference to the power properties (power supplies, power policies, sensors) of this baseboard."/>
+					<Annotation Term="OData.LongDescription" String="The value of this property shall be a reference to the resource that represents the power characteristics of this baseboard and shall be of type Power."/>
+					<Annotation Term="OData.AutoExpandReferences"/>
+				</NavigationProperty>
+			</EntityType>
 		</Schema>
 	</edmx:DataServices>
 </edmx:Edmx>

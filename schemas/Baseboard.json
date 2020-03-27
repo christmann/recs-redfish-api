@@ -10,6 +10,9 @@
                 },
                 {
                     "$ref": "http://redfish.dmtf.org/schemas/v1/Baseboard.v1_0_0.json#/definitions/Baseboard"
+                },
+                {
+                    "$ref": "http://redfish.dmtf.org/schemas/v1/Baseboard.v1_1_0.json#/definitions/Baseboard"
                 }
             ],
             "description": "This is the schema definition for the Baseboard resource.",

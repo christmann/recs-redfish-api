@@ -56,11 +56,13 @@ table { border-collapse: collapse; }
 <a href="pciefunctioncollection.html#pciefunctioncollection">PCIeFunctionCollection</a><br />
 <a href="port.html#port">Port</a><br />
 <a href="portcollection.html#portcollection">PortCollection</a><br />
+<a href="power.html#power">Power</a><br />
 <a href="processor.html#processor">Processor</a><br />
 <a href="processorcollection.html#processorcollection">ProcessorCollection</a><br />
 <a href="serviceroot.html#serviceroot">ServiceRoot</a><br />
 <a href="switch.html#switch">Switch</a><br />
 <a href="switchcollection.html#switchcollection">SwitchCollection</a><br />
+<a href="thermal.html#thermal">Thermal</a><br />
 <a href="vlannetworkinterface.html#vlannetworkinterface">VLanNetworkInterface</a><br />
 <a href="vlannetworkinterfacecollection.html#vlannetworkinterfacecollection">VLanNetworkInterfaceCollection</a><br />
 <a href="error.html#error">Error</a><br />
@@ -88,46 +90,48 @@ All other referred versions, such as JSON, ODATA and SSDP, are corresponding to 
 <td><a href="baseboard.html#baseboard">Baseboard</a></td>
 <td><a href="ethernetinterface.html#ethernetinterface">EthernetInterface</a></td>
 <td><a href="pciedevicecollection.html#pciedevicecollection">PCIeDeviceCollection</a></td>
-<td><a href="switch.html#switch">Switch</a></td>
+<td><a href="serviceroot.html#serviceroot">ServiceRoot</a></td>
 </tr>
 <tr>
 <td><a href="baseboardcollection.html#baseboardcollection">BaseboardCollection</a></td>
 <td><a href="ethernetinterfacecollection.html#ethernetinterfacecollection">EthernetInterfaceCollection</a></td>
 <td><a href="pciefunction.html#pciefunction">PCIeFunction</a></td>
-<td><a href="switchcollection.html#switchcollection">SwitchCollection</a></td>
+<td><a href="switch.html#switch">Switch</a></td>
 </tr>
 <tr>
 <td><a href="chassis.html#chassis">Chassis</a></td>
 <td><a href="hsllconnection.html#hsllconnection">HSLLConnection</a></td>
 <td><a href="pciefunctioncollection.html#pciefunctioncollection">PCIeFunctionCollection</a></td>
-<td><a href="vlannetworkinterface.html#vlannetworkinterface">VLanNetworkInterface</a></td>
+<td><a href="switchcollection.html#switchcollection">SwitchCollection</a></td>
 </tr>
 <tr>
 <td><a href="chassiscollection.html#chassiscollection">ChassisCollection</a></td>
 <td><a href="hsllconnectionset.html#hsllconnectionset">HSLLConnectionSet</a></td>
 <td><a href="port.html#port">Port</a></td>
-<td><a href="vlannetworkinterfacecollection.html#vlannetworkinterfacecollection">VLanNetworkInterfaceCollection</a></td>
+<td><a href="thermal.html#thermal">Thermal</a></td>
 </tr>
 <tr>
 <td><a href="composednode.html#composednode">ComposedNode</a></td>
 <td><a href="hsllinterface.html#hsllinterface">HSLLInterface</a></td>
 <td><a href="portcollection.html#portcollection">PortCollection</a></td>
-<td><a href="error.html#error">Error</a></td>
+<td><a href="vlannetworkinterface.html#vlannetworkinterface">VLanNetworkInterface</a></td>
 </tr>
 <tr>
 <td><a href="composednodecollection.html#composednodecollection">ComposedNodeCollection</a></td>
 <td><a href="jsonschemafile.html#jsonschemafile">JsonSchemaFile</a></td>
-<td><a href="processor.html#processor">Processor</a></td>
+<td><a href="power.html#power">Power</a></td>
+<td><a href="vlannetworkinterfacecollection.html#vlannetworkinterfacecollection">VLanNetworkInterfaceCollection</a></td>
 </tr>
 <tr>
 <td><a href="computersystem.html#computersystem">ComputerSystem</a></td>
 <td><a href="jsonschemafilecollection.html#jsonschemafilecollection">JsonSchemaFileCollection</a></td>
-<td><a href="processorcollection.html#processorcollection">ProcessorCollection</a></td>
+<td><a href="processor.html#processor">Processor</a></td>
+<td><a href="error.html#error">Error</a></td>
 </tr>
 <tr>
 <td><a href="computersystemcollection.html#computersystemcollection">ComputerSystemCollection</a></td>
 <td><a href="pciedevice.html#pciedevice">PCIeDevice</a></td>
-<td><a href="serviceroot.html#serviceroot">ServiceRoot</a></td>
+<td><a href="processorcollection.html#processorcollection">ProcessorCollection</a></td>
 </tr>
 </table>
 <h2 id="endpoint definitions">Endpoint Definitions</h2>
@@ -154,11 +158,13 @@ All other referred versions, such as JSON, ODATA and SSDP, are corresponding to 
 <tr><td><a href="pciefunctioncollection.html#pciefunctioncollection">PCIeFunctionCollection</a></td><td>/redfish/v1/Switches/{SwitchID}/PCIeFunctions</td></tr>
 <tr><td><a href="port.html#port">Port</a></td><td>/redfish/v1/Systems/{ComputerSystemID}/HSLLInterface/AssociatedPort<br />/redfish/v1/ComposedNodes/{ComposedNodeID}/ProvidedPorts/{PortID}<br />/redfish/v1/PCIeDevices/{PCIeDeviceID}/HSLLInterface/AssociatedPort<br />/redfish/v1/Switches/{SwitchID}/Ports/{PortID}<br />/redfish/v1/Systems/{ComputerSystemID}/EthernetInterfaces/{EthernetInterfaceID}/ConnectedPort<br />/redfish/v1/PCIeDevices/{PCIeDeviceID}/{PCIeFunctionID}/{EthernetInterfaceID}/ConnectedPort<br />/redfish/v1/ComposedNodes/{ComposedNodeID}/{HSLLConnectionSetID}/{HSLLConnectionID}/EndpointA/AssociatedPort<br />/redfish/v1/ComposedNodes/{ComposedNodeID}/{HSLLConnectionSetID}/{HSLLConnectionID}/EndpointB/AssociatedPort<br />/redfish/v1/Switches/{SwitchID}/PCIeFunctions/{PCIeFunctionID}/{EthernetInterfaceID}/ConnectedPort<br />/redfish/v1/ComposedNodes/{ComposedNodeID}/{HSLLConnectionSetID}/{HSLLConnectionID}/{PCIeFunctionID}/{EthernetInterfaceID}/ConnectedPort</td></tr>
 <tr><td><a href="portcollection.html#portcollection">PortCollection</a></td><td>/redfish/v1/ComposedNodes/{ComposedNodeID}/ProvidedPorts<br />/redfish/v1/Switches/{SwitchID}/Ports</td></tr>
+<tr><td><a href="power.html#power">Power</a></td><td>/redfish/v1/Chassis/{ChassisID}/Power<br />/redfish/v1/Systems/{ComputerSystemID}/Power<br />/redfish/v1/Baseboards/{BaseboardID}/Power</td></tr>
 <tr><td><a href="processor.html#processor">Processor</a></td><td>/redfish/v1/Systems/{ComputerSystemID}/Processors/{ProcessorID}</td></tr>
 <tr><td><a href="processorcollection.html#processorcollection">ProcessorCollection</a></td><td>/redfish/v1/Systems/{ComputerSystemID}/Processors</td></tr>
 <tr><td><a href="serviceroot.html#serviceroot">ServiceRoot</a></td><td>/redfish/v1</td></tr>
 <tr><td><a href="switch.html#switch">Switch</a></td><td>/redfish/v1/Switches/{SwitchID}</td></tr>
 <tr><td><a href="switchcollection.html#switchcollection">SwitchCollection</a></td><td>/redfish/v1/Switches</td></tr>
+<tr><td><a href="thermal.html#thermal">Thermal</a></td><td>/redfish/v1/Chassis/{ChassisID}/Thermal<br />/redfish/v1/Systems/{ComputerSystemID}/Thermal<br />/redfish/v1/Baseboards/{BaseboardID}/Thermal</td></tr>
 <tr><td><a href="vlannetworkinterface.html#vlannetworkinterface">VLanNetworkInterface</a></td><td>/redfish/v1/Systems/{ComputerSystemID}/EthernetInterfaces/{EthernetInterfaceID}/VLANs/{VLanNetworkInterfaceID}<br />/redfish/v1/Systems/{ComputerSystemID}/HSLLInterface/AssociatedPort/VLANs/{VLanNetworkInterfaceID}<br />/redfish/v1/ComposedNodes/{ComposedNodeID}/ProvidedPorts/{PortID}/VLANs/{VLanNetworkInterfaceID}<br />/redfish/v1/PCIeDevices/{PCIeDeviceID}/HSLLInterface/AssociatedPort/VLANs/{VLanNetworkInterfaceID}<br />/redfish/v1/PCIeDevices/{PCIeDeviceID}/{PCIeFunctionID}/{EthernetInterfaceID}/VLANs/{VLanNetworkInterfaceID}<br />/redfish/v1/Switches/{SwitchID}/Ports/{PortID}/VLANs/{VLanNetworkInterfaceID}<br />/redfish/v1/Systems/{ComputerSystemID}/EthernetInterfaces/{EthernetInterfaceID}/ConnectedPort/VLANs/{VLanNetworkInterfaceID}<br />/redfish/v1/PCIeDevices/{PCIeDeviceID}/{PCIeFunctionID}/{EthernetInterfaceID}/ConnectedPort/VLANs/{VLanNetworkInterfaceID}<br />/redfish/v1/Switches/{SwitchID}/PCIeFunctions/{PCIeFunctionID}/{EthernetInterfaceID}/VLANs/{VLanNetworkInterfaceID}<br />/redfish/v1/Systems/{ComputerSystemID}/HSLLInterface/AssociatedPort/{PCIeFunctionID}/{EthernetInterfaceID}/VLANs/{VLanNetworkInterfaceID}<br />/redfish/v1/ComposedNodes/{ComposedNodeID}/{HSLLConnectionSetID}/{HSLLConnectionID}/EndpointA/AssociatedPort/VLANs/{VLanNetworkInterfaceID}<br />/redfish/v1/ComposedNodes/{ComposedNodeID}/{HSLLConnectionSetID}/{HSLLConnectionID}/EndpointB/AssociatedPort/VLANs/{VLanNetworkInterfaceID}<br />/redfish/v1/ComposedNodes/{ComposedNodeID}/{HSLLConnectionSetID}/{HSLLConnectionID}/{PCIeFunctionID}/{EthernetInterfaceID}/VLANs/{VLanNetworkInterfaceID}<br />/redfish/v1/ComposedNodes/{ComposedNodeID}/ProvidedPorts/{PortID}/{PCIeFunctionID}/{EthernetInterfaceID}/VLANs/{VLanNetworkInterfaceID}<br />/redfish/v1/PCIeDevices/{PCIeDeviceID}/HSLLInterface/AssociatedPort/{PCIeFunctionID}/{EthernetInterfaceID}/VLANs/{VLanNetworkInterfaceID}<br />/redfish/v1/Switches/{SwitchID}/Ports/{PortID}/{PCIeFunctionID}/{EthernetInterfaceID}/VLANs/{VLanNetworkInterfaceID}<br />/redfish/v1/Switches/{SwitchID}/PCIeFunctions/{PCIeFunctionID}/{EthernetInterfaceID}/ConnectedPort/VLANs/{VLanNetworkInterfaceID}<br />/redfish/v1/ComposedNodes/{ComposedNodeID}/{HSLLConnectionSetID}/{HSLLConnectionID}/{PCIeFunctionID}/{EthernetInterfaceID}/ConnectedPort/VLANs/{VLanNetworkInterfaceID}<br />/redfish/v1/ComposedNodes/{ComposedNodeID}/{HSLLConnectionSetID}/{HSLLConnectionID}/EndpointA/AssociatedPort/{PCIeFunctionID}/{EthernetInterfaceID}/VLANs/{VLanNetworkInterfaceID}<br />/redfish/v1/ComposedNodes/{ComposedNodeID}/{HSLLConnectionSetID}/{HSLLConnectionID}/EndpointB/AssociatedPort/{PCIeFunctionID}/{EthernetInterfaceID}/VLANs/{VLanNetworkInterfaceID}</td></tr>
 <tr><td><a href="vlannetworkinterfacecollection.html#vlannetworkinterfacecollection">VLanNetworkInterfaceCollection</a></td><td>/redfish/v1/Systems/{ComputerSystemID}/EthernetInterfaces/{EthernetInterfaceID}/VLANs<br />/redfish/v1/Systems/{ComputerSystemID}/HSLLInterface/AssociatedPort/VLANs<br />/redfish/v1/ComposedNodes/{ComposedNodeID}/ProvidedPorts/{PortID}/VLANs<br />/redfish/v1/PCIeDevices/{PCIeDeviceID}/HSLLInterface/AssociatedPort/VLANs<br />/redfish/v1/PCIeDevices/{PCIeDeviceID}/{PCIeFunctionID}/{EthernetInterfaceID}/VLANs<br />/redfish/v1/Switches/{SwitchID}/Ports/{PortID}/VLANs<br />/redfish/v1/Systems/{ComputerSystemID}/EthernetInterfaces/{EthernetInterfaceID}/ConnectedPort/VLANs<br />/redfish/v1/PCIeDevices/{PCIeDeviceID}/{PCIeFunctionID}/{EthernetInterfaceID}/ConnectedPort/VLANs<br />/redfish/v1/Switches/{SwitchID}/PCIeFunctions/{PCIeFunctionID}/{EthernetInterfaceID}/VLANs<br />/redfish/v1/Systems/{ComputerSystemID}/HSLLInterface/AssociatedPort/{PCIeFunctionID}/{EthernetInterfaceID}/VLANs<br />/redfish/v1/ComposedNodes/{ComposedNodeID}/{HSLLConnectionSetID}/{HSLLConnectionID}/EndpointA/AssociatedPort/VLANs<br />/redfish/v1/ComposedNodes/{ComposedNodeID}/{HSLLConnectionSetID}/{HSLLConnectionID}/EndpointB/AssociatedPort/VLANs<br />/redfish/v1/ComposedNodes/{ComposedNodeID}/{HSLLConnectionSetID}/{HSLLConnectionID}/{PCIeFunctionID}/{EthernetInterfaceID}/VLANs<br />/redfish/v1/ComposedNodes/{ComposedNodeID}/ProvidedPorts/{PortID}/{PCIeFunctionID}/{EthernetInterfaceID}/VLANs<br />/redfish/v1/PCIeDevices/{PCIeDeviceID}/HSLLInterface/AssociatedPort/{PCIeFunctionID}/{EthernetInterfaceID}/VLANs<br />/redfish/v1/Switches/{SwitchID}/Ports/{PortID}/{PCIeFunctionID}/{EthernetInterfaceID}/VLANs<br />/redfish/v1/Switches/{SwitchID}/PCIeFunctions/{PCIeFunctionID}/{EthernetInterfaceID}/ConnectedPort/VLANs<br />/redfish/v1/ComposedNodes/{ComposedNodeID}/{HSLLConnectionSetID}/{HSLLConnectionID}/{PCIeFunctionID}/{EthernetInterfaceID}/ConnectedPort/VLANs<br />/redfish/v1/ComposedNodes/{ComposedNodeID}/{HSLLConnectionSetID}/{HSLLConnectionID}/EndpointA/AssociatedPort/{PCIeFunctionID}/{EthernetInterfaceID}/VLANs<br />/redfish/v1/ComposedNodes/{ComposedNodeID}/{HSLLConnectionSetID}/{HSLLConnectionID}/EndpointB/AssociatedPort/{PCIeFunctionID}/{EthernetInterfaceID}/VLANs</td></tr>
 </table>

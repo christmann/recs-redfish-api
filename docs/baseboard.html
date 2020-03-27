@@ -56,11 +56,13 @@ table { border-collapse: collapse; }
 <a href="pciefunctioncollection.html#pciefunctioncollection">PCIeFunctionCollection</a><br />
 <a href="port.html#port">Port</a><br />
 <a href="portcollection.html#portcollection">PortCollection</a><br />
+<a href="power.html#power">Power</a><br />
 <a href="processor.html#processor">Processor</a><br />
 <a href="processorcollection.html#processorcollection">ProcessorCollection</a><br />
 <a href="serviceroot.html#serviceroot">ServiceRoot</a><br />
 <a href="switch.html#switch">Switch</a><br />
 <a href="switchcollection.html#switchcollection">SwitchCollection</a><br />
+<a href="thermal.html#thermal">Thermal</a><br />
 <a href="vlannetworkinterface.html#vlannetworkinterface">VLanNetworkInterface</a><br />
 <a href="vlannetworkinterfacecollection.html#vlannetworkinterfacecollection">VLanNetworkInterfaceCollection</a><br />
 <a href="error.html#error">Error</a><br />
@@ -106,6 +108,9 @@ This is the schema definition for the Baseboard resource.
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;@odata.id</td><td>string</td><td></td><td></td><td>read-only</td><td>The unique identifier for a resource.<br />Format: uri</td></tr>
 <tr><td>} ]</td><td></td><td></td><td></td><td></td><td></td></tr>
 <tr><td>PCIeDevices@odata.count</td><td>number</td><td></td><td></td><td>read-only</td><td>The number of items in a collection.</td></tr>
+<tr><td>Power {</td><td>reference(<a href="power.html#power">Power</a>)</td><td></td><td></td><td>read-only</td><td>A reference to the power properties (power supplies, power policies, sensors) of this baseboard.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;@odata.id</td><td>string</td><td></td><td></td><td>read-only</td><td>The unique identifier for a resource.<br />Format: uri</td></tr>
+<tr><td>}</td><td></td><td></td><td></td><td></td><td></td></tr>
 <tr><td>Status {</td><td>object</td><td>Yes</td><td></td><td>read-write</td><td>This type describes the status and health of a resource and its children.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;Health</td><td>string</td><td>Yes</td><td></td><td>read-only</td><td>This represents the health state of this resource in the absence of its dependent resources.<br />Possible Values:<ul>
 <li>OK: Normal.</li>
@@ -131,6 +136,9 @@ This is the schema definition for the Baseboard resource.
 <li>Quiesced: The element is enabled but only processes a restricted set of commands.</li>
 <li>Updating: The element is updating and may be unavailable or degraded.</li>
 </ul></td></tr>
+<tr><td>}</td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>Thermal {</td><td>reference(<a href="thermal.html#thermal">Thermal</a>)</td><td></td><td></td><td>read-only</td><td>A reference to the thermal properties (fans, cooling, sensors) of this baseboard.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;@odata.id</td><td>string</td><td></td><td></td><td>read-only</td><td>The unique identifier for a resource.<br />Format: uri</td></tr>
 <tr><td>}</td><td></td><td></td><td></td><td></td><td></td></tr>
 </table>
 <h2 id="actions">Actions</h2>
@@ -241,6 +249,12 @@ Content-Type: application/json
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;"PCIeDevices@odata.count": 1,
 <br />
+&nbsp;&nbsp;&nbsp;&nbsp;"Power": {
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"@odata.id": "/redfish/v1/Baseboards/Baseboard1/Power"
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;},
+<br />
 &nbsp;&nbsp;&nbsp;&nbsp;"Status": {
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Health": "OK",
@@ -250,6 +264,12 @@ Content-Type: application/json
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Oem": { },
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"State": "Enabled"
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;}
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;"Thermal": {
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"@odata.id": "/redfish/v1/Baseboards/Baseboard1/Thermal"
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;}
 <br />

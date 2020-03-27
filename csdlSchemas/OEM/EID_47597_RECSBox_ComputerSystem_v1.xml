@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!---->
 <!--################################################################################ -->
-<!--# Copyright 2017-2019 christmann informationstechnik + medien GmbH & Co. KG      -->
+<!--# Copyright 2017-2019 christmann informationstechnik + medien GmbH & Co. KG			-->
 <!--################################################################################ -->
 <!---->
 <edmx:Edmx xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx" Version="4.0">
@@ -27,6 +27,12 @@
 	</edmx:Reference>
 	<edmx:Reference Uri="http://redfish.dmtf.org/schemas/v1/Port_v1.xml">
 		<edmx:Include Namespace="Port"/>
+	</edmx:Reference>
+	<edmx:Reference Uri="http://redfish.dmtf.org/schemas/v1/Thermal_v1.xml">
+		<edmx:Include Namespace="Thermal"/>
+	</edmx:Reference>
+	<edmx:Reference Uri="http://redfish.dmtf.org/schemas/v1/Power_v1.xml">
+		<edmx:Include Namespace="Power"/>
 	</edmx:Reference>
 
 	<edmx:DataServices>
@@ -71,7 +77,36 @@
 				<Member Name="Apalis" />
 				<Member Name="Jetson" />
 			</EnumType>
-	  
+		
+		</Schema>
+
+		<Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="EID_47597_RECSBox_ComputerSystem.v1_1_0">
+			
+			<ComplexType Name="ComputerSystem" BaseType="EID_47597_RECSBox_ComputerSystem.v1_0_0.ComputerSystem">
+				<NavigationProperty Name="Thermal" Type="Thermal.Thermal" ContainsTarget="true" Nullable="false">
+					<Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+					<Annotation Term="OData.Description" String="A reference to the thermal properties (fans, cooling, sensors) of this baseboard."/>
+					<Annotation Term="OData.LongDescription" String="The value of this property shall be a reference to the resource that represents the thermal characteristics of this baseboard and shall be of type Thermal."/>
+					<Annotation Term="OData.AutoExpandReferences"/>
+				</NavigationProperty>
+				<NavigationProperty Name="Power" Type="Power.Power" ContainsTarget="true" Nullable="false">
+					<Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+					<Annotation Term="OData.Description" String="A reference to the power properties (power supplies, power policies, sensors) of this baseboard."/>
+					<Annotation Term="OData.LongDescription" String="The value of this property shall be a reference to the resource that represents the power characteristics of this baseboard and shall be of type Power."/>
+					<Annotation Term="OData.AutoExpandReferences"/>
+				</NavigationProperty>
+			</ComplexType>
+
+			<EnumType Name="FormFactor">
+				<Member Name="COM Express" />
+				<Member Name="COM Express Type 1/2" />
+				<Member Name="COM Express Type 6" />
+				<Member Name="COM Express Type 7" />
+				<Member Name="COM Express Type 10" />
+				<Member Name="Apalis" />
+				<Member Name="Jetson" />
+			</EnumType>
+		
 		</Schema>
 
 	</edmx:DataServices>
