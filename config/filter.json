@@ -244,6 +244,7 @@
 			"Status": true
 		},
 		"Links": {
+			"EthernetInterfaces": true,
 			"Drives": true,
 			"PCIeDevice": true,
 			"StorageControllers": true
