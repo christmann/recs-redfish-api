@@ -50,6 +50,10 @@ This optional parameter points to the base folder where the java files will be g
 
 This optional flag indicates, if the adapter implementation code will be generated.
 
+#### -m, --mapping
+
+This optional parameter points to a file, which specifies the mapping between redfish resource classes and "real" modelcalsses for code generation. It has to be a valid JSON file. An example can be seen in the **config** folder.
+
 #### -b, --basepackage
 
 This optional parameter specifies the name of the base java package for the generated java classes. This parameter has to be set, if 'generatecode' is set.
