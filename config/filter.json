@@ -278,7 +278,12 @@
 			"PowerCapacityWatts": true,
 			"PowerAllocatedWatts": true,
 			"PowerLimit": true,
+			"RelatedItem": true,
 			"Status": true,
+			"PhysicalContext": true
+		},
+		"Voltage": {
+			"RelatedItem": true,
 			"PhysicalContext": true
 		}
 	},
@@ -333,6 +338,9 @@
 		}
 	},
 	"Thermal": {
+		"Thermal": {
+			"Redundancy": true
+		},
 		"Fan": {
 			"FanName": true,
 			"Location": true,
@@ -341,6 +349,7 @@
 			"Model": true,
 			"SerialNumber": true,
 			"PartNumber": true,
+			"RelatedItem": true,
 			"SparePartNumber": true,
 			"IndicatorLED": true
 		},
@@ -350,7 +359,8 @@
 			"MaxAllowableOperatingValue": true,
 			"MinAllowableOperatingValue": true,
 			"AdjustedMaxAllowableOperatingValue": true,
-			"AdjustedMinAllowableOperatingValue": true
+			"AdjustedMinAllowableOperatingValue": true,
+			"RelatedItem": true
 		}
 	}
 }
