@@ -14,7 +14,7 @@
 	"info.christmann.recs3.tor_master.redfish.model.SwitchResourceCollection": "java.util.Collection<info.christmann.recs3.model.ILogicalSwitch<? extends info.christmann.recs3.model.Port>>",
 	"info.christmann.recs3.tor_master.redfish.model.PortResource": "info.christmann.recs3.model.Port",
 	"info.christmann.recs3.tor_master.redfish.model.PortResourceCollection": "java.util.Collection<info.christmann.recs3.model.Port>",
-	"info.christmann.recs3.tor_master.redfish.model.PowerResource": "info.christmann.recs3.model.SensorValue",
+	"info.christmann.recs3.tor_master.redfish.model.PowerResource": "info.christmann.recs3.model.IElectricityMonitored",
 	"info.christmann.recs3.tor_master.redfish.model.HSLLConnectionResource": "info.christmann.recs3.model.HSLLConnection",
 	"info.christmann.recs3.tor_master.redfish.model.HSLLConnectionResourceCollection": "java.util.Collection<info.christmann.recs3.model.HSLLConnection>",
 	"info.christmann.recs3.tor_master.redfish.model.HSLLConnectionSetResource": "info.christmann.recs3.model.HSLLConnectionSet",
@@ -29,7 +29,7 @@
 	"info.christmann.recs3.tor_master.redfish.model.ProcessorResource": "info.christmann.recs3.model.Processor",
 	"info.christmann.recs3.tor_master.redfish.model.ProcessorResourceCollection": "java.util.Collection<info.christmann.recs3.model.Processor>",
 	"info.christmann.recs3.tor_master.redfish.model.ServiceRootResource": "info.christmann.recs3.model.RECSCluster",
-	"info.christmann.recs3.tor_master.redfish.model.ThermalResource": "info.christmann.recs3.model.SensorValue",
+	"info.christmann.recs3.tor_master.redfish.model.ThermalResource": "info.christmann.recs3.model.IThermalMonitored",
 	"info.christmann.recs3.tor_master.redfish.model.VLanNetworkInterfaceResource": "info.christmann.recs3.model.VLanNetworkInterface",
 	"info.christmann.recs3.tor_master.redfish.model.VLanNetworkInterfaceResourceCollection": "java.util.Collection<info.christmann.recs3.model.VLanNetworkInterface>"
 }
