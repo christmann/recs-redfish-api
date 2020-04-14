@@ -314,6 +314,11 @@
 			"Chassis": true
 		}
 	},
+	"Redundancy": {
+		"Redundancy": {
+			"RedundancySet": true
+		}
+	},
 	"Switch": {
 		"Switch": {
 			"AssetTag": true,
