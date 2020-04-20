@@ -356,7 +356,8 @@
 			"PartNumber": true,
 			"RelatedItem": true,
 			"SparePartNumber": true,
-			"IndicatorLED": true
+			"IndicatorLED": true,
+			"Redundancy": true
 		},
 		"Temperature": {
 			"DeltaReadingCelsius": true,
