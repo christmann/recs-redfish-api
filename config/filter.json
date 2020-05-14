@@ -279,7 +279,12 @@
 			"PowerCapacityWatts": true,
 			"PowerAllocatedWatts": true,
 			"PowerLimit": true,
+			"RelatedItem": true,
 			"Status": true,
+			"PhysicalContext": true
+		},
+		"Voltage": {
+			"RelatedItem": true,
 			"PhysicalContext": true
 		}
 	},
@@ -310,6 +315,11 @@
 			"Chassis": true
 		}
 	},
+	"Redundancy": {
+		"Redundancy": {
+			"RedundancySet": true
+		}
+	},
 	"Switch": {
 		"Switch": {
 			"AssetTag": true,
@@ -334,6 +344,9 @@
 		}
 	},
 	"Thermal": {
+		"Thermal": {
+			"Redundancy": true
+		},
 		"Fan": {
 			"FanName": true,
 			"Location": true,
@@ -342,8 +355,10 @@
 			"Model": true,
 			"SerialNumber": true,
 			"PartNumber": true,
+			"RelatedItem": true,
 			"SparePartNumber": true,
-			"IndicatorLED": true
+			"IndicatorLED": true,
+			"Redundancy": true
 		},
 		"Temperature": {
 			"DeltaReadingCelsius": true,
@@ -351,7 +366,8 @@
 			"MaxAllowableOperatingValue": true,
 			"MinAllowableOperatingValue": true,
 			"AdjustedMaxAllowableOperatingValue": true,
-			"AdjustedMinAllowableOperatingValue": true
+			"AdjustedMinAllowableOperatingValue": true,
+			"RelatedItem": true
 		}
 	}
 }
