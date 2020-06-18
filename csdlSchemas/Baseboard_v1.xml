@@ -69,7 +69,7 @@
 					<Annotation Term="OData.LongDescription" String="The Actions property shall contain the available actions for this resource."/>
 				</Property>
 				<Property Name="BaseboardType" Type="Baseboard.v1_0_0.BaseboardType">
-					<Annotation Term="OData.Permissions" EnumMember="OData.Permissions/Read"/>
+					<Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
 					<Annotation Term="OData.Description" String="The type of the Baseboard."/>
 				</Property>
 				<NavigationProperty Name="Chassis" Type="Chassis.Chassis" Nullable="false">
@@ -97,7 +97,7 @@
 					<Annotation Term="OData.AutoExpandReferences"/>
 				</NavigationProperty>
 				<Property Name="BladeSlot" Type="Edm.Int64" Nullable="false">
-					<Annotation Term="OData.Permissions" EnumMember="OData.Permissions/Read"/>
+					<Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
 					<Annotation Term="OData.Description" String="The one-based position of the blade slot containing this Baseboard within the Chassis."/>
 					<Annotation Term="OData.LongDescription" String="The value of this property shall contain the zero-based numeric position of the blade slot containing this Baseboard within the Chassis."/>
 					<Annotation Term="Validation.Minimum" Int="1"/>

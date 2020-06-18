@@ -75,7 +75,7 @@
 				</NavigationProperty>
 				<Property Name="Width" Type="Edm.Int64" Nullable="false">
 					<Annotation Term="Redfish.RequiredOnCreate"/>
-					<Annotation Term="OData.Permissions" EnumMember="OData.Permissions/ReadWrite"/>
+					<Annotation Term="OData.Permissions" EnumMember="OData.Permission/ReadWrite"/>
 					<Annotation Term="OData.Description" String="Connection width of the HSLLConnection specified in number of lanes"/>
 					<Annotation Term="OData.LongDescription" String="The value of this property shall contain the connection width of the HSLLConnection specified in number of lanes."/>
 					<Annotation Term="Validation.Minimum" Int="0"/>
