@@ -23,7 +23,7 @@
 	<edmx:DataServices>
 		<Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="Error">
 
-			<EntityType Name="Error" BaseType="Resource.OemObject" Abstract="true">
+			<EntityType Name="Error" BaseType="Resource.ItemOrCollection" Abstract="true">
 				<Annotation Term="OData.Description" String="This is the schema definition for the Error resource." />
 				<Annotation Term="OData.LongDescription" String="This is the schema definition for the Error resource. It represents the properties of an error response." />
 			</EntityType>
