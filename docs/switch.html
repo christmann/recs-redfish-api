@@ -74,54 +74,54 @@ Switch contains properties describing a simple fabric switch.
 <h3 id="properties">Properties</h3>
 <table class="datatable">
 <tr><th>Property</th><th>Type</th><th>Nullable</th><th>Required</th><th>Permission</th><th>Description</th></tr>
-<tr><td>@odata.context</td><td>string</td><td></td><td></td><td>read-only</td><td>The OData description of a payload.<br />Format: uri</td></tr>
-<tr><td>@odata.id</td><td>string</td><td></td><td></td><td>read-only</td><td>The unique identifier for a resource.<br />Format: uri</td></tr>
-<tr><td>@odata.type</td><td>string</td><td></td><td></td><td>read-only</td><td>The type of a resource.</td></tr>
-<tr><td>Actions {</td><td>object</td><td></td><td></td><td>read-write</td><td>The available actions for this resource.</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;Oem { }</td><td>object</td><td></td><td></td><td>read-write</td><td>The available OEM specific actions for this resource.</td></tr>
+<tr><td>@odata.context</td><td>String</td><td></td><td></td><td>read-only</td><td>The OData description of a payload.<br />Format: uri</td></tr>
+<tr><td>@odata.id</td><td>String</td><td></td><td></td><td>read-only</td><td>The unique identifier for a resource.<br />Format: uri</td></tr>
+<tr><td>@odata.type</td><td>String</td><td></td><td></td><td>read-only</td><td>The type of a resource.</td></tr>
+<tr><td>Actions {</td><td>Object</td><td></td><td></td><td>read-write</td><td>The available actions for this resource.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;Oem { }</td><td>Object</td><td></td><td></td><td>read-write</td><td>The available OEM specific actions for this resource.</td></tr>
 <tr><td>}</td><td></td><td></td><td></td><td></td><td></td></tr>
-<tr><td>Description</td><td>string</td><td>Yes</td><td></td><td>read-only</td><td>Provides a description of this resource and is used for commonality  in the schema definitions.</td></tr>
-<tr><td>Id</td><td>string</td><td></td><td>GET</td><td>read-only</td><td>Uniquely identifies the resource within the collection of like resources.</td></tr>
-<tr><td>Links {</td><td>object</td><td></td><td></td><td>read-write</td><td>Contains references to other resources that are related to this resource.</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;Chassis {</td><td>reference(<a href="chassis.html#chassis">Chassis</a>)</td><td></td><td></td><td>read-only</td><td>A reference to the chassis which contains this switch.</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@odata.id</td><td>string</td><td></td><td></td><td>read-only</td><td>The unique identifier for a resource.<br />Format: uri</td></tr>
+<tr><td>Description</td><td>String</td><td>Yes</td><td></td><td>read-only</td><td>Provides a description of this resource and is used for commonality  in the schema definitions.</td></tr>
+<tr><td>Id</td><td>String</td><td></td><td>GET</td><td>read-only</td><td>Uniquely identifies the resource within the collection of like resources.</td></tr>
+<tr><td>Links {</td><td>Object</td><td></td><td></td><td>read-write</td><td>Contains references to other resources that are related to this resource.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;Chassis {</td><td>Reference(<a href="chassis.html#chassis">Chassis</a>)</td><td></td><td></td><td>read-only</td><td>A reference to the chassis which contains this switch.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@odata.id</td><td>String</td><td></td><td></td><td>read-only</td><td>The unique identifier for a resource.<br />Format: uri</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;}</td><td></td><td></td><td></td><td></td><td></td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;Oem { }</td><td>object</td><td></td><td></td><td>read-write</td><td>Oem extension object.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;Oem { }</td><td>Object</td><td></td><td></td><td>read-write</td><td>Oem extension object.</td></tr>
 <tr><td>}</td><td></td><td></td><td></td><td></td><td></td></tr>
-<tr><td>Name</td><td>string</td><td></td><td>GET</td><td>read-only</td><td>The name of the resource or array element.</td></tr>
-<tr><td>Oem {</td><td>object</td><td></td><td></td><td>read-write</td><td>This is the manufacturer/provider specific extension moniker used to divide the Oem object into sections.</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;EID_47597 {</td><td>object</td><td></td><td></td><td>read-write</td><td>RECS|Box Switch extension</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PCIeFunctions {</td><td>reference(<a href="pciefunctioncollection.html#pciefunctioncollection">PCIeFunctionCollection</a>)</td><td>Yes</td><td></td><td>read-only</td><td>This is a link to a collection of PCIeFunctions provided by this switch. They can be exposed by ports of this switch.</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@odata.id</td><td>string</td><td></td><td></td><td>read-only</td><td>The unique identifier for a resource.<br />Format: uri</td></tr>
+<tr><td>Name</td><td>String</td><td></td><td>GET</td><td>read-only</td><td>The name of the resource or array element.</td></tr>
+<tr><td>Oem {</td><td>Object</td><td></td><td></td><td>read-write</td><td>This is the manufacturer/provider specific extension moniker used to divide the Oem object into sections.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;EID_47597 {</td><td>Object</td><td></td><td></td><td>read-write</td><td>RECS|Box Switch extension</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PCIeFunctions {</td><td>Reference(<a href="pciefunctioncollection.html#pciefunctioncollection">PCIeFunctionCollection</a>)</td><td>Yes</td><td></td><td>read-only</td><td>This is a link to a collection of PCIeFunctions provided by this switch. They can be exposed by ports of this switch.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@odata.id</td><td>String</td><td></td><td></td><td>read-only</td><td>The unique identifier for a resource.<br />Format: uri</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</td><td></td><td></td><td></td><td></td><td></td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SwitchType</td><td>string</td><td></td><td></td><td>read-only</td><td>The type of the switch.<br />Possible Values:<ul>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SwitchType</td><td>String</td><td></td><td></td><td>read-only</td><td>The type of the switch.<br />Possible Values:<ul>
 <li>Ethernet</li>
 <li>PCIe</li>
 </ul></td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;}</td><td></td><td></td><td></td><td></td><td></td></tr>
 <tr><td>}</td><td></td><td></td><td></td><td></td><td></td></tr>
-<tr><td>Ports {</td><td>reference(<a href="portcollection.html#portcollection">PortCollection</a>)</td><td></td><td></td><td>read-only</td><td>A collection of references to the ports for this switch.</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;@odata.id</td><td>string</td><td></td><td></td><td>read-only</td><td>The unique identifier for a resource.<br />Format: uri</td></tr>
+<tr><td>Ports {</td><td>Reference(<a href="portcollection.html#portcollection">PortCollection</a>)</td><td></td><td></td><td>read-only</td><td>A collection of references to the ports for this switch.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;@odata.id</td><td>String</td><td></td><td></td><td>read-only</td><td>The unique identifier for a resource.<br />Format: uri</td></tr>
 <tr><td>}</td><td></td><td></td><td></td><td></td><td></td></tr>
-<tr><td>PowerState</td><td>string</td><td>Yes</td><td></td><td>read-only</td><td>This is the current power state of the switch.<br />Possible Values:<ul>
+<tr><td>PowerState</td><td>String</td><td>Yes</td><td></td><td>read-only</td><td>This is the current power state of the switch.<br />Possible Values:<ul>
 <li>On: The state is powered On.</li>
 <li>Off: The state is powered Off.</li>
 <li>PoweringOn: A temporary state between Off and On.</li>
 <li>PoweringOff: A temporary state between On and Off.</li>
 </ul></td></tr>
-<tr><td>Status {</td><td>object</td><td></td><td></td><td>read-write</td><td>This type describes the status and health of a resource and its children.</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;Health</td><td>string</td><td>Yes</td><td></td><td>read-only</td><td>This represents the health state of this resource in the absence of its dependent resources.<br />Possible Values:<ul>
+<tr><td>Status {</td><td>Object</td><td></td><td></td><td>read-write</td><td>This type describes the status and health of a resource and its children.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;Health</td><td>String</td><td>Yes</td><td></td><td>read-only</td><td>This represents the health state of this resource in the absence of its dependent resources.<br />Possible Values:<ul>
 <li>OK: Normal.</li>
 <li>Warning: A condition exists that requires attention.</li>
 <li>Critical: A critical condition exists that requires immediate attention.</li>
 </ul></td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;HealthRollup</td><td>string</td><td>Yes</td><td></td><td>read-only</td><td>This represents the overall health state from the view of this resource.<br />Possible Values:<ul>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;HealthRollup</td><td>String</td><td>Yes</td><td></td><td>read-only</td><td>This represents the overall health state from the view of this resource.<br />Possible Values:<ul>
 <li>OK: Normal.</li>
 <li>Warning: A condition exists that requires attention.</li>
 <li>Critical: A critical condition exists that requires immediate attention.</li>
 </ul></td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;Oem { }</td><td>object</td><td></td><td></td><td>read-write</td><td>Oem extension object.</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;State</td><td>string</td><td>Yes</td><td></td><td>read-only</td><td>This indicates the known state of the resource, such as if it is enabled.<br />Possible Values:<ul>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;Oem { }</td><td>Object</td><td></td><td></td><td>read-write</td><td>Oem extension object.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;State</td><td>String</td><td>Yes</td><td></td><td>read-only</td><td>This indicates the known state of the resource, such as if it is enabled.<br />Possible Values:<ul>
 <li>Enabled: This function or resource has been enabled.</li>
 <li>Disabled: This function or resource has been disabled.</li>
 <li>StandbyOffline: This function or resource is enabled, but awaiting an external action to activate it.</li>
@@ -135,7 +135,7 @@ Switch contains properties describing a simple fabric switch.
 <li>Updating: The element is updating and may be unavailable or degraded.</li>
 </ul></td></tr>
 <tr><td>}</td><td></td><td></td><td></td><td></td><td></td></tr>
-<tr><td>TotalSwitchWidth</td><td>number</td><td>Yes</td><td></td><td>read-only</td><td>The total number of lanes, phys, or other physical transport links that this switch contains.</td></tr>
+<tr><td>TotalSwitchWidth</td><td>Int64</td><td>Yes</td><td></td><td>read-only</td><td>The total number of lanes, phys, or other physical transport links that this switch contains.</td></tr>
 </table>
 <h2 id="operations">Operations</h2>
 <h3 id="get">GET</h3>
@@ -154,7 +154,7 @@ Content-Type: application/json
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;"@odata.id": "/redfish/v1/Switches/Switch1",
 <br />
-&nbsp;&nbsp;&nbsp;&nbsp;"@odata.type": "string",
+&nbsp;&nbsp;&nbsp;&nbsp;"@odata.type": "String",
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;"Actions": {
 <br />
@@ -162,9 +162,9 @@ Content-Type: application/json
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;}
 <br />
-&nbsp;&nbsp;&nbsp;&nbsp;"Description": "string",
+&nbsp;&nbsp;&nbsp;&nbsp;"Description": "String",
 <br />
-&nbsp;&nbsp;&nbsp;&nbsp;"Id": "string",
+&nbsp;&nbsp;&nbsp;&nbsp;"Id": "String",
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;"Links": {
 <br />
@@ -178,7 +178,7 @@ Content-Type: application/json
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;}
 <br />
-&nbsp;&nbsp;&nbsp;&nbsp;"Name": "string",
+&nbsp;&nbsp;&nbsp;&nbsp;"Name": "String",
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;"Oem": {
 <br />

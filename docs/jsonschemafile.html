@@ -74,22 +74,24 @@ This is the schema definition for the Schema File locator resource.
 <h3 id="properties">Properties</h3>
 <table class="datatable">
 <tr><th>Property</th><th>Type</th><th>Nullable</th><th>Required</th><th>Permission</th><th>Description</th></tr>
-<tr><td>@odata.context</td><td>string</td><td></td><td></td><td>read-only</td><td>The OData description of a payload.<br />Format: uri</td></tr>
-<tr><td>@odata.id</td><td>string</td><td></td><td></td><td>read-only</td><td>The unique identifier for a resource.<br />Format: uri</td></tr>
-<tr><td>@odata.type</td><td>string</td><td></td><td></td><td>read-only</td><td>The type of a resource.</td></tr>
-<tr><td>Oem { }</td><td>object</td><td></td><td></td><td>read-write</td><td>This is the manufacturer/provider specific extension moniker used to divide the Oem object into sections.</td></tr>
-<tr><td>Id</td><td>string</td><td></td><td>GET</td><td>read-only</td><td>Uniquely identifies the resource within the collection of like resources.</td></tr>
-<tr><td>Description</td><td>string</td><td>Yes</td><td></td><td>read-only</td><td>Provides a description of this resource and is used for commonality  in the schema definitions.</td></tr>
-<tr><td>Name</td><td>string</td><td></td><td>GET</td><td>read-only</td><td>The name of the resource or array element.</td></tr>
-<tr><td>Languages [ ]</td><td>array[string]</td><td></td><td>GET</td><td>read-only</td><td>Language codes for the schemas available.</td></tr>
-<tr><td>Schema</td><td>string</td><td></td><td>GET</td><td>read-only</td><td>The @odata.type name this schema describes.</td></tr>
-<tr><td>Location [ {</td><td>array[object]</td><td></td><td>GET</td><td>read-write</td><td>Location information for this schema file.</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;Language</td><td>string</td><td></td><td></td><td>read-only</td><td>The language code for the file the schema is in.</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;Uri</td><td>string</td><td></td><td></td><td>read-only</td><td>Link to locally available URI for schema.<br />Format: uri</td></tr>
-<tr><td>} ]</td><td></td><td></td><td></td><td></td><td></td></tr>
-<tr><td>Actions {</td><td>object</td><td></td><td></td><td>read-write</td><td>The available actions for this resource.</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;Oem { }</td><td>object</td><td></td><td></td><td>read-write</td><td>The available OEM specific actions for this resource.</td></tr>
+<tr><td>@odata.context</td><td>String</td><td></td><td></td><td>read-only</td><td>The OData description of a payload.<br />Format: uri</td></tr>
+<tr><td>@odata.id</td><td>String</td><td></td><td></td><td>read-only</td><td>The unique identifier for a resource.<br />Format: uri</td></tr>
+<tr><td>@odata.type</td><td>String</td><td></td><td></td><td>read-only</td><td>The type of a resource.</td></tr>
+<tr><td>Actions {</td><td>Object</td><td></td><td></td><td>read-write</td><td>The available actions for this resource.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;Oem { }</td><td>Object</td><td></td><td></td><td>read-write</td><td>The available OEM specific actions for this resource.</td></tr>
 <tr><td>}</td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>Description</td><td>String</td><td>Yes</td><td></td><td>read-only</td><td>Provides a description of this resource and is used for commonality  in the schema definitions.</td></tr>
+<tr><td>Id</td><td>String</td><td></td><td>GET</td><td>read-only</td><td>Uniquely identifies the resource within the collection of like resources.</td></tr>
+<tr><td>Languages [ ]</td><td>Array[String]</td><td></td><td>GET</td><td>read-only</td><td>Language codes for the schemas available.</td></tr>
+<tr><td>Languages@odata.count</td><td>Int32</td><td></td><td></td><td>read-only</td><td>The number of items in a collection.</td></tr>
+<tr><td>Location [ {</td><td>Array[Object]</td><td></td><td>GET</td><td>read-write</td><td>Location information for this schema file.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;Language</td><td>String</td><td></td><td></td><td>read-only</td><td>The language code for the file the schema is in.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;Uri</td><td>String</td><td></td><td></td><td>read-only</td><td>Link to locally available URI for schema.<br />Format: uri</td></tr>
+<tr><td>} ]</td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>Location@odata.count</td><td>Int32</td><td></td><td></td><td>read-only</td><td>The number of items in a collection.</td></tr>
+<tr><td>Name</td><td>String</td><td></td><td>GET</td><td>read-only</td><td>The name of the resource or array element.</td></tr>
+<tr><td>Oem { }</td><td>Object</td><td></td><td></td><td>read-write</td><td>This is the manufacturer/provider specific extension moniker used to divide the Oem object into sections.</td></tr>
+<tr><td>Schema</td><td>String</td><td></td><td>GET</td><td>read-only</td><td>The @odata.type name this schema describes.</td></tr>
 </table>
 <h2 id="operations">Operations</h2>
 <h3 id="get">GET</h3>
@@ -108,33 +110,37 @@ Content-Type: application/json
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;"@odata.id": "/redfish/v1/JsonSchemas/JsonSchemaFile1",
 <br />
-&nbsp;&nbsp;&nbsp;&nbsp;"@odata.type": "string",
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;"Oem": { },
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;"Id": "string",
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;"Description": "string",
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;"Name": "string",
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;"Languages": [ "string" ],
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;"Schema": "string",
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;"Location": [{
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Language": "string",
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Uri": "uri"
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;}]
+&nbsp;&nbsp;&nbsp;&nbsp;"@odata.type": "String",
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;"Actions": {
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Oem": { }
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;}
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;"Description": "String",
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;"Id": "String",
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;"Languages": [ "String" ],
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;"Languages@odata.count": 1,
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;"Location": [{
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Language": "String",
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Uri": "uri"
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;}]
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;"Location@odata.count": 1,
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;"Name": "String",
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;"Oem": { },
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;"Schema": "String"
 <br />
 }
 <br />

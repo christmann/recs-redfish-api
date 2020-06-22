@@ -74,70 +74,68 @@ The Chassis schema represents the physical components of a system.  This resourc
 <h3 id="properties">Properties</h3>
 <table class="datatable">
 <tr><th>Property</th><th>Type</th><th>Nullable</th><th>Required</th><th>Permission</th><th>Description</th></tr>
-<tr><td>@odata.context</td><td>string</td><td></td><td></td><td>read-only</td><td>The OData description of a payload.<br />Format: uri</td></tr>
-<tr><td>@odata.id</td><td>string</td><td></td><td></td><td>read-only</td><td>The unique identifier for a resource.<br />Format: uri</td></tr>
-<tr><td>@odata.type</td><td>string</td><td></td><td></td><td>read-only</td><td>The type of a resource.</td></tr>
-<tr><td>Actions {</td><td>object</td><td></td><td></td><td>read-write</td><td>The available actions for this resource.</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;Oem { }</td><td>object</td><td></td><td></td><td>read-write</td><td>The available OEM specific actions for this resource.</td></tr>
+<tr><td>@odata.context</td><td>String</td><td></td><td></td><td>read-only</td><td>The OData description of a payload.<br />Format: uri</td></tr>
+<tr><td>@odata.id</td><td>String</td><td></td><td></td><td>read-only</td><td>The unique identifier for a resource.<br />Format: uri</td></tr>
+<tr><td>@odata.type</td><td>String</td><td></td><td></td><td>read-only</td><td>The type of a resource.</td></tr>
+<tr><td>Actions {</td><td>Object</td><td></td><td></td><td>read-write</td><td>The available actions for this resource.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;Oem { }</td><td>Object</td><td></td><td></td><td>read-write</td><td>The available OEM specific actions for this resource.</td></tr>
 <tr><td>}</td><td></td><td></td><td></td><td></td><td></td></tr>
-<tr><td>ChassisType</td><td>string</td><td></td><td>GET</td><td>read-only</td><td>The type of physical form factor of the chassis.<br />Possible Values:<ul>
+<tr><td>ChassisType</td><td>String</td><td></td><td>GET</td><td>read-only</td><td>The type of physical form factor of the chassis.<br />Possible Values:<ul>
 <li>Enclosure: A generic term for a chassis that does not fit any other description.</li>
 </ul></td></tr>
-<tr><td>Description</td><td>string</td><td>Yes</td><td></td><td>read-only</td><td>Provides a description of this resource and is used for commonality  in the schema definitions.</td></tr>
-<tr><td>Id</td><td>string</td><td></td><td>GET</td><td>read-only</td><td>Uniquely identifies the resource within the collection of like resources.</td></tr>
-<tr><td>Links {</td><td>object</td><td></td><td></td><td>read-write</td><td>Contains references to other resources that are related to this resource.</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;ComputerSystems [ {</td><td>array[reference(<a href="computersystem.html#computersystem">ComputerSystem</a>)]</td><td></td><td></td><td>read-only</td><td>An array of references to the computer systems contained in this chassis.  This will only reference ComputerSystems that are directly and wholly contained in this chassis.</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@odata.id</td><td>string</td><td></td><td></td><td>read-only</td><td>The unique identifier for a resource.<br />Format: uri</td></tr>
+<tr><td>Description</td><td>String</td><td>Yes</td><td></td><td>read-only</td><td>Provides a description of this resource and is used for commonality  in the schema definitions.</td></tr>
+<tr><td>Id</td><td>String</td><td></td><td>GET</td><td>read-only</td><td>Uniquely identifies the resource within the collection of like resources.</td></tr>
+<tr><td>Links {</td><td>Object</td><td></td><td></td><td>read-write</td><td>Contains references to other resources that are related to this resource.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;ComputerSystems [ {</td><td>Array[Reference(<a href="computersystem.html#computersystem">ComputerSystem</a>)]</td><td></td><td></td><td>read-only</td><td>An array of references to the computer systems contained in this chassis.  This will only reference ComputerSystems that are directly and wholly contained in this chassis.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@odata.id</td><td>String</td><td></td><td></td><td>read-only</td><td>The unique identifier for a resource.<br />Format: uri</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;} ]</td><td></td><td></td><td></td><td></td><td></td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;ComputerSystems@odata.count</td><td>number</td><td></td><td></td><td>read-only</td><td>The number of items in a collection.</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;Oem {</td><td>object</td><td></td><td></td><td>read-write</td><td>Oem extension object.</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;EID_47597 {</td><td>object</td><td></td><td></td><td>read-only</td><td>RECS|Box Chassis links extension.</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Baseboards [ {</td><td>array[reference(<a href="baseboard.html#baseboard">Baseboard</a>)]</td><td></td><td></td><td>read-only</td><td>An array of references to Baseboards within this Chassis.</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@odata.id</td><td>string</td><td></td><td></td><td>read-only</td><td>The unique identifier for a resource.<br />Format: uri</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;ComputerSystems@odata.count</td><td>Int32</td><td></td><td></td><td>read-only</td><td>The number of items in a collection.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;Oem {</td><td>Object</td><td></td><td></td><td>read-write</td><td>Oem extension object.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;EID_47597 {</td><td>Object</td><td></td><td></td><td>read-only</td><td>RECS|Box Chassis links extension.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Baseboards [ {</td><td>Array[Reference(<a href="baseboard.html#baseboard">Baseboard</a>)]</td><td></td><td></td><td>read-only</td><td>An array of references to Baseboards within this Chassis.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@odata.id</td><td>String</td><td></td><td></td><td>read-only</td><td>The unique identifier for a resource.<br />Format: uri</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;} ]</td><td></td><td></td><td></td><td></td><td></td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Baseboards@odata.count</td><td>number</td><td></td><td></td><td>read-only</td><td>The number of items in a collection.</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Switches [ {</td><td>array[reference(<a href="switch.html#switch">Switch</a>)]</td><td></td><td></td><td>read-only</td><td>An array of references to Ethernet- and PCIeSwitches hosted within this Chassis.</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@odata.id</td><td>string</td><td></td><td></td><td>read-only</td><td>The unique identifier for a resource.<br />Format: uri</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Baseboards@odata.count</td><td>Int32</td><td></td><td></td><td>read-only</td><td>The number of items in a collection.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Switches [ {</td><td>Array[Reference(<a href="switch.html#switch">Switch</a>)]</td><td></td><td></td><td>read-only</td><td>An array of references to Ethernet- and PCIeSwitches hosted within this Chassis.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@odata.id</td><td>String</td><td></td><td></td><td>read-only</td><td>The unique identifier for a resource.<br />Format: uri</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;} ]</td><td></td><td></td><td></td><td></td><td></td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Switches@odata.count</td><td>number</td><td></td><td></td><td>read-only</td><td>The number of items in a collection.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Switches@odata.count</td><td>Int32</td><td></td><td></td><td>read-only</td><td>The number of items in a collection.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</td><td></td><td></td><td></td><td></td><td></td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;}</td><td></td><td></td><td></td><td></td><td></td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;PCIeDevices [ {</td><td>array[reference(<a href="pciedevice.html#pciedevice">PCIeDevice</a>)]</td><td></td><td></td><td>read-only</td><td>An array of references to the PCIe Devices located in this Chassis.</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@odata.id</td><td>string</td><td></td><td></td><td>read-only</td><td>The unique identifier for a resource.<br />Format: uri</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;PCIeDevices [ {</td><td>Array[Reference(<a href="pciedevice.html#pciedevice">PCIeDevice</a>)]</td><td></td><td></td><td>read-only</td><td>An array of references to the PCIe Devices located in this Chassis.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@odata.id</td><td>String</td><td></td><td></td><td>read-only</td><td>The unique identifier for a resource.<br />Format: uri</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;} ]</td><td></td><td></td><td></td><td></td><td></td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;PCIeDevices@odata.count</td><td>number</td><td></td><td></td><td>read-only</td><td>The number of items in a collection.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;PCIeDevices@odata.count</td><td>Int32</td><td></td><td></td><td>read-only</td><td>The number of items in a collection.</td></tr>
 <tr><td>}</td><td></td><td></td><td></td><td></td><td></td></tr>
-<tr><td>Manufacturer</td><td>string</td><td>Yes</td><td></td><td>read-only</td><td>The manufacturer of this chassis.</td></tr>
-<tr><td>Model</td><td>string</td><td>Yes</td><td></td><td>read-only</td><td>The model number of the chassis.</td></tr>
-<tr><td>Name</td><td>string</td><td></td><td>GET</td><td>read-only</td><td>The name of the resource or array element.</td></tr>
-<tr><td>Oem {</td><td>object</td><td></td><td></td><td>read-write</td><td>This is the manufacturer/provider specific extension moniker used to divide the Oem object into sections.</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;EID_47597 { }</td><td>object</td><td></td><td></td><td>read-write</td><td>RECS|Box Chassis extension</td></tr>
+<tr><td>Manufacturer</td><td>String</td><td>Yes</td><td></td><td>read-only</td><td>The manufacturer of this chassis.</td></tr>
+<tr><td>Model</td><td>String</td><td>Yes</td><td></td><td>read-only</td><td>The model number of the chassis.</td></tr>
+<tr><td>Name</td><td>String</td><td></td><td>GET</td><td>read-only</td><td>The name of the resource or array element.</td></tr>
+<tr><td>Oem { }</td><td>Object</td><td></td><td></td><td>read-write</td><td>This is the manufacturer/provider specific extension moniker used to divide the Oem object into sections.</td></tr>
+<tr><td>PartNumber</td><td>String</td><td>Yes</td><td></td><td>read-only</td><td>The part number of the chassis.</td></tr>
+<tr><td>Power {</td><td>Reference(<a href="power.html#power">Power</a>)</td><td></td><td></td><td>read-only</td><td>A reference to the power properties (power supplies, power policies, sensors) of this chassis.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;@odata.id</td><td>String</td><td></td><td></td><td>read-only</td><td>The unique identifier for a resource.<br />Format: uri</td></tr>
 <tr><td>}</td><td></td><td></td><td></td><td></td><td></td></tr>
-<tr><td>PartNumber</td><td>string</td><td>Yes</td><td></td><td>read-only</td><td>The part number of the chassis.</td></tr>
-<tr><td>Power {</td><td>reference(<a href="power.html#power">Power</a>)</td><td></td><td></td><td>read-only</td><td>A reference to the power properties (power supplies, power policies, sensors) of this chassis.</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;@odata.id</td><td>string</td><td></td><td></td><td>read-only</td><td>The unique identifier for a resource.<br />Format: uri</td></tr>
-<tr><td>}</td><td></td><td></td><td></td><td></td><td></td></tr>
-<tr><td>PowerState</td><td>string</td><td>Yes</td><td></td><td>read-only</td><td>The current power state of the chassis.<br />Possible Values:<ul>
+<tr><td>PowerState</td><td>String</td><td>Yes</td><td></td><td>read-only</td><td>The current power state of the chassis.<br />Possible Values:<ul>
 <li>On: The components within the chassis has power on.</li>
 <li>Off: The components within the chassis has no power, except some components may continue to have AUX power such as management controller.</li>
 <li>PoweringOn: A temporary state between Off and On. The components within the chassis can take time to process the power on action.</li>
 <li>PoweringOff: A temporary state between On and Off. The components within the chassis can take time to process the power off action.</li>
 </ul></td></tr>
-<tr><td>SKU</td><td>string</td><td>Yes</td><td></td><td>read-only</td><td>The SKU of the chassis.</td></tr>
-<tr><td>SerialNumber</td><td>string</td><td>Yes</td><td></td><td>read-only</td><td>The serial number of the chassis.</td></tr>
-<tr><td>Status {</td><td>object</td><td></td><td></td><td>read-write</td><td>This type describes the status and health of a resource and its children.</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;Health</td><td>string</td><td>Yes</td><td></td><td>read-only</td><td>This represents the health state of this resource in the absence of its dependent resources.<br />Possible Values:<ul>
+<tr><td>SKU</td><td>String</td><td>Yes</td><td></td><td>read-only</td><td>The SKU of the chassis.</td></tr>
+<tr><td>SerialNumber</td><td>String</td><td>Yes</td><td></td><td>read-only</td><td>The serial number of the chassis.</td></tr>
+<tr><td>Status {</td><td>Object</td><td></td><td></td><td>read-write</td><td>This type describes the status and health of a resource and its children.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;Health</td><td>String</td><td>Yes</td><td></td><td>read-only</td><td>This represents the health state of this resource in the absence of its dependent resources.<br />Possible Values:<ul>
 <li>OK: Normal.</li>
 <li>Warning: A condition exists that requires attention.</li>
 <li>Critical: A critical condition exists that requires immediate attention.</li>
 </ul></td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;HealthRollup</td><td>string</td><td>Yes</td><td></td><td>read-only</td><td>This represents the overall health state from the view of this resource.<br />Possible Values:<ul>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;HealthRollup</td><td>String</td><td>Yes</td><td></td><td>read-only</td><td>This represents the overall health state from the view of this resource.<br />Possible Values:<ul>
 <li>OK: Normal.</li>
 <li>Warning: A condition exists that requires attention.</li>
 <li>Critical: A critical condition exists that requires immediate attention.</li>
 </ul></td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;Oem { }</td><td>object</td><td></td><td></td><td>read-write</td><td>Oem extension object.</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;State</td><td>string</td><td>Yes</td><td></td><td>read-only</td><td>This indicates the known state of the resource, such as if it is enabled.<br />Possible Values:<ul>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;Oem { }</td><td>Object</td><td></td><td></td><td>read-write</td><td>Oem extension object.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;State</td><td>String</td><td>Yes</td><td></td><td>read-only</td><td>This indicates the known state of the resource, such as if it is enabled.<br />Possible Values:<ul>
 <li>Enabled: This function or resource has been enabled.</li>
 <li>Disabled: This function or resource has been disabled.</li>
 <li>StandbyOffline: This function or resource is enabled, but awaiting an external action to activate it.</li>
@@ -151,8 +149,8 @@ The Chassis schema represents the physical components of a system.  This resourc
 <li>Updating: The element is updating and may be unavailable or degraded.</li>
 </ul></td></tr>
 <tr><td>}</td><td></td><td></td><td></td><td></td><td></td></tr>
-<tr><td>Thermal {</td><td>reference(<a href="thermal.html#thermal">Thermal</a>)</td><td></td><td></td><td>read-only</td><td>A reference to the thermal properties (fans, cooling, sensors) of this chassis.</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;@odata.id</td><td>string</td><td></td><td></td><td>read-only</td><td>The unique identifier for a resource.<br />Format: uri</td></tr>
+<tr><td>Thermal {</td><td>Reference(<a href="thermal.html#thermal">Thermal</a>)</td><td></td><td></td><td>read-only</td><td>A reference to the thermal properties (fans, cooling, sensors) of this chassis.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;@odata.id</td><td>String</td><td></td><td></td><td>read-only</td><td>The unique identifier for a resource.<br />Format: uri</td></tr>
 <tr><td>}</td><td></td><td></td><td></td><td></td><td></td></tr>
 </table>
 <h2 id="operations">Operations</h2>
@@ -172,7 +170,7 @@ Content-Type: application/json
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;"@odata.id": "/redfish/v1/Chassis/Chassis1",
 <br />
-&nbsp;&nbsp;&nbsp;&nbsp;"@odata.type": "string",
+&nbsp;&nbsp;&nbsp;&nbsp;"@odata.type": "String",
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;"Actions": {
 <br />
@@ -182,9 +180,9 @@ Content-Type: application/json
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;"ChassisType": "Enclosure",
 <br />
-&nbsp;&nbsp;&nbsp;&nbsp;"Description": "string",
+&nbsp;&nbsp;&nbsp;&nbsp;"Description": "String",
 <br />
-&nbsp;&nbsp;&nbsp;&nbsp;"Id": "string",
+&nbsp;&nbsp;&nbsp;&nbsp;"Id": "String",
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;"Links": {
 <br />
@@ -230,19 +228,15 @@ Content-Type: application/json
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;}
 <br />
-&nbsp;&nbsp;&nbsp;&nbsp;"Manufacturer": "string",
+&nbsp;&nbsp;&nbsp;&nbsp;"Manufacturer": "String",
 <br />
-&nbsp;&nbsp;&nbsp;&nbsp;"Model": "string",
+&nbsp;&nbsp;&nbsp;&nbsp;"Model": "String",
 <br />
-&nbsp;&nbsp;&nbsp;&nbsp;"Name": "string",
+&nbsp;&nbsp;&nbsp;&nbsp;"Name": "String",
 <br />
-&nbsp;&nbsp;&nbsp;&nbsp;"Oem": {
+&nbsp;&nbsp;&nbsp;&nbsp;"Oem": { },
 <br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"EID_47597": { }
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;}
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;"PartNumber": "string",
+&nbsp;&nbsp;&nbsp;&nbsp;"PartNumber": "String",
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;"Power": {
 <br />
@@ -252,9 +246,9 @@ Content-Type: application/json
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;"PowerState": "On",
 <br />
-&nbsp;&nbsp;&nbsp;&nbsp;"SKU": "string",
+&nbsp;&nbsp;&nbsp;&nbsp;"SKU": "String",
 <br />
-&nbsp;&nbsp;&nbsp;&nbsp;"SerialNumber": "string",
+&nbsp;&nbsp;&nbsp;&nbsp;"SerialNumber": "String",
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;"Status": {
 <br />

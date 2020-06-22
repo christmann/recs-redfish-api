@@ -74,33 +74,33 @@ This is the schema definition for the HSLLConnection resource.
 <h3 id="properties">Properties</h3>
 <table class="datatable">
 <tr><th>Property</th><th>Type</th><th>Nullable</th><th>Required</th><th>Permission</th><th>Description</th></tr>
-<tr><td>@odata.context</td><td>string</td><td></td><td></td><td>read-only</td><td>The OData description of a payload.<br />Format: uri</td></tr>
-<tr><td>@odata.id</td><td>string</td><td></td><td></td><td>read-only</td><td>The unique identifier for a resource.<br />Format: uri</td></tr>
-<tr><td>@odata.type</td><td>string</td><td></td><td></td><td>read-only</td><td>The type of a resource.</td></tr>
-<tr><td>ComposedNode {</td><td>reference(<a href="composednode.html#composednode">ComposedNode</a>)</td><td></td><td></td><td>read-only</td><td>The ComposedNode this connection is part of</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;@odata.id</td><td>string</td><td></td><td></td><td>read-only</td><td>The unique identifier for a resource.<br />Format: uri</td></tr>
+<tr><td>@odata.context</td><td>String</td><td></td><td></td><td>read-only</td><td>The OData description of a payload.<br />Format: uri</td></tr>
+<tr><td>@odata.id</td><td>String</td><td></td><td></td><td>read-only</td><td>The unique identifier for a resource.<br />Format: uri</td></tr>
+<tr><td>@odata.type</td><td>String</td><td></td><td></td><td>read-only</td><td>The type of a resource.</td></tr>
+<tr><td>ComposedNode {</td><td>Reference(<a href="composednode.html#composednode">ComposedNode</a>)</td><td></td><td></td><td>read-only</td><td>The ComposedNode this connection is part of</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;@odata.id</td><td>String</td><td></td><td></td><td>read-only</td><td>The unique identifier for a resource.<br />Format: uri</td></tr>
 <tr><td>}</td><td></td><td></td><td></td><td></td><td></td></tr>
-<tr><td>ConnectionSet {</td><td>reference(<a href="hsllconnectionset.html#hsllconnectionset">HSLLConnectionSet</a>)</td><td></td><td></td><td>read-only</td><td>The HSLLConnectionSet this connection is part of</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;@odata.id</td><td>string</td><td></td><td></td><td>read-only</td><td>The unique identifier for a resource.<br />Format: uri</td></tr>
+<tr><td>ConnectionSet {</td><td>Reference(<a href="hsllconnectionset.html#hsllconnectionset">HSLLConnectionSet</a>)</td><td></td><td></td><td>read-only</td><td>The HSLLConnectionSet this connection is part of</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;@odata.id</td><td>String</td><td></td><td></td><td>read-only</td><td>The unique identifier for a resource.<br />Format: uri</td></tr>
 <tr><td>}</td><td></td><td></td><td></td><td></td><td></td></tr>
-<tr><td>Description</td><td>string</td><td>Yes</td><td></td><td>read-only</td><td>Provides a description of this resource and is used for commonality  in the schema definitions.</td></tr>
-<tr><td>EndpointA {</td><td>reference(<a href="hsllinterface.html#hsllinterface">HSLLInterface</a>)</td><td></td><td>POST</td><td>read-write</td><td>The first endpoint of this connection</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;@odata.id</td><td>string</td><td></td><td></td><td>read-only</td><td>The unique identifier for a resource.<br />Format: uri</td></tr>
+<tr><td>Description</td><td>String</td><td>Yes</td><td></td><td>read-only</td><td>Provides a description of this resource and is used for commonality  in the schema definitions.</td></tr>
+<tr><td>EndpointA {</td><td>Reference(<a href="hsllinterface.html#hsllinterface">HSLLInterface</a>)</td><td></td><td>POST</td><td>read-write</td><td>The first endpoint of this connection</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;@odata.id</td><td>String</td><td></td><td></td><td>read-only</td><td>The unique identifier for a resource.<br />Format: uri</td></tr>
 <tr><td>}</td><td></td><td></td><td></td><td></td><td></td></tr>
-<tr><td>EndpointB {</td><td>reference(<a href="hsllinterface.html#hsllinterface">HSLLInterface</a>)</td><td></td><td>POST</td><td>read-write</td><td>The second endpoint of this connection.</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;@odata.id</td><td>string</td><td></td><td></td><td>read-only</td><td>The unique identifier for a resource.<br />Format: uri</td></tr>
+<tr><td>EndpointB {</td><td>Reference(<a href="hsllinterface.html#hsllinterface">HSLLInterface</a>)</td><td></td><td>POST</td><td>read-write</td><td>The second endpoint of this connection.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;@odata.id</td><td>String</td><td></td><td></td><td>read-only</td><td>The unique identifier for a resource.<br />Format: uri</td></tr>
 <tr><td>}</td><td></td><td></td><td></td><td></td><td></td></tr>
-<tr><td>Id</td><td>string</td><td></td><td>GET</td><td>read-only</td><td>Uniquely identifies the resource within the collection of like resources.</td></tr>
-<tr><td>Links {</td><td>object</td><td></td><td></td><td>read-only</td><td>The links object contains the links to other resources that are related to this resource.</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;Oem { }</td><td>object</td><td></td><td></td><td>read-write</td><td>Oem extension object.</td></tr>
+<tr><td>Id</td><td>String</td><td></td><td>GET</td><td>read-only</td><td>Uniquely identifies the resource within the collection of like resources.</td></tr>
+<tr><td>Links {</td><td>Object</td><td></td><td></td><td>read-only</td><td>The links object contains the links to other resources that are related to this resource.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;Oem { }</td><td>Object</td><td></td><td></td><td>read-write</td><td>Oem extension object.</td></tr>
 <tr><td>}</td><td></td><td></td><td></td><td></td><td></td></tr>
-<tr><td>Name</td><td>string</td><td></td><td>GET</td><td>read-only</td><td>The name of the resource or array element.</td></tr>
-<tr><td>Oem { }</td><td>object</td><td></td><td></td><td>read-write</td><td>This is the manufacturer/provider specific extension moniker used to divide the Oem object into sections.</td></tr>
-<tr><td>PCIeFunctions [ {</td><td>array[reference(<a href="pciefunction.html#pciefunction">PCIeFunction</a>)]</td><td></td><td></td><td>read-write</td><td>An array of references to PCIeFunctions offered by the port. This property is only usable, if one of the endpoints is a port of a PCIe switch and has to be a subset of PCIeFunctions provided by the switch.</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;@odata.id</td><td>string</td><td></td><td></td><td>read-only</td><td>The unique identifier for a resource.<br />Format: uri</td></tr>
+<tr><td>Name</td><td>String</td><td></td><td>GET</td><td>read-only</td><td>The name of the resource or array element.</td></tr>
+<tr><td>Oem { }</td><td>Object</td><td></td><td></td><td>read-write</td><td>This is the manufacturer/provider specific extension moniker used to divide the Oem object into sections.</td></tr>
+<tr><td>PCIeFunctions [ {</td><td>Array[Reference(<a href="pciefunction.html#pciefunction">PCIeFunction</a>)]</td><td></td><td></td><td>read-write</td><td>An array of references to PCIeFunctions offered by the port. This property is only usable, if one of the endpoints is a port of a PCIe switch and has to be a subset of PCIeFunctions provided by the switch.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;@odata.id</td><td>String</td><td></td><td></td><td>read-only</td><td>The unique identifier for a resource.<br />Format: uri</td></tr>
 <tr><td>} ]</td><td></td><td></td><td></td><td></td><td></td></tr>
-<tr><td>PCIeFunctions@odata.count</td><td>number</td><td></td><td></td><td>read-only</td><td>The number of items in a collection.</td></tr>
-<tr><td>Width</td><td>number</td><td></td><td>POST</td><td>read-write</td><td>Connection width of the HSLLConnection specified in number of lanes<br />Minimum: 0</td></tr>
+<tr><td>PCIeFunctions@odata.count</td><td>Int32</td><td></td><td></td><td>read-only</td><td>The number of items in a collection.</td></tr>
+<tr><td>Width</td><td>Int64</td><td></td><td>POST</td><td>read-write</td><td>Connection width of the HSLLConnection specified in number of lanes<br />Minimum: 0</td></tr>
 </table>
 <h2 id="operations">Operations</h2>
 <h3 id="get">GET</h3>
@@ -119,7 +119,7 @@ Content-Type: application/json
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;"@odata.id": "/redfish/v1/ComposedNodes/ComposedNode1/HSLLConnectionSet1/HSLLConnection1",
 <br />
-&nbsp;&nbsp;&nbsp;&nbsp;"@odata.type": "string",
+&nbsp;&nbsp;&nbsp;&nbsp;"@odata.type": "String",
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;"ComposedNode": {
 <br />
@@ -133,7 +133,7 @@ Content-Type: application/json
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;},
 <br />
-&nbsp;&nbsp;&nbsp;&nbsp;"Description": "string",
+&nbsp;&nbsp;&nbsp;&nbsp;"Description": "String",
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;"EndpointA": {
 <br />
@@ -147,7 +147,7 @@ Content-Type: application/json
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;},
 <br />
-&nbsp;&nbsp;&nbsp;&nbsp;"Id": "string",
+&nbsp;&nbsp;&nbsp;&nbsp;"Id": "String",
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;"Links": {
 <br />
@@ -155,7 +155,7 @@ Content-Type: application/json
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;}
 <br />
-&nbsp;&nbsp;&nbsp;&nbsp;"Name": "string",
+&nbsp;&nbsp;&nbsp;&nbsp;"Name": "String",
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;"Oem": { },
 <br />

@@ -74,59 +74,59 @@ This is the schema definition for the Power Metrics.  It represents the properti
 <h3 id="properties">Properties</h3>
 <table class="datatable">
 <tr><th>Property</th><th>Type</th><th>Nullable</th><th>Required</th><th>Permission</th><th>Description</th></tr>
-<tr><td>@odata.context</td><td>string</td><td></td><td></td><td>read-only</td><td>The OData description of a payload.<br />Format: uri</td></tr>
-<tr><td>@odata.id</td><td>string</td><td></td><td></td><td>read-only</td><td>The unique identifier for a resource.<br />Format: uri</td></tr>
-<tr><td>@odata.type</td><td>string</td><td></td><td></td><td>read-only</td><td>The type of a resource.</td></tr>
-<tr><td>Actions {</td><td>object</td><td></td><td></td><td>read-write</td><td>The available actions for this resource.</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;Oem { }</td><td>object</td><td></td><td></td><td>read-write</td><td>The available OEM specific actions for this resource.</td></tr>
+<tr><td>@odata.context</td><td>String</td><td></td><td></td><td>read-only</td><td>The OData description of a payload.<br />Format: uri</td></tr>
+<tr><td>@odata.id</td><td>String</td><td></td><td></td><td>read-only</td><td>The unique identifier for a resource.<br />Format: uri</td></tr>
+<tr><td>@odata.type</td><td>String</td><td></td><td></td><td>read-only</td><td>The type of a resource.</td></tr>
+<tr><td>Actions {</td><td>Object</td><td></td><td></td><td>read-write</td><td>The available actions for this resource.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;Oem { }</td><td>Object</td><td></td><td></td><td>read-write</td><td>The available OEM specific actions for this resource.</td></tr>
 <tr><td>}</td><td></td><td></td><td></td><td></td><td></td></tr>
-<tr><td>Description</td><td>string</td><td>Yes</td><td></td><td>read-only</td><td>Provides a description of this resource and is used for commonality  in the schema definitions.</td></tr>
-<tr><td>Id</td><td>string</td><td></td><td>GET</td><td>read-only</td><td>Uniquely identifies the resource within the collection of like resources.</td></tr>
-<tr><td>Name</td><td>string</td><td></td><td>GET</td><td>read-only</td><td>The name of the resource or array element.</td></tr>
-<tr><td>Oem { }</td><td>object</td><td></td><td></td><td>read-write</td><td>This is the manufacturer/provider specific extension moniker used to divide the Oem object into sections.</td></tr>
-<tr><td>PowerControl [ {</td><td>array[object]</td><td></td><td></td><td>read-write</td><td>This is the definition for power control function (power reading/limiting).</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;Actions {</td><td>object</td><td></td><td></td><td>read-write</td><td>The available actions for this resource.</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Oem { }</td><td>object</td><td></td><td></td><td>read-write</td><td>The available OEM specific actions for this resource.</td></tr>
+<tr><td>Description</td><td>String</td><td>Yes</td><td></td><td>read-only</td><td>Provides a description of this resource and is used for commonality  in the schema definitions.</td></tr>
+<tr><td>Id</td><td>String</td><td></td><td>GET</td><td>read-only</td><td>Uniquely identifies the resource within the collection of like resources.</td></tr>
+<tr><td>Name</td><td>String</td><td></td><td>GET</td><td>read-only</td><td>The name of the resource or array element.</td></tr>
+<tr><td>Oem { }</td><td>Object</td><td></td><td></td><td>read-write</td><td>This is the manufacturer/provider specific extension moniker used to divide the Oem object into sections.</td></tr>
+<tr><td>PowerControl [ {</td><td>Array[Object]</td><td></td><td></td><td>read-write</td><td>This is the definition for power control function (power reading/limiting).</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;Actions {</td><td>Object</td><td></td><td></td><td>read-write</td><td>The available actions for this resource.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Oem { }</td><td>Object</td><td></td><td></td><td>read-write</td><td>The available OEM specific actions for this resource.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;}</td><td></td><td></td><td></td><td></td><td></td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;MemberId</td><td>string</td><td></td><td></td><td>read-only</td><td>This is the identifier for the member within the collection.</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;Name</td><td>string</td><td>Yes</td><td></td><td>read-only</td><td>Power Control Function name.</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;Oem { }</td><td>object</td><td></td><td></td><td>read-write</td><td>This is the manufacturer/provider specific extension moniker used to divide the Oem object into sections.</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;PowerConsumedWatts</td><td>number</td><td>Yes</td><td></td><td>read-only</td><td>The actual power being consumed by the chassis.<br />Unit: W<br />Minimum: 0</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;PowerMetrics {</td><td>object</td><td></td><td></td><td>read-write</td><td>Power readings for this chassis.</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;AverageConsumedWatts</td><td>number</td><td>Yes</td><td></td><td>read-only</td><td>The average power level over the measurement window (the last IntervalInMin minutes).<br />Unit: W<br />Minimum: 0</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;IntervalInMin</td><td>number</td><td>Yes</td><td></td><td>read-only</td><td>The time interval (or window) in which the PowerMetrics are measured over.<br />Unit: min<br />Minimum: 0</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MaxConsumedWatts</td><td>number</td><td>Yes</td><td></td><td>read-only</td><td>The highest power consumption level that has occured over the measurement window (the last IntervalInMin minutes).<br />Unit: W<br />Minimum: 0</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MinConsumedWatts</td><td>number</td><td>Yes</td><td></td><td>read-only</td><td>The lowest power consumption level over the measurement window (the last IntervalInMin minutes).<br />Unit: W<br />Minimum: 0</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;MemberId</td><td>String</td><td></td><td></td><td>read-only</td><td>This is the identifier for the member within the collection.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;Name</td><td>String</td><td>Yes</td><td></td><td>read-only</td><td>Power Control Function name.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;Oem { }</td><td>Object</td><td></td><td></td><td>read-write</td><td>This is the manufacturer/provider specific extension moniker used to divide the Oem object into sections.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;PowerConsumedWatts</td><td>Decimal</td><td>Yes</td><td></td><td>read-only</td><td>The actual power being consumed by the chassis.<br />Unit: W<br />Minimum: 0</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;PowerMetrics {</td><td>Object</td><td></td><td></td><td>read-write</td><td>Power readings for this chassis.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;AverageConsumedWatts</td><td>Decimal</td><td>Yes</td><td></td><td>read-only</td><td>The average power level over the measurement window (the last IntervalInMin minutes).<br />Unit: W<br />Minimum: 0</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;IntervalInMin</td><td>Int64</td><td>Yes</td><td></td><td>read-only</td><td>The time interval (or window) in which the PowerMetrics are measured over.<br />Unit: min<br />Minimum: 0</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MaxConsumedWatts</td><td>Decimal</td><td>Yes</td><td></td><td>read-only</td><td>The highest power consumption level that has occured over the measurement window (the last IntervalInMin minutes).<br />Unit: W<br />Minimum: 0</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MinConsumedWatts</td><td>Decimal</td><td>Yes</td><td></td><td>read-only</td><td>The lowest power consumption level over the measurement window (the last IntervalInMin minutes).<br />Unit: W<br />Minimum: 0</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;}</td><td></td><td></td><td></td><td></td><td></td></tr>
 <tr><td>} ]</td><td></td><td></td><td></td><td></td><td></td></tr>
-<tr><td>PowerControl@odata.count</td><td>number</td><td></td><td></td><td>read-only</td><td>The number of items in a collection.</td></tr>
-<tr><td>Voltages [ {</td><td>array[object]</td><td></td><td></td><td>read-write</td><td>This is the definition for voltage sensors.</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;Actions {</td><td>object</td><td></td><td></td><td>read-write</td><td>The available actions for this resource.</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Oem { }</td><td>object</td><td></td><td></td><td>read-write</td><td>The available OEM specific actions for this resource.</td></tr>
+<tr><td>PowerControl@odata.count</td><td>Int32</td><td></td><td></td><td>read-only</td><td>The number of items in a collection.</td></tr>
+<tr><td>Voltages [ {</td><td>Array[Object]</td><td></td><td></td><td>read-write</td><td>This is the definition for voltage sensors.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;Actions {</td><td>Object</td><td></td><td></td><td>read-write</td><td>The available actions for this resource.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Oem { }</td><td>Object</td><td></td><td></td><td>read-write</td><td>The available OEM specific actions for this resource.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;}</td><td></td><td></td><td></td><td></td><td></td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;LowerThresholdCritical</td><td>number</td><td>Yes</td><td></td><td>read-only</td><td>Below normal range but not yet fatal.<br />Unit: V</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;LowerThresholdFatal</td><td>number</td><td>Yes</td><td></td><td>read-only</td><td>Below normal range and is fatal.<br />Unit: V</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;LowerThresholdNonCritical</td><td>number</td><td>Yes</td><td></td><td>read-only</td><td>Below normal range.<br />Unit: V</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;MaxReadingRange</td><td>number</td><td>Yes</td><td></td><td>read-only</td><td>Maximum value for this Voltage sensor.<br />Unit: V</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;MemberId</td><td>string</td><td></td><td></td><td>read-only</td><td>This is the identifier for the member within the collection.</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;MinReadingRange</td><td>number</td><td>Yes</td><td></td><td>read-only</td><td>Minimum value for this Voltage sensor.<br />Unit: V</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;Name</td><td>string</td><td>Yes</td><td></td><td>read-only</td><td>Voltage sensor name.</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;Oem { }</td><td>object</td><td></td><td></td><td>read-write</td><td>This is the manufacturer/provider specific extension moniker used to divide the Oem object into sections.</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;ReadingVolts</td><td>number</td><td>Yes</td><td></td><td>read-only</td><td>The present reading of the voltage sensor.<br />Unit: V</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;SensorNumber</td><td>number</td><td>Yes</td><td></td><td>read-only</td><td>A numerical identifier to represent the voltage sensor.</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;Status {</td><td>object</td><td></td><td></td><td>read-write</td><td>This type describes the status and health of a resource and its children.</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Health</td><td>string</td><td>Yes</td><td></td><td>read-only</td><td>This represents the health state of this resource in the absence of its dependent resources.<br />Possible Values:<ul>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;LowerThresholdCritical</td><td>Decimal</td><td>Yes</td><td></td><td>read-only</td><td>Below normal range but not yet fatal.<br />Unit: V</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;LowerThresholdFatal</td><td>Decimal</td><td>Yes</td><td></td><td>read-only</td><td>Below normal range and is fatal.<br />Unit: V</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;LowerThresholdNonCritical</td><td>Decimal</td><td>Yes</td><td></td><td>read-only</td><td>Below normal range.<br />Unit: V</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;MaxReadingRange</td><td>Decimal</td><td>Yes</td><td></td><td>read-only</td><td>Maximum value for this Voltage sensor.<br />Unit: V</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;MemberId</td><td>String</td><td></td><td></td><td>read-only</td><td>This is the identifier for the member within the collection.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;MinReadingRange</td><td>Decimal</td><td>Yes</td><td></td><td>read-only</td><td>Minimum value for this Voltage sensor.<br />Unit: V</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;Name</td><td>String</td><td>Yes</td><td></td><td>read-only</td><td>Voltage sensor name.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;Oem { }</td><td>Object</td><td></td><td></td><td>read-write</td><td>This is the manufacturer/provider specific extension moniker used to divide the Oem object into sections.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;ReadingVolts</td><td>Decimal</td><td>Yes</td><td></td><td>read-only</td><td>The present reading of the voltage sensor.<br />Unit: V</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;SensorNumber</td><td>Int64</td><td>Yes</td><td></td><td>read-only</td><td>A numerical identifier to represent the voltage sensor.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;Status {</td><td>Object</td><td></td><td></td><td>read-write</td><td>This type describes the status and health of a resource and its children.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Health</td><td>String</td><td>Yes</td><td></td><td>read-only</td><td>This represents the health state of this resource in the absence of its dependent resources.<br />Possible Values:<ul>
 <li>OK: Normal.</li>
 <li>Warning: A condition exists that requires attention.</li>
 <li>Critical: A critical condition exists that requires immediate attention.</li>
 </ul></td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;HealthRollup</td><td>string</td><td>Yes</td><td></td><td>read-only</td><td>This represents the overall health state from the view of this resource.<br />Possible Values:<ul>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;HealthRollup</td><td>String</td><td>Yes</td><td></td><td>read-only</td><td>This represents the overall health state from the view of this resource.<br />Possible Values:<ul>
 <li>OK: Normal.</li>
 <li>Warning: A condition exists that requires attention.</li>
 <li>Critical: A critical condition exists that requires immediate attention.</li>
 </ul></td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Oem { }</td><td>object</td><td></td><td></td><td>read-write</td><td>Oem extension object.</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;State</td><td>string</td><td>Yes</td><td></td><td>read-only</td><td>This indicates the known state of the resource, such as if it is enabled.<br />Possible Values:<ul>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Oem { }</td><td>Object</td><td></td><td></td><td>read-write</td><td>Oem extension object.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;State</td><td>String</td><td>Yes</td><td></td><td>read-only</td><td>This indicates the known state of the resource, such as if it is enabled.<br />Possible Values:<ul>
 <li>Enabled: This function or resource has been enabled.</li>
 <li>Disabled: This function or resource has been disabled.</li>
 <li>StandbyOffline: This function or resource is enabled, but awaiting an external action to activate it.</li>
@@ -140,11 +140,11 @@ This is the schema definition for the Power Metrics.  It represents the properti
 <li>Updating: The element is updating and may be unavailable or degraded.</li>
 </ul></td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;}</td><td></td><td></td><td></td><td></td><td></td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;UpperThresholdCritical</td><td>number</td><td>Yes</td><td></td><td>read-only</td><td>Above normal range but not yet fatal.<br />Unit: V</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;UpperThresholdFatal</td><td>number</td><td>Yes</td><td></td><td>read-only</td><td>Above normal range and is fatal.<br />Unit: V</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;UpperThresholdNonCritical</td><td>number</td><td>Yes</td><td></td><td>read-only</td><td>Above normal range.<br />Unit: V</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;UpperThresholdCritical</td><td>Decimal</td><td>Yes</td><td></td><td>read-only</td><td>Above normal range but not yet fatal.<br />Unit: V</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;UpperThresholdFatal</td><td>Decimal</td><td>Yes</td><td></td><td>read-only</td><td>Above normal range and is fatal.<br />Unit: V</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;UpperThresholdNonCritical</td><td>Decimal</td><td>Yes</td><td></td><td>read-only</td><td>Above normal range.<br />Unit: V</td></tr>
 <tr><td>} ]</td><td></td><td></td><td></td><td></td><td></td></tr>
-<tr><td>Voltages@odata.count</td><td>number</td><td></td><td></td><td>read-only</td><td>The number of items in a collection.</td></tr>
+<tr><td>Voltages@odata.count</td><td>Int32</td><td></td><td></td><td>read-only</td><td>The number of items in a collection.</td></tr>
 </table>
 <h2 id="operations">Operations</h2>
 <h3 id="get">GET</h3>
@@ -163,7 +163,7 @@ Content-Type: application/json
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;"@odata.id": "/redfish/v1/Chassis/Chassis1/Power",
 <br />
-&nbsp;&nbsp;&nbsp;&nbsp;"@odata.type": "string",
+&nbsp;&nbsp;&nbsp;&nbsp;"@odata.type": "String",
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;"Actions": {
 <br />
@@ -171,11 +171,11 @@ Content-Type: application/json
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;}
 <br />
-&nbsp;&nbsp;&nbsp;&nbsp;"Description": "string",
+&nbsp;&nbsp;&nbsp;&nbsp;"Description": "String",
 <br />
-&nbsp;&nbsp;&nbsp;&nbsp;"Id": "string",
+&nbsp;&nbsp;&nbsp;&nbsp;"Id": "String",
 <br />
-&nbsp;&nbsp;&nbsp;&nbsp;"Name": "string",
+&nbsp;&nbsp;&nbsp;&nbsp;"Name": "String",
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;"Oem": { },
 <br />
@@ -187,9 +187,9 @@ Content-Type: application/json
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
 <br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"MemberId": "string",
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"MemberId": "String",
 <br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Name": "string",
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Name": "String",
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Oem": { },
 <br />
@@ -227,11 +227,11 @@ Content-Type: application/json
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"MaxReadingRange": 0,
 <br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"MemberId": "string",
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"MemberId": "String",
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"MinReadingRange": 0,
 <br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Name": "string",
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Name": "String",
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Oem": { },
 <br />
