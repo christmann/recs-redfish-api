@@ -43,6 +43,8 @@
 					<Annotation Term="OData.LongDescription" String="This object shall only contain a reference that complies to the Port schema."/>
 					<Annotation Term="OData.AutoExpandReferences"/>
 				</NavigationProperty>
+				<Annotation Term="OData.Description" String="RECS|Box EthernetInterface extension"/>
+				<Annotation Term="OData.LongDescription" String="RECS|Box EthernetInterface extension" />
 			</ComplexType>
 
 		</Schema>
