@@ -88,7 +88,7 @@
 				<Parameter Name="HSLLInterface" Type="HSLLInterface.HSLLInterface" Nullable="false">
 					<Annotation Term="OData.Description" String="The URI of a HSLLInterface resource, on which the Port is exposed." />
 				</Parameter>
-				<Parameter Name="PCIeFunctions" Type="Collection(PCIeFunctionParameter.v1_0_0.PCIeFunction)">
+				<Parameter Name="PCIeFunctions" Type="Collection(PCIeFunctionParameter.v1_0_0.PCIeFunction)" Nullable="true">
 					<Annotation Term="OData.Description" String="An array of PCIeFunctions, provided by this port." />
 				</Parameter>
 				<Annotation Term="OData.Description" String="This action is used to expose a port of a composed node."/>
