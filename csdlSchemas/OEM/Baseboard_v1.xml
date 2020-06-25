@@ -146,5 +146,15 @@
 				</NavigationProperty>
 			</EntityType>
 		</Schema>
+
+		<Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="Baseboard.v1_2_0">
+			<EntityType Name="Baseboard" BaseType="Baseboard.v1_1_0.Baseboard">
+				<Property Name="ExpansionBoardInserted" Type="Edm.Boolean" Nullable="false">
+					<Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+					<Annotation Term="OData.Description" String="Indicates, if an expansion board is inserted into this baseboard."/>
+					<Annotation Term="OData.LongDescription" String="The value of this property contains a boolean value, indicating if an expansion board is inserted into this baseboard."/>
+				</Property>
+			</EntityType>
+		</Schema>
 	</edmx:DataServices>
 </edmx:Edmx>
