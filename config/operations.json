@@ -5,7 +5,7 @@
 		"#ComposedNode.ExposePort": {
 			"Status": 201,
 			"Headers": {
-				"Location": "Port"
+				"Location": "see class-mapping.json"
 			}
 		}
 	},
@@ -13,7 +13,7 @@
 		"#ComposedNodeCollection.Allocate": {
 			"Status": 201,
 			"Headers": {
-				"Location": "ComposedNode"
+				"Location": "see class-mapping.json"
 			}
 		}
 	},
