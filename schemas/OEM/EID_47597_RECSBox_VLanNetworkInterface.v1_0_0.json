@@ -4,6 +4,8 @@
     "definitions": {
         "VLanNetworkInterface": {
             "additionalProperties": false,
+            "description": "RECS|Box VLanNetworkInterface extension",
+            "longDescription": "RECS|Box VLanNetworkInterface extension",
             "patternProperties": {
                 "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message|Privileges)\\.[a-zA-Z_][a-zA-Z0-9_.]+$": {
                     "description": "This property shall specify a valid odata or Redfish property.",
