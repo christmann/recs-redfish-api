@@ -183,6 +183,7 @@
 	"EthernetInterface": {
 		"EthernetInterface": {
 			"VLAN": true,
+			"VLANs": true,
 			"Status": true,
 			"InterfaceEnabled": true,
 			"MACAddress": true,

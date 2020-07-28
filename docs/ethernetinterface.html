@@ -99,9 +99,6 @@ The EthernetInterface schema represents a single, logical ethernet interface or 
 <tr><td>}</td><td></td><td></td><td></td><td></td><td></td></tr>
 <tr><td>PermanentMACAddress</td><td>String</td><td>Yes</td><td></td><td>read-only</td><td>This is the permanent MAC address assigned to this interface (port).<br />Pattern: ^([0-9A-Fa-f]{2}[:-]){5}([0-9A-Fa-f]{2})$</td></tr>
 <tr><td>UefiDevicePath</td><td>String</td><td>Yes</td><td></td><td>read-only</td><td>The UEFI device path for this interface.</td></tr>
-<tr><td>VLANs {</td><td>Reference(<a href="vlannetworkinterfacecollection.html#vlannetworkinterfacecollection">VLanNetworkInterfaceCollection</a>)</td><td></td><td></td><td>read-only</td><td>This is a reference to a collection of VLANs and is only used if the interface supports more than one VLANs.</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;@odata.id</td><td>String</td><td></td><td></td><td>read-only</td><td>The unique identifier for a resource.<br />Format: uri</td></tr>
-<tr><td>}</td><td></td><td></td><td></td><td></td><td></td></tr>
 </table>
 <h2 id="operations">Operations</h2>
 <h3 id="get">GET</h3>
@@ -164,13 +161,7 @@ Content-Type: application/json
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;"PermanentMACAddress": "String",
 <br />
-&nbsp;&nbsp;&nbsp;&nbsp;"UefiDevicePath": "String",
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;"VLANs": {
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"@odata.id": "/redfish/v1/Systems/ComputerSystem1/EthernetInterfaces/EthernetInterface1/VLANs"
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;}
+&nbsp;&nbsp;&nbsp;&nbsp;"UefiDevicePath": "String"
 <br />
 }
 <br />
