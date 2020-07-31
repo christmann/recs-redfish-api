@@ -1,0 +1,55 @@
+{
+    "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema.v1_3_0.json",
+    "copyright": "Copyright 2014-2017 Distributed Management Task Force, Inc. (DMTF). For the full DMTF copyright policy, see http://www.dmtf.org/about/policies/copyright",
+    "definitions": {
+        "VLanNetworkInterface": {
+            "additionalProperties": false,
+            "description": "RECS|Box VLanNetworkInterface extension",
+            "longDescription": "RECS|Box VLanNetworkInterface extension",
+            "patternProperties": {
+                "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message|Privileges)\\.[a-zA-Z_][a-zA-Z0-9_.]+$": {
+                    "description": "This property shall specify a valid odata or Redfish property.",
+                    "type": [
+                        "array",
+                        "boolean",
+                        "number",
+                        "null",
+                        "object",
+                        "string"
+                    ]
+                }
+            },
+            "properties": {
+                "Provider": {
+                    "$ref": "http://redfish.dmtf.org/schemas/v1/odata.v4_0_1.json#/definitions/idRef",
+                    "description": "The provider of this VLAN. This can either be a Port of an (Ethernet-)Switch or a EthernetInterface.",
+                    "longDescription": "This object shall only contain a reference that complies to the Switch or EthernetInterface schema.",
+                    "readonly": true
+                },
+                "Tagged": {
+                    "description": "This indicates if VLAN is tagged (as defined in IEEE 802.1Q).",
+                    "longDescription": "This indicates if VLAN is tagged (as defined in IEEE 802.1Q).",
+                    "readonly": false,
+                    "type": [
+                        "boolean",
+                        "null"
+                    ]
+                },
+                "VLANName": {
+                    "description": "An optional name for the VLAN.",
+                    "longDescription": "The value of this property shall be used to indicate the VLAN name for this VLAN.",
+                    "readonly": false,
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "requiredOnCreate": [
+                "Tagged"
+            ],
+            "type": "object"
+        }
+    },
+    "title": "#EID_47597_RECSBox_VLanNetworkInterface.v1_1_0"
+}

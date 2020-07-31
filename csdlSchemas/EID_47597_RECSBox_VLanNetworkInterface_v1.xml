@@ -40,6 +40,20 @@
 
 		</Schema>
 
+		<Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="EID_47597_RECSBox_VLanNetworkInterface.v1_1_0">
+			
+			<ComplexType Name="VLanNetworkInterface" BaseType="EID_47597_RECSBox_VLanNetworkInterface.v1_0_0.VLanNetworkInterface">
+				<Property Name="VLANName" Type="Edm.String">
+					<Annotation Term="OData.Permissions" EnumMember="OData.Permission/ReadWrite"/>
+					<Annotation Term="OData.Description" String="An optional name for the VLAN."/>
+					<Annotation Term="OData.LongDescription" String="The value of this property shall be used to indicate the VLAN name for this VLAN." />
+				</Property>
+				<Annotation Term="OData.Description" String="RECS|Box VLanNetworkInterface extension"/>
+				<Annotation Term="OData.LongDescription" String="RECS|Box VLanNetworkInterface extension" />
+			</ComplexType>
+
+		</Schema>
+
 	</edmx:DataServices>
 
 </edmx:Edmx>
