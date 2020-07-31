@@ -95,8 +95,8 @@
             "type": "object"
         },
         "VLANId": {
-            "maximum": 4094,
-            "minimum": 0,
+            "maximum": 4080,
+            "minimum": 1,
             "type": "number"
         },
         "VLanNetworkInterface": {
