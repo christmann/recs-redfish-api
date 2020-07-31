@@ -93,8 +93,8 @@
       </ComplexType>
 
       <TypeDefinition Name="VLANId" UnderlyingType="Edm.Int64">
-        <Annotation Term="Validation.Minimum" Int="0"/>
-        <Annotation Term="Validation.Maximum" Int="4094"/>
+        <Annotation Term="Validation.Minimum" Int="1"/>
+        <Annotation Term="Validation.Maximum" Int="4080"/>
       </TypeDefinition>
 
     </Schema>
