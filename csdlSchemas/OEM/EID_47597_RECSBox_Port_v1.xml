@@ -47,7 +47,7 @@
 					<Annotation Term="OData.AutoExpandReferences"/>
 				</NavigationProperty>
 				<NavigationProperty Name="PCIeFunctions" Type="Collection(PCIeFunction.PCIeFunction)" Nullable="false">
-					<Annotation Term="OData.Permissions" EnumMember="OData.Permission/ReadWrite"/>
+					<Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
 					<Annotation Term="OData.Description" String="An array of references to PCIeFunctions exposed by this port. This property is patchable for ports of a PCIe switch only and has to be a subset of PCIeFunctions provided by the switch."/>
 					<Annotation Term="OData.LongDescription" String="This object shall only contain references to resources that comply to the PCIeFunction schema."/>
 					<Annotation Term="OData.AutoExpandReferences"/>

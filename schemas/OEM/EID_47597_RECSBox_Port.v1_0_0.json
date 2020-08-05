@@ -52,7 +52,7 @@
                         "$ref": "PCIeFunction_v1.xml/PCIeFunction.json#/definitions/PCIeFunction"
                     },
                     "longDescription": "This object shall only contain references to resources that comply to the PCIeFunction schema.",
-                    "readonly": false,
+                    "readonly": true,
                     "type": "array"
                 },
                 "PCIeFunctions@odata.count": {
