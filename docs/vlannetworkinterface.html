@@ -92,7 +92,6 @@ This resource describes the attributes of a Virtual LAN.
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;VLANName</td><td>String</td><td>Yes</td><td></td><td>read-write</td><td>An optional name for the VLAN.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;}</td><td></td><td></td><td></td><td></td><td></td></tr>
 <tr><td>}</td><td></td><td></td><td></td><td></td><td></td></tr>
-<tr><td>VLANEnable</td><td>Boolean</td><td>Yes</td><td>POST</td><td>read-write</td><td>This indicates if this VLAN is enabled.</td></tr>
 <tr><td>VLANId</td><td>Int64</td><td>Yes</td><td>POST</td><td>read-write</td><td>This indicates the VLAN identifier for this VLAN.<br />Minimum: 1<br />Maximum: 4080</td></tr>
 </table>
 <h2 id="operations">Operations</h2>
@@ -144,8 +143,6 @@ Content-Type: application/json
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;}
 <br />
-&nbsp;&nbsp;&nbsp;&nbsp;"VLANEnable": false,
-<br />
 &nbsp;&nbsp;&nbsp;&nbsp;"VLANId": 1
 <br />
 }
@@ -179,8 +176,6 @@ Content-Type: application/json
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;}
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;"VLANEnable": false,
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;"VLANId": 1
 <br />

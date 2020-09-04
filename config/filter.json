@@ -384,6 +384,11 @@
 			"RelatedItem": true
 		}
 	},
+	"VLanNetworkInterface": {
+		"VLanNetworkInterface": {
+			"VLANEnable": true
+		}
+	},
 	"VLanNetworkInterfaceCollection": {
 		"URI": {
 			"/redfish/v1/ComposedNodes/{ComposedNodeID}/ProvidedPorts/{PortID}/VLANs": true
