@@ -22,6 +22,9 @@
 	<edmx:Reference Uri="http://redfish.dmtf.org/schemas/v1/Switch_v1.xml">
 		<edmx:Include Namespace="Switch"/>
 	</edmx:Reference>
+	<edmx:Reference Uri="ComposedNodeCollection_v1.xml">
+		<edmx:Include Namespace="ComposedNodeCollection"/>
+	</edmx:Reference>
 
 	<edmx:DataServices>
 
@@ -51,6 +54,30 @@
 					<Annotation Term="OData.AutoExpandReferences"/>
 				</NavigationProperty>
 			</ComplexType>
+			
+		</Schema>
+
+		<Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="EID_47597_RECSBox_Chassis.v1_1_0">
+			
+			<ComplexType Name="Chassis" BaseType="EID_47597_RECSBox_Chassis.v1_0_0.Chassis">
+				<Property Name="Links" Type="EID_47597_RECSBox_Chassis.v1_1_0.Links" Nullable="false">
+					<Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+					<Annotation Term="OData.Description" String="RECS|Box Chassis links extension."/>
+				</Property>
+				<Annotation Term="OData.AdditionalProperties" Bool="false"/>
+				<Annotation Term="OData.Description" String="RECS|Box Chassis extension"/>
+				<Annotation Term="OData.LongDescription" String="RECS|Box Chassis extension" />
+			</ComplexType>
+
+			<ComplexType Name="Links" BaseType="EID_47597_RECSBox_Chassis.v1_0_0.Links">
+				<NavigationProperty Name="ComposedNodes" Type="ComposedNodeCollection.ComposedNodeCollection" Nullable="false">
+					<Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+					<Annotation Term="OData.Description" String="This is a link to a collection of ComposedNodes."/>
+					<Annotation Term="OData.LongDescription" String="This object shall only contain a reference to a collection of resources that comply to the ComposedNode schema."/>
+					<Annotation Term="OData.AutoExpandReferences"/>
+				</NavigationProperty>
+			</ComplexType>
+			
 		</Schema>
 
 	</edmx:DataServices>
