@@ -1,59 +1,59 @@
 {
 	"ServiceRoot": {
 		"ServiceRoot": {
-			"CompositionService": true,
-			"AccountService": true,
-			"Product": true,
-			"ProtocolFeaturesSupported": true,
-			"Managers": true,
-			"Tasks": true,
-			"SessionService": true,
-			"EventService": true,
-			"Registries": true,
-			"StorageSystems": true,
-			"StorageServices": true,
-			"Fabrics": true,
-			"UpdateService": true
+			"CompositionService": "REMOVED",
+			"AccountService": "REMOVED",
+			"Product": "REMOVED",
+			"ProtocolFeaturesSupported": "REMOVED",
+			"Managers": "REMOVED",
+			"Tasks": "REMOVED",
+			"SessionService": "REMOVED",
+			"EventService": "REMOVED",
+			"Registries": "REMOVED",
+			"StorageSystems": "REMOVED",
+			"StorageServices": "REMOVED",
+			"Fabrics": "REMOVED",
+			"UpdateService": "REMOVED"
 		},
 		"Links": {
-			"Sessions": true
+			"Sessions": "REMOVED"
 		}
 	},
 	"Chassis": {
 		"Chassis": {
-			"Assembly": true,
-			"AssetTag": true,
+			"Assembly": "REMOVED",
+			"AssetTag": "REMOVED",
 			"ChassisType": [
 				"Enclosure"
 			],
-			"LogServices": true,
-			"PhysicalSecurity": true,
-			"Location": true,
-			"HeightMm": true,
-			"WidthMm": true,
-			"DepthMm": true,
-			"WeightKg": true,
-			"NetworkAdapters": true,
-			"IndicatorLED": true
+			"LogServices": "REMOVED",
+			"PhysicalSecurity": "REMOVED",
+			"Location": "REMOVED",
+			"HeightMm": "REMOVED",
+			"WidthMm": "REMOVED",
+			"DepthMm": "REMOVED",
+			"WeightKg": "REMOVED",
+			"NetworkAdapters": "REMOVED",
+			"IndicatorLED": "REMOVED"
 		},
 		"Links": {
-			"ManagedBy": true,
-			"PoweredBy": true,
-			"CooledBy": true,
-			"ContainedBy": true,
-			"Contains": true,
-			"ManagersInChassis": true,
-			"Drives": true,
-			"Storage": true,
-			"ResourceBlocks" : true
+			"ManagedBy": "REMOVED",
+			"PoweredBy": "REMOVED",
+			"CooledBy": "REMOVED",
+			"ContainedBy": "REMOVED",
+			"Contains": "REMOVED",
+			"ManagersInChassis": "REMOVED",
+			"Drives": "REMOVED",
+			"Storage": "REMOVED",
+			"ResourceBlocks" : "REMOVED"
 		},
 		"Actions": {
-			"#Chassis.Reset": true
+			"#Chassis.Reset": "REMOVED"
 		}
 	},
 	"Baseboard": {
 		"Baseboard": {
-			"Switches": true
+			"Switches": "REMOVED"
 		},
 		"Actions": {
 			"#Baseboard.Reset": {
@@ -71,29 +71,29 @@
 	},
 	"ComputerSystem": {
 		"ComputerSystem": {
-			"SystemType": true,
-			"PartNumber": true,
-			"BiosVersion": true,
-			"AssetTag": true,
-			"HostName": true,
-			"MemorySummary": true,
-			"MemoryMirroring": true,
-			"SimpleStorage": true,
-			"Memory": true,
-			"LogServices": true,
-			"TrustedModules": true,
-			"SecureBoot": true,
-			"PCIeDevices": true,
-			"PCIeFunctions": true,
-			"Bios": true,
-			"Storage": true,
-			"HostingRoles": true,
-			"HostedServices": true,
-			"MemoryDomains": true,
-			"NetworkInterfaces": true,
-			"HostWatchdogTimer": true,
-			"Redundancy": true,
-			"SubModel": true
+			"SystemType": "REMOVED",
+			"PartNumber": "REMOVED",
+			"BiosVersion": "REMOVED",
+			"AssetTag": "REMOVED",
+			"HostName": "REMOVED",
+			"MemorySummary": "REMOVED",
+			"MemoryMirroring": "REMOVED",
+			"SimpleStorage": "REMOVED",
+			"Memory": "REMOVED",
+			"LogServices": "REMOVED",
+			"TrustedModules": "REMOVED",
+			"SecureBoot": "REMOVED",
+			"PCIeDevices": "REMOVED",
+			"PCIeFunctions": "REMOVED",
+			"Bios": "REMOVED",
+			"Storage": "REMOVED",
+			"HostingRoles": "REMOVED",
+			"HostedServices": "REMOVED",
+			"MemoryDomains": "REMOVED",
+			"NetworkInterfaces": "REMOVED",
+			"HostWatchdogTimer": "REMOVED",
+			"Redundancy": "REMOVED",
+			"SubModel": "REMOVED"
 		},
 		"Actions": {
 			"#ComputerSystem.Reset": {
@@ -107,17 +107,17 @@
 					"PushPowerButton"
 				]
 			},
-			"#ComputerSystem.SetDefaultBootOrder": true
+			"#ComputerSystem.SetDefaultBootOrder": "REMOVED"
 		},
 		"Links": {
-			"Chassis": true,
-			"ManagedBy": true,
-			"PoweredBy": true,
-			"CooledBy": true,
-			"Endpoints": true,
-			"ConsumingComputerSystems": true,
-			"ResourceBlocks": true,
-			"SupplyingComputerSystems": true
+			"Chassis": "REMOVED",
+			"ManagedBy": "REMOVED",
+			"PoweredBy": "REMOVED",
+			"CooledBy": "REMOVED",
+			"Endpoints": "REMOVED",
+			"ConsumingComputerSystems": "REMOVED",
+			"ResourceBlocks": "REMOVED",
+			"SupplyingComputerSystems": "REMOVED"
 		},
 		"Boot": {
 			"BootSourceOverrideTarget": [
@@ -127,20 +127,20 @@
 				"Usb",
 				"Hdd"
 			],
-			"UefiTargetBootSourceOverride": true,
-			"BootSourceOverrideMode": true,
-			"BootNext": true,
-			"BootOptions": true,
-			"BootOrder": true
+			"UefiTargetBootSourceOverride": "REMOVED",
+			"BootSourceOverrideMode": "REMOVED",
+			"BootNext": "REMOVED",
+			"BootOptions": "REMOVED",
+			"BootOrder": "REMOVED"
 		},
 		"ProcessorSummary": {
-			"LogicalProcessorCount": true,
-			"Status": true
+			"LogicalProcessorCount": "REMOVED",
+			"Status": "REMOVED"
 		}
 	},
 	"ComposedNode": {
 		"ComposedNode": {
-			"Chassis": true
+			"Chassis": "REMOVED"
 		},
 		"Actions": {
 			"#ComposedNode.Reset": {
@@ -175,138 +175,138 @@
 			]
 		},
 		"Port": {
-			"PCIeFunctions": true,
-			"HSLLInterface": true,
-			"Resource": true
+			"PCIeFunctions": "REMOVED",
+			"HSLLInterface": "REMOVED",
+			"Resource": "REMOVED"
 		}
 	},
 	"EthernetInterface": {
 		"EthernetInterface": {
-			"VLAN": true,
-			"VLANs": true,
-			"Status": true,
-			"InterfaceEnabled": true,
-			"MACAddress": true,
-			"SpeedMbps": true,
-			"AutoNeg": true,
-			"FullDuplex": true,
-			"MTUSize": true,
-			"HostName": true,
-			"FQDN": true,
-			"MaxIPv6StaticAddresses": true,
-			"IPv4Addresses": true,
-			"IPv4StaticAddresses": true,
-			"IPv6AddressPolicyTable": true,
-			"IPv6Addresses": true,
-			"IPv6StaticAddresses": true,
-			"IPv6DefaultGateway": true,
-			"IPv6StaticDefaultGateways": true,
-			"NameServers": true,
-			"LinkStatus": true,
-			"DHCPv4": true,
-			"DHCPv6": true,
-			"StatelessAddressAutoConfig": true,
-			"StaticNameServers": true
+			"VLAN": "REMOVED",
+			"VLANs": "REMOVED",
+			"Status": "REMOVED",
+			"InterfaceEnabled": "REMOVED",
+			"MACAddress": "REMOVED",
+			"SpeedMbps": "REMOVED",
+			"AutoNeg": "REMOVED",
+			"FullDuplex": "REMOVED",
+			"MTUSize": "REMOVED",
+			"HostName": "REMOVED",
+			"FQDN": "REMOVED",
+			"MaxIPv6StaticAddresses": "REMOVED",
+			"IPv4Addresses": "REMOVED",
+			"IPv4StaticAddresses": "REMOVED",
+			"IPv6AddressPolicyTable": "REMOVED",
+			"IPv6Addresses": "REMOVED",
+			"IPv6StaticAddresses": "REMOVED",
+			"IPv6DefaultGateway": "REMOVED",
+			"IPv6StaticDefaultGateways": "REMOVED",
+			"NameServers": "REMOVED",
+			"LinkStatus": "REMOVED",
+			"DHCPv4": "REMOVED",
+			"DHCPv6": "REMOVED",
+			"StatelessAddressAutoConfig": "REMOVED",
+			"StaticNameServers": "REMOVED"
 		},
 		"Links": {
-			"Endpoints": true,
-			"HostInterface": true,
-			"Chassis": true
+			"Endpoints": "REMOVED",
+			"HostInterface": "REMOVED",
+			"Chassis": "REMOVED"
 		}
 	},
 	"HSLLInterface": {
 		"HSLLInterface": {
-			"SpeedGBps": true,
-			"Width": true,
-			"Status": true
+			"SpeedGBps": "REMOVED",
+			"Width": "REMOVED",
+			"Status": "REMOVED"
 		},
 		"URI": {
-			"/redfish/v1/ComposedNodes/{ComposedNodeID}/{HSLLConnectionSetID}/{HSLLConnectionID}/EndpointA": true,
-			"/redfish/v1/ComposedNodes/{ComposedNodeID}/{HSLLConnectionSetID}/{HSLLConnectionID}/EndpointB": true,
-			"/redfish/v1/ComposedNodes/{ComposedNodeID}/ProvidedPorts/{PortID}/HSLLInterface": true
+			"/redfish/v1/ComposedNodes/{ComposedNodeID}/{HSLLConnectionSetID}/{HSLLConnectionID}/EndpointA": "REMOVED",
+			"/redfish/v1/ComposedNodes/{ComposedNodeID}/{HSLLConnectionSetID}/{HSLLConnectionID}/EndpointB": "REMOVED",
+			"/redfish/v1/ComposedNodes/{ComposedNodeID}/ProvidedPorts/{PortID}/HSLLInterface": "REMOVED"
 		}
 	},
 	"JsonSchemaFile": {
 		"Location": {
-			"ArchiveUri": true,
-			"PublicationUri": true,
-			"ArchiveFile": true
+			"ArchiveUri": "REMOVED",
+			"PublicationUri": "REMOVED",
+			"ArchiveFile": "REMOVED"
 		}
 	},
 	"PCIeDevice": {
 		"PCIeDevice": {
-			"AssetTag": true,
-			"Assembly": true,
-			"FirmwareVersion": true
+			"AssetTag": "REMOVED",
+			"Assembly": "REMOVED",
+			"FirmwareVersion": "REMOVED"
 		},
 		"Links": {
-			"Chassis": true,
-			"HostInterface": true
+			"Chassis": "REMOVED",
+			"HostInterface": "REMOVED"
 		}
 	},
 	"PCIeFunction": {
 		"PCIeFunction": {
-			"AssetTag": true,
-			"Status": true
+			"AssetTag": "REMOVED",
+			"Status": "REMOVED"
 		},
 		"Links": {
-			"EthernetInterfaces": true,
-			"Drives": true,
-			"PCIeDevice": true,
-			"StorageControllers": true
+			"EthernetInterfaces": "REMOVED",
+			"Drives": "REMOVED",
+			"PCIeDevice": "REMOVED",
+			"StorageControllers": "REMOVED"
 		},
 		"URI": {
-			"/redfish/v1/ComposedNodes/{ComposedNodeID}/{HSLLConnectionSetID}/{HSLLConnectionID}/{PCIeFunctionID}": true
+			"/redfish/v1/ComposedNodes/{ComposedNodeID}/{HSLLConnectionSetID}/{HSLLConnectionID}/{PCIeFunctionID}": "REMOVED"
 		}
 	},
 	"Port": {
 		"Port": {
-			"CurrentSpeedGbps": true,
-			"Location": true,
-			"PortProtocol": true,
-			"PortType": true,
-			"PortId": true,
-			"Status": true
+			"CurrentSpeedGbps": "REMOVED",
+			"Location": "REMOVED",
+			"PortProtocol": "REMOVED",
+			"PortType": "REMOVED",
+			"PortId": "REMOVED",
+			"Status": "REMOVED"
 		},
 		"Links": {
-			"AssociatedEndpoints": true,
-			"ConnectedSwitchPorts": true,
-			"ConnectedSwitches": true
+			"AssociatedEndpoints": "REMOVED",
+			"ConnectedSwitchPorts": "REMOVED",
+			"ConnectedSwitches": "REMOVED"
 		},
 		"Actions": {
-			"#Port.Reset": true
+			"#Port.Reset": "REMOVED"
 		},
 		"URI": {
-			"/redfish/v1/Systems/{ComputerSystemID}/EthernetInterfaces/{EthernetInterfaceID}/ConnectedPort": true,
-			"/redfish/v1/Systems/{ComputerSystemID}/HSLLInterface/AssociatedPort": true,
-			"/redfish/v1/PCIeDevices/{PCIeDeviceID}/HSLLInterface/AssociatedPort": true
+			"/redfish/v1/Systems/{ComputerSystemID}/EthernetInterfaces/{EthernetInterfaceID}/ConnectedPort": "REMOVED",
+			"/redfish/v1/Systems/{ComputerSystemID}/HSLLInterface/AssociatedPort": "REMOVED",
+			"/redfish/v1/PCIeDevices/{PCIeDeviceID}/HSLLInterface/AssociatedPort": "REMOVED"
 		}
 	},
 	"Power": {
 		"Power": {
-			"PowerSupplies": true,
-			"Redundancy": true
+			"PowerSupplies": "REMOVED",
+			"Redundancy": "REMOVED"
 		},
 		"PowerControl": {
-			"PowerRequestedWatts": true,
-			"PowerAvailableWatts": true,
-			"PowerCapacityWatts": true,
-			"PowerAllocatedWatts": true,
-			"PowerLimit": true,
-			"RelatedItem": true,
-			"Status": true,
-			"PhysicalContext": true
+			"PowerRequestedWatts": "REMOVED",
+			"PowerAvailableWatts": "REMOVED",
+			"PowerCapacityWatts": "REMOVED",
+			"PowerAllocatedWatts": "REMOVED",
+			"PowerLimit": "REMOVED",
+			"RelatedItem": "REMOVED",
+			"Status": "REMOVED",
+			"PhysicalContext": "REMOVED"
 		},
 		"Voltage": {
-			"RelatedItem": true,
-			"PhysicalContext": true
+			"RelatedItem": "REMOVED",
+			"PhysicalContext": "REMOVED"
 		}
 	},
 	"Processor": {
 		"Processor": {
-			"Assembly": true,
-			"Status": true,
-			"Location": true,
+			"Assembly": "REMOVED",
+			"Status": "REMOVED",
+			"Location": "REMOVED",
 			"ProcessorType": [
 				"CPU",
 				"GPU",
@@ -322,76 +322,76 @@
 				"ARM-A32",
 				"ARM-A64"
 			],
-			"ProcessorId": true,
-			"Socket": true
+			"ProcessorId": "REMOVED",
+			"Socket": "REMOVED"
 		},
 		"Links": {
-			"Chassis": true
+			"Chassis": "REMOVED"
 		}
 	},
 	"Redundancy": {
 		"Redundancy": {
-			"RedundancySet": true
+			"RedundancySet": "REMOVED"
 		}
 	},
 	"Switch": {
 		"Switch": {
-			"AssetTag": true,
-			"DomainID": true,
-			"IndicatorLED": true,
-			"IsManaged": true,
-			"Location": true,
-			"LogServices": true,
-			"Redundancy": true,
-			"SwitchType": true,
-			"Manufacturer": true,
-			"Model": true,
-			"PartNumber": true,
-			"SKU": true,
-			"SerialNumber": true
+			"AssetTag": "REMOVED",
+			"DomainID": "REMOVED",
+			"IndicatorLED": "REMOVED",
+			"IsManaged": "REMOVED",
+			"Location": "REMOVED",
+			"LogServices": "REMOVED",
+			"Redundancy": "REMOVED",
+			"SwitchType": "REMOVED",
+			"Manufacturer": "REMOVED",
+			"Model": "REMOVED",
+			"PartNumber": "REMOVED",
+			"SKU": "REMOVED",
+			"SerialNumber": "REMOVED"
 		},
 		"Links": {
-			"ManagedBy": true
+			"ManagedBy": "REMOVED"
 		},
 		"Actions": {
-			"#Switch.Reset": true
+			"#Switch.Reset": "REMOVED"
 		}
 	},
 	"Thermal": {
 		"Thermal": {
-			"Redundancy": true
+			"Redundancy": "REMOVED"
 		},
 		"Fan": {
-			"FanName": true,
-			"Location": true,
-			"Assembly": true,
-			"Manufacturer": true,
-			"Model": true,
-			"SerialNumber": true,
-			"PartNumber": true,
-			"RelatedItem": true,
-			"SparePartNumber": true,
-			"IndicatorLED": true,
-			"Redundancy": true
+			"FanName": "REMOVED",
+			"Location": "REMOVED",
+			"Assembly": "REMOVED",
+			"Manufacturer": "REMOVED",
+			"Model": "REMOVED",
+			"SerialNumber": "REMOVED",
+			"PartNumber": "REMOVED",
+			"RelatedItem": "REMOVED",
+			"SparePartNumber": "REMOVED",
+			"IndicatorLED": "REMOVED",
+			"Redundancy": "REMOVED"
 		},
 		"Temperature": {
-			"DeltaReadingCelsius": true,
-			"DeltaPhysicalContext": true,
-			"MaxAllowableOperatingValue": true,
-			"MinAllowableOperatingValue": true,
-			"AdjustedMaxAllowableOperatingValue": true,
-			"AdjustedMinAllowableOperatingValue": true,
-			"RelatedItem": true
+			"DeltaReadingCelsius": "REMOVED",
+			"DeltaPhysicalContext": "REMOVED",
+			"MaxAllowableOperatingValue": "REMOVED",
+			"MinAllowableOperatingValue": "REMOVED",
+			"AdjustedMaxAllowableOperatingValue": "REMOVED",
+			"AdjustedMinAllowableOperatingValue": "REMOVED",
+			"RelatedItem": "REMOVED"
 		}
 	},
 	"VLanNetworkInterface": {
 		"VLanNetworkInterface": {
-			"VLANEnable": true
+			"VLANEnable": "REMOVED"
 		}
 	},
 	"VLanNetworkInterfaceCollection": {
 		"URI": {
-			"/redfish/v1/ComposedNodes/{ComposedNodeID}/ProvidedPorts/{PortID}/VLANs": true
+			"/redfish/v1/ComposedNodes/{ComposedNodeID}/ProvidedPorts/{PortID}/VLANs": "REMOVED"
 		}
 	}
 }
