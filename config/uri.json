@@ -1,0 +1,54 @@
+{
+	"ServiceRoot": {
+	},
+	"Chassis": {
+	},
+	"Baseboard": {
+	},
+	"ComputerSystem": {
+	},
+	"ComposedNode": {
+	},
+	"EthernetInterface": {
+	},
+	"HSLLInterface": {
+		"REMOVE": [
+			"/redfish/v1/ComposedNodes/{ComposedNodeID}/{HSLLConnectionSetID}/{HSLLConnectionID}/EndpointA",
+			"/redfish/v1/ComposedNodes/{ComposedNodeID}/{HSLLConnectionSetID}/{HSLLConnectionID}/EndpointB",
+			"/redfish/v1/ComposedNodes/{ComposedNodeID}/ProvidedPorts/{PortID}/HSLLInterface"
+		]
+	},
+	"JsonSchemaFile": {
+	},
+	"PCIeDevice": {
+	},
+	"PCIeFunction": {
+		"REMOVE": [
+			"/redfish/v1/ComposedNodes/{ComposedNodeID}/{HSLLConnectionSetID}/{HSLLConnectionID}/{PCIeFunctionID}"
+		]
+	},
+	"Port": {
+		"REMOVE": [
+			"/redfish/v1/Systems/{ComputerSystemID}/EthernetInterfaces/{EthernetInterfaceID}/ConnectedPort",
+			"/redfish/v1/Systems/{ComputerSystemID}/HSLLInterface/AssociatedPort",
+			"/redfish/v1/PCIeDevices/{PCIeDeviceID}/HSLLInterface/AssociatedPort"
+		]
+	},
+	"Power": {
+	},
+	"Processor": {
+	},
+	"Redundancy": {
+	},
+	"Switch": {
+	},
+	"Thermal": {
+	},
+	"VLanNetworkInterface": {
+	},
+	"VLanNetworkInterfaceCollection": {
+		"REMOVE": [
+			"/redfish/v1/ComposedNodes/{ComposedNodeID}/ProvidedPorts/{PortID}/VLANs"
+		]
+	}
+}

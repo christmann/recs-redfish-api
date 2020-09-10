@@ -219,11 +219,6 @@
 			"SpeedGBps": "REMOVED",
 			"Width": "REMOVED",
 			"Status": "REMOVED"
-		},
-		"URI": {
-			"/redfish/v1/ComposedNodes/{ComposedNodeID}/{HSLLConnectionSetID}/{HSLLConnectionID}/EndpointA": "REMOVED",
-			"/redfish/v1/ComposedNodes/{ComposedNodeID}/{HSLLConnectionSetID}/{HSLLConnectionID}/EndpointB": "REMOVED",
-			"/redfish/v1/ComposedNodes/{ComposedNodeID}/ProvidedPorts/{PortID}/HSLLInterface": "REMOVED"
 		}
 	},
 	"JsonSchemaFile": {
@@ -254,9 +249,6 @@
 			"Drives": "REMOVED",
 			"PCIeDevice": "REMOVED",
 			"StorageControllers": "REMOVED"
-		},
-		"URI": {
-			"/redfish/v1/ComposedNodes/{ComposedNodeID}/{HSLLConnectionSetID}/{HSLLConnectionID}/{PCIeFunctionID}": "REMOVED"
 		}
 	},
 	"Port": {
@@ -275,11 +267,6 @@
 		},
 		"Actions": {
 			"#Port.Reset": "REMOVED"
-		},
-		"URI": {
-			"/redfish/v1/Systems/{ComputerSystemID}/EthernetInterfaces/{EthernetInterfaceID}/ConnectedPort": "REMOVED",
-			"/redfish/v1/Systems/{ComputerSystemID}/HSLLInterface/AssociatedPort": "REMOVED",
-			"/redfish/v1/PCIeDevices/{PCIeDeviceID}/HSLLInterface/AssociatedPort": "REMOVED"
 		}
 	},
 	"Power": {
@@ -387,11 +374,6 @@
 	"VLanNetworkInterface": {
 		"VLanNetworkInterface": {
 			"VLANEnable": "REMOVED"
-		}
-	},
-	"VLanNetworkInterfaceCollection": {
-		"URI": {
-			"/redfish/v1/ComposedNodes/{ComposedNodeID}/ProvidedPorts/{PortID}/VLANs": "REMOVED"
 		}
 	}
 }

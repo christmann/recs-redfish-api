@@ -28,15 +28,19 @@ This optional parameter accepts a comma-separared list of prefixes to identify O
 #### -f, --filter
 
 This optional parameter points to a filter file, which specifies the properties to be ignored during the documentation generation. It has to be a valid JSON file. An example can be seen in the **config** folder.  
-Note: Setting the value __true__ for a property within that filter file will completely ignore the corresponding property, whereas properties with the value __false__ will be documented but greyed out in the documentation.
+Note: Setting the value "REMOVED" for a property within that filter file will completely ignore the corresponding property, whereas properties with the value "HIDDEN" will be documented but greyed out in the documentation.
+
+#### -u, --urifilter
+
+This optional parameter points to a filter file, which specifies the URIs to be ignored or to be taken as primary URIs during the documentation generation. It has to be a valid JSON file. An example can be seen in the **config** folder.
 
 #### -p, --operations
 
-This optional parameter points to a operations file, which specifies the available operations (other than GET) per defined Resource. If not specified, only GET operations will be available.
+This optional parameter points to a operations file, which specifies the available operations (other than GET) per defined Resource. If not specified, only GET operations will be available. It has to be a valid JSON file. An example can be seen in the **config** folder.
 
 #### -l, --literals
 
-This optional parameter points to a literals file, which specifies literals for the documentation.
+This optional parameter points to a literals file, which specifies literals for the documentation. It has to be a valid JSON file. An example can be seen in the **config** folder.
 
 #### -s, --schema
 
