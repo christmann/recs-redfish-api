@@ -159,7 +159,7 @@ This is the schema definition for the Baseboard resource.
 </table>
 <h4 id="request">Request</h4>
 <div class="code">
-POST /redfish/v1/Baseboards/Baseboard1/Actions/Baseboard.Reset
+POST /redfish/v1/Chassis/Chassis1/Baseboard1/Actions/Baseboard.Reset
 <br />
 Content-Type: application/json
 <br />
@@ -179,7 +179,7 @@ HTTP/1.1 204
 <h3 id="get">GET</h3>
 <h4 id="request">Request</h4>
 <div class="code">
-GET /redfish/v1/Baseboards/Baseboard1
+GET /redfish/v1/Chassis/Chassis1/Baseboard1
 <br />
 Content-Type: application/json
 <br />
@@ -190,7 +190,7 @@ Content-Type: application/json
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;"@odata.context": "uri",
 <br />
-&nbsp;&nbsp;&nbsp;&nbsp;"@odata.id": "/redfish/v1/Baseboards/Baseboard1",
+&nbsp;&nbsp;&nbsp;&nbsp;"@odata.id": "/redfish/v1/Chassis/Chassis1/Baseboard1",
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;"@odata.type": "String",
 <br />
@@ -198,7 +198,7 @@ Content-Type: application/json
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"#Baseboard.Reset": {
 <br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"target": "/redfish/v1/Baseboards/Baseboard1/Actions/Baseboard.Reset",
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"target": "/redfish/v1/Chassis/Chassis1/Baseboard1/Actions/Baseboard.Reset",
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"ResetType@Redfish.AllowableValues": ["On", "ForceOff", "GracefulShutdown", "GracefulRestart", "ForceRestart", "ForceOn", "PushPowerButton"],
 <br />
@@ -222,7 +222,7 @@ Content-Type: application/json
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;"ComputerSystems": [{
 <br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"@odata.id": "/redfish/v1/Systems/ComputerSystem1"
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"@odata.id": "/redfish/v1/Chassis/Chassis1/Baseboard1/ComputerSystem1"
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;}],
 <br />
@@ -246,7 +246,7 @@ Content-Type: application/json
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;"PCIeDevices": [{
 <br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"@odata.id": "/redfish/v1/PCIeDevices/PCIeDevice1"
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"@odata.id": "/redfish/v1/Chassis/Chassis1/Baseboard1/PCIeDevice1"
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;}],
 <br />
@@ -254,7 +254,7 @@ Content-Type: application/json
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;"Power": {
 <br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"@odata.id": "/redfish/v1/Baseboards/Baseboard1/Power"
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"@odata.id": "/redfish/v1/Chassis/Chassis1/Baseboard1/Power"
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;},
 <br />
@@ -272,7 +272,7 @@ Content-Type: application/json
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;"Thermal": {
 <br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"@odata.id": "/redfish/v1/Baseboards/Baseboard1/Thermal"
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"@odata.id": "/redfish/v1/Chassis/Chassis1/Baseboard1/Thermal"
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;}
 <br />

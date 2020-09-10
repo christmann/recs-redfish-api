@@ -216,7 +216,7 @@ This is the schema definition for the ComposedNode resource.
 </table>
 <h4 id="request">Request</h4>
 <div class="code">
-POST /redfish/v1/ComposedNodes/ComposedNode1/Actions/ComposedNode.Assemble
+POST /redfish/v1/Chassis/Chassis1/ComposedNodes/ComposedNode1/Actions/ComposedNode.Assemble
 <br />
 Content-Type: application/json
 <br />
@@ -230,13 +230,13 @@ Content-Type: application/json
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"EndpointA": {
 <br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"@odata.id": "/redfish/v1/Systems/ComputerSystem1/HSLLInterface"
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"@odata.id": "/redfish/v1/Chassis/Chassis1/Baseboard1/ComputerSystem1/HSLLInterface"
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"EndpointB": {
 <br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"@odata.id": "/redfish/v1/Systems/ComputerSystem1/HSLLInterface"
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"@odata.id": "/redfish/v1/Chassis/Chassis1/Baseboard1/ComputerSystem1/HSLLInterface"
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},
 <br />
@@ -333,7 +333,7 @@ HTTP/1.1 204
 </table>
 <h4 id="request">Request</h4>
 <div class="code">
-POST /redfish/v1/ComposedNodes/ComposedNode1/Actions/ComposedNode.ExposePort
+POST /redfish/v1/Chassis/Chassis1/ComposedNodes/ComposedNode1/Actions/ComposedNode.ExposePort
 <br />
 Content-Type: application/json
 <br />
@@ -343,7 +343,7 @@ Content-Type: application/json
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;"HSLLInterface": {
 <br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"@odata.id": "/redfish/v1/Systems/ComputerSystem1/HSLLInterface"
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"@odata.id": "/redfish/v1/Chassis/Chassis1/Baseboard1/ComputerSystem1/HSLLInterface"
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;},
 <br />
@@ -384,7 +384,7 @@ Content-Type: application/json
 <div class="code">
 HTTP/1.1 201
 <br />
-Location: http://{IP}:{PORT}/redfish/v1/ComposedNodes/ComposedNode1/ProvidedPorts/Port1
+Location: http://{IP}:{PORT}/redfish/v1/Chassis/Chassis1/Switch1/Ports/Port1
 <br />
 </div>
 <h3 id="#composednode.reject">#ComposedNode.Reject</h3>
@@ -392,7 +392,7 @@ Location: http://{IP}:{PORT}/redfish/v1/ComposedNodes/ComposedNode1/ProvidedPort
 This action has no parameters.
 <h4 id="request">Request</h4>
 <div class="code">
-POST /redfish/v1/ComposedNodes/ComposedNode1/Actions/ComposedNode.Reject
+POST /redfish/v1/Chassis/Chassis1/ComposedNodes/ComposedNode1/Actions/ComposedNode.Reject
 <br />
 Content-Type: application/json
 <br />
@@ -416,7 +416,7 @@ HTTP/1.1 204
 </table>
 <h4 id="request">Request</h4>
 <div class="code">
-POST /redfish/v1/ComposedNodes/ComposedNode1/Actions/ComposedNode.RemovePort
+POST /redfish/v1/Chassis/Chassis1/ComposedNodes/ComposedNode1/Actions/ComposedNode.RemovePort
 <br />
 Content-Type: application/json
 <br />
@@ -424,7 +424,7 @@ Content-Type: application/json
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;"Port": {
 <br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"@odata.id": "/redfish/v1/ComposedNodes/ComposedNode1/ProvidedPorts/Port1"
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"@odata.id": "/redfish/v1/Chassis/Chassis1/Switch1/Ports/Port1"
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;}
 <br />
@@ -452,7 +452,7 @@ HTTP/1.1 204
 </table>
 <h4 id="request">Request</h4>
 <div class="code">
-POST /redfish/v1/ComposedNodes/ComposedNode1/Actions/ComposedNode.Reset
+POST /redfish/v1/Chassis/Chassis1/ComposedNodes/ComposedNode1/Actions/ComposedNode.Reset
 <br />
 Content-Type: application/json
 <br />
@@ -472,7 +472,7 @@ HTTP/1.1 204
 <h3 id="get">GET</h3>
 <h4 id="request">Request</h4>
 <div class="code">
-GET /redfish/v1/ComposedNodes/ComposedNode1
+GET /redfish/v1/Chassis/Chassis1/ComposedNodes/ComposedNode1
 <br />
 Content-Type: application/json
 <br />
@@ -483,7 +483,7 @@ Content-Type: application/json
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;"@odata.context": "uri",
 <br />
-&nbsp;&nbsp;&nbsp;&nbsp;"@odata.id": "/redfish/v1/ComposedNodes/ComposedNode1",
+&nbsp;&nbsp;&nbsp;&nbsp;"@odata.id": "/redfish/v1/Chassis/Chassis1/ComposedNodes/ComposedNode1",
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;"@odata.type": "String",
 <br />
@@ -491,7 +491,7 @@ Content-Type: application/json
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"#ComposedNode.Assemble": {
 <br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"target": "/redfish/v1/ComposedNodes/ComposedNode1/Actions/ComposedNode.Assemble",
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"target": "/redfish/v1/Chassis/Chassis1/ComposedNodes/ComposedNode1/Actions/ComposedNode.Assemble",
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"title": "String"
 <br />
@@ -499,7 +499,7 @@ Content-Type: application/json
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"#ComposedNode.ExposePort": {
 <br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"target": "/redfish/v1/ComposedNodes/ComposedNode1/Actions/ComposedNode.ExposePort",
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"target": "/redfish/v1/Chassis/Chassis1/ComposedNodes/ComposedNode1/Actions/ComposedNode.ExposePort",
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"title": "String"
 <br />
@@ -507,7 +507,7 @@ Content-Type: application/json
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"#ComposedNode.Reject": {
 <br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"target": "/redfish/v1/ComposedNodes/ComposedNode1/Actions/ComposedNode.Reject",
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"target": "/redfish/v1/Chassis/Chassis1/ComposedNodes/ComposedNode1/Actions/ComposedNode.Reject",
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"title": "String"
 <br />
@@ -515,7 +515,7 @@ Content-Type: application/json
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"#ComposedNode.RemovePort": {
 <br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"target": "/redfish/v1/ComposedNodes/ComposedNode1/Actions/ComposedNode.RemovePort",
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"target": "/redfish/v1/Chassis/Chassis1/ComposedNodes/ComposedNode1/Actions/ComposedNode.RemovePort",
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"title": "String"
 <br />
@@ -523,7 +523,7 @@ Content-Type: application/json
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"#ComposedNode.Reset": {
 <br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"target": "/redfish/v1/ComposedNodes/ComposedNode1/Actions/ComposedNode.Reset",
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"target": "/redfish/v1/Chassis/Chassis1/ComposedNodes/ComposedNode1/Actions/ComposedNode.Reset",
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"ResetType@Redfish.AllowableValues": ["On", "ForceOff", "GracefulShutdown", "GracefulRestart", "ForceRestart", "ForceOn", "PushPowerButton"],
 <br />
@@ -539,7 +539,7 @@ Content-Type: application/json
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;"ComposedIn": {
 <br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"@odata.id": "/redfish/v1/ComposedNodes/ComposedNode1"
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"@odata.id": "/redfish/v1/Chassis/Chassis1/ComposedNodes/ComposedNode1"
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;},
 <br />
@@ -547,7 +547,7 @@ Content-Type: application/json
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;"ConnectionSets": [{
 <br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"@odata.id": "/redfish/v1/ComposedNodes/ComposedNode1/HSLLConnectionSet1"
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"@odata.id": "/redfish/v1/Chassis/Chassis1/ComposedNodes/ComposedNode1/HSLLConnectionSet1"
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;}],
 <br />
@@ -577,7 +577,7 @@ Content-Type: application/json
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;"ProvidedPorts": {
 <br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"@odata.id": "/redfish/v1/ComposedNodes/ComposedNode1/ProvidedPorts"
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"@odata.id": "/redfish/v1/Chassis/Chassis1/ComposedNodes/ComposedNode1/ProvidedPorts"
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;},
 <br />
@@ -607,7 +607,7 @@ HTTP/1.1 405 Method Not Allowed
 <h3 id="patch">PATCH</h3>
 <h4 id="request">Request</h4>
 <div class="code">
-PATCH /redfish/v1/ComposedNodes/ComposedNode1
+PATCH /redfish/v1/Chassis/Chassis1/ComposedNodes/ComposedNode1
 <br />
 Content-Type: application/json
 <br />
@@ -626,7 +626,7 @@ HTTP/1.1 204 No Content
 <h3 id="delete">DELETE</h3>
 <h4 id="request">Request</h4>
 <div class="code">
-DELETE /redfish/v1/ComposedNodes/ComposedNode1
+DELETE /redfish/v1/Chassis/Chassis1/ComposedNodes/ComposedNode1
 <br />
 </div>
 <h4 id="response">Response</h4>

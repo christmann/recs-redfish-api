@@ -1,54 +1,53 @@
 {
-	"ServiceRoot": {
-	},
-	"Chassis": {
-	},
 	"Baseboard": {
+		"REMOVE": [
+			"/redfish/v1/Baseboards/{BaseboardID}",
+			"/redfish/v1/Chassis/{ChassisID}/{ComputerSystemID}/Baseboard",
+			"/redfish/v1/Chassis/{ChassisID}/{PCIeDeviceID}/Baseboard"
+		]
 	},
 	"ComputerSystem": {
+		"REMOVE": [
+			"/redfish/v1/Systems/{ComputerSystemID}",
+			"/redfish/v1/Chassis/{ChassisID}/{ComputerSystemID}"
+		]
 	},
 	"ComposedNode": {
-	},
-	"EthernetInterface": {
+		"REMOVE": [
+			"/redfish/v1/ComposedNodes/{ComposedNodeID}",
+			"/redfish/v1/Chassis/{ChassisID}/{*"
+		]
 	},
 	"HSLLInterface": {
 		"REMOVE": [
-			"/redfish/v1/ComposedNodes/{ComposedNodeID}/{HSLLConnectionSetID}/{HSLLConnectionID}/EndpointA",
-			"/redfish/v1/ComposedNodes/{ComposedNodeID}/{HSLLConnectionSetID}/{HSLLConnectionID}/EndpointB",
-			"/redfish/v1/ComposedNodes/{ComposedNodeID}/ProvidedPorts/{PortID}/HSLLInterface"
+			"/redfish/v1/Chassis/{ChassisID}/ComposedNodes/*",
+			"/redfish/v1/Chassis/{ChassisID}/{BaseboardID}/{ComputerSystemID}/EthernetInterfaces/{EthernetInterfaceID}/ConnectedPort/HSLLInterface"
 		]
 	},
-	"JsonSchemaFile": {
-	},
 	"PCIeDevice": {
+		"REMOVE": [
+			"/redfish/v1/PCIeDevices/{PCIeDeviceID}",
+			"/redfish/v1/Chassis/{ChassisID}/{PCIeDeviceID}"
+		]
 	},
 	"PCIeFunction": {
 		"REMOVE": [
-			"/redfish/v1/ComposedNodes/{ComposedNodeID}/{HSLLConnectionSetID}/{HSLLConnectionID}/{PCIeFunctionID}"
+			"/redfish/v1/Chassis/{ChassisID}/ComposedNodes/{ComposedNodeID}/{HSLLConnectionSetID}/{HSLLConnectionID}/{PCIeFunctionID}"
 		]
 	},
 	"Port": {
 		"REMOVE": [
-			"/redfish/v1/Systems/{ComputerSystemID}/EthernetInterfaces/{EthernetInterfaceID}/ConnectedPort",
-			"/redfish/v1/Systems/{ComputerSystemID}/HSLLInterface/AssociatedPort",
-			"/redfish/v1/PCIeDevices/{PCIeDeviceID}/HSLLInterface/AssociatedPort"
+			"/redfish/v1/Chassis/{ChassisID}/{BaseboardID}/*"
 		]
 	},
-	"Power": {
-	},
-	"Processor": {
-	},
-	"Redundancy": {
-	},
 	"Switch": {
-	},
-	"Thermal": {
-	},
-	"VLanNetworkInterface": {
+		"REMOVE": [
+			"/redfish/v1/Switches/{SwitchID}"
+		]
 	},
 	"VLanNetworkInterfaceCollection": {
 		"REMOVE": [
-			"/redfish/v1/ComposedNodes/{ComposedNodeID}/ProvidedPorts/{PortID}/VLANs"
+			"/redfish/v1/Chassis/{ChassisID}/ComposedNodes/{ComposedNodeID}/ProvidedPorts/{PortID}/VLANs"
 		]
 	}
 }
