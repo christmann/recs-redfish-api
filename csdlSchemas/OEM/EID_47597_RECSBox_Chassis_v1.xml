@@ -16,8 +16,8 @@
 	<edmx:Reference Uri="http://redfish.dmtf.org/schemas/v1/Resource_v1.xml">
 		<edmx:Include Namespace="Resource"/>
 	</edmx:Reference>
-	<edmx:Reference Uri="Baseboard_v1.xml">
-		<edmx:Include Namespace="Baseboard"/>
+	<edmx:Reference Uri="BaseboardCollection_v1.xml">
+		<edmx:Include Namespace="BaseboardCollection"/>
 	</edmx:Reference>
 	<edmx:Reference Uri="http://redfish.dmtf.org/schemas/v1/Switch_v1.xml">
 		<edmx:Include Namespace="Switch"/>
@@ -41,10 +41,10 @@
 			</ComplexType>
 
 			<ComplexType Name="Links" BaseType="Resource.OemObject">
-				<NavigationProperty Name="Baseboards" Type="Collection(Baseboard.Baseboard)" Nullable="false">
+				<NavigationProperty Name="Baseboards" Type="BaseboardCollection.BaseboardCollection" Nullable="false">
 					<Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
-					<Annotation Term="OData.Description" String="An array of references to Baseboards within this Chassis."/>
-					<Annotation Term="OData.LongDescription" String="This object shall only contain references to the resource that complies to the Baseboard schema."/>
+					<Annotation Term="OData.Description" String="This is a link to a collection of Baseboards within this Chassis."/>
+					<Annotation Term="OData.LongDescription" String="This object shall only contain a reference to a collection of resources that comply to the Baseboard schema."/>
 					<Annotation Term="OData.AutoExpandReferences"/>
 				</NavigationProperty>
 				<NavigationProperty Name="Switches" Type="Collection(Switch.Switch)" Nullable="false">

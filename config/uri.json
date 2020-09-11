@@ -15,7 +15,8 @@
 	"ComposedNode": {
 		"REMOVE": [
 			"/redfish/v1/ComposedNodes/{ComposedNodeID}",
-			"/redfish/v1/Chassis/{ChassisID}/{*"
+			"/redfish/v1/Chassis/{ChassisID}/Baseboards/*",
+			"/redfish/v1/Chassis/{ChassisID}/{SwitchID}/*"
 		]
 	},
 	"ComposedNodeCollection": {
@@ -26,7 +27,7 @@
 	"HSLLInterface": {
 		"REMOVE": [
 			"/redfish/v1/Chassis/{ChassisID}/ComposedNodes/*",
-			"/redfish/v1/Chassis/{ChassisID}/{BaseboardID}/{ComputerSystemID}/EthernetInterfaces/{EthernetInterfaceID}/ConnectedPort/HSLLInterface"
+			"/redfish/v1/Chassis/{ChassisID}/Baseboards/{BaseboardID}/ComputerSystems/{ComputerSystemID}/EthernetInterfaces/*"
 		]
 	},
 	"PCIeDevice": {
@@ -42,7 +43,7 @@
 	},
 	"Port": {
 		"REMOVE": [
-			"/redfish/v1/Chassis/{ChassisID}/{BaseboardID}/*"
+			"/redfish/v1/Chassis/{ChassisID}/Baseboards/{BaseboardID}/*"
 		]
 	},
 	"Switch": {

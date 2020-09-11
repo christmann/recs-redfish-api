@@ -45,16 +45,10 @@
             },
             "properties": {
                 "Baseboards": {
-                    "description": "An array of references to Baseboards within this Chassis.",
-                    "items": {
-                        "$ref": "Baseboard_v1.xml/Baseboard.json#/definitions/Baseboard"
-                    },
-                    "longDescription": "This object shall only contain references to the resource that complies to the Baseboard schema.",
-                    "readonly": true,
-                    "type": "array"
-                },
-                "Baseboards@odata.count": {
-                    "$ref": "http://redfish.dmtf.org/schemas/v1/odata.v4_0_1.json#/definitions/count"
+                    "$ref": "BaseboardCollection_v1.xml/BaseboardCollection.json#/definitions/BaseboardCollection",
+                    "description": "This is a link to a collection of Baseboards within this Chassis.",
+                    "longDescription": "This object shall only contain a reference to a collection of resources that comply to the Baseboard schema.",
+                    "readonly": true
                 },
                 "Switches": {
                     "description": "An array of references to Ethernet- and PCIeSwitches hosted within this Chassis.",
