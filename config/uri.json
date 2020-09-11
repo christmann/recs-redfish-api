@@ -18,6 +18,11 @@
 			"/redfish/v1/Chassis/{ChassisID}/{*"
 		]
 	},
+	"ComposedNodeCollection": {
+		"REMOVE": [
+			"/redfish/v1/ComposedNodes/Actions/ComposedNodeCollection.Allocate"
+		]
+	},
 	"HSLLInterface": {
 		"REMOVE": [
 			"/redfish/v1/Chassis/{ChassisID}/ComposedNodes/*",
