@@ -202,7 +202,7 @@ This schema defines a computer system and its respective properties.  A computer
 </table>
 <h4 id="request">Request</h4>
 <div class="code">
-POST /redfish/v1/Chassis/Chassis1/Baseboard1/ComputerSystem1/Actions/ComputerSystem.Reset
+POST /redfish/v1/Chassis/Chassis1/Baseboard1/ComputerSystems/ComputerSystem1/Actions/ComputerSystem.Reset
 <br />
 Content-Type: application/json
 <br />
@@ -222,7 +222,7 @@ HTTP/1.1 204
 <h3 id="get">GET</h3>
 <h4 id="request">Request</h4>
 <div class="code">
-GET /redfish/v1/Chassis/Chassis1/Baseboard1/ComputerSystem1
+GET /redfish/v1/Chassis/Chassis1/Baseboard1/ComputerSystems/ComputerSystem1
 <br />
 Content-Type: application/json
 <br />
@@ -233,7 +233,7 @@ Content-Type: application/json
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;"@odata.context": "uri",
 <br />
-&nbsp;&nbsp;&nbsp;&nbsp;"@odata.id": "/redfish/v1/Chassis/Chassis1/Baseboard1/ComputerSystem1",
+&nbsp;&nbsp;&nbsp;&nbsp;"@odata.id": "/redfish/v1/Chassis/Chassis1/Baseboard1/ComputerSystems/ComputerSystem1",
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;"@odata.type": "String",
 <br />
@@ -241,7 +241,7 @@ Content-Type: application/json
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"#ComputerSystem.Reset": {
 <br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"target": "/redfish/v1/Chassis/Chassis1/Baseboard1/ComputerSystem1/Actions/ComputerSystem.Reset",
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"target": "/redfish/v1/Chassis/Chassis1/Baseboard1/ComputerSystems/ComputerSystem1/Actions/ComputerSystem.Reset",
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"ResetType@Redfish.AllowableValues": ["On", "ForceOff", "GracefulShutdown", "GracefulRestart", "ForceRestart", "ForceOn", "PushPowerButton"],
 <br />
@@ -269,7 +269,7 @@ Content-Type: application/json
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;"EthernetInterfaces": {
 <br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"@odata.id": "/redfish/v1/Chassis/Chassis1/Baseboard1/ComputerSystem1/EthernetInterfaces"
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"@odata.id": "/redfish/v1/Chassis/Chassis1/Baseboard1/ComputerSystems/ComputerSystem1/EthernetInterfaces"
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;},
 <br />
@@ -311,19 +311,19 @@ Content-Type: application/json
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"HSLLInterface": {
 <br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"@odata.id": "/redfish/v1/Chassis/Chassis1/Baseboard1/ComputerSystem1/HSLLInterface"
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"@odata.id": "/redfish/v1/Chassis/Chassis1/Baseboard1/ComputerSystems/ComputerSystem1/HSLLInterface"
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Power": {
 <br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"@odata.id": "/redfish/v1/Chassis/Chassis1/Baseboard1/ComputerSystem1/Power"
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"@odata.id": "/redfish/v1/Chassis/Chassis1/Baseboard1/ComputerSystems/ComputerSystem1/Power"
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Thermal": {
 <br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"@odata.id": "/redfish/v1/Chassis/Chassis1/Baseboard1/ComputerSystem1/Thermal"
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"@odata.id": "/redfish/v1/Chassis/Chassis1/Baseboard1/ComputerSystems/ComputerSystem1/Thermal"
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
 <br />
@@ -343,7 +343,7 @@ Content-Type: application/json
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;"Processors": {
 <br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"@odata.id": "/redfish/v1/Chassis/Chassis1/Baseboard1/ComputerSystem1/Processors"
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"@odata.id": "/redfish/v1/Chassis/Chassis1/Baseboard1/ComputerSystems/ComputerSystem1/Processors"
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;},
 <br />
@@ -379,7 +379,7 @@ HTTP/1.1 405 Method Not Allowed
 <h3 id="patch">PATCH</h3>
 <h4 id="request">Request</h4>
 <div class="code">
-PATCH /redfish/v1/Chassis/Chassis1/Baseboard1/ComputerSystem1
+PATCH /redfish/v1/Chassis/Chassis1/Baseboard1/ComputerSystems/ComputerSystem1
 <br />
 Content-Type: application/json
 <br />
