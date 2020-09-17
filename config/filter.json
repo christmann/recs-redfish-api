@@ -93,7 +93,16 @@
 			"NetworkInterfaces": "REMOVED",
 			"HostWatchdogTimer": "REMOVED",
 			"Redundancy": "REMOVED",
-			"SubModel": "REMOVED"
+			"SubModel": "REMOVED",
+			"Boot": {
+				"BootSourceOverrideTarget": [
+					"None",
+					"Pxe",
+					"Cd",
+					"Usb",
+					"Hdd"
+				]
+			}
 		},
 		"Actions": {
 			"#ComputerSystem.Reset": {
@@ -120,13 +129,6 @@
 			"SupplyingComputerSystems": "REMOVED"
 		},
 		"Boot": {
-			"BootSourceOverrideTarget": [
-				"None",
-				"Pxe",
-				"Cd",
-				"Usb",
-				"Hdd"
-			],
 			"UefiTargetBootSourceOverride": "REMOVED",
 			"BootSourceOverrideMode": "REMOVED",
 			"BootNext": "REMOVED",
@@ -157,22 +159,24 @@
 		}
 	},
 	"ComposedNodeAllocationRequirement": {
-		"Processor": {
-			"ProcessorType": [
-				"CPU",
-				"GPU",
-				"FPGA"
-			],
-			"ProcessorArchitecture": [
-				"x86",
-				"ARM"
-			],
-			"InstructionSet": [
-				"x86",
-				"x86-64",
-				"ARM-A32",
-				"ARM-A64"
-			]
+		"System": {
+			"Processors": {
+				"ProcessorType": [
+					"CPU",
+					"GPU",
+					"FPGA"
+				],
+				"ProcessorArchitecture": [
+					"x86",
+					"ARM"
+				],
+				"InstructionSet": [
+					"x86",
+					"x86-64",
+					"ARM-A32",
+					"ARM-A64"
+				]
+			}
 		},
 		"Port": {
 			"PCIeFunctions": "REMOVED",
