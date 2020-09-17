@@ -158,26 +158,32 @@
 			}
 		}
 	},
-	"ComposedNodeAllocationRequirement": {
-		"System": {
-			"Processors": {
-				"ProcessorType": [
-					"CPU",
-					"GPU",
-					"FPGA"
-				],
-				"ProcessorArchitecture": [
-					"x86",
-					"ARM"
-				],
-				"InstructionSet": [
-					"x86",
-					"x86-64",
-					"ARM-A32",
-					"ARM-A64"
-				]
+	"ComposedNodeCollection": {
+		"Actions": {
+			"#ComposedNodeCollection.Allocate": {
+				"Systems": {
+					"Processors": {
+						"ProcessorType": [
+							"CPU",
+							"GPU",
+							"FPGA"
+						],
+						"ProcessorArchitecture": [
+							"x86",
+							"ARM"
+						],
+						"InstructionSet": [
+							"x86",
+							"x86-64",
+							"ARM-A32",
+							"ARM-A64"
+						]
+					}
+				}
 			}
-		},
+		}
+	},
+	"ComposedNodeAllocationRequirement": {
 		"Port": {
 			"PCIeFunctions": "REMOVED",
 			"HSLLInterface": "REMOVED",
