@@ -54,6 +54,10 @@ This optional parameter points to the base folder where the java files will be g
 
 This optional flag indicates, if the adapter implementation code will be generated.
 
+#### -t, --generatetest
+
+This optional parameter points to the base folder where the java test files will be generated. This folder will be cleared automatically before new code is generated. If not specified, no test code is generated.
+
 #### -m, --mapping
 
 This optional parameter points to a file, which specifies the mapping between redfish resource classes and "real" modelcalsses for code generation. It has to be a valid JSON file. An example can be seen in the **config** folder.
