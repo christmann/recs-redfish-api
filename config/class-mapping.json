@@ -43,6 +43,11 @@
 		"EthernetInterface.ConnectedPort": "info.christmann.recs.model.interfaces.IEthernetSwitchPort",
 		"ComposedNode.ContainedResources": "info.christmann.recs.model.interfaces.IComposable",
 		"ComposedNode.ExposePort": "info.christmann.recs.model.interfaces.IPort",
-		"ComposedNodeCollection.Allocate": "info.christmann.recs.model.interfaces.IComposedNode"
+		"ComposedNodeCollection.Allocate": "info.christmann.recs.model.interfaces.IComposedNode",
+		"Power.PowerControl": "info.christmann.recs.model.interfaces.ISensorValueProvider",
+		"Power.Voltages": "info.christmann.recs.model.interfaces.ISensorValueProvider",
+		"Thermal.Fans": "info.christmann.recs.model.interfaces.IFan",
+		"Thermal.Temperatures": "info.christmann.recs.model.interfaces.ISensorValueProvider",
+		"JsonSchemaFile.Location": "java.lang.Object"
 	}
 }
