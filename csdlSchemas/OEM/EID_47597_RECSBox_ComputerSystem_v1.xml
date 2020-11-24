@@ -113,12 +113,12 @@
 			
 			<ComplexType Name="ComputerSystem" BaseType="EID_47597_RECSBox_ComputerSystem.v1_1_0.ComputerSystem">
 				<Property Name="OnKVM" Type="Edm.Boolean" Nullable="false">
-					<Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
-					<Annotation Term="OData.Description" String="If true, this ComputerSystem is set to KVM."/>
+					<Annotation Term="OData.Permissions" EnumMember="OData.Permission/ReadWrite"/>
+					<Annotation Term="OData.Description" String="If true, this ComputerSystem is set to KVM. Attention: KVM is released from all other ComputerSystems."/>
 				</Property>
 				<Property Name="OnIKVM" Type="Edm.Boolean" Nullable="false">
-					<Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
-					<Annotation Term="OData.Description" String="If true, this ComputerSystem is set to iKVM."/>
+					<Annotation Term="OData.Permissions" EnumMember="OData.Permission/ReadWrite"/>
+					<Annotation Term="OData.Description" String="If true, this ComputerSystem is set to iKVM. Attention: iKVM is released from all other ComputerSystems."/>
 				</Property>
 			</ComplexType>
 
@@ -131,15 +131,6 @@
 				<Member Name="Apalis" />
 				<Member Name="Jetson" />
 			</EnumType>
-
-			<Action Name="ToKVM" IsBound="true">
-				<Parameter Name="ComputerSystem" Type="ComputerSystem.v1_5_0.Actions"/>
-				<Parameter Name="Physical" Type="Edm.Boolean">
-					<Annotation Term="Redfish.RequiredOnCreate"/>
-					<Annotation Term="OData.Description" String="If true, set KVM. Set iKVM otherwise."/>
-				</Parameter>
-				<Annotation Term="OData.Description" String="Switches the KVM/iKVM port of the Chassis containing the ComputerSystem to this ComputerSystem."/>
-			</Action>
 		
 		</Schema>
 

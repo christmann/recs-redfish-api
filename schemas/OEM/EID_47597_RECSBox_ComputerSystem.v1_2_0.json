@@ -2,28 +2,6 @@
     "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema.v1_3_0.json",
     "copyright": "Copyright 2014-2017 Distributed Management Task Force, Inc. (DMTF). For the full DMTF copyright policy, see http://www.dmtf.org/about/policies/copyright",
     "definitions": {
-        "Actions": {
-            "additionalProperties": false,
-            "patternProperties": {
-                "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message|Privileges)\\.[a-zA-Z_][a-zA-Z0-9_.]+$": {
-                    "description": "This property shall specify a valid odata or Redfish property.",
-                    "type": [
-                        "array",
-                        "boolean",
-                        "number",
-                        "null",
-                        "object",
-                        "string"
-                    ]
-                }
-            },
-            "properties": {
-                "#EID_47597_RECSBox_ComputerSystem.ToKVM": {
-                    "$ref": "#/definitions/ToKVM"
-                }
-            },
-            "type": "object"
-        },
         "ComputerSystem": {
             "additionalProperties": false,
             "description": "RECS|Box ComputerSystem extension",
@@ -81,13 +59,13 @@
                     "readonly": true
                 },
                 "OnIKVM": {
-                    "description": "If true, this ComputerSystem is set to iKVM.",
-                    "readonly": true,
+                    "description": "If true, this ComputerSystem is set to iKVM. Attention: iKVM is released from all other ComputerSystems.",
+                    "readonly": false,
                     "type": "boolean"
                 },
                 "OnKVM": {
-                    "description": "If true, this ComputerSystem is set to KVM.",
-                    "readonly": true,
+                    "description": "If true, this ComputerSystem is set to KVM. Attention: KVM is released from all other ComputerSystems.",
+                    "readonly": false,
                     "type": "boolean"
                 },
                 "Power": {
@@ -116,41 +94,6 @@
                 "Jetson"
             ],
             "type": "string"
-        },
-        "ToKVM": {
-            "additionalProperties": false,
-            "description": "Switches the KVM/iKVM port of the Chassis containing the ComputerSystem to this ComputerSystem.",
-            "parameters": {
-                "Physical": {
-                    "description": "If true, set KVM. Set iKVM otherwise.",
-                    "type": "boolean"
-                }
-            },
-            "patternProperties": {
-                "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message|Privileges)\\.[a-zA-Z_][a-zA-Z0-9_.]+$": {
-                    "description": "This property shall specify a valid odata or Redfish property.",
-                    "type": [
-                        "array",
-                        "boolean",
-                        "number",
-                        "null",
-                        "object",
-                        "string"
-                    ]
-                }
-            },
-            "properties": {
-                "target": {
-                    "description": "Link to invoke action",
-                    "format": "uri",
-                    "type": "string"
-                },
-                "title": {
-                    "description": "Friendly action name",
-                    "type": "string"
-                }
-            },
-            "type": "object"
         }
     },
     "title": "#EID_47597_RECSBox_ComputerSystem.v1_2_0"

@@ -1,4 +1,7 @@
 {
+	"Chassis": {
+		"PATCH": true
+	},
 	"ComposedNode": {
 		"PATCH": true,
 		"DELETE": true,
