@@ -42,7 +42,7 @@
 			<EntityType Name="Baseboard" BaseType="Resource.v1_0_0.Resource" Abstract="true">
 				<Annotation Term="OData.Description" String="This is the schema definition for the Baseboard resource." />
 				<Annotation Term="OData.LongDescription" String="This is the schema definition for the Baseboard resource. It represents the properties of a Baseboard." />
-			</EntityType>>
+			</EntityType>
 
 			<Action Name="Reset" IsBound="true">
 				<Parameter Name="Baseboard" Type="Baseboard.v1_0_0.Actions"/>

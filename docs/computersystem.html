@@ -82,6 +82,10 @@ This schema defines a computer system and its respective properties.  A computer
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;target</td><td>String</td><td></td><td></td><td>read-write</td><td>Link to invoke action<br />Format: uri</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;title</td><td>String</td><td></td><td></td><td>read-write</td><td>Friendly action name</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;}</td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;#ComputerSystem.ToKVM {</td><td>Object</td><td></td><td></td><td>read-write</td><td>Switches the KVM port of the Chassis containing the ComputerSystem to this ComputerSystem.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;target</td><td>String</td><td></td><td></td><td>read-write</td><td>Link to invoke action<br />Format: uri</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;title</td><td>String</td><td></td><td></td><td>read-write</td><td>Friendly action name</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;}</td><td></td><td></td><td></td><td></td><td></td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;Oem { }</td><td>Object</td><td></td><td></td><td>read-write</td><td>The available OEM specific actions for this resource.</td></tr>
 <tr><td>}</td><td></td><td></td><td></td><td></td><td></td></tr>
 <tr><td>Boot {</td><td>Object</td><td></td><td></td><td>read-write</td><td>Information about the boot settings for this system.</td></tr>
@@ -218,6 +222,30 @@ Content-Type: application/json
 HTTP/1.1 204
 <br />
 </div>
+<h3 id="#computersystem.tokvm">#ComputerSystem.ToKVM</h3>
+<h4 id="parameters">Parameters</h4>
+<table class="datatable">
+<tr><th>Property</th><th>Type</th><th>Nullable</th><th>Required</th><th>Permission</th><th>Description</th></tr>
+<tr><td>Physical</td><td>Boolean</td><td>Yes</td><td>POST</td><td>read-write</td><td>If true, set KVM. Set iKVM otherwise.</td></tr>
+</table>
+<h4 id="request">Request</h4>
+<div class="code">
+POST /redfish/v1/Chassis/Chassis1/Baseboards/Baseboard1/ComputerSystems/ComputerSystem1/Actions/ComputerSystem.ToKVM
+<br />
+Content-Type: application/json
+<br />
+{
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;"Physical": false
+<br />
+}
+<br />
+</div>
+<h4 id="response">Response</h4>
+<div class="code">
+HTTP/1.1 204
+<br />
+</div>
 <h2 id="operations">Operations</h2>
 <h3 id="get">GET</h3>
 <h4 id="request">Request</h4>
@@ -244,6 +272,14 @@ Content-Type: application/json
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"target": "/redfish/v1/Chassis/Chassis1/Baseboards/Baseboard1/ComputerSystems/ComputerSystem1/Actions/ComputerSystem.Reset",
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"ResetType@Redfish.AllowableValues": ["On", "ForceOff", "GracefulShutdown", "GracefulRestart", "ForceRestart", "ForceOn", "PushPowerButton"],
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"title": "String"
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"#ComputerSystem.ToKVM": {
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"target": "/redfish/v1/Chassis/Chassis1/Baseboards/Baseboard1/ComputerSystems/ComputerSystem1/Actions/ComputerSystem.ToKVM",
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"title": "String"
 <br />

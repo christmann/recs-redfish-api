@@ -109,6 +109,32 @@
 		
 		</Schema>
 
+		<Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="EID_47597_RECSBox_ComputerSystem.v1_2_0">
+			
+			<ComplexType Name="ComputerSystem" BaseType="EID_47597_RECSBox_ComputerSystem.v1_1_0.ComputerSystem">
+			</ComplexType>
+
+			<EnumType Name="FormFactor">
+				<Member Name="COM Express" />
+				<Member Name="COM Express Type 1/2" />
+				<Member Name="COM Express Type 6" />
+				<Member Name="COM Express Type 7" />
+				<Member Name="COM Express Type 10" />
+				<Member Name="Apalis" />
+				<Member Name="Jetson" />
+			</EnumType>
+
+			<Action Name="ToKVM" IsBound="true">
+				<Parameter Name="ComputerSystem" Type="ComputerSystem.v1_5_0.Actions"/>
+				<Parameter Name="Physical" Type="Edm.Boolean">
+					<Annotation Term="Redfish.RequiredOnCreate"/>
+					<Annotation Term="OData.Description" String="If true, set KVM. Set iKVM otherwise."/>
+				</Parameter>
+				<Annotation Term="OData.Description" String="Switches the KVM port of the Chassis containing the ComputerSystem to this ComputerSystem."/>
+			</Action>
+		
+		</Schema>
+
 	</edmx:DataServices>
 
 </edmx:Edmx>
