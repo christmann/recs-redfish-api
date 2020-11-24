@@ -20,7 +20,12 @@
                 }
             },
             "properties": {
-                "IKVM": {
+                "Links": {
+                    "$ref": "#/definitions/Links",
+                    "description": "RECS|Box Chassis links extension.",
+                    "readonly": true
+                },
+                "NodeOnIKVM": {
                     "anyOf": [
                         {
                             "$ref": "http://redfish.dmtf.org/schemas/v1/ComputerSystem.json#/definitions/ComputerSystem"
@@ -33,7 +38,7 @@
                     "longDescription": "This object shall only contain a reference that complies to the ComputerSystem schema.",
                     "readonly": false
                 },
-                "KVM": {
+                "NodeOnKVM": {
                     "anyOf": [
                         {
                             "$ref": "http://redfish.dmtf.org/schemas/v1/ComputerSystem.json#/definitions/ComputerSystem"
@@ -45,11 +50,6 @@
                     "description": "This is a link to the ComputerSystem, which is set to KVM",
                     "longDescription": "This object shall only contain a reference that complies to the ComputerSystem schema.",
                     "readonly": false
-                },
-                "Links": {
-                    "$ref": "#/definitions/Links",
-                    "description": "RECS|Box Chassis links extension.",
-                    "readonly": true
                 }
             },
             "type": "object"

@@ -86,13 +86,13 @@
 		<Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="EID_47597_RECSBox_Chassis.v1_2_0">
 			
 			<ComplexType Name="Chassis" BaseType="EID_47597_RECSBox_Chassis.v1_1_0.Chassis">
-				<NavigationProperty Name="KVM" Type="ComputerSystem.ComputerSystem">
+				<NavigationProperty Name="NodeOnKVM" Type="ComputerSystem.ComputerSystem">
 					<Annotation Term="OData.Permissions" EnumMember="OData.Permission/ReadWrite"/>
 					<Annotation Term="OData.Description" String="This is a link to the ComputerSystem, which is set to KVM"/>
 					<Annotation Term="OData.LongDescription" String="This object shall only contain a reference that complies to the ComputerSystem schema."/>
 					<Annotation Term="OData.AutoExpandReferences"/>
 				</NavigationProperty>
-				<NavigationProperty Name="IKVM" Type="ComputerSystem.ComputerSystem">
+				<NavigationProperty Name="NodeOnIKVM" Type="ComputerSystem.ComputerSystem">
 					<Annotation Term="OData.Permissions" EnumMember="OData.Permission/ReadWrite"/>
 					<Annotation Term="OData.Description" String="This is a link to the ComputerSystem, which is set to iKVM"/>
 					<Annotation Term="OData.LongDescription" String="This object shall only contain a reference that complies to the ComputerSystem schema."/>

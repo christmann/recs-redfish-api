@@ -10,8 +10,8 @@
 		"REMOVE": [
 			"/redfish/v1/Systems/{ComputerSystemID}",
 			"/redfish/v1/Chassis/{ChassisID}/{ComputerSystemID}",
-			"/redfish/v1/Chassis/{ChassisID}/KVM",
-			"/redfish/v1/Chassis/{ChassisID}/IKVM"
+			"/redfish/v1/Chassis/{ChassisID}/NodeOnKVM",
+			"/redfish/v1/Chassis/{ChassisID}/NodeOnIKVM"
 		]
 	},
 	"ComposedNode": {
