@@ -80,6 +80,16 @@
                     "longDescription": "This object shall only contain a reference to a resource that complies to the HSLLInterface schema.",
                     "readonly": true
                 },
+                "OnIKVM": {
+                    "description": "If true, this ComputerSystem is set to iKVM.",
+                    "readonly": true,
+                    "type": "boolean"
+                },
+                "OnKVM": {
+                    "description": "If true, this ComputerSystem is set to KVM.",
+                    "readonly": true,
+                    "type": "boolean"
+                },
                 "Power": {
                     "$ref": "http://redfish.dmtf.org/schemas/v1/Power.json#/definitions/Power",
                     "description": "A reference to the power properties (power supplies, power policies, sensors) of this baseboard.",
@@ -109,7 +119,7 @@
         },
         "ToKVM": {
             "additionalProperties": false,
-            "description": "Switches the KVM port of the Chassis containing the ComputerSystem to this ComputerSystem.",
+            "description": "Switches the KVM/iKVM port of the Chassis containing the ComputerSystem to this ComputerSystem.",
             "parameters": {
                 "Physical": {
                     "description": "If true, set KVM. Set iKVM otherwise.",
