@@ -25,19 +25,6 @@
                     "description": "RECS|Box Chassis links extension.",
                     "readonly": true
                 },
-                "NodeOnIKVM": {
-                    "anyOf": [
-                        {
-                            "$ref": "http://redfish.dmtf.org/schemas/v1/ComputerSystem.json#/definitions/ComputerSystem"
-                        },
-                        {
-                            "type": "null"
-                        }
-                    ],
-                    "description": "This is a link to the ComputerSystem, which is set to iKVM",
-                    "longDescription": "This object shall only contain a reference that complies to the ComputerSystem schema.",
-                    "readonly": false
-                },
                 "NodeOnKVM": {
                     "anyOf": [
                         {
@@ -47,9 +34,9 @@
                             "type": "null"
                         }
                     ],
-                    "description": "This is a link to the ComputerSystem, which is set to KVM",
+                    "description": "This is a link to the ComputerSystem, which is set to KVM/iKVM",
                     "longDescription": "This object shall only contain a reference that complies to the ComputerSystem schema.",
-                    "readonly": false
+                    "readonly": true
                 },
                 "OverallFanSpeedPercent": {
                     "description": "Gets/Sets the overall fan speed of all fans in the chassis in percent.",

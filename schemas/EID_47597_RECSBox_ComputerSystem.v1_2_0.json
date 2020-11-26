@@ -58,15 +58,10 @@
                     "longDescription": "This object shall only contain a reference to a resource that complies to the HSLLInterface schema.",
                     "readonly": true
                 },
-                "OnIKVM": {
-                    "description": "If true, this ComputerSystem is set to iKVM. Attention: iKVM is released from all other ComputerSystems.",
-                    "readonly": false,
-                    "type": "boolean"
-                },
-                "OnKVM": {
-                    "description": "If true, this ComputerSystem is set to KVM. Attention: KVM is released from all other ComputerSystems.",
-                    "readonly": false,
-                    "type": "boolean"
+                "KvmStatus": {
+                    "$ref": "#/definitions/KvmStatus",
+                    "description": "The KVM status of the ComputerSystem. Attention: If set to KVM/iKVM, KVM is released from all other ComputerSystems.",
+                    "readonly": false
                 },
                 "Power": {
                     "$ref": "http://redfish.dmtf.org/schemas/v1/Power.json#/definitions/Power",
@@ -92,6 +87,14 @@
                 "COM Express Type 10",
                 "Apalis",
                 "Jetson"
+            ],
+            "type": "string"
+        },
+        "KvmStatus": {
+            "enum": [
+                "None",
+                "KVM",
+                "iKVM"
             ],
             "type": "string"
         }

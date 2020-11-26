@@ -112,13 +112,9 @@
 		<Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="EID_47597_RECSBox_ComputerSystem.v1_2_0">
 			
 			<ComplexType Name="ComputerSystem" BaseType="EID_47597_RECSBox_ComputerSystem.v1_1_0.ComputerSystem">
-				<Property Name="OnKVM" Type="Edm.Boolean" Nullable="false">
+				<Property Name="KvmStatus" Type="EID_47597_RECSBox_ComputerSystem.v1_2_0.KvmStatus" Nullable="false">
 					<Annotation Term="OData.Permissions" EnumMember="OData.Permission/ReadWrite"/>
-					<Annotation Term="OData.Description" String="If true, this ComputerSystem is set to KVM. Attention: KVM is released from all other ComputerSystems."/>
-				</Property>
-				<Property Name="OnIKVM" Type="Edm.Boolean" Nullable="false">
-					<Annotation Term="OData.Permissions" EnumMember="OData.Permission/ReadWrite"/>
-					<Annotation Term="OData.Description" String="If true, this ComputerSystem is set to iKVM. Attention: iKVM is released from all other ComputerSystems."/>
+					<Annotation Term="OData.Description" String="The KVM status of the ComputerSystem. Attention: If set to KVM/iKVM, KVM is released from all other ComputerSystems."/>
 				</Property>
 			</ComplexType>
 
@@ -130,6 +126,12 @@
 				<Member Name="COM Express Type 10" />
 				<Member Name="Apalis" />
 				<Member Name="Jetson" />
+			</EnumType>
+
+			<EnumType Name="KvmStatus">
+				<Member Name="None" />
+				<Member Name="KVM" />
+				<Member Name="iKVM" />
 			</EnumType>
 		
 		</Schema>
