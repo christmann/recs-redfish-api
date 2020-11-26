@@ -50,6 +50,13 @@
                     "description": "This is a link to the ComputerSystem, which is set to KVM",
                     "longDescription": "This object shall only contain a reference that complies to the ComputerSystem schema.",
                     "readonly": false
+                },
+                "OverallFanSpeedPercent": {
+                    "description": "Gets/Sets the overall fan speed of all fans in the chassis in percent.",
+                    "maximum": 100,
+                    "minimum": 0,
+                    "readonly": false,
+                    "type": "number"
                 }
             },
             "type": "object"
