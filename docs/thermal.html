@@ -93,7 +93,11 @@ This is the schema definition for the Thermal properties.  It represents the pro
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;MemberId</td><td>String</td><td></td><td></td><td>read-only</td><td>This is the identifier for the member within the collection.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;MinReadingRange</td><td>Int64</td><td>Yes</td><td></td><td>read-only</td><td>Minimum value for Reading.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;Name</td><td>String</td><td>Yes</td><td></td><td>read-only</td><td>Name of the fan.</td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;Oem { }</td><td>Object</td><td></td><td></td><td>read-write</td><td>This is the manufacturer/provider specific extension moniker used to divide the Oem object into sections.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;Oem {</td><td>Object</td><td></td><td></td><td>read-write</td><td>This is the manufacturer/provider specific extension moniker used to divide the Oem object into sections.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;EID_47597 {</td><td>Object</td><td></td><td></td><td>read-write</td><td>RECS|Box Fan extension</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SpeedPercent</td><td>SByte</td><td></td><td></td><td>read-only</td><td>Gets/Sets the speed of the fan in percent.<br />Minimum: 0<br />Maximum: 100</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;}</td><td></td><td></td><td></td><td></td><td></td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;PhysicalContext</td><td>String</td><td></td><td></td><td>read-only</td><td>Describes the area or device associated with this fan.<br />Possible Values:<ul>
 <li>Room: The room.</li>
 <li>Intake: The air intake point of the chassis.</li>
@@ -312,7 +316,15 @@ Content-Type: application/json
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Name": "String",
 <br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Oem": { },
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Oem": {
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"EID_47597": {
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"SpeedPercent": 0
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"PhysicalContext": "Room",
 <br />
