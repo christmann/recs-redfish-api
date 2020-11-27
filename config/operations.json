@@ -1,4 +1,12 @@
 {
+	"Baseboard": {
+		"#Baseboard.Reset": {
+			"Status": 204,
+			"Headers": {
+				"Location": "see class-mapping.json"
+			}
+		}
+	},
 	"Chassis": {
 		"PATCH": true
 	},
@@ -7,6 +15,30 @@
 		"DELETE": true,
 		"#ComposedNode.ExposePort": {
 			"Status": 201,
+			"Headers": {
+				"Location": "see class-mapping.json"
+			}
+		},
+		"#ComposedNode.Assemble": {
+			"Status": 204,
+			"Headers": {
+				"Location": "see class-mapping.json"
+			}
+		},
+		"#ComposedNode.Reject": {
+			"Status": 204,
+			"Headers": {
+				"Location": "see class-mapping.json"
+			}
+		},
+		"#ComposedNode.RemovePort": {
+			"Status": 204,
+			"Headers": {
+				"Location": "see class-mapping.json"
+			}
+		},
+		"#ComposedNode.Reset": {
+			"Status": 204,
 			"Headers": {
 				"Location": "see class-mapping.json"
 			}
@@ -21,7 +53,21 @@
 		}
 	},
 	"ComputerSystem": {
-		"PATCH": true
+		"PATCH": true,
+		"#ComputerSystem.Reset": {
+			"Status": 204,
+			"Headers": {
+				"Location": "see class-mapping.json"
+			}
+		}
+	},
+	"Thermal": {
+		"#Thermal.SetFanSpeed": {
+			"Status": 204,
+			"Headers": {
+				"Location": "see class-mapping.json"
+			}
+		}
 	},
 	"VLanNetworkInterface": {
 		"PATCH": true,

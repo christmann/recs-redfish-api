@@ -10,8 +10,7 @@
 		"REMOVE": [
 			"/redfish/v1/Systems/{ComputerSystemID}",
 			"/redfish/v1/Chassis/{ChassisID}/{ComputerSystemID}",
-			"/redfish/v1/Chassis/{ChassisID}/NodeOnKVM",
-			"/redfish/v1/Chassis/{ChassisID}/NodeOnIKVM"
+			"/redfish/v1/Chassis/{ChassisID}/NodeOnKVM"
 		]
 	},
 	"ComposedNode": {
@@ -51,6 +50,12 @@
 	"Switch": {
 		"REMOVE": [
 			"/redfish/v1/Switches/{SwitchID}"
+		]
+	},
+	"Thermal": {
+		"REMOVE": [
+			"/redfish/v1/Chassis/{ChassisID}/Baseboards/{BaseboardID}/Thermal/Actions/Thermal.SetFanSpeed",
+			"/redfish/v1/Chassis/{ChassisID}/Baseboards/{BaseboardID}/ComputerSystems/{ComputerSystemID}/Thermal/Actions/Thermal.SetFanSpeed"
 		]
 	},
 	"VLanNetworkInterfaceCollection": {
