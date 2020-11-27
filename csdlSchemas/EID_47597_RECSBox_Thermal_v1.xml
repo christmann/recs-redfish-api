@@ -16,6 +16,9 @@
 	<edmx:Reference Uri="http://redfish.dmtf.org/schemas/v1/Resource_v1.xml">
 		<edmx:Include Namespace="Resource"/>
 	</edmx:Reference>
+	<edmx:Reference Uri="http://redfish.dmtf.org/schemas/v1/Thermal_v1.xml">
+		<edmx:Include Namespace="Thermal"/>
+	</edmx:Reference>
 
 	<edmx:DataServices>
 
@@ -24,13 +27,28 @@
 			<ComplexType Name="Fan" BaseType="Resource.OemObject">
 				<Property Name="SpeedPercent" Type="Edm.SByte" Nullable="false">
 					<Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
-					<Annotation Term="OData.Description" String="Gets/Sets the speed of the fan in percent."/>
+					<Annotation Term="OData.Description" String="Gets the speed of the fan in percent."/>
 					<Annotation Term="Validation.Minimum" Int="0"/>
 					<Annotation Term="Validation.Maximum" Int="100"/>
 				</Property>
 				<Annotation Term="OData.Description" String="RECS|Box Fan extension"/>
 				<Annotation Term="OData.LongDescription" String="RECS|Box Fan extension" />
 			</ComplexType>
+
+			<Action Name="SetFanSpeed" IsBound="true">
+				<Parameter Name="Thermal" Type="Thermal.v1_4_0.Actions"/>
+				<Parameter Name="Name" Type="Edm.String">
+					<Annotation Term="Redfish.RequiredOnCreate"/>
+					<Annotation Term="OData.Description" String="The name of the Fan."/>
+				</Parameter>
+				<Parameter Name="Percent" Type="Edm.SByte">
+					<Annotation Term="Redfish.RequiredOnCreate"/>
+					<Annotation Term="OData.Description" String="The speed of the fan in percent."/>
+					<Annotation Term="Validation.Minimum" Int="0"/>
+					<Annotation Term="Validation.Maximum" Int="100"/>
+				</Parameter>
+				<Annotation Term="OData.Description" String="Sets the speed of a fan in percent."/>
+			</Action>
 
 		</Schema>
 
