@@ -30,6 +30,8 @@
 		"info.christmann.recs.tor_master.redfish.model.ProcessorResource": "info.christmann.recs.model.interfaces.IProcessor",
 		"info.christmann.recs.tor_master.redfish.model.ProcessorResourceCollection": "info.christmann.recs.tor_master.redfish.util.OwnedList<info.christmann.recs.model.interfaces.IProcessor, info.christmann.recs.model.interfaces.IIdentifiable>",
 		"info.christmann.recs.tor_master.redfish.model.ServiceRootResource": "info.christmann.recs.model.interfaces.IRECSCluster",
+		"info.christmann.recs.tor_master.redfish.model.SoftwareInventoryResource": "info.christmann.recs.model.interfaces.IImage",
+		"info.christmann.recs.tor_master.redfish.model.SoftwareInventoryResourceCollection": "info.christmann.recs.tor_master.redfish.util.OwnedList<info.christmann.recs.model.interfaces.IImage, info.christmann.recs.model.interfaces.IIdentifiable>",
 		"info.christmann.recs.tor_master.redfish.model.ThermalResource": "info.christmann.recs.model.interfaces.IThermalMonitored",
 		"info.christmann.recs.tor_master.redfish.model.VLanNetworkInterfaceResource": "info.christmann.recs.model.interfaces.IVLanNetworkInterface",
 		"info.christmann.recs.tor_master.redfish.model.VLanNetworkInterfaceResourceCollection": "info.christmann.recs.tor_master.redfish.util.OwnedList<info.christmann.recs.model.interfaces.IVLanNetworkInterface, info.christmann.recs.model.interfaces.IIdentifiable>"
@@ -55,6 +57,7 @@
 		"Thermal.Fans": "info.christmann.recs.model.interfaces.IFan",
 		"Thermal.Temperatures": "info.christmann.recs.model.interfaces.ISensorValueProvider",
 		"Thermal.SetFanSpeed": "info.christmann.recs.model.interfaces.IThermalMonitored",
-		"JsonSchemaFile.Location": "java.lang.Object"
+		"JsonSchemaFile.Location": "java.lang.Object",
+		"SoftwareInventory.RelatedItem": "info.christmann.recs.model.interfaces.IImageTarget"
 	}
 }

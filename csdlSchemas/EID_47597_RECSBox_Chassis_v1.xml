@@ -28,6 +28,9 @@
 	<edmx:Reference Uri="ComposedNodeCollection_v1.xml">
 		<edmx:Include Namespace="ComposedNodeCollection"/>
 	</edmx:Reference>
+	<edmx:Reference Uri="http://redfish.dmtf.org/schemas/v1/SoftwareInventoryCollection_v1.xml">
+		<edmx:Include Namespace="SoftwareInventoryCollection"/>
+	</edmx:Reference>
 
 	<edmx:DataServices>
 
@@ -96,6 +99,22 @@
 					<Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
 					<Annotation Term="OData.Description" String="This is a link to the ComputerSystem, which is set to KVM/iKVM"/>
 					<Annotation Term="OData.LongDescription" String="This object shall only contain a reference that complies to the ComputerSystem schema."/>
+					<Annotation Term="OData.AutoExpandReferences"/>
+				</NavigationProperty>
+				<Annotation Term="OData.AdditionalProperties" Bool="false"/>
+				<Annotation Term="OData.Description" String="RECS|Box Chassis extension"/>
+				<Annotation Term="OData.LongDescription" String="RECS|Box Chassis extension" />
+			</ComplexType>
+			
+		</Schema>
+
+		<Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="EID_47597_RECSBox_Chassis.v1_3_0">
+			
+			<ComplexType Name="Chassis" BaseType="EID_47597_RECSBox_Chassis.v1_2_0.Chassis">
+				<NavigationProperty Name="ImageInventory" Type="SoftwareInventoryCollection.SoftwareInventoryCollection">
+					<Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+					<Annotation Term="OData.Description" String="A inventory of operating system images."/>
+					<Annotation Term="OData.LongDescription" String="This object shall only contain a reference to a collection of resources that comply to the SoftwareInventory schema."/>
 					<Annotation Term="OData.AutoExpandReferences"/>
 				</NavigationProperty>
 				<Annotation Term="OData.AdditionalProperties" Bool="false"/>

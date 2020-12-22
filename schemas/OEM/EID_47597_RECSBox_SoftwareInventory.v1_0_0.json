@@ -1,0 +1,115 @@
+{
+    "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema.v1_3_0.json",
+    "copyright": "Copyright 2014-2017 Distributed Management Task Force, Inc. (DMTF). For the full DMTF copyright policy, see http://www.dmtf.org/about/policies/copyright",
+    "definitions": {
+        "Format": {
+            "enum": [
+                "Raw",
+                "ISO",
+                "Unknown"
+            ],
+            "enumDescriptions": {
+                "ISO": "The SoftwareInventory item is formatted with the read-only ISO 9660 (also known as ECMA-119) filesystem commonly used for CDs and DVDs.",
+                "Raw": "This is an unstructured file format.",
+                "Unknown": "This indicates an unknown file format."
+            },
+            "type": "string"
+        },
+        "SoftwareInventory": {
+            "additionalProperties": false,
+            "description": "RECS|Box SoftwareInventory extension",
+            "longDescription": "RECS|Box SoftwareInventory extension",
+            "patternProperties": {
+                "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message|Privileges)\\.[a-zA-Z_][a-zA-Z0-9_.]+$": {
+                    "description": "This property shall specify a valid odata or Redfish property.",
+                    "type": [
+                        "array",
+                        "boolean",
+                        "number",
+                        "null",
+                        "object",
+                        "string"
+                    ]
+                }
+            },
+            "properties": {
+                "Architecture": {
+                    "anyOf": [
+                        {
+                            "$ref": "http://redfish.dmtf.org/schemas/v1/Processor.json#/definitions/ProcessorArchitecture"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "The processor architecture supported by this SoftwareInventory item.",
+                    "longDescription": "This property shall contain the string which identifies the processor architecture supported by this SoftwareInventory item.",
+                    "readonly": true
+                },
+                "Distribution": {
+                    "description": "The common name of the operating system distribution.",
+                    "longDescription": "This property shall contain a string which identifies the operating system distribution of the SoftwareInventory item.",
+                    "readonly": true,
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "Format": {
+                    "$ref": "#/definitions/Format",
+                    "description": "The format of the SoftwareInventory file.",
+                    "longDescription": "An enumeration that indicates the format of the SoftwareInventory file.",
+                    "readonly": true
+                },
+                "InstructionSet": {
+                    "anyOf": [
+                        {
+                            "$ref": "http://redfish.dmtf.org/schemas/v1/Processor.json#/definitions/InstructionSet"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "The processor instruction set supported by this SoftwareInventory item.",
+                    "longDescription": "This property shall contain the string which identifies the processor instruction set supported by this SoftwareInventory item.",
+                    "readonly": true
+                },
+                "State": {
+                    "$ref": "#/definitions/State",
+                    "description": "The current state of the SoftwareInventory item.",
+                    "longDescription": "An enumeration that indicates the current state of the SoftwareInventory item.",
+                    "readonly": true
+                },
+                "Type": {
+                    "$ref": "http://redfish.dmtf.org/schemas/v1/Processor.json#/definitions/ProcessorType",
+                    "description": "The processor type supported by this SoftwareInventory item.",
+                    "longDescription": "This property shall contain the string which identifies the processor type supported by this SoftwareInventory item.",
+                    "readonly": true
+                }
+            },
+            "requiredOnCreate": [
+                "Format",
+                "Type",
+                "Architecture",
+                "InstructionSet"
+            ],
+            "type": "object"
+        },
+        "State": {
+            "enum": [
+                "Absent",
+                "Uploading",
+                "Active",
+                "Deactivated"
+            ],
+            "enumDescriptions": {
+                "Absent": "No software inventory file present.",
+                "Active": "Denotes an software inventory item that is fully available.",
+                "Deactivated": "Denotes that access to software inventory file is not allowed to any non-admin user.",
+                "Uploading": "The software inventory file is currently uploading."
+            },
+            "type": "string"
+        }
+    },
+    "title": "#EID_47597_RECSBox_SoftwareInventory.v1_0_0"
+}

@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!---->
+<!--################################################################################ -->
+<!--# Copyright 2017-2019 christmann informationstechnik + medien GmbH & Co. KG      -->
+<!--################################################################################ -->
+<!---->
+<edmx:Edmx xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx" Version="4.0">
+
+	<edmx:Reference Uri="http://docs.oasis-open.org/odata/odata/v4.0/errata03/csd01/complete/vocabularies/Org.OData.Core.V1.xml">
+		<edmx:Include Namespace="Org.OData.Core.V1" Alias="OData"/>
+	</edmx:Reference>
+	<edmx:Reference Uri="http://redfish.dmtf.org/schemas/v1/RedfishExtensions_v1.xml">
+		<edmx:Include Namespace="RedfishExtensions.v1_0_0" Alias="Redfish"/>
+		<edmx:Include Namespace="Validation.v1_0_0" Alias="Validation"/>
+	</edmx:Reference>
+	<edmx:Reference Uri="http://redfish.dmtf.org/schemas/v1/Resource_v1.xml">
+		<edmx:Include Namespace="Resource"/>
+	</edmx:Reference>
+	<edmx:Reference Uri="http://redfish.dmtf.org/schemas/v1/Thermal_v1.xml">
+		<edmx:Include Namespace="Thermal"/>
+	</edmx:Reference>
+	<edmx:Reference Uri="http://redfish.dmtf.org/schemas/v1/Processor_v1.xml">
+		<edmx:Include Namespace="Processor"/>
+	</edmx:Reference>
+
+	<edmx:DataServices>
+
+		<Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="EID_47597_RECSBox_SoftwareInventory.v1_0_0">
+			
+			<ComplexType Name="SoftwareInventory" BaseType="Resource.OemObject">
+				<Property Name="State" Type="EID_47597_RECSBox_SoftwareInventory.v1_0_0.State" Nullable="false">
+					<Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+					<Annotation Term="OData.Description" String="The current state of the SoftwareInventory item."/>
+					<Annotation Term="OData.LongDescription" String="An enumeration that indicates the current state of the SoftwareInventory item."/>
+				</Property>
+				<Property Name="Format" Type="EID_47597_RECSBox_SoftwareInventory.v1_0_0.Format" Nullable="false">
+					<Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+					<Annotation Term="Redfish.RequiredOnCreate"/>
+					<Annotation Term="OData.Description" String="The format of the SoftwareInventory file."/>
+					<Annotation Term="OData.LongDescription" String="An enumeration that indicates the format of the SoftwareInventory file."/>
+				</Property>
+				<Property Name="Type" Type="Processor.ProcessorType" Nullable="false">
+					<Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+					<Annotation Term="Redfish.RequiredOnCreate"/>
+					<Annotation Term="OData.Description" String="The processor type supported by this SoftwareInventory item."/>
+					<Annotation Term="OData.LongDescription" String="This property shall contain the string which identifies the processor type supported by this SoftwareInventory item."/>
+				</Property>
+				<Property Name="Architecture" Type="Processor.ProcessorArchitecture">
+					<Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+					<Annotation Term="Redfish.RequiredOnCreate"/>
+					<Annotation Term="OData.Description" String="The processor architecture supported by this SoftwareInventory item."/>
+					<Annotation Term="OData.LongDescription" String="This property shall contain the string which identifies the processor architecture supported by this SoftwareInventory item."/>
+				</Property>
+				<Property Name="InstructionSet" Type="Processor.InstructionSet">
+					<Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+					<Annotation Term="Redfish.RequiredOnCreate"/>
+					<Annotation Term="OData.Description" String="The processor instruction set supported by this SoftwareInventory item."/>
+					<Annotation Term="OData.LongDescription" String="This property shall contain the string which identifies the processor instruction set supported by this SoftwareInventory item."/>
+				</Property>
+				<Property Name="Distribution" Type="Edm.String">
+					<Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+					<Annotation Term="OData.Description" String="The common name of the operating system distribution."/>
+					<Annotation Term="OData.LongDescription" String="This property shall contain a string which identifies the operating system distribution of the SoftwareInventory item."/>
+				</Property>
+				<Annotation Term="OData.Description" String="RECS|Box SoftwareInventory extension"/>
+				<Annotation Term="OData.LongDescription" String="RECS|Box SoftwareInventory extension" />
+			</ComplexType>
+
+			<EnumType Name="State">
+				<Member Name="Absent">
+					<Annotation Term="OData.Description" String="No software inventory file present."/>
+				</Member>
+				<Member Name="Uploading">
+					<Annotation Term="OData.Description" String="The software inventory file is currently uploading."/>
+				</Member>
+				<Member Name="Active">
+					<Annotation Term="OData.Description" String="Denotes an software inventory item that is fully available."/>
+				</Member>
+				<Member Name="Deactivated">
+					<Annotation Term="OData.Description" String="Denotes that access to software inventory file is not allowed to any non-admin user."/>
+				</Member>
+			</EnumType>
+
+			<EnumType Name="Format">
+				<Member Name="Raw">
+					<Annotation Term="OData.Description" String="This is an unstructured file format."/>
+				</Member>
+				<Member Name="ISO">
+					<Annotation Term="OData.Description" String="The SoftwareInventory item is formatted with the read-only ISO 9660 (also known as ECMA-119) filesystem commonly used for CDs and DVDs."/>
+				</Member>
+				<Member Name="Unknown">
+					<Annotation Term="OData.Description" String="This indicates an unknown file format."/>
+				</Member>
+			</EnumType>
+
+		</Schema>
+
+	</edmx:DataServices>
+
+</edmx:Edmx>

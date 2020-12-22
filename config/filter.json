@@ -331,6 +331,32 @@
 			"RedundancySet": "REMOVED"
 		}
 	},
+	"SoftwareInventory": {
+		"SoftwareInventory": {
+			"LowestSupportedVersion": "REMOVED",
+			"Status": "REMOVED",
+			"UefiDevicePaths": "REMOVED",
+			"Updateable": "REMOVED",
+			"Oem": {
+				"EID_47597": {
+					"Type": [
+						"CPU",
+						"FPGA"
+					],
+					"Architecture": [
+						"x86",
+						"ARM"
+					],
+					"InstructionSet": [
+						"x86",
+						"x86-64",
+						"ARM-A32",
+						"ARM-A64"
+					]
+				}
+			}
+		}
+	},
 	"Switch": {
 		"Switch": {
 			"AssetTag": "REMOVED",
