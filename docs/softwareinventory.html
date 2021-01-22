@@ -92,6 +92,7 @@ This schema defines an inventory of software components.
 <li>ARM: ARM.</li>
 </ul></td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Distribution</td><td>String</td><td>Yes</td><td></td><td>read-only</td><td>The common name of the operating system distribution.</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DownloadUrl</td><td>String</td><td>Yes</td><td></td><td>read-only</td><td>The URL to download the software inventory file<br />Format: uri</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Format</td><td>String</td><td></td><td>POST</td><td>read-only</td><td>The format of the SoftwareInventory file.<br />Possible Values:<ul>
 <li>Raw: This is an unstructured file format.</li>
 <li>ISO: The SoftwareInventory item is formatted with the read-only ISO 9660 (also known as ECMA-119) filesystem commonly used for CDs and DVDs.</li>
@@ -161,6 +162,8 @@ Content-Type: application/json
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Architecture": "x86",
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Distribution": "String",
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"DownloadUrl": "uri",
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Format": "Raw",
 <br />

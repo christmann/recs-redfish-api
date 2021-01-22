@@ -68,6 +68,12 @@
 					<Annotation Term="OData.LongDescription" String="The value of this property shall be the size of the software inventory file in Byte."/>
 					<Annotation Term="Measures.Unit" String="By"/>
 				</Property>
+				<Property Name="DownloadUrl" Type="Edm.String">
+					<Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+					<Annotation Term="OData.Description" String="The URL to download the software inventory file"/>
+					<Annotation Term="OData.LongDescription" String="This property shall contain a URL pointing to the software inventory file."/>
+					<Annotation Term="OData.IsURL"/>
+				</Property>
 				<Annotation Term="OData.Description" String="RECS|Box SoftwareInventory extension"/>
 				<Annotation Term="OData.LongDescription" String="RECS|Box SoftwareInventory extension" />
 			</ComplexType>

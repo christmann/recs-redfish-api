@@ -55,6 +55,16 @@
                         "null"
                     ]
                 },
+                "DownloadUrl": {
+                    "description": "The URL to download the software inventory file",
+                    "format": "uri",
+                    "longDescription": "This property shall contain a URL pointing to the software inventory file.",
+                    "readonly": true,
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "Format": {
                     "$ref": "#/definitions/Format",
                     "description": "The format of the SoftwareInventory file.",
