@@ -62,6 +62,12 @@
 					<Annotation Term="OData.Description" String="The common name of the operating system distribution."/>
 					<Annotation Term="OData.LongDescription" String="This property shall contain a string which identifies the operating system distribution of the SoftwareInventory item."/>
 				</Property>
+				<Property Name="SizeBytes" Type="Edm.Int64">
+					<Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+					<Annotation Term="OData.Description" String="Size of the software inventory file in Byte."/>
+					<Annotation Term="OData.LongDescription" String="The value of this property shall be the size of the software inventory file in Byte."/>
+					<Annotation Term="Measures.Unit" String="By"/>
+				</Property>
 				<Annotation Term="OData.Description" String="RECS|Box SoftwareInventory extension"/>
 				<Annotation Term="OData.LongDescription" String="RECS|Box SoftwareInventory extension" />
 			</ComplexType>

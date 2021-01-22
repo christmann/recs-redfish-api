@@ -103,6 +103,7 @@ This schema defines an inventory of software components.
 <li>ARM-A32: ARM 32-bit.</li>
 <li>ARM-A64: ARM 64-bit.</li>
 </ul></td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SizeBytes</td><td>Int64</td><td>Yes</td><td></td><td>read-only</td><td>Size of the software inventory file in Byte.<br />Unit: By</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;State</td><td>String</td><td></td><td></td><td>read-only</td><td>The current state of the SoftwareInventory item.<br />Possible Values:<ul>
 <li>Absent: No software inventory file present.</li>
 <li>Uploading: The software inventory file is currently uploading.</li>
@@ -164,6 +165,8 @@ Content-Type: application/json
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Format": "Raw",
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"InstructionSet": "x86",
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"SizeBytes": 0,
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"State": "Absent",
 <br />

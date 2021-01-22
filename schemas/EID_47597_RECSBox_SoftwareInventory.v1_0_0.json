@@ -74,6 +74,16 @@
                     "longDescription": "This property shall contain the string which identifies the processor instruction set supported by this SoftwareInventory item.",
                     "readonly": true
                 },
+                "SizeBytes": {
+                    "description": "Size of the software inventory file in Byte.",
+                    "longDescription": "The value of this property shall be the size of the software inventory file in Byte.",
+                    "readonly": true,
+                    "type": [
+                        "number",
+                        "null"
+                    ],
+                    "units": "By"
+                },
                 "State": {
                     "$ref": "#/definitions/State",
                     "description": "The current state of the SoftwareInventory item.",
