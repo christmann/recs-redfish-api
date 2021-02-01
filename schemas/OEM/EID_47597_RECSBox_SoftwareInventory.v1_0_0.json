@@ -6,10 +6,12 @@
             "enum": [
                 "Raw",
                 "ISO",
+                "MassFlash",
                 "Unknown"
             ],
             "enumDescriptions": {
                 "ISO": "The SoftwareInventory item is formatted with the read-only ISO 9660 (also known as ECMA-119) filesystem commonly used for CDs and DVDs.",
+                "MassFlash": "A Jetson-Massflash-Image.",
                 "Raw": "This is an unstructured file format.",
                 "Unknown": "This indicates an unknown file format."
             },

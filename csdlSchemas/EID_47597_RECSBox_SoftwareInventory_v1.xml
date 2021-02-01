@@ -100,6 +100,9 @@
 				<Member Name="ISO">
 					<Annotation Term="OData.Description" String="The SoftwareInventory item is formatted with the read-only ISO 9660 (also known as ECMA-119) filesystem commonly used for CDs and DVDs."/>
 				</Member>
+				<Member Name="MassFlash">
+					<Annotation Term="OData.Description" String="A Jetson-Massflash-Image."/>
+				</Member>
 				<Member Name="Unknown">
 					<Annotation Term="OData.Description" String="This indicates an unknown file format."/>
 				</Member>
