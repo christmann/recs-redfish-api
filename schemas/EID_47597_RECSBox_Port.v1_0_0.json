@@ -52,7 +52,7 @@
                         "$ref": "PCIeFunction_v1.xml/PCIeFunction.json#/definitions/PCIeFunction"
                     },
                     "longDescription": "This object shall only contain references to resources that comply to the PCIeFunction schema.",
-                    "readonly": false,
+                    "readonly": true,
                     "type": "array"
                 },
                 "PCIeFunctions@odata.count": {
@@ -62,19 +62,6 @@
                     "$ref": "http://redfish.dmtf.org/schemas/v1/odata.v4_0_1.json#/definitions/idRef",
                     "description": "The provider of this Port. This can either be a Switch or a ComposedNode.",
                     "longDescription": "This object shall only contain a reference that complies to the Switch or ComposedNode schema.",
-                    "readonly": true
-                },
-                "VLANs": {
-                    "anyOf": [
-                        {
-                            "$ref": "http://redfish.dmtf.org/schemas/v1/VLanNetworkInterfaceCollection.json#/definitions/VLanNetworkInterfaceCollection"
-                        },
-                        {
-                            "type": "null"
-                        }
-                    ],
-                    "description": "This is a reference to a collection of VLANs.",
-                    "longDescription": "The value of this property shall reference a collection of VLAN resources.",
                     "readonly": true
                 }
             },

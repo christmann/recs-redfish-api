@@ -25,8 +25,8 @@
 	<edmx:Reference Uri="PCIeFunction_v1.xml">
 		<edmx:Include Namespace="PCIeFunction"/>
 	</edmx:Reference>
-	<edmx:Reference Uri="http://redfish.dmtf.org/schemas/v1/VLanNetworkInterfaceCollection_v1.xml">
-		<edmx:Include Namespace="VLanNetworkInterfaceCollection"/>
+	<edmx:Reference Uri="http://redfish.dmtf.org/schemas/v1/VLanNetworkInterface_v1.xml">
+		<edmx:Include Namespace="VLanNetworkInterface"/>
 	</edmx:Reference>
 
 	<edmx:DataServices>
@@ -58,10 +58,27 @@
 					<Annotation Term="OData.LongDescription" String="This object shall only contain a reference to a resource that complies to the ComposedNode schema."/>
 					<Annotation Term="OData.AutoExpandReferences"/>
 				</NavigationProperty>
+				<!-- Replaced in EID_47597_RECSBox_Port.v1_1_0.Port
 				<NavigationProperty Name="VLANs" Type="VLanNetworkInterfaceCollection.VLanNetworkInterfaceCollection">
 					<Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
 					<Annotation Term="OData.Description" String="This is a reference to a collection of VLANs."/>
 					<Annotation Term="OData.LongDescription" String="The value of this property shall reference a collection of VLAN resources."/>
+					<Annotation Term="OData.AutoExpandReferences"/>
+				</NavigationProperty>
+				-->
+				<Annotation Term="OData.AdditionalProperties" Bool="false"/>
+				<Annotation Term="OData.Description" String="RECS|Box Port extension"/>
+				<Annotation Term="OData.LongDescription" String="RECS|Box Port extension" />
+			</ComplexType>
+		</Schema>
+
+		<Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="EID_47597_RECSBox_Port.v1_1_0">
+			
+			<ComplexType Name="Port" BaseType="EID_47597_RECSBox_Port.v1_0_0.Port">
+				<NavigationProperty Name="VLANs" Type="Collection(VLanNetworkInterface.VLanNetworkInterface)" Nullable="false">
+					<Annotation Term="OData.Permissions" EnumMember="OData.Permission/ReadWrite"/>
+					<Annotation Term="OData.Description" String="An array of references to VLanNetworkInterfaces of this port. This property is patchable for ports of a Ethernet switch only and has to be a subset of VLanNetworkInterfaces provided by the switch."/>
+					<Annotation Term="OData.LongDescription" String="This object shall only contain references to resources that comply to the VLanNetworkInterface schema."/>
 					<Annotation Term="OData.AutoExpandReferences"/>
 				</NavigationProperty>
 				<Annotation Term="OData.AdditionalProperties" Bool="false"/>
@@ -69,6 +86,7 @@
 				<Annotation Term="OData.LongDescription" String="RECS|Box Port extension" />
 			</ComplexType>
 		</Schema>
+
 
 	</edmx:DataServices>
 

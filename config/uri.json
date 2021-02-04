@@ -58,9 +58,10 @@
 			"/redfish/v1/Chassis/{ChassisID}/Baseboards/{BaseboardID}/ComputerSystems/{ComputerSystemID}/Thermal/Actions/Thermal.SetFanSpeed"
 		]
 	},
-	"VLanNetworkInterfaceCollection": {
+	"VLanNetworkInterface": {
 		"REMOVE": [
-			"/redfish/v1/Chassis/{ChassisID}/ComposedNodes/{ComposedNodeID}/ProvidedPorts/{PortID}/VLANs"
+			"/redfish/v1/Chassis/{ChassisID}/{SwitchID}/Ports/{PortID}/{VLanNetworkInterfaceID}",
+			"/redfish/v1/Chassis/{ChassisID}/ComposedNodes/{ComposedNodeID}/ProvidedPorts/{PortID}/{VLanNetworkInterfaceID}"
 		]
 	}
 }

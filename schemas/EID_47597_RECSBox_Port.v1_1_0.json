@@ -1,0 +1,84 @@
+{
+    "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema.v1_3_0.json",
+    "copyright": "Copyright 2014-2017 Distributed Management Task Force, Inc. (DMTF). For the full DMTF copyright policy, see http://www.dmtf.org/about/policies/copyright",
+    "definitions": {
+        "Port": {
+            "additionalProperties": false,
+            "description": "RECS|Box Port extension",
+            "longDescription": "RECS|Box Port extension",
+            "patternProperties": {
+                "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message|Privileges)\\.[a-zA-Z_][a-zA-Z0-9_.]+$": {
+                    "description": "This property shall specify a valid odata or Redfish property.",
+                    "type": [
+                        "array",
+                        "boolean",
+                        "number",
+                        "null",
+                        "object",
+                        "string"
+                    ]
+                }
+            },
+            "properties": {
+                "ComposedIn": {
+                    "anyOf": [
+                        {
+                            "$ref": "ComposedNode_v1.xml/ComposedNode.json#/definitions/ComposedNode"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "This is a link to the ComposedNode, this Port is composed in. It can only be non-null for PCIe ports.",
+                    "longDescription": "This object shall only contain a reference to a resource that complies to the ComposedNode schema.",
+                    "readonly": true
+                },
+                "HSLLInterface": {
+                    "anyOf": [
+                        {
+                            "$ref": "HSLLInterface_v1.xml/HSLLInterface.json#/definitions/HSLLInterface"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "This is a link to the HSLLInterface provided by this port",
+                    "longDescription": "This object shall only contain a reference to a resource that complies to the HSLLInterface schema.",
+                    "readonly": true
+                },
+                "PCIeFunctions": {
+                    "description": "An array of references to PCIeFunctions exposed by this port. This property is patchable for ports of a PCIe switch only and has to be a subset of PCIeFunctions provided by the switch.",
+                    "items": {
+                        "$ref": "PCIeFunction_v1.xml/PCIeFunction.json#/definitions/PCIeFunction"
+                    },
+                    "longDescription": "This object shall only contain references to resources that comply to the PCIeFunction schema.",
+                    "readonly": true,
+                    "type": "array"
+                },
+                "PCIeFunctions@odata.count": {
+                    "$ref": "http://redfish.dmtf.org/schemas/v1/odata.v4_0_1.json#/definitions/count"
+                },
+                "Provider": {
+                    "$ref": "http://redfish.dmtf.org/schemas/v1/odata.v4_0_1.json#/definitions/idRef",
+                    "description": "The provider of this Port. This can either be a Switch or a ComposedNode.",
+                    "longDescription": "This object shall only contain a reference that complies to the Switch or ComposedNode schema.",
+                    "readonly": true
+                },
+                "VLANs": {
+                    "description": "An array of references to VLanNetworkInterfaces of this port. This property is patchable for ports of a Ethernet switch only and has to be a subset of VLanNetworkInterfaces provided by the switch.",
+                    "items": {
+                        "$ref": "http://redfish.dmtf.org/schemas/v1/VLanNetworkInterface.json#/definitions/VLanNetworkInterface"
+                    },
+                    "longDescription": "This object shall only contain references to resources that comply to the VLanNetworkInterface schema.",
+                    "readonly": false,
+                    "type": "array"
+                },
+                "VLANs@odata.count": {
+                    "$ref": "http://redfish.dmtf.org/schemas/v1/odata.v4_0_1.json#/definitions/count"
+                }
+            },
+            "type": "object"
+        }
+    },
+    "title": "#EID_47597_RECSBox_Port.v1_1_0"
+}
