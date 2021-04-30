@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!---->
+<!--################################################################################ -->
+<!--# Copyright 2017-2019 christmann informationstechnik + medien GmbH & Co. KG      -->
+<!--################################################################################ -->
+<!---->
+<edmx:Edmx xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx" Version="4.0">
+
+	<edmx:Reference Uri="http://docs.oasis-open.org/odata/odata/v4.0/errata03/csd01/complete/vocabularies/Org.OData.Core.V1.xml">
+		<edmx:Include Namespace="Org.OData.Core.V1" Alias="OData"/>
+	</edmx:Reference>
+	<edmx:Reference Uri="http://redfish.dmtf.org/schemas/v1/RedfishExtensions_v1.xml">
+		<edmx:Include Namespace="RedfishExtensions.v1_0_0" Alias="Redfish"/>
+		<edmx:Include Namespace="Validation.v1_0_0" Alias="Validation"/>
+	</edmx:Reference>
+	<edmx:Reference Uri="http://redfish.dmtf.org/schemas/v1/Resource_v1.xml">
+		<edmx:Include Namespace="Resource"/>
+	</edmx:Reference>
+	<edmx:Reference Uri="http://redfish.dmtf.org/schemas/v1/Power_v1.xml">
+		<edmx:Include Namespace="Power"/>
+	</edmx:Reference>
+
+	<edmx:DataServices>
+
+		<Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="EID_47597_RECSBox_Power.v1_0_0">
+			
+			<ComplexType Name="Power" BaseType="Resource.OemObject">
+				<Property Name="LastSensorUpdate" Type="Edm.Int64">
+					<Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+					<Annotation Term="OData.Description" String="The timestamp of the last sensor update expressed as milliseconds since the time 00:00:00 UTC on January 1, 1970."/>
+					<Annotation Term="OData.LongDescription" String="The value of this property shall be the timestamp of the last sensor update expressed as milliseconds since the time 00:00:00 UTC on January 1, 1970."/>
+				</Property>
+				<Annotation Term="OData.Description" String="RECS|Box Power extension"/>
+				<Annotation Term="OData.LongDescription" String="RECS|Box Power extension" />
+			</ComplexType>
+
+		</Schema>
+
+	</edmx:DataServices>
+
+</edmx:Edmx>

@@ -24,6 +24,16 @@
 
 		<Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="EID_47597_RECSBox_Thermal.v1_0_0">
 			
+			<ComplexType Name="Thermal" BaseType="Resource.OemObject">
+				<Property Name="LastSensorUpdate" Type="Edm.Int64">
+					<Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+					<Annotation Term="OData.Description" String="The timestamp of the last sensor update expressed as milliseconds since the time 00:00:00 UTC on January 1, 1970."/>
+					<Annotation Term="OData.LongDescription" String="The value of this property shall be the timestamp of the last sensor update expressed as milliseconds since the time 00:00:00 UTC on January 1, 1970."/>
+				</Property>
+				<Annotation Term="OData.Description" String="RECS|Box Thermal extension"/>
+				<Annotation Term="OData.LongDescription" String="RECS|Box Thermal extension" />
+			</ComplexType>
+			
 			<ComplexType Name="Fan" BaseType="Resource.OemObject">
 				<Property Name="SpeedPercent" Type="Edm.SByte" Nullable="false">
 					<Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
