@@ -51,10 +51,10 @@
 		"ComposedNodeCollection.Allocate": "info.christmann.recs.model.ComposedNode",
 		"ComputerSystem.Reset": "info.christmann.recs.model.Node",
 		"Baseboard.Reset": "info.christmann.recs.model.Baseboard",
-		"Power.PowerControl": "info.christmann.recs.model.interfaces.ISensorValueProvider",
-		"Power.Voltages": "info.christmann.recs.model.interfaces.ISensorValueProvider",
+		"Power.PowerControl": "info.christmann.recs.model.health.IHistoricalSensorValueProvider",
+		"Power.Voltages": "info.christmann.recs.model.health.IHistoricalSensorValueProvider",
 		"Thermal.Fans": "info.christmann.recs.model.Fan",
-		"Thermal.Temperatures": "info.christmann.recs.model.interfaces.ISensorValueProvider",
+		"Thermal.Temperatures": "info.christmann.recs.model.health.IHistoricalSensorValueProvider",
 		"Thermal.SetFanSpeed": "info.christmann.recs.model.interfaces.IThermalMonitored",
 		"JsonSchemaFile.Location": "java.lang.Object",
 		"SoftwareInventory.RelatedItem": "info.christmann.recs.model.interfaces.IImageTarget"
