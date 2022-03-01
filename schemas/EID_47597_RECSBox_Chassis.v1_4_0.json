@@ -1,0 +1,84 @@
+{
+    "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema.v1_3_0.json",
+    "copyright": "Copyright 2014-2017 Distributed Management Task Force, Inc. (DMTF). For the full DMTF copyright policy, see http://www.dmtf.org/about/policies/copyright",
+    "definitions": {
+        "Chassis": {
+            "additionalProperties": false,
+            "description": "RECS|Box Chassis extension",
+            "longDescription": "RECS|Box Chassis extension",
+            "patternProperties": {
+                "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message|Privileges)\\.[a-zA-Z_][a-zA-Z0-9_.]+$": {
+                    "description": "This property shall specify a valid odata or Redfish property.",
+                    "type": [
+                        "array",
+                        "boolean",
+                        "number",
+                        "null",
+                        "object",
+                        "string"
+                    ]
+                }
+            },
+            "properties": {
+                "FanProfile": {
+                    "$ref": "#/definitions/FanProfile",
+                    "description": "Gets/Sets the current fan profile of the chassis.",
+                    "readonly": false
+                },
+                "ImageInventory": {
+                    "anyOf": [
+                        {
+                            "$ref": "http://redfish.dmtf.org/schemas/v1/SoftwareInventoryCollection.json#/definitions/SoftwareInventoryCollection"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "A inventory of operating system images.",
+                    "longDescription": "This object shall only contain a reference to a collection of resources that comply to the SoftwareInventory schema.",
+                    "readonly": true
+                },
+                "Links": {
+                    "$ref": "#/definitions/Links",
+                    "description": "RECS|Box Chassis links extension.",
+                    "readonly": true
+                },
+                "NodeOnKVM": {
+                    "anyOf": [
+                        {
+                            "$ref": "http://redfish.dmtf.org/schemas/v1/ComputerSystem.json#/definitions/ComputerSystem"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "This is a link to the ComputerSystem, which is set to KVM/iKVM",
+                    "longDescription": "This object shall only contain a reference that complies to the ComputerSystem schema.",
+                    "readonly": true
+                },
+                "OverallFanSpeedPercent": {
+                    "description": "Gets/Sets the overall fan speed of all fans in the chassis in percent.",
+                    "maximum": 100,
+                    "minimum": 0,
+                    "readonly": false,
+                    "type": "number"
+                }
+            },
+            "type": "object"
+        },
+        "FanProfile": {
+            "enum": [
+                "Manual",
+                "IncreaseByTemperature",
+                "AdjustByTemperature"
+            ],
+            "enumDescriptions": {
+                "AdjustByTemperature": "The fan speed increases, if the temperature gets too high and decreases, if it is low enough.",
+                "IncreaseByTemperature": "The fan speed increases, if the temperature gets too high.",
+                "Manual": "The fan speed does not adapt."
+            },
+            "type": "string"
+        }
+    },
+    "title": "#EID_47597_RECSBox_Chassis.v1_4_0"
+}
