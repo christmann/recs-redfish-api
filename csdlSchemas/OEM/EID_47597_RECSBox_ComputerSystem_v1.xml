@@ -136,6 +136,28 @@
 		
 		</Schema>
 
+		<Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="EID_47597_RECSBox_ComputerSystem.v1_3_0">
+
+			<EnumType Name="FormFactor">
+				<Member Name="Unknown" />
+				<Member Name="COM Express Type 1/2" />
+				<Member Name="COM Express Type 6" />
+				<Member Name="COM Express Type 7" />
+				<Member Name="COM Express Type 10" />
+				<Member Name="Apalis" />
+				<Member Name="Jetson" />
+				<Member Name="COM-HPC Server" />
+				<Member Name="COM-HPC Client" />
+			</EnumType>
+
+			<EnumType Name="KvmStatus">
+				<Member Name="None" />
+				<Member Name="KVM" />
+				<Member Name="iKVM" />
+			</EnumType>
+		
+		</Schema>
+
 	</edmx:DataServices>
 
 </edmx:Edmx>

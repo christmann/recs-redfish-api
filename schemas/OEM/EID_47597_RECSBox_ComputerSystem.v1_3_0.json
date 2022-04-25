@@ -1,0 +1,29 @@
+{
+    "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema.v1_3_0.json",
+    "copyright": "Copyright 2014-2017 Distributed Management Task Force, Inc. (DMTF). For the full DMTF copyright policy, see http://www.dmtf.org/about/policies/copyright",
+    "definitions": {
+        "FormFactor": {
+            "enum": [
+                "Unknown",
+                "COM Express Type 1/2",
+                "COM Express Type 6",
+                "COM Express Type 7",
+                "COM Express Type 10",
+                "Apalis",
+                "Jetson",
+                "COM-HPC Server",
+                "COM-HPC Client"
+            ],
+            "type": "string"
+        },
+        "KvmStatus": {
+            "enum": [
+                "None",
+                "KVM",
+                "iKVM"
+            ],
+            "type": "string"
+        }
+    },
+    "title": "#EID_47597_RECSBox_ComputerSystem.v1_3_0"
+}
