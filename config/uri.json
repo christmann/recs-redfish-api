@@ -61,7 +61,8 @@
 	"VLanNetworkInterface": {
 		"REMOVE": [
 			"/redfish/v1/Chassis/{ChassisID}/{SwitchID}/Ports/{PortID}/{VLanNetworkInterfaceID}",
-			"/redfish/v1/Chassis/{ChassisID}/ComposedNodes/{ComposedNodeID}/ProvidedPorts/{PortID}/{VLanNetworkInterfaceID}"
+			"/redfish/v1/Chassis/{ChassisID}/ComposedNodes/{ComposedNodeID}/ProvidedPorts/{PortID}/{VLanNetworkInterfaceID}",
+			"/redfish/v1/Chassis/{ChassisID}/ComposedNodes/{ComposedNodeID}/ProvidedPorts/{PortID}/UntaggedVLAN"
 		]
 	}
 }

@@ -4,6 +4,8 @@
     "definitions": {
         "VLanNetworkInterface": {
             "additionalProperties": false,
+            "description": "RECS|Box VLanNetworkInterface extension",
+            "longDescription": "RECS|Box VLanNetworkInterface extension",
             "patternProperties": {
                 "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message|Privileges)\\.[a-zA-Z_][a-zA-Z0-9_.]+$": {
                     "description": "This property shall specify a valid odata or Redfish property.",
@@ -23,20 +25,8 @@
                     "description": "The provider of this VLAN. This can either be a Port of an (Ethernet-)Switch or a EthernetInterface.",
                     "longDescription": "This object shall only contain a reference that complies to the Switch or EthernetInterface schema.",
                     "readonly": true
-                },
-                "Tagged": {
-                    "description": "This indicates if VLAN is tagged (as defined in IEEE 802.1Q).",
-                    "longDescription": "This indicates if VLAN is tagged (as defined in IEEE 802.1Q).",
-                    "readonly": false,
-                    "type": [
-                        "boolean",
-                        "null"
-                    ]
                 }
             },
-            "requiredOnCreate": [
-                "Tagged"
-            ],
             "type": "object"
         }
     },

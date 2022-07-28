@@ -63,18 +63,6 @@
                     "description": "The provider of this Port. This can either be a Switch or a ComposedNode.",
                     "longDescription": "This object shall only contain a reference that complies to the Switch or ComposedNode schema.",
                     "readonly": true
-                },
-                "VLANs": {
-                    "description": "An array of references to VLanNetworkInterfaces of this port. This property is patchable for ports of a Ethernet switch only and has to be a subset of VLanNetworkInterfaces provided by the switch.",
-                    "items": {
-                        "$ref": "http://redfish.dmtf.org/schemas/v1/VLanNetworkInterface.json#/definitions/VLanNetworkInterface"
-                    },
-                    "longDescription": "This object shall only contain references to resources that comply to the VLanNetworkInterface schema.",
-                    "readonly": false,
-                    "type": "array"
-                },
-                "VLANs@odata.count": {
-                    "$ref": "http://redfish.dmtf.org/schemas/v1/odata.v4_0_1.json#/definitions/count"
                 }
             },
             "type": "object"
