@@ -69,12 +69,10 @@
         "FanProfile": {
             "enum": [
                 "Manual",
-                "IncreaseByTemperature",
-                "AdjustByTemperature"
+                "Auto"
             ],
             "enumDescriptions": {
-                "AdjustByTemperature": "The fan speed increases, if the temperature gets too high and decreases, if it is low enough.",
-                "IncreaseByTemperature": "The fan speed increases, if the temperature gets too high.",
+                "Auto": "The fan speed increases, if the temperature gets too high and decreases, if it is low enough.",
                 "Manual": "The fan speed does not adapt."
             },
             "type": "string"

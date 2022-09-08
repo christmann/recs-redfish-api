@@ -140,10 +140,7 @@
 				<Member Name="Manual">
 				  <Annotation Term="OData.Description" String="The fan speed does not adapt."/>
 				</Member>
-				<Member Name="IncreaseByTemperature">
-					<Annotation Term="OData.Description" String="The fan speed increases, if the temperature gets too high."/>
-				</Member>
-				<Member Name="AdjustByTemperature">
+				<Member Name="Auto">
 					<Annotation Term="OData.Description" String="The fan speed increases, if the temperature gets too high and decreases, if it is low enough."/>
 				</Member>
 			</EnumType>

@@ -118,8 +118,7 @@ The Chassis schema represents the physical components of a system.  This resourc
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;EID_47597 {</td><td>Object</td><td></td><td></td><td>read-write</td><td>RECS|Box Chassis extension</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FanProfile</td><td>String</td><td></td><td></td><td>read-write</td><td>Gets/Sets the current fan profile of the chassis.<br />Possible Values:<ul>
 <li>Manual: The fan speed does not adapt.</li>
-<li>IncreaseByTemperature: The fan speed increases, if the temperature gets too high.</li>
-<li>AdjustByTemperature: The fan speed increases, if the temperature gets too high and decreases, if it is low enough.</li>
+<li>Auto: The fan speed increases, if the temperature gets too high and decreases, if it is low enough.</li>
 </ul></td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ImageInventory {</td><td>Reference(<a href="softwareinventorycollection.html#softwareinventorycollection">SoftwareInventoryCollection</a>)</td><td>Yes</td><td></td><td>read-only</td><td>A inventory of operating system images.</td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@odata.id</td><td>String</td><td></td><td></td><td>read-only</td><td>The unique identifier for a resource.<br />Format: uri</td></tr>
@@ -263,7 +262,7 @@ Content-Type: application/json
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"FanProfile": "Manual",
 <br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"FanProfile@Redfish.AllowableValues": ["Manual", "IncreaseByTemperature", "AdjustByTemperature"],
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"FanProfile@Redfish.AllowableValues": ["Manual", "Auto"],
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"ImageInventory": {
 <br />
